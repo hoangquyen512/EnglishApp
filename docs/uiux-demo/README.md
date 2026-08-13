@@ -2,7 +2,13 @@
 
 ## 1. Mẫu pet (xem trước)
 
-Mở [`index.html`](index.html) hoặc:
+**Điện thoại:** mở link này trên trình duyệt (Safari / Chrome):
+
+https://htmlpreview.github.io/?https://github.com/hoangquyen512/EnglishApp/blob/cursor/vocab-pet-uiux-design-9e4c/docs/uiux-demo/index.html
+
+Hoặc xem ảnh trên PR: https://github.com/hoangquyen512/EnglishApp/pull/3
+
+Máy tính — mở [`index.html`](index.html) hoặc:
 
 ```bash
 python3 -m http.server 8765

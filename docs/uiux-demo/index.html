@@ -4,7 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vocab Pet — Mẫu pet</title>
-  <script>if (/[?&]shot=1/.test(location.search)) document.documentElement.classList.add("shot");</script>
+  <base id="assetBase" href="./" />
+  <script>
+    (function () {
+      var host = location.hostname;
+      var local = host === "localhost" || host === "127.0.0.1" || location.protocol === "file:";
+      if (!local) {
+        document.getElementById("assetBase").href =
+          "https://cdn.jsdelivr.net/gh/hoangquyen512/EnglishApp@cursor/vocab-pet-uiux-design-9e4c/docs/uiux-demo/";
+      }
+      if (/[?&]shot=1/.test(location.search)) document.documentElement.classList.add("shot");
+    })();
+  </script>
   <style>
     @font-face { font-family: "Be Vietnam Pro"; src: url("./fonts/BeVietnamPro-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
     @font-face { font-family: "Be Vietnam Pro"; src: url("./fonts/BeVietnamPro-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
@@ -146,8 +157,13 @@
 
     .moods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
     @media (max-width: 800px) {
-      .hero { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 20px, 960px); margin: 16px auto 40px; }
+      .hero { grid-template-columns: 1fr; padding: 16px; border-radius: 18px; }
+      .habitat { max-width: 280px; margin: 0 auto; }
+      .copy h1 { font-size: 26px; }
+      .chip { min-height: 44px; }
       .moods, .evo { grid-template-columns: 1fr 1fr; }
+      .demo-bar { position: static; }
     }
   </style>
 </head>
