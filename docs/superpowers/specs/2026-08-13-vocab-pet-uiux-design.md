@@ -292,31 +292,22 @@ Copy:
 
 ### 6.2 Home — “Nhà của pet”
 
-**Job:** see the companion first; start a study session second.
+**Job:** pick study mode and start a session. The live pet is already floating on the desktop — Home is the control panel, not a second habitat.
 
 **Layout (880×640, two columns, 24px padding, 16px gap)**
 
 ```
 ┌────────────────────┬────────────────────────────────────────┐
-│ HABITAT            │ HỌC                                    │
-│                    │ Chế độ học                             │
-│   [pet 160]        │ [Từ vựng]  [Câu giao tiếp]             │
-│   Fraunces name    │                                        │
-│   Mèo · Vui        │ (if phrase) Chủ đề                     │
-│                    │ [Tất cả] [Du lịch] [Ẩm thực] …         │
-│   Cấp 2   Streak 3 │                                        │
-│   ████░░░░ 20/50 XP│ [Học ngay]                             │
-│                    │                                        │
-│                    │ NHIỆM VỤ HÔM NAY                       │
-│                    │ ☐ Học từ/câu mới     3/10  +15 XP      │
-│                    │ ☐ Ôn lại đã sai      0/5   +10 XP      │
-│                    │ ☐ Luyện Du lịch      1/3   +12 XP      │
-│                    │                                        │
-│                    │ Popup mỗi  [ 2 ] phút                  │
+│ STATS (no plate)   │ HỌC                                    │
+│  transparent pet   │ Chế độ học                             │
+│  Mèo · Vui         │ [Từ vựng]  [Câu giao tiếp]             │
+│  Cấp 2   Streak 3  │ [Học ngay]                             │
+│  ████░░░░ 20/50 XP │ NHIỆM VỤ HÔM NAY …                     │
+│                    │ Nhắc học mỗi [ 2 ] phút                │
 └────────────────────┴────────────────────────────────────────┘
 ```
 
-**Left column (280px, sticky visually):** PetHabitat + name (Be Vietnam Pro 700) + species · mood + two stats (Cấp, Streak) + XP bar. Do **not** put study controls here.
+**Left column (~240px):** transparent pet PNG (no well) + name + mood text + Cấp / Streak + XP bar. Study controls stay on the right.
 
 **Right column:**
 
@@ -326,7 +317,7 @@ Copy:
 4. Missions list (read-only).
 5. Interval — last, visually quiet. Label `Nhắc học mỗi (phút)` (clearer than “Popup mỗi”). Number input 1–180, persistent label, not a placeholder.
 
-**Hungry / sad treatment:** habitat well tints slightly cooler; mood chip uses the sad/hungry icon + label. Optional one-line under the name: `Pet đang đói — một thẻ là đủ để pet vui lại.` Never “bạn đã quên học”.
+**Hungry / sad treatment:** use the matching transparent mood sprite (desktop + Home). One line under the name: `Pet đang đói — một thẻ là đủ để pet vui lại.` Never “bạn đã quên học”.
 
 **Empty missions:** should not happen (3 generated daily). If the list is empty while loading, show three skeleton rows, not “No data”.
 

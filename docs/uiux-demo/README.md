@@ -19,6 +19,8 @@ python3 -m http.server 8765
 
 Query: `?species=cat&stage=adult&mood=happy`
 
-## 2. Demo màn hình app (sau khi chốt pet)
+## 2. Popup / Nhà / Thẻ học
 
-[`app.html`](app.html) — onboarding, nhà, popup. Chưa phải bản cuối.
+[`app.html`](app.html) — desktop + pet nổi, onboarding, nhà, thẻ học.
+
+Điện thoại: https://htmlpreview.github.io/?https://github.com/hoangquyen512/EnglishApp/blob/cursor/vocab-pet-uiux-design-9e4c/docs/uiux-demo/app.html
