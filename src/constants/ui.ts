@@ -11,7 +11,7 @@ export const UI = {
   choosePet: "Chọn pet này",
   homeTitle: "Nhà của pet",
   studyModeTitle: "Chế độ học",
-  vocabulary: "Từ vựng TOEIC",
+  vocabulary: "Từ vựng",
   phrases: "Câu giao tiếp",
   pickTopic: "Chủ đề",
   allTopics: "Tất cả chủ đề",

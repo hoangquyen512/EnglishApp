@@ -13,12 +13,8 @@ interface VocabIllustrationProps {
 export function VocabIllustration({ imageKey, className = "" }: VocabIllustrationProps) {
   const file = TOPIC_FALLBACK[imageKey] ?? imageKey;
   return (
-    <div className={`overflow-hidden rounded-[16px] ring-1 ring-line ${className}`}>
-      <img
-        src={`/arts/${file}.jpg`}
-        alt=""
-        className="aspect-video h-full w-full object-cover"
-      />
+    <div className={`bg-cream ring-1 ring-line ${className}`}>
+      <img src={`/arts/${file}.jpg`} alt="" className="block h-auto w-full object-contain" />
     </div>
   );
 }

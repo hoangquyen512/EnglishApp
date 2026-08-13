@@ -56,8 +56,8 @@
     }
 
     .floater {
-      position: absolute; right: 4px; top: calc(28px + var(--safe-top));
-      width: 108px; background: none; border: 0; padding: 0; z-index: 6;
+      position: absolute; right: 8px; top: calc(8px + var(--safe-top));
+      width: 100px; background: none; border: 0; padding: 0; z-index: 6;
       filter: drop-shadow(0 12px 18px rgb(31 25 21 / 0.3));
     }
     .floater img { width: 100%; height: auto; display: block; animation: bob 2.4s ease-in-out infinite; pointer-events: none; }
@@ -65,7 +65,7 @@
     @media (prefers-reduced-motion: reduce) { .floater img { animation: none; } }
 
     .card {
-      margin-top: 96px;
+      margin-top: 118px;
       flex: 1;
       background: var(--stone-25);
       border-radius: var(--radius-lg);
@@ -79,10 +79,16 @@
       font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--stone-500);
     }
     .art {
-      border-radius: 16px; overflow: hidden; background: #fffdf9; border: 1px solid var(--stone-100);
-      aspect-ratio: 16 / 9; max-height: 200px;
+      background: var(--stone-50);
+      border: 1px solid var(--stone-100);
     }
-    .art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .art img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      object-position: center;
+    }
     .pos { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--stone-500); }
     .word-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
     .word { margin: 0; font-family: Fraunces, Georgia, serif; font-size: 32px; letter-spacing: -.02em; line-height: 1.15; }
@@ -123,7 +129,7 @@
     <p class="hint">Chạm pet hoặc loa để nghe · thẻ đổi mỗi 30 giây</p>
     <article class="card" id="card">
       <div class="meta-row">
-        <span>Từ vựng TOEIC</span>
+        <span>Từ vựng</span>
       </div>
       <div class="art" id="art"></div>
       <p class="pos" id="pos"></p>
