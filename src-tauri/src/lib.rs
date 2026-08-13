@@ -1,8 +1,13 @@
 mod commands;
 mod tray;
 
+use tauri::Manager;
 use tauri_plugin_sql::{Migration, MigrationKind};
 
+use commands::paths::{
+    ensure_user_data_dirs, read_app_settings, sqlite_db_url, user_data_paths, write_app_settings,
+    SqliteUrl,
+};
 use commands::window::{hide_popup_window, show_main_window, show_popup_window};
 
 fn sqlite_migrations() -> Vec<Migration> {
@@ -110,12 +115,14 @@ fn sqlite_migrations() -> Vec<Migration> {
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_notification::init())
-        .plugin(
-            tauri_plugin_sql::Builder::new()
-                .add_migrations("sqlite:vocab_pet.db", sqlite_migrations())
-                .build(),
-        )
         .setup(|app| {
+            let paths = ensure_user_data_dirs(&app.handle().clone())?;
+            app.manage(SqliteUrl(paths.sqlite_url.clone()));
+            app.handle().plugin(
+                tauri_plugin_sql::Builder::new()
+                    .add_migrations(&paths.sqlite_url, sqlite_migrations())
+                    .build(),
+            )?;
             tray::setup_tray(app)?;
             #[cfg(debug_assertions)]
             {
@@ -126,7 +133,11 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             show_main_window,
             show_popup_window,
-            hide_popup_window
+            hide_popup_window,
+            user_data_paths,
+            sqlite_db_url,
+            read_app_settings,
+            write_app_settings
         ])
         .on_window_event(|window, event| {
             if let tauri::WindowEvent::CloseRequested { api, .. } = event {

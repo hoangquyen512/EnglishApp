@@ -1,5 +1,3 @@
-export const DB_URL = "sqlite:vocab_pet.db";
-
 export function todayDate(now = new Date()): string {
   const year = now.getFullYear();
   const month = String(now.getMonth() + 1).padStart(2, "0");

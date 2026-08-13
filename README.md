@@ -15,9 +15,11 @@ Correct answers feed the pet (XP, mood, evolution). Missing days makes the pet s
 ```bash
 pnpm install
 pnpm test
-pnpm tauri dev      # desktop app (main window is visible in debug)
-pnpm tauri build    # installers for the current OS
+pnpm tauri dev
+pnpm tauri build    # Windows: NSIS current-user setup.exe; macOS: drag-and-drop .dmg
 ```
+
+Installers are **per-user** (no admin / no UAC). The `.app` inside the macOS DMG can live in any writable folder, not only `/Applications`. SQLite and settings are stored under Tauri `appLocalDataDir` / `appDataDir`. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) § Deployment constraints.
 
 In release builds the main window starts hidden. Use the tray icon:
 

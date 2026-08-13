@@ -1,14 +1,32 @@
 import Database from "@tauri-apps/plugin-sql";
+import { isTauri } from "../lib/tauri";
 
-export const DB_URL = "sqlite:vocab_pet.db";
+export const DB_FILENAME = "vocab_pet.db";
 
 let instance: Database | null = null;
+let loading: Promise<Database> | null = null;
+
+async function resolveSqliteUrl(): Promise<string> {
+  if (!isTauri()) {
+    return `sqlite:${DB_FILENAME}`;
+  }
+  const { invoke } = await import("@tauri-apps/api/core");
+  return invoke<string>("sqlite_db_url");
+}
 
 export async function getDb(): Promise<Database> {
-  if (!instance) {
-    instance = await Database.load(DB_URL);
+  if (instance) {
+    return instance;
   }
-  return instance;
+  if (!loading) {
+    loading = (async () => {
+      const url = await resolveSqliteUrl();
+      const db = await Database.load(url);
+      instance = db;
+      return db;
+    })();
+  }
+  return loading;
 }
 
 export type SqlValue = string | number | null;

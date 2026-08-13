@@ -32,7 +32,8 @@ Rust is limited to tray, window show/hide, plugin wiring, and SQL migrations. Qu
               │                       │
               └──────────┬────────────┘
                          ▼
-              sqlite:vocab_pet.db  (AppConfig)
+              sqlite:vocab_pet.db  (appLocalDataDir)
+              settings.json        (appDataDir)
 ```
 
 Both windows load the same SPA. `getCurrentWebviewWindow().label` selects the tree (`main` vs `popup`). Closing a window hides it; only **Thoát** exits.
@@ -77,13 +78,51 @@ Frontend `setInterval` (default **2 minutes**, editable on the home screen, pers
 
 Study mode is persisted with Zustand so the popup WebView can read the same `contentType` / `topic`.
 
-## SQLite
+## SQLite and user files
 
 SQLite via sqlx only runs one statement per migration version, so schema and seed are split into `src-tauri/migrations/001_*.sql` … `016_*.sql`.
+
+The database file is `{appLocalDataDir}/vocab_pet.db`. Settings are `{appDataDir}/settings.json`. Both directories are created at startup through Tauri's path API (`app.path().app_local_data_dir()` / `app_data_dir()` on the Rust side, `@tauri-apps/api/path` on the frontend). `tauri-plugin-sql` is registered with that absolute `sqlite:` URL so migrations apply to the same file the UI opens.
 
 Seed: 10 NGSL-based lemmas, 10 original phrases across four topics, three species × three evolution stages, one empty `user_progress` row. `pet_state` is inserted only after onboarding.
 
 Phrases have no `learning_progress` row (FK is `vocabulary_id` only). Phrase review uses `study_sessions` aggregates.
+
+## Deployment constraints
+
+These rules are locked in `src-tauri/tauri.conf.json` and guarded by `src/config/deployment.test.ts`. Do not reverse them.
+
+### Installers (no admin)
+
+| Platform | Ship | Do not ship |
+| --- | --- | --- |
+| Windows | NSIS `.exe` with `"installMode": "currentUser"` | WiX `.msi`, `perMachine`, or `both` (those trigger UAC and write under Program Files) |
+| macOS | Drag-and-drop `.dmg` containing a `.app` (`targets` includes `app` + `dmg`) | `.pkg` installer |
+
+Windows current-user NSIS installs under `%LOCALAPPDATA%` (typically `C:\Users\<user>\AppData\Local\...`), not `C:\Program Files`. Registry keys go to `HKCU`. A standard (non-admin) account must be able to run the installer with **no UAC prompt**.
+
+macOS: the `.app` is relocatable. The DMG may show an Applications shortcut as a convenience, but the user may drag Vocab Pet into Desktop, `~/Applications`, or any other folder they can write. Runtime data does not follow the `.app`.
+
+`bundle.targets` is the explicit list `["nsis", "app", "dmg"]` — never `"all"` (that would reintroduce `.msi`).
+
+### Data writes (always user-scoped)
+
+| File | Path API | Typical location |
+| --- | --- | --- |
+| SQLite | `appLocalDataDir()` | Windows `%LOCALAPPDATA%\com.vocabpet.app\vocab_pet.db`; macOS `~/Library/Application Support/com.vocabpet.app/vocab_pet.db` |
+| Settings JSON | `appDataDir()` | Windows `%APPDATA%\com.vocabpet.app\settings.json`; macOS same Application Support folder |
+
+Never write into the install directory, `Program Files`, `/Applications`, `/Library`, or any other path that needs elevation. The WebView profile is also under the user AppData tree.
+
+### Manual install check (non-admin account)
+
+This Linux CI/agent environment cannot click through Windows UAC or mount a macOS DMG. Before a release, on a **standard user** (not Administrator / not in sudoers for the test):
+
+1. **Windows:** run the NSIS `*-setup.exe`. Confirm no UAC dialog, install completes under `%LOCALAPPDATA%`, app launches, then confirm `vocab_pet.db` and `settings.json` appear under the user AppData folders in the table above — not under `C:\Program Files`.
+2. **macOS:** open the `.dmg`, drag `Vocab Pet.app` to Desktop (not `/Applications`), launch it, and confirm the same user-scoped files under `~/Library/Application Support/com.vocabpet.app/`.
+
+Automated guard: `pnpm test` includes `src/config/deployment.test.ts`.
+
 
 ## Native commands
 
@@ -92,6 +131,10 @@ Phrases have no `learning_progress` row (FK is `vocabulary_id` only). Phrase rev
 | `show_main_window` | none | `Result<(), String>` |
 | `show_popup_window` | none | `Result<(), String>` |
 | `hide_popup_window` | none | `Result<(), String>` |
+| `sqlite_db_url` | none | `sqlite:` URL under `appLocalDataDir` |
+| `user_data_paths` | none | user-scoped dirs + sqlite URL + settings path |
+| `read_app_settings` | none | `{appDataDir}/settings.json` or `{}` |
+| `write_app_settings` | `contents: string` | `Result<(), String>` |
 
 SQL and notifications go through official plugins, not custom commands.
 

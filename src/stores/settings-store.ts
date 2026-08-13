@@ -1,6 +1,7 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 import { DEFAULT_POPUP_INTERVAL_MINUTES } from "../constants/study";
+import { userSettingsStorage } from "../lib/user-storage";
 
 interface SettingsState {
   intervalMinutes: number;
@@ -16,6 +17,9 @@ export const useSettingsStore = create<SettingsState>()(
           intervalMinutes: Math.max(1, Math.min(180, Math.round(minutes))),
         }),
     }),
-    { name: "vocab-pet-settings" },
+    {
+      name: "vocab-pet-settings",
+      storage: createJSONStorage(() => userSettingsStorage),
+    },
   ),
 );

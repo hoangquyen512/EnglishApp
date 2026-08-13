@@ -10,6 +10,7 @@ import {
   refreshUserProgress,
   todaysMissions,
 } from "../features/pet-state";
+import { resolveUserDataDirs } from "../lib/user-paths";
 
 interface AppState {
   ready: boolean;
@@ -33,6 +34,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   progress: null,
   hydrate: async () => {
     try {
+      await resolveUserDataDirs();
       const species = await listSpecies();
       await ensureDailyMissions();
       await refreshUserProgress();
