@@ -148,10 +148,11 @@ export const petFixture = {
 ## 7. Chạy và phạm vi CI
 
 ```bash
-pnpm test              # bắt buộc trước khi claim xong
-pnpm test:watch        # local
-pnpm build             # tsc + vite — không thay test
+bash scripts/run-regression.sh   # bắt buộc sau mỗi feature — full suite
+pnpm test:watch                  # local, không phải bằng chứng xong
 ```
+
+Script đã gồm `pnpm test` (mọi file) + `pnpm build` + `pnpm test:e2e` nếu có. Cùng lệnh chạy trên GitHub Actions (`Regression`). Chi tiết: [regression-gate.md](regression-gate.md).
 
 Linux cloud agent: `pnpm test` + `pnpm build` là đủ. `pnpm tauri dev` / `tauri build` cần WebView/GTK — đừng lấy fail native làm fail test domain.
 

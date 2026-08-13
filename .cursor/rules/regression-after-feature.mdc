@@ -1,0 +1,28 @@
+---
+description: After every completed feature or bugfix, run full-system regression — never a single test file.
+alwaysApply: true
+---
+
+# Regression after every feature
+
+A feature or bugfix is **not done** until the **entire** automated suite is green.
+
+Required command (repo root):
+
+```bash
+bash scripts/run-regression.sh
+```
+
+That script runs every Vitest file, then `build` (tsc + Vite) if present, then `test:e2e` if present. It does **not** accept a file filter.
+
+Forbidden as proof of done:
+
+- `pnpm test path/to/new.test.ts` only
+- `pnpm test:watch` glanced at one file
+- “Old tests probably still pass”
+- Opening `pnpm tauri dev` instead of the suite
+- Claiming done before the script exits 0
+
+If the script skips because the app is not on this branch, say so. Do not invent a green suite.
+
+Load `.cursor/skills/automating-vocab-pet-tests/SKILL.md` when writing or changing tests.

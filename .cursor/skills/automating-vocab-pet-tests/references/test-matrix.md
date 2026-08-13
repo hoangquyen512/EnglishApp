@@ -2,6 +2,8 @@
 
 Nguồn: `docs/ARCHITECTURE.md` (scaffold) + UI/UX Warm Companion. Cập nhật hàng khi thêm feature.
 
+Sau mỗi feature: `bash scripts/run-regression.sh` — toàn bộ P0 hiện có phải xanh, không chỉ hàng mới. CI `Regression` chạy cùng lệnh trên mọi PR. Xem [regression-gate.md](regression-gate.md).
+
 ## P0 — chặn merge nếu đỏ
 
 | ID | Hành vi | Tầng | Target | Oracle |
