@@ -55,6 +55,11 @@ export function HomeScreen({
         <Panel>
           <h1 className="text-2xl font-bold">{UI.homeTitle}</h1>
           <p className="mt-1 text-sm text-muted">{UI.cardIntervalHint}</p>
+          {contentType === "vocabulary" && player.deck.length > 0 ? (
+            <p className="mt-1 text-sm text-muted">
+              {UI.vocabBankSize.replace("{n}", String(player.deck.length))}
+            </p>
+          ) : null}
           {player.card ? (
             <div className="mt-4">
               <FlashcardFace

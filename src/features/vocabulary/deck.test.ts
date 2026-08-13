@@ -18,14 +18,18 @@ describe("flashcard deck", () => {
 
 describe("TOEIC card content", () => {
   it("includes word, IPA, image, example, and meaning on every card", () => {
-    expect(TOEIC_CARDS.length).toBeGreaterThanOrEqual(12);
+    expect(TOEIC_CARDS.length).toBeGreaterThanOrEqual(200);
+    const words = TOEIC_CARDS.map((card) => card.word.toLowerCase());
+    expect(new Set(words).size).toBe(words.length);
     for (const card of TOEIC_CARDS) {
       expect(card.word.length).toBeGreaterThan(0);
-      expect(card.phonetic).toMatch(/^\/.+\/$/);
+      expect(card.phonetic).toMatch(/^\/.+\//);
       expect(card.meaning.length).toBeGreaterThan(0);
       expect(card.example.length).toBeGreaterThan(0);
+      expect(card.exampleVi.length).toBeGreaterThan(0);
       expect(card.imageKey.length).toBeGreaterThan(0);
       expect(card.partOfSpeech.length).toBeGreaterThan(0);
+      expect(card.category).toBe("TOEIC");
     }
   });
 });

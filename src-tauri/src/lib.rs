@@ -144,6 +144,18 @@ fn sqlite_migrations() -> Vec<Migration> {
             sql: include_str!("../migrations/022_seed_more_toeic.sql"),
             kind: MigrationKind::Up,
         },
+        Migration {
+            version: 23,
+            description: "vocab_word_unique",
+            sql: include_str!("../migrations/023_vocab_word_unique.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 24,
+            description: "seed_toeic_lexicon",
+            sql: include_str!("../migrations/024_seed_toeic_lexicon.sql"),
+            kind: MigrationKind::Up,
+        },
     ]
 }
 

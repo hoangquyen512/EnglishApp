@@ -17,6 +17,12 @@
   <link rel="preload" as="image" href="./arts/itinerary.jpg" />
   <link rel="preload" as="image" href="./arts/complimentary.jpg" />
   <link rel="preload" as="image" href="./arts/authorize.jpg" />
+  <link rel="preload" as="image" href="./arts/employee.jpg" />
+  <link rel="preload" as="image" href="./arts/inventory.jpg" />
+  <link rel="preload" as="image" href="./arts/memo.jpg" />
+  <link rel="preload" as="image" href="./arts/headquarters.jpg" />
+  <link rel="preload" as="image" href="./arts/occupancy.jpg" />
+  <link rel="preload" as="image" href="./arts/brochure.jpg" />
   <script>
     (function () {
       var host = location.hostname;
@@ -142,6 +148,7 @@
     <article class="card" id="card">
       <div class="meta-row">
         <span>Từ vựng</span>
+        <span class="tabular" id="count"></span>
       </div>
       <div class="art" id="art"></div>
       <p class="pos" id="pos"></p>
@@ -179,7 +186,7 @@
     </article>
   </main>
   <script>
-    var CARDS = [
+    var FALLBACK = [
       { word: "invoice", phonetic: "/ˈɪn.vɔɪs/", pos: "n.", meaning: "hóa đơn", example: "Please attach the invoice to your email.", exampleVi: "Vui lòng đính kèm hóa đơn vào email của bạn.", art: "invoice" },
       { word: "deadline", phonetic: "/ˈded.laɪn/", pos: "n.", meaning: "hạn chót", example: "The deadline for the report is next Monday.", exampleVi: "Hạn chót nộp báo cáo là thứ Hai tuần sau.", art: "deadline" },
       { word: "applicant", phonetic: "/ˈæp.lɪ.kənt/", pos: "n.", meaning: "ứng viên", example: "Each applicant must submit a résumé by Friday.", exampleVi: "Mỗi ứng viên phải nộp sơ yếu lý lịch trước thứ Sáu.", art: "applicant" },
@@ -191,6 +198,8 @@
       { word: "complimentary", phonetic: "/ˌkɑːm.plɪˈmen.tər.i/", pos: "adj.", meaning: "miễn phí (tặng kèm)", example: "Guests receive a complimentary breakfast each morning.", exampleVi: "Khách được dùng bữa sáng miễn phí mỗi sáng.", art: "complimentary" },
       { word: "authorize", phonetic: "/ˈɔː.θə.raɪz/", pos: "v.", meaning: "ủy quyền / cho phép", example: "Only the director can authorize this payment.", exampleVi: "Chỉ giám đốc mới được ủy quyền khoản thanh toán này.", art: "authorize" }
     ];
+    var CARDS = FALLBACK.slice();
+    var TESTING = /[?&]test=1/.test(location.search);
 
     var index = 0, paused = false, started = Date.now(), pausedMs = 0, pausedAt = null, audioReady = false;
     var DURATION = 30000;
@@ -218,24 +227,50 @@
       return "./arts/" + key + ".jpg";
     }
 
+    function shuffle(list) {
+      for (var i = list.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = list[i];
+        list[i] = list[j];
+        list[j] = tmp;
+      }
+      return list;
+    }
+
+    function uniqueArts() {
+      var seen = {};
+      var keys = [];
+      CARDS.forEach(function (c) {
+        if (!seen[c.art]) {
+          seen[c.art] = true;
+          keys.push(c.art);
+        }
+      });
+      return keys;
+    }
+
     function mountArts() {
       var box = document.getElementById("art");
-      CARDS.forEach(function (c, i) {
+      box.innerHTML = "";
+      uniqueArts().forEach(function (key) {
         var img = document.createElement("img");
-        img.src = artSrc(c.art);
-        img.alt = c.meaning;
-        img.dataset.art = c.art;
-        img.dataset.i = String(i);
+        img.src = artSrc(key);
+        img.alt = "";
+        img.dataset.art = key;
         img.decoding = "async";
         box.appendChild(img);
       });
     }
 
-    function imgFor(i) {
-      return document.querySelector('#art img[data-i="' + i + '"]');
+    function imgForCard(c) {
+      return document.querySelector('#art img[data-art="' + c.art + '"]');
     }
 
     function whenLoaded(img, done) {
+      if (!img) {
+        done();
+        return;
+      }
       if (img.complete && img.naturalWidth > 0) {
         done();
         return;
@@ -251,20 +286,21 @@
       document.getElementById("meaning").textContent = c.meaning;
       document.getElementById("example").textContent = c.example;
       document.getElementById("exampleVi").textContent = c.exampleVi;
+      document.getElementById("count").textContent = (index + 1) + "/" + CARDS.length;
     }
 
     function show(i, doSpeak) {
       var nextIndex = (i + CARDS.length) % CARDS.length;
       var c = CARDS[nextIndex];
-      var img = imgFor(nextIndex);
+      var img = imgForCard(c);
       var token = ++showToken;
       whenLoaded(img, function () {
         if (token !== showToken) return;
         document.querySelectorAll("#art img").forEach(function (el) {
           el.classList.toggle("is-on", el === img);
         });
-        paint(c);
         index = nextIndex;
+        paint(c);
         started = Date.now();
         pausedMs = 0;
         pausedAt = paused ? Date.now() : null;
@@ -314,18 +350,19 @@
     }, 250);
 
     function runSelfTest() {
-      function ready(i, cb) {
-        whenLoaded(imgFor(i), cb);
+      function ready(card, cb) {
+        whenLoaded(imgForCard(card), cb);
       }
       show(0, false);
-      ready(0, function () {
+      ready(CARDS[0], function () {
         var firstWord = document.getElementById("word").textContent;
         var firstArt = document.querySelector("#art img.is-on").dataset.art;
         show(1, false);
-        ready(1, function () {
+        ready(CARDS[1], function () {
           var on = document.querySelector("#art img.is-on");
           var word = document.getElementById("word").textContent;
           var ok =
+            CARDS.length >= 200 &&
             firstWord === CARDS[0].word &&
             firstArt === CARDS[0].art &&
             word === CARDS[1].word &&
@@ -335,13 +372,45 @@
           document.body.dataset.test = ok ? "ok" : "fail";
           document.body.dataset.testWord = word;
           document.body.dataset.testArt = on.dataset.art;
+          document.body.dataset.testCount = String(CARDS.length);
         });
       });
     }
 
-    mountArts();
-    if (/[?&]test=1/.test(location.search)) runSelfTest();
-    else show(0, false);
+    function boot(list, shouldShuffle) {
+      CARDS = list.slice();
+      if (shouldShuffle) shuffle(CARDS);
+      mountArts();
+      if (TESTING) runSelfTest();
+      else show(0, false);
+    }
+
+    function mapRows(rows) {
+      return rows.map(function (row) {
+        return {
+          word: row.word,
+          phonetic: row.phonetic,
+          pos: row.partOfSpeech,
+          meaning: row.meaning,
+          example: row.example,
+          exampleVi: row.exampleVi,
+          art: row.imageKey
+        };
+      });
+    }
+
+    fetch("vocabulary.json")
+      .then(function (res) {
+        if (!res.ok) throw new Error("vocab");
+        return res.json();
+      })
+      .then(function (rows) {
+        if (!rows || rows.length < 200) throw new Error("short");
+        boot(mapRows(rows), !TESTING);
+      })
+      .catch(function () {
+        boot(FALLBACK, false);
+      });
   </script>
 </body>
 </html>

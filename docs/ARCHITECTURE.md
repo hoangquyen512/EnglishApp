@@ -28,7 +28,7 @@ Rust is limited to tray, window show/hide, plugin wiring, and SQL migrations. Fl
      │  visible: false │   │ alwaysOnTop, no     │
      │  onboarding /   │   │ chrome, skipTaskbar │
      │  home + live    │   │ TOEIC flashcard     │
-     │  10s cards      │   │ auto-speak + rotate │
+     │  30s cards      │   │ auto-speak + rotate │
      └────────┬────────┘   └──────────┬──────────┘
               │                       │
               └──────────┬────────────┘
@@ -46,7 +46,7 @@ Debug builds (`pnpm tauri dev`) show the main window immediately so onboarding i
 ```
 src/                         React + TS
   components/popup|pet|shared
-  features/vocabulary        deck, 10s timer, TTS, recordFlashcardEvent
+  features/vocabulary        deck, 30s timer, TTS, recordFlashcardEvent
   features/pet-state         XP, mood, evolution, daily missions, user_progress
   features/scheduler         interval timer + notification + popup
   stores/                    Zustand
@@ -85,11 +85,11 @@ Study mode is persisted with Zustand so the popup WebView can read the same `con
 
 ## SQLite and user files
 
-SQLite via sqlx only runs one statement per migration version, so schema and seed are split into `src-tauri/migrations/001_*.sql` … `016_*.sql`.
+SQLite via sqlx only runs one statement per migration version, so schema and seed are split into `src-tauri/migrations/001_*.sql` … `024_*.sql`.
 
 The database file is `{appLocalDataDir}/vocab_pet.db`. Settings are `{appDataDir}/settings.json`. Both directories are created at startup through Tauri's path API (`app.path().app_local_data_dir()` / `app_data_dir()` on the Rust side, `@tauri-apps/api/path` on the frontend). `tauri-plugin-sql` is registered with that absolute `sqlite:` URL so migrations apply to the same file the UI opens.
 
-Seed: 16 TOEIC-style lemmas (IPA, illustration key, example + Vietnamese gloss), 10 original phrases across four topics, three species × three evolution stages, one empty `user_progress` row. `pet_state` is inserted only after onboarding.
+Seed: **433** original TOEIC-style lemmas (IPA, illustration key, example + Vietnamese gloss) from `src/data/toeic-vocabulary.json`, unique index on `vocabulary.word`, 10 original phrases across four topics, three species × three evolution stages, one empty `user_progress` row. `pet_state` is inserted only after onboarding. The phone demo loads the same JSON from `docs/uiux-demo/vocabulary.json`.
 
 Phrases have no `learning_progress` row (FK is `vocabulary_id` only). Phrase review uses `study_sessions` aggregates.
 

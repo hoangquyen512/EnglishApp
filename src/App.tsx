@@ -4,7 +4,7 @@ import { FlashcardPopup } from "./components/popup/flashcard-popup";
 import { HomeScreen } from "./components/shared/home-screen";
 import { OnboardingScreen } from "./components/shared/onboarding-screen";
 import { preloadVocabArts } from "./components/flashcard/vocab-illustration";
-import { TOEIC_CARDS } from "./data/toeic-cards";
+import { TOEIC_ART_KEYS } from "./data/toeic-cards";
 import { openStudyPopup, startScheduler } from "./features/scheduler";
 import { getWindowLabel, showMainWindow } from "./lib/tauri";
 import { useAppStore } from "./stores/app-store";
@@ -32,7 +32,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    preloadVocabArts(TOEIC_CARDS.map((item) => item.imageKey));
+    preloadVocabArts(TOEIC_ART_KEYS);
   }, []);
 
   useEffect(() => {

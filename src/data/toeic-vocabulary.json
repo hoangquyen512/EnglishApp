@@ -1,0 +1,4332 @@
+[
+  {
+    "word": "invoice",
+    "phonetic": "/ˈɪn.vɔɪs/",
+    "partOfSpeech": "n.",
+    "meaning": "hóa đơn",
+    "example": "Please attach the invoice to your email.",
+    "exampleVi": "Vui lòng đính kèm hóa đơn vào email của bạn.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "applicant",
+    "phonetic": "/ˈæp.lɪ.kənt/",
+    "partOfSpeech": "n.",
+    "meaning": "ứng viên",
+    "example": "Each applicant must submit a résumé by Friday.",
+    "exampleVi": "Mỗi ứng viên phải nộp sơ yếu lý lịch trước thứ Sáu.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "deadline",
+    "phonetic": "/ˈded.laɪn/",
+    "partOfSpeech": "n.",
+    "meaning": "hạn chót",
+    "example": "The deadline for the report is next Monday.",
+    "exampleVi": "Hạn chót nộp báo cáo là thứ Hai tuần sau.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "conference",
+    "phonetic": "/ˈkɑːn.fər.əns/",
+    "partOfSpeech": "n.",
+    "meaning": "hội nghị",
+    "example": "She will speak at an international conference in May.",
+    "exampleVi": "Cô ấy sẽ phát biểu tại một hội nghị quốc tế vào tháng Năm.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "shipment",
+    "phonetic": "/ˈʃɪp.mənt/",
+    "partOfSpeech": "n.",
+    "meaning": "lô hàng",
+    "example": "The shipment will arrive at the warehouse tomorrow.",
+    "exampleVi": "Lô hàng sẽ đến kho vào ngày mai.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "budget",
+    "phonetic": "/ˈbʌdʒ.ɪt/",
+    "partOfSpeech": "n.",
+    "meaning": "ngân sách",
+    "example": "We need to reduce the marketing budget this quarter.",
+    "exampleVi": "Chúng ta cần cắt giảm ngân sách marketing quý này.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "employee",
+    "phonetic": "/ɪmˈplɔɪ.iː/",
+    "partOfSpeech": "n.",
+    "meaning": "nhân viên",
+    "example": "Every employee receives a complimentary lunch on Fridays.",
+    "exampleVi": "Mỗi nhân viên được ăn trưa miễn phí vào thứ Sáu.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "reservation",
+    "phonetic": "/ˌrez.ərˈveɪ.ʃn/",
+    "partOfSpeech": "n.",
+    "meaning": "đặt chỗ",
+    "example": "I made a reservation at the hotel near headquarters.",
+    "exampleVi": "Tôi đã đặt phòng tại khách sạn gần trụ sở.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "inventory",
+    "phonetic": "/ˈɪn.vən.tɔː.ri/",
+    "partOfSpeech": "n.",
+    "meaning": "hàng tồn kho",
+    "example": "Please update the inventory before the store opens.",
+    "exampleVi": "Vui lòng cập nhật hàng tồn kho trước khi cửa hàng mở cửa.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "memo",
+    "phonetic": "/ˈmem.oʊ/",
+    "partOfSpeech": "n.",
+    "meaning": "bản ghi nhớ",
+    "example": "The manager sent a memo about the new dress code.",
+    "exampleVi": "Quản lý đã gửi bản ghi nhớ về quy định trang phục mới.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "headquarters",
+    "phonetic": "/ˈhedˌkwɔːr.tərz/",
+    "partOfSpeech": "n.",
+    "meaning": "trụ sở",
+    "example": "Our headquarters is located downtown.",
+    "exampleVi": "Trụ sở của chúng tôi nằm ở trung tâm thành phố.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "itinerary",
+    "phonetic": "/aɪˈtɪn.ə.rer.i/",
+    "partOfSpeech": "n.",
+    "meaning": "lịch trình",
+    "example": "The travel itinerary includes two client meetings.",
+    "exampleVi": "Lịch trình chuyến đi gồm hai cuộc họp với khách hàng.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "occupancy",
+    "phonetic": "/ˈɑː.kjə.pən.si/",
+    "partOfSpeech": "n.",
+    "meaning": "tỷ lệ lấp đầy",
+    "example": "Hotel occupancy increased during the conference.",
+    "exampleVi": "Tỷ lệ lấp đầy khách sạn tăng trong thời gian hội nghị.",
+    "imageKey": "occupancy",
+    "category": "TOEIC"
+  },
+  {
+    "word": "complimentary",
+    "phonetic": "/ˌkɑːm.plɪˈmen.tər.i/",
+    "partOfSpeech": "adj.",
+    "meaning": "miễn phí (tặng kèm)",
+    "example": "Guests receive a complimentary breakfast each morning.",
+    "exampleVi": "Khách được dùng bữa sáng miễn phí mỗi sáng.",
+    "imageKey": "complimentary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "authorize",
+    "phonetic": "/ˈɔː.θə.raɪz/",
+    "partOfSpeech": "v.",
+    "meaning": "ủy quyền / cho phép",
+    "example": "Only the director can authorize this payment.",
+    "exampleVi": "Chỉ giám đốc mới được ủy quyền khoản thanh toán này.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "brochure",
+    "phonetic": "/broʊˈʃʊr/",
+    "partOfSpeech": "n.",
+    "meaning": "tờ rơi / brochure",
+    "example": "Please take a brochure from the reception desk.",
+    "exampleVi": "Xin hãy lấy một tờ brochure ở quầy lễ tân.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "receipt",
+    "phonetic": "/ɹɪsˈit/",
+    "partOfSpeech": "n.",
+    "meaning": "biên lai",
+    "example": "Keep the receipt in case you need a refund.",
+    "exampleVi": "Hãy giữ biên lai phòng khi bạn cần hoàn tiền.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "expense",
+    "phonetic": "/ɪkspˈɛns/",
+    "partOfSpeech": "n.",
+    "meaning": "chi phí",
+    "example": "Travel expenses must be reported by Friday.",
+    "exampleVi": "Chi phí đi lại phải được báo cáo trước thứ Sáu.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "revenue",
+    "phonetic": "/ɹˈɛvənˌu/",
+    "partOfSpeech": "n.",
+    "meaning": "doanh thu",
+    "example": "Online sales increased the company's revenue.",
+    "exampleVi": "Bán hàng trực tuyến làm tăng doanh thu của công ty.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "profit",
+    "phonetic": "/pɹˈɑfət/",
+    "partOfSpeech": "n.",
+    "meaning": "lợi nhuận",
+    "example": "The store made a small profit last month.",
+    "exampleVi": "Cửa hàng có lợi nhuận nhỏ vào tháng trước.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "loss",
+    "phonetic": "/lˈɔs/",
+    "partOfSpeech": "n.",
+    "meaning": "thua lỗ",
+    "example": "The factory reported a loss after the storm.",
+    "exampleVi": "Nhà máy báo lỗ sau cơn bão.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "deduct",
+    "phonetic": "/dɪdˈʌkt/",
+    "partOfSpeech": "v.",
+    "meaning": "khấu trừ",
+    "example": "The company will deduct tax from your paycheck.",
+    "exampleVi": "Công ty sẽ khấu trừ thuế từ phiếu lương của bạn.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "refund",
+    "phonetic": "/ɹɪfˈʌnd/",
+    "partOfSpeech": "n.",
+    "meaning": "hoàn tiền",
+    "example": "Customers may request a refund within 14 days.",
+    "exampleVi": "Khách có thể yêu cầu hoàn tiền trong vòng 14 ngày.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "overdue",
+    "phonetic": "/ˈoʊvɚdˈu/",
+    "partOfSpeech": "adj.",
+    "meaning": "quá hạn",
+    "example": "This invoice is overdue and must be paid today.",
+    "exampleVi": "Hóa đơn này đã quá hạn và phải thanh toán hôm nay.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "quotation",
+    "phonetic": "/kwoʊtˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "báo giá",
+    "example": "Please send a quotation for 200 office chairs.",
+    "exampleVi": "Vui lòng gửi báo giá cho 200 ghế văn phòng.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "estimate",
+    "phonetic": "/ˈɛstɨmɨt/",
+    "partOfSpeech": "n.",
+    "meaning": "ước tính",
+    "example": "The repair estimate is higher than we expected.",
+    "exampleVi": "Ước tính chi phí sửa chữa cao hơn chúng tôi nghĩ.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "transaction",
+    "phonetic": "/tɹænzˈækʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "giao dịch",
+    "example": "Each transaction is recorded in the accounting system.",
+    "exampleVi": "Mỗi giao dịch được ghi vào hệ thống kế toán.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "fee",
+    "phonetic": "/fˈi/",
+    "partOfSpeech": "n.",
+    "meaning": "phí",
+    "example": "There is a small fee for late registration.",
+    "exampleVi": "Có một khoản phí nhỏ nếu đăng ký muộn.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "charge",
+    "phonetic": "/t͡ʃɑːd͡ʒ/",
+    "partOfSpeech": "n.",
+    "meaning": "khoản thu phí",
+    "example": "The hotel added a service charge to the bill.",
+    "exampleVi": "Khách sạn cộng phí dịch vụ vào hóa đơn.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "discount",
+    "phonetic": "/dɪskˈaʊnt/",
+    "partOfSpeech": "n.",
+    "meaning": "giảm giá",
+    "example": "Members receive a 10 percent discount on all items.",
+    "exampleVi": "Thành viên được giảm 10 phần trăm cho mọi mặt hàng.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "reimbursement",
+    "phonetic": "/ˌɹiː.ɪmˈbɜːs.mənt/",
+    "partOfSpeech": "n.",
+    "meaning": "hoàn trả chi phí",
+    "example": "Submit your tickets to receive reimbursement.",
+    "exampleVi": "Nộp vé của bạn để được hoàn trả chi phí.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "accountant",
+    "phonetic": "/əkˈaʊntənt/",
+    "partOfSpeech": "n.",
+    "meaning": "kế toán",
+    "example": "The accountant will review the annual report.",
+    "exampleVi": "Kế toán sẽ rà soát báo cáo thường niên.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "audit",
+    "phonetic": "/ɔː.dɪt/",
+    "partOfSpeech": "n.",
+    "meaning": "kiểm toán",
+    "example": "An external audit will begin next Monday.",
+    "exampleVi": "Một cuộc kiểm toán độc lập sẽ bắt đầu vào thứ Hai tuần sau.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "fiscal",
+    "phonetic": "/fˈɪskəl/",
+    "partOfSpeech": "adj.",
+    "meaning": "thuộc tài khóa",
+    "example": "The fiscal year ends on December 31.",
+    "exampleVi": "Năm tài khóa kết thúc vào ngày 31 tháng 12.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "tax",
+    "phonetic": "/tæks/",
+    "partOfSpeech": "n.",
+    "meaning": "thuế",
+    "example": "Sales tax is included in the listed price.",
+    "exampleVi": "Thuế bán hàng đã được tính trong giá niêm yết.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "tariff",
+    "phonetic": "/tˈɛɹəf/",
+    "partOfSpeech": "n.",
+    "meaning": "thuế quan",
+    "example": "The new tariff will raise the cost of imported steel.",
+    "exampleVi": "Thuế quan mới sẽ làm tăng giá thép nhập khẩu.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "ledger",
+    "phonetic": "/lˈɛdʒɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "sổ cái",
+    "example": "Please enter this payment in the ledger.",
+    "exampleVi": "Vui lòng ghi khoản thanh toán này vào sổ cái.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "payable",
+    "phonetic": "/pˈeɪəbəl/",
+    "partOfSpeech": "adj.",
+    "meaning": "phải trả",
+    "example": "All invoices are payable within 30 days.",
+    "exampleVi": "Mọi hóa đơn phải được thanh toán trong 30 ngày.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "receivable",
+    "phonetic": "/ɹɪsˈivəbəl/",
+    "partOfSpeech": "n.",
+    "meaning": "khoản phải thu",
+    "example": "Accounts receivable rose after the holiday season.",
+    "exampleVi": "Khoản phải thu tăng sau mùa lễ.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "statement",
+    "phonetic": "/stˈeɪtmənt/",
+    "partOfSpeech": "n.",
+    "meaning": "sao kê",
+    "example": "Your monthly bank statement arrives by email.",
+    "exampleVi": "Sao kê ngân hàng hàng tháng được gửi qua email.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "balance",
+    "phonetic": "/ˈbæləns/",
+    "partOfSpeech": "n.",
+    "meaning": "số dư",
+    "example": "The account balance is lower than last week.",
+    "exampleVi": "Số dư tài khoản thấp hơn tuần trước.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "deposit",
+    "phonetic": "/dɪˈpɒzɪt/",
+    "partOfSpeech": "n.",
+    "meaning": "tiền đặt cọc",
+    "example": "A deposit of 50 dollars holds the meeting room.",
+    "exampleVi": "Khoản đặt cọc 50 đô la giữ chỗ phòng họp.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "withdraw",
+    "phonetic": "/wɪðˈdɹɔː/",
+    "partOfSpeech": "v.",
+    "meaning": "rút tiền",
+    "example": "You can withdraw cash from any partner bank.",
+    "exampleVi": "Bạn có thể rút tiền mặt tại bất kỳ ngân hàng đối tác nào.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "interest",
+    "phonetic": "/ˈɪntəɹɪst/",
+    "partOfSpeech": "n.",
+    "meaning": "lãi suất",
+    "example": "The loan carries a low interest rate.",
+    "exampleVi": "Khoản vay có lãi suất thấp.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "loan",
+    "phonetic": "/lˈoʊn/",
+    "partOfSpeech": "n.",
+    "meaning": "khoản vay",
+    "example": "The bank approved a loan for new equipment.",
+    "exampleVi": "Ngân hàng đã duyệt khoản vay để mua thiết bị mới.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "mortgage",
+    "phonetic": "/mˈɔɹɡədʒ/",
+    "partOfSpeech": "n.",
+    "meaning": "khoản thế chấp nhà",
+    "example": "They applied for a mortgage on the new office.",
+    "exampleVi": "Họ nộp hồ sơ thế chấp cho văn phòng mới.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "dividend",
+    "phonetic": "/dˈɪvɪdˌɛnd/",
+    "partOfSpeech": "n.",
+    "meaning": "cổ tức",
+    "example": "Shareholders will receive a dividend in June.",
+    "exampleVi": "Cổ đông sẽ nhận cổ tức vào tháng Sáu.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "capital",
+    "phonetic": "/ˈkæp.ɪ.təl/",
+    "partOfSpeech": "n.",
+    "meaning": "vốn",
+    "example": "The startup needs more capital to expand.",
+    "exampleVi": "Công ty khởi nghiệp cần thêm vốn để mở rộng.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "investment",
+    "phonetic": "/ɪnˈvɛsmənt/",
+    "partOfSpeech": "n.",
+    "meaning": "khoản đầu tư",
+    "example": "This investment should grow over five years.",
+    "exampleVi": "Khoản đầu tư này sẽ tăng trong năm năm.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "shareholder",
+    "phonetic": "/ʃˈɛɹhˌoʊldɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "cổ đông",
+    "example": "Each shareholder will vote at the annual meeting.",
+    "exampleVi": "Mỗi cổ đông sẽ bỏ phiếu tại cuộc họp thường niên.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "stock",
+    "phonetic": "/stˈɑk/",
+    "partOfSpeech": "n.",
+    "meaning": "cổ phiếu",
+    "example": "Company stock rose after the product launch.",
+    "exampleVi": "Cổ phiếu công ty tăng sau khi ra mắt sản phẩm.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "bond",
+    "phonetic": "/bɒnd/",
+    "partOfSpeech": "n.",
+    "meaning": "trái phiếu",
+    "example": "The city issued a bond to repair the bridge.",
+    "exampleVi": "Thành phố phát hành trái phiếu để sửa cầu.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "merger",
+    "phonetic": "/mˈɝdʒɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "sáp nhập",
+    "example": "The merger of the two banks will take six months.",
+    "exampleVi": "Việc sáp nhập hai ngân hàng sẽ mất sáu tháng.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "acquisition",
+    "phonetic": "/ˌækwəzˈɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "thâu tóm / mua lại",
+    "example": "The acquisition added three factories to the group.",
+    "exampleVi": "Thương vụ mua lại bổ sung ba nhà máy cho tập đoàn.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "asset",
+    "phonetic": "/ˈæsˌɛt/",
+    "partOfSpeech": "n.",
+    "meaning": "tài sản",
+    "example": "The warehouse is the company's largest asset.",
+    "exampleVi": "Kho hàng là tài sản lớn nhất của công ty.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "liability",
+    "phonetic": "/laɪəˈbɪlɪti/",
+    "partOfSpeech": "n.",
+    "meaning": "nợ phải trả",
+    "example": "Long-term liability appears on the balance sheet.",
+    "exampleVi": "Nợ dài hạn xuất hiện trên bảng cân đối kế toán.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "equity",
+    "phonetic": "/ˈɛk.wɪ.ti/",
+    "partOfSpeech": "n.",
+    "meaning": "vốn chủ sở hữu",
+    "example": "Owners' equity increased after the profitable year.",
+    "exampleVi": "Vốn chủ sở hữu tăng sau năm có lãi.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "payroll",
+    "phonetic": "/pˈeɪɹˌoʊl/",
+    "partOfSpeech": "n.",
+    "meaning": "bảng lương",
+    "example": "Payroll is processed every other Friday.",
+    "exampleVi": "Bảng lương được xử lý vào thứ Sáu cách tuần.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "pension",
+    "phonetic": "/pˈɛnʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "lương hưu",
+    "example": "Employees join the pension plan after one year.",
+    "exampleVi": "Nhân viên tham gia quỹ lương hưu sau một năm.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "compensation",
+    "phonetic": "/ˌkɒmpɛnˈseɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "thù lao",
+    "example": "Total compensation includes salary and health insurance.",
+    "exampleVi": "Tổng thù lao gồm lương và bảo hiểm y tế.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "bonus",
+    "phonetic": "/ˈbəʊ.nəs/",
+    "partOfSpeech": "n.",
+    "meaning": "tiền thưởng",
+    "example": "The sales team earned a year-end bonus.",
+    "exampleVi": "Nhóm bán hàng nhận thưởng cuối năm.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "allowance",
+    "phonetic": "/əˈlaʊəns/",
+    "partOfSpeech": "n.",
+    "meaning": "trợ cấp",
+    "example": "Staff receive a monthly travel allowance.",
+    "exampleVi": "Nhân viên nhận trợ cấp đi lại hàng tháng.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "subsidy",
+    "phonetic": "/ˈsʌbsɨdi/",
+    "partOfSpeech": "n.",
+    "meaning": "trợ cấp (nhà nước)",
+    "example": "The factory received a subsidy for cleaner energy.",
+    "exampleVi": "Nhà máy nhận trợ cấp cho năng lượng sạch hơn.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "grant",
+    "phonetic": "/ɡɹɑːnt/",
+    "partOfSpeech": "n.",
+    "meaning": "khoản tài trợ",
+    "example": "The city awarded a grant for job training.",
+    "exampleVi": "Thành phố cấp khoản tài trợ cho đào tạo việc làm.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "fund",
+    "phonetic": "/ˈfʌnd/",
+    "partOfSpeech": "n.",
+    "meaning": "quỹ",
+    "example": "The emergency fund covers unexpected repairs.",
+    "exampleVi": "Quỹ khẩn cấp chi cho các sửa chữa bất ngờ.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "surplus",
+    "phonetic": "/ˈsɜːpləs/",
+    "partOfSpeech": "n.",
+    "meaning": "thặng dư",
+    "example": "The department ended the year with a surplus.",
+    "exampleVi": "Phòng ban kết thúc năm với thặng dư.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "deficit",
+    "phonetic": "/ˈdɛfɪsɪt/",
+    "partOfSpeech": "n.",
+    "meaning": "thâm hụt",
+    "example": "A budget deficit forced the city to cut overtime.",
+    "exampleVi": "Thâm hụt ngân sách buộc thành phố cắt giờ làm thêm.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "bankrupt",
+    "phonetic": "/ˈbæŋ.kɹəpt/",
+    "partOfSpeech": "adj.",
+    "meaning": "phá sản",
+    "example": "The airline went bankrupt after fuel prices rose.",
+    "exampleVi": "Hãng hàng không phá sản sau khi giá nhiên liệu tăng.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "lucrative",
+    "phonetic": "/lˈukɹətɪv/",
+    "partOfSpeech": "adj.",
+    "meaning": "sinh lợi",
+    "example": "Online courses became a lucrative side business.",
+    "exampleVi": "Khóa học trực tuyến trở thành việc phụ sinh lợi.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "economical",
+    "phonetic": "/ˌɛkəˈnɒmɪkəl/",
+    "partOfSpeech": "adj.",
+    "meaning": "tiết kiệm",
+    "example": "This printer is more economical than the old model.",
+    "exampleVi": "Máy in này tiết kiệm hơn mẫu cũ.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "affordable",
+    "phonetic": "/əfˈɔɹdəbəl/",
+    "partOfSpeech": "adj.",
+    "meaning": "vừa túi tiền",
+    "example": "The hotel offers affordable rooms near the airport.",
+    "exampleVi": "Khách sạn có phòng vừa túi tiền gần sân bay.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "costly",
+    "phonetic": "/kˈɑstli/",
+    "partOfSpeech": "adj.",
+    "meaning": "tốn kém",
+    "example": "A delayed shipment can be a costly mistake.",
+    "exampleVi": "Lô hàng chậm có thể là sai lầm tốn kém.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "currency",
+    "phonetic": "/kˈɝənsi/",
+    "partOfSpeech": "n.",
+    "meaning": "tiền tệ",
+    "example": "Please pay in local currency at the front desk.",
+    "exampleVi": "Vui lòng thanh toán bằng tiền địa phương tại quầy lễ tân.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "exchange",
+    "phonetic": "/ɛksˈtʃeɪndʒ/",
+    "partOfSpeech": "n.",
+    "meaning": "tỷ giá / đổi tiền",
+    "example": "The exchange rate is posted in the lobby.",
+    "exampleVi": "Tỷ giá được niêm yết ở sảnh.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "wholesale",
+    "phonetic": "/ˈhoʊlseɪl/",
+    "partOfSpeech": "adj.",
+    "meaning": "bán sỉ",
+    "example": "Wholesale prices are lower than retail prices.",
+    "exampleVi": "Giá sỉ thấp hơn giá bán lẻ.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "retail",
+    "phonetic": "/ɹˈitˌeɪl/",
+    "partOfSpeech": "n.",
+    "meaning": "bán lẻ",
+    "example": "Retail sales usually rise in December.",
+    "exampleVi": "Doanh số bán lẻ thường tăng vào tháng 12.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "bargain",
+    "phonetic": "/bˈɑɹɡən/",
+    "partOfSpeech": "n.",
+    "meaning": "món hời",
+    "example": "This printer is a bargain at the sale price.",
+    "exampleVi": "Máy in này là món hời với giá khuyến mãi.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "quarterly",
+    "phonetic": "/kwˈɔɹtɚli/",
+    "partOfSpeech": "adj.",
+    "meaning": "hàng quý",
+    "example": "Managers submit a quarterly sales report.",
+    "exampleVi": "Quản lý nộp báo cáo doanh số hàng quý.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "annually",
+    "phonetic": "/ˈænjuəli/",
+    "partOfSpeech": "adv.",
+    "meaning": "hàng năm",
+    "example": "The safety course is required annually.",
+    "exampleVi": "Khóa an toàn phải học hàng năm.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "postpone",
+    "phonetic": "/poʊstˈpoʊn/",
+    "partOfSpeech": "v.",
+    "meaning": "hoãn",
+    "example": "We will postpone the meeting until Thursday.",
+    "exampleVi": "Chúng tôi sẽ hoãn cuộc họp đến thứ Năm.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "expire",
+    "phonetic": "/ɪkspˈaɪɹ/",
+    "partOfSpeech": "v.",
+    "meaning": "hết hạn",
+    "example": "Your membership will expire at the end of May.",
+    "exampleVi": "Thẻ thành viên sẽ hết hạn vào cuối tháng Năm.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "extend",
+    "phonetic": "/ɛkˈstɛnd/",
+    "partOfSpeech": "v.",
+    "meaning": "gia hạn / kéo dài",
+    "example": "The client asked us to extend the contract.",
+    "exampleVi": "Khách hàng nhờ chúng tôi gia hạn hợp đồng.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "renew",
+    "phonetic": "/ɹɪnˈu/",
+    "partOfSpeech": "v.",
+    "meaning": "gia hạn lại",
+    "example": "Please renew your parking permit before Friday.",
+    "exampleVi": "Vui lòng gia hạn thẻ gửi xe trước thứ Sáu.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "schedule",
+    "phonetic": "/skˈɛdʒʊl/",
+    "partOfSpeech": "n.",
+    "meaning": "lịch",
+    "example": "The train schedule is posted at the station.",
+    "exampleVi": "Lịch tàu được dán tại ga.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "promptly",
+    "phonetic": "/pɹˈɑmptli/",
+    "partOfSpeech": "adv.",
+    "meaning": "ngay lập tức / đúng giờ",
+    "example": "Please reply promptly to the client's email.",
+    "exampleVi": "Vui lòng trả lời email khách hàng ngay.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "immediately",
+    "phonetic": "/əˈmiːdi.ətli/",
+    "partOfSpeech": "adv.",
+    "meaning": "ngay lập tức",
+    "example": "Call the supervisor immediately if a machine stops.",
+    "exampleVi": "Gọi quản sát ngay nếu máy dừng.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "currently",
+    "phonetic": "/kˈɝəntli/",
+    "partOfSpeech": "adv.",
+    "meaning": "hiện nay",
+    "example": "The position is currently open to internal staff.",
+    "exampleVi": "Vị trí hiện đang mở cho nhân viên nội bộ.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "recently",
+    "phonetic": "/ˈɹiːsəntli/",
+    "partOfSpeech": "adv.",
+    "meaning": "gần đây",
+    "example": "The company recently opened a branch in Da Nang.",
+    "exampleVi": "Công ty gần đây mở chi nhánh ở Đà Nẵng.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "duration",
+    "phonetic": "/dˈʊɹˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "thời lượng",
+    "example": "The workshop has a duration of three hours.",
+    "exampleVi": "Hội thảo kéo dài ba giờ.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "period",
+    "phonetic": "/pˈɪɹiəd/",
+    "partOfSpeech": "n.",
+    "meaning": "giai đoạn",
+    "example": "The trial period lasts 30 days.",
+    "exampleVi": "Giai đoạn dùng thử kéo dài 30 ngày.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "extension",
+    "phonetic": "/ɪkˈstɛnʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "sự gia hạn",
+    "example": "We were given a two-week extension on the report.",
+    "exampleVi": "Chúng tôi được gia hạn báo cáo thêm hai tuần.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "adjourn",
+    "phonetic": "/ədʒˈɝn/",
+    "partOfSpeech": "v.",
+    "meaning": "tạm nghỉ (cuộc họp)",
+    "example": "The chair voted to adjourn the meeting at noon.",
+    "exampleVi": "Chủ tọa biểu quyết tạm nghỉ cuộc họp lúc trưa.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "urgent",
+    "phonetic": "/ˈɝdʒənt/",
+    "partOfSpeech": "adj.",
+    "meaning": "khẩn cấp",
+    "example": "This is an urgent request from the legal team.",
+    "exampleVi": "Đây là yêu cầu khẩn từ nhóm pháp chế.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "timely",
+    "phonetic": "/tˈaɪmli/",
+    "partOfSpeech": "adj.",
+    "meaning": "đúng lúc",
+    "example": "Timely delivery keeps our customers satisfied.",
+    "exampleVi": "Giao hàng đúng lúc giúp khách hài lòng.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "tentative",
+    "phonetic": "/tˈɛntətɪv/",
+    "partOfSpeech": "adj.",
+    "meaning": "tạm thời / chưa chốt",
+    "example": "Friday is a tentative date for the launch.",
+    "exampleVi": "Thứ Sáu là ngày dự kiến cho buổi ra mắt.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "shortly",
+    "phonetic": "/ʃˈɔɹtli/",
+    "partOfSpeech": "adv.",
+    "meaning": "chẳng bao lâu nữa",
+    "example": "The next bus will arrive shortly.",
+    "exampleVi": "Chuyến xe buýt tiếp theo sẽ đến chẳng bao lâu nữa.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "meanwhile",
+    "phonetic": "/mˈinwˌaɪl/",
+    "partOfSpeech": "adv.",
+    "meaning": "trong lúc đó",
+    "example": "Meanwhile, please wait in the lobby.",
+    "exampleVi": "Trong lúc đó, vui lòng chờ ở sảnh.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "resume",
+    "phonetic": "/ˈrez.ə.meɪ/",
+    "partOfSpeech": "n.",
+    "meaning": "sơ yếu lý lịch",
+    "example": "Please attach your résumé to the application form.",
+    "exampleVi": "Vui lòng đính kèm sơ yếu lý lịch vào đơn ứng tuyển.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "interview",
+    "phonetic": "/ˈɪntɚvjˌu/",
+    "partOfSpeech": "n.",
+    "meaning": "phỏng vấn",
+    "example": "Her interview is scheduled for 9 a.m. tomorrow.",
+    "exampleVi": "Buổi phỏng vấn của cô ấy lúc 9 giờ sáng mai.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "recruit",
+    "phonetic": "/ɹɪˈkɹuːt/",
+    "partOfSpeech": "v.",
+    "meaning": "tuyển dụng",
+    "example": "The firm will recruit five engineers this spring.",
+    "exampleVi": "Công ty sẽ tuyển năm kỹ sư vào mùa xuân này.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "hire",
+    "phonetic": "/haɪə/",
+    "partOfSpeech": "v.",
+    "meaning": "thuê / tuyển",
+    "example": "We hope to hire a receptionist next week.",
+    "exampleVi": "Chúng tôi hy vọng tuyển lễ tân vào tuần tới.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "resign",
+    "phonetic": "/ɹɪzˈaɪn/",
+    "partOfSpeech": "v.",
+    "meaning": "từ chức",
+    "example": "He will resign from the board in March.",
+    "exampleVi": "Ông ấy sẽ từ chức khỏi hội đồng vào tháng Ba.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "retire",
+    "phonetic": "/ɹɪtˈaɪɹ/",
+    "partOfSpeech": "v.",
+    "meaning": "nghỉ hưu",
+    "example": "She plans to retire after 30 years at the bank.",
+    "exampleVi": "Cô ấy định nghỉ hưu sau 30 năm làm ở ngân hàng.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "promote",
+    "phonetic": "/pɹəˈməʊt/",
+    "partOfSpeech": "v.",
+    "meaning": "thăng chức",
+    "example": "The company will promote two supervisors in June.",
+    "exampleVi": "Công ty sẽ thăng chức hai quản sát vào tháng Sáu.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "intern",
+    "phonetic": "/ˈɪntɚn/",
+    "partOfSpeech": "n.",
+    "meaning": "thực tập sinh",
+    "example": "The intern is learning how to file invoices.",
+    "exampleVi": "Thực tập sinh đang học cách lưu hóa đơn.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "trainee",
+    "phonetic": "/tɹˈeɪnˈi/",
+    "partOfSpeech": "n.",
+    "meaning": "nhân viên tập sự",
+    "example": "Each trainee shadows a senior technician.",
+    "exampleVi": "Mỗi nhân viên tập sự theo kèm một kỹ thuật viên kỳ cựu.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "vacancy",
+    "phonetic": "/vˈeɪkənsi/",
+    "partOfSpeech": "n.",
+    "meaning": "vị trí trống",
+    "example": "There is a vacancy in the accounting department.",
+    "exampleVi": "Có một vị trí trống ở phòng kế toán.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "qualification",
+    "phonetic": "/kwˌɑləfəkˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "bằng cấp / năng lực",
+    "example": "This job requires a qualification in accounting.",
+    "exampleVi": "Công việc này yêu cầu bằng kế toán.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "reference",
+    "phonetic": "/ɹˈɛfɚəns/",
+    "partOfSpeech": "n.",
+    "meaning": "người tham chiếu",
+    "example": "Please provide two professional references.",
+    "exampleVi": "Vui lòng cung cấp hai người tham chiếu nghề nghiệp.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "recommendation",
+    "phonetic": "/ɹˌɛkəməndˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "thư giới thiệu",
+    "example": "Her manager wrote a strong recommendation.",
+    "exampleVi": "Quản lý của cô ấy viết thư giới thiệu tốt.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "orientation",
+    "phonetic": "/ˌɔɹiɛntˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "hướng dẫn nhập việc",
+    "example": "New staff attend orientation on Monday morning.",
+    "exampleVi": "Nhân viên mới tham gia hướng dẫn nhập việc sáng thứ Hai.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "probation",
+    "phonetic": "/pɹoʊbˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "thử việc",
+    "example": "The probation period lasts three months.",
+    "exampleVi": "Thời gian thử việc kéo dài ba tháng.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "evaluate",
+    "phonetic": "/ɨˈvaljʊeɪt/",
+    "partOfSpeech": "v.",
+    "meaning": "đánh giá",
+    "example": "Supervisors evaluate performance twice a year.",
+    "exampleVi": "Quản sát đánh giá hiệu suất hai lần mỗi năm.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "appraisal",
+    "phonetic": "/əˈpɹeɪzəl/",
+    "partOfSpeech": "n.",
+    "meaning": "đánh giá nhân sự",
+    "example": "Your annual appraisal is on Thursday.",
+    "exampleVi": "Buổi đánh giá năm của bạn vào thứ Năm.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "candidate",
+    "phonetic": "/ˈkæn.dɪdət/",
+    "partOfSpeech": "n.",
+    "meaning": "ứng cử viên",
+    "example": "The strongest candidate has hotel experience.",
+    "exampleVi": "Ứng viên mạnh nhất có kinh nghiệm khách sạn.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "credential",
+    "phonetic": "/kɹɪdˈɛnʃəl/",
+    "partOfSpeech": "n.",
+    "meaning": "chứng chỉ / giấy tờ năng lực",
+    "example": "Please bring a copy of your teaching credential.",
+    "exampleVi": "Vui lòng mang bản sao chứng chỉ giảng dạy.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "supervisor",
+    "phonetic": "/ˈsuːpɚˌvaɪzɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "người giám sát",
+    "example": "Ask your supervisor before changing the shift.",
+    "exampleVi": "Hãy hỏi người giám sát trước khi đổi ca.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "colleague",
+    "phonetic": "/ˈkɒliːɡ/",
+    "partOfSpeech": "n.",
+    "meaning": "đồng nghiệp",
+    "example": "Please copy your colleague on the email.",
+    "exampleVi": "Vui lòng gửi kèm đồng nghiệp vào email.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "personnel",
+    "phonetic": "/ˌpɝː.səˈnel/",
+    "partOfSpeech": "n.",
+    "meaning": "nhân sự",
+    "example": "All personnel must wear a badge in the factory.",
+    "exampleVi": "Mọi nhân sự phải đeo thẻ trong nhà máy.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "staff",
+    "phonetic": "/ˈstæf/",
+    "partOfSpeech": "n.",
+    "meaning": "nhân viên (tập thể)",
+    "example": "The hotel staff were polite and efficient.",
+    "exampleVi": "Nhân viên khách sạn lịch sự và làm việc nhanh.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "workforce",
+    "phonetic": "/wˈɝkfˌɔɹs/",
+    "partOfSpeech": "n.",
+    "meaning": "lực lượng lao động",
+    "example": "The workforce grew after the new plant opened.",
+    "exampleVi": "Lực lượng lao động tăng sau khi nhà máy mới mở.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "occupation",
+    "phonetic": "/ˌɑkjəpˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "nghề nghiệp",
+    "example": "Please state your occupation on the form.",
+    "exampleVi": "Vui lòng ghi nghề nghiệp trên mẫu đơn.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "career",
+    "phonetic": "/kəˈɹɪə/",
+    "partOfSpeech": "n.",
+    "meaning": "sự nghiệp",
+    "example": "She built a career in international sales.",
+    "exampleVi": "Cô ấy gây dựng sự nghiệp trong bán hàng quốc tế.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "salary",
+    "phonetic": "/ˈsælɚi/",
+    "partOfSpeech": "n.",
+    "meaning": "lương tháng",
+    "example": "The starting salary is listed in the offer letter.",
+    "exampleVi": "Mức lương khởi điểm được ghi trong thư mời nhận việc.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "wage",
+    "phonetic": "/weɪd͡ʒ/",
+    "partOfSpeech": "n.",
+    "meaning": "tiền công",
+    "example": "Hourly wages increase after six months.",
+    "exampleVi": "Tiền công theo giờ tăng sau sáu tháng.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "overtime",
+    "phonetic": "/ˈoʊvɚˌtaɪm/",
+    "partOfSpeech": "n.",
+    "meaning": "giờ làm thêm",
+    "example": "Overtime must be approved by a manager.",
+    "exampleVi": "Giờ làm thêm phải được quản lý phê duyệt.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "shift",
+    "phonetic": "/ʃɪft/",
+    "partOfSpeech": "n.",
+    "meaning": "ca làm",
+    "example": "The night shift begins at 10 p.m.",
+    "exampleVi": "Ca đêm bắt đầu lúc 10 giờ tối.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "commute",
+    "phonetic": "/kəˈmjuːt/",
+    "partOfSpeech": "v.",
+    "meaning": "đi làm (đi về)",
+    "example": "Many staff commute by train from the suburbs.",
+    "exampleVi": "Nhiều nhân viên đi làm bằng tàu từ ngoại ô.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "layoff",
+    "phonetic": "/lˈeɪˌɔf/",
+    "partOfSpeech": "n.",
+    "meaning": "sa thải hàng loạt",
+    "example": "The factory announced a layoff of 40 workers.",
+    "exampleVi": "Nhà máy thông báo sa thải 40 công nhân.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "downsize",
+    "phonetic": "/ˈdaʊnsaɪz/",
+    "partOfSpeech": "v.",
+    "meaning": "tinh giản biên chế",
+    "example": "The office will downsize after the merger.",
+    "exampleVi": "Văn phòng sẽ tinh giản biên chế sau sáp nhập.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "union",
+    "phonetic": "/ˈjuːnjən/",
+    "partOfSpeech": "n.",
+    "meaning": "công đoàn",
+    "example": "The union will vote on the new contract.",
+    "exampleVi": "Công đoàn sẽ bỏ phiếu về hợp đồng mới.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "benefit",
+    "phonetic": "/ˈbɛn.ɪ.fɪt/",
+    "partOfSpeech": "n.",
+    "meaning": "phúc lợi",
+    "example": "Health benefits begin on the first day of work.",
+    "exampleVi": "Phúc lợi y tế bắt đầu từ ngày làm việc đầu tiên.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "insurance",
+    "phonetic": "/ɪn.ˈʃɔː.ɹəns/",
+    "partOfSpeech": "n.",
+    "meaning": "bảo hiểm",
+    "example": "Travel insurance is included with the ticket.",
+    "exampleVi": "Bảo hiểm du lịch đã gồm trong vé.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "teamwork",
+    "phonetic": "/tˈimwˌɝk/",
+    "partOfSpeech": "n.",
+    "meaning": "làm việc nhóm",
+    "example": "Good teamwork helped us finish before the deadline.",
+    "exampleVi": "Làm việc nhóm tốt giúp chúng tôi xong trước hạn.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "collaboration",
+    "phonetic": "/kəlˌæbɚˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "hợp tác",
+    "example": "The project requires collaboration between two teams.",
+    "exampleVi": "Dự án cần sự hợp tác giữa hai nhóm.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "delegate",
+    "phonetic": "/dˈɛləɡˌeɪt/",
+    "partOfSpeech": "v.",
+    "meaning": "ủy thác công việc",
+    "example": "Managers should delegate routine tasks.",
+    "exampleVi": "Quản lý nên ủy thác các việc thường ngày.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "assign",
+    "phonetic": "/əˈsaɪn/",
+    "partOfSpeech": "v.",
+    "meaning": "giao việc",
+    "example": "The lead will assign rooms to each guest.",
+    "exampleVi": "Trưởng nhóm sẽ giao phòng cho từng khách.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "transfer",
+    "phonetic": "/ˈtɹænzfɜː/",
+    "partOfSpeech": "v.",
+    "meaning": "điều chuyển",
+    "example": "She asked to transfer to the Seoul office.",
+    "exampleVi": "Cô ấy xin điều chuyển sang văn phòng Seoul.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "dismiss",
+    "phonetic": "/dɪsmˈɪs/",
+    "partOfSpeech": "v.",
+    "meaning": "sa thải",
+    "example": "The firm may dismiss staff who break safety rules.",
+    "exampleVi": "Công ty có thể sa thải người vi phạm quy định an toàn.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "agenda",
+    "phonetic": "/ədʒˈɛndə/",
+    "partOfSpeech": "n.",
+    "meaning": "chương trình nghị sự",
+    "example": "The agenda lists three items for discussion.",
+    "exampleVi": "Chương trình nghị sự liệt kê ba mục cần thảo luận.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "minutes",
+    "phonetic": "/mˈɪnəts/",
+    "partOfSpeech": "n.",
+    "meaning": "biên bản cuộc họp",
+    "example": "Please email the minutes after the meeting.",
+    "exampleVi": "Vui lòng gửi biên bản sau cuộc họp.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "attend",
+    "phonetic": "/əˈtɛnd/",
+    "partOfSpeech": "v.",
+    "meaning": "tham dự",
+    "example": "All managers must attend the safety briefing.",
+    "exampleVi": "Mọi quản lý phải tham dự buổi phổ biến an toàn.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "participant",
+    "phonetic": "/pɑɹtˈɪsəpənt/",
+    "partOfSpeech": "n.",
+    "meaning": "người tham dự",
+    "example": "Each participant will receive a name badge.",
+    "exampleVi": "Mỗi người tham dự sẽ nhận thẻ tên.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "presenter",
+    "phonetic": "/pɹˈɛzəntɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "người thuyết trình",
+    "example": "The presenter will answer questions at the end.",
+    "exampleVi": "Người thuyết trình sẽ trả lời câu hỏi lúc cuối.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "seminar",
+    "phonetic": "/sˈɛmənˌɑɹ/",
+    "partOfSpeech": "n.",
+    "meaning": "hội thảo chuyên đề",
+    "example": "The tax seminar is open to small business owners.",
+    "exampleVi": "Hội thảo thuế mở cho chủ doanh nghiệp nhỏ.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "workshop",
+    "phonetic": "/ˈwɜːk.ʃɒp/",
+    "partOfSpeech": "n.",
+    "meaning": "buổi tập huấn",
+    "example": "The design workshop lasts all afternoon.",
+    "exampleVi": "Buổi tập huấn thiết kế kéo dài cả buổi chiều.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "convention",
+    "phonetic": "/kənvˈɛnʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "đại hội / hội nghị ngành",
+    "example": "The travel convention draws thousands of buyers.",
+    "exampleVi": "Hội nghị du lịch thu hút hàng nghìn người mua.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "exhibition",
+    "phonetic": "/ɛksɪˈbɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "triển lãm",
+    "example": "The furniture exhibition opens on Tuesday.",
+    "exampleVi": "Triển lãm nội thất mở cửa vào thứ Ba.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "booth",
+    "phonetic": "/buːð/",
+    "partOfSpeech": "n.",
+    "meaning": "gian hàng",
+    "example": "Our booth is next to the main entrance.",
+    "exampleVi": "Gian hàng của chúng tôi cạnh cửa chính.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "announcement",
+    "phonetic": "/əˈnaʊns.mɛnt/",
+    "partOfSpeech": "n.",
+    "meaning": "thông báo",
+    "example": "The announcement about the delay was posted online.",
+    "exampleVi": "Thông báo về sự chậm trễ được đăng trực tuyến.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "propose",
+    "phonetic": "/pɹəˈpəʊz/",
+    "partOfSpeech": "v.",
+    "meaning": "đề xuất",
+    "example": "I propose that we hire a second receptionist.",
+    "exampleVi": "Tôi đề xuất chúng ta thuê thêm một lễ tân.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "suggest",
+    "phonetic": "/sədʒˈɛst/",
+    "partOfSpeech": "v.",
+    "meaning": "gợi ý",
+    "example": "The consultant suggested a shorter meeting.",
+    "exampleVi": "Tư vấn viên gợi ý cuộc họp ngắn hơn.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "recommend",
+    "phonetic": "/ɹˌɛkəmˈɛnd/",
+    "partOfSpeech": "v.",
+    "meaning": "khuyên dùng / giới thiệu",
+    "example": "We recommend booking a table in advance.",
+    "exampleVi": "Chúng tôi khuyên nên đặt bàn trước.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "approve",
+    "phonetic": "/əpɹˈuv/",
+    "partOfSpeech": "v.",
+    "meaning": "phê duyệt",
+    "example": "The director must approve all travel requests.",
+    "exampleVi": "Giám đốc phải phê duyệt mọi đề nghị đi công tác.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "reject",
+    "phonetic": "/ɹɪdʒˈɛkt/",
+    "partOfSpeech": "v.",
+    "meaning": "từ chối",
+    "example": "The committee rejected the first design.",
+    "exampleVi": "Ủy ban đã từ chối thiết kế đầu tiên.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "decline",
+    "phonetic": "/dɪˈklaɪn/",
+    "partOfSpeech": "v.",
+    "meaning": "từ chối (lịch sự)",
+    "example": "She declined the invitation because of a conflict.",
+    "exampleVi": "Cô ấy từ chối lời mời vì trùng lịch.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "accept",
+    "phonetic": "/æksˈɛpt/",
+    "partOfSpeech": "v.",
+    "meaning": "chấp nhận",
+    "example": "Please accept our apology for the late delivery.",
+    "exampleVi": "Xin hãy chấp nhận lời xin lỗi về việc giao hàng muộn.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "consider",
+    "phonetic": "/kənˈsɪdə/",
+    "partOfSpeech": "v.",
+    "meaning": "cân nhắc",
+    "example": "We will consider your offer this week.",
+    "exampleVi": "Chúng tôi sẽ cân nhắc đề nghị của bạn trong tuần này.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "review",
+    "phonetic": "/ɹɪˈvjuː/",
+    "partOfSpeech": "v.",
+    "meaning": "xem xét lại",
+    "example": "Please review the contract before you sign.",
+    "exampleVi": "Vui lòng xem xét hợp đồng trước khi ký.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "revise",
+    "phonetic": "/ɹɪvˈaɪz/",
+    "partOfSpeech": "v.",
+    "meaning": "sửa lại",
+    "example": "The writer will revise the brochure tonight.",
+    "exampleVi": "Người viết sẽ sửa lại tờ brochure tối nay.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "amend",
+    "phonetic": "/əˈmɛnd/",
+    "partOfSpeech": "v.",
+    "meaning": "sửa đổi (văn bản)",
+    "example": "The board voted to amend the policy.",
+    "exampleVi": "Hội đồng biểu quyết sửa đổi chính sách.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "draft",
+    "phonetic": "/dɹæft/",
+    "partOfSpeech": "n.",
+    "meaning": "bản nháp",
+    "example": "The first draft of the report is ready.",
+    "exampleVi": "Bản nháp đầu của báo cáo đã xong.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "submit",
+    "phonetic": "/səbˈmɪt/",
+    "partOfSpeech": "v.",
+    "meaning": "nộp",
+    "example": "Please submit your timesheet by 5 p.m.",
+    "exampleVi": "Vui lòng nộp bảng chấm công trước 5 giờ chiều.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "lecture",
+    "phonetic": "/lˈɛktʃɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "bài giảng",
+    "example": "The guest lecture begins at 2 p.m.",
+    "exampleVi": "Bài giảng khách mời bắt đầu lúc 2 giờ chiều.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "facilitate",
+    "phonetic": "/fəsˈɪlətˌeɪt/",
+    "partOfSpeech": "v.",
+    "meaning": "điều phối / tạo điều kiện",
+    "example": "A trained host will facilitate the discussion.",
+    "exampleVi": "Người dẫn đã được đào tạo sẽ điều phối thảo luận.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "correspondence",
+    "phonetic": "/ˌkɒɹɪˈspɒndəns/",
+    "partOfSpeech": "n.",
+    "meaning": "thư từ",
+    "example": "Please keep all client correspondence in this folder.",
+    "exampleVi": "Vui lòng lưu mọi thư từ khách hàng trong thư mục này.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "enclose",
+    "phonetic": "/ɪnklˈoʊz/",
+    "partOfSpeech": "v.",
+    "meaning": "đính kèm (trong thư)",
+    "example": "We enclose a copy of the signed contract.",
+    "exampleVi": "Chúng tôi đính kèm bản hợp đồng đã ký.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "attach",
+    "phonetic": "/ətˈætʃ/",
+    "partOfSpeech": "v.",
+    "meaning": "đính kèm (file)",
+    "example": "Please attach the spreadsheet to your reply.",
+    "exampleVi": "Vui lòng đính kèm bảng tính vào thư trả lời.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "forward",
+    "phonetic": "/ˈfoːwəd/",
+    "partOfSpeech": "v.",
+    "meaning": "chuyển tiếp",
+    "example": "Forward the complaint to the customer service team.",
+    "exampleVi": "Chuyển tiếp khiếu nại đến nhóm chăm sóc khách hàng.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "reply",
+    "phonetic": "/ɹɪˈplaɪ/",
+    "partOfSpeech": "v.",
+    "meaning": "trả lời",
+    "example": "I will reply to the vendor this afternoon.",
+    "exampleVi": "Tôi sẽ trả lời nhà cung cấp chiều nay.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "inquire",
+    "phonetic": "/ˌɪnkwˈaɪɹ/",
+    "partOfSpeech": "v.",
+    "meaning": "hỏi thông tin",
+    "example": "Call this number to inquire about vacancies.",
+    "exampleVi": "Gọi số này để hỏi về vị trí trống.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "confirm",
+    "phonetic": "/kənˈfɜːm/",
+    "partOfSpeech": "v.",
+    "meaning": "xác nhận",
+    "example": "Please confirm your attendance by Wednesday.",
+    "exampleVi": "Vui lòng xác nhận tham dự trước thứ Tư.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "notify",
+    "phonetic": "/nˈoʊtəfˌaɪ/",
+    "partOfSpeech": "v.",
+    "meaning": "thông báo cho",
+    "example": "We will notify you when the package ships.",
+    "exampleVi": "Chúng tôi sẽ thông báo khi kiện hàng được gửi.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "remind",
+    "phonetic": "/ɹimˈaɪnd/",
+    "partOfSpeech": "v.",
+    "meaning": "nhắc",
+    "example": "This email is to remind you of tomorrow's call.",
+    "exampleVi": "Email này để nhắc bạn về cuộc gọi ngày mai.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "request",
+    "phonetic": "/ɹɪˈkwɛst/",
+    "partOfSpeech": "v.",
+    "meaning": "yêu cầu",
+    "example": "Guests may request a late checkout.",
+    "exampleVi": "Khách có thể yêu cầu trả phòng muộn.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "require",
+    "phonetic": "/ɹˌikwˈaɪɚ/",
+    "partOfSpeech": "v.",
+    "meaning": "đòi hỏi",
+    "example": "This position requires two years of experience.",
+    "exampleVi": "Vị trí này đòi hỏi hai năm kinh nghiệm.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "document",
+    "phonetic": "/ˈdɒkjʊmənt/",
+    "partOfSpeech": "n.",
+    "meaning": "tài liệu",
+    "example": "Please sign the document in blue ink.",
+    "exampleVi": "Vui lòng ký tài liệu bằng mực xanh.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "report",
+    "phonetic": "/ɹəˈpoːt/",
+    "partOfSpeech": "n.",
+    "meaning": "báo cáo",
+    "example": "The safety report lists three minor injuries.",
+    "exampleVi": "Báo cáo an toàn nêu ba chấn thương nhẹ.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "survey",
+    "phonetic": "/sɚvˈeɪ/",
+    "partOfSpeech": "n.",
+    "meaning": "khảo sát",
+    "example": "Please complete the customer survey after checkout.",
+    "exampleVi": "Vui lòng hoàn thành khảo sát khách hàng sau khi trả phòng.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "questionnaire",
+    "phonetic": "/kwˌɛstʃənˈɛɹ/",
+    "partOfSpeech": "n.",
+    "meaning": "bảng câu hỏi",
+    "example": "The questionnaire takes about five minutes.",
+    "exampleVi": "Bảng câu hỏi mất khoảng năm phút.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "statistics",
+    "phonetic": "/stətˈɪstɪks/",
+    "partOfSpeech": "n.",
+    "meaning": "số liệu thống kê",
+    "example": "The statistics show a rise in online orders.",
+    "exampleVi": "Số liệu thống kê cho thấy đơn hàng trực tuyến tăng.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "chart",
+    "phonetic": "/tʃɑːt/",
+    "partOfSpeech": "n.",
+    "meaning": "biểu đồ",
+    "example": "This chart compares sales in four cities.",
+    "exampleVi": "Biểu đồ này so sánh doanh số ở bốn thành phố.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "graph",
+    "phonetic": "/ɡɹæf/",
+    "partOfSpeech": "n.",
+    "meaning": "đồ thị",
+    "example": "The graph shows a drop in energy use.",
+    "exampleVi": "Đồ thị cho thấy mức dùng năng lượng giảm.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "archive",
+    "phonetic": "/ˈɑɹkˌaɪv/",
+    "partOfSpeech": "v.",
+    "meaning": "lưu trữ",
+    "example": "Please archive last year's invoices.",
+    "exampleVi": "Vui lòng lưu trữ hóa đơn năm ngoái.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "circular",
+    "phonetic": "/sˈɝkjəlɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "thông tư / thư ngỏ",
+    "example": "A circular was sent to every department.",
+    "exampleVi": "Một thông tư đã được gửi tới mọi phòng ban.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "bulletin",
+    "phonetic": "/bˈʊlɪtən/",
+    "partOfSpeech": "n.",
+    "meaning": "bản tin",
+    "example": "Check the staff bulletin for holiday hours.",
+    "exampleVi": "Xem bản tin nhân viên để biết giờ lễ.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "notice",
+    "phonetic": "/nˈoʊtəs/",
+    "partOfSpeech": "n.",
+    "meaning": "thông báo niêm yết",
+    "example": "A notice on the door lists the new hours.",
+    "exampleVi": "Tờ thông báo trên cửa ghi giờ mới.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "department",
+    "phonetic": "/dɪpˈɑɹtmənt/",
+    "partOfSpeech": "n.",
+    "meaning": "phòng ban",
+    "example": "The shipping department closes at 6 p.m.",
+    "exampleVi": "Phòng vận chuyển đóng lúc 6 giờ chiều.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "division",
+    "phonetic": "/dɪˈvɪʒən/",
+    "partOfSpeech": "n.",
+    "meaning": "khối / bộ phận",
+    "example": "The electronics division moved to a new building.",
+    "exampleVi": "Khối điện tử chuyển sang tòa nhà mới.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "branch",
+    "phonetic": "/bɹˈæntʃ/",
+    "partOfSpeech": "n.",
+    "meaning": "chi nhánh",
+    "example": "The bank will open a branch near the university.",
+    "exampleVi": "Ngân hàng sẽ mở chi nhánh gần trường đại học.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "subsidiary",
+    "phonetic": "/səbsˈɪdiˌɛɹi/",
+    "partOfSpeech": "n.",
+    "meaning": "công ty con",
+    "example": "The Japanese subsidiary reports to headquarters.",
+    "exampleVi": "Công ty con tại Nhật báo cáo về trụ sở.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "affiliate",
+    "phonetic": "/əˈfɪl.i.et/",
+    "partOfSpeech": "n.",
+    "meaning": "công ty liên kết",
+    "example": "Our affiliate in Singapore handles regional sales.",
+    "exampleVi": "Công ty liên kết ở Singapore phụ trách bán hàng khu vực.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "client",
+    "phonetic": "/klˈaɪənt/",
+    "partOfSpeech": "n.",
+    "meaning": "khách hàng (dịch vụ)",
+    "example": "The client asked for a revised proposal.",
+    "exampleVi": "Khách hàng yêu cầu đề xuất đã chỉnh sửa.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "customer",
+    "phonetic": "/kˈʌstəmɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "khách hàng (mua hàng)",
+    "example": "Every customer receives a printed receipt.",
+    "exampleVi": "Mỗi khách hàng nhận biên lai in.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "supplier",
+    "phonetic": "/səplˈaɪɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "nhà cung cấp",
+    "example": "Our main supplier is based in Busan.",
+    "exampleVi": "Nhà cung cấp chính của chúng tôi ở Busan.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "vendor",
+    "phonetic": "/vˈɛndɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "nhà bán hàng",
+    "example": "Please compare prices from three vendors.",
+    "exampleVi": "Vui lòng so giá từ ba nhà bán.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "contractor",
+    "phonetic": "/kˈɑntɹˌæktɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "nhà thầu",
+    "example": "The contractor will finish the lobby in June.",
+    "exampleVi": "Nhà thầu sẽ xong sảnh vào tháng Sáu.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "consultant",
+    "phonetic": "/kənˈsʌltənt/",
+    "partOfSpeech": "n.",
+    "meaning": "tư vấn viên",
+    "example": "A consultant reviewed our hiring process.",
+    "exampleVi": "Một tư vấn viên đã rà soát quy trình tuyển dụng.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "executive",
+    "phonetic": "/ɪɡzˈɛkjətɪv/",
+    "partOfSpeech": "n.",
+    "meaning": "giám đốc điều hành",
+    "example": "Senior executives will attend the dinner.",
+    "exampleVi": "Các giám đốc cấp cao sẽ dự bữa tối.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "director",
+    "phonetic": "/dɚˈɛktɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "giám đốc",
+    "example": "The finance director signed the budget.",
+    "exampleVi": "Giám đốc tài chính đã ký ngân sách.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "manager",
+    "phonetic": "/mˈænədʒɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "quản lý",
+    "example": "Ask the duty manager if the room is ready.",
+    "exampleVi": "Hỏi quản lý trực ca nếu phòng đã sẵn sàng.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "assistant",
+    "phonetic": "/əsˈɪstənt/",
+    "partOfSpeech": "n.",
+    "meaning": "trợ lý",
+    "example": "The assistant booked the flights this morning.",
+    "exampleVi": "Trợ lý đã đặt vé máy bay sáng nay.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "secretary",
+    "phonetic": "/ˈsɛk.ɹə.tɹi/",
+    "partOfSpeech": "n.",
+    "meaning": "thư ký",
+    "example": "The secretary keeps the meeting calendar.",
+    "exampleVi": "Thư ký giữ lịch họp.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "clerk",
+    "phonetic": "/klɐːk/",
+    "partOfSpeech": "n.",
+    "meaning": "nhân viên văn phòng",
+    "example": "The clerk stamped the forms at the counter.",
+    "exampleVi": "Nhân viên đóng dấu các mẫu đơn tại quầy.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "receptionist",
+    "phonetic": "/ɹɪˈsɛpʃənɪst/",
+    "partOfSpeech": "n.",
+    "meaning": "lễ tân",
+    "example": "The receptionist will print your visitor badge.",
+    "exampleVi": "Lễ tân sẽ in thẻ khách cho bạn.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "cubicle",
+    "phonetic": "/ˈkjubɪkəl/",
+    "partOfSpeech": "n.",
+    "meaning": "vách làm việc",
+    "example": "Her cubicle is next to the copy machine.",
+    "exampleVi": "Vách làm việc của cô ấy cạnh máy photocopy.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "lobby",
+    "phonetic": "/lˈɑbi/",
+    "partOfSpeech": "n.",
+    "meaning": "sảnh",
+    "example": "Please wait in the lobby until your name is called.",
+    "exampleVi": "Vui lòng chờ ở sảnh đến khi được gọi tên.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "facility",
+    "phonetic": "/fəˈsɪlɪti/",
+    "partOfSpeech": "n.",
+    "meaning": "cơ sở / nhà xưởng",
+    "example": "The new facility can store 2,000 pallets.",
+    "exampleVi": "Cơ sở mới chứa được 2.000 palet.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "factory",
+    "phonetic": "/fˈæktɚi/",
+    "partOfSpeech": "n.",
+    "meaning": "nhà máy",
+    "example": "The factory runs two shifts on weekdays.",
+    "exampleVi": "Nhà máy chạy hai ca vào ngày thường.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "plant",
+    "phonetic": "/plænt/",
+    "partOfSpeech": "n.",
+    "meaning": "nhà máy sản xuất",
+    "example": "The chemical plant is closed for maintenance.",
+    "exampleVi": "Nhà máy hóa chất đóng cửa để bảo trì.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "corporation",
+    "phonetic": "/kˌɔɹpɚˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "tập đoàn",
+    "example": "The corporation employs 8,000 people worldwide.",
+    "exampleVi": "Tập đoàn thuê 8.000 người trên toàn cầu.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "enterprise",
+    "phonetic": "/ˈɛntɚˌpɹaɪz/",
+    "partOfSpeech": "n.",
+    "meaning": "doanh nghiệp",
+    "example": "Small enterprises can apply for the grant.",
+    "exampleVi": "Doanh nghiệp nhỏ có thể xin khoản tài trợ.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "warehouse",
+    "phonetic": "/wˈɛɹhˌaʊs/",
+    "partOfSpeech": "n.",
+    "meaning": "kho hàng",
+    "example": "The warehouse is located near the port.",
+    "exampleVi": "Kho hàng nằm gần cảng.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "cargo",
+    "phonetic": "/kˈɑɹɡˌoʊ/",
+    "partOfSpeech": "n.",
+    "meaning": "hàng hóa vận chuyển",
+    "example": "The cargo was damaged during the storm.",
+    "exampleVi": "Hàng hóa bị hư trong cơn bão.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "freight",
+    "phonetic": "/fɹˈeɪt/",
+    "partOfSpeech": "n.",
+    "meaning": "cước vận tải",
+    "example": "Freight costs rose after fuel prices increased.",
+    "exampleVi": "Cước vận tải tăng sau khi giá nhiên liệu tăng.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "packing",
+    "phonetic": "/pˈækɪŋ/",
+    "partOfSpeech": "n.",
+    "meaning": "đóng gói",
+    "example": "Packing materials are stored in aisle B.",
+    "exampleVi": "Vật liệu đóng gói được để ở lối B.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "carton",
+    "phonetic": "/ˈkɑːtn̩/",
+    "partOfSpeech": "n.",
+    "meaning": "thùng carton",
+    "example": "Each carton holds 24 bottles.",
+    "exampleVi": "Mỗi thùng carton chứa 24 chai.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "pallet",
+    "phonetic": "/ˈpælət/",
+    "partOfSpeech": "n.",
+    "meaning": "palet",
+    "example": "Please stack the boxes on a wooden pallet.",
+    "exampleVi": "Vui lòng xếp thùng lên palet gỗ.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "container",
+    "phonetic": "/kənˈteɪnə/",
+    "partOfSpeech": "n.",
+    "meaning": "container",
+    "example": "The container will leave the port on Friday.",
+    "exampleVi": "Container sẽ rời cảng vào thứ Sáu.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "dock",
+    "phonetic": "/dˈɑk/",
+    "partOfSpeech": "n.",
+    "meaning": "bến tàu / bến xe tải",
+    "example": "Trucks must wait at dock 4 for unloading.",
+    "exampleVi": "Xe tải phải chờ ở bến 4 để dỡ hàng.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "harbor",
+    "phonetic": "/hˈɑɹbɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "bến cảng",
+    "example": "Fog delayed ships entering the harbor.",
+    "exampleVi": "Sương mù làm chậm tàu vào bến cảng.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "port",
+    "phonetic": "/pɔːt/",
+    "partOfSpeech": "n.",
+    "meaning": "cảng",
+    "example": "The goods will clear customs at this port.",
+    "exampleVi": "Hàng sẽ thông quan tại cảng này.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "customs",
+    "phonetic": "/kˈʌstəmz/",
+    "partOfSpeech": "n.",
+    "meaning": "hải quan",
+    "example": "Customs officers inspected the shipment.",
+    "exampleVi": "Nhân viên hải quan đã kiểm tra lô hàng.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "inspect",
+    "phonetic": "/ˌɪnspˈɛkt/",
+    "partOfSpeech": "v.",
+    "meaning": "kiểm tra",
+    "example": "Technicians inspect every machine before shipping.",
+    "exampleVi": "Kỹ thuật viên kiểm tra mọi máy trước khi gửi.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "arrive",
+    "phonetic": "/ɚˈaɪv/",
+    "partOfSpeech": "v.",
+    "meaning": "đến",
+    "example": "The overnight train will arrive at 6:40 a.m.",
+    "exampleVi": "Chuyến tàu đêm sẽ đến lúc 6:40 sáng.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "depart",
+    "phonetic": "/dɪˈpɑːt/",
+    "partOfSpeech": "v.",
+    "meaning": "khởi hành",
+    "example": "Buses depart from gate 12 every hour.",
+    "exampleVi": "Xe buýt khởi hành từ cổng 12 mỗi giờ.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "destination",
+    "phonetic": "/dɛstɪˈneɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "điểm đến",
+    "example": "Tokyo is the final destination of this flight.",
+    "exampleVi": "Tokyo là điểm đến cuối của chuyến bay này.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "origin",
+    "phonetic": "/ˈɔɹədʒən/",
+    "partOfSpeech": "n.",
+    "meaning": "nơi xuất phát",
+    "example": "The form asks for the origin of the goods.",
+    "exampleVi": "Mẫu đơn hỏi nơi xuất phát của hàng.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "route",
+    "phonetic": "/ɹˈut/",
+    "partOfSpeech": "n.",
+    "meaning": "tuyến đường",
+    "example": "This bus route stops near headquarters.",
+    "exampleVi": "Tuyến xe buýt này dừng gần trụ sở.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "carrier",
+    "phonetic": "/ˈkæ.ɹɪ.ə/",
+    "partOfSpeech": "n.",
+    "meaning": "hãng vận chuyển",
+    "example": "Our carrier will pick up the pallets at noon.",
+    "exampleVi": "Hãng vận chuyển sẽ lấy palet lúc trưa.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "courier",
+    "phonetic": "/kˈɝiɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "chuyển phát nhanh",
+    "example": "A courier delivered the contract this morning.",
+    "exampleVi": "Chuyển phát nhanh đã giao hợp đồng sáng nay.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "deliver",
+    "phonetic": "/dɪlˈɪvɚ/",
+    "partOfSpeech": "v.",
+    "meaning": "giao hàng",
+    "example": "We deliver office supplies within 24 hours.",
+    "exampleVi": "Chúng tôi giao văn phòng phẩm trong 24 giờ.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "consignment",
+    "phonetic": "/kənsˈaɪnmənt/",
+    "partOfSpeech": "n.",
+    "meaning": "lô hàng gửi",
+    "example": "The consignment includes spare parts and manuals.",
+    "exampleVi": "Lô hàng gửi gồm phụ tùng và sách hướng dẫn.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "tracking",
+    "phonetic": "/tɹˈækɪŋ/",
+    "partOfSpeech": "n.",
+    "meaning": "mã theo dõi",
+    "example": "Use the tracking number to check delivery.",
+    "exampleVi": "Dùng mã theo dõi để kiểm tra giao hàng.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "barcode",
+    "phonetic": "/ˈbɑːr.koʊd/",
+    "partOfSpeech": "n.",
+    "meaning": "mã vạch",
+    "example": "Scan the barcode to add the item to inventory.",
+    "exampleVi": "Quét mã vạch để thêm mặt hàng vào tồn kho.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "load",
+    "phonetic": "/lˈoʊd/",
+    "partOfSpeech": "v.",
+    "meaning": "chất hàng",
+    "example": "Workers will load the truck after lunch.",
+    "exampleVi": "Công nhân sẽ chất hàng lên xe sau bữa trưa.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "unload",
+    "phonetic": "/ənlˈoʊd/",
+    "partOfSpeech": "v.",
+    "meaning": "dỡ hàng",
+    "example": "Please unload the boxes at the back door.",
+    "exampleVi": "Vui lòng dỡ thùng ở cửa sau.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "transit",
+    "phonetic": "/tɹˈænzɪt/",
+    "partOfSpeech": "n.",
+    "meaning": "trung chuyển",
+    "example": "The package is still in transit.",
+    "exampleVi": "Kiện hàng vẫn đang trung chuyển.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "bulk",
+    "phonetic": "/bˈʌlk/",
+    "partOfSpeech": "n.",
+    "meaning": "hàng số lượng lớn",
+    "example": "Rice is shipped in bulk, not in cartons.",
+    "exampleVi": "Gạo được gửi số lượng lớn, không đóng thùng.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "fragile",
+    "phonetic": "/ˈfɹædʒaɪl/",
+    "partOfSpeech": "adj.",
+    "meaning": "dễ vỡ",
+    "example": "Mark the crate as fragile before shipping.",
+    "exampleVi": "Ghi dễ vỡ trên thùng trước khi gửi.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "perishable",
+    "phonetic": "/pˈɛɹɪʃəbəl/",
+    "partOfSpeech": "adj.",
+    "meaning": "dễ hỏng",
+    "example": "Perishable food must stay in a cold truck.",
+    "exampleVi": "Thực phẩm dễ hỏng phải để trên xe lạnh.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "assemble",
+    "phonetic": "/əsˈɛmbəl/",
+    "partOfSpeech": "v.",
+    "meaning": "lắp ráp",
+    "example": "Workers assemble the chairs on the second floor.",
+    "exampleVi": "Công nhân lắp ráp ghế ở tầng hai.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "manufacture",
+    "phonetic": "/mˌænjəfˈæktʃɚ/",
+    "partOfSpeech": "v.",
+    "meaning": "sản xuất",
+    "example": "The plant can manufacture 500 units a day.",
+    "exampleVi": "Nhà máy sản xuất được 500 chiếc mỗi ngày.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "equipment",
+    "phonetic": "/ɪkwˈɪpmənt/",
+    "partOfSpeech": "n.",
+    "meaning": "thiết bị",
+    "example": "Safety equipment is required in this area.",
+    "exampleVi": "Khu vực này bắt buộc dùng thiết bị an toàn.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "machinery",
+    "phonetic": "/məʃˈinɚi/",
+    "partOfSpeech": "n.",
+    "meaning": "máy móc",
+    "example": "The machinery will be replaced next year.",
+    "exampleVi": "Máy móc sẽ được thay vào năm tới.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "defective",
+    "phonetic": "/dɪfˈɛktɪv/",
+    "partOfSpeech": "adj.",
+    "meaning": "bị lỗi",
+    "example": "Return any defective item within 30 days.",
+    "exampleVi": "Trả lại mặt hàng lỗi trong vòng 30 ngày.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "warranty",
+    "phonetic": "/wˈɔɹənti/",
+    "partOfSpeech": "n.",
+    "meaning": "bảo hành",
+    "example": "The printer has a two-year warranty.",
+    "exampleVi": "Máy in có bảo hành hai năm.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "guarantee",
+    "phonetic": "/ɡˌɛɹəntˈi/",
+    "partOfSpeech": "n.",
+    "meaning": "bảo đảm",
+    "example": "The store offers a 90-day money-back guarantee.",
+    "exampleVi": "Cửa hàng cam kết hoàn tiền trong 90 ngày.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "maintenance",
+    "phonetic": "/mˈeɪntənəns/",
+    "partOfSpeech": "n.",
+    "meaning": "bảo trì",
+    "example": "The elevator is closed for maintenance.",
+    "exampleVi": "Thang máy đóng để bảo trì.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "repair",
+    "phonetic": "/ɹɪpˈɛɹ/",
+    "partOfSpeech": "n.",
+    "meaning": "sửa chữa",
+    "example": "The repair will take two business days.",
+    "exampleVi": "Việc sửa chữa mất hai ngày làm việc.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "replace",
+    "phonetic": "/ɹˌiplˈeɪs/",
+    "partOfSpeech": "v.",
+    "meaning": "thay thế",
+    "example": "We will replace the broken chair at no charge.",
+    "exampleVi": "Chúng tôi sẽ thay ghế hỏng miễn phí.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "recycle",
+    "phonetic": "/ɹisˈaɪkəl/",
+    "partOfSpeech": "v.",
+    "meaning": "tái chế",
+    "example": "Please recycle paper in the blue bin.",
+    "exampleVi": "Vui lòng tái chế giấy ở thùng xanh.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "dispose",
+    "phonetic": "/dɪspˈoʊz/",
+    "partOfSpeech": "v.",
+    "meaning": "vứt bỏ",
+    "example": "Do not dispose of batteries in regular trash.",
+    "exampleVi": "Không vứt pin vào rác thường.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "material",
+    "phonetic": "/məˈtɪəɹɪəl/",
+    "partOfSpeech": "n.",
+    "meaning": "nguyên liệu",
+    "example": "Raw material arrived from the supplier today.",
+    "exampleVi": "Nguyên liệu thô đến từ nhà cung cấp hôm nay.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "supply",
+    "phonetic": "/səplˈaɪ/",
+    "partOfSpeech": "n.",
+    "meaning": "nguồn cung",
+    "example": "A shortage of supply delayed production.",
+    "exampleVi": "Thiếu nguồn cung làm chậm sản xuất.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "shortage",
+    "phonetic": "/ʃˈɔɹtədʒ/",
+    "partOfSpeech": "n.",
+    "meaning": "tình trạng thiếu",
+    "example": "There is a shortage of trained nurses.",
+    "exampleVi": "Đang thiếu y tá được đào tạo.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "handle",
+    "phonetic": "/hˈændəl/",
+    "partOfSpeech": "v.",
+    "meaning": "xử lý / cầm nắm",
+    "example": "Please handle glass bottles with care.",
+    "exampleVi": "Vui lòng cầm chai thủy tinh cẩn thận.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "spare",
+    "phonetic": "/spˈɛɹ/",
+    "partOfSpeech": "adj.",
+    "meaning": "dự phòng",
+    "example": "Keep a spare key at the front desk.",
+    "exampleVi": "Giữ chìa khóa dự phòng ở quầy lễ tân.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "accommodation",
+    "phonetic": "/əkˌɑmədˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "chỗ ở",
+    "example": "The city has limited accommodation during the festival.",
+    "exampleVi": "Thành phố thiếu chỗ ở trong dịp lễ hội.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "lodging",
+    "phonetic": "/lˈɑdʒɪŋ/",
+    "partOfSpeech": "n.",
+    "meaning": "chỗ trọ",
+    "example": "Lodging is included in the conference fee.",
+    "exampleVi": "Chỗ trọ đã gồm trong phí hội nghị.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "suite",
+    "phonetic": "/swiːt/",
+    "partOfSpeech": "n.",
+    "meaning": "phòng suite",
+    "example": "The suite has a meeting table and a kitchen.",
+    "exampleVi": "Phòng suite có bàn họp và bếp.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "vacant",
+    "phonetic": "/vˈeɪkənt/",
+    "partOfSpeech": "adj.",
+    "meaning": "còn trống",
+    "example": "Two rooms are still vacant on the third floor.",
+    "exampleVi": "Hai phòng tầng ba vẫn còn trống.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "available",
+    "phonetic": "/əvˈeɪləbəl/",
+    "partOfSpeech": "adj.",
+    "meaning": "còn chỗ / có sẵn",
+    "example": "The 3 p.m. tour is no longer available.",
+    "exampleVi": "Tour 3 giờ chiều không còn chỗ.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "luggage",
+    "phonetic": "/lˈʌɡədʒ/",
+    "partOfSpeech": "n.",
+    "meaning": "hành lý",
+    "example": "Please leave your luggage with the porter.",
+    "exampleVi": "Vui lòng để hành lý cho nhân viên khuân vác.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "hospitality",
+    "phonetic": "/hˌɑspətˈæləti/",
+    "partOfSpeech": "n.",
+    "meaning": "lòng mến khách",
+    "example": "The hotel is known for warm hospitality.",
+    "exampleVi": "Khách sạn nổi tiếng vì lòng mến khách.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "amenity",
+    "phonetic": "/əˈmiːnəti/",
+    "partOfSpeech": "n.",
+    "meaning": "tiện nghi",
+    "example": "Each room includes a coffee amenity kit.",
+    "exampleVi": "Mỗi phòng có bộ tiện nghi pha cà phê.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "concierge",
+    "phonetic": "/ˌkɒn.siˈɛə̯ʒ/",
+    "partOfSpeech": "n.",
+    "meaning": "nhân viên hỗ trợ khách",
+    "example": "The concierge can book a taxi to the airport.",
+    "exampleVi": "Nhân viên hỗ trợ có thể đặt taxi ra sân bay.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "housekeeping",
+    "phonetic": "/hˈaʊskˌipɪŋ/",
+    "partOfSpeech": "n.",
+    "meaning": "bộ phận buồng phòng",
+    "example": "Housekeeping will clean the room after 2 p.m.",
+    "exampleVi": "Buồng phòng sẽ dọn phòng sau 2 giờ chiều.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "banquet",
+    "phonetic": "/bˈæŋkwət/",
+    "partOfSpeech": "n.",
+    "meaning": "tiệc lớn",
+    "example": "The awards banquet starts at 7 p.m.",
+    "exampleVi": "Tiệc trao giải bắt đầu lúc 7 giờ tối.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "catering",
+    "phonetic": "/kˈeɪtɚɪŋ/",
+    "partOfSpeech": "n.",
+    "meaning": "dịch vụ ăn uống",
+    "example": "Catering for 80 guests has already been arranged.",
+    "exampleVi": "Dịch vụ ăn uống cho 80 khách đã được sắp xếp.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "buffet",
+    "phonetic": "/bˈʌfət/",
+    "partOfSpeech": "n.",
+    "meaning": "tiệc buffet",
+    "example": "Breakfast is served as a buffet until 10 a.m.",
+    "exampleVi": "Bữa sáng buffet phục vụ đến 10 giờ sáng.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "beverage",
+    "phonetic": "/bˈɛvɚɪdʒ/",
+    "partOfSpeech": "n.",
+    "meaning": "đồ uống",
+    "example": "Hot beverages are free in the waiting lounge.",
+    "exampleVi": "Đồ uống nóng miễn phí ở phòng chờ.",
+    "imageKey": "complimentary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "appetizer",
+    "phonetic": "/ˈæpətˌaɪzɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "món khai vị",
+    "example": "The chef recommends the soup as an appetizer.",
+    "exampleVi": "Bếp trưởng gợi ý món súp làm khai vị.",
+    "imageKey": "complimentary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "dessert",
+    "phonetic": "/dɪzˈɝt/",
+    "partOfSpeech": "n.",
+    "meaning": "món tráng miệng",
+    "example": "Dessert is served after the main course.",
+    "exampleVi": "Món tráng miệng được phục vụ sau món chính.",
+    "imageKey": "complimentary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "gratuity",
+    "phonetic": "/ɡɹətˈuɪti/",
+    "partOfSpeech": "n.",
+    "meaning": "tiền tip",
+    "example": "An 18 percent gratuity is added for groups of six.",
+    "exampleVi": "Nhóm từ sáu người bị cộng 18 phần trăm tiền tip.",
+    "imageKey": "complimentary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "spacious",
+    "phonetic": "/ˈspeɪʃəs/",
+    "partOfSpeech": "adj.",
+    "meaning": "rộng rãi",
+    "example": "The meeting hall is spacious enough for 200 seats.",
+    "exampleVi": "Hội trường đủ rộng cho 200 ghế.",
+    "imageKey": "occupancy",
+    "category": "TOEIC"
+  },
+  {
+    "word": "renovated",
+    "phonetic": "/ɹˈɛnəvˌeɪtɪd/",
+    "partOfSpeech": "adj.",
+    "meaning": "được cải tạo",
+    "example": "The renovated lobby opened last weekend.",
+    "exampleVi": "Sảnh được cải tạo đã mở cửa cuối tuần trước.",
+    "imageKey": "occupancy",
+    "category": "TOEIC"
+  },
+  {
+    "word": "capacity",
+    "phonetic": "/kəpˈæsəti/",
+    "partOfSpeech": "n.",
+    "meaning": "sức chứa",
+    "example": "The hall has a capacity of 300 people.",
+    "exampleVi": "Hội trường có sức chứa 300 người.",
+    "imageKey": "occupancy",
+    "category": "TOEIC"
+  },
+  {
+    "word": "peak",
+    "phonetic": "/pˈik/",
+    "partOfSpeech": "adj.",
+    "meaning": "cao điểm",
+    "example": "Room rates are higher during peak season.",
+    "exampleVi": "Giá phòng cao hơn vào mùa cao điểm.",
+    "imageKey": "occupancy",
+    "category": "TOEIC"
+  },
+  {
+    "word": "refreshment",
+    "phonetic": "/ɹəfɹˈɛʃmənt/",
+    "partOfSpeech": "n.",
+    "meaning": "đồ giải khát",
+    "example": "Refreshments will be served during the break.",
+    "exampleVi": "Đồ giải khát sẽ được phục vụ trong giờ giải lao.",
+    "imageKey": "complimentary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "courtesy",
+    "phonetic": "/kˈɝtəsi/",
+    "partOfSpeech": "n.",
+    "meaning": "sự lịch sự / xe đưa đón miễn phí",
+    "example": "A courtesy shuttle runs to the train station.",
+    "exampleVi": "Xe đưa đón miễn phí chạy ra ga tàu.",
+    "imageKey": "complimentary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "included",
+    "phonetic": "/ˌɪnklˈudəd/",
+    "partOfSpeech": "adj.",
+    "meaning": "đã bao gồm",
+    "example": "Breakfast is included in the room rate.",
+    "exampleVi": "Bữa sáng đã gồm trong giá phòng.",
+    "imageKey": "complimentary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "boarding",
+    "phonetic": "/bˈɔɹdɪŋ/",
+    "partOfSpeech": "n.",
+    "meaning": "lên máy bay / lên tàu",
+    "example": "Boarding begins 30 minutes before departure.",
+    "exampleVi": "Lên máy bay bắt đầu 30 phút trước giờ khởi hành.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "gate",
+    "phonetic": "/ɡˈeɪt/",
+    "partOfSpeech": "n.",
+    "meaning": "cổng (sân bay)",
+    "example": "The flight to Osaka leaves from gate 22.",
+    "exampleVi": "Chuyến bay tới Osaka rời từ cổng 22.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "terminal",
+    "phonetic": "/tˈɝmənəl/",
+    "partOfSpeech": "n.",
+    "meaning": "nhà ga",
+    "example": "International flights use terminal 2.",
+    "exampleVi": "Chuyến bay quốc tế dùng nhà ga 2.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "flight",
+    "phonetic": "/flˈaɪt/",
+    "partOfSpeech": "n.",
+    "meaning": "chuyến bay",
+    "example": "The morning flight was canceled because of fog.",
+    "exampleVi": "Chuyến bay sáng bị hủy vì sương mù.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "departure",
+    "phonetic": "/dɪpˈɑɹtʃɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "chuyến đi / giờ khởi hành",
+    "example": "The departure board shows a 20-minute delay.",
+    "exampleVi": "Bảng khởi hành báo chậm 20 phút.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "arrival",
+    "phonetic": "/ɚˈaɪvəl/",
+    "partOfSpeech": "n.",
+    "meaning": "chuyến đến",
+    "example": "Please wait in the arrival hall.",
+    "exampleVi": "Vui lòng chờ ở sảnh đến.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "fare",
+    "phonetic": "/fˈɛɹ/",
+    "partOfSpeech": "n.",
+    "meaning": "giá vé",
+    "example": "The round-trip fare includes one checked bag.",
+    "exampleVi": "Giá vé khứ hồi gồm một kiện hành lý ký gửi.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "passenger",
+    "phonetic": "/pˈæsəndʒɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "hành khách",
+    "example": "Each passenger must show a photo ID.",
+    "exampleVi": "Mỗi hành khách phải xuất trình giấy tờ có ảnh.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "ticket",
+    "phonetic": "/tˈɪkət/",
+    "partOfSpeech": "n.",
+    "meaning": "vé",
+    "example": "Please keep your ticket until you exit the station.",
+    "exampleVi": "Vui lòng giữ vé đến khi ra khỏi ga.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "passport",
+    "phonetic": "/pˈæspˌɔɹt/",
+    "partOfSpeech": "n.",
+    "meaning": "hộ chiếu",
+    "example": "Your passport must be valid for six months.",
+    "exampleVi": "Hộ chiếu phải còn hạn ít nhất sáu tháng.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "visa",
+    "phonetic": "/vˈizə/",
+    "partOfSpeech": "n.",
+    "meaning": "thị thực",
+    "example": "A tourist visa is required for this trip.",
+    "exampleVi": "Chuyến đi này cần thị thực du lịch.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "layover",
+    "phonetic": "/lˈeɪˌoʊvɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "điểm dừng nối chuyến",
+    "example": "There is a two-hour layover in Seoul.",
+    "exampleVi": "Có hai giờ dừng nối chuyến ở Seoul.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "aisle",
+    "phonetic": "/ˈaɪl/",
+    "partOfSpeech": "n.",
+    "meaning": "lối đi",
+    "example": "She asked for an aisle seat near the exit.",
+    "exampleVi": "Cô ấy xin ghế cạnh lối đi gần cửa thoát hiểm.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "sightseeing",
+    "phonetic": "/sˈaɪtsˈiɪŋ/",
+    "partOfSpeech": "n.",
+    "meaning": "tham quan",
+    "example": "The afternoon is free for sightseeing.",
+    "exampleVi": "Buổi chiều rảnh để tham quan.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "excursion",
+    "phonetic": "/ɪkskˈɝʒən/",
+    "partOfSpeech": "n.",
+    "meaning": "chuyến tham quan ngắn",
+    "example": "The museum excursion leaves the hotel at 9 a.m.",
+    "exampleVi": "Chuyến tham quan bảo tàng rời khách sạn lúc 9 giờ sáng.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "tour",
+    "phonetic": "/tˈʊɹ/",
+    "partOfSpeech": "n.",
+    "meaning": "tour",
+    "example": "The walking tour of the old town lasts two hours.",
+    "exampleVi": "Tour đi bộ phố cổ kéo dài hai giờ.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "souvenir",
+    "phonetic": "/sˌuvənˈɪɹ/",
+    "partOfSpeech": "n.",
+    "meaning": "quà lưu niệm",
+    "example": "The gift shop sells local souvenirs.",
+    "exampleVi": "Cửa hàng quà bán đồ lưu niệm địa phương.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "delay",
+    "phonetic": "/dɪlˈeɪ/",
+    "partOfSpeech": "n.",
+    "meaning": "sự chậm trễ",
+    "example": "The delay was caused by heavy rain.",
+    "exampleVi": "Sự chậm trễ do mưa lớn.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "connection",
+    "phonetic": "/kənˈɛkʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "chuyến nối",
+    "example": "You have 40 minutes to make your connection.",
+    "exampleVi": "Bạn có 40 phút để kịp chuyến nối.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "permit",
+    "phonetic": "/pɚmˈɪt/",
+    "partOfSpeech": "n.",
+    "meaning": "giấy phép",
+    "example": "A parking permit is required in this garage.",
+    "exampleVi": "Bãi xe này cần giấy phép đỗ.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "license",
+    "phonetic": "/lˈaɪsəns/",
+    "partOfSpeech": "n.",
+    "meaning": "giấy phép hành nghề",
+    "example": "The restaurant license must be displayed at the door.",
+    "exampleVi": "Giấy phép nhà hàng phải được treo ở cửa.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "regulation",
+    "phonetic": "/ɹˌɛɡjəlˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "quy định",
+    "example": "Safety regulations forbid open shoes in the plant.",
+    "exampleVi": "Quy định an toàn cấm giày hở trong nhà máy.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "comply",
+    "phonetic": "/kəmplˈaɪ/",
+    "partOfSpeech": "v.",
+    "meaning": "tuân thủ",
+    "example": "All vendors must comply with the new rules.",
+    "exampleVi": "Mọi nhà bán phải tuân thủ quy định mới.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "violate",
+    "phonetic": "/vˈaɪəleɪt/",
+    "partOfSpeech": "v.",
+    "meaning": "vi phạm",
+    "example": "Do not violate the quiet hours in the hotel.",
+    "exampleVi": "Không vi phạm giờ yên lặng ở khách sạn.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "restrict",
+    "phonetic": "/ɹistɹˈɪkt/",
+    "partOfSpeech": "v.",
+    "meaning": "hạn chế",
+    "example": "The city will restrict truck traffic downtown.",
+    "exampleVi": "Thành phố sẽ hạn chế xe tải ở trung tâm.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "prohibit",
+    "phonetic": "/pɹoʊhˈɪbət/",
+    "partOfSpeech": "v.",
+    "meaning": "cấm",
+    "example": "Signs prohibit smoking near the entrance.",
+    "exampleVi": "Biển báo cấm hút thuốc gần cửa ra vào.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "eligible",
+    "phonetic": "/ˈɛlədʒəbəl/",
+    "partOfSpeech": "adj.",
+    "meaning": "đủ điều kiện",
+    "example": "Staff with one year of service are eligible for the bonus.",
+    "exampleVi": "Nhân viên làm đủ một năm mới đủ điều kiện nhận thưởng.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "entitled",
+    "phonetic": "/ɛntˈaɪtəld/",
+    "partOfSpeech": "adj.",
+    "meaning": "được hưởng",
+    "example": "Full-time staff are entitled to paid leave.",
+    "exampleVi": "Nhân viên toàn thời gian được hưởng nghỉ có lương.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "obligation",
+    "phonetic": "/ˌɑbləɡˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "nghĩa vụ",
+    "example": "The contract lists each party's obligation.",
+    "exampleVi": "Hợp đồng liệt kê nghĩa vụ của mỗi bên.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "clause",
+    "phonetic": "/klˈɔz/",
+    "partOfSpeech": "n.",
+    "meaning": "điều khoản",
+    "example": "Please read the cancellation clause carefully.",
+    "exampleVi": "Vui lòng đọc kỹ điều khoản hủy.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "terms",
+    "phonetic": "/tˈɝmz/",
+    "partOfSpeech": "n.",
+    "meaning": "điều kiện hợp đồng",
+    "example": "Payment terms are net 30 days.",
+    "exampleVi": "Điều kiện thanh toán là 30 ngày.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "terminate",
+    "phonetic": "/tˈɝmənˌeɪt/",
+    "partOfSpeech": "v.",
+    "meaning": "chấm dứt",
+    "example": "Either side may terminate the agreement with 30 days' notice.",
+    "exampleVi": "Mỗi bên có thể chấm dứt thỏa thuận với thông báo 30 ngày.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "valid",
+    "phonetic": "/vˈælɪd/",
+    "partOfSpeech": "adj.",
+    "meaning": "còn hiệu lực",
+    "example": "This coupon is valid until the end of March.",
+    "exampleVi": "Phiếu này còn hiệu lực đến hết tháng Ba.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "authentic",
+    "phonetic": "/əθˈɛntɪk/",
+    "partOfSpeech": "adj.",
+    "meaning": "chính hãng / xác thực",
+    "example": "Please buy authentic parts from our dealer.",
+    "exampleVi": "Vui lòng mua linh kiện chính hãng từ đại lý.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "counterfeit",
+    "phonetic": "/kˈaʊntɚfˌɪt/",
+    "partOfSpeech": "adj.",
+    "meaning": "giả mạo",
+    "example": "The store does not accept counterfeit bills.",
+    "exampleVi": "Cửa hàng không nhận tiền giả.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "signature",
+    "phonetic": "/sˈɪɡnətʃɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "chữ ký",
+    "example": "A manager's signature is required on this form.",
+    "exampleVi": "Mẫu này cần chữ ký của quản lý.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "lawsuit",
+    "phonetic": "/lˈɔsˌut/",
+    "partOfSpeech": "n.",
+    "meaning": "vụ kiện",
+    "example": "The company settled the lawsuit last month.",
+    "exampleVi": "Công ty đã hòa giải vụ kiện tháng trước.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "claim",
+    "phonetic": "/klˈeɪm/",
+    "partOfSpeech": "n.",
+    "meaning": "yêu cầu bồi thường",
+    "example": "File an insurance claim within 48 hours.",
+    "exampleVi": "Nộp yêu cầu bồi thường bảo hiểm trong 48 giờ.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "policy",
+    "phonetic": "/pˈɑləsi/",
+    "partOfSpeech": "n.",
+    "meaning": "chính sách",
+    "example": "The refund policy is printed on the receipt.",
+    "exampleVi": "Chính sách hoàn tiền được in trên biên lai.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "coverage",
+    "phonetic": "/kˈʌvɚədʒ/",
+    "partOfSpeech": "n.",
+    "meaning": "phạm vi bảo hiểm",
+    "example": "The policy coverage includes fire and flood.",
+    "exampleVi": "Phạm vi bảo hiểm gồm hỏa hoạn và lũ.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "premium",
+    "phonetic": "/pɹˈimiəm/",
+    "partOfSpeech": "n.",
+    "meaning": "phí bảo hiểm",
+    "example": "The monthly premium will rise in January.",
+    "exampleVi": "Phí bảo hiểm hàng tháng sẽ tăng vào tháng Giêng.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "deductible",
+    "phonetic": "/dɪdˈʌktəbəl/",
+    "partOfSpeech": "n.",
+    "meaning": "mức tự trả",
+    "example": "You pay the deductible before insurance covers the rest.",
+    "exampleVi": "Bạn trả mức tự trả trước khi bảo hiểm chi phần còn lại.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "consent",
+    "phonetic": "/kənsˈɛnt/",
+    "partOfSpeech": "n.",
+    "meaning": "sự đồng ý",
+    "example": "Written consent is needed before we share your data.",
+    "exampleVi": "Cần sự đồng ý bằng văn bản trước khi chúng tôi chia sẻ dữ liệu.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "advertise",
+    "phonetic": "/ˈædvɚtˌaɪz/",
+    "partOfSpeech": "v.",
+    "meaning": "quảng cáo",
+    "example": "We will advertise the sale in the Sunday paper.",
+    "exampleVi": "Chúng tôi sẽ quảng cáo đợt giảm giá trên báo Chủ nhật.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "campaign",
+    "phonetic": "/kæmpˈeɪn/",
+    "partOfSpeech": "n.",
+    "meaning": "chiến dịch",
+    "example": "The spring campaign will run for six weeks.",
+    "exampleVi": "Chiến dịch mùa xuân sẽ chạy sáu tuần.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "promotion",
+    "phonetic": "/pɹəmˈoʊʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "khuyến mãi",
+    "example": "This promotion is valid in store only.",
+    "exampleVi": "Khuyến mãi này chỉ áp dụng tại cửa hàng.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "slogan",
+    "phonetic": "/slˈoʊɡən/",
+    "partOfSpeech": "n.",
+    "meaning": "khẩu hiệu",
+    "example": "The new slogan appears on every poster.",
+    "exampleVi": "Khẩu hiệu mới xuất hiện trên mọi poster.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "brand",
+    "phonetic": "/bɹˈænd/",
+    "partOfSpeech": "n.",
+    "meaning": "thương hiệu",
+    "example": "The brand is known for reliable printers.",
+    "exampleVi": "Thương hiệu nổi tiếng với máy in bền.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "trademark",
+    "phonetic": "/tɹˈeɪdmˌɑɹk/",
+    "partOfSpeech": "n.",
+    "meaning": "nhãn hiệu độc quyền",
+    "example": "Do not copy the company's trademark.",
+    "exampleVi": "Không sao chép nhãn hiệu độc quyền của công ty.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "logo",
+    "phonetic": "/lˈoʊɡoʊ/",
+    "partOfSpeech": "n.",
+    "meaning": "biểu tượng",
+    "example": "The logo must appear in the top left corner.",
+    "exampleVi": "Biểu tượng phải nằm ở góc trên bên trái.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "packaging",
+    "phonetic": "/pˈækɪdʒɪŋ/",
+    "partOfSpeech": "n.",
+    "meaning": "bao bì",
+    "example": "The new packaging uses less plastic.",
+    "exampleVi": "Bao bì mới dùng ít nhựa hơn.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "consumer",
+    "phonetic": "/kənsˈumɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "người tiêu dùng",
+    "example": "Consumers prefer products with clear labels.",
+    "exampleVi": "Người tiêu dùng thích sản phẩm có nhãn rõ.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "competitor",
+    "phonetic": "/kəmpˈɛtətɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "đối thủ cạnh tranh",
+    "example": "Our main competitor lowered its prices.",
+    "exampleVi": "Đối thủ chính đã hạ giá.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "market",
+    "phonetic": "/mˈɑɹkət/",
+    "partOfSpeech": "n.",
+    "meaning": "thị trường",
+    "example": "The company entered the Korean market last year.",
+    "exampleVi": "Công ty tiến vào thị trường Hàn Quốc năm ngoái.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "launch",
+    "phonetic": "/lˈɔntʃ/",
+    "partOfSpeech": "v.",
+    "meaning": "ra mắt",
+    "example": "We will launch the new phone in September.",
+    "exampleVi": "Chúng tôi sẽ ra mắt điện thoại mới vào tháng Chín.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "sample",
+    "phonetic": "/sˈæmpəl/",
+    "partOfSpeech": "n.",
+    "meaning": "mẫu thử",
+    "example": "Free samples are available at the booth.",
+    "exampleVi": "Mẫu thử miễn phí có ở gian hàng.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "catalog",
+    "phonetic": "/kˈætəlɔɡ/",
+    "partOfSpeech": "n.",
+    "meaning": "danh mục sản phẩm",
+    "example": "The spring catalog will be mailed next week.",
+    "exampleVi": "Danh mục mùa xuân sẽ được gửi tuần tới.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "flyer",
+    "phonetic": "/flˈaɪɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "tờ rơi",
+    "example": "Please hand a flyer to each visitor.",
+    "exampleVi": "Vui lòng đưa tờ rơi cho mỗi khách.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "commercial",
+    "phonetic": "/kəmˈɝʃəl/",
+    "partOfSpeech": "n.",
+    "meaning": "quảng cáo (TV/radio)",
+    "example": "The radio commercial will air during the news.",
+    "exampleVi": "Quảng cáo radio sẽ phát trong bản tin.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "publicity",
+    "phonetic": "/pəblˈɪsəti/",
+    "partOfSpeech": "n.",
+    "meaning": "truyền thông",
+    "example": "The event received a lot of publicity.",
+    "exampleVi": "Sự kiện được nhiều truyền thông đưa tin.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "reputation",
+    "phonetic": "/ɹˌɛpjətˈeɪʃən/",
+    "partOfSpeech": "n.",
+    "meaning": "uy tín",
+    "example": "The hotel has a reputation for clean rooms.",
+    "exampleVi": "Khách sạn có uy tín về phòng sạch.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "quality",
+    "phonetic": "/kwˈɑləti/",
+    "partOfSpeech": "n.",
+    "meaning": "chất lượng",
+    "example": "We do not reduce quality to cut costs.",
+    "exampleVi": "Chúng tôi không giảm chất lượng để cắt chi phí.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "feature",
+    "phonetic": "/fˈitʃɚ/",
+    "partOfSpeech": "n.",
+    "meaning": "tính năng",
+    "example": "The main feature of this phone is the long battery.",
+    "exampleVi": "Tính năng chính của điện thoại này là pin lâu.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "advantage",
+    "phonetic": "/ædvˈæntɪdʒ/",
+    "partOfSpeech": "n.",
+    "meaning": "lợi thế",
+    "example": "A downtown location is a clear advantage.",
+    "exampleVi": "Vị trí trung tâm là lợi thế rõ ràng.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "drawback",
+    "phonetic": "/dɹˈɔbˌæk/",
+    "partOfSpeech": "n.",
+    "meaning": "nhược điểm",
+    "example": "The only drawback is the limited parking.",
+    "exampleVi": "Nhược điểm duy nhất là chỗ đỗ xe hạn chế.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "trend",
+    "phonetic": "/tɹˈɛnd/",
+    "partOfSpeech": "n.",
+    "meaning": "xu hướng",
+    "example": "Remote work is a growing trend in this industry.",
+    "exampleVi": "Làm việc từ xa là xu hướng tăng trong ngành này.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "innovative",
+    "phonetic": "/ˈɪnəvˌeɪtɪv/",
+    "partOfSpeech": "adj.",
+    "meaning": "đổi mới",
+    "example": "The award honors innovative packaging design.",
+    "exampleVi": "Giải thưởng vinh danh thiết kế bao bì đổi mới.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "obsolete",
+    "phonetic": "/ˈɑbsəlˌit/",
+    "partOfSpeech": "adj.",
+    "meaning": "lỗi thời",
+    "example": "The old software is now obsolete.",
+    "exampleVi": "Phần mềm cũ giờ đã lỗi thời.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "conventional",
+    "phonetic": "/kənvˈɛnʃənəl/",
+    "partOfSpeech": "adj.",
+    "meaning": "thông thường",
+    "example": "We replaced conventional lights with LED lamps.",
+    "exampleVi": "Chúng tôi thay đèn thông thường bằng đèn LED.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "attractive",
+    "phonetic": "/ətɹˈæktɪv/",
+    "partOfSpeech": "adj.",
+    "meaning": "hấp dẫn",
+    "example": "The package includes an attractive discount.",
+    "exampleVi": "Gói dịch vụ gồm mức giảm giá hấp dẫn.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "exclusive",
+    "phonetic": "/ɪksklˈusɪv/",
+    "partOfSpeech": "adj.",
+    "meaning": "độc quyền",
+    "example": "Club members get exclusive early access.",
+    "exampleVi": "Thành viên câu lạc bộ được quyền truy cập sớm độc quyền.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "implement",
+    "phonetic": "/ˈɪmpləmənt/",
+    "partOfSpeech": "v.",
+    "meaning": "triển khai",
+    "example": "The office will implement a new booking system.",
+    "exampleVi": "Văn phòng sẽ triển khai hệ thống đặt chỗ mới.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "expand",
+    "phonetic": "/ɪkspˈænd/",
+    "partOfSpeech": "v.",
+    "meaning": "mở rộng",
+    "example": "The chain plans to expand into two more cities.",
+    "exampleVi": "Chuỗi cửa hàng định mở rộng thêm hai thành phố.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "reduce",
+    "phonetic": "/ɹədˈus/",
+    "partOfSpeech": "v.",
+    "meaning": "giảm",
+    "example": "Please reduce printing to save paper.",
+    "exampleVi": "Vui lòng giảm in ấn để tiết kiệm giấy.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "increase",
+    "phonetic": "/ˌɪnkɹˈis/",
+    "partOfSpeech": "v.",
+    "meaning": "tăng",
+    "example": "Night flights will increase in July.",
+    "exampleVi": "Chuyến bay đêm sẽ tăng vào tháng Bảy.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "improve",
+    "phonetic": "/ˌɪmpɹˈuv/",
+    "partOfSpeech": "v.",
+    "meaning": "cải thiện",
+    "example": "Training will improve customer service scores.",
+    "exampleVi": "Đào tạo sẽ cải thiện điểm phục vụ khách.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "operate",
+    "phonetic": "/ˈɑpɚˌeɪt/",
+    "partOfSpeech": "v.",
+    "meaning": "vận hành",
+    "example": "The café operates from 7 a.m. to 8 p.m.",
+    "exampleVi": "Quán cà phê vận hành từ 7 giờ sáng đến 8 giờ tối.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "purchase",
+    "phonetic": "/pˈɝtʃəs/",
+    "partOfSpeech": "v.",
+    "meaning": "mua",
+    "example": "You can purchase tickets at the kiosk.",
+    "exampleVi": "Bạn có thể mua vé tại ki-ốt.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "provide",
+    "phonetic": "/pɹəvˈaɪd/",
+    "partOfSpeech": "v.",
+    "meaning": "cung cấp",
+    "example": "The hotel will provide maps of the city.",
+    "exampleVi": "Khách sạn sẽ cung cấp bản đồ thành phố.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "obtain",
+    "phonetic": "/əbtˈeɪn/",
+    "partOfSpeech": "v.",
+    "meaning": "có được",
+    "example": "You must obtain a visitor badge at reception.",
+    "exampleVi": "Bạn phải lấy thẻ khách tại lễ tân.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "retain",
+    "phonetic": "/ɹɪtˈeɪn/",
+    "partOfSpeech": "v.",
+    "meaning": "giữ lại",
+    "example": "Please retain your boarding pass until you exit.",
+    "exampleVi": "Vui lòng giữ thẻ lên máy bay đến khi ra cửa.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "achieve",
+    "phonetic": "/ətʃˈiv/",
+    "partOfSpeech": "v.",
+    "meaning": "đạt được",
+    "example": "The team achieved its sales target in May.",
+    "exampleVi": "Nhóm đã đạt mục tiêu doanh số vào tháng Năm.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "exceed",
+    "phonetic": "/ɪksˈid/",
+    "partOfSpeech": "v.",
+    "meaning": "vượt",
+    "example": "Orders exceeded our estimate this quarter.",
+    "exampleVi": "Đơn hàng vượt ước tính trong quý này.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "fulfill",
+    "phonetic": "/fʊlfˈɪl/",
+    "partOfSpeech": "v.",
+    "meaning": "hoàn thành (đơn hàng)",
+    "example": "We will fulfill all orders by Friday.",
+    "exampleVi": "Chúng tôi sẽ hoàn thành mọi đơn trước thứ Sáu.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "satisfy",
+    "phonetic": "/sˈætəsfˌaɪ/",
+    "partOfSpeech": "v.",
+    "meaning": "làm hài lòng",
+    "example": "A replacement part should satisfy the customer.",
+    "exampleVi": "Linh kiện thay thế sẽ làm khách hài lòng.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "distribute",
+    "phonetic": "/dɪstɹˈɪbjut/",
+    "partOfSpeech": "v.",
+    "meaning": "phân phối",
+    "example": "Please distribute the agenda before the meeting.",
+    "exampleVi": "Vui lòng phân phối chương trình họp trước giờ họp.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "allocate",
+    "phonetic": "/ˈæləkˌeɪt/",
+    "partOfSpeech": "v.",
+    "meaning": "phân bổ",
+    "example": "The board will allocate extra funds to training.",
+    "exampleVi": "Hội đồng sẽ phân bổ thêm quỹ cho đào tạo.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "monitor",
+    "phonetic": "/mˈɑnətɚ/",
+    "partOfSpeech": "v.",
+    "meaning": "giám sát",
+    "example": "Staff monitor the lobby cameras at night.",
+    "exampleVi": "Nhân viên giám sát camera sảnh vào ban đêm.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "verify",
+    "phonetic": "/vˈɛɹəfˌaɪ/",
+    "partOfSpeech": "v.",
+    "meaning": "xác minh",
+    "example": "Please verify the address before shipping.",
+    "exampleVi": "Vui lòng xác minh địa chỉ trước khi gửi hàng.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "identify",
+    "phonetic": "/aɪdˈɛntəfˌaɪ/",
+    "partOfSpeech": "v.",
+    "meaning": "nhận diện",
+    "example": "Guests must identify themselves at the gate.",
+    "exampleVi": "Khách phải xuất trình danh tính ở cổng.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "specify",
+    "phonetic": "/spˈɛsəfˌaɪ/",
+    "partOfSpeech": "v.",
+    "meaning": "nêu rõ",
+    "example": "Please specify the number of chairs you need.",
+    "exampleVi": "Vui lòng nêu rõ số ghế bạn cần.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "indicate",
+    "phonetic": "/ˈɪndəkˌeɪt/",
+    "partOfSpeech": "v.",
+    "meaning": "chỉ ra",
+    "example": "Arrows indicate the way to the exhibition hall.",
+    "exampleVi": "Mũi tên chỉ đường tới hội trường triển lãm.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "ensure",
+    "phonetic": "/ɛnʃˈʊɹ/",
+    "partOfSpeech": "v.",
+    "meaning": "đảm bảo",
+    "example": "Please ensure that the door is locked.",
+    "exampleVi": "Vui lòng đảm bảo cửa đã khóa.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "prevent",
+    "phonetic": "/pɹɪvˈɛnt/",
+    "partOfSpeech": "v.",
+    "meaning": "ngăn",
+    "example": "Barriers prevent trucks from entering the plaza.",
+    "exampleVi": "Rào chắn ngăn xe tải vào quảng trường.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "avoid",
+    "phonetic": "/əvˈɔɪd/",
+    "partOfSpeech": "v.",
+    "meaning": "tránh",
+    "example": "Avoid calling clients during their lunch hour.",
+    "exampleVi": "Tránh gọi khách trong giờ ăn trưa.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "arrange",
+    "phonetic": "/ɚˈeɪndʒ/",
+    "partOfSpeech": "v.",
+    "meaning": "sắp xếp",
+    "example": "I will arrange a taxi for the visiting team.",
+    "exampleVi": "Tôi sẽ sắp xếp taxi cho đoàn khách.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "prepare",
+    "phonetic": "/pɹipˈɛɹ/",
+    "partOfSpeech": "v.",
+    "meaning": "chuẩn bị",
+    "example": "Please prepare name cards for every guest.",
+    "exampleVi": "Vui lòng chuẩn bị thẻ tên cho mọi khách.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "complete",
+    "phonetic": "/kəmplˈit/",
+    "partOfSpeech": "v.",
+    "meaning": "hoàn tất",
+    "example": "Complete the form and leave it at the desk.",
+    "exampleVi": "Hoàn tất mẫu đơn rồi để ở quầy.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "accomplish",
+    "phonetic": "/əkˈɑmplɪʃ/",
+    "partOfSpeech": "v.",
+    "meaning": "hoàn thành (nhiệm vụ)",
+    "example": "We accomplished the move over the weekend.",
+    "exampleVi": "Chúng tôi hoàn thành việc chuyển văn phòng trong cuối tuần.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "perform",
+    "phonetic": "/pɚfˈɔɹm/",
+    "partOfSpeech": "v.",
+    "meaning": "thực hiện",
+    "example": "Technicians perform a safety check each morning.",
+    "exampleVi": "Kỹ thuật viên thực hiện kiểm tra an toàn mỗi sáng.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "conduct",
+    "phonetic": "/kˈɑndəkt/",
+    "partOfSpeech": "v.",
+    "meaning": "tiến hành",
+    "example": "The firm will conduct interviews next week.",
+    "exampleVi": "Công ty sẽ tiến hành phỏng vấn tuần tới.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "establish",
+    "phonetic": "/ɪstˈæblɪʃ/",
+    "partOfSpeech": "v.",
+    "meaning": "thành lập",
+    "example": "They plan to establish an office in Hanoi.",
+    "exampleVi": "Họ định thành lập văn phòng ở Hà Nội.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "introduce",
+    "phonetic": "/ˌɪntɹədˈus/",
+    "partOfSpeech": "v.",
+    "meaning": "giới thiệu",
+    "example": "Let me introduce our new sales manager.",
+    "exampleVi": "Xin giới thiệu quản lý bán hàng mới.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "announce",
+    "phonetic": "/ənˈaʊns/",
+    "partOfSpeech": "v.",
+    "meaning": "công bố",
+    "example": "The airline will announce the new route tomorrow.",
+    "exampleVi": "Hãng hàng không sẽ công bố tuyến mới vào ngày mai.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "negotiate",
+    "phonetic": "/nəɡˈoʊʃiˌeɪt/",
+    "partOfSpeech": "v.",
+    "meaning": "đàm phán",
+    "example": "We will negotiate the price with the supplier.",
+    "exampleVi": "Chúng tôi sẽ đàm phán giá với nhà cung cấp.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "compromise",
+    "phonetic": "/kˈɑmpɹəmˌaɪz/",
+    "partOfSpeech": "n.",
+    "meaning": "sự thỏa hiệp",
+    "example": "The two sides reached a compromise on overtime.",
+    "exampleVi": "Hai bên đạt thỏa hiệp về giờ làm thêm.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "settle",
+    "phonetic": "/sˈɛtəl/",
+    "partOfSpeech": "v.",
+    "meaning": "dàn xếp / thanh toán",
+    "example": "Please settle your bill at the front desk.",
+    "exampleVi": "Vui lòng thanh toán hóa đơn tại quầy lễ tân.",
+    "imageKey": "invoice",
+    "category": "TOEIC"
+  },
+  {
+    "word": "resolve",
+    "phonetic": "/ɹizˈɑlv/",
+    "partOfSpeech": "v.",
+    "meaning": "giải quyết",
+    "example": "The manager resolved the complaint in one hour.",
+    "exampleVi": "Quản lý giải quyết khiếu nại trong một giờ.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "coordinate",
+    "phonetic": "/koʊˈɔɹdənət/",
+    "partOfSpeech": "v.",
+    "meaning": "phối hợp",
+    "example": "She will coordinate the movers and the IT team.",
+    "exampleVi": "Cô ấy sẽ phối hợp đội chuyển nhà và nhóm IT.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "organize",
+    "phonetic": "/ˈɔɹɡənˌaɪz/",
+    "partOfSpeech": "v.",
+    "meaning": "tổ chức",
+    "example": "The club will organize a job fair in April.",
+    "exampleVi": "Câu lạc bộ sẽ tổ chức hội chợ việc làm vào tháng Tư.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "instruct",
+    "phonetic": "/ˌɪnstɹˈʌkt/",
+    "partOfSpeech": "v.",
+    "meaning": "hướng dẫn",
+    "example": "A trainer will instruct you on the new software.",
+    "exampleVi": "Huấn luyện viên sẽ hướng dẫn bạn phần mềm mới.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "inform",
+    "phonetic": "/ˌɪnfˈɔɹm/",
+    "partOfSpeech": "v.",
+    "meaning": "thông tin cho",
+    "example": "Please inform reception if you will be late.",
+    "exampleVi": "Vui lòng báo lễ tân nếu bạn đến muộn.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "update",
+    "phonetic": "/əpdˈeɪt/",
+    "partOfSpeech": "v.",
+    "meaning": "cập nhật",
+    "example": "Please update your contact details online.",
+    "exampleVi": "Vui lòng cập nhật thông tin liên hệ trực tuyến.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "upgrade",
+    "phonetic": "/əpɡɹˈeɪd/",
+    "partOfSpeech": "v.",
+    "meaning": "nâng cấp",
+    "example": "Guests may upgrade to a suite for a small fee.",
+    "exampleVi": "Khách có thể nâng cấp lên suite với phí nhỏ.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "restore",
+    "phonetic": "/ɹɪstˈɔɹ/",
+    "partOfSpeech": "v.",
+    "meaning": "khôi phục",
+    "example": "Power was restored after two hours.",
+    "exampleVi": "Điện được khôi phục sau hai giờ.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "retrieve",
+    "phonetic": "/ɹɪtɹˈiv/",
+    "partOfSpeech": "v.",
+    "meaning": "lấy lại",
+    "example": "You can retrieve lost items at the information desk.",
+    "exampleVi": "Bạn có thể lấy lại đồ thất lạc ở quầy thông tin.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "compile",
+    "phonetic": "/kəmpˈaɪl/",
+    "partOfSpeech": "v.",
+    "meaning": "tổng hợp",
+    "example": "Please compile the survey results by Monday.",
+    "exampleVi": "Vui lòng tổng hợp kết quả khảo sát trước thứ Hai.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "summarize",
+    "phonetic": "/sˈʌmɚˌaɪz/",
+    "partOfSpeech": "v.",
+    "meaning": "tóm tắt",
+    "example": "The last slide summarizes the main points.",
+    "exampleVi": "Slide cuối tóm tắt các ý chính.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "outline",
+    "phonetic": "/ˈaʊtlˌaɪn/",
+    "partOfSpeech": "v.",
+    "meaning": "nêu đại cương",
+    "example": "The letter outlines the new parking rules.",
+    "exampleVi": "Lá thư nêu đại cương quy định đỗ xe mới.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "emphasize",
+    "phonetic": "/ˈɛmfəsˌaɪz/",
+    "partOfSpeech": "v.",
+    "meaning": "nhấn mạnh",
+    "example": "The speaker emphasized the need for safety glasses.",
+    "exampleVi": "Diễn giả nhấn mạnh việc cần kính bảo hộ.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "commit",
+    "phonetic": "/kəmˈɪt/",
+    "partOfSpeech": "v.",
+    "meaning": "cam kết",
+    "example": "The city committed funds to the new terminal.",
+    "exampleVi": "Thành phố cam kết quỹ cho nhà ga mới.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "assure",
+    "phonetic": "/əʃˈʊɹ/",
+    "partOfSpeech": "v.",
+    "meaning": "cam đoan",
+    "example": "We assure guests that the water is safe.",
+    "exampleVi": "Chúng tôi cam đoan với khách rằng nước an toàn.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "efficient",
+    "phonetic": "/ɪfˈɪʃənt/",
+    "partOfSpeech": "adj.",
+    "meaning": "hiệu quả",
+    "example": "The new printer is faster and more efficient.",
+    "exampleVi": "Máy in mới nhanh và hiệu quả hơn.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "reliable",
+    "phonetic": "/ɹɪlˈaɪəbəl/",
+    "partOfSpeech": "adj.",
+    "meaning": "đáng tin cậy",
+    "example": "This courier is reliable for overnight delivery.",
+    "exampleVi": "Hãng chuyển phát này đáng tin cho giao hàng qua đêm.",
+    "imageKey": "shipment",
+    "category": "TOEIC"
+  },
+  {
+    "word": "convenient",
+    "phonetic": "/kənvˈinjənt/",
+    "partOfSpeech": "adj.",
+    "meaning": "tiện lợi",
+    "example": "The hotel is convenient for the convention center.",
+    "exampleVi": "Khách sạn tiện cho trung tâm hội nghị.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "essential",
+    "phonetic": "/ɛsˈɛnʃəl/",
+    "partOfSpeech": "adj.",
+    "meaning": "thiết yếu",
+    "example": "A valid passport is essential for this trip.",
+    "exampleVi": "Hộ chiếu còn hạn là thứ thiết yếu cho chuyến đi.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "mandatory",
+    "phonetic": "/mˈændətˌɔɹi/",
+    "partOfSpeech": "adj.",
+    "meaning": "bắt buộc",
+    "example": "A safety helmet is mandatory in the warehouse.",
+    "exampleVi": "Mũ bảo hộ là bắt buộc trong kho.",
+    "imageKey": "authorize",
+    "category": "TOEIC"
+  },
+  {
+    "word": "optional",
+    "phonetic": "/ˈɑpʃənəl/",
+    "partOfSpeech": "adj.",
+    "meaning": "không bắt buộc",
+    "example": "The city tour is optional for conference guests.",
+    "exampleVi": "Tour thành phố không bắt buộc với khách hội nghị.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "temporary",
+    "phonetic": "/tˈɛmpɚˌɛɹi/",
+    "partOfSpeech": "adj.",
+    "meaning": "tạm thời",
+    "example": "A temporary office is set up on the third floor.",
+    "exampleVi": "Văn phòng tạm được bố trí ở tầng ba.",
+    "imageKey": "headquarters",
+    "category": "TOEIC"
+  },
+  {
+    "word": "permanent",
+    "phonetic": "/pˈɝmənənt/",
+    "partOfSpeech": "adj.",
+    "meaning": "thường xuyên / lâu dài",
+    "example": "She accepted a permanent position in accounting.",
+    "exampleVi": "Cô ấy nhận vị trí chính thức ở phòng kế toán.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "prior",
+    "phonetic": "/pɹˈaɪɚ/",
+    "partOfSpeech": "adj.",
+    "meaning": "trước đó",
+    "example": "Prior experience with hotels is helpful.",
+    "exampleVi": "Kinh nghiệm khách sạn trước đó sẽ hữu ích.",
+    "imageKey": "applicant",
+    "category": "TOEIC"
+  },
+  {
+    "word": "subsequent",
+    "phonetic": "/sˈʌbsəkwənt/",
+    "partOfSpeech": "adj.",
+    "meaning": "tiếp theo",
+    "example": "Subsequent meetings will be held online.",
+    "exampleVi": "Các cuộc họp tiếp theo sẽ họp trực tuyến.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "frequent",
+    "phonetic": "/fɹˈikwənt/",
+    "partOfSpeech": "adj.",
+    "meaning": "thường xuyên",
+    "example": "Frequent travelers may join the loyalty club.",
+    "exampleVi": "Khách đi thường xuyên có thể tham gia câu lạc bộ thành viên.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "adequate",
+    "phonetic": "/ˈædəkwət/",
+    "partOfSpeech": "adj.",
+    "meaning": "đủ",
+    "example": "Please bring an adequate number of chairs.",
+    "exampleVi": "Vui lòng mang đủ số ghế.",
+    "imageKey": "conference",
+    "category": "TOEIC"
+  },
+  {
+    "word": "insufficient",
+    "phonetic": "/ˌɪnsəfˈɪʃənt/",
+    "partOfSpeech": "adj.",
+    "meaning": "không đủ",
+    "example": "There was insufficient parking for the event.",
+    "exampleVi": "Chỗ đỗ xe không đủ cho sự kiện.",
+    "imageKey": "occupancy",
+    "category": "TOEIC"
+  },
+  {
+    "word": "substantial",
+    "phonetic": "/səbstˈænʃəl/",
+    "partOfSpeech": "adj.",
+    "meaning": "đáng kể",
+    "example": "The store reported a substantial rise in sales.",
+    "exampleVi": "Cửa hàng báo doanh số tăng đáng kể.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "moderate",
+    "phonetic": "/mˈɑdɚət/",
+    "partOfSpeech": "adj.",
+    "meaning": "vừa phải",
+    "example": "Choose a hotel in the moderate price range.",
+    "exampleVi": "Chọn khách sạn ở tầm giá vừa phải.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "minimum",
+    "phonetic": "/mˈɪnəməm/",
+    "partOfSpeech": "n.",
+    "meaning": "mức tối thiểu",
+    "example": "The minimum order is 20 boxes.",
+    "exampleVi": "Đơn hàng tối thiểu là 20 thùng.",
+    "imageKey": "inventory",
+    "category": "TOEIC"
+  },
+  {
+    "word": "maximum",
+    "phonetic": "/mˈæksəməm/",
+    "partOfSpeech": "n.",
+    "meaning": "mức tối đa",
+    "example": "The elevator has a maximum load of 800 kilograms.",
+    "exampleVi": "Thang máy có tải tối đa 800 kg.",
+    "imageKey": "occupancy",
+    "category": "TOEIC"
+  },
+  {
+    "word": "approximately",
+    "phonetic": "/əpɹˈɑksəmətli/",
+    "partOfSpeech": "adv.",
+    "meaning": "khoảng",
+    "example": "The taxi ride takes approximately 25 minutes.",
+    "exampleVi": "Chuyến taxi mất khoảng 25 phút.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "particularly",
+    "phonetic": "/pˌɑɹtˈɪkjəlɚli/",
+    "partOfSpeech": "adv.",
+    "meaning": "đặc biệt",
+    "example": "The restaurant is particularly busy on Fridays.",
+    "exampleVi": "Nhà hàng đặc biệt đông vào thứ Sáu.",
+    "imageKey": "complimentary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "successfully",
+    "phonetic": "/səksˈɛsfəli/",
+    "partOfSpeech": "adv.",
+    "meaning": "thành công",
+    "example": "The team successfully launched the new catalog.",
+    "exampleVi": "Nhóm đã ra mắt danh mục mới thành công.",
+    "imageKey": "brochure",
+    "category": "TOEIC"
+  },
+  {
+    "word": "gradually",
+    "phonetic": "/ɡɹˈædʒuəli/",
+    "partOfSpeech": "adv.",
+    "meaning": "dần dần",
+    "example": "Prices will gradually increase over the year.",
+    "exampleVi": "Giá sẽ tăng dần trong năm.",
+    "imageKey": "budget",
+    "category": "TOEIC"
+  },
+  {
+    "word": "highly",
+    "phonetic": "/hˈaɪli/",
+    "partOfSpeech": "adv.",
+    "meaning": "rất / hết sức",
+    "example": "This course is highly recommended for new managers.",
+    "exampleVi": "Khóa này rất được khuyên cho quản lý mới.",
+    "imageKey": "employee",
+    "category": "TOEIC"
+  },
+  {
+    "word": "thoroughly",
+    "phonetic": "/θˈɝoʊli/",
+    "partOfSpeech": "adv.",
+    "meaning": "kỹ lưỡng",
+    "example": "Please check the figures thoroughly before you send them.",
+    "exampleVi": "Vui lòng kiểm tra số liệu kỹ trước khi gửi.",
+    "imageKey": "memo",
+    "category": "TOEIC"
+  },
+  {
+    "word": "accordingly",
+    "phonetic": "/əkˈɔɹdɪŋli/",
+    "partOfSpeech": "adv.",
+    "meaning": "theo đó",
+    "example": "The flight was delayed; please wait accordingly.",
+    "exampleVi": "Chuyến bay bị hoãn; vui lòng chờ theo đó.",
+    "imageKey": "itinerary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "therefore",
+    "phonetic": "/ðˈɛɹfˌɔɹ/",
+    "partOfSpeech": "adv.",
+    "meaning": "do đó",
+    "example": "The hall is full; therefore, extra chairs were added.",
+    "exampleVi": "Hội trường đã đầy; do đó đã thêm ghế.",
+    "imageKey": "occupancy",
+    "category": "TOEIC"
+  },
+  {
+    "word": "however",
+    "phonetic": "/hˌaʊˈɛvɚ/",
+    "partOfSpeech": "adv.",
+    "meaning": "tuy nhiên",
+    "example": "The room is small; however, it has a city view.",
+    "exampleVi": "Phòng nhỏ; tuy nhiên có view thành phố.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  },
+  {
+    "word": "moreover",
+    "phonetic": "/mɔɹˈoʊvɚ/",
+    "partOfSpeech": "adv.",
+    "meaning": "hơn nữa",
+    "example": "The hotel is central; moreover, breakfast is included.",
+    "exampleVi": "Khách sạn ở trung tâm; hơn nữa đã gồm bữa sáng.",
+    "imageKey": "complimentary",
+    "category": "TOEIC"
+  },
+  {
+    "word": "nevertheless",
+    "phonetic": "/nˌɛvɚðəlˈɛs/",
+    "partOfSpeech": "adv.",
+    "meaning": "dù vậy",
+    "example": "The train was late; nevertheless, we arrived on time.",
+    "exampleVi": "Tàu muộn; dù vậy chúng tôi vẫn tới đúng giờ.",
+    "imageKey": "deadline",
+    "category": "TOEIC"
+  },
+  {
+    "word": "otherwise",
+    "phonetic": "/ˈʌðɚwˌaɪz/",
+    "partOfSpeech": "adv.",
+    "meaning": "nếu không",
+    "example": "Please RSVP today; otherwise, we cannot hold the seat.",
+    "exampleVi": "Vui lòng xác nhận hôm nay; nếu không chúng tôi không giữ chỗ.",
+    "imageKey": "reservation",
+    "category": "TOEIC"
+  }
+]

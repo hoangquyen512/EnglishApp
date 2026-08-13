@@ -29,6 +29,7 @@ export const UI = {
   missionsToday: "Nhiệm vụ hôm nay",
   schedulerLabel: "Nhắc học mỗi (phút)",
   cardIntervalHint: "Pet đổi thẻ mỗi 30 giây",
+  vocabBankSize: "{n} từ trong bộ học",
   loading: "Đang tải...",
   noCard: "Chưa có thẻ nào phù hợp.",
   popupTitle: "Học ngay",
