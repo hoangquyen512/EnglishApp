@@ -1,12 +1,12 @@
 # Daily English Companion Chat — Design Spec
 
 Date: 2026-08-13  
-Product: EnglishApp  
+Product: Yume  
 Status: Draft for review
 
 ## Problem
 
-EnglishApp needs a daily place to talk — check in, share how the day feels, and practice English without turning the conversation into a lesson. The first version is an AI companion (not human-to-human chat).
+Yume needs a daily place to talk — check in, share how the day feels, and practice English without turning the conversation into a lesson. The first version is an AI companion (not human-to-human chat).
 
 ## Goals
 
@@ -73,7 +73,7 @@ Endpoints:
 | `messages` | paginated history; send a user turn |
 | `GET /api/coach/:messageId` | coach payload, only when the user opens a chip |
 
-Send-message flow: persist user message → call an OpenAI-compatible chat API (model from env) with memory summary + last 10 messages + current turn → persist companion reply → write 0–2 coach suggestions into `messages.coach_json` on the **user** message (or the companion message if the chip teaches a word Jun used). Mood / chips / level are secondary: a missing extra must not fail the reply.
+Send-message flow: persist user message → call an OpenAI-compatible chat API (model from env) with memory summary + last 10 messages + current turn → persist companion reply → write 0–2 coach suggestions into `messages.coach_json` on the **user** message (or the companion message if the chip teaches a word Sora used). Mood / chips / level are secondary: a missing extra must not fail the reply.
 
 Cron (default timezone `Asia/Ho_Chi_Minh`, per-user `users.timezone`): if `last_checkin_on` is not today **and** the user has not already sent a `chat` message today, insert one companion message with `source = daily_checkin` and set `last_checkin_on`. If the user already talked today, skip. Cron is the primary path; `GET /api/messages` may lazy-create the same check-in under the same rules when the user opens the app before cron runs.
 
@@ -118,7 +118,7 @@ Users cannot read another user’s messages (`user_id` scoped on every query).
 
 ## Companion behavior
 
-Working name: **Jun**. Warm, curious, concise. One main question per turn. Friend, not teacher.
+Pet name (finalized): **Sora**. Warm, curious, concise. One main question per turn. Friend, not teacher.
 
 Level shapes wording:
 
@@ -130,7 +130,7 @@ New users start at `beginner`. On the same 8-message cadence as `memory_summary`
 
 Daily check-in copy: greeting + a callback to yesterday’s mood or topic + one open question. Do not repeat yesterday’s sentence verbatim.
 
-Safety: if the user expresses self-harm or crisis, Jun listens, points to real-world help, does not do therapy, and **does not attach coach chips** to those messages.
+Safety: if the user expresses self-harm or crisis, Sora listens, points to real-world help, does not do therapy, and **does not attach coach chips** to those messages.
 
 ## Coach chips
 
@@ -174,7 +174,7 @@ Fake the LLM in automated tests (full JSON, missing extras, timeout). No live pr
 
 **E2E (Playwright, narrow)**
 
-1. Register → thread shows Jun’s welcome/check-in.
+1. Register → thread shows Sora’s welcome/check-in.
 2. Send an English line → companion reply appears.
 3. Open a chip when `hasCoach` → Vietnamese explanation + `Dùng câu này` inserts into the composer.
 4. Sign out and back in → history remains.
@@ -185,8 +185,8 @@ No visual regression, load suite, or device farm in v1.
 
 Static phone mockup (not the real app): `docs/superpowers/specs/demo/index.html`.
 
-Three screens at ~390px: login, Jun thread with an optional coach chip, light profile. Vietnamese chrome, English bubbles. Mood is shown as remembered text, not a picker.
+Three screens at ~390px: login, Sora thread with an optional coach chip, light profile. Vietnamese chrome, English bubbles. Mood is shown as remembered text, not a picker.
 
 ## Success
 
-A day counts as successful when the user can open the app, see or start a conversation with Jun, be understood, and optionally tap a chip — without being forced through a lesson or a mood widget. The next day’s check-in should feel like it remembered them.
+A day counts as successful when the user can open the app, see or start a conversation with Sora, be understood, and optionally tap a chip — without being forced through a lesson or a mood widget. The next day’s check-in should feel like it remembered them.
