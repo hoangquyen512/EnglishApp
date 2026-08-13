@@ -10,11 +10,17 @@ export type MissionType = "learn_new" | "review_wrong" | "topic_practice";
 
 export type CefrLevel = "A1" | "A2" | "B1" | "B2";
 
+export type FlashcardOutcome = "viewed" | "known" | "unknown";
+
 export interface Vocabulary {
   id: number;
   word: string;
   meaning: string;
   example: string | null;
+  exampleVi: string | null;
+  phonetic: string | null;
+  partOfSpeech: string | null;
+  imageKey: string | null;
   category: string | null;
   createdAt: string;
 }
@@ -93,20 +99,17 @@ export interface UserProgress {
   updatedAt: string;
 }
 
-export interface QuizChoice {
-  id: string;
-  text: string;
-  isCorrect: boolean;
-}
-
-export interface QuizCard {
+export interface StudyFlashcard {
   contentId: number;
   contentType: ContentType;
-  prompt: string;
+  word: string;
+  phonetic: string | null;
+  partOfSpeech: string | null;
+  meaning: string;
   example: string | null;
+  exampleVi: string | null;
+  imageKey: string;
   topic: PhraseTopic | null;
-  choices: QuizChoice[];
-  correctAnswer: string;
 }
 
 export interface StudyMode {
@@ -116,7 +119,9 @@ export interface StudyMode {
 
 export interface SubmitAnswerResult {
   isCorrect: boolean;
+  outcome: FlashcardOutcome;
+  xpGained: number;
   leveledUp: boolean;
   completedMissions: DailyMission[];
-  pet: PetState;
+  pet: PetState | null;
 }

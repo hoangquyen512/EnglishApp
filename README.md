@@ -1,8 +1,8 @@
 # Vocab Pet
 
-Desktop app (Windows + macOS) for daily English flashcards with a Tamagotchi-style pet. Built with **Tauri 2**, **React 18**, **TypeScript**, **Zustand**, **TailwindCSS**, and **SQLite**.
+Desktop app (Windows + macOS) for daily **TOEIC flashcards** with a Tamagotchi-style pet. Built with **Tauri 2**, **React 18**, **TypeScript**, **Zustand**, **TailwindCSS**, and **SQLite**.
 
-Correct answers feed the pet (XP, mood, evolution). Missing days makes the pet sad or hungry — it never dies.
+The pet sits on your desk and changes a vocabulary card about every **10 seconds**. Each card shows the English word, IPA, pronunciation audio, an illustration, and an example sentence. Viewing cards feeds the pet (XP, mood, evolution). Missing days makes the pet sad or hungry — it never dies.
 
 ## Prerequisites
 
@@ -15,30 +15,33 @@ Correct answers feed the pet (XP, mood, evolution). Missing days makes the pet s
 ```bash
 pnpm install
 pnpm test
+pnpm dev          # browser preview of the TOEIC desk (no tray / SQLite)
 pnpm tauri dev
-pnpm tauri build    # Windows: NSIS current-user setup.exe; macOS: drag-and-drop .dmg
+pnpm tauri build  # Windows: NSIS current-user setup.exe; macOS: drag-and-drop .dmg
 ```
 
-Installers are **per-user** (no admin / no UAC). The `.app` inside the macOS DMG can live in any writable folder, not only `/Applications`. SQLite and settings are stored under Tauri `appLocalDataDir` / `appDataDir`. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) § Deployment constraints.
+Open `http://localhost:1420/?window=popup` for the always-on-top study widget in the browser preview.
+
+Installers are **per-user** (no admin / no UAC). SQLite and settings live under Tauri `appLocalDataDir` / `appDataDir`. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
 In release builds the main window starts hidden. Use the tray icon:
 
-- **Mở app** — dashboard (pet, missions, study mode)
-- **Học ngay** — flashcard popup
+- **Mở app** — pet desk + live flashcards
+- **Học ngay** — always-on-top TOEIC widget (auto-speak, 10s rotate)
 - **Thoát** — quit
 
-## MVP flow
+## Study flow
 
 1. Choose a pet species (Cat / Fox / Dragon).
-2. Pick study mode: vocabulary, or phrases + topic (travel / food / office / family).
-3. Answer 4-choice flashcards. Correct answers grant XP; enough XP levels the pet and may change its sprite.
-4. Daily missions generate automatically. Completing them grants bonus XP.
-5. A demo scheduler opens the popup every N minutes (default 2).
+2. Watch TOEIC cards on the desk. The pet rotates a card every 10 seconds.
+3. **Học ngay** opens a focused widget: auto-play pronunciation, pause / next, **Đã nhớ** / **Chưa nhớ**.
+4. Viewing a card grants a little XP; marking **Đã nhớ** grants more and advances spaced repetition.
+5. Daily missions still generate automatically.
 
-## Content sources
+## Content
 
-- Sample vocabulary lemmas follow the **NGSL** (New General Service List) by Browne, Culligan & Phillips, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Vietnamese glosses and example sentences in this repo are original.
-- Communication phrases are original (not copied from commercial courses).
-- Broader NGSL / [WordNet](https://wordnet.princeton.edu/) / [Tatoeba](https://tatoeba.org) (CC-BY) can be imported later.
+- Seed vocabulary is original TOEIC-style business English (invoice, deadline, occupancy, …) with IPA, Vietnamese glosses, and example sentences.
+- Communication phrases remain available as a second mode.
+- Pronunciation uses the system `speechSynthesis` voice (en-US). Illustrations are bundled SVGs so the app works offline.
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for module boundaries and the SQLite schema.

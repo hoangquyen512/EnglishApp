@@ -6,6 +6,10 @@ interface VocabularyRow {
   word: string;
   meaning: string;
   example: string | null;
+  example_vi: string | null;
+  phonetic: string | null;
+  part_of_speech: string | null;
+  image_key: string | null;
   category: string | null;
   created_at: string;
 }
@@ -20,12 +24,19 @@ interface ProgressRow {
   status: LearningStatus;
 }
 
+const VOCAB_COLUMNS =
+  "id, word, meaning, example, example_vi, phonetic, part_of_speech, image_key, category, created_at";
+
 function mapVocab(row: VocabularyRow): Vocabulary {
   return {
     id: row.id,
     word: row.word,
     meaning: row.meaning,
     example: row.example,
+    exampleVi: row.example_vi,
+    phonetic: row.phonetic,
+    partOfSpeech: row.part_of_speech,
+    imageKey: row.image_key,
     category: row.category,
     createdAt: row.created_at,
   };
@@ -45,14 +56,14 @@ function mapProgress(row: ProgressRow): LearningProgress {
 
 export async function listVocabulary(): Promise<Vocabulary[]> {
   const rows = await select<VocabularyRow>(
-    "SELECT id, word, meaning, example, category, created_at FROM vocabulary ORDER BY id ASC",
+    `SELECT ${VOCAB_COLUMNS} FROM vocabulary ORDER BY id ASC`,
   );
   return rows.map(mapVocab);
 }
 
 export async function getVocabularyById(id: number): Promise<Vocabulary | null> {
   const row = await selectOne<VocabularyRow>(
-    "SELECT id, word, meaning, example, category, created_at FROM vocabulary WHERE id = $1",
+    `SELECT ${VOCAB_COLUMNS} FROM vocabulary WHERE id = $1`,
     [id],
   );
   return row ? mapVocab(row) : null;
@@ -60,7 +71,7 @@ export async function getVocabularyById(id: number): Promise<Vocabulary | null> 
 
 export async function getDueOrNewVocabulary(nowIso: string): Promise<Vocabulary[]> {
   const rows = await select<VocabularyRow>(
-    `SELECT v.id, v.word, v.meaning, v.example, v.category, v.created_at
+    `SELECT v.id, v.word, v.meaning, v.example, v.example_vi, v.phonetic, v.part_of_speech, v.image_key, v.category, v.created_at
      FROM vocabulary v
      LEFT JOIN learning_progress p ON p.vocabulary_id = v.id
      WHERE p.id IS NULL OR p.next_review_at IS NULL OR p.next_review_at <= $1

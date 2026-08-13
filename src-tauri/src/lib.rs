@@ -108,6 +108,42 @@ fn sqlite_migrations() -> Vec<Migration> {
             sql: include_str!("../migrations/016_seed_user_progress.sql"),
             kind: MigrationKind::Up,
         },
+        Migration {
+            version: 17,
+            description: "vocab_phonetic",
+            sql: include_str!("../migrations/017_vocab_phonetic.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 18,
+            description: "vocab_part_of_speech",
+            sql: include_str!("../migrations/018_vocab_pos.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 19,
+            description: "vocab_image_key",
+            sql: include_str!("../migrations/019_vocab_image_key.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 20,
+            description: "vocab_example_vi",
+            sql: include_str!("../migrations/020_vocab_example_vi.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 21,
+            description: "replace_ngsl_with_toeic",
+            sql: include_str!("../migrations/021_replace_ngsl_with_toeic.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 22,
+            description: "seed_more_toeic",
+            sql: include_str!("../migrations/022_seed_more_toeic.sql"),
+            kind: MigrationKind::Up,
+        },
     ]
 }
 

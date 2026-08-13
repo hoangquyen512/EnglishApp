@@ -2,6 +2,7 @@ import type { PetMood } from "../types";
 
 export const XP_PER_LEVEL = 50;
 export const CORRECT_ANSWER_XP = 5;
+export const VIEWED_CARD_XP = 2;
 
 export const SPRITE_EMOJI: Record<string, string> = {
   cat_egg: "🥚",

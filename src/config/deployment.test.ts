@@ -3,6 +3,9 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 interface TauriConf {
+  app: {
+    windows: Array<{ label: string; width: number; height: number }>;
+  };
   bundle: {
     targets: string | string[];
     windows?: { nsis?: { installMode?: string } };
@@ -31,5 +34,11 @@ describe("deployment constraints", () => {
     expect(targets).not.toBe("all");
 
     expect(conf.bundle.windows?.nsis?.installMode).toBe("currentUser");
+  });
+
+  it("sizes the study popup for a TOEIC flashcard", () => {
+    const popup = loadConf().app.windows.find((window) => window.label === "popup");
+    expect(popup?.width).toBe(420);
+    expect(popup?.height).toBe(680);
   });
 });

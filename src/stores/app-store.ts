@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import type { DailyMission, PetSpecies, PetState, UserProgress } from "../types";
+import { DEMO_MISSIONS, DEMO_PET, DEMO_SPECIES } from "../data/demo-pet";
 import {
   adoptSpecies,
   ensureDailyMissions,
@@ -10,6 +11,7 @@ import {
   refreshUserProgress,
   todaysMissions,
 } from "../features/pet-state";
+import { isTauri } from "../lib/tauri";
 import { resolveUserDataDirs } from "../lib/user-paths";
 
 interface AppState {
@@ -33,6 +35,17 @@ export const useAppStore = create<AppState>((set, get) => ({
   missions: [],
   progress: null,
   hydrate: async () => {
+    if (!isTauri()) {
+      set({
+        ready: true,
+        error: null,
+        species: DEMO_SPECIES,
+        pet: DEMO_PET,
+        missions: DEMO_MISSIONS,
+        progress: null,
+      });
+      return;
+    }
     try {
       await resolveUserDataDirs();
       const species = await listSpecies();
@@ -55,6 +68,17 @@ export const useAppStore = create<AppState>((set, get) => ({
     }
   },
   chooseSpecies: async (species) => {
+    if (!isTauri()) {
+      set({
+        pet: {
+          ...DEMO_PET,
+          petName: species.speciesName,
+          speciesName: species.speciesName,
+          speciesId: species.id,
+        },
+      });
+      return;
+    }
     const pet = await adoptSpecies(species);
     set({ pet });
   },

@@ -13,7 +13,7 @@ MVP desktop app: a hidden-by-default Tauri shell, a small always-on-top study po
 | Alerts | Official `tauri-plugin-notification` |
 | Tray | `tauri::tray::TrayIconBuilder` |
 
-Rust is limited to tray, window show/hide, plugin wiring, and SQL migrations. Quiz, XP, mood, missions, and progress live in TypeScript.
+Rust is limited to tray, window show/hide, plugin wiring, and SQL migrations. Flashcards, XP, mood, missions, and progress live in TypeScript.
 
 ## Process and windows
 
@@ -24,10 +24,11 @@ Rust is limited to tray, window show/hide, plugin wiring, and SQL migrations. Qu
                 │                  │
                 ▼                  ▼
      ┌─────────────────┐   ┌─────────────────────┐
-     │  main (880x640) │   │ popup (400x500)     │
+     │  main (880x640) │   │ popup (420x680)     │
      │  visible: false │   │ alwaysOnTop, no     │
      │  onboarding /   │   │ chrome, skipTaskbar │
-     │  home + missions│   │ flashcard quiz      │
+     │  home + live    │   │ TOEIC flashcard     │
+     │  10s cards      │   │ auto-speak + rotate │
      └────────┬────────┘   └──────────┬──────────┘
               │                       │
               └──────────┬────────────┘
@@ -45,7 +46,7 @@ Debug builds (`pnpm tauri dev`) show the main window immediately so onboarding i
 ```
 src/                         React + TS
   components/popup|pet|shared
-  features/vocabulary        next card, spaced repetition, submitAnswer
+  features/vocabulary        deck, 10s timer, TTS, recordFlashcardEvent
   features/pet-state         XP, mood, evolution, daily missions, user_progress
   features/scheduler         interval timer + notification + popup
   stores/                    Zustand
@@ -61,14 +62,18 @@ src-tauri/
 
 Features export a public `index.ts` only. They may call `db/` and another feature's public API (vocabulary → pet-state after an answer). Components do not embed SQL.
 
-## Data flow (one answer)
+## Data flow (one flashcard)
 
-1. Popup calls `getNextCard(contentType, topic)` → due/new vocab or unseen/wrong phrases, plus 3 distractors.
-2. `submitAnswer` records `study_sessions`, updates `learning_progress` for vocabulary (simple SM-2-ish intervals: 1 / 3 / 7 / 14 days, `mastered` at 5 correct).
-3. `user_progress` is recomputed (unique correct words/phrases, streak, JSON `progress_by_topic`).
-4. Daily missions increment when the event matches (`learn_new` / `review_wrong` / `topic_practice`). Completing a mission grants its `xp_reward`.
-5. A correct answer grants +5 XP. Overflow levels the pet (`XP_PER_LEVEL = 50`) and may move `current_stage_id` to the next `pet_evolution_stages` row (`min_level` 1 → 3 → 6).
-6. `last_fed_at` is set and mood becomes `happy`.
+1. Home and popup call `getStudyDeck(contentType, topic)` → due/new TOEIC vocabulary (word, IPA, image key, example) or phrases.
+2. A card stays on screen for **10 seconds**, then the pet rotates to the next card. Audio auto-plays in the popup via `speechSynthesis`.
+3. `recordFlashcardEvent` records `study_sessions`. Outcomes:
+   - `viewed` (timer or next): +2 XP, short 1-day interval, does not count toward mastered
+   - `known`: +5 XP, SM-2-ish intervals 1 / 3 / 7 / 14 days, `mastered` at 5 known marks
+   - `unknown`: 0 XP, interval resets to 0 days
+4. `user_progress` is recomputed (unique seen words/phrases, streak, JSON `progress_by_topic`).
+5. Daily missions increment when the event matches (`learn_new` / `review_wrong` / `topic_practice`). Completing a mission grants its `xp_reward`.
+6. XP overflow levels the pet (`XP_PER_LEVEL = 50`) and may move `current_stage_id` to the next `pet_evolution_stages` row (`min_level` 1 → 3 → 6).
+7. `last_fed_at` is set and mood becomes `happy`.
 
 Idle mood (from `last_fed_at`): 0d happy → 1d neutral → 2d sad → 3d+ hungry. The pet does not die.
 
@@ -84,7 +89,7 @@ SQLite via sqlx only runs one statement per migration version, so schema and see
 
 The database file is `{appLocalDataDir}/vocab_pet.db`. Settings are `{appDataDir}/settings.json`. Both directories are created at startup through Tauri's path API (`app.path().app_local_data_dir()` / `app_data_dir()` on the Rust side, `@tauri-apps/api/path` on the frontend). `tauri-plugin-sql` is registered with that absolute `sqlite:` URL so migrations apply to the same file the UI opens.
 
-Seed: 10 NGSL-based lemmas, 10 original phrases across four topics, three species × three evolution stages, one empty `user_progress` row. `pet_state` is inserted only after onboarding.
+Seed: 16 TOEIC-style lemmas (IPA, illustration key, example + Vietnamese gloss), 10 original phrases across four topics, three species × three evolution stages, one empty `user_progress` row. `pet_state` is inserted only after onboarding.
 
 Phrases have no `learning_progress` row (FK is `vocabulary_id` only). Phrase review uses `study_sessions` aggregates.
 

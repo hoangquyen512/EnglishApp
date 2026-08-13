@@ -13,11 +13,11 @@ export function PrimaryButton({
 }: PrimaryButtonProps) {
   const styles =
     variant === "primary"
-      ? "bg-orange-500 text-white hover:bg-orange-600"
-      : "bg-white text-orange-800 border border-orange-200 hover:bg-orange-50";
+      ? "bg-clay text-white hover:bg-clay-dark"
+      : "bg-paper text-ink border border-line hover:bg-cream";
   return (
     <button
-      className={`rounded-xl px-4 py-2 text-sm font-semibold transition disabled:opacity-50 ${styles} ${className}`}
+      className={`min-h-10 rounded-xl px-4 py-2 text-base font-semibold transition disabled:opacity-50 ${styles} ${className}`}
       {...props}
     >
       {children}

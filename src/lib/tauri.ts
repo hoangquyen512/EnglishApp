@@ -29,7 +29,7 @@ export async function showMainWindow(): Promise<void> {
 
 export async function showPopupWindow(): Promise<void> {
   if (!isTauri()) {
-    window.open(`${window.location.origin}/?window=popup`, "vocab-pet-popup", "width=400,height=500");
+    window.open(`${window.location.origin}/?window=popup`, "vocab-pet-popup", "width=420,height=680");
     return;
   }
   const { invoke } = await import("@tauri-apps/api/core");
@@ -61,7 +61,7 @@ export async function notifyStudyTime(): Promise<void> {
   if (granted) {
     sendNotification({
       title: "Vocab Pet",
-      body: "Đến giờ học rồi — pet đang đợi bạn!",
+      body: "Một thẻ TOEIC nhỏ cho pet?",
     });
   }
 }

@@ -1,13 +1,17 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { UI } from "../../constants/ui";
-import { getNextCard, submitAnswer } from "../../features/vocabulary";
+import { recordFlashcardEvent, speakWord } from "../../features/vocabulary";
 import { dismissStudyPopup } from "../../features/scheduler";
 import { useAppStore } from "../../stores/app-store";
 import { useStudyStore } from "../../stores/study-store";
-import type { QuizCard, QuizChoice } from "../../types";
-import { PetAvatar } from "../pet/pet-avatar";
-import { PrimaryButton } from "../shared/primary-button";
-import { ChoiceButton } from "./choice-button";
+import type { FlashcardOutcome } from "../../types";
+import { FlashcardFace } from "../flashcard/flashcard-face";
+import { useFlashcardPlayer } from "../flashcard/use-flashcard-player";
+import { IconButton, IconClose } from "../shared/icon-button";
+
+function remainingLabel(ms: number): string {
+  return `${Math.max(0, Math.ceil(ms / 1000))}s`;
+}
 
 export function FlashcardPopup() {
   const pet = useAppStore((state) => state.pet);
@@ -15,106 +19,103 @@ export function FlashcardPopup() {
   const setPet = useAppStore((state) => state.setPet);
   const contentType = useStudyStore((state) => state.contentType);
   const topic = useStudyStore((state) => state.topic);
-  const [card, setCard] = useState<QuizCard | null>(null);
-  const [selected, setSelected] = useState<QuizChoice | null>(null);
-  const [revealed, setRevealed] = useState(false);
-  const [feedback, setFeedback] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
-  const loadCard = useCallback(async () => {
-    setBusy(true);
-    setError(null);
-    setSelected(null);
-    setRevealed(false);
-    setFeedback(null);
-    try {
-      const next = await getNextCard(contentType, contentType === "phrase" ? topic : null);
-      setCard(next);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : UI.noCard);
-    } finally {
-      setBusy(false);
-    }
-  }, [contentType, topic]);
+  const onAdvance = useCallback(
+    async (card: { contentId: number; contentType: typeof contentType; topic: typeof topic }) => {
+      const result = await recordFlashcardEvent({
+        contentType: card.contentType,
+        contentId: card.contentId,
+        outcome: "viewed",
+        topic: card.topic,
+      });
+      if (result.pet) {
+        setPet(result.pet);
+      }
+    },
+    [setPet],
+  );
+
+  const player = useFlashcardPlayer({
+    contentType,
+    topic: contentType === "phrase" ? topic : null,
+    autoSpeak: true,
+    onAdvance,
+  });
 
   useEffect(() => {
     void hydrate();
-    void loadCard();
-  }, [hydrate, loadCard]);
+  }, [hydrate]);
 
-  async function onSubmit() {
-    if (!card) {
-      return;
-    }
-    if (!selected) {
-      setFeedback(UI.needChoice);
-      return;
-    }
-    setBusy(true);
-    try {
-      const result = await submitAnswer({
-        contentType: card.contentType,
-        contentId: card.contentId,
-        selectedText: selected.text,
-        topic: card.topic,
+  const mark = useCallback(
+    async (outcome: FlashcardOutcome) => {
+      if (!player.card) {
+        return;
+      }
+      const result = await recordFlashcardEvent({
+        contentType: player.card.contentType,
+        contentId: player.card.contentId,
+        outcome,
+        topic: player.card.topic,
       });
-      setRevealed(true);
-      setPet(result.pet);
-      setFeedback(result.isCorrect ? UI.correct : `${UI.incorrect}: ${card.correctAnswer}`);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : UI.noCard);
-    } finally {
-      setBusy(false);
+      if (result.pet) {
+        setPet(result.pet);
+      }
+      player.next({ silent: true });
+    },
+    [player, setPet],
+  );
+
+  useEffect(() => {
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        void dismissStudyPopup();
+      }
+      if (event.key === " " || event.code === "Space") {
+        event.preventDefault();
+        player.togglePause();
+      }
+      if (event.key === "ArrowRight") {
+        player.next();
+      }
+      if (event.key === "ArrowLeft") {
+        player.prev();
+      }
     }
-  }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [player]);
 
   return (
-    <div className="flex h-screen flex-col bg-orange-50">
+    <div className="flex h-screen flex-col bg-cream text-ink">
       <header
         data-tauri-drag-region
-        className="flex items-center justify-between border-b border-orange-100 bg-white px-3 py-2"
+        className="flex items-center justify-between border-b border-line bg-paper px-3 py-2"
       >
-        <strong data-tauri-drag-region>{UI.popupTitle}</strong>
-        <button type="button" onClick={() => void dismissStudyPopup()} className="text-sm text-orange-700">
-          {UI.close}
-        </button>
+        <h1 data-tauri-drag-region className="text-base font-semibold">
+          {UI.popupTitle}
+        </h1>
+        <IconButton label="Đóng cửa sổ học" onClick={() => void dismissStudyPopup()}>
+          <IconClose />
+        </IconButton>
       </header>
-      <div className="flex flex-1 flex-col gap-3 overflow-auto p-4">
-        {pet ? <PetAvatar pet={pet} size="md" /> : null}
-        {error ? <p className="text-sm text-red-600">{error}</p> : null}
-        {busy && !card ? <p>{UI.loading}</p> : null}
-        {!busy && !card ? <p>{UI.noCard}</p> : null}
-        {card ? (
-          <>
-            <div className="rounded-2xl bg-white p-4 text-center shadow-sm">
-              <p className="text-xl font-bold">{card.prompt}</p>
-              {card.example ? <p className="mt-2 text-xs text-orange-800/70">{card.example}</p> : null}
-            </div>
-            <div className="grid gap-2">
-              {card.choices.map((choice) => (
-                <ChoiceButton
-                  key={choice.id}
-                  choice={choice}
-                  selected={selected?.id === choice.id}
-                  revealed={revealed}
-                  onSelect={(item) => {
-                    if (!revealed) {
-                      setSelected(item);
-                    }
-                  }}
-                />
-              ))}
-            </div>
-            {feedback ? <p className="text-center text-sm font-semibold">{feedback}</p> : null}
-            {revealed ? (
-              <PrimaryButton onClick={() => void loadCard()}>{UI.nextCard}</PrimaryButton>
-            ) : (
-              <PrimaryButton disabled={busy} onClick={() => void onSubmit()}>
-                {UI.submit}
-              </PrimaryButton>
-            )}
-          </>
+      <div className="flex-1 overflow-auto p-4">
+        {player.error ? <p className="text-sm text-rose">{player.error}</p> : null}
+        {player.loading && !player.card ? <p>{UI.loading}</p> : null}
+        {!player.loading && !player.card ? <p>{UI.noCard}</p> : null}
+        {player.card ? (
+          <FlashcardFace
+            card={player.card}
+            progress={player.progress}
+            paused={player.paused}
+            remainingLabel={remainingLabel(player.remaining)}
+            pet={pet}
+            onPauseToggle={player.togglePause}
+            onPrev={player.prev}
+            onNext={() => player.next()}
+            onSpeak={() => speakWord(player.card!.word)}
+            onKnown={() => void mark("known")}
+            onUnknown={() => void mark("unknown")}
+          />
         ) : null}
       </div>
     </div>
