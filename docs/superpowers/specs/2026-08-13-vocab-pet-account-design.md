@@ -2,14 +2,14 @@
 
 Date: 2026-08-13  
 Product: Vocab Pet (repo `EnglishApp`)  
-Status: Ready for review (revision 3)  
+Status: Ready for review (revision 4)  
 Scope: Tài khoản tối giản. Đăng ký / đăng nhập chỉ username + password. **Không** verify email, không OAuth, không server đồng bộ. Email dùng cho quên mật khẩu **và** sửa trên màn Thông tin tài khoản. Màn đó còn **Tên thường gọi** và **avatar**, đều sửa được.
 
 Spec này là nguồn sự thật cho chức năng tài khoản. Nó **không** đổi pet XP/mood/missions, SRS, tray, popup 400×500, hay installer. Những phần đó vẫn khóa trong `docs/ARCHITECTURE.md` (PR #2) và UI Warm Companion (PR #3).
 
 **Revision 2:** quên mật khẩu không còn mã khôi phục. User nhập email → hệ thống gửi **mật khẩu mặc định** tới mail, lưu email vào account; lần quên sau phải nhập **đúng email đã lưu**. Sau khi gửi mail, hiện form: mật khẩu mặc định + mật khẩu mới + nhập lại → đổi mật khẩu.
 
-**Revision 3:** màn **Thông tin tài khoản** (đã login): sửa email, tên thường gọi, avatar. Username chỉ đọc — vẫn là identity đăng nhập.
+**Revision 4:** tách màn **Thông tin tài khoản** (xem) và **Chỉnh sửa thông tin** (sửa). Demo HTML Warm Companion: [`docs/uiux-demo/account.html`](../../uiux-demo/account.html).
 
 ---
 
@@ -21,7 +21,7 @@ Yêu cầu sản phẩm:
 
 1. Đăng ký / đăng nhập: chỉ username và password. Không bắt email lúc tạo tài khoản. Không verify email.
 2. Quên mật khẩu: nhập email → gửi mật khẩu mặc định tới email đó → lưu email vào thông tin account. Lần quên tiếp theo phải nhập **đúng email đã lưu**. Sau nút gửi mail: màn hình mật khẩu mặc định, mật khẩu mới, nhập lại mật khẩu mới, đổi mật khẩu.
-3. Màn **Thông tin tài khoản**: xem/sửa email, tên thường gọi, avatar.
+3. Màn **Thông tin tài khoản** (xem) và **Chỉnh sửa thông tin** (sửa email, tên thường gọi, avatar). Đăng xuất là dialog xác nhận.
 
 Tên agent: **Chức năng tài khoản tối giản**.
 
@@ -439,34 +439,41 @@ Không có đường “gửi lại” tự động trên màn 2. User **Quay l�
 
 Màn Thông tin tài khoản → **Xóa tài khoản**: password + gõ lại username. Cascade pet, progress, sessions, missions, file avatar. AuthGate.
 
-### 7.8 Màn Thông tin tài khoản (đã login)
+### 7.8 Màn Thông tin tài khoản và Chỉnh sửa (đã login)
 
-Vào từ Home (bấm avatar / tên). Cùng main window 880×640, không popup. Nút **Quay lại** về Home.
+Vào từ Home (bấm avatar 32px + tên thường gọi). Cùng main 880×640. **Hai màn**, không gộp form sửa vào màn xem.
 
-**Bố cục (một cột, panel Warm Companion)**
+**Màn xem — Thông tin tài khoản**
 
-1. **Avatar** 96px vòng tròn. Overlay camera (Lucide `Camera`, `aria-label` “Đổi ảnh đại diện”).
-   - **Đổi ảnh** → native picker → `set_account_avatar` ngay (không đợi Lưu).
-   - **Xóa ảnh** (chỉ hiện khi đang có file) → confirm một dòng “Dùng lại chữ cái?” → `clear_account_avatar`.
-2. **Tên thường gọi** — text, placeholder “Tên hiện trên nhà pet”.
-3. **Email** — text, placeholder “Dùng khi quên mật khẩu”. Helper: “Lần quên mật khẩu sau phải nhập đúng email này.”
-4. **Tên đăng nhập** — username, **disabled / read-only**. Helper: “Dùng để đăng nhập, không đổi được.”
-5. Primary: **Lưu** → `update_account_profile({ displayName, email })`. Toast “Đã lưu thông tin tài khoản.”
-6. Secondary rows (không phải primary): **Đổi mật khẩu** (mục 7.5), **Đăng xuất** (7.4), **Xóa tài khoản** (7.7, destructive `--rose-700`).
+- Header: back “Nhà của pet”, H1 “Thông tin tài khoản”.
+- Avatar 96px + tên thường gọi + username phụ (muted).
+- Khối định nghĩa (không phải form): Tên thường gọi, Email, Tên đăng nhập. Email trống: “Chưa lưu” muted.
+- Một primary: **Chỉnh sửa thông tin**.
+- Ghost: **Đổi mật khẩu** (dialog mục 7.5), **Đăng xuất** (dialog mục 7.4).
+- Danger text: **Xóa tài khoản**.
 
-Không hỏi mật khẩu khi Lưu tên/email hay đổi avatar.
+**Màn chỉnh sửa — Chỉnh sửa thông tin**
 
-Email rỗng lúc Lưu: `email = NULL`. Copy confirm nếu đang có email và user xóa hết: “Chưa có email. Lần quên mật khẩu tới sẽ lưu email bạn nhập lúc đó.”
+- Header: back = Hủy về màn xem. H1 “Chỉnh sửa thông tin”.
+- Avatar + nút camera **Đổi ảnh** (áp dụng ngay) + **Xóa ảnh** nếu đang có file.
+- Fields: Tên thường gọi, Email (helper quên MK), Tên đăng nhập **disabled**.
+- Primary: **Lưu** → `update_account_profile` → toast “Đã lưu thông tin tài khoản.” → về màn xem.
+- Không hỏi mật khẩu.
 
-Tên thường gọi rỗng: `display_name = NULL`; Home hiện username.
+Email rỗng lúc Lưu: `email = NULL` + confirm “Chưa có email. Lần quên mật khẩu tới sẽ lưu email bạn nhập lúc đó.”
+Tên rỗng: `display_name = NULL`; Home hiện username.
 
-Sửa email không gửi mail xác nhận (vẫn không verify). Quên mật khẩu lần sau dùng email mới.
+**Demo:** `docs/uiux-demo/account.html?screen=account` và `?screen=edit`.
 
 ---
 
 ## 8. UI (Warm Companion)
 
-Auth là view trong main WebView 880×640. Token PR #3:
+Auth và tài khoản dùng **cùng token Warm Companion** (PR #3). Demo tương tác: [`docs/uiux-demo/account.html`](../../uiux-demo/account.html) (`python3 -m http.server 8765` rồi mở `/docs/uiux-demo/account.html`).
+
+`?screen=` = `login` | `register` | `forgot` | `forgot2` | `home` | `account` | `edit` | `logout` | `changepw`. `?shot=1` ẩn thanh demo.
+
+Token:
 
 - Nền `--stone-25`, panel trắng `--radius-lg`, primary `--terracotta-700` chữ trắng.
 - Be Vietnam Pro 16px+. Focus ring `--focus`.
@@ -482,9 +489,11 @@ Màn hình:
 2. **Đăng ký** — mặc định khi 0 account.
 3. **Quên mật khẩu màn 1** — username + email.
 4. **Quên mật khẩu màn 2** — mặc định + mới + nhập lại.
-5. **Home** — bấm avatar/tên → Thông tin tài khoản.
-6. **Thông tin tài khoản** — avatar, tên thường gọi, email, username đọc, Lưu, đổi MK, đăng xuất, xóa.
-7. **Đổi mật khẩu** — panel/overlay trên màn tài khoản.
+5. **Home** — chip avatar + tên góc phải → Thông tin tài khoản.
+6. **Thông tin tài khoản** — xem (không form). Primary: Chỉnh sửa thông tin.
+7. **Chỉnh sửa thông tin** — form tên / email / avatar; username đọc.
+8. **Đăng xuất** — dialog trên màn tài khoản.
+9. **Đổi mật khẩu** — dialog (mục 7.5).
 
 Copy:
 
@@ -495,6 +504,8 @@ Copy:
 - H1 quên màn 1: “Quên mật khẩu”
 - H1 quên màn 2: “Đặt mật khẩu mới”
 - H1 thông tin: “Thông tin tài khoản”
+- H1 chỉnh sửa: “Chỉnh sửa thông tin”
+- Dialog đăng xuất: “Đăng xuất?” / “Pet vẫn trên máy. Đăng nhập lại để học tiếp.”
 
 ---
 

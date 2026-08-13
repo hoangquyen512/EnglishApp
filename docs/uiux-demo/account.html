@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vocab Pet — Demo tài khoản</title>
+  <script>if (/[?&]shot=1/.test(location.search)) document.documentElement.classList.add("shot");</script>
+  <style>
+    @font-face {
+      font-family: "Be Vietnam Pro";
+      src: url("./fonts/BeVietnamPro-Regular.ttf") format("truetype");
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Be Vietnam Pro";
+      src: url("./fonts/BeVietnamPro-SemiBold.ttf") format("truetype");
+      font-weight: 600; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Be Vietnam Pro";
+      src: url("./fonts/BeVietnamPro-Bold.ttf") format("truetype");
+      font-weight: 700; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Fraunces";
+      src: url("./fonts/Fraunces.ttf") format("truetype");
+      font-weight: 600 700; font-style: normal; font-display: swap;
+    }
+    :root {
+      --stone-25: #faf6f1; --stone-50: #f4eee6; --stone-100: #e8dfd4;
+      --stone-500: #5c524a; --stone-800: #3d322b; --stone-950: #1f1915;
+      --terracotta-700: #c2410c; --terracotta-800: #9a3412; --terracotta-500: #ea580c;
+      --leaf-700: #3f6212; --leaf-50: #f7fee7; --rose-700: #be123c; --rose-50: #fff1f2;
+      --focus: #1d4ed8;
+      --color-bg: var(--stone-25); --color-surface: #ffffff;
+      --color-fg: var(--stone-950); --color-fg-muted: var(--stone-500);
+      --color-border: var(--stone-100);
+      --color-primary: var(--terracotta-700); --color-primary-hover: var(--terracotta-800);
+      --color-primary-fg: #ffffff;
+      --radius-sm: 8px; --radius-md: 12px; --radius-lg: 20px;
+      --shadow-sm: 0 1px 2px rgb(31 25 21 / 0.06);
+      --shadow-md: 0 8px 24px rgb(31 25 21 / 0.08);
+      --shadow-window: 0 24px 64px rgb(31 25 21 / 0.18);
+      --dur-fast: 120ms; --dur-base: 180ms; --ease-out: cubic-bezier(0.2, 0, 0, 1);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    html.shot .demo-bar { display: none !important; }
+    body {
+      font-family: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+      color: var(--color-fg);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgb(255 236 210 / 0.7), transparent 55%),
+        radial-gradient(900px 500px at 90% 110%, rgb(194 65 12 / 0.08), transparent 50%),
+        linear-gradient(180deg, #d9cbb8 0%, #c4b29a 100%);
+      min-height: 100vh;
+    }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    .icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; }
+    .icon.sm { width: 16px; height: 16px; }
+
+    .demo-bar {
+      position: sticky; top: 0; z-index: 20;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+      padding: 10px 16px; background: rgb(31 25 21 / 0.88); color: #faf6f1;
+      backdrop-filter: blur(8px);
+    }
+    .demo-bar strong { font-size: 14px; font-weight: 600; margin-right: 8px; }
+    .demo-bar button {
+      border: 0; background: rgb(250 246 241 / 0.12); color: #faf6f1;
+      padding: 6px 12px; border-radius: 999px; font-size: 13px;
+    }
+    .demo-bar button[aria-current="true"] { background: #c2410c; color: #fff; }
+    .demo-bar .hint { margin-left: auto; font-size: 12px; color: rgb(250 246 241 / 0.7); }
+
+    .stage { min-height: calc(100vh - 52px); display: grid; place-items: center; padding: 40px 24px 64px; }
+    body.shot .stage, html.shot .stage { min-height: 100vh; padding: 48px 32px; }
+    .window {
+      background: var(--color-bg); border-radius: 12px;
+      box-shadow: var(--shadow-window); overflow: hidden; position: relative;
+      width: 880px; height: 640px;
+    }
+    .os-dots { display: flex; gap: 6px; padding: 10px 14px 0; }
+    .os-dots span { width: 10px; height: 10px; border-radius: 50%; background: #e8dfd4; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      min-height: 40px; min-width: 44px; padding: 0 16px;
+      border-radius: var(--radius-md); border: 1px solid transparent;
+      transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+    }
+    .btn:focus-visible, .icon-btn:focus-visible, .field input:focus-visible, .chip:focus-visible {
+      outline: 2px solid var(--focus); outline-offset: 2px;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background: var(--color-primary); color: var(--color-primary-fg); }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-ghost { background: transparent; border-color: var(--color-border); color: var(--color-fg); }
+    .btn-ghost:hover { border-color: var(--stone-800); }
+    .btn-danger { background: transparent; border-color: transparent; color: var(--rose-700); }
+    .btn-danger:hover { background: var(--rose-50); }
+    .btn-wide { width: 100%; }
+    .btn-text { border: 0; background: none; color: var(--terracotta-800); min-height: 32px; padding: 0 4px; font-weight: 600; font-size: 14px; }
+    .btn-text:hover { text-decoration: underline; }
+    .icon-btn {
+      width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px;
+      display: grid; place-items: center; color: var(--stone-800);
+    }
+    .icon-btn:hover { background: var(--stone-50); }
+
+    .auth {
+      height: calc(100% - 20px); display: flex; flex-direction: column;
+      align-items: center; justify-content: center; padding: 8px 32px 32px;
+    }
+    .brand { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 16px; }
+    .habitat {
+      width: 72px; height: 72px; border-radius: var(--radius-lg);
+      display: grid; place-items: center;
+      background: radial-gradient(circle at 50% 30%, rgb(234 88 12 / 0.12), transparent 60%), var(--stone-50);
+      margin-bottom: 12px;
+    }
+    .auth h1 { font-size: 30px; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 4px; }
+    .auth .sub { margin: 0; color: var(--color-fg-muted); font-size: 16px; line-height: 1.5; }
+
+    .card {
+      width: 100%; max-width: 400px;
+      background: var(--color-surface); border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg); padding: 24px;
+    }
+    .card.wide { max-width: 520px; }
+    form { display: flex; flex-direction: column; gap: 16px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label { font-size: 14px; font-weight: 600; color: var(--stone-800); }
+    .field .hint { font-size: 12px; color: var(--color-fg-muted); font-weight: 400; }
+    .field input {
+      width: 100%; height: 40px; padding: 0 12px;
+      border: 1px solid var(--color-border); border-radius: var(--radius-md);
+      background: #fff; color: var(--color-fg); font-size: 16px;
+    }
+    .field input:disabled {
+      background: var(--stone-50); color: var(--color-fg-muted); cursor: not-allowed;
+    }
+    .field.invalid input { border-color: var(--rose-700); }
+    .pw { position: relative; }
+    .pw input { padding-right: 44px; }
+    .pw .icon-btn { position: absolute; right: 2px; top: 50%; transform: translateY(-50%); }
+    .err {
+      display: none; align-items: flex-start; gap: 8px;
+      background: var(--rose-50); color: var(--rose-700);
+      border-radius: var(--radius-md); padding: 10px 12px; font-size: 14px; line-height: 1.4;
+    }
+    .err.show { display: flex; }
+    .banner {
+      display: flex; align-items: flex-start; gap: 8px;
+      border-radius: var(--radius-md); padding: 10px 12px; font-size: 14px; line-height: 1.4;
+    }
+    .banner.ok { background: var(--leaf-50); color: var(--leaf-700); }
+    .links { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .links.center { justify-content: center; }
+
+    .page { height: calc(100% - 20px); display: flex; flex-direction: column; padding: 4px 28px 24px; }
+    .page-head { display: flex; align-items: center; gap: 8px; min-height: 40px; margin-bottom: 8px; }
+    .page-head h1 { font-size: 20px; margin: 0; flex: 1; }
+    .page-scroll { flex: 1; overflow: auto; min-height: 0; }
+
+    .avatar {
+      border-radius: 999px; display: grid; place-items: center;
+      background: var(--terracotta-700); color: #fff;
+      font-weight: 700; border: 1px solid var(--color-border);
+      overflow: hidden; flex: 0 0 auto;
+    }
+    .avatar.lg { width: 96px; height: 96px; font-size: 32px; }
+    .avatar.md { width: 40px; height: 40px; font-size: 16px; }
+    .avatar.sm { width: 32px; height: 32px; font-size: 12px; }
+    .avatar img, .avatar svg { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .avatar-wrap { position: relative; width: 96px; }
+    .cam {
+      position: absolute; right: -2px; bottom: -2px; width: 32px; height: 32px;
+      border-radius: 999px; border: 2px solid #fff; background: var(--stone-800); color: #fff;
+      display: grid; place-items: center; padding: 0;
+    }
+    .cam:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+    .cam .icon { width: 16px; height: 16px; }
+
+    .id-block { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 8px; margin: 8px 0 20px; }
+    .id-block .name { font-size: 20px; font-weight: 700; margin: 0; }
+    .id-block .handle { margin: 0; font-size: 14px; color: var(--color-fg-muted); }
+
+    .dl { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; background: #fff; }
+    .row {
+      display: grid; grid-template-columns: 160px 1fr; gap: 12px;
+      padding: 14px 16px; border-top: 1px solid var(--color-border); font-size: 16px;
+    }
+    .row:first-child { border-top: 0; }
+    .row dt { color: var(--color-fg-muted); font-size: 14px; font-weight: 600; }
+    .row dd { margin: 0; color: var(--color-fg); }
+    .row .empty { color: var(--color-fg-muted); }
+
+    .stack { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+    .edit-grid { display: flex; flex-direction: column; gap: 16px; max-width: 480px; }
+
+    .home {
+      height: calc(100% - 20px); display: grid;
+      grid-template-columns: 280px 1fr; gap: 16px; padding: 8px 24px 24px;
+    }
+    .home-pet { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 20px; }
+    .home-pet h2 { margin: 0; font-size: 20px; }
+    .home-pet .meta { margin: 0; font-size: 14px; color: var(--color-fg-muted); }
+    .habitat.lg { width: 160px; height: 160px; margin: 0 auto; border-radius: var(--radius-lg); }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; border: 1px solid var(--color-border);
+      border-radius: 999px; padding: 4px 10px 4px 4px;
+      font-size: 14px; font-weight: 600; color: var(--stone-800);
+    }
+    .chip:hover { border-color: var(--stone-800); }
+    .home-top { display: flex; justify-content: flex-end; margin-bottom: 8px; }
+    .panel { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 20px; }
+    .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-fg-muted); margin: 0 0 8px; }
+
+    .scrim {
+      position: absolute; inset: 0; background: rgb(31 25 21 / 0.32);
+      display: grid; place-items: center; padding: 24px; z-index: 5;
+    }
+    .dialog {
+      width: 100%; max-width: 400px; background: #fff;
+      border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-window);
+    }
+    .dialog h2 { margin: 0 0 8px; font-size: 20px; }
+    .dialog p { margin: 0 0 20px; color: var(--stone-800); font-size: 16px; line-height: 1.5; }
+    .dialog-actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+    .toast {
+      position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+      background: var(--stone-950); color: #faf6f1; padding: 10px 16px;
+      border-radius: 999px; font-size: 14px; display: none; z-index: 6;
+    }
+    .toast.show { display: block; }
+  </style>
+</head>
+<body>
+  <nav class="demo-bar" aria-label="Chuyển màn demo">
+    <strong>Tài khoản</strong>
+    <button type="button" data-screen="login">Đăng nhập</button>
+    <button type="button" data-screen="forgot">Quên MK</button>
+    <button type="button" data-screen="forgot2">Đặt MK mới</button>
+    <button type="button" data-screen="home">Nhà (vào TK)</button>
+    <button type="button" data-screen="account">Thông tin TK</button>
+    <button type="button" data-screen="edit">Chỉnh sửa</button>
+    <button type="button" data-screen="logout">Đăng xuất</button>
+    <span class="hint">Warm Companion · 880×640</span>
+  </nav>
+  <div class="stage">
+    <div id="frame" class="window"></div>
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3l18 18"/><path d="M10.6 10.6a3 3 0 0 0 4.2 4.2"/><path d="M9.9 5.1A11 11 0 0 1 12 5c6.5 0 10 7 10 7a18 18 0 0 1-2.2 3.1"/><path d="M6.1 6.1C3.8 7.8 2 12 2 12s3.5 7 10 7a10 10 0 0 0 4.4-1"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  </svg>
+
+  <script>
+    const I = (name, cls = "icon") =>
+      `<svg class="${cls}" aria-hidden="true"><use href="#i-${name}"></use></svg>`;
+
+    const cat = `<svg viewBox="0 0 80 80" width="88" height="88" aria-hidden="true">
+      <ellipse cx="40" cy="48" rx="22" ry="18" fill="#f3d2b3"/>
+      <path d="M22 36l6-16 8 12" fill="#e8b48a"/>
+      <path d="M58 36l-6-16-8 12" fill="#e8b48a"/>
+      <circle cx="40" cy="42" r="16" fill="#f7c9a4"/>
+      <circle cx="34" cy="40" r="1.6" fill="#3d322b"/>
+      <circle cx="46" cy="40" r="1.6" fill="#3d322b"/>
+      <path d="M36 47c2 2 6 2 8 0" stroke="#9a3412" fill="none" stroke-width="1.5" stroke-linecap="round"/>
+      <ellipse cx="40" cy="64" rx="10" ry="4" fill="#e8b48a"/>
+    </svg>`;
+
+    const portrait = `<svg viewBox="0 0 96 96" aria-hidden="true">
+      <rect width="96" height="96" fill="#e8b48a"/>
+      <circle cx="48" cy="36" r="16" fill="#f7c9a4"/>
+      <ellipse cx="48" cy="84" rx="28" ry="24" fill="#f3d2b3"/>
+    </svg>`;
+
+    const dots = `<div class="os-dots" aria-hidden="true"><span></span><span></span><span></span></div>`;
+
+    function pwField(id, label, placeholder) {
+      return `<div class="field">
+        <label for="${id}">${label}</label>
+        <div class="pw">
+          <input id="${id}" type="password" autocomplete="off" placeholder="${placeholder}" />
+          <button type="button" class="icon-btn toggle-pw" data-for="${id}" aria-label="Hiện mật khẩu">${I("eye")}</button>
+        </div>
+      </div>`;
+    }
+
+    const screens = {
+      login() {
+        return `${dots}
+        <div class="auth">
+          <div class="brand">
+            <div class="habitat">${cat}</div>
+            <h1>Chào lại</h1>
+            <p class="sub">Đăng nhập để gặp lại pet.</p>
+          </div>
+          <div class="card">
+            <form id="f-login" action="#">
+              <div class="err" id="login-err">${I("alert")}<span>Username hoặc mật khẩu không đúng.</span></div>
+              <div class="field">
+                <label for="login-user">Tên đăng nhập</label>
+                <input id="login-user" type="text" autocomplete="username" placeholder="minh.anh" value="minh.anh" />
+              </div>
+              ${pwField("login-pw", "Mật khẩu", "••••••••")}
+              <button class="btn btn-primary btn-wide" type="submit">Đăng nhập</button>
+              <div class="links">
+                <button type="button" class="btn-text" data-go="forgot">Quên mật khẩu?</button>
+                <button type="button" class="btn-text" data-go="register">Tạo tài khoản</button>
+              </div>
+            </form>
+          </div>
+        </div>`;
+      },
+      register() {
+        return `${dots}
+        <div class="auth">
+          <div class="brand">
+            <div class="habitat">${cat}</div>
+            <h1>Tạo tài khoản</h1>
+            <p class="sub">Chỉ cần tên và mật khẩu. Không cần email.</p>
+          </div>
+          <div class="card">
+            <form id="f-reg" action="#">
+              <div class="field">
+                <label for="reg-user">Tên đăng nhập</label>
+                <span class="hint">3–24 ký tự. Chữ, số, dấu chấm và gạch dưới.</span>
+                <input id="reg-user" type="text" autocomplete="username" placeholder="minh.anh" />
+              </div>
+              ${pwField("reg-pw", "Mật khẩu", "Ít nhất 8 ký tự")}
+              ${pwField("reg-pw2", "Nhập lại mật khẩu", "Nhập lại")}
+              <button class="btn btn-primary btn-wide" type="submit">Tạo tài khoản</button>
+              <div class="links center">
+                <button type="button" class="btn-text" data-go="login">Đã có tài khoản</button>
+              </div>
+            </form>
+          </div>
+        </div>`;
+      },
+      forgot() {
+        return `${dots}
+        <div class="auth">
+          <div class="brand">
+            <h1>Quên mật khẩu</h1>
+            <p class="sub">Lần đầu: email này sẽ lưu vào tài khoản. Lần sau phải dùng đúng email đó.</p>
+          </div>
+          <div class="card">
+            <form id="f-forgot" action="#">
+              <div class="field">
+                <label for="fg-user">Tên đăng nhập</label>
+                <input id="fg-user" type="text" value="minh.anh" />
+              </div>
+              <div class="field">
+                <label for="fg-mail">Email</label>
+                <input id="fg-mail" type="email" placeholder="ban@email.com" value="minh@example.com" />
+              </div>
+              <button class="btn btn-primary btn-wide" type="submit">Gửi mail</button>
+              <div class="links center">
+                <button type="button" class="btn-text" data-go="login">${I("arrow-left", "icon sm")} Quay lại đăng nhập</button>
+              </div>
+            </form>
+          </div>
+        </div>`;
+      },
+      forgot2() {
+        return `${dots}
+        <div class="auth">
+          <div class="brand">
+            <h1>Đặt mật khẩu mới</h1>
+            <p class="sub">Nhập mật khẩu mặc định đã gửi tới hộp thư.</p>
+          </div>
+          <div class="card">
+            <div class="banner ok" style="margin-bottom:16px">${I("mail")}<span>Đã gửi mật khẩu mặc định tới <strong>minh@example.com</strong>. Kiểm tra hộp thư — app không hiện mật khẩu này.</span></div>
+            <form id="f-reset" action="#">
+              ${pwField("rs-def", "Mật khẩu mặc định", "Mật khẩu trong email")}
+              ${pwField("rs-new", "Mật khẩu mới", "Ít nhất 8 ký tự")}
+              ${pwField("rs-new2", "Nhập lại mật khẩu mới", "Nhập lại")}
+              <button class="btn btn-primary btn-wide" type="submit">Đổi mật khẩu</button>
+              <div class="links">
+                <button type="button" class="btn-text" data-go="forgot">Gửi lại mail</button>
+                <button type="button" class="btn-text" data-go="login">Đăng nhập</button>
+              </div>
+            </form>
+          </div>
+        </div>`;
+      },
+      home() {
+        return `${dots}
+        <div class="page" style="padding-bottom:16px">
+          <div class="home-top">
+            <button type="button" class="chip" data-go="account" aria-label="Thông tin tài khoản, Minh Anh">
+              <span class="avatar sm">${portrait}</span>
+              Minh Anh
+            </button>
+          </div>
+          <div class="home" style="height:auto;flex:1;padding:0">
+            <aside class="home-pet">
+              <div class="habitat lg">${cat}</div>
+              <h2>Mèo</h2>
+              <p class="meta">Vui · Cấp 3</p>
+              <button type="button" class="btn btn-primary btn-wide">Học ngay</button>
+            </aside>
+            <div class="panel">
+              <p class="eyebrow">Nhà của pet</p>
+              <p style="margin:0;font-size:16px;line-height:1.5;color:var(--stone-800)">Bấm tên hoặc ảnh góc phải để mở thông tin tài khoản, chỉnh email / tên / avatar, hoặc đăng xuất.</p>
+            </div>
+          </div>
+        </div>`;
+      },
+      account() {
+        return `${dots}
+        <div class="page">
+          <div class="page-head">
+            <button type="button" class="icon-btn" data-go="home" aria-label="Quay lại nhà">${I("arrow-left")}</button>
+            <h1>Thông tin tài khoản</h1>
+          </div>
+          <div class="page-scroll">
+            <div class="id-block">
+              <span class="avatar lg">${portrait}</span>
+              <p class="name">Minh Anh</p>
+              <p class="handle">minh.anh</p>
+            </div>
+            <dl class="dl">
+              <div class="row"><dt>Tên thường gọi</dt><dd>Minh Anh</dd></div>
+              <div class="row"><dt>Email</dt><dd>minh@example.com</dd></div>
+              <div class="row"><dt>Tên đăng nhập</dt><dd>minh.anh</dd></div>
+            </dl>
+            <div class="stack">
+              <button type="button" class="btn btn-primary btn-wide" data-go="edit">Chỉnh sửa thông tin</button>
+              <button type="button" class="btn btn-ghost btn-wide" data-go="changepw">Đổi mật khẩu</button>
+              <button type="button" class="btn btn-ghost btn-wide" data-go="logout">Đăng xuất</button>
+              <button type="button" class="btn btn-danger btn-wide">Xóa tài khoản</button>
+            </div>
+          </div>
+        </div>`;
+      },
+      edit() {
+        return `${dots}
+        <div class="page">
+          <div class="page-head">
+            <button type="button" class="icon-btn" data-go="account" aria-label="Hủy, quay lại">${I("arrow-left")}</button>
+            <h1>Chỉnh sửa thông tin</h1>
+          </div>
+          <div class="page-scroll">
+            <form id="f-edit" class="edit-grid" action="#" style="margin:0 auto">
+              <div class="id-block">
+                <div class="avatar-wrap">
+                  <span class="avatar lg">${portrait}</span>
+                  <button type="button" class="cam" aria-label="Đổi ảnh đại diện">${I("camera")}</button>
+                </div>
+                <button type="button" class="btn-text" id="clear-av">Xóa ảnh</button>
+              </div>
+              <div class="field">
+                <label for="ed-name">Tên thường gọi</label>
+                <span class="hint">Hiện trên nhà pet. Tối đa 40 ký tự. Có dấu tiếng Việt.</span>
+                <input id="ed-name" type="text" maxlength="40" value="Minh Anh" />
+              </div>
+              <div class="field">
+                <label for="ed-mail">Email</label>
+                <span class="hint">Lần quên mật khẩu sau phải nhập đúng email này.</span>
+                <input id="ed-mail" type="email" value="minh@example.com" />
+              </div>
+              <div class="field">
+                <label for="ed-user">Tên đăng nhập</label>
+                <span class="hint">Dùng để đăng nhập, không đổi được.</span>
+                <input id="ed-user" type="text" value="minh.anh" disabled />
+              </div>
+              <button class="btn btn-primary btn-wide" type="submit">Lưu</button>
+            </form>
+          </div>
+          <div class="toast" id="toast">Đã lưu thông tin tài khoản.</div>
+        </div>`;
+      },
+      changepw() {
+        return `${dots}
+        <div class="page">
+          <div class="page-head">
+            <button type="button" class="icon-btn" data-go="account" aria-label="Quay lại">${I("arrow-left")}</button>
+            <h1>Thông tin tài khoản</h1>
+          </div>
+        </div>
+        <div class="scrim" role="dialog" aria-modal="true" aria-labelledby="pw-title">
+          <div class="dialog">
+            <h2 id="pw-title">Đổi mật khẩu</h2>
+            <form id="f-pw" action="#" style="gap:12px">
+              ${pwField("pw-cur", "Mật khẩu hiện tại", "••••••••")}
+              ${pwField("pw-new", "Mật khẩu mới", "Ít nhất 8 ký tự")}
+              ${pwField("pw-new2", "Nhập lại mật khẩu mới", "Nhập lại")}
+              <div class="dialog-actions">
+                <button type="button" class="btn btn-ghost" data-go="account">Hủy</button>
+                <button class="btn btn-primary" type="submit">Đổi mật khẩu</button>
+              </div>
+            </form>
+          </div>
+        </div>`;
+      },
+      logout() {
+        return `${dots}
+        <div class="page">
+          <div class="page-head">
+            <button type="button" class="icon-btn" data-go="home" aria-label="Quay lại nhà">${I("arrow-left")}</button>
+            <h1>Thông tin tài khoản</h1>
+          </div>
+          <div class="id-block">
+            <span class="avatar lg">${portrait}</span>
+            <p class="name">Minh Anh</p>
+            <p class="handle">minh.anh</p>
+          </div>
+        </div>
+        <div class="scrim" role="dialog" aria-modal="true" aria-labelledby="lo-title">
+          <div class="dialog">
+            <h2 id="lo-title">Đăng xuất?</h2>
+            <p>Pet vẫn trên máy. Đăng nhập lại để học tiếp.</p>
+            <div class="dialog-actions">
+              <button type="button" class="btn btn-ghost" data-go="account">Hủy</button>
+              <button type="button" class="btn btn-primary" data-go="login">Đăng xuất</button>
+            </div>
+          </div>
+        </div>`;
+      }
+    };
+
+    const frame = document.getElementById("frame");
+    let current = "login";
+
+    function bind(root) {
+      root.querySelectorAll("[data-go]").forEach((el) => {
+        el.addEventListener("click", () => show(el.getAttribute("data-go")));
+      });
+      root.querySelectorAll(".toggle-pw").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const input = document.getElementById(btn.dataset.for);
+          const hide = input.type === "password";
+          input.type = hide ? "text" : "password";
+          btn.setAttribute("aria-label", hide ? "Ẩn mật khẩu" : "Hiện mật khẩu");
+          btn.innerHTML = I(hide ? "eye-off" : "eye");
+        });
+      });
+      const login = root.querySelector("#f-login");
+      if (login) login.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const pw = root.querySelector("#login-pw").value;
+        if (!pw) { root.querySelector("#login-err").classList.add("show"); return; }
+        show("home");
+      });
+      const reg = root.querySelector("#f-reg");
+      if (reg) reg.addEventListener("submit", (e) => { e.preventDefault(); show("home"); });
+      const fg = root.querySelector("#f-forgot");
+      if (fg) fg.addEventListener("submit", (e) => { e.preventDefault(); show("forgot2"); });
+      const rs = root.querySelector("#f-reset");
+      if (rs) rs.addEventListener("submit", (e) => { e.preventDefault(); show("home"); });
+      const pw = root.querySelector("#f-pw");
+      if (pw) pw.addEventListener("submit", (e) => { e.preventDefault(); show("account"); });
+      const ed = root.querySelector("#f-edit");
+      if (ed) ed.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const t = root.querySelector("#toast");
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 1800);
+      });
+    }
+
+    function show(name) {
+      if (!screens[name]) name = "login";
+      current = name;
+      frame.innerHTML = screens[name]();
+      bind(frame);
+      document.querySelectorAll(".demo-bar [data-screen]").forEach((b) => {
+        b.setAttribute("aria-current", b.dataset.screen === name ? "true" : "false");
+      });
+      const url = new URL(location.href);
+      url.searchParams.set("screen", name);
+      history.replaceState(null, "", url);
+    }
+
+    document.querySelectorAll(".demo-bar [data-screen]").forEach((b) => {
+      b.addEventListener("click", () => show(b.dataset.screen));
+    });
+    const start = new URLSearchParams(location.search).get("screen") || "login";
+    show(start);
+  </script>
+</body>
+</html>
