@@ -1,24 +1,18 @@
-# Vocab Pet — Demo UI/UX
+# Vocab Pet — Demo
 
-Interactive Warm Companion mock (not the Tauri app). Open in a browser:
+## 1. Mẫu pet (xem trước)
+
+Mở [`index.html`](index.html) hoặc:
 
 ```bash
-# from repo root
 python3 -m http.server 8765
-# then visit http://localhost:8765/docs/uiux-demo/
+# http://localhost:8765/docs/uiux-demo/
 ```
 
-Or open `index.html` directly.
+Chọn loài (Mèo / Cáo / Rồng), giai đoạn (trứng / non / trưởng thành), tâm trạng (vui / bình thường / buồn / đói).
 
-Screens via `?screen=`:
+Query: `?species=cat&stage=adult&mood=happy`
 
-| Query | Surface |
-| --- | --- |
-| `onboarding` | Choose Cat / Fox / Dragon |
-| `home` | Habitat + study mode + missions |
-| `hungry` | Sad/hungry mood + notification |
-| `popup` | Flashcard before submit |
-| `correct` | “Đúng rồi!” |
-| `incorrect` | “Chưa đúng” |
+## 2. Demo màn hình app (sau khi chốt pet)
 
-In the popup: keys `1`–`4` select, `Enter` submits / next card, `Esc` returns home.
+[`app.html`](app.html) — onboarding, nhà, popup. Chưa phải bản cuối.

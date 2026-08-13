@@ -7,7 +7,8 @@ Scope: Visual system + screen design for the existing MVP. No new product featur
 
 This spec is the source of truth for polishing UI. It does **not** change pet mechanics, SRS, missions, tray behavior, or installers. Those stay as locked in `docs/ARCHITECTURE.md` on `cursor/vocab-pet-scaffold-6115` (PR #2).
 
-**Interactive demo:** open [`docs/uiux-demo/index.html`](../../uiux-demo/index.html) in a browser, or from the repo root run `python3 -m http.server 8765` and visit `http://localhost:8765/docs/uiux-demo/`. Switch screens from the top bar, or use `?screen=onboarding|home|hungry|popup|correct|incorrect`. Popup keys: `1`–`4`, Enter, Esc.
+**Pet sample (review first):** [`docs/uiux-demo/index.html`](../../uiux-demo/index.html) — Mèo / Cáo / Rồng, trứng → non → trưởng thành, 4 tâm trạng.  
+**App screens (later):** [`docs/uiux-demo/app.html`](../../uiux-demo/app.html). From repo root: `python3 -m http.server 8765` then `http://localhost:8765/docs/uiux-demo/`.
 
 ---
 

@@ -3,37 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vocab Pet — Demo UI/UX</title>
+  <title>Vocab Pet — Mẫu pet</title>
   <script>if (/[?&]shot=1/.test(location.search)) document.documentElement.classList.add("shot");</script>
   <style>
-    @font-face {
-      font-family: "Be Vietnam Pro";
-      src: url("./fonts/BeVietnamPro-Regular.ttf") format("truetype");
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Be Vietnam Pro";
-      src: url("./fonts/BeVietnamPro-SemiBold.ttf") format("truetype");
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Be Vietnam Pro";
-      src: url("./fonts/BeVietnamPro-Bold.ttf") format("truetype");
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: "Fraunces";
-      src: url("./fonts/Fraunces.ttf") format("truetype");
-      font-weight: 600 700;
-      font-style: normal;
-      font-display: swap;
-    }
+    @font-face { font-family: "Be Vietnam Pro"; src: url("./fonts/BeVietnamPro-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "Be Vietnam Pro"; src: url("./fonts/BeVietnamPro-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+    @font-face { font-family: "Be Vietnam Pro"; src: url("./fonts/BeVietnamPro-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+    @font-face { font-family: "Fraunces"; src: url("./fonts/Fraunces.ttf") format("truetype"); font-weight: 600 700; font-display: swap; }
 
     :root {
       --stone-25: #faf6f1;
@@ -44,666 +20,255 @@
       --stone-950: #1f1915;
       --terracotta-700: #c2410c;
       --terracotta-800: #9a3412;
-      --terracotta-500: #ea580c;
       --leaf-700: #3f6212;
-      --leaf-50: #f7fee7;
-      --rose-700: #be123c;
-      --rose-50: #fff1f2;
       --focus: #1d4ed8;
-      --color-bg: var(--stone-25);
-      --color-surface: #ffffff;
-      --color-fg: var(--stone-950);
-      --color-fg-muted: var(--stone-500);
-      --color-border: var(--stone-100);
-      --color-primary: var(--terracotta-700);
-      --color-primary-hover: var(--terracotta-800);
-      --color-primary-fg: #ffffff;
-      --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 20px;
-      --shadow-sm: 0 1px 2px rgb(31 25 21 / 0.06);
-      --shadow-md: 0 8px 24px rgb(31 25 21 / 0.08);
-      --shadow-window: 0 24px 64px rgb(31 25 21 / 0.18);
-      --dur-fast: 120ms;
-      --dur-base: 180ms;
-      --ease-out: cubic-bezier(0.2, 0, 0, 1);
     }
 
     * { box-sizing: border-box; }
     html, body { margin: 0; min-height: 100%; }
-    html.shot .demo-bar { display: none !important; }
     body {
       font-family: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
-      color: var(--color-fg);
+      color: var(--stone-950);
       background:
-        radial-gradient(1200px 600px at 20% -10%, rgb(255 236 210 / 0.7), transparent 55%),
-        radial-gradient(900px 500px at 90% 110%, rgb(194 65 12 / 0.08), transparent 50%),
-        linear-gradient(180deg, #d9cbb8 0%, #c4b29a 100%);
-      min-height: 100vh;
+        radial-gradient(900px 480px at 18% 0%, rgb(255 236 210 / 0.75), transparent 55%),
+        linear-gradient(180deg, #e8dcc8 0%, #cfc0a8 100%);
     }
+    html.shot .demo-bar { display: none !important; }
 
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    .tabular { font-variant-numeric: tabular-nums; }
+    button { font: inherit; cursor: pointer; }
+    button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
-    .icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; }
-
-    /* —— Demo chrome (not part of the product) —— */
     .demo-bar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
+      position: sticky; top: 0; z-index: 10;
+      display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
       padding: 10px 16px;
-      background: rgb(31 25 21 / 0.88);
-      color: #faf6f1;
-      backdrop-filter: blur(8px);
+      background: rgb(31 25 21 / 0.88); color: #faf6f1;
     }
-    .demo-bar strong { font-size: 14px; font-weight: 600; margin-right: 8px; }
-    .demo-bar button {
-      border: 0;
-      background: rgb(250 246 241 / 0.12);
-      color: #faf6f1;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-    }
-    .demo-bar button[aria-current="true"] { background: #c2410c; color: #fff; }
+    .demo-bar strong { font-size: 14px; }
+    .demo-bar a { color: #ffedd5; font-size: 13px; }
     .demo-bar .hint { margin-left: auto; font-size: 12px; color: rgb(250 246 241 / 0.7); }
 
-    .stage {
-      min-height: calc(100vh - 52px);
+    .wrap {
+      width: min(100% - 32px, 960px);
+      margin: 32px auto 56px;
+    }
+
+    .hero {
       display: grid;
-      place-items: center;
-      padding: 40px 24px 64px;
-    }
-    body.shot .stage { min-height: 100vh; padding: 48px 32px; }
-
-    .window {
-      background: var(--color-bg);
-      border-radius: 12px;
-      box-shadow: var(--shadow-window);
-      overflow: hidden;
-      position: relative;
-    }
-    .window.main { width: 880px; height: 640px; }
-    .window.popup { width: 400px; height: 500px; box-shadow: var(--shadow-md), var(--shadow-window); }
-
-    .os-dots { display: flex; gap: 6px; padding: 10px 14px 0; }
-    .os-dots span { width: 10px; height: 10px; border-radius: 50%; background: #e8dfd4; }
-    .window.popup .os-dots { display: none; }
-
-    /* —— Shared product UI —— */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 40px;
-      min-width: 44px;
-      padding: 0 16px;
-      border-radius: var(--radius-md);
-      border: 1px solid transparent;
-      transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
-    }
-    .btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-    .btn:active { transform: scale(0.98); }
-    .btn-primary { background: var(--color-primary); color: var(--color-primary-fg); }
-    .btn-primary:hover { background: var(--color-primary-hover); }
-    .btn-ghost { background: transparent; border-color: var(--color-border); color: var(--color-fg); }
-    .btn-ghost:hover { border-color: var(--stone-800); }
-    .btn-ghost[aria-pressed="true"] { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
-    .btn-wide { width: 100%; }
-
-    .eyebrow {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--color-fg-muted);
-      margin: 0 0 8px;
-    }
-
-    .panel {
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: 20px;
+      grid-template-columns: 340px 1fr;
+      gap: 20px;
+      background: var(--stone-25);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 24px 64px rgb(31 25 21 / 0.16);
     }
 
     .habitat {
       position: relative;
+      aspect-ratio: 1;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 50% 28%, rgb(234 88 12 / 0.14), transparent 58%),
+        var(--stone-50);
       display: grid;
       place-items: center;
-      background:
-        radial-gradient(circle at 50% 30%, rgb(234 88 12 / 0.12), transparent 60%),
-        var(--stone-50);
-      border-radius: var(--radius-lg);
+      overflow: hidden;
     }
-    .habitat.lg { width: 160px; height: 160px; margin: 0 auto; }
-    .habitat.sm { width: 56px; height: 56px; flex: 0 0 56px; }
     .habitat.cool {
       background:
-        radial-gradient(circle at 50% 30%, rgb(100 116 139 / 0.16), transparent 60%),
+        radial-gradient(circle at 50% 28%, rgb(100 116 139 / 0.18), transparent 58%),
         #ece8e4;
     }
-    .pet-bob { animation: bob 2.4s ease-in-out infinite; }
+    .habitat img {
+      width: 82%;
+      height: 82%;
+      object-fit: contain;
+      animation: bob 2.4s ease-in-out infinite;
+    }
     @keyframes bob {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
+      50% { transform: translateY(-6px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .habitat img { animation: none; }
     }
     .mood-chip {
-      position: absolute;
-      left: 8px;
-      bottom: 8px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: #fff;
-      border: 1px solid var(--color-border);
-      border-radius: 999px;
-      padding: 2px 8px 2px 6px;
-      font-size: 12px;
-      color: var(--stone-800);
+      position: absolute; left: 14px; bottom: 14px;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff; border: 1px solid var(--stone-100);
+      border-radius: 999px; padding: 4px 10px; font-size: 13px; color: var(--stone-800);
     }
-    .habitat.sm .mood-chip { display: none; }
 
-    /* —— Onboarding —— */
-    .onboard { height: 100%; padding: 28px 32px 32px; display: flex; flex-direction: column; }
-    .onboard h1 { font-size: 30px; line-height: 1.2; letter-spacing: -0.02em; margin: 8px 0 4px; }
-    .onboard .sub { color: var(--color-fg-muted); margin: 0 0 24px; font-size: 16px; }
-    .species-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; flex: 1; }
-    .species {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      background: #fff;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: 16px;
+    .copy h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 32px; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 8px;
     }
-    .species h2 { margin: 0; font-size: 18px; }
-    .species p { margin: 0; flex: 1; font-size: 14px; color: var(--color-fg-muted); line-height: 1.5; }
-    .species .habitat { width: 100%; height: 120px; }
+    .copy .sub { margin: 0 0 20px; color: var(--stone-500); font-size: 16px; line-height: 1.5; }
+    .eyebrow {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+      text-transform: uppercase; color: var(--stone-500); margin: 0 0 8px;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .chip {
+      min-height: 40px; padding: 0 14px; border-radius: 999px;
+      border: 1px solid var(--stone-100); background: #fff; color: var(--stone-950);
+    }
+    .chip[aria-pressed="true"] { background: var(--terracotta-700); color: #fff; border-color: var(--terracotta-700); }
+    .lore { margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: var(--stone-800); }
+    .meta { margin: 6px 0 0; font-size: 13px; color: var(--stone-500); }
 
-    /* —— Home —— */
-    .home {
-      height: 100%;
+    .board {
+      margin-top: 20px;
+      background: var(--stone-25);
+      border-radius: 24px;
+      padding: 20px 24px 24px;
+      box-shadow: 0 16px 40px rgb(31 25 21 / 0.1);
+    }
+    .board h2 { font-size: 16px; margin: 0 0 12px; }
+    .evo {
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 16px;
-      padding: 24px;
-    }
-    .home-pet { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; }
-    .home-pet h2 { margin: 0; font-size: 20px; font-weight: 700; }
-    .home-pet .meta { margin: 0; font-size: 14px; color: var(--color-fg-muted); }
-    .hint-line { margin: 0; font-size: 14px; color: var(--stone-800); line-height: 1.45; }
-    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
-    .stat { background: var(--stone-50); border-radius: var(--radius-md); padding: 8px; }
-    .stat .k { font-size: 12px; color: var(--color-fg-muted); }
-    .stat .v { font-size: 16px; font-weight: 700; }
-    .xp { width: 100%; }
-    .xp-track { height: 8px; background: var(--stone-50); border-radius: 999px; overflow: hidden; }
-    .xp-fill { height: 100%; width: 40%; background: var(--terracotta-700); border-radius: 999px; }
-    .xp-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--color-fg-muted); margin-top: 6px; }
-
-    .home-main { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .missions { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-    .mission {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      background: var(--stone-50);
-      border-radius: 12px;
-      padding: 10px 12px;
-      font-size: 14px;
     }
-    .mission.done .title { text-decoration: line-through; color: var(--color-fg-muted); }
-    .mission .left { display: flex; align-items: center; gap: 8px; }
-    .mission .right { color: var(--color-fg-muted); white-space: nowrap; }
-    .check {
-      width: 20px; height: 20px; border-radius: 6px; border: 1.75px solid var(--stone-800);
-      display: grid; place-items: center; color: transparent;
-    }
-    .mission.done .check { background: var(--leaf-700); border-color: var(--leaf-700); color: #fff; }
-    .interval {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      color: var(--color-fg-muted);
-      margin-top: 4px;
-    }
-    .interval input {
-      width: 64px;
-      height: 36px;
-      border: 1px solid var(--color-border);
-      border-radius: 8px;
-      padding: 0 8px;
+    .tile {
       background: #fff;
-      color: var(--color-fg);
+      border: 1px solid var(--stone-100);
+      border-radius: var(--radius-lg);
+      padding: 12px;
+      text-align: center;
     }
-    .interval input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+    .tile[aria-current="true"] { border-color: var(--terracotta-700); box-shadow: 0 0 0 2px rgb(194 65 12 / 0.2); }
+    .tile img { width: 100%; aspect-ratio: 1; object-fit: contain; background: var(--stone-50); border-radius: 14px; }
+    .tile b { display: block; margin-top: 8px; font-size: 14px; }
+    .tile span { font-size: 12px; color: var(--stone-500); }
 
-    /* —— Popup —— */
-    .popup-ui { height: 100%; display: flex; flex-direction: column; background: var(--color-bg); }
-    .popup-head {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 4px 4px 12px;
-      border-bottom: 1px solid var(--color-border);
-      user-select: none;
-    }
-    .popup-head .title { flex: 1; font-size: 14px; font-weight: 600; }
-    .icon-btn {
-      width: 40px; height: 40px; border: 0; background: transparent; border-radius: 10px;
-      display: grid; place-items: center; color: var(--stone-800);
-    }
-    .icon-btn:hover { background: var(--stone-50); }
-    .icon-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-    .popup-body { flex: 1; padding: 12px 16px 16px; display: flex; flex-direction: column; gap: 8px; min-height: 0; }
-    .witness { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--color-fg-muted); }
-    .prompt { margin: 0; font-family: Fraunces, Georgia, serif; font-size: 24px; line-height: 1.2; letter-spacing: -0.02em; }
-    .prompt.phrase { font-size: 18px; }
-    .example { margin: 0; font-size: 14px; color: var(--color-fg-muted); }
-    .choices { display: flex; flex-direction: column; gap: 8px; }
-    .choice {
-      width: 100%;
-      min-height: 40px;
-      text-align: left;
-      padding: 8px 12px;
-      background: #fff;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      font-size: 16px;
-    }
-    .choice:hover:not(:disabled) { border-color: var(--stone-800); }
-    .choice:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-    .choice.selected { border: 2px solid var(--terracotta-700); padding: 9px 11px; }
-    .choice.correct { background: var(--leaf-50); border-color: var(--leaf-700); color: var(--leaf-700); }
-    .choice.wrong { background: var(--rose-50); border-color: var(--rose-700); color: var(--rose-700); }
-    .choice.dim { opacity: 0.45; }
-    .banner {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      border-radius: var(--radius-md);
-      padding: 10px 12px;
-      font-size: 14px;
-      line-height: 1.4;
-    }
-    .banner.ok { background: var(--leaf-50); color: var(--leaf-700); }
-    .banner.bad { background: var(--rose-50); color: var(--rose-700); }
-    .banner strong { display: block; font-size: 16px; }
-    .need { margin: 0; font-size: 14px; color: var(--rose-700); }
-    .popup-actions { margin-top: auto; flex-shrink: 0; }
-
-    .notify {
-      position: absolute;
-      top: 72px;
-      right: 32px;
-      width: 280px;
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: var(--shadow-window);
-      padding: 12px 14px;
-      display: none;
-    }
-    .notify.show { display: block; }
-    .notify .app { font-size: 12px; font-weight: 600; color: var(--color-fg-muted); }
-    .notify p { margin: 4px 0 0; font-size: 14px; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .pet-bob { animation: none; }
+    .moods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+      .moods, .evo { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
-  <nav class="demo-bar" aria-label="Chuyển màn demo">
-    <strong>Demo Vocab Pet</strong>
-    <button type="button" data-screen="onboarding">Onboarding</button>
-    <button type="button" data-screen="home">Nhà của pet</button>
-    <button type="button" data-screen="hungry">Pet đói</button>
-    <button type="button" data-screen="popup">Popup học</button>
-    <button type="button" data-screen="correct">Đúng rồi</button>
-    <button type="button" data-screen="incorrect">Chưa đúng</button>
-    <span class="hint">880×640 nhà · 400×500 popup · phím 1–4 / Enter / Esc</span>
+  <nav class="demo-bar">
+    <strong>Mẫu pet</strong>
+    <a href="./app.html">Demo màn hình app (sau)</a>
+    <span class="hint">3 loài · trứng → non → trưởng thành · 4 tâm trạng</span>
   </nav>
 
-  <div class="stage">
-    <div id="notify" class="notify" role="status">
-      <div class="app">Vocab Pet</div>
-      <p>Một thẻ nhỏ cho Mèo?</p>
-    </div>
-    <div id="frame" class="window main"></div>
-  </div>
+  <main class="wrap">
+    <section class="hero">
+      <div id="habitat" class="habitat"></div>
+      <div class="copy">
+        <h1>Người bạn đồng hành</h1>
+        <p class="sub">Xem pet trước. Chưa chốt UI app — chỉ mẫu hình, tiến hóa và tâm trạng.</p>
 
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
-    <symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 10h.01M16 10h.01M8 14s1.5 2 4 2 4-2 4-2"/></symbol>
-    <symbol id="i-meh" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 10h.01M16 10h.01M8 15h8"/></symbol>
-    <symbol id="i-sad" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 10h.01M16 10h.01M16 16s-1.5-2-4-2-4 2-4 2"/></symbol>
-    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h2v11M7 2v9M21 15V2c-2.5 2-4 5.5-4 9v13M17 11h4"/></symbol>
-    <symbol id="i-grip" viewBox="0 0 24 24"><circle cx="9" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="9" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="9" cy="16" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="8" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="16" r="1" fill="currentColor" stroke="none"/></symbol>
-  </svg>
+        <p class="eyebrow">Loài</p>
+        <div class="chips" id="species"></div>
+
+        <p class="eyebrow">Tiến hóa</p>
+        <div class="chips" id="stages"></div>
+
+        <p class="eyebrow">Tâm trạng</p>
+        <div class="chips" id="moods"></div>
+
+        <p class="lore" id="lore"></p>
+        <p class="meta" id="meta"></p>
+      </div>
+    </section>
+
+    <section class="board">
+      <h2>Hàng tiến hóa</h2>
+      <div class="evo" id="evo"></div>
+      <h2 style="margin-top:20px">Tâm trạng (dạng trưởng thành)</h2>
+      <div class="moods" id="moodGrid"></div>
+    </section>
+  </main>
 
   <script>
-    const I = (name) =>
-      `<svg class="icon" aria-hidden="true"><use href="#i-${name}"></use></svg>`;
-
-    const pets = {
-      cat: `<svg viewBox="0 0 80 80" width="88" height="88" aria-hidden="true">
-        <ellipse cx="40" cy="48" rx="22" ry="18" fill="#f3d2b3"/>
-        <path d="M22 36l6-16 8 12" fill="#e8b48a"/>
-        <path d="M58 36l-6-16-8 12" fill="#e8b48a"/>
-        <circle cx="40" cy="42" r="16" fill="#f7c9a4"/>
-        <circle cx="34" cy="40" r="1.6" fill="#3d322b"/>
-        <circle cx="46" cy="40" r="1.6" fill="#3d322b"/>
-        <path d="M36 47c2 2 6 2 8 0" stroke="#9a3412" fill="none" stroke-width="1.5" stroke-linecap="round"/>
-        <ellipse cx="40" cy="64" rx="10" ry="4" fill="#e8b48a"/>
-      </svg>`,
-      fox: `<svg viewBox="0 0 80 80" width="88" height="88" aria-hidden="true">
-        <path d="M20 38l8-20 12 14 12-14 8 20-20 22z" fill="#e07a3d"/>
-        <path d="M28 38l12-8 12 8-12 8z" fill="#f4eee6"/>
-        <circle cx="34" cy="40" r="1.6" fill="#1f1915"/>
-        <circle cx="46" cy="40" r="1.6" fill="#1f1915"/>
-        <path d="M38 46h4" stroke="#1f1915" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>`,
-      dragon: `<svg viewBox="0 0 80 80" width="88" height="88" aria-hidden="true">
-        <path d="M40 18l6 10h12l-8 8 4 12-14-6-14 6 4-12-8-8h12z" fill="#5b8c5a"/>
-        <circle cx="40" cy="44" r="16" fill="#7aa86a"/>
-        <circle cx="34" cy="42" r="1.6" fill="#1f1915"/>
-        <circle cx="46" cy="42" r="1.6" fill="#1f1915"/>
-        <path d="M32 50c3 3 13 3 16 0" stroke="#3d322b" fill="none" stroke-width="1.5"/>
-        <path d="M54 36c8 2 12 10 10 16" stroke="#5b8c5a" fill="none" stroke-width="4" stroke-linecap="round"/>
-      </svg>`,
-      egg: `<svg viewBox="0 0 80 80" width="72" height="72" aria-hidden="true">
-        <ellipse cx="40" cy="46" rx="20" ry="26" fill="#e7c89a"/>
-        <ellipse cx="40" cy="46" rx="18" ry="24" fill="#f3d7b0"/>
-        <ellipse cx="33" cy="36" rx="7" ry="9" fill="#fff6e8"/>
-        <circle cx="48" cy="50" r="3" fill="#c2410c" opacity="0.35"/>
-        <circle cx="36" cy="56" r="2" fill="#c2410c" opacity="0.25"/>
-        <path d="M26 50c10-5 18 3 28-2" stroke="#c4a57a" fill="none" stroke-width="2"/>
-      </svg>`
+    const SPECIES = {
+      cat: { name: "Mèo", lore: "Bạn đồng hành lông mềm, thích ngồi cạnh bàn học." },
+      fox: { name: "Cáo", lore: "Thông minh và tò mò — hay nghiêng đầu khi bạn sai." },
+      dragon: { name: "Rồng", lore: "Quả trứng rồng nhỏ. Lớn chậm, nhớ dai." }
     };
-
-    const species = [
-      { id: "cat", name: "Mèo", desc: "Bạn đồng hành lông mềm, thích ngồi cạnh bàn học." },
-      { id: "fox", name: "Cáo", desc: "Thông minh và tò mò — hay nghiêng đầu khi bạn sai." },
-      { id: "dragon", name: "Rồng", desc: "Quả trứng rồng nhỏ. Lớn chậm, nhớ dai." }
+    const STAGES = [
+      { id: "egg", label: "Trứng", level: "Cấp 1" },
+      { id: "young", label: "Non", level: "Cấp 3" },
+      { id: "adult", label: "Trưởng thành", level: "Cấp 6" }
+    ];
+    const MOODS = [
+      { id: "happy", label: "Vui" },
+      { id: "neutral", label: "Bình thường" },
+      { id: "sad", label: "Buồn" },
+      { id: "hungry", label: "Đói" }
     ];
 
-    const cards = [
-      { prompt: "time", example: "Take your time.", choices: ["thời gian", "người", "năm", "cách"], answer: 0 },
-      { prompt: "Where is the nearest station?", example: null, phrase: true, choices: ["Nhà ga gần nhất ở đâu?", "Cho tôi xem thực đơn.", "Gia đình bạn thế nào?", "Gửi báo cáo giúp tôi."], answer: 0 }
-    ];
+    const state = { species: "cat", stage: "adult", mood: "happy" };
 
-    const state = {
-      screen: "onboarding",
-      pet: "cat",
-      mood: "happy",
-      contentType: "vocabulary",
-      topic: null,
-      cardIndex: 0,
-      selected: null,
-      result: null,
-      needChoice: false,
-      interval: 2
-    };
-
-    const moodLabel = { happy: "Vui", neutral: "Bình thường", sad: "Buồn", hungry: "Đói" };
-    const moodIcon = { happy: "smile", neutral: "meh", sad: "sad", hungry: "utensils" };
-
-    function habitat(kind, size, mood) {
-      const cool = mood === "hungry" || mood === "sad" ? " cool" : "";
-      const chip = size === "lg"
-        ? `<span class="mood-chip">${I(moodIcon[mood])} ${moodLabel[mood]}</span>`
-        : "";
-      return `<div class="habitat ${size}${cool}"><span class="pet-bob">${pets[kind]}</span>${chip}</div>`;
-    }
-
-    function onboarding() {
-      return `
-        <div class="os-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="onboard">
-          <h1>Chọn người bạn đồng hành</h1>
-          <p class="sub">Pet lớn lên mỗi khi bạn trả lời đúng.</p>
-          <div class="species-grid">
-            ${species.map((s) => `
-              <article class="species">
-                <div class="habitat" style="width:100%;height:120px">${pets.egg}</div>
-                <h2>${s.name}</h2>
-                <p>${s.desc}</p>
-                <button class="btn btn-primary btn-wide" type="button" data-adopt="${s.id}">Chọn pet này</button>
-              </article>
-            `).join("")}
-          </div>
-        </div>`;
-    }
-
-    function home(hungry) {
-      const mood = hungry ? "hungry" : "happy";
-      const hint = hungry
-        ? `<p class="hint-line">Pet đang đói — một thẻ là đủ để pet vui lại.</p>`
-        : "";
-      const topics = state.contentType === "phrase" ? `
-        <p class="eyebrow" style="margin-top:16px">Chủ đề</p>
-        <div class="chips">
-          ${[["all","Tất cả chủ đề"],["travel","Du lịch"],["food","Ẩm thực"],["office","Công việc"],["family","Gia đình"]]
-            .map(([id, label]) => `
-              <button type="button" class="btn btn-ghost" data-topic="${id}" aria-pressed="${(id === "all" && !state.topic) || state.topic === id}">${label}</button>
-            `).join("")}
-        </div>` : "";
-
-      return `
-        <div class="os-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="home">
-          <aside class="panel home-pet">
-            ${habitat(state.pet, "lg", mood)}
-            <div>
-              <h2>${species.find((s) => s.id === state.pet).name}</h2>
-              <p class="meta">${species.find((s) => s.id === state.pet).name} · ${moodLabel[mood]}</p>
-            </div>
-            ${hint}
-            <div class="stats">
-              <div class="stat"><div class="k">Cấp</div><div class="v tabular">2</div></div>
-              <div class="stat"><div class="k">Streak</div><div class="v tabular">${hungry ? 0 : 3}</div></div>
-            </div>
-            <div class="xp">
-              <div class="xp-track" role="progressbar" aria-valuemin="0" aria-valuemax="50" aria-valuenow="20" aria-label="Kinh nghiệm tới cấp tiếp theo">
-                <div class="xp-fill"></div>
-              </div>
-              <div class="xp-label"><span>XP</span><span class="tabular">20/50</span></div>
-            </div>
-          </aside>
-          <div class="home-main">
-            <section class="panel">
-              <p class="eyebrow">Chế độ học</p>
-              <div class="chips">
-                <button type="button" class="btn btn-ghost" data-mode="vocabulary" aria-pressed="${state.contentType === "vocabulary"}">Từ vựng</button>
-                <button type="button" class="btn btn-ghost" data-mode="phrase" aria-pressed="${state.contentType === "phrase"}">Câu giao tiếp</button>
-              </div>
-              ${topics}
-              <div style="margin-top:16px">
-                <button type="button" class="btn btn-primary" data-study>Học ngay</button>
-              </div>
-            </section>
-            <section class="panel">
-              <h2 class="eyebrow" style="font-size:12px">Nhiệm vụ hôm nay</h2>
-              <ul class="missions">
-                <li class="mission"><span class="left"><span class="check">${I("check")}</span><span class="title">Học từ/câu mới hôm nay</span></span><span class="right tabular">3/10 · +15 XP</span></li>
-                <li class="mission"><span class="left"><span class="check">${I("check")}</span><span class="title">Ôn lại từ/câu đã trả lời sai</span></span><span class="right tabular">0/5 · +10 XP</span></li>
-                <li class="mission"><span class="left"><span class="check">${I("check")}</span><span class="title">Luyện chủ đề Du lịch</span></span><span class="right tabular">1/3 · +12 XP</span></li>
-              </ul>
-              <div class="interval">
-                <label for="interval">Nhắc học mỗi (phút)</label>
-                <input id="interval" class="tabular" type="number" min="1" max="180" value="${state.interval}" />
-              </div>
-            </section>
-          </div>
-        </div>`;
-    }
-
-    function popup() {
-      const card = cards[state.contentType === "phrase" ? 1 : 0];
-      const locked = state.result !== null;
-      const choices = card.choices.map((text, i) => {
-        let cls = "choice";
-        if (!locked && state.selected === i) cls += " selected";
-        if (locked && i === card.answer) cls += " correct";
-        if (locked && state.selected === i && i !== card.answer) cls += " wrong";
-        if (locked && i !== card.answer && i !== state.selected) cls += " dim";
-        const mark = (!locked && state.selected === i) || (locked && i === card.answer)
-          ? I("check")
-          : (locked && state.selected === i ? I("x") : "");
-        return `<button type="button" class="${cls}" data-choice="${i}" ${locked ? "disabled" : ""}><span>${text}</span>${mark}</button>`;
-      }).join("");
-
-      let banner = "";
-      if (state.result === "ok") {
-        banner = `<div class="banner ok" role="status">${I("check")}<div><strong>Đúng rồi!</strong>Pet vui lên · +5 XP</div></div>`;
-      } else if (state.result === "bad") {
-        banner = `<div class="banner bad" role="status">${I("x")}<div><strong>Chưa đúng</strong>Đáp án đúng được tô xanh bên dưới.</div></div>`;
+    function sprite(species, stage, mood) {
+      if (stage !== "adult") return `pets/${species}-${stage}.jpg`;
+      if (mood === "happy") return `pets/${species}-adult.jpg`;
+      if (mood === "neutral") {
+        return species === "cat" ? "pets/cat-neutral.jpg" : `pets/${species}-adult.jpg`;
       }
+      return `pets/${species}-${mood}.jpg`;
+    }
 
-      const cta = locked
-        ? `<button type="button" class="btn btn-primary btn-wide" data-next>Thẻ tiếp theo</button>`
-        : `<button type="button" class="btn btn-primary btn-wide" data-submit>Submit</button>`;
-
-      return `
-        <div class="popup-ui">
-          <header class="popup-head">
-            ${I("grip")}
-            <h1 class="title">Học ngay</h1>
-            <button type="button" class="icon-btn" data-close title="Đóng" aria-label="Đóng cửa sổ học">${I("x")}</button>
-          </header>
-          <div class="popup-body">
-            <div class="witness">${habitat(state.pet, "sm", "happy")}<span>Mèo · Vui</span></div>
-            <h2 class="prompt${card.phrase ? " phrase" : ""}" lang="en">${card.prompt}</h2>
-            ${card.example && !state.result ? `<p class="example" lang="en">${card.example}</p>` : ""}
-            ${banner}
-            <div class="choices">${choices}</div>
-            ${state.needChoice ? `<p class="need">Hãy chọn một đáp án.</p>` : ""}
-            <div class="popup-actions">${cta}</div>
-          </div>
-        </div>`;
+    function chips(el, items, key, getId, getLabel) {
+      el.innerHTML = items.map((item) => {
+        const id = getId(item);
+        return `<button type="button" class="chip" data-key="${key}" data-id="${id}" aria-pressed="${state[key] === id}">${getLabel(item)}</button>`;
+      }).join("");
     }
 
     function render() {
-      const frame = document.getElementById("frame");
-      const notify = document.getElementById("notify");
-      const isPopup = ["popup", "correct", "incorrect"].includes(state.screen);
-      frame.className = "window " + (isPopup ? "popup" : "main");
-      notify.classList.toggle("show", state.screen === "hungry");
+      const cool = state.mood === "sad" || state.mood === "hungry";
+      const src = sprite(state.species, state.stage, state.mood);
+      const mood = MOODS.find((m) => m.id === state.mood);
+      document.getElementById("habitat").className = "habitat" + (cool ? " cool" : "");
+      document.getElementById("habitat").innerHTML =
+        `<img src="${src}" alt="${SPECIES[state.species].name} ${mood.label}" />` +
+        `<span class="mood-chip">${mood.label}</span>`;
 
-      if (state.screen === "onboarding") frame.innerHTML = onboarding();
-      else if (state.screen === "home") frame.innerHTML = home(false);
-      else if (state.screen === "hungry") frame.innerHTML = home(true);
-      else frame.innerHTML = popup();
+      chips(document.getElementById("species"), Object.keys(SPECIES), "species", (id) => id, (id) => SPECIES[id].name);
+      chips(document.getElementById("stages"), STAGES, "stage", (s) => s.id, (s) => s.label);
+      chips(document.getElementById("moods"), MOODS, "mood", (m) => m.id, (m) => m.label);
 
-      document.querySelectorAll(".demo-bar [data-screen]").forEach((btn) => {
-        btn.setAttribute("aria-current", btn.dataset.screen === state.screen ? "true" : "false");
-      });
-      history.replaceState(null, "", "?screen=" + state.screen);
+      document.getElementById("lore").textContent = SPECIES[state.species].lore;
+      const stage = STAGES.find((s) => s.id === state.stage);
+      document.getElementById("meta").textContent =
+        `${SPECIES[state.species].name} · ${stage.label} (${stage.level}) · ${mood.label}` +
+        (state.stage !== "adult" && state.mood !== "happy" ? " — tâm trạng chỉ vẽ ở dạng trưởng thành" : "");
+
+      document.getElementById("evo").innerHTML = STAGES.map((s) => `
+        <button type="button" class="tile" data-key="stage" data-id="${s.id}" aria-current="${state.stage === s.id}">
+          <img src="${sprite(state.species, s.id, "happy")}" alt="" />
+          <b>${s.label}</b><span>${s.level}</span>
+        </button>`).join("");
+
+      document.getElementById("moodGrid").innerHTML = MOODS.map((m) => `
+        <button type="button" class="tile" data-key="mood" data-id="${m.id}" aria-current="${state.mood === m.id}">
+          <img src="${sprite(state.species, "adult", m.id)}" alt="" />
+          <b>${m.label}</b>
+        </button>`).join("");
+
+      history.replaceState(null, "", `?species=${state.species}&stage=${state.stage}&mood=${state.mood}`);
     }
 
-    function go(screen) {
-      state.screen = screen;
-      if (screen === "popup") {
-        state.selected = null;
-        state.result = null;
-        state.needChoice = false;
-      }
-      if (screen === "correct") {
-        state.selected = 0;
-        state.result = "ok";
-        state.needChoice = false;
-        state.contentType = "vocabulary";
-      }
-      if (screen === "incorrect") {
-        state.selected = 1;
-        state.result = "bad";
-        state.needChoice = false;
-        state.contentType = "vocabulary";
-      }
+    document.body.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-key]");
+      if (!btn) return;
+      state[btn.dataset.key] = btn.dataset.id;
       render();
-    }
-
-    document.querySelector(".demo-bar").addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-screen]");
-      if (btn) go(btn.dataset.screen);
     });
 
-    document.getElementById("frame").addEventListener("click", (e) => {
-      const adopt = e.target.closest("[data-adopt]");
-      if (adopt) { state.pet = adopt.dataset.adopt; go("home"); return; }
-      const mode = e.target.closest("[data-mode]");
-      if (mode) { state.contentType = mode.dataset.mode; if (state.contentType === "vocabulary") state.topic = null; render(); return; }
-      const topic = e.target.closest("[data-topic]");
-      if (topic) { state.topic = topic.dataset.topic === "all" ? null : topic.dataset.topic; render(); return; }
-      if (e.target.closest("[data-study]")) { go("popup"); return; }
-      const choice = e.target.closest("[data-choice]");
-      if (choice && state.result === null) { state.selected = Number(choice.dataset.choice); state.needChoice = false; render(); return; }
-      if (e.target.closest("[data-submit]")) {
-        if (state.selected === null) { state.needChoice = true; render(); return; }
-        const card = cards[state.contentType === "phrase" ? 1 : 0];
-        state.result = state.selected === card.answer ? "ok" : "bad";
-        render();
-        return;
-      }
-      if (e.target.closest("[data-next]")) { state.selected = null; state.result = null; state.contentType = state.contentType === "vocabulary" ? "phrase" : "vocabulary"; render(); return; }
-      if (e.target.closest("[data-close]")) { go("home"); }
-    });
-
-    document.getElementById("frame").addEventListener("change", (e) => {
-      if (e.target.id === "interval") state.interval = Number(e.target.value);
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (!["popup", "correct", "incorrect"].includes(state.screen) && state.screen !== "popup") {
-        /* still handle if we are visually on popup via those screens */
-      }
-      const onPopup = document.querySelector(".popup-ui");
-      if (!onPopup) return;
-      if (["1", "2", "3", "4"].includes(e.key) && state.result === null) {
-        state.selected = Number(e.key) - 1;
-        state.needChoice = false;
-        render();
-      } else if (e.key === "Enter") {
-        if (state.result) {
-          state.selected = null; state.result = null;
-          state.contentType = state.contentType === "vocabulary" ? "phrase" : "vocabulary";
-          render();
-        } else if (state.selected === null) {
-          state.needChoice = true; render();
-        } else {
-          const card = cards[state.contentType === "phrase" ? 1 : 0];
-          state.result = state.selected === card.answer ? "ok" : "bad";
-          render();
-        }
-      } else if (e.key === "Escape") {
-        go("home");
-      }
-    });
-
-    const params = new URLSearchParams(location.search);
-    const initial = params.get("screen") || "onboarding";
-    if (params.get("shot") === "1") {
-      document.querySelector(".demo-bar").hidden = true;
-      document.body.classList.add("shot");
-    }
-    go(["onboarding", "home", "hungry", "popup", "correct", "incorrect"].includes(initial) ? initial : "onboarding");
+    const q = new URLSearchParams(location.search);
+    if (SPECIES[q.get("species")]) state.species = q.get("species");
+    if (STAGES.some((s) => s.id === q.get("stage"))) state.stage = q.get("stage");
+    if (MOODS.some((m) => m.id === q.get("mood"))) state.mood = q.get("mood");
+    render();
   </script>
 </body>
 </html>
