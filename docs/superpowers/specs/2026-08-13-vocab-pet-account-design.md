@@ -2,10 +2,12 @@
 
 Date: 2026-08-13  
 Product: Vocab Pet (repo `EnglishApp`)  
-Status: Ready for review  
-Scope: Tài khoản tối giản — chỉ username và password. Không email, không verify email, không OAuth, không server đồng bộ.
+Status: Ready for review (revision 2)  
+Scope: Tài khoản tối giản. Đăng ký / đăng nhập chỉ username + password. **Không** verify email, không OAuth, không server đồng bộ. Email **chỉ** dùng cho quên mật khẩu.
 
 Spec này là nguồn sự thật cho chức năng tài khoản. Nó **không** đổi pet XP/mood/missions, SRS, tray, popup 400×500, hay installer. Những phần đó vẫn khóa trong `docs/ARCHITECTURE.md` (PR #2) và UI Warm Companion (PR #3).
+
+**Revision 2:** quên mật khẩu không còn mã khôi phục. User nhập email → hệ thống gửi **mật khẩu mặc định** tới mail, lưu email vào account; lần quên sau phải nhập **đúng email đã lưu**. Sau khi gửi mail, hiện form: mật khẩu mặc định + mật khẩu mới + nhập lại → đổi mật khẩu.
 
 ---
 
@@ -13,9 +15,10 @@ Spec này là nguồn sự thật cho chức năng tài khoản. Nó **không** 
 
 Vocab Pet hiện là app desktop **một người / một máy**: SQLite local, onboarding = chọn pet, không có khái niệm đăng nhập. `pet_state` và `user_progress` là bảng singleton (một hàng, không `user_id`).
 
-Yêu cầu sản phẩm (từ người dùng):
+Yêu cầu sản phẩm:
 
-> Chỉ cần nhập username và password. Không cần email hay verify email.
+1. Đăng ký / đăng nhập: chỉ username và password. Không bắt email lúc tạo tài khoản. Không verify email.
+2. Quên mật khẩu: nhập email → gửi mật khẩu mặc định tới email đó → lưu email vào thông tin account. Lần quên tiếp theo phải nhập **đúng email đã lưu**. Sau nút gửi mail: màn hình mật khẩu mặc định, mật khẩu mới, nhập lại mật khẩu mới, đổi mật khẩu.
 
 Tên agent: **Chức năng tài khoản tối giản**.
 
@@ -23,24 +26,26 @@ Tên agent: **Chức năng tài khoản tối giản**.
 
 | Constraint | Implication |
 | --- | --- |
-| Không email | Không gửi mail, không confirm link, không “quên mật khẩu qua email” |
-| Không verify | Đăng ký xong là dùng được ngay |
-| Desktop local-first (Tauri + SQLite) | Chưa có backend; thêm server là phạm vi lớn |
-| Máy dùng chung có thể xảy ra | Username phải unique **trên máy này**, data phải tách theo tài khoản |
-| Offline | Đăng ký / đăng nhập không được phụ thuộc mạng |
-| Warm Companion UI | Màn hình auth phải cùng token (Be Vietnam Pro, terracotta-700, cream) |
+| Không email lúc đăng ký | Form đăng ký không có field email. Cột `accounts.email` bắt đầu `NULL` |
+| Không verify email | Không link xác nhận, không OTP, không chặn login vì email chưa confirm |
+| Email chỉ khi quên mật khẩu | Cần SMTP (mạng) **cho flow này**; đăng ký / đăng nhập vẫn offline |
+| Desktop local-first (Tauri + SQLite) | Account vẫn local; không backend user-directory. Mailer là lệnh gửi SMTP từ app |
+| Máy dùng chung có thể xảy ra | Username unique **trên máy này**; data tách theo tài khoản |
+| Warm Companion UI | Màn hình auth cùng token (Be Vietnam Pro, terracotta-700, cream) |
 
-### 1.2 Giả định (background agent — không hỏi được từng câu)
-
-Các giả định dưới đây được **chốt trong spec**. Nếu sai, sửa spec trước khi viết plan.
+### 1.2 Giả định đã chốt
 
 1. Sản phẩm là **Vocab Pet desktop**, không phải web app riêng.
-2. Tài khoản là **bắt buộc** — không có chế độ khách. Lần mở đầu tiên = đăng ký, rồi mới chọn pet.
-3. Một máy có thể có **nhiều tài khoản** (hai người dùng chung laptop, hoặc “tài khoản học” / “tài khoản chơi”).
-4. Phiên đăng nhập **giữ đến khi bấm Đăng xuất** (tray app không hỏi password mỗi lần hiện popup).
-5. Cloud sync, leaderboard, đăng nhập Google — **không** thuộc spec này.
-6. Đổi username — **không** thuộc spec này.
-7. Người học là người Việt; copy UI bằng tiếng Việt.
+2. Tài khoản **bắt buộc** — không chế độ khách. Lần mở đầu tiên = đăng ký, rồi chọn pet.
+3. Một máy có thể có **nhiều tài khoản**.
+4. Phiên **giữ đến khi bấm Đăng xuất** (popup không hỏi password).
+5. Cloud sync, OAuth, Google login — **không** thuộc spec này.
+6. Đổi username — **không**.
+7. Copy UI tiếng Việt.
+8. Màn quên mật khẩu có **username + email**. Username chọn đúng account (lúc đăng ký chưa có email, không thể tìm account chỉ bằng mail lần đầu).
+9. **Mật khẩu mặc định** = mật khẩu tạm hệ thống **sinh mới mỗi lần gửi** (8 ký tự, dễ gõ). Không phải một chuỗi cố định cho mọi user (`123456`). Hash Argon2id **thay** `password_hash` hiện tại khi gửi mail thành công — password cũ hết hiệu lực.
+10. Màn sau khi gửi có **ba ô nhập** (mật khẩu mặc định / mật khẩu mới / nhập lại). App **không** hiện plaintext mật khẩu mặc định trên UI — user đọc trong hộp thư. Field không pre-fill.
+11. Gửi mail thất bại → **không** lưu email, **không** đổi password.
 
 ---
 
@@ -48,118 +53,141 @@ Các giả định dưới đây được **chốt trong spec**. Nếu sai, sử
 
 **Goal**
 
-- Người dùng tạo tài khoản bằng username + password, rồi vào onboarding pet như hiện tại.
-- Lần sau: đăng nhập bằng đúng cặp đó để thấy pet và tiến độ của mình.
-- Đăng xuất → màn hình đăng nhập. Tài khoản khác trên cùng máy không thấy data của nhau.
-- Quên mật khẩu: khôi phục bằng **mã khôi phục** (hiện một lần lúc đăng ký), không qua email.
+- Tạo tài khoản bằng username + password, rồi onboarding pet như hiện tại.
+- Lần sau: đăng nhập bằng cặp đó để thấy pet và tiến độ của mình.
+- Đăng xuất → màn đăng nhập. Tài khoản khác trên cùng máy không thấy data của nhau.
+- Quên mật khẩu theo flow email + mật khẩu mặc định (mục 7.6).
 
 **Non-goal (cấm lọt vào PR implementation)**
 
-- Email, số điện thoại, OTP, captcha, OAuth, 2FA.
-- Server, API cloud, đồng bộ nhiều máy.
-- Reset password qua mail / SMS / admin.
+- Bắt nhập email lúc đăng ký; link verify; OTP; captcha; OAuth; 2FA.
+- Server user-directory, đồng bộ nhiều máy, JWT cloud.
+- Mã khôi phục (Crockford) — **đã bỏ** ở revision 2.
+- Reset qua SMS / admin.
 - Phân quyền (admin / teacher / student).
-- Xóa tài khoản kèm xuất file GDPR — chỉ xóa local row + cascade (mục 7.7).
-- Đổi username.
-- Avatar / profile social.
-- Bắt nhập password mỗi lần mở popup.
+- Xuất file GDPR khi xóa — chỉ cascade local (mục 7.7).
+- Đổi username. Avatar / profile social.
+- Hỏi password mỗi lần mở popup.
 
 ---
 
 ## 3. Ba hướng — trade-off và khuyến nghị
 
-### A. Hồ sơ local (khuyến nghị)
+### A. Hồ sơ local + SMTP cho quên mật khẩu (khuyến nghị)
 
-Username + password lưu trong SQLite trên máy. Hash Argon2id chạy ở **Rust**. Không server.
-
-| Ưu | Nhược |
-| --- | --- |
-| Khớp kiến trúc hiện tại (Tauri + SQLite, offline) | Username unique chỉ trên **máy này**, không “tài khoản internet” |
-| Zero hosting, zero email | Mất máy / xóa AppData = mất tài khoản |
-| Nhiều người dùng chung máy được ngay | Không đăng nhập được máy khác |
-| Có thể gắn `user_id` cloud sau này mà không đổi UX | Phải tự giải bài toán quên mật khẩu (mã khôi phục) |
-
-**Phù hợp** vì yêu cầu là tối giản và sản phẩm chưa có backend.
-
-### B. Backend username + password (không email)
-
-Một API nhỏ: `POST /register`, `POST /login`, JWT. Username unique toàn cục.
+Username + password trong SQLite trên máy. Hash Argon2id ở **Rust**. Quên mật khẩu: app gửi SMTP (crate `lettre`) tới email user nhập.
 
 | Ưu | Nhược |
 | --- | --- |
-| Đăng nhập được nhiều máy | Phải viết/host server, TLS, rate limit, backup |
-| Username là identity thật | **Không email** ⇒ không verify, không reset chuẩn, dễ bị chiếm username |
-| Sẵn sàng cho sync | Phá ràng buộc offline; lần đầu phải có mạng |
-| | Phạm vi gấp nhiều lần so với “tối giản” |
+| Đăng ký / login khớp kiến trúc hiện tại, offline | Username unique chỉ trên **máy này** |
+| Đúng flow email người dùng mô tả | Cần cấu hình SMTP; quên mật khẩu cần mạng |
+| Nhiều hồ sơ trên một máy | SMTP credentials phải nằm ngoài git |
+| Không host user-server | Ai có file DB vẫn hash-offline được (giới hạn local-app) |
 
-**Không chọn** cho vòng này. Nếu sau này cần sync, spec A đã để `accounts.id` ổn định để map lên server.
+**Chọn A.** Account vẫn local. Chỉ thêm mailer cho một flow.
 
-### C. Khách mặc định + khóa mật khẩu tùy chọn
+### B. Backend username + password + mailer trên server
 
-Giữ singleton như hiện tại. Password chỉ là PIN khóa cửa sổ chính.
+API `register` / `login` / `forgot`. Email và hash nằm server.
 
 | Ưu | Nhược |
 | --- | --- |
-| Ít schema change | Không phải “tài khoản”; không đăng ký / nhiều user |
-| | Không tách tiến độ khi hai người dùng chung máy |
-| | Username trở thành nhãn trang trí |
+| Đăng nhập nhiều máy | Phạm vi lớn: host, TLS, backup |
+| SMTP không nhét vào app cài | Phá offline ngay cả login |
+| | Không khớp “tối giản” / desktop local-first |
 
-**Không chọn** — người dùng hỏi chức năng tài khoản (đăng ký + đăng nhập), không phải khóa màn hình.
+**Không chọn** vòng này.
 
-**Quyết định:** ship **Approach A**.
+### C. Mã khôi phục local (revision 1)
+
+Hiện mã một lần lúc đăng ký, không email.
+
+**Không chọn** — người dùng đã thay bằng gửi mật khẩu mặc định qua email.
+
+**Quyết định:** ship **Approach A**, với flow quên mật khẩu revision 2.
 
 ---
 
 ## 4. Architecture
 
-Auth sống ở **Rust** (hash, verify, session id). TypeScript chỉ gọi command và render form. JS **không** hash password và **không** nhận `password_hash` từ DB.
+Auth sống ở **Rust** (hash, verify, session, gửi mail). TypeScript chỉ gọi command và render form. JS **không** hash password, **không** nhận `password_hash`, **không** nhận plaintext mật khẩu mặc định từ command gửi mail.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  Main window (880×640)                                      │
-│   chưa session → AuthGate (Đăng nhập | Đăng ký)             │
+│   chưa session → AuthGate (Đăng nhập | Đăng ký | Quên MK)   │
 │   có session, chưa pet → Onboarding (chọn pet) — giữ nguyên │
 │   có session, có pet   → Home                               │
 └────────────────────────────┬────────────────────────────────┘
                              │ invoke
                              ▼
 ┌─────────────────────────────────────────────────────────────┐
-│  Rust commands (src-tauri/src/commands/auth.rs)             │
-│   register / login / logout / change_password / recover     │
-│   current_session                                           │
-│   Argon2id (PHC string trong cột password_hash)             │
+│  Rust: commands/auth.rs + mailer.rs                         │
+│   register / login / logout / change_password               │
+│   request_password_reset / confirm_password_reset           │
+│   current_session / update_account_email                    │
+│   Argon2id; SMTP via lettre                                 │
 └────────────────────────────┬────────────────────────────────┘
                              ▼
               sqlite:vocab_pet.db
-              accounts + app_session + user_id trên bảng tiến độ
-              settings.json không chứa session (tránh đua với Zustand)
+              accounts (username, password_hash, email)
+              app_session + user_id trên bảng tiến độ
+              settings.json không chứa session
+                             │
+                             ▼
+              SMTP  →  hộp thư user  (mật khẩu mặc định)
 ```
 
-Popup **không** có màn hình auth. Nếu chưa đăng nhập mà tray bấm **Học ngay**, Rust/`show_popup_window` vẫn mở popup nhưng frontend popup hiện copy “Mở app để đăng nhập” + nút đóng — không lộ thẻ học. Scheduler tick khi chưa login: **không** bắn notification (tránh làm phiền trước khi có tài khoản).
+Popup **không** có màn hình auth. Tray **Học ngay** khi chưa login: popup copy “Mở app để đăng nhập” + đóng. Scheduler khi chưa login: **không** bắn notification.
 
-### 4.1 Thành phần (một việc / một ranh giới)
+### 4.1 Thành phần
 
 | Unit | Việc | API công khai | Phụ thuộc |
 | --- | --- | --- | --- |
-| `commands/auth.rs` | Đăng ký, login, logout, đổi/khôi phục mật khẩu, session | Tauri commands dưới đây | SQLite, Argon2id |
-| `db/accounts.ts` | Đọc session hiện tại cho UI (không SQL password) | `getCurrentAccount()` | `current_session` command |
-| `features/auth` | Validate form phía client (độ dài, khớp confirm) | `validateUsername`, `validatePassword` | không |
-| `components/auth/*` | AuthGate, LoginForm, RegisterForm, RecoveryReveal, ForgotForm | props onSubmit | `features/auth` + invoke |
-| `AuthGate` (main) | Chọn cây: auth / onboarding / home | wrap existing App | session + `pet_state` |
+| `commands/auth.rs` | Đăng ký, login, logout, đổi MK, reset, session | commands dưới đây | SQLite, Argon2id, `mailer` |
+| `mailer.rs` | Gửi một loại mail: mật khẩu mặc định | `send_default_password(to, username, default_password)` | SMTP env |
+| `db/accounts.ts` | Đọc session cho UI (không SQL password) | `getCurrentAccount()` | `current_session` |
+| `features/auth` | Validate username / password / email format | `validateUsername`, `validatePassword`, `validateEmail` | không |
+| `components/auth/*` | AuthGate, Login, Register, ForgotEmail, ForgotChangePassword | props onSubmit | `features/auth` + invoke |
+| `AuthGate` (main) | Cây: auth / onboarding / home | wrap App | session + `pet_state` |
 
-Rust commands:
+`mailer.rs` không biết SQLite. `auth.rs` không nói SMTP host — chỉ gọi `send_default_password`. Test auth bằng mailer fake.
+
+### 4.2 Rust commands
 
 | Command | Input | Output |
 | --- | --- | --- |
-| `register_account` | `{ username, password }` | `{ userId, username, recoveryCode }` — `recoveryCode` **chỉ lần này** |
-| `login_account` | `{ username, password }` | `{ userId, username }` |
+| `register_account` | `{ username, password }` | `{ userId, username, email: null }` |
+| `login_account` | `{ username, password }` | `{ userId, username, email }` |
 | `logout_account` | none | `()` |
-| `current_session` | none | `{ userId, username } \| null` |
-| `change_password` | `{ currentPassword, newPassword }` | `()` |
-| `recover_password` | `{ username, recoveryCode, newPassword }` | `{ userId, username }` (cũng đăng nhập) |
-| `delete_account` | `{ password }` | `()` — xóa user đang login + cascade data |
+| `current_session` | none | `{ userId, username, email } \| null` |
+| `change_password` | `{ currentPassword, newPassword }` | `()` — đã login |
+| `request_password_reset` | `{ username, email }` | `{ ok: true }` — **không** trả mật khẩu mặc định |
+| `confirm_password_reset` | `{ username, defaultPassword, newPassword }` | `{ userId, username, email }` (đăng nhập luôn) |
+| `update_account_email` | `{ password, email }` | `{ email }` — đã login; đổi / gán email |
+| `delete_account` | `{ password }` | `()` |
 
-Mọi command nhận password dạng plaintext **chỉ trong IPC nội bộ** (cùng máy). Không ghi log argument.
+Mọi password / default password chỉ đi IPC nội bộ. Không log argument. `request_password_reset` thành công **không** set `app_session` — user phải hoàn tất màn đổi mật khẩu (hoặc login bằng mật khẩu mặc định vừa nhận).
+
+### 4.3 SMTP
+
+Biến môi trường (không commit, không nhét vào binary public):
+
+| Biến | Vai trò |
+| --- | --- |
+| `VOCABPET_SMTP_HOST` | Host, ví dụ `smtp.gmail.com` |
+| `VOCABPET_SMTP_PORT` | Mặc định `587` STARTTLS |
+| `VOCABPET_SMTP_USER` | SMTP user |
+| `VOCABPET_SMTP_PASS` | SMTP password / app password |
+| `VOCABPET_SMTP_FROM` | From, ví dụ `Vocab Pet <noreply@...>` |
+
+Thiếu config: `request_password_reset` trả lỗi `mail_not_configured` → UI “Chưa cấu hình gửi email. Không gửi được mật khẩu mặc định.”
+
+Mail:
+
+- Subject: `Mật khẩu mặc định Vocab Pet`
+- Body (text): chào, username, mật khẩu mặc định, “Mở app → Quên mật khẩu (bước 2) hoặc Đăng nhập bằng mật khẩu này, rồi đổi mật khẩu mới.”
+- Không HTML marketing.
 
 ---
 
@@ -174,15 +202,17 @@ CREATE TABLE accounts (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   username TEXT NOT NULL COLLATE NOCASE UNIQUE,
   password_hash TEXT NOT NULL,
-  recovery_hash TEXT NOT NULL,
+  email TEXT COLLATE NOCASE,
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 ```
 
-- `username`: đã chuẩn hóa (trim, không đổi hoa/thường khi so khớp nhờ `NOCASE`; lưu **đúng như user gõ** sau trim).
-- `password_hash` / `recovery_hash`: chuỗi PHC Argon2id (`$argon2id$v=19$...`). Không lưu plaintext, không lưu salt tách cột (salt nằm trong PHC).
-- Không cột email. Không cột `verified`. Không cột `role`.
+- `username`: trim; so khớp `NOCASE`; lưu đúng như user gõ sau trim.
+- `password_hash`: PHC Argon2id. Không plaintext, không salt tách cột.
+- `email`: `NULL` đến lần quên mật khẩu đầu (hoặc đến lúc user cập nhật khi đã login). So khớp `NOCASE`. Lưu lowercase sau trim (tránh `A@x.com` vs `a@x.com` lúc “phải đúng email”).
+- Không cột `verified`. Không `recovery_hash`. Không `role`.
+- Không UNIQUE bắt buộc trên `email` (nhiều account `NULL`; quên MK luôn kèm username). Index thường `(email)` để lookup.
 
 ### 5.2 Gắn `user_id`
 
@@ -196,17 +226,17 @@ Thêm cột nullable `user_id INTEGER REFERENCES accounts(id) ON DELETE CASCADE`
 
 Unique/singleton theo user:
 
-- `pet_state`: unique `(user_id)` — một pet / tài khoản.
+- `pet_state`: unique `(user_id)` — một pet / tài khoản. SQLite cho nhiều `NULL`.
 - `user_progress`: unique `(user_id)`.
-- `daily_missions`: không thêm UNIQUE mới. Query/insert vẫn theo semantics hiện tại, **luôn** lọc `user_id = session`. Index `(user_id, mission_date)`.
+- `daily_missions`: không thêm UNIQUE mới. Query/insert lọc `user_id = session`. Index `(user_id, mission_date)`.
 
 Index khác: `learning_progress(user_id, vocabulary_id)`, `study_sessions(user_id, answered_at)`.
 
-`user_id` trên các bảng cũ là `NULL` được ở schema (SQLite không ALTER dễ thành `NOT NULL`). **Application rule:** mọi INSERT sau khi có session phải ghi `user_id`. SELECT tiến độ / pet / missions luôn `WHERE user_id = ?`. Hàng `user_id IS NULL` chỉ tồn tại như data orphan trước lần đăng ký đầu (mục 5.4).
+`user_id` nullable ở schema (SQLite khó ALTER thành `NOT NULL`). **Application rule:** INSERT sau khi có session phải có `user_id`. SELECT tiến độ / pet / missions luôn `WHERE user_id = ?`.
 
 ### 5.3 Session
 
-Bảng riêng — **không** ghi vào `settings.json` (file đó đang bị Zustand persist chiếm, `write_app_settings` ghi đè cả file).
+Không ghi `settings.json` (Zustand persist chiếm file).
 
 ```sql
 CREATE TABLE app_session (
@@ -216,139 +246,185 @@ CREATE TABLE app_session (
 );
 ```
 
-Tối đa một hàng (`id = 1`). Login = `INSERT OR REPLACE`. Logout = `DELETE FROM app_session`. `current_session` join `accounts`. Không JWT, không lưu password.
-
-Xóa tài khoản đang login: FK cascade xóa `app_session` → coi như logout.
+Tối đa một hàng (`id = 1`). Login / `confirm_password_reset` = `INSERT OR REPLACE`. Logout = `DELETE`. Xóa account đang login: cascade xóa session.
 
 ### 5.4 Migration data cũ
 
-Scaffold seed một hàng `user_progress` trống (migration `016`) và chỉ insert `pet_state` sau onboarding.
+Scaffold seed một hàng `user_progress` trống (`016`); `pet_state` chỉ sau onboarding.
 
 1. Tạo `accounts` và `app_session`.
-2. `ALTER TABLE ... ADD COLUMN user_id INTEGER REFERENCES accounts(id) ON DELETE CASCADE` trên `pet_state`, `user_progress`, `learning_progress`, `study_sessions`, `daily_missions` (nullable).
-3. **Không** tự tạo tài khoản ghost.
-4. `register_account` **đầu tiên trên máy** (bảng `accounts` đang trống):
-   - Singleton (`pet_state`, `user_progress`): nếu có đúng một hàng `user_id IS NULL`, gán `user_id` mới. Nếu không có hàng — không tạo pet ở đây (onboarding làm). Scaffold seed đúng một `user_progress`; `pet_state` có sau onboarding.
-   - Không-singleton (`learning_progress`, `study_sessions`, `daily_missions`): `UPDATE ... SET user_id = ? WHERE user_id IS NULL`.
-5. Đăng ký thứ hai trở đi: không claim orphan. Insert `user_progress` trống cho user mới; `pet_state` chỉ insert sau onboarding.
-
-Hai tài khoản trên máy trống (chưa từng onboarding): user 1 claim hàng `user_progress` seed; user 2 được insert `user_progress` mới. Mỗi người chọn pet riêng.
+2. `ALTER TABLE ... ADD COLUMN user_id INTEGER REFERENCES accounts(id) ON DELETE CASCADE` trên năm bảng trên (nullable).
+3. Không tạo tài khoản ghost.
+4. `register_account` **đầu tiên** (`accounts` đang trống):
+   - Singleton (`pet_state`, `user_progress`): nếu đúng một hàng `user_id IS NULL`, gán `user_id` mới.
+   - Không-singleton: `UPDATE ... SET user_id = ? WHERE user_id IS NULL`.
+5. Đăng ký sau: không claim orphan. Insert `user_progress` trống; `pet_state` sau onboarding.
 
 ---
 
-## 6. Quy tắc username và password
+## 6. Quy tắc username, password, email
 
 ### Username
 
 | Rule | Giá trị |
 | --- | --- |
-| Độ dài | 3–24 ký tự sau trim |
+| Độ dài | 3–24 sau trim |
 | Ký tự | `A–Z a–z 0–9 _ .` — không dấu, không khoảng trắng |
 | Unique | Không phân biệt hoa thường (`alice` = `Alice`) |
-| Reserved | `admin`, `root`, `system`, `guest` — từ chối (tránh nhầm UI sau này) |
-| Hiển thị | Đúng như lúc đăng ký (sau trim) |
+| Reserved | `admin`, `root`, `system`, `guest` |
+| Hiển thị | Đúng lúc đăng ký (sau trim) |
 
-Validate **cùng rule** ở TypeScript (UX tức thì) và Rust (nguồn sự thật). Rust thắng.
+Validate TS (UX) và Rust (nguồn sự thật). Rust thắng.
 
-### Password
+### Password (mật khẩu user chọn)
 
 | Rule | Giá trị |
 | --- | --- |
-| Độ dài | 8–128 ký tự |
-| Complexity | Không bắt buộc chữ hoa / số / ký tự đặc biệt |
-| Confirm | Bắt buộc lúc đăng ký, đổi mật khẩu, khôi phục |
-| Hash | Argon2id, params: memory 19 MiB, iterations 2, parallelism 1 (OWASP 2023 interactive). Đổi params = version trong PHC, verify cũ vẫn được |
-| Cấm | Trùng username (so khớp không phân biệt hoa thường) |
+| Độ dài | 8–128 |
+| Complexity | Không bắt chữ hoa / số / ký tự đặc biệt |
+| Confirm | Bắt buộc lúc đăng ký, đổi MK (đã login), màn sau gửi mail |
+| Hash | Argon2id, memory 19 MiB, iterations 2, parallelism 1 (OWASP 2023 interactive) |
+| Cấm | Trùng username (NOCASE) |
 
-Không meter “mạnh/yếu” phức tạp. Một dòng gợi ý: “Ít nhất 8 ký tự. Không dùng lại username.”
+Gợi ý UI: “Ít nhất 8 ký tự. Không dùng lại username.”
+
+### Mật khẩu mặc định (hệ thống sinh)
+
+| Rule | Giá trị |
+| --- | --- |
+| Độ dài | đúng 8 |
+| Charset | `A–Z` trừ `I O`, `a–z` trừ `l`, `2–9` — tránh nhầm ký tự khi đọc mail |
+| TTL | Là password hiện tại của account cho đến khi user đổi (màn 7.6 bước 2 hoặc Đổi mật khẩu khi đã login) |
+| Không | Trả về frontend từ `request_password_reset`; không ghi plaintext ra disk / log |
+
+### Email
+
+| Rule | Giá trị |
+| --- | --- |
+| Format | Một `@`, local + domain có dấu `.`, không khoảng trắng; max 254 |
+| Lưu | `trim` + lowercase |
+| Lần quên đầu | `accounts.email IS NULL` → nhận email này, lưu nếu gửi SMTP thành công |
+| Lần quên sau | Phải **trùng** `accounts.email` (đã lowercase) |
+| Đăng ký | Không có field |
 
 ---
 
 ## 7. Flows
 
-Copy UI: tiếng Việt. English chỉ là nội dung học (không xuất hiện trên auth).
+Copy UI: tiếng Việt.
 
-### 7.1 Đăng ký (first run hoặc từ link “Tạo tài khoản”)
+### 7.1 Đăng ký
 
-1. Form: Username, Mật khẩu, Nhập lại mật khẩu. Primary: **Tạo tài khoản**. Secondary: **Đã có tài khoản**.
-2. Client validate → invoke `register_account`.
-3. Thành công: hiện **màn hình mã khôi phục** (bắt buộc, không skip):
-   - Mã 16 ký tự, nhóm 4×4, charset Crockford Base32 không nhầm `0/O/1/I`.
-   - Copy: “Lưu mã này. Không có email để gửi lại. Mất mật khẩu và mất mã thì không lấy lại được pet.”
-   - Checkbox “Tôi đã lưu mã” mới enable **Tiếp tục**.
-   - Nút **Sao chép**.
-4. Tiếp tục → session đã set lúc register → **Onboarding chọn pet** (màn hiện tại). Claim data cũ nếu đã có pet thì **bỏ** onboarding.
-   - `register_account` ghi `app_session` ngay (trước khi UI hiện mã). Nếu app tắt lúc đang xem mã: lần sau vẫn login; mã plaintext đã mất — user vẫn vào được bằng password vừa tạo.
-5. Lỗi username trùng: “Tên này đã dùng trên máy. Chọn tên khác hoặc đăng nhập.”
-
-Mã khôi phục: Rust generate, hash Argon2id vào `recovery_hash`, trả plaintext **một lần** trong response. Không ghi plaintext ra disk / log.
+1. Form: Username, Mật khẩu, Nhập lại mật khẩu. Primary: **Tạo tài khoản**. Secondary: **Đã có tài khoản**. **Không** field email.
+2. Validate → `register_account`.
+3. Thành công: `app_session` set → Onboarding chọn pet. Claim data cũ nếu đã có pet thì bỏ onboarding.
+4. Username trùng: “Tên này đã dùng trên máy. Chọn tên khác hoặc đăng nhập.”
 
 ### 7.2 Đăng nhập
 
 1. Form: Username, Mật khẩu. Primary: **Đăng nhập**. Links: **Tạo tài khoản**, **Quên mật khẩu**.
-2. Sai username hoặc sai password: **cùng** message “Username hoặc mật khẩu không đúng.” (không tiết lộ user có tồn tại).
-3. Đúng: ghi `app_session`, vào Home (hoặc Onboarding nếu chưa có pet).
-4. Sau 5 lần sai liên tiếp **cùng username** trong 5 phút: khóa 30 giây. Message: “Thử lại sau 30 giây.” Đếm trong bộ nhớ process (đủ cho MVP desktop); reset khi login đúng hoặc restart app.
+2. Sai username hoặc sai password: cùng câu “Username hoặc mật khẩu không đúng.”
+3. Đúng: ghi `app_session` → Home (hoặc Onboarding nếu chưa pet).
+4. 5 lần sai liên tiếp cùng username trong 5 phút: khóa 30 giây. Đếm in-memory; reset khi login đúng hoặc restart app.
+
+Sau khi `request_password_reset` thành công, mật khẩu cũ không còn. User có thể **Đăng nhập** bằng mật khẩu mặc định trong mail, hoặc đi tiếp bước 2 của quên mật khẩu.
 
 ### 7.3 Giữ phiên / mở lại app
 
-- Có hàng `app_session` join được `accounts` → không hiện auth. Popup học bình thường.
-- Không có session / user đã xóa → AuthGate.
-- Không hỏi lại password khi hiện popup hay khi máy sleep.
+- Có `app_session` join được `accounts` → không hiện auth.
+- Không session / user đã xóa → AuthGate.
+- Không hỏi lại password khi hiện popup hay máy sleep.
 
 ### 7.4 Đăng xuất
 
-Từ Home: menu nhỏ cạnh tên username (góc, không tranh “Học ngay”) → **Đăng xuất**. Confirm một dòng: “Pet vẫn trên máy. Đăng nhập lại để học tiếp.” → `logout_account` → AuthGate.
+Home: menu cạnh username → **Đăng xuất**. Confirm: “Pet vẫn trên máy. Đăng nhập lại để học tiếp.” → AuthGate.
 
-Tray **Thoát** = quit process, **không** logout (lần mở sau vẫn vào Home). Đây là lựa chọn có chủ đích: tray app, không phải ngân hàng.
+Tray **Thoát** = quit process, **không** logout.
 
 ### 7.5 Đổi mật khẩu (đã login)
 
-Home → menu tài khoản → **Đổi mật khẩu**: mật khẩu hiện tại, mật khẩu mới, nhập lại. Thành công: toast “Đã đổi mật khẩu.” Session giữ nguyên. Mã khôi phục **không** đổi.
+Menu tài khoản → **Đổi mật khẩu**: mật khẩu hiện tại, mật khẩu mới, nhập lại. Toast “Đã đổi mật khẩu.” Session giữ nguyên. Email không đổi.
 
 ### 7.6 Quên mật khẩu
 
-AuthGate → **Quên mật khẩu**: username + mã khôi phục + mật khẩu mới + nhập lại.
+Hai màn, không skip màn 2 về login bằng back **sau khi đã gửi thành công** — có link “Đăng nhập” nếu user muốn vào bằng mật khẩu mặc định.
 
-- Sai mã hoặc sai username: “Không khôi phục được. Kiểm tra username và mã.”
-- Đúng: hash password mới, **đăng nhập luôn**.
-- Không cấp mã khôi phục mới trong flow này (YAGNI). User đã login có thể không rotate recovery trong MVP.
+**Màn 1 — nhập email**
 
-Mất cả password lẫn mã: không có đường cứu. Copy trên màn quên mật khẩu nói rõ. Không “xóa AppData” như hướng dẫn mặc định trên UI (người rành có thể tự xóa file DB — không document trên màn hình học).
+- Fields: Username, Email.
+- Primary: **Gửi mail**.
+- Secondary: **Quay lại đăng nhập**.
+- Copy: “Lần đầu: email này sẽ lưu vào tài khoản. Lần sau phải dùng đúng email đó.”
+
+`request_password_reset`:
+
+| Tình huống | Hành vi |
+| --- | --- |
+| Username không tồn tại | Cùng lỗi generic: “Không gửi được. Kiểm tra username và email.” Không tiết lộ user có hay không. Vẫn tốn ~cùng thời gian (hash dummy / delay) |
+| Username có, `email` đang `NULL`, format email hợp lệ | Sinh mật khẩu mặc định → **gửi SMTP** → thành công thì `password_hash` = hash mặc định, `email` = email đã lowercase, `updated_at` now. Rồi mở màn 2 |
+| Username có, `email` đã có, input **trùng** | Sinh mặc định mới → gửi → thành công thì cập nhật `password_hash` (email giữ nguyên). Mở màn 2 |
+| Username có, `email` đã có, input **khác** | Generic “Không gửi được. Kiểm tra username và email.” Không gửi, không đổi hash |
+| SMTP fail / chưa cấu hình | Không lưu email, không đổi hash. Message cụ thể: chưa cấu hình / “Không gửi được email. Thử lại.” |
+| Email format sai | Inline, không gọi Rust |
+
+Gửi thành công: toast hoặc banner màn 2 “Đã gửi mật khẩu mặc định tới {email}.” (hiện đúng địa chỉ user vừa gõ, đã lowercase).
+
+**Màn 2 — đổi mật khẩu** (sau **Gửi mail** thành công)
+
+- Không hỏi lại username; UI giữ username + email từ màn 1 để gọi `confirm_password_reset`.
+- Fields (cả ba type password + hiện/ẩn):
+  1. **Mật khẩu mặc định** — user gõ từ mail, không pre-fill, không hiện giá trị hệ thống sinh
+  2. **Mật khẩu mới**
+  3. **Nhập lại mật khẩu mới**
+- Primary: **Đổi mật khẩu**
+- Link: **Đăng nhập** (nếu đã nhớ mặc định và muốn vào Home trước)
+
+`confirm_password_reset`:
+
+- Verify `defaultPassword` khớp `password_hash` hiện tại của username.
+- `newPassword` theo rule mục 6; khác mật khẩu mặc định; confirm khớp (confirm chỉ check ở client + Rust so `newPassword`).
+- Thành công: hash mật khẩu mới, set `app_session`, vào Home / Onboarding.
+- Sai mặc định: “Mật khẩu mặc định không đúng.” Không tiết lộ thêm. Cùng lockout 5/30s theo username như login.
+
+Không có đường “gửi lại” tự động trên màn 2. User **Quay lại** màn 1 và gửi lần nữa (mật khẩu mặc định mới, cái cũ trong mail hết hiệu lực khi gửi thành công lần sau).
 
 ### 7.7 Xóa tài khoản
 
-Home → menu → **Xóa tài khoản**: gõ lại password + gõ username để confirm. Cascade xóa pet, progress, sessions, missions của user đó. User khác trên máy không bị ảnh hưởng. Về AuthGate.
+Menu → **Xóa tài khoản**: password + gõ lại username. Cascade pet, progress, sessions, missions. AuthGate.
+
+### 7.8 Email trên thông tin account (đã login)
+
+Menu hiện email hoặc “Chưa lưu email”. **Cập nhật email**: mật khẩu hiện tại + email mới. `update_account_email` lưu lowercase. Lần quên sau phải dùng email mới. Không gửi mail xác nhận (vẫn không verify).
 
 ---
 
 ## 8. UI (Warm Companion)
 
-Không thêm route mới. Auth là view trong main WebView, cùng 880×640.
-
-**Không** dùng visual companion / demo HTML trong spec này — auth là form ngắn, không phải so layout. Implementation lần sau dùng token PR #3:
+Auth là view trong main WebView 880×640. Token PR #3:
 
 - Nền `--stone-25`, panel trắng `--radius-lg`, primary `--terracotta-700` chữ trắng.
 - Be Vietnam Pro 16px+. Focus ring `--focus`.
 - Một PrimaryButton mỗi màn.
-- Password field: type password + nút hiện/ẩn (icon Lucide `Eye` / `EyeOff`, `aria-label` “Hiện mật khẩu”).
-- Lỗi: `--rose-50` well + text `--rose-700`, không chỉ màu.
-- Username trên Home: `text-sm` `--stone-500`, không phải hero.
+- Password: type password + Lucide `Eye` / `EyeOff`, `aria-label` “Hiện mật khẩu”.
+- Lỗi: `--rose-50` + `--rose-700`, không chỉ màu.
+- Username trên Home: `text-sm` `--stone-500`.
 
-Màn hình (thứ tự):
+Màn hình:
 
-1. **Đăng nhập** — mặc định khi đã có ≥1 account trên máy và chưa session.
-2. **Đăng ký** — mặc định khi 0 account; cũng tới được từ link.
-3. **Mã khôi phục** — chỉ sau register thành công, chặn back (tránh mất mã). Nút back bị disable.
-4. **Quên mật khẩu**
-5. **Đổi mật khẩu** / **Xóa tài khoản** — overlay/panel trên Home, không full-page marketing.
+1. **Đăng nhập** — mặc định khi ≥1 account, chưa session.
+2. **Đăng ký** — mặc định khi 0 account.
+3. **Quên mật khẩu màn 1** — username + email.
+4. **Quên mật khẩu màn 2** — mặc định + mới + nhập lại.
+5. **Đổi mật khẩu / Cập nhật email / Xóa tài khoản** — panel trên Home.
 
-First-run copy:
+Copy:
 
 - H1 đăng ký: “Tạo tài khoản”
 - Sub: “Chỉ cần tên và mật khẩu. Không cần email.”
 - H1 đăng nhập: “Chào lại”
 - Sub: “Đăng nhập để gặp lại pet.”
+- H1 quên màn 1: “Quên mật khẩu”
+- H1 quên màn 2: “Đặt mật khẩu mới”
 
 ---
 
@@ -356,53 +432,66 @@ First-run copy:
 
 | Tình huống | Hành vi |
 | --- | --- |
-| Username trống / ngắn / ký tự lạ | Inline dưới field, không gọi Rust |
+| Username trống / ngắn / ký tự lạ | Inline, không gọi Rust |
 | Password < 8 hoặc > 128 | Inline |
 | Confirm không khớp | Inline “Hai mật khẩu chưa giống nhau.” |
-| Username trùng | Sau invoke, message mục 7.1 |
-| Login sai | Message chung; lockout mục 7.2 |
-| Recovery sai | Message chung mục 7.6 |
-| DB locked / disk đầy | “Không lưu được tài khoản. Kiểm tra dung lượng đĩa.” + giữ form |
-| Command panic | Không crash UI; toast lỗi generic “Có lỗi. Thử lại.” |
-
-Không stack trace trên UI.
+| Email format sai | Inline “Email không hợp lệ.” |
+| Username trùng lúc đăng ký | Mục 7.1 |
+| Login sai | Message chung; lockout 7.2 |
+| Reset màn 1 sai user/email | Generic mục 7.6 |
+| Reset màn 2 sai mặc định | “Mật khẩu mặc định không đúng.” |
+| SMTP / chưa cấu hình | Mục 7.6; account không đổi |
+| Mật khẩu mới = mật khẩu mặc định | Inline “Chọn mật khẩu khác mật khẩu mặc định.” |
+| DB locked / disk đầy | “Không lưu được tài khoản. Kiểm tra dung lượng đĩa.” |
+| Command panic | Toast “Có lỗi. Thử lại.” Không stack trace |
 
 ---
 
-## 10. Security notes (đủ cho local MVP)
+## 10. Security notes
 
-1. Hash và verify **chỉ trong Rust**. Frontend không `SELECT password_hash`.
-2. Argon2id PHC string; `argon2::verify_encoded` (constant-time theo lib).
-3. IPC password không đi mạng. Vẫn không `console.log` form values; không persist form.
-4. Recovery code entropy: 16 char Crockford ≈ 80 bit — đủ chống đoán trên máy local.
-5. Lockout 5/30s — chống anh/chị/em thử password, không chống attacker có file DB (họ hash-offline được; đó là giới hạn local-app, chấp nhận).
-6. Không SQL string từ username (parameterized).
-7. `delete_account` và `change_password` yêu cầu password hiện tại.
-8. Không secret trên GitHub. Argon2 params hardcode trong Rust.
+1. Hash / verify **chỉ Rust**. Frontend không `SELECT password_hash`.
+2. Argon2id PHC; verify constant-time theo lib.
+3. Không `console.log` form. Không persist form.
+4. `request_password_reset` không trả plaintext mật khẩu mặc định.
+5. Gửi SMTP **trước** khi commit email + hash mới. Fail → rollback (không commit).
+6. Lockout 5/30s trên login và `confirm_password_reset`.
+7. Username/email parameterized SQL.
+8. `delete_account`, `change_password`, `update_account_email` cần password hiện tại.
+9. SMTP secrets không trên GitHub.
+10. Generic error màn 1 tránh dò username/email.
 
-Không OS keyring trong MVP (thêm dependency, khác Windows/macOS). Session = một hàng `app_session` là đủ: app không phải password manager. Ai đã unlock OS thì mở được DB — password chỉ tách **hồ sơ**, không mã hóa file SQLite.
+Giới hạn chấp nhận: mật khẩu mặc định 8 ký tự đi qua email (SMTP thường plaintext tới mailbox). Ai đọc được inbox thì reset được — đúng ý “chứng minh email”. App local không mã hóa DB.
 
-**Mã hóa DB (SQLCipher) = non-goal.** Nếu cần sau này, đó là spec riêng.
+**SQLCipher = non-goal.**
 
 ---
 
 ## 11. Testing
 
-Pure tests (chạy `pnpm test` / `cargo test`, không cần GUI):
+Mailer inject fake trong unit test (không SMTP thật).
 
 | Case | Layer |
 | --- | --- |
 | Username: accept `minh.anh_1`, reject `ab`, `a b`, `minh@anh`, `Admin` | TS + Rust |
-| Password: reject 7 chars, reject = username, accept 8 chars | TS + Rust |
-| Register unique NOCASE: `Minh` rồi `minh` fail | Rust |
-| Login wrong password / unknown user → cùng error code | Rust |
-| Recovery đúng đổi pass; recovery sai không đổi | Rust |
+| Password: reject 7 chars, reject = username, accept 8 | TS + Rust |
+| Email: accept `a.b@x.vn`, reject `a@b`, `a b@x.com` | TS + Rust |
+| Register unique NOCASE | Rust |
+| Register không ghi email | Rust |
+| Login sai → cùng error code | Rust |
+| Reset lần đầu: lưu email, đổi hash, gọi mailer 1 lần | Rust |
+| SMTP fail lần đầu: email vẫn NULL, hash cũ | Rust |
+| Reset lần 2 đúng email: gửi, hash mới | Rust |
+| Reset lần 2 sai email: không gửi, hash không đổi | Rust |
+| Username không tồn tại: không gửi, error generic | Rust |
+| `confirm_password_reset` đúng mặc định + new → session | Rust |
+| `confirm` sai mặc định → không đổi hash mới | Rust |
 | First register claims orphan `pet_state` | Rust |
-| Second user không thấy `learning_progress` của user 1 | Rust |
-| Logout clears session; `current_session` null | Rust |
+| User 2 không thấy progress user 1 | Rust |
+| Logout clears session | Rust |
 | Lockout after 5 failures | Rust |
+| `update_account_email` rồi reset bằng email cũ fail | Rust |
 
-UI: không bắt Cypress cho MVP. Manual: đăng ký → thấy mã → onboarding → logout → login → home cùng pet.
+Manual: đăng ký (không email) → logout → quên MK → nhận mail (môi trường có SMTP) → màn 2 → Home cùng pet.
 
 ---
 
@@ -410,25 +499,29 @@ UI: không bắt Cypress cho MVP. Manual: đăng ký → thấy mã → onboardi
 
 Không làm trong PR này. PR này **chỉ spec**.
 
-1. Tests cho validate + auth commands (TDD).
-2. Migration `accounts` + `user_id` + claim logic.
-3. Rust commands.
-4. AuthGate + forms (Warm Companion tokens).
-5. Home: username + menu đăng xuất / đổi mật khẩu / xóa.
+1. Tests validate + auth commands + fake mailer (TDD).
+2. Migration `accounts` (có `email`) + `user_id` + claim.
+3. Rust auth commands + `mailer.rs`.
+4. AuthGate + đăng ký/đăng nhập + hai màn quên MK.
+5. Home: username, email, menu đăng xuất / đổi MK / cập nhật email / xóa.
 6. Popup + scheduler: chặn khi chưa session.
 7. `pnpm test` + `cargo test` auth.
 
 ---
 
-## 13. Open questions đã chốt (không để mở)
+## 13. Open questions đã chốt
 
 | Câu hỏi | Chốt |
 | --- | --- |
-| Local hay cloud? | Local (A) |
-| Bắt buộc tài khoản hay khách? | Bắt buộc |
+| Local hay cloud account? | Local (A) |
+| Email lúc đăng ký? | Không |
+| Verify email? | Không |
+| Quên mật khẩu? | Email + mật khẩu mặc định gửi mail; lần sau phải đúng email đã lưu |
+| Hiện plaintext mặc định trên app? | Không — chỉ trong email; màn 2 là ô nhập |
+| Mật khẩu mặc định cố định mọi user? | Không — sinh 8 ký tự mỗi lần gửi |
+| Quên MK có username? | Có (bind account khi chưa có email) |
+| Bắt buộc tài khoản? | Có |
 | Hỏi password mỗi lần mở app? | Không |
-| Quên mật khẩu? | Mã khôi phục một lần lúc đăng ký |
 | Nhiều user / máy? | Có, isolated |
-| Email sau này? | Ngoài spec; schema không có cột email để khỏi “điền tạm” |
 
-Nếu người dùng muốn cloud sync, viết spec mới — không nhồi vào vòng này.
+SMTP credentials cần khi implement (không phải lúc review spec).
