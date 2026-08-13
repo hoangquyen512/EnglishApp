@@ -1,0 +1,69 @@
+/**
+ * Vocab Pet design tokens — source of truth for the whole project.
+ * Import this file (or map tokens.json into Tailwind) instead of hardcoding colors.
+ * Spec: docs/superpowers/specs/2026-08-13-vocab-pet-uiux-design.md
+ */
+:root {
+  --stone-25: #faf6f1;
+  --stone-50: #f4eee6;
+  --stone-100: #e8dfd4;
+  --stone-500: #5c524a;
+  --stone-800: #3d322b;
+  --stone-950: #1f1915;
+  --terracotta-700: #c2410c;
+  --terracotta-800: #9a3412;
+  --terracotta-500: #ea580c;
+  --leaf-700: #3f6212;
+  --leaf-50: #f7fee7;
+  --rose-700: #be123c;
+  --rose-50: #fff1f2;
+  --focus: #1d4ed8;
+
+  --color-bg: var(--stone-25);
+  --color-surface: #ffffff;
+  --color-fg: var(--stone-950);
+  --color-fg-muted: var(--stone-500);
+  --color-border: var(--stone-100);
+  --color-primary: var(--terracotta-700);
+  --color-primary-hover: var(--terracotta-800);
+  --color-primary-fg: #ffffff;
+  --color-focus-ring: var(--focus);
+  --color-success: var(--leaf-700);
+  --color-danger: var(--rose-700);
+
+  --font-ui: "Be Vietnam Pro", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-specimen: Fraunces, Georgia, "Times New Roman", serif;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgb(31 25 21 / 0.06);
+  --shadow-md: 0 8px 24px rgb(31 25 21 / 0.08);
+
+  --dur-fast: 120ms;
+  --dur-base: 180ms;
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+
+  --pet-float-width: 180px;
+  --popup-width: 400px;
+  --popup-height: 500px;
+  --home-width: 880px;
+  --home-height: 640px;
+}

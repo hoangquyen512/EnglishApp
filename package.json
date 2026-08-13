@@ -1,0 +1,14 @@
+{
+  "name": "english-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "design:sync": "node design-system/sync-tokens.mjs",
+    "test": "pnpm design:sync --check && pnpm test:ui",
+    "test:ui": "playwright test",
+    "test:ui:update": "playwright test --update-snapshots"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}

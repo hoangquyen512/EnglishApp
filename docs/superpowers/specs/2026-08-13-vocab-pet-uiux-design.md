@@ -114,6 +114,8 @@ Popup Đóng / ✕ ───────► Hide popup
 
 ---
 
+Project tokens (import these, do not fork hex values): [`design-system/tokens.css`](../../../design-system/tokens.css) and [`design-system/tokens.json`](../../../design-system/tokens.json). UI tests: `pnpm test`.
+
 ## 5. Design system
 
 ### 5.1 Type
