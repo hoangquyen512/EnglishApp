@@ -1,13 +1,16 @@
 import type { MissionType, PetMood, PhraseTopic } from "../types";
 
-export const APP_NAME = "Vocab Pet";
+export const APP_NAME = "Yume";
+export const DEFAULT_PET_NAME = "Sora";
 
 export const UI = {
   openApp: "Mở app",
   studyNow: "Học ngay",
   quit: "Thoát",
-  onboardingTitle: "Chọn người bạn đồng hành",
-  onboardingSubtitle: "Pet sẽ lớn lên mỗi khi bạn học từ vựng đúng.",
+  onboardingTitle: `Chào mừng đến ${APP_NAME}`,
+  onboardingSubtitle: "Chọn người bạn đồng hành. Pet sẽ lớn lên mỗi khi bạn học từ vựng đúng.",
+  petNameLabel: "Tên pet",
+  petNamePlaceholder: DEFAULT_PET_NAME,
   choosePet: "Chọn pet này",
   homeTitle: "Nhà của pet",
   studyModeTitle: "Chọn chế độ học",
@@ -28,7 +31,7 @@ export const UI = {
   loading: "Đang tải...",
   noCard: "Chưa có thẻ nào phù hợp.",
   needChoice: "Hãy chọn một đáp án.",
-  popupTitle: "Học ngay",
+  popupTitle: APP_NAME,
   xpGained: "pet vui lên và nhận XP",
   missionComplete: "Hoàn thành nhiệm vụ",
   dbUnavailable: "Không kết nối được SQLite. Hãy chạy bằng pnpm tauri dev.",

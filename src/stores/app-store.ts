@@ -20,7 +20,7 @@ interface AppState {
   missions: DailyMission[];
   progress: UserProgress | null;
   hydrate: () => Promise<void>;
-  chooseSpecies: (species: PetSpecies) => Promise<void>;
+  chooseSpecies: (species: PetSpecies, petName?: string) => Promise<void>;
   reloadMissions: () => Promise<void>;
   setPet: (pet: PetState) => void;
 }
@@ -54,8 +54,8 @@ export const useAppStore = create<AppState>((set, get) => ({
       set({ ready: true, error: message });
     }
   },
-  chooseSpecies: async (species) => {
-    const pet = await adoptSpecies(species);
+  chooseSpecies: async (species, petName) => {
+    const pet = await adoptSpecies(species, petName);
     set({ pet });
   },
   reloadMissions: async () => {

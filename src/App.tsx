@@ -72,7 +72,12 @@ export default function App() {
   }
 
   if (!pet) {
-    return <OnboardingScreen species={species} onChoose={(item) => void chooseSpecies(item)} />;
+    return (
+      <OnboardingScreen
+        species={species}
+        onChoose={(item, petName) => void chooseSpecies(item, petName)}
+      />
+    );
   }
 
   return (

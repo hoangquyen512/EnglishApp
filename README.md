@@ -1,6 +1,6 @@
-# Vocab Pet
+# Yume
 
-Desktop app (Windows + macOS) for daily English flashcards with a Tamagotchi-style pet. Built with **Tauri 2**, **React 18**, **TypeScript**, **Zustand**, **TailwindCSS**, and **SQLite**.
+Desktop app (Windows + macOS) for daily English flashcards with a Tamagotchi-style pet (default name **Sora**). Built with **Tauri 2**, **React 18**, **TypeScript**, **Zustand**, **TailwindCSS**, and **SQLite**.
 
 Correct answers feed the pet (XP, mood, evolution). Missing days makes the pet sad or hungry — it never dies.
 
@@ -29,7 +29,7 @@ In release builds the main window starts hidden. Use the tray icon:
 
 ## MVP flow
 
-1. Choose a pet species (Cat / Fox / Dragon).
+1. Name the pet (default **Sora**) and choose a species (Cat / Fox / Dragon).
 2. Pick study mode: vocabulary, or phrases + topic (travel / food / office / family).
 3. Answer 4-choice flashcards. Correct answers grant XP; enough XP levels the pet and may change its sprite.
 4. Daily missions generate automatically. Completing them grants bonus XP.

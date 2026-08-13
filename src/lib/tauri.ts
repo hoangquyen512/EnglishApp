@@ -1,3 +1,5 @@
+import { APP_NAME } from "../constants/ui";
+
 export function isTauri(): boolean {
   return typeof window !== "undefined" && "__TAURI_INTERNALS__" in window;
 }
@@ -29,7 +31,7 @@ export async function showMainWindow(): Promise<void> {
 
 export async function showPopupWindow(): Promise<void> {
   if (!isTauri()) {
-    window.open(`${window.location.origin}/?window=popup`, "vocab-pet-popup", "width=400,height=500");
+    window.open(`${window.location.origin}/?window=popup`, "yume-popup", "width=400,height=500");
     return;
   }
   const { invoke } = await import("@tauri-apps/api/core");
@@ -60,7 +62,7 @@ export async function notifyStudyTime(): Promise<void> {
   }
   if (granted) {
     sendNotification({
-      title: "Vocab Pet",
+      title: APP_NAME,
       body: "Đến giờ học rồi — pet đang đợi bạn!",
     });
   }

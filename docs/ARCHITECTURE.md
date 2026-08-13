@@ -1,6 +1,6 @@
-# Vocab Pet architecture
+# Yume architecture
 
-MVP desktop app: a hidden-by-default Tauri shell, a small always-on-top study popup, SQLite on disk, and TypeScript domain logic.
+MVP desktop app: a hidden-by-default Tauri shell, a small always-on-top study popup, SQLite on disk, and TypeScript domain logic. The product name is **Yume**; the default pet name is **Sora** (user-renameable via `pet_state.pet_name`).
 
 ## Stack
 
@@ -101,7 +101,7 @@ These rules are locked in `src-tauri/tauri.conf.json` and guarded by `src/config
 
 Windows current-user NSIS installs under `%LOCALAPPDATA%` (typically `C:\Users\<user>\AppData\Local\...`), not `C:\Program Files`. Registry keys go to `HKCU`. A standard (non-admin) account must be able to run the installer with **no UAC prompt**.
 
-macOS: the `.app` is relocatable. The DMG may show an Applications shortcut as a convenience, but the user may drag Vocab Pet into Desktop, `~/Applications`, or any other folder they can write. Runtime data does not follow the `.app`.
+macOS: the `.app` is relocatable. The DMG may show an Applications shortcut as a convenience, but the user may drag Yume into Desktop, `~/Applications`, or any other folder they can write. Runtime data does not follow the `.app`.
 
 `bundle.targets` is the explicit list `["nsis", "app", "dmg"]` — never `"all"` (that would reintroduce `.msi`).
 
@@ -109,8 +109,8 @@ macOS: the `.app` is relocatable. The DMG may show an Applications shortcut as a
 
 | File | Path API | Typical location |
 | --- | --- | --- |
-| SQLite | `appLocalDataDir()` | Windows `%LOCALAPPDATA%\com.vocabpet.app\vocab_pet.db`; macOS `~/Library/Application Support/com.vocabpet.app/vocab_pet.db` |
-| Settings JSON | `appDataDir()` | Windows `%APPDATA%\com.vocabpet.app\settings.json`; macOS same Application Support folder |
+| SQLite | `appLocalDataDir()` | Windows `%LOCALAPPDATA%\com.hoangquyen.yume\vocab_pet.db`; macOS `~/Library/Application Support/com.hoangquyen.yume/vocab_pet.db` |
+| Settings JSON | `appDataDir()` | Windows `%APPDATA%\com.hoangquyen.yume\settings.json`; macOS same Application Support folder |
 
 Never write into the install directory, `Program Files`, `/Applications`, `/Library`, or any other path that needs elevation. The WebView profile is also under the user AppData tree.
 
@@ -119,7 +119,7 @@ Never write into the install directory, `Program Files`, `/Applications`, `/Libr
 This Linux CI/agent environment cannot click through Windows UAC or mount a macOS DMG. Before a release, on a **standard user** (not Administrator / not in sudoers for the test):
 
 1. **Windows:** run the NSIS `*-setup.exe`. Confirm no UAC dialog, install completes under `%LOCALAPPDATA%`, app launches, then confirm `vocab_pet.db` and `settings.json` appear under the user AppData folders in the table above — not under `C:\Program Files`.
-2. **macOS:** open the `.dmg`, drag `Vocab Pet.app` to Desktop (not `/Applications`), launch it, and confirm the same user-scoped files under `~/Library/Application Support/com.vocabpet.app/`.
+2. **macOS:** open the `.dmg`, drag `Yume.app` to Desktop (not `/Applications`), launch it, and confirm the same user-scoped files under `~/Library/Application Support/com.hoangquyen.yume/`.
 
 Automated guard: `pnpm test` includes `src/config/deployment.test.ts`.
 

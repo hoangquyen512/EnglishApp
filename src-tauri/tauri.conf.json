@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Vocab Pet",
+  "productName": "Yume",
   "version": "0.1.0",
-  "identifier": "com.vocabpet.app",
+  "identifier": "com.hoangquyen.yume",
   "build": {
     "beforeDevCommand": "pnpm dev",
     "devUrl": "http://localhost:1420",
@@ -13,7 +13,7 @@
     "windows": [
       {
         "label": "main",
-        "title": "Vocab Pet",
+        "title": "Yume",
         "width": 880,
         "height": 640,
         "minWidth": 720,
@@ -23,7 +23,7 @@
       },
       {
         "label": "popup",
-        "title": "Vocab Pet",
+        "title": "Yume",
         "width": 400,
         "height": 500,
         "resizable": false,
