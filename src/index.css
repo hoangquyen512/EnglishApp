@@ -10,7 +10,12 @@ body,
 
 body {
   margin: 0;
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-  background: #fff7ed;
-  color: #431407;
+  font-family: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  background: #faf6f1;
+  color: #1f1915;
+}
+
+button,
+input {
+  font: inherit;
 }

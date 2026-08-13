@@ -3,6 +3,7 @@ import { UI } from "../../constants/ui";
 import { getNextCard, submitAnswer } from "../../features/vocabulary";
 import { dismissStudyPopup } from "../../features/scheduler";
 import { useAppStore } from "../../stores/app-store";
+import { useAuthStore } from "../../stores/auth-store";
 import { useStudyStore } from "../../stores/study-store";
 import type { QuizCard, QuizChoice } from "../../types";
 import { PetAvatar } from "../pet/pet-avatar";
@@ -10,6 +11,9 @@ import { PrimaryButton } from "../shared/primary-button";
 import { ChoiceButton } from "./choice-button";
 
 export function FlashcardPopup() {
+  const session = useAuthStore((state) => state.session);
+  const authReady = useAuthStore((state) => state.ready);
+  const hydrateAuth = useAuthStore((state) => state.hydrate);
   const pet = useAppStore((state) => state.pet);
   const hydrate = useAppStore((state) => state.hydrate);
   const setPet = useAppStore((state) => state.setPet);
@@ -39,9 +43,16 @@ export function FlashcardPopup() {
   }, [contentType, topic]);
 
   useEffect(() => {
+    void hydrateAuth();
+  }, [hydrateAuth]);
+
+  useEffect(() => {
+    if (!session) {
+      return;
+    }
     void hydrate();
     void loadCard();
-  }, [hydrate, loadCard]);
+  }, [hydrate, loadCard, session]);
 
   async function onSubmit() {
     if (!card) {
@@ -70,50 +81,61 @@ export function FlashcardPopup() {
   }
 
   return (
-    <div className="flex h-screen flex-col bg-orange-50">
+    <div className="flex h-screen flex-col bg-stone-25">
       <header
         data-tauri-drag-region
-        className="flex items-center justify-between border-b border-orange-100 bg-white px-3 py-2"
+        className="flex items-center justify-between border-b border-stone-100 bg-white px-3 py-2"
       >
         <strong data-tauri-drag-region>{UI.popupTitle}</strong>
-        <button type="button" onClick={() => void dismissStudyPopup()} className="text-sm text-orange-700">
+        <button type="button" onClick={() => void dismissStudyPopup()} className="text-sm text-terracotta-800">
           {UI.close}
         </button>
       </header>
       <div className="flex flex-1 flex-col gap-3 overflow-auto p-4">
-        {pet ? <PetAvatar pet={pet} size="md" /> : null}
-        {error ? <p className="text-sm text-red-600">{error}</p> : null}
-        {busy && !card ? <p>{UI.loading}</p> : null}
-        {!busy && !card ? <p>{UI.noCard}</p> : null}
-        {card ? (
+        {!authReady ? <p>{UI.loading}</p> : null}
+        {authReady && !session ? (
+          <div className="flex flex-1 flex-col items-center justify-center gap-4 text-center">
+            <p className="text-lg font-semibold">{UI.popupNeedLogin}</p>
+            <PrimaryButton onClick={() => void dismissStudyPopup()}>{UI.close}</PrimaryButton>
+          </div>
+        ) : null}
+        {session ? (
           <>
-            <div className="rounded-2xl bg-white p-4 text-center shadow-sm">
-              <p className="text-xl font-bold">{card.prompt}</p>
-              {card.example ? <p className="mt-2 text-xs text-orange-800/70">{card.example}</p> : null}
-            </div>
-            <div className="grid gap-2">
-              {card.choices.map((choice) => (
-                <ChoiceButton
-                  key={choice.id}
-                  choice={choice}
-                  selected={selected?.id === choice.id}
-                  revealed={revealed}
-                  onSelect={(item) => {
-                    if (!revealed) {
-                      setSelected(item);
-                    }
-                  }}
-                />
-              ))}
-            </div>
-            {feedback ? <p className="text-center text-sm font-semibold">{feedback}</p> : null}
-            {revealed ? (
-              <PrimaryButton onClick={() => void loadCard()}>{UI.nextCard}</PrimaryButton>
-            ) : (
-              <PrimaryButton disabled={busy} onClick={() => void onSubmit()}>
-                {UI.submit}
-              </PrimaryButton>
-            )}
+            {pet ? <PetAvatar pet={pet} size="md" /> : null}
+            {error ? <p className="text-sm text-rose-700">{error}</p> : null}
+            {busy && !card ? <p>{UI.loading}</p> : null}
+            {!busy && !card && !error ? <p>{UI.noCard}</p> : null}
+            {card ? (
+              <>
+                <div className="rounded-2xl bg-white p-4 text-center shadow-sm">
+                  <p className="text-xl font-bold">{card.prompt}</p>
+                  {card.example ? <p className="mt-2 text-xs text-stone-500">{card.example}</p> : null}
+                </div>
+                <div className="grid gap-2">
+                  {card.choices.map((choice) => (
+                    <ChoiceButton
+                      key={choice.id}
+                      choice={choice}
+                      selected={selected?.id === choice.id}
+                      revealed={revealed}
+                      onSelect={(item) => {
+                        if (!revealed) {
+                          setSelected(item);
+                        }
+                      }}
+                    />
+                  ))}
+                </div>
+                {feedback ? <p className="text-center text-sm font-semibold">{feedback}</p> : null}
+                {revealed ? (
+                  <PrimaryButton onClick={() => void loadCard()}>{UI.nextCard}</PrimaryButton>
+                ) : (
+                  <PrimaryButton disabled={busy} onClick={() => void onSubmit()}>
+                    {UI.submit}
+                  </PrimaryButton>
+                )}
+              </>
+            ) : null}
           </>
         ) : null}
       </div>

@@ -1,5 +1,7 @@
 import { MISSION_TITLES, TOPIC_LABELS, UI } from "../../constants/ui";
+import type { SessionDto } from "../../features/auth";
 import type { ContentType, DailyMission, PetState, PhraseTopic } from "../../types";
+import { HomeAccountChip } from "../account/home-account-chip";
 import { PetStatus } from "../pet/pet-status";
 import { Panel } from "./panel";
 import { PrimaryButton } from "./primary-button";
@@ -14,6 +16,8 @@ interface HomeScreenProps {
   onTopic: (topic: PhraseTopic | null) => void;
   onInterval: (minutes: number) => void;
   onStudyNow: () => void;
+  session: SessionDto;
+  onOpenAccount: () => void;
 }
 
 function missionLabel(mission: DailyMission): string {
@@ -36,13 +40,18 @@ export function HomeScreen({
   onTopic,
   onInterval,
   onStudyNow,
+  session,
+  onOpenAccount,
 }: HomeScreenProps) {
   return (
-    <main className="mx-auto grid min-h-screen max-w-5xl gap-4 p-6 md:grid-cols-[280px_1fr]">
+    <main className="mx-auto grid min-h-screen max-w-5xl gap-4 bg-stone-25 p-6 md:grid-cols-[280px_1fr]">
       <Panel>
         <PetStatus pet={pet} />
       </Panel>
       <div className="flex flex-col gap-4">
+        <div className="flex justify-end">
+          <HomeAccountChip session={session} onOpen={onOpenAccount} />
+        </div>
         <Panel>
           <h1 className="text-2xl font-black">{UI.homeTitle}</h1>
           <h2 className="mt-4 text-sm font-semibold uppercase tracking-wide text-orange-700">

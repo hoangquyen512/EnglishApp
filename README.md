@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-# EnglishApp
-
-Vocab Pet — desktop companion for daily English vocabulary.
-
-## Specs
-
-- [Account: username + password](docs/superpowers/specs/2026-08-13-vocab-pet-account-design.md)
-- [Account screens demo (Warm Companion)](docs/uiux-demo/account.html)
-=======
 # Vocab Pet
 
 Desktop app (Windows + macOS) for daily English flashcards with a Tamagotchi-style pet. Built with **Tauri 2**, **React 18**, **TypeScript**, **Zustand**, **TailwindCSS**, and **SQLite**.
@@ -39,11 +29,21 @@ In release builds the main window starts hidden. Use the tray icon:
 
 ## MVP flow
 
-1. Choose a pet species (Cat / Fox / Dragon).
-2. Pick study mode: vocabulary, or phrases + topic (travel / food / office / family).
-3. Answer 4-choice flashcards. Correct answers grant XP; enough XP levels the pet and may change its sprite.
-4. Daily missions generate automatically. Completing them grants bonus XP.
-5. A demo scheduler opens the popup every N minutes (default 2).
+1. Create an account (username + password only).
+2. Choose a pet species (Cat / Fox / Dragon).
+3. Pick study mode: vocabulary, or phrases + topic (travel / food / office / family).
+4. Answer 4-choice flashcards. Correct answers grant XP; enough XP levels the pet and may change its sprite.
+5. Daily missions generate automatically. Completing them grants bonus XP.
+6. A demo scheduler opens the popup every N minutes (default 2).
+
+## Account
+
+Username + password. No email at register. Email is optional account info and is required to reset a forgotten password.
+
+Forgot-password mail uses SMTP env vars (not committed): `VOCABPET_SMTP_HOST`, `VOCABPET_SMTP_PORT`, `VOCABPET_SMTP_USER`, `VOCABPET_SMTP_PASS`, `VOCABPET_SMTP_FROM`.
+
+- Spec: [docs/superpowers/specs/2026-08-13-vocab-pet-account-design.md](docs/superpowers/specs/2026-08-13-vocab-pet-account-design.md)
+- Screen demo: [docs/uiux-demo/account.html](docs/uiux-demo/account.html)
 
 ## Content sources
 
@@ -52,4 +52,3 @@ In release builds the main window starts hidden. Use the tray icon:
 - Broader NGSL / [WordNet](https://wordnet.princeton.edu/) / [Tatoeba](https://tatoeba.org) (CC-BY) can be imported later.
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for module boundaries and the SQLite schema.
->>>>>>> origin/cursor/vocab-pet-scaffold-6115
