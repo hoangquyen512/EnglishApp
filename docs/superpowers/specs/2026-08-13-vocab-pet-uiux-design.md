@@ -2,13 +2,13 @@
 
 Date: 2026-08-13  
 Product: Vocab Pet (repo `EnglishApp`)  
-Status: Ready for review  
-Scope: Visual system + screen design for the existing MVP. No new product features.
+Status: Pet look locked (2026-08-13)  
+Scope: Visual system + screen design for the existing MVP. Floating pet window added as a locked UX rule.
 
 This spec is the source of truth for polishing UI. It does **not** change pet mechanics, SRS, missions, tray behavior, or installers. Those stay as locked in `docs/ARCHITECTURE.md` on `cursor/vocab-pet-scaffold-6115` (PR #2).
 
-**Pet sample (review first):** [`docs/uiux-demo/index.html`](../../uiux-demo/index.html) — Mèo / Cáo / Rồng, trứng → non → trưởng thành, 4 tâm trạng.  
-**App screens (later):** [`docs/uiux-demo/app.html`](../../uiux-demo/app.html). From repo root: `python3 -m http.server 8765` then `http://localhost:8765/docs/uiux-demo/`.
+**Pet sample (locked):** [`docs/uiux-demo/index.html`](../../uiux-demo/index.html) — Mèo / Cáo / Rồng, trứng → non → trưởng thành, 4 tâm trạng. Pet **nổi trên desktop**, PNG trong suốt, **không hộp/nền** phía sau.  
+**App screens (later):** [`docs/uiux-demo/app.html`](../../uiux-demo/app.html). Phone: [HTML preview](https://htmlpreview.github.io/?https://github.com/hoangquyen512/EnglishApp/blob/cursor/vocab-pet-uiux-design-9e4c/docs/uiux-demo/index.html).
 
 ---
 
@@ -20,8 +20,9 @@ MVP screens already exist and are functional, not designed:
 
 | Surface | Job | Size / chrome |
 | --- | --- | --- |
+| **Floating pet** | Companion sits on the desktop | ~180×200, frameless, **transparent**, always-on-top, skip taskbar, no shadow plate |
 | Onboarding | Choose Cat / Fox / Dragon | Main window 880×640 |
-| Home (“Nhà của pet”) | See pet, pick study mode, start study, scan missions, set interval | Main window 880×640 |
+| Home (“Nhà của pet”) | Study mode, missions, interval | Main window 880×640 |
 | Flashcard popup | Answer one 4-choice card, then next or close | 400×500, frameless, always-on-top, skip taskbar |
 | System tray | Mở app / Học ngay / Thoát | Native OS menu |
 | Notification | Nudge to study on scheduler tick | Native OS toast |
@@ -52,6 +53,7 @@ Current UI problems (from scaffold + UI/UX Pro Max audit):
 2. **Study is feeding.** Correct answers are the celebration. Wrong answers are calm and reversible (next card), not a fail screen.
 3. **Interrupt, then get out of the way.** The popup is a sticky note, not a dashboard. One primary action. Close is always visible.
 4. **Companion, not gamification chrome.** XP, level, streak, and missions support the pet. They are not the hero.
+4b. **Floating pet, no plate.** The live pet is a transparent desktop overlay. No cream well, no card, no mood chip stuck on the sprite. Mood is the face. Click pet → Học ngay.
 5. **Vietnamese UI, English specimen.** Buttons, labels, errors, tray, notifications: Vietnamese. The word/phrase on the card is English and visually distinct.
 6. **Accessibility is a constraint.** WCAG 2.2 AA. Keyboard-first on the popup. No information by color alone. No emoji-as-icon.
 
@@ -83,7 +85,7 @@ Sage/slate, educational, quiet. Easy to implement.
 - Reads as generic AI/SaaS. Easy to confuse with a notes app.
 - Weak emotional hook for a companion product.
 
-**Decision:** ship **Approach A**. If illustration budget appears later, sprites drop into the habitat frame without a rebrand.
+**Decision (locked 2026-08-13):** Approach A art (illustrated Mèo / Cáo / Rồng). The **on-screen pet is a floating transparent sprite**, not a habitat frame. Sprites: `docs/uiux-demo/pets/*.png` (alpha, no cream plate).
 
 ---
 
@@ -247,7 +249,7 @@ Do not ship emoji as UI icons (close, check, mission checkbox, mood). Emoji may 
 
 **MissionRow** — checkbox icon (not emoji), title, `current/target`, `+N XP`. Completed: checkbox filled + strikethrough title + `aria-label` “Hoàn thành”.
 
-**PetHabitat** — square well, radius `--radius-lg`, cream inset, pet sprite centered, mood chip bottom-left (icon + “Vui” / “Bình thường” / “Buồn” / “Đói”). Size `lg` on home (160px), `sm` on popup (56px).
+**FloatingPet** — transparent PNG only. No well, no card, no chip overlay. ~180px wide on the desktop window; ~56px if a tiny witness is needed inside the flashcard popup (still no plate). `aria-label` = `{tên} · {tâm trạng}`. Click / Enter opens the study popup.
 
 **Toast / live region** (in-window, not OS): `role="status"` `aria-live="polite"` for “+5 XP”, “Lên cấp 3”, “Hoàn thành nhiệm vụ”. No auto-dismiss under 5s; these can sit in the feedback banner of the popup instead of a floating toast.
 
@@ -486,7 +488,8 @@ Implement against PR #2 (`vocab-pet-app` at repo root on that branch). This spec
 | `src/components/shared/home-screen.tsx` | Habitat-left / study-right; primary = Học ngay; quiet interval |
 | `src/components/popup/flashcard-popup.tsx` | Header drag+close; specimen type; banner states; keyboard 1–4 |
 | `src/components/popup/choice-button.tsx` | Selected / correct / incorrect states with icons |
-| `src/components/pet/pet-avatar.tsx` | PetHabitat frame; emoji temporary + `aria-hidden`; mood chip text |
+| `src/components/pet/pet-avatar.tsx` | Transparent PNG only; no habitat well; click → study |
+| `src-tauri/tauri.conf.json` | New `pet` window: transparent, frameless, alwaysOnTop, skipTaskbar |
 | `src/components/pet/pet-status.tsx` | Drop 3-up orange tiles; Cấp + Streak + labeled XP bar |
 | Tray / notification strings | Notification body as in §6.4; tray unchanged |
 

@@ -15,7 +15,7 @@ python3 -m http.server 8765
 # http://localhost:8765/docs/uiux-demo/
 ```
 
-Chọn loài (Mèo / Cáo / Rồng), giai đoạn (trứng / non / trưởng thành), tâm trạng (vui / bình thường / buồn / đói).
+Đã chốt: pet **nổi trên màn hình**, PNG trong suốt, không hộp/nền phía sau. Chọn loài / tiến hóa / tâm trạng trên demo.
 
 Query: `?species=cat&stage=adult&mood=happy`
 

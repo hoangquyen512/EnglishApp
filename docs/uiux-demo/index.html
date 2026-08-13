@@ -68,34 +68,48 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 340px 1fr;
+      grid-template-columns: 1fr 320px;
       gap: 20px;
-      background: var(--stone-25);
-      border-radius: 24px;
-      padding: 24px;
-      box-shadow: 0 24px 64px rgb(31 25 21 / 0.16);
+      align-items: start;
     }
 
-    .habitat {
+    .desktop {
       position: relative;
-      aspect-ratio: 1;
-      border-radius: 28px;
-      background:
-        radial-gradient(circle at 50% 28%, rgb(234 88 12 / 0.14), transparent 58%),
-        var(--stone-50);
-      display: grid;
-      place-items: center;
+      min-height: 420px;
+      border-radius: 16px;
       overflow: hidden;
-    }
-    .habitat.cool {
+      box-shadow: 0 24px 64px rgb(31 25 21 / 0.2);
       background:
-        radial-gradient(circle at 50% 28%, rgb(100 116 139 / 0.18), transparent 58%),
-        #ece8e4;
+        linear-gradient(180deg, #7ea8c9 0%, #c5d6b8 42%, #d8c4a0 100%);
     }
-    .habitat img {
-      width: 82%;
-      height: 82%;
-      object-fit: contain;
+    .desktop::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 10%, rgb(255 255 255 / 0.35), transparent 40%),
+        repeating-linear-gradient(90deg, rgb(255 255 255 / 0.04) 0 2px, transparent 2px 80px);
+      pointer-events: none;
+    }
+    .desk-bar {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      height: 36px;
+      background: rgb(31 25 21 / 0.45);
+      backdrop-filter: blur(8px);
+    }
+    .floater {
+      position: absolute;
+      right: 8%;
+      bottom: 48px;
+      width: 200px;
+      background: none;
+      border: 0;
+      padding: 0;
+      filter: drop-shadow(0 10px 16px rgb(31 25 21 / 0.28));
+    }
+    .floater img {
+      width: 100%;
+      height: auto;
+      display: block;
       animation: bob 2.4s ease-in-out infinite;
     }
     @keyframes bob {
@@ -103,13 +117,14 @@
       50% { transform: translateY(-6px); }
     }
     @media (prefers-reduced-motion: reduce) {
-      .habitat img { animation: none; }
+      .floater img { animation: none; }
     }
-    .mood-chip {
-      position: absolute; left: 14px; bottom: 14px;
-      display: inline-flex; align-items: center; gap: 6px;
-      background: #fff; border: 1px solid var(--stone-100);
-      border-radius: 999px; padding: 4px 10px; font-size: 13px; color: var(--stone-800);
+
+    .copy {
+      background: var(--stone-25);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 16px 40px rgb(31 25 21 / 0.1);
     }
 
     .copy h1 {
@@ -151,15 +166,26 @@
       text-align: center;
     }
     .tile[aria-current="true"] { border-color: var(--terracotta-700); box-shadow: 0 0 0 2px rgb(194 65 12 / 0.2); }
-    .tile img { width: 100%; aspect-ratio: 1; object-fit: contain; background: var(--stone-50); border-radius: 14px; }
+    .tile img {
+      width: 100%; aspect-ratio: 1; object-fit: contain; border-radius: 14px;
+      background:
+        linear-gradient(45deg, #ddd 25%, transparent 25%),
+        linear-gradient(-45deg, #ddd 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ddd 75%),
+        linear-gradient(-45deg, transparent 75%, #ddd 75%);
+      background-size: 16px 16px;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+      background-color: #f3f3f3;
+    }
     .tile b { display: block; margin-top: 8px; font-size: 14px; }
     .tile span { font-size: 12px; color: var(--stone-500); }
 
     .moods { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
     @media (max-width: 800px) {
       .wrap { width: min(100% - 20px, 960px); margin: 16px auto 40px; }
-      .hero { grid-template-columns: 1fr; padding: 16px; border-radius: 18px; }
-      .habitat { max-width: 280px; margin: 0 auto; }
+      .hero { grid-template-columns: 1fr; }
+      .desktop { min-height: 320px; }
+      .floater { width: 150px; }
       .copy h1 { font-size: 26px; }
       .chip { min-height: 44px; }
       .moods, .evo { grid-template-columns: 1fr 1fr; }
@@ -171,15 +197,18 @@
   <nav class="demo-bar">
     <strong>Mẫu pet</strong>
     <a href="./app.html">Demo màn hình app (sau)</a>
-    <span class="hint">3 loài · trứng → non → trưởng thành · 4 tâm trạng</span>
+    <span class="hint">Pet nổi trên màn hình · PNG trong suốt · không khung nền</span>
   </nav>
 
   <main class="wrap">
     <section class="hero">
-      <div id="habitat" class="habitat"></div>
+      <div class="desktop" aria-label="Pet nổi trên desktop, không nền">
+        <button type="button" class="floater" id="floater" title="Bấm để học"></button>
+        <div class="desk-bar" aria-hidden="true"></div>
+      </div>
       <div class="copy">
         <h1>Người bạn đồng hành</h1>
-        <p class="sub">Xem pet trước. Chưa chốt UI app — chỉ mẫu hình, tiến hóa và tâm trạng.</p>
+        <p class="sub">Đã chốt: pet nổi trên màn hình máy tính, sprite trong suốt, không hộp/nền phía sau. Bấm pet = học ngay.</p>
 
         <p class="eyebrow">Loài</p>
         <div class="chips" id="species"></div>
@@ -224,12 +253,12 @@
     const state = { species: "cat", stage: "adult", mood: "happy" };
 
     function sprite(species, stage, mood) {
-      if (stage !== "adult") return `pets/${species}-${stage}.jpg`;
-      if (mood === "happy") return `pets/${species}-adult.jpg`;
+      if (stage !== "adult") return `pets/${species}-${stage}.png`;
+      if (mood === "happy") return `pets/${species}-adult.png`;
       if (mood === "neutral") {
-        return species === "cat" ? "pets/cat-neutral.jpg" : `pets/${species}-adult.jpg`;
+        return species === "cat" ? "pets/cat-neutral.png" : `pets/${species}-adult.png`;
       }
-      return `pets/${species}-${mood}.jpg`;
+      return `pets/${species}-${mood}.png`;
     }
 
     function chips(el, items, key, getId, getLabel) {
@@ -240,13 +269,10 @@
     }
 
     function render() {
-      const cool = state.mood === "sad" || state.mood === "hungry";
       const src = sprite(state.species, state.stage, state.mood);
       const mood = MOODS.find((m) => m.id === state.mood);
-      document.getElementById("habitat").className = "habitat" + (cool ? " cool" : "");
-      document.getElementById("habitat").innerHTML =
-        `<img src="${src}" alt="${SPECIES[state.species].name} ${mood.label}" />` +
-        `<span class="mood-chip">${mood.label}</span>`;
+      document.getElementById("floater").innerHTML =
+        `<img src="${src}" alt="${SPECIES[state.species].name} ${mood.label} — nổi, không nền" />`;
 
       chips(document.getElementById("species"), Object.keys(SPECIES), "species", (id) => id, (id) => SPECIES[id].name);
       chips(document.getElementById("stages"), STAGES, "stage", (s) => s.id, (s) => s.label);
