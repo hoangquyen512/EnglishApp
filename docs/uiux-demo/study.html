@@ -5,8 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="theme-color" content="#7ea8c9" />
-  <title>Vocab Pet — Học từ vựng TOEIC</title>
+  <title>Vocab Pet — Học từ vựng</title>
   <base id="assetBase" href="./" />
+  <link rel="preload" as="image" href="./arts/invoice.jpg" />
+  <link rel="preload" as="image" href="./arts/deadline.jpg" />
+  <link rel="preload" as="image" href="./arts/applicant.jpg" />
+  <link rel="preload" as="image" href="./arts/conference.jpg" />
+  <link rel="preload" as="image" href="./arts/shipment.jpg" />
+  <link rel="preload" as="image" href="./arts/budget.jpg" />
+  <link rel="preload" as="image" href="./arts/reservation.jpg" />
+  <link rel="preload" as="image" href="./arts/itinerary.jpg" />
+  <link rel="preload" as="image" href="./arts/complimentary.jpg" />
+  <link rel="preload" as="image" href="./arts/authorize.jpg" />
   <script>
     (function () {
       var host = location.hostname;
@@ -81,14 +91,16 @@
     .art {
       background: var(--stone-50);
       border: 1px solid var(--stone-100);
+      min-height: 140px;
     }
     .art img {
       width: 100%;
       height: auto;
-      display: block;
+      display: none;
       object-fit: contain;
       object-position: center;
     }
+    .art img.is-on { display: block; }
     .pos { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--stone-500); }
     .word-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
     .word { margin: 0; font-family: Fraunces, Georgia, serif; font-size: 32px; letter-spacing: -.02em; line-height: 1.15; }
@@ -182,6 +194,7 @@
 
     var index = 0, paused = false, started = Date.now(), pausedMs = 0, pausedAt = null, audioReady = false;
     var DURATION = 30000;
+    var showToken = 0;
 
     function remaining() {
       var end = pausedAt || Date.now();
@@ -201,18 +214,62 @@
       speak(CARDS[index].word);
     }
 
-    function show(i, doSpeak) {
-      index = (i + CARDS.length) % CARDS.length;
-      var c = CARDS[index];
+    function artSrc(key) {
+      return "./arts/" + key + ".jpg";
+    }
+
+    function mountArts() {
+      var box = document.getElementById("art");
+      CARDS.forEach(function (c, i) {
+        var img = document.createElement("img");
+        img.src = artSrc(c.art);
+        img.alt = c.meaning;
+        img.dataset.art = c.art;
+        img.dataset.i = String(i);
+        img.decoding = "async";
+        box.appendChild(img);
+      });
+    }
+
+    function imgFor(i) {
+      return document.querySelector('#art img[data-i="' + i + '"]');
+    }
+
+    function whenLoaded(img, done) {
+      if (img.complete && img.naturalWidth > 0) {
+        done();
+        return;
+      }
+      img.addEventListener("load", done, { once: true });
+      img.addEventListener("error", done, { once: true });
+    }
+
+    function paint(c) {
       document.getElementById("word").textContent = c.word;
       document.getElementById("ipa").textContent = c.phonetic;
       document.getElementById("pos").textContent = c.pos;
       document.getElementById("meaning").textContent = c.meaning;
       document.getElementById("example").textContent = c.example;
       document.getElementById("exampleVi").textContent = c.exampleVi;
-      document.getElementById("art").innerHTML = '<img src="./arts/' + c.art + '.jpg" alt="' + c.meaning + '" />';
-      started = Date.now(); pausedMs = 0; pausedAt = paused ? Date.now() : null;
-      if (doSpeak && audioReady) speak(c.word);
+    }
+
+    function show(i, doSpeak) {
+      var nextIndex = (i + CARDS.length) % CARDS.length;
+      var c = CARDS[nextIndex];
+      var img = imgFor(nextIndex);
+      var token = ++showToken;
+      whenLoaded(img, function () {
+        if (token !== showToken) return;
+        document.querySelectorAll("#art img").forEach(function (el) {
+          el.classList.toggle("is-on", el === img);
+        });
+        paint(c);
+        index = nextIndex;
+        started = Date.now();
+        pausedMs = 0;
+        pausedAt = paused ? Date.now() : null;
+        if (doSpeak && audioReady) speak(c.word);
+      });
     }
 
     function next(note) {
@@ -256,7 +313,35 @@
       if (remaining() <= 0 && !paused) next();
     }, 250);
 
-    show(0, false);
+    function runSelfTest() {
+      function ready(i, cb) {
+        whenLoaded(imgFor(i), cb);
+      }
+      show(0, false);
+      ready(0, function () {
+        var firstWord = document.getElementById("word").textContent;
+        var firstArt = document.querySelector("#art img.is-on").dataset.art;
+        show(1, false);
+        ready(1, function () {
+          var on = document.querySelector("#art img.is-on");
+          var word = document.getElementById("word").textContent;
+          var ok =
+            firstWord === CARDS[0].word &&
+            firstArt === CARDS[0].art &&
+            word === CARDS[1].word &&
+            on.dataset.art === CARDS[1].art &&
+            on.complete &&
+            on.naturalWidth > 0;
+          document.body.dataset.test = ok ? "ok" : "fail";
+          document.body.dataset.testWord = word;
+          document.body.dataset.testArt = on.dataset.art;
+        });
+      });
+    }
+
+    mountArts();
+    if (/[?&]test=1/.test(location.search)) runSelfTest();
+    else show(0, false);
   </script>
 </body>
 </html>

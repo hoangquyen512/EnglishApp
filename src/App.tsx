@@ -3,6 +3,8 @@ import { UI } from "./constants/ui";
 import { FlashcardPopup } from "./components/popup/flashcard-popup";
 import { HomeScreen } from "./components/shared/home-screen";
 import { OnboardingScreen } from "./components/shared/onboarding-screen";
+import { preloadVocabArts } from "./components/flashcard/vocab-illustration";
+import { TOEIC_CARDS } from "./data/toeic-cards";
 import { openStudyPopup, startScheduler } from "./features/scheduler";
 import { getWindowLabel, showMainWindow } from "./lib/tauri";
 import { useAppStore } from "./stores/app-store";
@@ -27,6 +29,10 @@ export default function App() {
 
   useEffect(() => {
     void getWindowLabel().then(setWindowKind);
+  }, []);
+
+  useEffect(() => {
+    preloadVocabArts(TOEIC_CARDS.map((item) => item.imageKey));
   }, []);
 
   useEffect(() => {

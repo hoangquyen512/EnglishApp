@@ -1,7 +1,8 @@
+import { useEffect, useState } from "react";
 import { UI } from "../../constants/ui";
 import type { PetState, StudyFlashcard } from "../../types";
 import { PetAvatar } from "../pet/pet-avatar";
-import { VocabIllustration } from "./vocab-illustration";
+import { artSrc, VocabIllustration } from "./vocab-illustration";
 import {
   IconButton,
   IconPause,
@@ -37,40 +38,61 @@ export function FlashcardFace({
   onKnown,
   onUnknown,
 }: FlashcardFaceProps) {
+  const [visible, setVisible] = useState(card);
+
+  useEffect(() => {
+    let cancelled = false;
+    const img = new Image();
+    const apply = () => {
+      if (!cancelled) {
+        setVisible(card);
+      }
+    };
+    img.onload = apply;
+    img.onerror = apply;
+    img.src = artSrc(card.imageKey);
+    if (img.complete && img.naturalWidth > 0) {
+      apply();
+    }
+    return () => {
+      cancelled = true;
+    };
+  }, [card]);
+
   return (
     <article className="flex flex-col gap-3">
       <p className="text-xs font-semibold uppercase tracking-[0.04em] text-muted">{UI.cardIntervalHint}</p>
 
-      <VocabIllustration imageKey={card.imageKey} className="shadow-card" />
+      <VocabIllustration imageKey={visible.imageKey} className="shadow-card" />
 
       <div className="rounded-[20px] bg-paper p-4 shadow-card ring-1 ring-line">
-        {card.partOfSpeech ? (
-          <p className="text-xs font-semibold uppercase tracking-[0.04em] text-muted">{card.partOfSpeech}</p>
+        {visible.partOfSpeech ? (
+          <p className="text-xs font-semibold uppercase tracking-[0.04em] text-muted">{visible.partOfSpeech}</p>
         ) : null}
         <div className="mt-1 flex items-start justify-between gap-2">
           <h2 lang="en" className="font-specimen text-3xl font-semibold leading-tight text-ink">
-            {card.word}
+            {visible.word}
           </h2>
           <IconButton label={UI.listen} onClick={onSpeak} className="shrink-0 bg-cream">
             <IconSpeaker />
           </IconButton>
         </div>
-        {card.phonetic ? (
+        {visible.phonetic ? (
           <p lang="en" className="mt-1 text-base text-muted">
-            {card.phonetic}
+            {visible.phonetic}
           </p>
         ) : null}
         <p className="mt-3 text-lg font-semibold text-clay-dark">
           <span className="sr-only">{UI.meaningLabel}: </span>
-          {card.meaning}
+          {visible.meaning}
         </p>
-        {card.example ? (
+        {visible.example ? (
           <blockquote lang="en" className="mt-3 border-l-2 border-clay pl-3 text-sm leading-relaxed text-ink">
             <span className="sr-only">{UI.exampleLabel}: </span>
-            {card.example}
+            {visible.example}
           </blockquote>
         ) : null}
-        {card.exampleVi ? <p className="mt-1 pl-3 text-xs text-muted">{card.exampleVi}</p> : null}
+        {visible.exampleVi ? <p className="mt-1 pl-3 text-xs text-muted">{visible.exampleVi}</p> : null}
       </div>
 
       {pet ? (
