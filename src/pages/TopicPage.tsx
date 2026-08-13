@@ -39,7 +39,7 @@ export function TopicPage({ topic, state }: TopicPageProps) {
             })
           }
         >
-          Học từng câu
+          Học flashcard
         </button>
         <button
           type="button"

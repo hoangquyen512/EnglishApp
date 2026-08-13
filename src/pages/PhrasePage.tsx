@@ -1,5 +1,5 @@
-import { useEffect, type CSSProperties } from 'react'
-import { SpeakButton } from '../components/SpeakButton'
+import { useEffect, useRef } from 'react'
+import { VocabCard } from '../components/VocabCard'
 import { getPhraseProgress } from '../lib/progress'
 import { navigate } from '../lib/router'
 import type { ProgressState, Topic } from '../types'
@@ -21,8 +21,9 @@ export function PhrasePage({
   onToggleSaved,
   isSaved,
 }: PhrasePageProps) {
-  const index = topic.phrases.findIndex((phrase) => phrase.id === phraseId)
+  const index = topic.phrases.findIndex((item) => item.id === phraseId)
   const phrase = topic.phrases[index]
+  const startX = useRef<number | null>(null)
 
   useEffect(() => {
     if (phrase) onSeen(phrase.id)
@@ -41,33 +42,54 @@ export function PhrasePage({
   const progress = getPhraseProgress(state, phrase.id)
 
   return (
-    <section className="page">
-      <button
-        type="button"
-        className="back"
-        onClick={() => navigate({ name: 'topic', topicId: topic.id })}
-      >
-        ← {topic.titleVi}
-      </button>
-
-      <article className="phrase-card" style={{ '--accent': topic.accent } as CSSProperties}>
-        <p className="eyebrow">
-          Câu {index + 1}/{topic.phrases.length}
+    <section
+      className="page flash-page"
+      onTouchStart={(event) => {
+        startX.current = event.changedTouches[0]?.clientX ?? null
+      }}
+      onTouchEnd={(event) => {
+        if (startX.current == null) return
+        const dx = (event.changedTouches[0]?.clientX ?? startX.current) - startX.current
+        if (dx < -48 && next) {
+          navigate({ name: 'phrase', topicId: topic.id, phraseId: next.id })
+        } else if (dx > 48 && prev) {
+          navigate({ name: 'phrase', topicId: topic.id, phraseId: prev.id })
+        }
+        startX.current = null
+      }}
+    >
+      <header className="flash-top">
+        <button type="button" className="back" onClick={() => navigate({ name: 'home' })}>
+          ← Chủ đề
+        </button>
+        <p className="flash-count">
+          {topic.titleVi} · {index + 1}/{topic.phrases.length}
         </p>
-        <h1>{phrase.en}</h1>
-        <p className="ipa">{phrase.ipa}</p>
-        <SpeakButton text={phrase.en} large />
-        <p className="vi">{phrase.vi}</p>
-        <p className="note">{phrase.note}</p>
-        <div className="card-actions">
-          <button type="button" className="btn ghost" onClick={() => onToggleSaved(phrase.id)}>
-            {isSaved ? '★ Đã lưu' : '☆ Lưu câu'}
-          </button>
-          <span className="status" data-state={progress.mastered ? 'done' : 'learning'}>
-            {progress.mastered ? 'Đã thuộc' : 'Đang học'}
-          </span>
-        </div>
-      </article>
+      </header>
+
+      <VocabCard phrase={phrase} accent={topic.accent} autoPlay />
+
+      <div className="dots" aria-hidden="true">
+        {topic.phrases.map((item, itemIndex) => (
+          <span key={item.id} className={itemIndex === index ? 'dot on' : 'dot'} />
+        ))}
+      </div>
+
+      <div className="card-actions">
+        <button type="button" className="btn ghost" onClick={() => onToggleSaved(phrase.id)}>
+          {isSaved ? '★ Đã lưu' : '☆ Lưu'}
+        </button>
+        <span className="status" data-state={progress.mastered ? 'done' : 'learning'}>
+          {progress.mastered ? 'Đã thuộc' : 'Đang học'}
+        </span>
+        <button
+          type="button"
+          className="btn ghost"
+          onClick={() => navigate({ name: 'practice', topicId: topic.id, mode: 'quiz' })}
+        >
+          Quiz
+        </button>
+      </div>
 
       <div className="cta-row">
         <button
@@ -78,7 +100,7 @@ export function PhrasePage({
             prev && navigate({ name: 'phrase', topicId: topic.id, phraseId: prev.id })
           }
         >
-          Câu trước
+          Trước
         </button>
         <button
           type="button"
@@ -88,7 +110,7 @@ export function PhrasePage({
             else navigate({ name: 'practice', topicId: topic.id, mode: 'quiz' })
           }}
         >
-          {next ? 'Câu tiếp' : 'Luyện tập'}
+          {next ? 'Thẻ tiếp' : 'Luyện tập'}
         </button>
       </div>
     </section>

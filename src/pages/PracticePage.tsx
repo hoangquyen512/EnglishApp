@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { SpeakButton } from '../components/SpeakButton'
+import { VocabCard } from '../components/VocabCard'
 import { allPhrases } from '../data/topics'
 import { getPhraseProgress } from '../lib/progress'
 import { buildQuizQuestion, scorePercent } from '../lib/quiz'
@@ -55,38 +56,31 @@ export function PracticePage({ topic, mode, state, onAnswer, onSeen }: PracticeP
 
 function CardPractice({ topic, onSeen }: { topic: Topic; onSeen: (id: string) => void }) {
   const [index, setIndex] = useState(0)
-  const [flipped, setFlipped] = useState(false)
   const phrase = topic.phrases[index]
 
+  useEffect(() => {
+    onSeen(phrase.id)
+  }, [phrase.id, onSeen])
+
   return (
-    <div>
+    <div className="flash-page">
       <p className="meta">
-        Thẻ {index + 1}/{topic.phrases.length} · chạm để lật
+        Thẻ {index + 1}/{topic.phrases.length}
       </p>
-      <button
-        type="button"
-        className={flipped ? 'flip-card flipped' : 'flip-card'}
-        onClick={() => {
-          setFlipped((value) => !value)
-          onSeen(phrase.id)
-        }}
-      >
-        <span className="flip-face front">
-          <strong>{phrase.en}</strong>
-          <em>{phrase.ipa}</em>
-        </span>
-        <span className="flip-face back">
-          <strong>{phrase.vi}</strong>
-          <em>{phrase.note}</em>
-        </span>
-      </button>
+      <VocabCard phrase={phrase} accent={topic.accent} autoPlay />
       <div className="cta-row">
-        <SpeakButton text={phrase.en} />
+        <button
+          type="button"
+          className="btn ghost"
+          onClick={() => setIndex((value) => (value - 1 + topic.phrases.length) % topic.phrases.length)}
+        >
+          Trước
+        </button>
         <button
           type="button"
           className="btn primary"
           onClick={() => {
-            setFlipped(false)
+            onSeen(phrase.id)
             setIndex((value) => (value + 1) % topic.phrases.length)
           }}
         >

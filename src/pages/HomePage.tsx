@@ -19,7 +19,7 @@ export function HomePage({ state }: HomePageProps) {
         <p className="eyebrow">EnglishApp</p>
         <h1>Câu giao tiếp theo chủ đề</h1>
         <p className="lede">
-          Học câu tiếng Anh dùng được ngay: nghe, lật thẻ, rồi luyện trắc nghiệm.
+          Chọn chủ đề, học từng thẻ: câu tiếng Anh, phiên âm, nghĩa, hình và audio.
         </p>
         <div className="overall">
           <strong>
@@ -49,7 +49,13 @@ export function HomePage({ state }: HomePageProps) {
                 type="button"
                 className="topic-card"
                 style={{ '--accent': topic.accent } as CSSProperties}
-                onClick={() => navigate({ name: 'topic', topicId: topic.id })}
+                onClick={() =>
+                  navigate({
+                    name: 'phrase',
+                    topicId: topic.id,
+                    phraseId: topic.phrases[0].id,
+                  })
+                }
               >
                 <span className="topic-emoji" aria-hidden="true">
                   {topic.emoji}
