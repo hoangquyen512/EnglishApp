@@ -19,10 +19,6 @@ interface HomeScreenProps {
   onStudyNow: () => void;
 }
 
-function remainingLabel(ms: number): string {
-  return `${Math.max(0, Math.ceil(ms / 1000))}s`;
-}
-
 function missionLabel(mission: DailyMission): string {
   if (mission.missionType === "topic_practice" && mission.topic) {
     return `${MISSION_TITLES.topic_practice} ${TOPIC_LABELS[mission.topic]} (${mission.targetCount})`;
@@ -63,9 +59,7 @@ export function HomeScreen({
             <div className="mt-4">
               <FlashcardFace
                 card={player.card}
-                progress={player.progress}
                 paused={player.paused}
-                remainingLabel={remainingLabel(player.remaining)}
                 showActions={false}
                 onPauseToggle={player.togglePause}
                 onPrev={player.prev}

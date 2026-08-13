@@ -65,7 +65,7 @@ Features export a public `index.ts` only. They may call `db/` and another featur
 ## Data flow (one flashcard)
 
 1. Home and popup call `getStudyDeck(contentType, topic)` → due/new TOEIC vocabulary (word, IPA, image key, example) or phrases.
-2. A card stays on screen for **10 seconds**, then the pet rotates to the next card. Audio auto-plays in the popup via `speechSynthesis`.
+2. A card stays on screen for **30 seconds**, then the pet rotates to the next card. Audio auto-plays in the popup via `speechSynthesis`.
 3. `recordFlashcardEvent` records `study_sessions`. Outcomes:
    - `viewed` (timer or next): +2 XP, short 1-day interval, does not count toward mastered
    - `known`: +5 XP, SM-2-ish intervals 1 / 3 / 7 / 14 days, `mastered` at 5 known marks

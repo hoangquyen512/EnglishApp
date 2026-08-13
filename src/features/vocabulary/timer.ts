@@ -1,4 +1,4 @@
-export const CARD_INTERVAL_MS = 10_000;
+export const CARD_INTERVAL_MS = 30_000;
 
 export function cardRemainingMs(input: {
   startedAt: number;

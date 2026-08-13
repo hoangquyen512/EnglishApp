@@ -16,6 +16,6 @@ https://htmlpreview.github.io/?https://github.com/hoangquyen512/EnglishApp/blob/
 
 - Pet mèo nổi trên nền bàn, chạm pet để nghe phát âm
 - Thẻ TOEIC: hình · từ · IPA · loa · nghĩa · câu ví dụ
-- Tự đổi thẻ mỗi **10 giây** (vuốt trái/phải, tạm dừng, Đã nhớ / Chưa nhớ)
+- Tự đổi thẻ mỗi **30 giây** (vuốt trái/phải, tạm dừng, Đã nhớ / Chưa nhớ)
 
 Lần chạm đầu tiên trên iPhone mới cho phép loa đọc (giới hạn Safari).

@@ -9,10 +9,6 @@ import { FlashcardFace } from "../flashcard/flashcard-face";
 import { useFlashcardPlayer } from "../flashcard/use-flashcard-player";
 import { IconButton, IconClose } from "../shared/icon-button";
 
-function remainingLabel(ms: number): string {
-  return `${Math.max(0, Math.ceil(ms / 1000))}s`;
-}
-
 export function FlashcardPopup() {
   const pet = useAppStore((state) => state.pet);
   const hydrate = useAppStore((state) => state.hydrate);
@@ -105,9 +101,7 @@ export function FlashcardPopup() {
         {player.card ? (
           <FlashcardFace
             card={player.card}
-            progress={player.progress}
             paused={player.paused}
-            remainingLabel={remainingLabel(player.remaining)}
             pet={pet}
             onPauseToggle={player.togglePause}
             onPrev={player.prev}

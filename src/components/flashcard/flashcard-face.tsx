@@ -14,9 +14,7 @@ import { PrimaryButton } from "../shared/primary-button";
 
 interface FlashcardFaceProps {
   card: StudyFlashcard;
-  progress: number;
   paused: boolean;
-  remainingLabel: string;
   pet?: PetState | null;
   showActions?: boolean;
   onPauseToggle: () => void;
@@ -29,9 +27,7 @@ interface FlashcardFaceProps {
 
 export function FlashcardFace({
   card,
-  progress,
   paused,
-  remainingLabel,
   pet,
   showActions = true,
   onPauseToggle,
@@ -43,16 +39,7 @@ export function FlashcardFace({
 }: FlashcardFaceProps) {
   return (
     <article className="flex flex-col gap-3">
-      <div className="h-1.5 overflow-hidden rounded-full bg-cream">
-        <div
-          className="h-full rounded-full bg-clay transition-[width] duration-100"
-          style={{ width: `${Math.round(progress * 100)}%` }}
-        />
-      </div>
-      <div className="flex items-center justify-between text-xs text-muted">
-        <span>{UI.cardIntervalHint}</span>
-        <span className="tabular">{remainingLabel}</span>
-      </div>
+      <p className="text-xs font-semibold uppercase tracking-[0.04em] text-muted">{UI.cardIntervalHint}</p>
 
       <VocabIllustration imageKey={card.imageKey} className="shadow-card" />
 

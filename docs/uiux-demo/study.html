@@ -74,13 +74,6 @@
       display: flex; flex-direction: column; gap: 10px;
       min-height: 0;
     }
-    .progress {
-      height: 6px; background: var(--stone-50); border-radius: 999px; overflow: hidden;
-    }
-    .progress > span {
-      display: block; height: 100%; width: 0; background: var(--terracotta-700);
-      transition: width 100ms linear;
-    }
     .meta-row {
       display: flex; justify-content: space-between; align-items: center;
       font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--stone-500);
@@ -127,12 +120,10 @@
     <button class="floater" id="petBtn" type="button" aria-label="Nghe phát âm">
       <img id="petImg" src="./pets/cat-adult.png" alt="" />
     </button>
-    <p class="hint">Chạm pet hoặc loa để nghe · thẻ đổi mỗi 10 giây</p>
+    <p class="hint">Chạm pet hoặc loa để nghe · thẻ đổi mỗi 30 giây</p>
     <article class="card" id="card">
-      <div class="progress" aria-hidden="true"><span id="bar"></span></div>
       <div class="meta-row">
         <span>Từ vựng TOEIC</span>
-        <span class="tabular" id="clock">10s</span>
       </div>
       <div class="art" id="art"></div>
       <p class="pos" id="pos"></p>
@@ -197,7 +188,7 @@
     };
 
     var index = 0, paused = false, started = Date.now(), pausedMs = 0, pausedAt = null, audioReady = false;
-    var DURATION = 10000;
+    var DURATION = 30000;
 
     function remaining() {
       var end = pausedAt || Date.now();
@@ -269,11 +260,8 @@
     });
 
     setInterval(function () {
-      var left = remaining();
-      document.getElementById("clock").textContent = Math.ceil(left / 1000) + "s";
-      document.getElementById("bar").style.width = ((1 - left / DURATION) * 100) + "%";
-      if (left <= 0 && !paused) next();
-    }, 100);
+      if (remaining() <= 0 && !paused) next();
+    }, 250);
 
     show(0, false);
   </script>

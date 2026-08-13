@@ -7,8 +7,8 @@ import {
 } from "./timer";
 
 describe("TOEIC flashcard timer", () => {
-  it("uses a 10 second interval", () => {
-    expect(CARD_INTERVAL_MS).toBe(10_000);
+  it("uses a 30 second interval", () => {
+    expect(CARD_INTERVAL_MS).toBe(30_000);
   });
 
   it("counts down while playing and freezes while paused", () => {
@@ -19,7 +19,7 @@ describe("TOEIC flashcard timer", () => {
         pausedMs: 0,
         pausedAt: null,
       }),
-    ).toBe(7_000);
+    ).toBe(27_000);
 
     expect(
       cardRemainingMs({
@@ -28,14 +28,14 @@ describe("TOEIC flashcard timer", () => {
         pausedMs: 0,
         pausedAt: 4_000,
       }),
-    ).toBe(7_000);
+    ).toBe(27_000);
   });
 
   it("advances only after the interval elapses", () => {
     expect(shouldAdvanceCard(1)).toBe(false);
     expect(shouldAdvanceCard(0)).toBe(true);
-    expect(cardProgress(2_500)).toBe(0.75);
+    expect(cardProgress(7_500)).toBe(0.75);
     expect(cardProgress(0)).toBe(1);
-    expect(cardProgress(10_000)).toBe(0);
+    expect(cardProgress(30_000)).toBe(0);
   });
 });

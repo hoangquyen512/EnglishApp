@@ -2,7 +2,7 @@
 
 Desktop app (Windows + macOS) for daily **TOEIC flashcards** with a Tamagotchi-style pet. Built with **Tauri 2**, **React 18**, **TypeScript**, **Zustand**, **TailwindCSS**, and **SQLite**.
 
-The pet sits on your desk and changes a vocabulary card about every **10 seconds**. Each card shows the English word, IPA, pronunciation audio, an illustration, and an example sentence. Viewing cards feeds the pet (XP, mood, evolution). Missing days makes the pet sad or hungry — it never dies.
+The pet sits on your desk and changes a vocabulary card about every **30 seconds**. Each card shows the English word, IPA, pronunciation audio, an illustration, and an example sentence. Viewing cards feeds the pet (XP, mood, evolution). Missing days makes the pet sad or hungry — it never dies.
 
 ## Prerequisites
 
@@ -27,13 +27,13 @@ Installers are **per-user** (no admin / no UAC). SQLite and settings live under 
 In release builds the main window starts hidden. Use the tray icon:
 
 - **Mở app** — pet desk + live flashcards
-- **Học ngay** — always-on-top TOEIC widget (auto-speak, 10s rotate)
+- **Học ngay** — always-on-top TOEIC widget (auto-speak, 30s rotate)
 - **Thoát** — quit
 
 ## Study flow
 
 1. Choose a pet species (Cat / Fox / Dragon).
-2. Watch TOEIC cards on the desk. The pet rotates a card every 10 seconds.
+2. Watch TOEIC cards on the desk. The pet rotates a card every 30 seconds.
 3. **Học ngay** opens a focused widget: auto-play pronunciation, pause / next, **Đã nhớ** / **Chưa nhớ**.
 4. Viewing a card grants a little XP; marking **Đã nhớ** grants more and advances spaced repetition.
 5. Daily missions still generate automatically.
