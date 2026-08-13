@@ -2,9 +2,17 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Vocab Pet — Demo tài khoản</title>
-  <script>if (/[?&]shot=1/.test(location.search)) document.documentElement.classList.add("shot");</script>
+  <script>
+    (function () {
+      var q = location.search;
+      if (/[?&]shot=1/.test(q)) document.documentElement.classList.add("shot");
+      if (/[?&]phone=1/.test(q) || (window.matchMedia && matchMedia("(max-width: 720px)").matches)) {
+        document.documentElement.classList.add("phone");
+      }
+    })();
+  </script>
   <style>
     @font-face {
       font-family: "Be Vietnam Pro";
@@ -237,6 +245,75 @@
       border-radius: 999px; font-size: 14px; display: none; z-index: 6;
     }
     .toast.show { display: block; }
+
+    html.phone, html.phone body { min-height: 100dvh; }
+    html.phone body {
+      background: var(--color-bg);
+      display: flex;
+      flex-direction: column;
+    }
+    html.phone .demo-bar {
+      padding: 8px 10px calc(8px + env(safe-area-inset-top));
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    html.phone .demo-bar strong { display: none; }
+    html.phone .demo-bar button {
+      min-height: 36px; padding: 8px 12px; font-size: 13px;
+    }
+    html.phone .demo-bar .hint { flex-basis: 100%; margin: 0; font-size: 11px; }
+    html.phone .stage {
+      flex: 1;
+      min-height: 0;
+      padding: 0;
+      place-items: stretch;
+      display: flex;
+    }
+    html.phone.shot .stage { min-height: 100dvh; }
+    html.phone .window {
+      width: 100%;
+      height: auto;
+      flex: 1;
+      min-height: 0;
+      border-radius: 0;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+    }
+    html.phone.shot .window { min-height: 100dvh; }
+    html.phone .window > .auth,
+    html.phone .window > .page {
+      flex: 1;
+      min-height: 0;
+      height: auto;
+    }
+    html.phone .os-dots { display: none; }
+    html.phone .auth {
+      height: 100%; justify-content: flex-start;
+      padding: 16px 16px calc(24px + env(safe-area-inset-bottom));
+      overflow: auto; -webkit-overflow-scrolling: touch;
+    }
+    html.phone .auth h1 { font-size: 24px; }
+    html.phone .card { max-width: none; padding: 20px 16px; }
+    html.phone .habitat { width: 64px; height: 64px; }
+    html.phone .page {
+      height: 100%;
+      padding: 8px 16px calc(20px + env(safe-area-inset-bottom));
+    }
+    html.phone .row { grid-template-columns: 1fr; gap: 4px; padding: 12px 16px; }
+    html.phone .home {
+      height: auto; grid-template-columns: 1fr; padding: 0; gap: 12px;
+    }
+    html.phone .habitat.lg { width: 120px; height: 120px; }
+    html.phone .btn { min-height: 44px; }
+    html.phone .field input { height: 44px; font-size: 16px; }
+    html.phone .chip { min-height: 44px; padding: 4px 12px 4px 4px; }
+    html.phone .scrim { padding: 16px; align-items: end; }
+    html.phone .dialog { max-width: none; border-radius: 20px 20px 12px 12px; }
+
+    @media (max-width: 720px) {
+      html:not(.shot) { /* phone class already set by JS */ }
+    }
   </style>
 </head>
 <body>
@@ -249,7 +326,7 @@
     <button type="button" data-screen="account">Thông tin TK</button>
     <button type="button" data-screen="edit">Chỉnh sửa</button>
     <button type="button" data-screen="logout">Đăng xuất</button>
-    <span class="hint">Warm Companion · 880×640</span>
+    <span class="hint">Vuốt / bấm nút trên để đổi màn · mở được trên điện thoại</span>
   </nav>
   <div class="stage">
     <div id="frame" class="window"></div>
