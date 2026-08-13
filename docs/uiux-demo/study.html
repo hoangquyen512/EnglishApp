@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#7ea8c9" />
+  <title>Vocab Pet — Học từ vựng TOEIC</title>
+  <base id="assetBase" href="./" />
+  <script>
+    (function () {
+      var host = location.hostname;
+      var local = host === "localhost" || host === "127.0.0.1" || location.protocol === "file:";
+      var served = /githack|jsdelivr|rawgit/i.test(host);
+      if (!local && !served) {
+        document.getElementById("assetBase").href =
+          "https://cdn.jsdelivr.net/gh/hoangquyen512/EnglishApp@cursor/toeic-flashcards-e7dc/docs/uiux-demo/";
+      }
+    })();
+  </script>
+  <style>
+    @font-face { font-family: "Be Vietnam Pro"; src: url("./fonts/BeVietnamPro-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+    @font-face { font-family: "Be Vietnam Pro"; src: url("./fonts/BeVietnamPro-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+    @font-face { font-family: "Be Vietnam Pro"; src: url("./fonts/BeVietnamPro-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+    @font-face { font-family: "Fraunces"; src: url("./fonts/Fraunces.ttf") format("truetype"); font-weight: 600 700; font-display: swap; }
+
+    :root {
+      --stone-25: #faf6f1; --stone-50: #f4eee6; --stone-100: #e8dfd4;
+      --stone-500: #5c524a; --stone-800: #3d322b; --stone-950: #1f1915;
+      --terracotta-700: #c2410c; --terracotta-800: #9a3412;
+      --leaf-700: #3f6212; --leaf-50: #f7fee7;
+      --rose-700: #be123c; --rose-50: #fff1f2;
+      --focus: #1d4ed8;
+      --radius-md: 12px; --radius-lg: 20px;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bot: env(safe-area-inset-bottom, 0px);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+      color: var(--stone-950);
+      background: linear-gradient(180deg, #7ea8c9 0%, #c5d6b8 45%, #d8c4a0 100%);
+      min-height: 100dvh;
+      -webkit-tap-highlight-color: transparent;
+    }
+    button { font: inherit; cursor: pointer; }
+    button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+    .tabular { font-variant-numeric: tabular-nums; }
+
+    .stage {
+      position: relative;
+      min-height: 100dvh;
+      padding: calc(12px + var(--safe-top)) 16px calc(16px + var(--safe-bot));
+      display: flex; flex-direction: column; gap: 8px;
+    }
+
+    .floater {
+      position: absolute; right: 4px; top: calc(28px + var(--safe-top));
+      width: 108px; background: none; border: 0; padding: 0; z-index: 6;
+      filter: drop-shadow(0 12px 18px rgb(31 25 21 / 0.3));
+    }
+    .floater img { width: 100%; height: auto; display: block; animation: bob 2.4s ease-in-out infinite; pointer-events: none; }
+    @keyframes bob { 50% { transform: translateY(-6px); } }
+    @media (prefers-reduced-motion: reduce) { .floater img { animation: none; } }
+
+    .card {
+      margin-top: 96px;
+      flex: 1;
+      background: var(--stone-25);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 24px 64px rgb(31 25 21 / 0.2);
+      padding: 14px 16px 16px;
+      display: flex; flex-direction: column; gap: 10px;
+      min-height: 0;
+    }
+    .progress {
+      height: 6px; background: var(--stone-50); border-radius: 999px; overflow: hidden;
+    }
+    .progress > span {
+      display: block; height: 100%; width: 0; background: var(--terracotta-700);
+      transition: width 100ms linear;
+    }
+    .meta-row {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--stone-500);
+    }
+    .art {
+      border-radius: 16px; overflow: hidden; background: #fffdf9; border: 1px solid var(--stone-100);
+      aspect-ratio: 16 / 9; max-height: 160px;
+    }
+    .art svg { width: 100%; height: 100%; display: block; }
+    .pos { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--stone-500); }
+    .word-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+    .word { margin: 0; font-family: Fraunces, Georgia, serif; font-size: 32px; letter-spacing: -.02em; line-height: 1.15; }
+    .ipa { margin: 2px 0 0; font-size: 16px; color: var(--stone-500); }
+    .meaning { margin: 0; font-size: 18px; font-weight: 700; color: var(--terracotta-800); }
+    .example { margin: 0; padding-left: 12px; border-left: 2px solid var(--terracotta-700); font-size: 15px; line-height: 1.45; }
+    .example-vi { margin: 0; padding-left: 12px; font-size: 12px; color: var(--stone-500); }
+    .icon-btn {
+      width: 44px; height: 44px; border: 0; border-radius: 999px;
+      background: var(--stone-50); color: var(--stone-800);
+      display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .controls { display: flex; justify-content: center; gap: 12px; }
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: auto; }
+    .btn {
+      min-height: 44px; border-radius: var(--radius-md); border: 1px solid transparent;
+      font-weight: 600; font-size: 16px;
+    }
+    .btn-primary { background: var(--terracotta-700); color: #fff; }
+    .btn-primary:active { background: var(--terracotta-800); }
+    .btn-ghost { background: #fff; border-color: var(--stone-100); color: var(--stone-950); }
+    .toast {
+      min-height: 20px; text-align: center; font-size: 14px; font-weight: 600; color: var(--leaf-700);
+    }
+    .hint { margin: 0; font-size: 13px; color: rgb(31 25 21 / 0.72); text-align: center; }
+
+    @media (min-width: 640px) {
+      .stage { max-width: 420px; margin: 0 auto; }
+      .floater { width: 140px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <button class="floater" id="petBtn" type="button" aria-label="Nghe phát âm">
+      <img id="petImg" src="./pets/cat-adult.png" alt="" />
+    </button>
+    <p class="hint">Chạm pet hoặc loa để nghe · thẻ đổi mỗi 10 giây</p>
+    <article class="card" id="card">
+      <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+      <div class="meta-row">
+        <span>Từ vựng TOEIC</span>
+        <span class="tabular" id="clock">10s</span>
+      </div>
+      <div class="art" id="art"></div>
+      <p class="pos" id="pos"></p>
+      <div class="word-row">
+        <div>
+          <h1 class="word" lang="en" id="word"></h1>
+          <p class="ipa" lang="en" id="ipa"></p>
+        </div>
+        <button class="icon-btn" id="speakBtn" type="button" aria-label="Nghe phát âm">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path d="M4 10v4h4l5 4V6L8 10H4z" />
+            <path d="M16 9c1.2 1 1.8 2.2 1.8 3s-.6 2-1.8 3M18.5 7c1.8 1.6 2.7 3.4 2.7 5s-.9 3.4-2.7 5" />
+          </svg>
+        </button>
+      </div>
+      <p class="meaning" id="meaning"></p>
+      <p class="example" lang="en" id="example"></p>
+      <p class="example-vi" id="exampleVi"></p>
+      <div class="controls">
+        <button class="icon-btn" id="prevBtn" type="button" aria-label="Thẻ trước">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 6l-8 6 8 6V6z"/><path d="M6 6v12" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>
+        </button>
+        <button class="icon-btn" id="pauseBtn" type="button" aria-label="Tạm dừng">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="6" width="3.5" height="12" rx="1"/><rect x="13.5" y="6" width="3.5" height="12" rx="1"/></svg>
+        </button>
+        <button class="icon-btn" id="nextBtn" type="button" aria-label="Thẻ tiếp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 6l8 6-8 6V6z"/><path d="M18 6v12" fill="none" stroke="currentColor" stroke-width="1.75"/></svg>
+        </button>
+      </div>
+      <p class="toast" id="toast" role="status"></p>
+      <div class="actions">
+        <button class="btn btn-ghost" id="unknownBtn" type="button">Chưa nhớ</button>
+        <button class="btn btn-primary" id="knownBtn" type="button">Đã nhớ</button>
+      </div>
+    </article>
+  </main>
+  <script>
+    var CARDS = [
+      { word: "invoice", phonetic: "/ˈɪn.vɔɪs/", pos: "n.", meaning: "hóa đơn", example: "Please attach the invoice to your email.", exampleVi: "Vui lòng đính kèm hóa đơn vào email của bạn.", art: "invoice" },
+      { word: "deadline", phonetic: "/ˈded.laɪn/", pos: "n.", meaning: "hạn chót", example: "The deadline for the report is next Monday.", exampleVi: "Hạn chót nộp báo cáo là thứ Hai tuần sau.", art: "deadline" },
+      { word: "applicant", phonetic: "/ˈæp.lɪ.kənt/", pos: "n.", meaning: "ứng viên", example: "Each applicant must submit a résumé by Friday.", exampleVi: "Mỗi ứng viên phải nộp sơ yếu lý lịch trước thứ Sáu.", art: "applicant" },
+      { word: "conference", phonetic: "/ˈkɑːn.fər.əns/", pos: "n.", meaning: "hội nghị", example: "She will speak at an international conference in May.", exampleVi: "Cô ấy sẽ phát biểu tại một hội nghị quốc tế vào tháng Năm.", art: "conference" },
+      { word: "shipment", phonetic: "/ˈʃɪp.mənt/", pos: "n.", meaning: "lô hàng", example: "The shipment will arrive at the warehouse tomorrow.", exampleVi: "Lô hàng sẽ đến kho vào ngày mai.", art: "shipment" },
+      { word: "budget", phonetic: "/ˈbʌdʒ.ɪt/", pos: "n.", meaning: "ngân sách", example: "We need to reduce the marketing budget this quarter.", exampleVi: "Chúng ta cần cắt giảm ngân sách marketing quý này.", art: "budget" },
+      { word: "reservation", phonetic: "/ˌrez.ərˈveɪ.ʃn/", pos: "n.", meaning: "đặt chỗ", example: "I made a reservation at the hotel near headquarters.", exampleVi: "Tôi đã đặt phòng tại khách sạn gần trụ sở.", art: "reservation" },
+      { word: "itinerary", phonetic: "/aɪˈtɪn.ə.rer.i/", pos: "n.", meaning: "lịch trình", example: "The travel itinerary includes two client meetings.", exampleVi: "Lịch trình chuyến đi gồm hai cuộc họp với khách hàng.", art: "itinerary" },
+      { word: "complimentary", phonetic: "/ˌkɑːm.plɪˈmen.tər.i/", pos: "adj.", meaning: "miễn phí (tặng kèm)", example: "Guests receive a complimentary breakfast each morning.", exampleVi: "Khách được dùng bữa sáng miễn phí mỗi sáng.", art: "complimentary" },
+      { word: "authorize", phonetic: "/ˈɔː.θə.raɪz/", pos: "v.", meaning: "ủy quyền / cho phép", example: "Only the director can authorize this payment.", exampleVi: "Chỉ giám đốc mới được ủy quyền khoản thanh toán này.", art: "authorize" }
+    ];
+
+    var ARTS = {
+      invoice: '<svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#f4eee6"/><rect x="96" y="28" width="128" height="124" rx="6" fill="#fff" stroke="#c2410c" stroke-width="2"/><rect x="112" y="44" width="96" height="8" rx="2" fill="#1f3a5f"/><rect x="112" y="62" width="72" height="6" rx="2" fill="#e8dfd4"/><rect x="160" y="116" width="48" height="10" rx="2" fill="#c2410c"/><circle cx="70" cy="130" r="18" fill="#f7fee7" stroke="#3f6212" stroke-width="2"/><path d="M62 130 l6 6 12-14" fill="none" stroke="#3f6212" stroke-width="3"/></svg>',
+      deadline: '<svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#f4eee6"/><rect x="108" y="36" width="104" height="108" rx="10" fill="#fff" stroke="#1f3a5f" stroke-width="2"/><rect x="108" y="36" width="104" height="24" rx="10" fill="#c2410c"/><circle cx="160" cy="96" r="28" fill="#faf6f1" stroke="#3d322b" stroke-width="2"/><line x1="160" y1="96" x2="160" y2="76" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/><line x1="160" y1="96" x2="178" y2="104" stroke="#1f3a5f" stroke-width="3" stroke-linecap="round"/></svg>',
+      applicant: '<svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#f4eee6"/><circle cx="150" cy="64" r="22" fill="#fffdf9" stroke="#3d322b" stroke-width="2"/><path d="M114 128c8-24 24-36 36-36s28 12 36 36" fill="#1f3a5f"/><rect x="200" y="48" width="70" height="88" rx="6" fill="#fff" stroke="#c2410c" stroke-width="2"/><rect x="212" y="62" width="46" height="6" fill="#e8dfd4"/></svg>',
+      conference: '<svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#f4eee6"/><rect x="40" y="108" width="240" height="12" rx="2" fill="#e8dfd4"/><rect x="70" y="86" width="36" height="22" rx="4" fill="#1f3a5f"/><rect x="118" y="86" width="36" height="22" rx="4" fill="#1f3a5f"/><rect x="166" y="86" width="36" height="22" rx="4" fill="#1f3a5f"/><rect x="214" y="86" width="36" height="22" rx="4" fill="#1f3a5f"/><rect x="132" y="40" width="56" height="28" rx="4" fill="#c2410c"/></svg>',
+      shipment: '<svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#f4eee6"/><rect x="70" y="70" width="90" height="70" rx="4" fill="#c2410c"/><rect x="160" y="86" width="80" height="54" rx="4" fill="#9a3412"/><rect x="210" y="48" width="50" height="28" fill="#1f3a5f"/></svg>',
+      budget: '<svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#f4eee6"/><rect x="70" y="110" width="28" height="36" fill="#e8dfd4"/><rect x="110" y="88" width="28" height="58" fill="#1f3a5f"/><rect x="150" y="64" width="28" height="82" fill="#c2410c"/><rect x="190" y="78" width="28" height="68" fill="#3f6212"/></svg>',
+      reservation: '<svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#f4eee6"/><rect x="86" y="40" width="148" height="100" rx="10" fill="#fff" stroke="#1f3a5f" stroke-width="2"/><rect x="108" y="58" width="104" height="14" rx="4" fill="#c2410c"/><circle cx="210" cy="112" r="10" fill="#f7fee7" stroke="#3f6212" stroke-width="2"/></svg>',
+      itinerary: '<svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#f4eee6"/><rect x="70" y="40" width="120" height="108" rx="6" fill="#fff" stroke="#1f3a5f" stroke-width="2"/><rect x="86" y="56" width="88" height="8" fill="#c2410c"/><circle cx="230" cy="86" r="32" fill="#f4eee6" stroke="#c2410c" stroke-width="3"/></svg>',
+      complimentary: '<svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#f4eee6"/><ellipse cx="160" cy="118" rx="70" ry="18" fill="#e8dfd4"/><path d="M110 110c10-40 30-56 50-56s40 16 50 56" fill="#fff" stroke="#c2410c" stroke-width="2"/><rect x="210" y="48" width="46" height="28" rx="6" fill="#c2410c"/></svg>',
+      authorize: '<svg viewBox="0 0 320 180"><rect width="320" height="180" fill="#f4eee6"/><rect x="90" y="44" width="140" height="96" rx="8" fill="#fff" stroke="#1f3a5f" stroke-width="2"/><circle cx="210" cy="118" r="14" fill="#f7fee7" stroke="#3f6212" stroke-width="2"/><path d="M204 118 l5 5 10-12" fill="none" stroke="#3f6212" stroke-width="3"/></svg>'
+    };
+
+    var index = 0, paused = false, started = Date.now(), pausedMs = 0, pausedAt = null, audioReady = false;
+    var DURATION = 10000;
+
+    function remaining() {
+      var end = pausedAt || Date.now();
+      return Math.max(0, DURATION - (end - started - pausedMs));
+    }
+
+    function speak(text) {
+      if (!("speechSynthesis" in window)) return;
+      window.speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = "en-US"; u.rate = 0.9;
+      window.speechSynthesis.speak(u);
+    }
+
+    function unlockAudio() {
+      audioReady = true;
+      speak(CARDS[index].word);
+    }
+
+    function show(i, doSpeak) {
+      index = (i + CARDS.length) % CARDS.length;
+      var c = CARDS[index];
+      document.getElementById("word").textContent = c.word;
+      document.getElementById("ipa").textContent = c.phonetic;
+      document.getElementById("pos").textContent = c.pos;
+      document.getElementById("meaning").textContent = c.meaning;
+      document.getElementById("example").textContent = c.example;
+      document.getElementById("exampleVi").textContent = c.exampleVi;
+      document.getElementById("art").innerHTML = ARTS[c.art] || ARTS.invoice;
+      started = Date.now(); pausedMs = 0; pausedAt = paused ? Date.now() : null;
+      if (doSpeak && audioReady) speak(c.word);
+    }
+
+    function next(note) {
+      if (note) {
+        document.getElementById("toast").textContent = note;
+        setTimeout(function () { document.getElementById("toast").textContent = ""; }, 1400);
+      }
+      show(index + 1, true);
+    }
+
+    document.getElementById("speakBtn").onclick = function () { audioReady = true; speak(CARDS[index].word); };
+    document.getElementById("petBtn").onclick = function () { audioReady = true; speak(CARDS[index].word); };
+    document.getElementById("nextBtn").onclick = function () { audioReady = true; next(); };
+    document.getElementById("prevBtn").onclick = function () { audioReady = true; show(index - 1, true); };
+    document.getElementById("knownBtn").onclick = function () { audioReady = true; next("Pet vui lên · +5 XP"); };
+    document.getElementById("unknownBtn").onclick = function () { audioReady = true; next("Sẽ ôn lại từ này"); };
+    var PAUSE_ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="6" width="3.5" height="12" rx="1"/><rect x="13.5" y="6" width="3.5" height="12" rx="1"/></svg>';
+    var PLAY_ICON = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 6v12l10-6-10-6z"/></svg>';
+
+    document.getElementById("pauseBtn").onclick = function () {
+      paused = !paused;
+      if (paused) pausedAt = Date.now();
+      else { pausedMs += Date.now() - pausedAt; pausedAt = null; }
+      this.innerHTML = paused ? PLAY_ICON : PAUSE_ICON;
+      this.setAttribute("aria-label", paused ? "Tiếp tục" : "Tạm dừng");
+    };
+
+    document.body.addEventListener("touchstart", function () { if (!audioReady) unlockAudio(); }, { once: true });
+
+    var touchX = null;
+    document.getElementById("card").addEventListener("touchstart", function (e) { touchX = e.changedTouches[0].clientX; }, { passive: true });
+    document.getElementById("card").addEventListener("touchend", function (e) {
+      if (touchX == null) return;
+      var dx = e.changedTouches[0].clientX - touchX;
+      if (dx < -40) { audioReady = true; next(); }
+      if (dx > 40) { audioReady = true; show(index - 1, true); }
+      touchX = null;
+    });
+
+    setInterval(function () {
+      var left = remaining();
+      document.getElementById("clock").textContent = Math.ceil(left / 1000) + "s";
+      document.getElementById("bar").style.width = ((1 - left / DURATION) * 100) + "%";
+      if (left <= 0 && !paused) next();
+    }, 100);
+
+    show(0, false);
+  </script>
+</body>
+</html>
