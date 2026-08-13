@@ -181,6 +181,12 @@ Fake the LLM in automated tests (full JSON, missing extras, timeout). No live pr
 
 No visual regression, load suite, or device farm in v1.
 
+## Mobile demo
+
+Static phone mockup (not the real app): `docs/superpowers/specs/demo/index.html`.
+
+Three screens at ~390px: login, Jun thread with an optional coach chip, light profile. Vietnamese chrome, English bubbles. Mood is shown as remembered text, not a picker.
+
 ## Success
 
 A day counts as successful when the user can open the app, see or start a conversation with Jun, be understood, and optionally tap a chip — without being forced through a lesson or a mood widget. The next day’s check-in should feel like it remembered them.

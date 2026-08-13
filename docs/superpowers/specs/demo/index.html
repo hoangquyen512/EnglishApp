@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Jun — hỏi thăm hàng ngày</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f4efe6;
+      --ink: #2a221b;
+      --ink-soft: #6b5e52;
+      --moss: #2f5d4a;
+      --moss-deep: #24483a;
+      --clay: #c45c3e;
+      --bubble-jun: #efe6d6;
+      --line: rgba(42, 34, 27, 0.08);
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bot: env(safe-area-inset-bottom, 0px);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: #1c1814;
+      color: var(--ink);
+      font-family: Nunito, "Segoe UI", sans-serif;
+    }
+
+    .phone {
+      min-height: 100dvh;
+      max-width: 430px;
+      margin: 0 auto;
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .screen { display: none; flex: 1; flex-direction: column; min-height: 100dvh; }
+    .screen.active { display: flex; }
+
+    .topbar {
+      padding: calc(12px + var(--safe-top)) 18px 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(244, 239, 230, 0.92);
+      backdrop-filter: blur(10px);
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 30%, #f3d7b0 0 22%, transparent 23%),
+        linear-gradient(160deg, #e8c39a, #c9845a);
+      box-shadow: inset 0 -6px 0 rgba(47, 93, 74, 0.15);
+      flex-shrink: 0;
+    }
+
+    .topbar h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 20px;
+      margin: 0;
+      font-weight: 650;
+    }
+
+    .topbar p {
+      margin: 2px 0 0;
+      font-size: 12px;
+      color: var(--ink-soft);
+    }
+
+    .icon-btn {
+      margin-left: auto;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: var(--ink);
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .thread {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 16px 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .day-mark {
+      align-self: center;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin: 4px 0 2px;
+    }
+
+    .row { display: flex; flex-direction: column; max-width: 86%; }
+    .row.jun { align-self: flex-start; }
+    .row.me { align-self: flex-end; align-items: flex-end; }
+
+    .bubble {
+      padding: 11px 14px;
+      border-radius: 18px;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .row.jun .bubble {
+      background: var(--bubble-jun);
+      border-bottom-left-radius: 6px;
+    }
+
+    .row.me .bubble {
+      background: var(--moss);
+      color: #f7f3ec;
+      border-bottom-right-radius: 6px;
+    }
+
+    .chip {
+      margin-top: 6px;
+      border: 1px solid rgba(196, 92, 62, 0.35);
+      background: #fff8f3;
+      color: var(--clay);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .panel {
+      display: none;
+      margin-top: 8px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+      width: min(300px, 92vw);
+    }
+
+    .panel.open { display: block; }
+    .panel .was {
+      font-size: 13px;
+      color: var(--ink-soft);
+      text-decoration: line-through;
+      margin: 0 0 6px;
+    }
+    .panel .better {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 16px;
+      margin: 0 0 8px;
+    }
+    .panel .why { font-size: 13px; color: var(--ink-soft); margin: 0 0 10px; }
+    .use-btn {
+      border: 0;
+      background: var(--moss);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .composer {
+      padding: 10px 12px calc(12px + var(--safe-bot));
+      display: flex;
+      gap: 8px;
+      border-top: 1px solid var(--line);
+      background: #f7f3ec;
+    }
+
+    .composer input {
+      flex: 1;
+      border: 0;
+      background: #fff;
+      border-radius: 22px;
+      padding: 12px 16px;
+      font: inherit;
+      font-size: 16px;
+    }
+
+    .send {
+      width: 46px;
+      height: 46px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--moss);
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .auth, .profile {
+      padding: calc(28px + var(--safe-top)) 24px calc(24px + var(--safe-bot));
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--clay);
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+
+    .auth h2, .profile h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 34px;
+      line-height: 1.15;
+      margin: 0 0 10px;
+    }
+
+    .lede { color: var(--ink-soft); margin: 0 0 28px; line-height: 1.5; }
+
+    label { display: block; font-size: 13px; font-weight: 700; margin: 0 0 6px; }
+    .field { margin-bottom: 16px; }
+    .field input {
+      width: 100%;
+      border: 1px solid rgba(42, 34, 27, 0.12);
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px 14px;
+      font: inherit;
+      font-size: 16px;
+    }
+
+    .primary {
+      width: 100%;
+      border: 0;
+      background: var(--moss);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      font-size: 16px;
+      padding: 15px;
+      border-radius: 16px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    .ghost {
+      width: 100%;
+      margin-top: 10px;
+      border: 0;
+      background: transparent;
+      color: var(--ink-soft);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .card strong { display: block; font-size: 18px; }
+    .card span { color: var(--ink-soft); font-size: 14px; }
+
+    .level {
+      display: inline-block;
+      margin-top: 8px;
+      background: #e7f0ea;
+      color: var(--moss-deep);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    .danger {
+      width: 100%;
+      margin-top: 20px;
+      border: 0;
+      background: transparent;
+      color: var(--clay);
+      font-weight: 700;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <section id="auth" class="screen auth active">
+      <p class="eyebrow">EnglishApp</p>
+      <h2>Một người bạn hỏi thăm mỗi ngày.</h2>
+      <p class="lede">Nói chuyện bằng tiếng Anh. Jun lắng nghe — học khi bạn muốn, không khi bạn đang tâm sự.</p>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" value="quyen@example.com" autocomplete="username" />
+      </div>
+      <div class="field">
+        <label for="pass">Mật khẩu</label>
+        <input id="pass" type="password" value="password" autocomplete="current-password" />
+      </div>
+      <button class="primary" type="button" onclick="show('chat')">Đăng nhập</button>
+      <button class="ghost" type="button">Tạo tài khoản</button>
+    </section>
+
+    <section id="chat" class="screen">
+      <header class="topbar">
+        <div class="avatar" aria-hidden="true"></div>
+        <div>
+          <h1>Jun</h1>
+          <p>Bạn tâm sự · hôm nay đã hỏi thăm</p>
+        </div>
+        <button class="icon-btn" type="button" onclick="show('profile')" aria-label="Hồ sơ">☰</button>
+      </header>
+
+      <div class="thread">
+        <div class="day-mark">Hôm nay</div>
+
+        <div class="row jun">
+          <div class="bubble">Hey, yesterday sounded heavy after work. Did you get any rest last night?</div>
+        </div>
+
+        <div class="row me">
+          <div class="bubble">I sleep a little better. Still tired but not so bad.</div>
+          <button class="chip" type="button" onclick="toggleChip()">Cách nói tự nhiên hơn</button>
+          <div id="coach" class="panel">
+            <p class="was">I sleep a little better.</p>
+            <p class="better">I slept a little better.</p>
+            <p class="why">Chuyện đã xảy ra đêm qua — dùng <em>slept</em> (quá khứ), không phải <em>sleep</em>.</p>
+            <button class="use-btn" type="button" onclick="usePhrase()">Dùng câu này</button>
+          </div>
+        </div>
+
+        <div class="row jun">
+          <div class="bubble">That’s good to hear. What does today look like for you?</div>
+        </div>
+      </div>
+
+      <form class="composer" onsubmit="return false;">
+        <input id="draft" type="text" placeholder="Nói với Jun bằng tiếng Anh…" />
+        <button class="send" type="button" aria-label="Gửi">↑</button>
+      </form>
+    </section>
+
+    <section id="profile" class="screen profile">
+      <p class="eyebrow">Hồ sơ</p>
+      <h2>Quyen</h2>
+      <p class="lede">Jun nhớ mood và chủ đề qua từng ngày — không cần chọn icon.</p>
+      <div class="card">
+        <strong>Trình độ hiện tại</strong>
+        <span>App tự ước lượng từ cách bạn nói</span>
+        <div class="level">Đang ở mức dễ</div>
+      </div>
+      <div class="card">
+        <strong>Mood gần nhất</strong>
+        <span>Hơi mệt sau giờ làm — đang đỡ hơn</span>
+      </div>
+      <button class="primary" type="button" onclick="show('chat')">Quay lại đoạn chat</button>
+      <button class="danger" type="button" onclick="show('auth')">Đăng xuất</button>
+    </section>
+  </div>
+  <script>
+    function show(id) {
+      document.querySelectorAll(".screen").forEach(function (el) {
+        el.classList.toggle("active", el.id === id);
+      });
+    }
+    function toggleChip() {
+      document.getElementById("coach").classList.toggle("open");
+    }
+    function usePhrase() {
+      document.getElementById("draft").value = "I slept a little better.";
+      document.getElementById("coach").classList.remove("open");
+      document.getElementById("draft").focus();
+    }
+    (function bootFromQuery() {
+      var q = new URLSearchParams(location.search);
+      if (q.get("screen")) show(q.get("screen"));
+      if (q.get("chip") === "1") {
+        show("chat");
+        document.getElementById("coach").classList.add("open");
+      }
+    })();
+  </script>
+</body>
+</html>
