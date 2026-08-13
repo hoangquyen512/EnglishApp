@@ -2,6 +2,8 @@
 
 Desktop app (Windows + macOS) for daily English flashcards with a Tamagotchi-style pet (default name **Sora**). Built with **Tauri 2**, **React 18**, **TypeScript**, **Zustand**, **TailwindCSS**, and **SQLite**.
 
+Brand mark (sleeping companion + moon/star) lives in [`brand/`](brand/) and is used for the tray / installer icons.
+
 Correct answers feed the pet (XP, mood, evolution). Missing days makes the pet sad or hungry — it never dies.
 
 ## Prerequisites
