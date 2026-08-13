@@ -34,6 +34,11 @@ export const UI_STRINGS = {
     sad: "Sad",
     hungry: "Hungry",
   },
+  web: {
+    modeBadge: "Web mode — no install required",
+    offlineHint: "Data saved on this device (browser storage)",
+    addToHome: "Tip: Add to Home Screen for quick access",
+  },
 } as const;
 
 export const PET_CONFIG = {

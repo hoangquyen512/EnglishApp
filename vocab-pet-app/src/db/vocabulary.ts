@@ -1,11 +1,27 @@
+import { isTauri } from "../lib/platform";
 import { executeQuery, selectRows } from "./connection";
+import {
+  webGetAllVocabulary,
+  webGetLearningProgress,
+  webGetRandomMeanings,
+  webGetRandomVocabulary,
+  webInsertStudySession,
+  webUpdateLearningProgress,
+} from "./web-storage";
 import type { LearningProgress, Vocabulary } from "../types";
 
 export async function getAllVocabulary(): Promise<Vocabulary[]> {
+  if (!isTauri()) {
+    return webGetAllVocabulary();
+  }
   return selectRows<Vocabulary>("SELECT * FROM vocabulary ORDER BY id");
 }
 
 export async function getVocabularyById(id: number): Promise<Vocabulary | null> {
+  if (!isTauri()) {
+    const items = await webGetAllVocabulary();
+    return items.find((item) => item.id === id) ?? null;
+  }
   const rows = await selectRows<Vocabulary>(
     "SELECT * FROM vocabulary WHERE id = $1",
     [id],
@@ -14,6 +30,10 @@ export async function getVocabularyById(id: number): Promise<Vocabulary | null> 
 }
 
 export async function getDueVocabulary(): Promise<Vocabulary[]> {
+  if (!isTauri()) {
+    const item = await webGetRandomVocabulary();
+    return item ? [item] : [];
+  }
   return selectRows<Vocabulary>(
     `SELECT v.* FROM vocabulary v
      LEFT JOIN learning_progress lp ON lp.vocabulary_id = v.id
@@ -24,6 +44,9 @@ export async function getDueVocabulary(): Promise<Vocabulary[]> {
 }
 
 export async function getRandomVocabulary(): Promise<Vocabulary | null> {
+  if (!isTauri()) {
+    return webGetRandomVocabulary();
+  }
   const rows = await selectRows<Vocabulary>(
     "SELECT * FROM vocabulary ORDER BY RANDOM() LIMIT 1",
   );
@@ -34,6 +57,9 @@ export async function getRandomMeanings(
   excludeId: number,
   count: number,
 ): Promise<string[]> {
+  if (!isTauri()) {
+    return webGetRandomMeanings(excludeId, count);
+  }
   const rows = await selectRows<{ meaning: string }>(
     `SELECT meaning FROM vocabulary
      WHERE id != $1
@@ -47,6 +73,9 @@ export async function getRandomMeanings(
 export async function getLearningProgress(
   vocabularyId: number,
 ): Promise<LearningProgress | null> {
+  if (!isTauri()) {
+    return webGetLearningProgress(vocabularyId);
+  }
   const rows = await selectRows<LearningProgress>(
     "SELECT * FROM learning_progress WHERE vocabulary_id = $1",
     [vocabularyId],
@@ -58,6 +87,10 @@ export async function updateLearningProgress(
   vocabularyId: number,
   isCorrect: boolean,
 ): Promise<void> {
+  if (!isTauri()) {
+    return webUpdateLearningProgress(vocabularyId, isCorrect);
+  }
+
   const now = new Date().toISOString();
   const progress = await getLearningProgress(vocabularyId);
 
@@ -98,6 +131,9 @@ export async function insertStudySession(
   vocabularyId: number,
   isCorrect: boolean,
 ): Promise<void> {
+  if (!isTauri()) {
+    return webInsertStudySession(vocabularyId, isCorrect);
+  }
   await executeQuery(
     "INSERT INTO study_sessions (vocabulary_id, is_correct) VALUES ($1, $2)",
     [vocabularyId, isCorrect ? 1 : 0],

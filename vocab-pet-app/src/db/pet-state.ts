@@ -1,7 +1,17 @@
+import { isTauri } from "../lib/platform";
 import { executeQuery, selectRows } from "./connection";
+import {
+  webGetPetState,
+  webRefreshPetMood,
+  webUpdatePetAfterAnswer,
+  webUpdateStreak,
+} from "./web-storage";
 import type { PetMood, PetState } from "../types";
 
 export async function getPetState(): Promise<PetState | null> {
+  if (!isTauri()) {
+    return webGetPetState();
+  }
   const rows = await selectRows<PetState>(
     "SELECT * FROM pet_state ORDER BY id LIMIT 1",
   );
@@ -11,6 +21,10 @@ export async function getPetState(): Promise<PetState | null> {
 export async function updatePetAfterAnswer(
   xpGained: number,
 ): Promise<{ leveledUp: boolean; newLevel: number }> {
+  if (!isTauri()) {
+    return webUpdatePetAfterAnswer(xpGained);
+  }
+
   const pet = await getPetState();
   if (!pet) {
     return { leveledUp: false, newLevel: 1 };
@@ -41,6 +55,10 @@ export async function updatePetAfterAnswer(
 
 /** Decays mood based on days since last study (last_fed_at). */
 export async function refreshPetMood(): Promise<PetMood> {
+  if (!isTauri()) {
+    return webRefreshPetMood();
+  }
+
   const pet = await getPetState();
   if (!pet) {
     return "happy";
@@ -73,6 +91,10 @@ function computeMoodFromLastFed(lastFedAt: string | null): PetMood {
 }
 
 export async function updateStreak(): Promise<void> {
+  if (!isTauri()) {
+    return webUpdateStreak();
+  }
+
   const pet = await getPetState();
   if (!pet?.last_fed_at) {
     return;

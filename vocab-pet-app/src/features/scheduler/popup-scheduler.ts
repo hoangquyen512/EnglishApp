@@ -1,60 +1,84 @@
-import {
-  isPermissionGranted,
-  requestPermission,
-  sendNotification,
-} from "@tauri-apps/plugin-notification";
-import { getCurrentWindow } from "@tauri-apps/api/window";
-import { WebviewWindow } from "@tauri-apps/api/webviewWindow";
+import { isTauri } from "../../lib/platform";
 import { SCHEDULER_CONFIG, UI_STRINGS } from "../../constants/ui-strings";
+import { useUiStore } from "../../stores/ui-store";
 
 let intervalId: ReturnType<typeof setInterval> | null = null;
 let onTickCallback: (() => void) | null = null;
 
-/** Shows the popup window and optionally sends a notification. */
-export async function showStudyPopup(): Promise<void> {
-  const popup = await WebviewWindow.getByLabel("popup");
-  if (popup) {
-    await popup.show();
-    await popup.setFocus();
-    await popup.center();
+async function notifyStudyReminder(): Promise<void> {
+  if (typeof Notification === "undefined") {
+    return;
   }
 
-  await maybeNotify();
-}
-
-/** Sends a desktop notification if permission is granted. */
-async function maybeNotify(): Promise<void> {
-  let granted = await isPermissionGranted();
-  if (!granted) {
-    const permission = await requestPermission();
-    granted = permission === "granted";
+  if (Notification.permission === "default") {
+    await Notification.requestPermission();
   }
 
-  if (granted) {
-    await sendNotification({
-      title: UI_STRINGS.app.title,
+  if (Notification.permission === "granted") {
+    new Notification(UI_STRINGS.app.title, {
       body: UI_STRINGS.tray.studyNow,
     });
   }
 }
 
-/** Starts the demo scheduler (popup every X minutes). Only runs in the main window. */
+/** Shows the flashcard UI (popup window on desktop, modal on web/mobile). */
+export async function showStudyPopup(): Promise<void> {
+  if (isTauri()) {
+    const { WebviewWindow } = await import("@tauri-apps/api/webviewWindow");
+    const {
+      isPermissionGranted,
+      requestPermission,
+      sendNotification,
+    } = await import("@tauri-apps/plugin-notification");
+
+    const popup = await WebviewWindow.getByLabel("popup");
+    if (popup) {
+      await popup.show();
+      await popup.setFocus();
+      await popup.center();
+    }
+
+    let granted = await isPermissionGranted();
+    if (!granted) {
+      const permission = await requestPermission();
+      granted = permission === "granted";
+    }
+    if (granted) {
+      await sendNotification({
+        title: UI_STRINGS.app.title,
+        body: UI_STRINGS.tray.studyNow,
+      });
+    }
+    return;
+  }
+
+  useUiStore.getState().openFlashcard();
+  await notifyStudyReminder();
+}
+
+/** Starts the demo scheduler. Desktop: main window only. Web: always runs. */
 export function startPopupScheduler(onTick?: () => void): void {
   if (intervalId) {
     return;
   }
 
   onTickCallback = onTick ?? null;
-  const window = getCurrentWindow();
 
-  if (window.label !== "main") {
+  const tick = () => {
+    void showStudyPopup().then(() => onTickCallback?.());
+  };
+
+  if (isTauri()) {
+    void import("@tauri-apps/api/window").then(({ getCurrentWindow }) => {
+      if (getCurrentWindow().label !== "main") {
+        return;
+      }
+      intervalId = setInterval(tick, SCHEDULER_CONFIG.popupIntervalMs);
+    });
     return;
   }
 
-  intervalId = setInterval(async () => {
-    await showStudyPopup();
-    onTickCallback?.();
-  }, SCHEDULER_CONFIG.popupIntervalMs);
+  intervalId = setInterval(tick, SCHEDULER_CONFIG.popupIntervalMs);
 }
 
 /** Stops the popup scheduler. */
@@ -71,10 +95,16 @@ export function getPopupIntervalMs(): number {
   return SCHEDULER_CONFIG.popupIntervalMs;
 }
 
-/** Hides the popup window after a study session. */
+/** Hides the flashcard UI after a study session. */
 export async function hidePopupWindow(): Promise<void> {
-  const popup = await WebviewWindow.getByLabel("popup");
-  if (popup) {
-    await popup.hide();
+  if (isTauri()) {
+    const { WebviewWindow } = await import("@tauri-apps/api/webviewWindow");
+    const popup = await WebviewWindow.getByLabel("popup");
+    if (popup) {
+      await popup.hide();
+    }
+    return;
   }
+
+  useUiStore.getState().closeFlashcard();
 }

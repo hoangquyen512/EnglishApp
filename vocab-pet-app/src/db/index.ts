@@ -1,4 +1,4 @@
-export { getDb, selectRows, executeQuery } from "./connection";
+export { getDb, selectRows, executeQuery, initDatabase } from "./connection";
 export {
   getAllVocabulary,
   getVocabularyById,

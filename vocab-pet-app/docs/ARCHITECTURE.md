@@ -1,6 +1,17 @@
 # Vocab Pet — Architecture (MVP Scaffold)
 
-Desktop vocabulary learning app with a Tamagotchi-style pet. Built with **Tauri 2.0**, **React 18**, **TypeScript**, **Zustand**, **TailwindCSS**, and **SQLite** (`tauri-plugin-sql`).
+Desktop + **web/mobile (PWA)** vocabulary learning app with a Tamagotchi-style pet. Built with **Tauri 2.0**, **React 18**, **TypeScript**, **Zustand**, **TailwindCSS**, and dual storage backends.
+
+## Dual runtime
+
+| Runtime | Storage | Flashcard UI | Scheduler |
+|---------|---------|--------------|-----------|
+| **Tauri desktop** | SQLite (`tauri-plugin-sql`) | Separate `popup` window | Tray + desktop notification |
+| **Web / mobile browser** | `localStorage` (`web-storage.ts`) | In-app modal (`FlashcardModal`) | Browser `Notification` API |
+
+Detection: `src/lib/platform.ts` → `isTauri()`. Same feature modules and stores; `db/vocabulary.ts` and `db/pet-state.ts` branch on runtime.
+
+Web build: `pnpm build:web` (relative `base`, PWA manifest, service worker). Deploy `dist/` or use `pnpm preview:web` for LAN testing on phone.
 
 ## High-level overview
 

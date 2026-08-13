@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { usePetStore } from "../../stores/pet-store";
 import { useSchedulerStore } from "../../stores/scheduler-store";
+import { isTauri } from "../../lib/platform";
 import { UI_STRINGS } from "../../constants/ui-strings";
 import { LoadingSpinner } from "../shared/loading-spinner";
 import { PetAvatar } from "../pet/pet-avatar";
@@ -47,15 +48,22 @@ export function MainDashboard() {
   const { pet, xpProgressPercent, xpToNextLevel } = snapshot;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50 to-white p-8">
-      <header className="mb-8">
-        <h1 className="text-2xl font-bold text-indigo-800">
+    <div className="min-h-[100dvh] bg-gradient-to-b from-indigo-50 to-white p-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:p-8">
+      <header className="mb-6 sm:mb-8">
+        <h1 className="text-xl font-bold text-indigo-800 sm:text-2xl">
           {UI_STRINGS.app.title}
         </h1>
-        <p className="text-gray-600">{UI_STRINGS.main.subtitle}</p>
+        <p className="text-sm text-gray-600 sm:text-base">
+          {UI_STRINGS.main.subtitle}
+        </p>
+        {!isTauri() ? (
+          <p className="mt-2 inline-block rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-700">
+            {UI_STRINGS.web.modeBadge}
+          </p>
+        ) : null}
       </header>
 
-      <div className="mx-auto max-w-md rounded-2xl bg-white p-8 shadow-lg">
+      <div className="mx-auto max-w-md rounded-2xl bg-white p-5 shadow-lg sm:p-8">
         <h2 className="mb-6 text-center text-lg font-semibold text-gray-800">
           {UI_STRINGS.main.petStatus}
         </h2>
@@ -106,10 +114,16 @@ export function MainDashboard() {
         <button
           type="button"
           onClick={() => void triggerNow()}
-          className="mt-6 w-full rounded-lg bg-indigo-600 py-2.5 text-sm font-medium text-white hover:bg-indigo-700"
+          className="mt-6 min-h-12 w-full rounded-lg bg-indigo-600 py-2.5 text-sm font-medium text-white hover:bg-indigo-700 active:bg-indigo-800"
         >
           {UI_STRINGS.main.studyNow}
         </button>
+
+        {!isTauri() ? (
+          <p className="mt-4 text-center text-xs text-gray-500">
+            {UI_STRINGS.web.addToHome}
+          </p>
+        ) : null}
       </div>
     </div>
   );
