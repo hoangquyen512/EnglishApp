@@ -1,0 +1,2 @@
+Be Vietnam Pro and Fraunces are licensed under the SIL Open Font License 1.1.
+Sources: https://github.com/google/fonts (ofl/bevietnampro, ofl/fraunces)
