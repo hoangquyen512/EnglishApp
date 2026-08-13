@@ -1,0 +1,7 @@
+CREATE TABLE study_sessions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  content_id INTEGER NOT NULL,
+  content_type TEXT NOT NULL,
+  is_correct INTEGER NOT NULL,
+  answered_at TEXT DEFAULT CURRENT_TIMESTAMP
+);

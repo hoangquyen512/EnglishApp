@@ -1,0 +1,122 @@
+export type ContentType = "vocabulary" | "phrase";
+
+export type PhraseTopic = "travel" | "food" | "office" | "family";
+
+export type LearningStatus = "new" | "learning" | "mastered";
+
+export type PetMood = "happy" | "neutral" | "sad" | "hungry";
+
+export type MissionType = "learn_new" | "review_wrong" | "topic_practice";
+
+export type CefrLevel = "A1" | "A2" | "B1" | "B2";
+
+export interface Vocabulary {
+  id: number;
+  word: string;
+  meaning: string;
+  example: string | null;
+  category: string | null;
+  createdAt: string;
+}
+
+export interface Phrase {
+  id: number;
+  phraseEn: string;
+  meaningVi: string;
+  topic: PhraseTopic;
+  level: CefrLevel;
+  createdAt: string;
+}
+
+export interface LearningProgress {
+  id: number;
+  vocabularyId: number;
+  correctCount: number;
+  wrongCount: number;
+  lastReviewedAt: string | null;
+  nextReviewAt: string | null;
+  status: LearningStatus;
+}
+
+export interface PetSpecies {
+  id: number;
+  speciesName: string;
+  description: string | null;
+}
+
+export interface PetEvolutionStage {
+  id: number;
+  speciesId: number;
+  stageOrder: number;
+  minLevel: number;
+  spriteKey: string;
+}
+
+export interface PetState {
+  id: number;
+  petName: string;
+  level: number;
+  xp: number;
+  mood: PetMood;
+  streakDays: number;
+  lastFedAt: string | null;
+  updatedAt: string;
+  speciesId: number | null;
+  currentStageId: number | null;
+  spriteKey: string | null;
+  speciesName: string | null;
+}
+
+export interface DailyMission {
+  id: number;
+  missionDate: string;
+  missionType: MissionType;
+  targetCount: number;
+  currentCount: number;
+  topic: PhraseTopic | null;
+  xpReward: number;
+  isCompleted: boolean;
+}
+
+export interface TopicProgress {
+  learned: number;
+  mastered: number;
+}
+
+export interface UserProgress {
+  id: number;
+  totalWordsLearned: number;
+  totalPhrasesLearned: number;
+  currentStreak: number;
+  longestStreak: number;
+  progressByTopic: Record<string, TopicProgress>;
+  updatedAt: string;
+}
+
+export interface QuizChoice {
+  id: string;
+  text: string;
+  isCorrect: boolean;
+}
+
+export interface QuizCard {
+  contentId: number;
+  contentType: ContentType;
+  prompt: string;
+  example: string | null;
+  topic: PhraseTopic | null;
+  choices: QuizChoice[];
+  correctAnswer: string;
+}
+
+export interface StudyMode {
+  contentType: ContentType;
+  topic: PhraseTopic | null;
+}
+
+export interface SubmitAnswerResult {
+  isCorrect: boolean;
+  leveledUp: boolean;
+  completedMissions: DailyMission[];
+  pet: PetState;
+}

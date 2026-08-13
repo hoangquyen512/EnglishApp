@@ -1,0 +1,10 @@
+CREATE TABLE pet_state (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  pet_name TEXT DEFAULT 'Pet',
+  level INTEGER DEFAULT 1,
+  xp INTEGER DEFAULT 0,
+  mood TEXT DEFAULT 'happy',
+  streak_days INTEGER DEFAULT 0,
+  last_fed_at TEXT,
+  updated_at TEXT DEFAULT CURRENT_TIMESTAMP
+);

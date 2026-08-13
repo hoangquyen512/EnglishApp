@@ -1,0 +1,8 @@
+CREATE TABLE phrases (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  phrase_en TEXT NOT NULL,
+  meaning_vi TEXT NOT NULL,
+  topic TEXT NOT NULL,
+  level TEXT DEFAULT 'A2',
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
