@@ -2,12 +2,14 @@
 
 Date: 2026-08-13  
 Product: Vocab Pet (repo `EnglishApp`)  
-Status: Ready for review (revision 2)  
-Scope: Tài khoản tối giản. Đăng ký / đăng nhập chỉ username + password. **Không** verify email, không OAuth, không server đồng bộ. Email **chỉ** dùng cho quên mật khẩu.
+Status: Ready for review (revision 3)  
+Scope: Tài khoản tối giản. Đăng ký / đăng nhập chỉ username + password. **Không** verify email, không OAuth, không server đồng bộ. Email dùng cho quên mật khẩu **và** sửa trên màn Thông tin tài khoản. Màn đó còn **Tên thường gọi** và **avatar**, đều sửa được.
 
 Spec này là nguồn sự thật cho chức năng tài khoản. Nó **không** đổi pet XP/mood/missions, SRS, tray, popup 400×500, hay installer. Những phần đó vẫn khóa trong `docs/ARCHITECTURE.md` (PR #2) và UI Warm Companion (PR #3).
 
 **Revision 2:** quên mật khẩu không còn mã khôi phục. User nhập email → hệ thống gửi **mật khẩu mặc định** tới mail, lưu email vào account; lần quên sau phải nhập **đúng email đã lưu**. Sau khi gửi mail, hiện form: mật khẩu mặc định + mật khẩu mới + nhập lại → đổi mật khẩu.
+
+**Revision 3:** màn **Thông tin tài khoản** (đã login): sửa email, tên thường gọi, avatar. Username chỉ đọc — vẫn là identity đăng nhập.
 
 ---
 
@@ -19,6 +21,7 @@ Yêu cầu sản phẩm:
 
 1. Đăng ký / đăng nhập: chỉ username và password. Không bắt email lúc tạo tài khoản. Không verify email.
 2. Quên mật khẩu: nhập email → gửi mật khẩu mặc định tới email đó → lưu email vào thông tin account. Lần quên tiếp theo phải nhập **đúng email đã lưu**. Sau nút gửi mail: màn hình mật khẩu mặc định, mật khẩu mới, nhập lại mật khẩu mới, đổi mật khẩu.
+3. Màn **Thông tin tài khoản**: xem/sửa email, tên thường gọi, avatar.
 
 Tên agent: **Chức năng tài khoản tối giản**.
 
@@ -28,7 +31,7 @@ Tên agent: **Chức năng tài khoản tối giản**.
 | --- | --- |
 | Không email lúc đăng ký | Form đăng ký không có field email. Cột `accounts.email` bắt đầu `NULL` |
 | Không verify email | Không link xác nhận, không OTP, không chặn login vì email chưa confirm |
-| Email chỉ khi quên mật khẩu | Cần SMTP (mạng) **cho flow này**; đăng ký / đăng nhập vẫn offline |
+| Email không verify | Cần SMTP **khi quên mật khẩu**; đăng ký / login / sửa profile vẫn offline |
 | Desktop local-first (Tauri + SQLite) | Account vẫn local; không backend user-directory. Mailer là lệnh gửi SMTP từ app |
 | Máy dùng chung có thể xảy ra | Username unique **trên máy này**; data tách theo tài khoản |
 | Warm Companion UI | Màn hình auth cùng token (Be Vietnam Pro, terracotta-700, cream) |
@@ -46,6 +49,9 @@ Tên agent: **Chức năng tài khoản tối giản**.
 9. **Mật khẩu mặc định** = mật khẩu tạm hệ thống **sinh mới mỗi lần gửi** (8 ký tự, dễ gõ). Không phải một chuỗi cố định cho mọi user (`123456`). Hash Argon2id **thay** `password_hash` hiện tại khi gửi mail thành công — password cũ hết hiệu lực.
 10. Màn sau khi gửi có **ba ô nhập** (mật khẩu mặc định / mật khẩu mới / nhập lại). App **không** hiện plaintext mật khẩu mặc định trên UI — user đọc trong hộp thư. Field không pre-fill.
 11. Gửi mail thất bại → **không** lưu email, **không** đổi password.
+12. Tên thường gọi và avatar **không** bắt lúc đăng ký. Để trống thì Home hiện username và avatar chữ cái.
+13. Sửa email / tên / avatar khi đã login **không** hỏi lại mật khẩu (đã có session). Đổi mật khẩu và xóa tài khoản vẫn hỏi mật khẩu.
+14. Avatar là **file ảnh local** (chọn từ máy), không URL mạng, không emoji-as-avatar, không đồng bộ cloud.
 
 ---
 
@@ -57,6 +63,7 @@ Tên agent: **Chức năng tài khoản tối giản**.
 - Lần sau: đăng nhập bằng cặp đó để thấy pet và tiến độ của mình.
 - Đăng xuất → màn đăng nhập. Tài khoản khác trên cùng máy không thấy data của nhau.
 - Quên mật khẩu theo flow email + mật khẩu mặc định (mục 7.6).
+- Màn Thông tin tài khoản: sửa email, tên thường gọi, avatar (mục 7.8).
 
 **Non-goal (cấm lọt vào PR implementation)**
 
@@ -66,7 +73,7 @@ Tên agent: **Chức năng tài khoản tối giản**.
 - Reset qua SMS / admin.
 - Phân quyền (admin / teacher / student).
 - Xuất file GDPR khi xóa — chỉ cascade local (mục 7.7).
-- Đổi username. Avatar / profile social.
+- Đổi username (login id). Profile công khai / mạng xã hội / avatar trên CDN.
 - Hỏi password mỗi lần mở popup.
 
 ---
@@ -117,7 +124,7 @@ Auth sống ở **Rust** (hash, verify, session, gửi mail). TypeScript chỉ g
 │  Main window (880×640)                                      │
 │   chưa session → AuthGate (Đăng nhập | Đăng ký | Quên MK)   │
 │   có session, chưa pet → Onboarding (chọn pet) — giữ nguyên │
-│   có session, có pet   → Home                               │
+│   có session, có pet   → Home → Thông tin tài khoản         │
 └────────────────────────────┬────────────────────────────────┘
                              │ invoke
                              ▼
@@ -125,12 +132,15 @@ Auth sống ở **Rust** (hash, verify, session, gửi mail). TypeScript chỉ g
 │  Rust: commands/auth.rs + mailer.rs                         │
 │   register / login / logout / change_password               │
 │   request_password_reset / confirm_password_reset           │
-│   current_session / update_account_email                    │
+│   current_session / update_account_profile                  │
+│   set_account_avatar / clear_account_avatar                 │
 │   Argon2id; SMTP via lettre                                 │
 └────────────────────────────┬────────────────────────────────┘
                              ▼
               sqlite:vocab_pet.db
-              accounts (username, password_hash, email)
+              accounts (username, password_hash, email,
+                        display_name, avatar_file)
+              avatars/{user_id}.jpg  (appLocalDataDir)
               app_session + user_id trên bảng tiến độ
               settings.json không chứa session
                              │
@@ -144,12 +154,13 @@ Popup **không** có màn hình auth. Tray **Học ngay** khi chưa login: popup
 
 | Unit | Việc | API công khai | Phụ thuộc |
 | --- | --- | --- | --- |
-| `commands/auth.rs` | Đăng ký, login, logout, đổi MK, reset, session | commands dưới đây | SQLite, Argon2id, `mailer` |
+| `commands/auth.rs` | Đăng ký, login, logout, đổi MK, reset, session, profile, avatar | commands dưới đây | SQLite, Argon2id, `mailer`, disk avatar |
 | `mailer.rs` | Gửi một loại mail: mật khẩu mặc định | `send_default_password(to, username, default_password)` | SMTP env |
 | `db/accounts.ts` | Đọc session cho UI (không SQL password) | `getCurrentAccount()` | `current_session` |
-| `features/auth` | Validate username / password / email format | `validateUsername`, `validatePassword`, `validateEmail` | không |
+| `features/auth` | Validate username / password / email / display name | `validateUsername`, `validatePassword`, `validateEmail`, `validateDisplayName` | không |
 | `components/auth/*` | AuthGate, Login, Register, ForgotEmail, ForgotChangePassword | props onSubmit | `features/auth` + invoke |
-| `AuthGate` (main) | Cây: auth / onboarding / home | wrap App | session + `pet_state` |
+| `components/account/account-screen.tsx` | Thông tin tài khoản: avatar, tên, email, username đọc, đổi MK, xóa | `AccountScreen` | session commands |
+| `AuthGate` (main) | Cây: auth / onboarding / home / account | wrap App | session + `pet_state` |
 
 `mailer.rs` không biết SQLite. `auth.rs` không nói SMTP host — chỉ gọi `send_default_password`. Test auth bằng mailer fake.
 
@@ -157,15 +168,17 @@ Popup **không** có màn hình auth. Tray **Học ngay** khi chưa login: popup
 
 | Command | Input | Output |
 | --- | --- | --- |
-| `register_account` | `{ username, password }` | `{ userId, username, email: null }` |
-| `login_account` | `{ username, password }` | `{ userId, username, email }` |
+| `register_account` | `{ username, password }` | `{ userId, username, email: null, displayName: null, avatarUrl: null }` |
+| `login_account` | `{ username, password }` | `{ userId, username, email, displayName, avatarUrl }` |
 | `logout_account` | none | `()` |
-| `current_session` | none | `{ userId, username, email } \| null` |
+| `current_session` | none | `{ userId, username, email, displayName, avatarUrl } \| null` |
 | `change_password` | `{ currentPassword, newPassword }` | `()` — đã login |
 | `request_password_reset` | `{ username, email }` | `{ ok: true }` — **không** trả mật khẩu mặc định |
-| `confirm_password_reset` | `{ username, defaultPassword, newPassword }` | `{ userId, username, email }` (đăng nhập luôn) |
-| `update_account_email` | `{ password, email }` | `{ email }` — đã login; đổi / gán email |
-| `delete_account` | `{ password }` | `()` |
+| `confirm_password_reset` | `{ username, defaultPassword, newPassword }` | session DTO (đăng nhập luôn) |
+| `update_account_profile` | `{ displayName, email }` | session DTO — đã login; **không** hỏi password. `displayName` / `email` chuỗi rỗng → lưu `NULL` |
+| `set_account_avatar` | `{ sourcePath }` | `{ avatarUrl }` — copy + chuẩn hóa file; đã login |
+| `clear_account_avatar` | none | `{ avatarUrl: null }` — xóa file + cột |
+| `delete_account` | `{ password }` | `()` — xóa luôn file avatar |
 
 Mọi password / default password chỉ đi IPC nội bộ. Không log argument. `request_password_reset` thành công **không** set `app_session` — user phải hoàn tất màn đổi mật khẩu (hoặc login bằng mật khẩu mặc định vừa nhận).
 
@@ -203,16 +216,21 @@ CREATE TABLE accounts (
   username TEXT NOT NULL COLLATE NOCASE UNIQUE,
   password_hash TEXT NOT NULL,
   email TEXT COLLATE NOCASE,
+  display_name TEXT,
+  avatar_file TEXT,
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 ```
 
-- `username`: trim; so khớp `NOCASE`; lưu đúng như user gõ sau trim.
+- `username`: trim; so khớp `NOCASE`; lưu đúng như user gõ sau trim. **Không** sửa sau đăng ký.
 - `password_hash`: PHC Argon2id. Không plaintext, không salt tách cột.
-- `email`: `NULL` đến lần quên mật khẩu đầu (hoặc đến lúc user cập nhật khi đã login). So khớp `NOCASE`. Lưu lowercase sau trim (tránh `A@x.com` vs `a@x.com` lúc “phải đúng email”).
+- `email`: `NULL` đến khi user lưu trên màn Thông tin tài khoản **hoặc** lần quên mật khẩu đầu thành công. So khớp `NOCASE`. Lưu lowercase sau trim.
+- `display_name`: `NULL` đến khi user nhập tên thường gọi. Lưu trim, giữ nguyên hoa/thường/dấu tiếng Việt.
+- `avatar_file`: `NULL` hoặc tên file trong `{appLocalDataDir}/avatars/` (ví dụ `3.jpg`). Không lưu blob trong SQLite. Không đường dẫn tuyệt đối (máy khác / user folder đổi vẫn resolve qua `appLocalDataDir`).
 - Không cột `verified`. Không `recovery_hash`. Không `role`.
 - Không UNIQUE bắt buộc trên `email` (nhiều account `NULL`; quên MK luôn kèm username). Index thường `(email)` để lookup.
+- Xóa account: xóa hàng + xóa file `avatars/{avatar_file}` nếu có.
 
 ### 5.2 Gắn `user_id`
 
@@ -262,7 +280,7 @@ Scaffold seed một hàng `user_progress` trống (`016`); `pet_state` chỉ sau
 
 ---
 
-## 6. Quy tắc username, password, email
+## 6. Quy tắc username, password, email, tên thường gọi, avatar
 
 ### Username
 
@@ -272,7 +290,8 @@ Scaffold seed một hàng `user_progress` trống (`016`); `pet_state` chỉ sau
 | Ký tự | `A–Z a–z 0–9 _ .` — không dấu, không khoảng trắng |
 | Unique | Không phân biệt hoa thường (`alice` = `Alice`) |
 | Reserved | `admin`, `root`, `system`, `guest` |
-| Hiển thị | Đúng lúc đăng ký (sau trim) |
+| Hiển thị | Đúng lúc đăng ký (sau trim). Chỉ đọc trên màn Thông tin tài khoản |
+| Đổi | Không |
 
 Validate TS (UX) và Rust (nguồn sự thật). Rust thắng.
 
@@ -305,7 +324,33 @@ Gợi ý UI: “Ít nhất 8 ký tự. Không dùng lại username.”
 | Lưu | `trim` + lowercase |
 | Lần quên đầu | `accounts.email IS NULL` → nhận email này, lưu nếu gửi SMTP thành công |
 | Lần quên sau | Phải **trùng** `accounts.email` (đã lowercase) |
+| Màn thông tin | Sửa / xóa (rỗng → `NULL`). Không gửi mail xác nhận. Lần quên sau dùng giá trị mới (nếu `NULL` thì lại như lần đầu) |
 | Đăng ký | Không có field |
+
+### Tên thường gọi (`display_name`)
+
+| Rule | Giá trị |
+| --- | --- |
+| Độ dài | 0 hoặc 1–40 sau trim. 0 / chỉ khoảng trắng → `NULL` |
+| Ký tự | Unicode, **có dấu tiếng Việt**, khoảng trắng giữa từ. Không xuống dòng, không control char |
+| Unique | Không |
+| Đăng ký | Không có field |
+| Hiển thị | Home + header: `display_name` nếu có, không thì `username` |
+| `aria-label` avatar | Tên thường gọi hoặc username |
+
+### Avatar
+
+| Rule | Giá trị |
+| --- | --- |
+| Nguồn | Native file picker (Tauri dialog). Chỉ file local |
+| MIME / magic | JPEG, PNG, WebP. **Cấm** SVG, GIF, HEIC (SVG = XSS WebView; GIF/HEIC = phức tạp không cần) |
+| Kích thước file gốc | ≤ 2 MiB; lớn hơn → “Ảnh tối đa 2 MB.” |
+| Lưu | Rust đọc path, kiểm tra magic bytes, resize cạnh dài ≤ 512, ghi JPEG quality ~85 → `{appLocalDataDir}/avatars/{user_id}.jpg`, `avatar_file = "{user_id}.jpg"` |
+| Mặc định | Không file: vòng tròn cream, chữ cái đầu của tên thường gọi (hoặc username), `--terracotta-700` |
+| Xóa | `clear_account_avatar`: xóa file, `avatar_file = NULL` → lại chữ cái |
+| `avatarUrl` | Custom protocol / `convertFileSrc` trỏ file đã copy, **không** trả `sourcePath` gốc. Cache-bust query `?t={updated_at}` |
+
+`set_account_avatar` fail (không đọc được file, không phải ảnh, quá lớn): không đổi file cũ.
 
 ---
 
@@ -315,7 +360,7 @@ Copy UI: tiếng Việt.
 
 ### 7.1 Đăng ký
 
-1. Form: Username, Mật khẩu, Nhập lại mật khẩu. Primary: **Tạo tài khoản**. Secondary: **Đã có tài khoản**. **Không** field email.
+1. Form: Username, Mật khẩu, Nhập lại mật khẩu. Primary: **Tạo tài khoản**. Secondary: **Đã có tài khoản**. **Không** field email, tên thường gọi, avatar.
 2. Validate → `register_account`.
 3. Thành công: `app_session` set → Onboarding chọn pet. Claim data cũ nếu đã có pet thì bỏ onboarding.
 4. Username trùng: “Tên này đã dùng trên máy. Chọn tên khác hoặc đăng nhập.”
@@ -337,13 +382,15 @@ Sau khi `request_password_reset` thành công, mật khẩu cũ không còn. Use
 
 ### 7.4 Đăng xuất
 
-Home: menu cạnh username → **Đăng xuất**. Confirm: “Pet vẫn trên máy. Đăng nhập lại để học tiếp.” → AuthGate.
+Home: cụm **avatar (32px) + tên thường gọi** (fallback username) góc, không tranh “Học ngay”. Bấm cụm → màn Thông tin tài khoản. Menu overflow trên màn đó có **Đăng xuất**.
+
+Confirm đăng xuất: “Pet vẫn trên máy. Đăng nhập lại để học tiếp.” → AuthGate.
 
 Tray **Thoát** = quit process, **không** logout.
 
 ### 7.5 Đổi mật khẩu (đã login)
 
-Menu tài khoản → **Đổi mật khẩu**: mật khẩu hiện tại, mật khẩu mới, nhập lại. Toast “Đã đổi mật khẩu.” Session giữ nguyên. Email không đổi.
+Màn Thông tin tài khoản → **Đổi mật khẩu**: mật khẩu hiện tại, mật khẩu mới, nhập lại. Toast “Đã đổi mật khẩu.” Session, email, tên, avatar không đổi.
 
 ### 7.6 Quên mật khẩu
 
@@ -390,11 +437,30 @@ Không có đường “gửi lại” tự động trên màn 2. User **Quay l�
 
 ### 7.7 Xóa tài khoản
 
-Menu → **Xóa tài khoản**: password + gõ lại username. Cascade pet, progress, sessions, missions. AuthGate.
+Màn Thông tin tài khoản → **Xóa tài khoản**: password + gõ lại username. Cascade pet, progress, sessions, missions, file avatar. AuthGate.
 
-### 7.8 Email trên thông tin account (đã login)
+### 7.8 Màn Thông tin tài khoản (đã login)
 
-Menu hiện email hoặc “Chưa lưu email”. **Cập nhật email**: mật khẩu hiện tại + email mới. `update_account_email` lưu lowercase. Lần quên sau phải dùng email mới. Không gửi mail xác nhận (vẫn không verify).
+Vào từ Home (bấm avatar / tên). Cùng main window 880×640, không popup. Nút **Quay lại** về Home.
+
+**Bố cục (một cột, panel Warm Companion)**
+
+1. **Avatar** 96px vòng tròn. Overlay camera (Lucide `Camera`, `aria-label` “Đổi ảnh đại diện”).
+   - **Đổi ảnh** → native picker → `set_account_avatar` ngay (không đợi Lưu).
+   - **Xóa ảnh** (chỉ hiện khi đang có file) → confirm một dòng “Dùng lại chữ cái?” → `clear_account_avatar`.
+2. **Tên thường gọi** — text, placeholder “Tên hiện trên nhà pet”.
+3. **Email** — text, placeholder “Dùng khi quên mật khẩu”. Helper: “Lần quên mật khẩu sau phải nhập đúng email này.”
+4. **Tên đăng nhập** — username, **disabled / read-only**. Helper: “Dùng để đăng nhập, không đổi được.”
+5. Primary: **Lưu** → `update_account_profile({ displayName, email })`. Toast “Đã lưu thông tin tài khoản.”
+6. Secondary rows (không phải primary): **Đổi mật khẩu** (mục 7.5), **Đăng xuất** (7.4), **Xóa tài khoản** (7.7, destructive `--rose-700`).
+
+Không hỏi mật khẩu khi Lưu tên/email hay đổi avatar.
+
+Email rỗng lúc Lưu: `email = NULL`. Copy confirm nếu đang có email và user xóa hết: “Chưa có email. Lần quên mật khẩu tới sẽ lưu email bạn nhập lúc đó.”
+
+Tên thường gọi rỗng: `display_name = NULL`; Home hiện username.
+
+Sửa email không gửi mail xác nhận (vẫn không verify). Quên mật khẩu lần sau dùng email mới.
 
 ---
 
@@ -407,7 +473,8 @@ Auth là view trong main WebView 880×640. Token PR #3:
 - Một PrimaryButton mỗi màn.
 - Password: type password + Lucide `Eye` / `EyeOff`, `aria-label` “Hiện mật khẩu”.
 - Lỗi: `--rose-50` + `--rose-700`, không chỉ màu.
-- Username trên Home: `text-sm` `--stone-500`.
+- Username trên Home: `text-sm` `--stone-500` chỉ khi không có tên thường gọi; có tên thì tên là `text-sm` `--stone-800`, username không hiện trên Home.
+- Avatar Home 32px / màn account 96px, `object-fit: cover`, vòng tròn, 1px `--color-border`. Chữ cái: Be Vietnam Pro 700.
 
 Màn hình:
 
@@ -415,7 +482,9 @@ Màn hình:
 2. **Đăng ký** — mặc định khi 0 account.
 3. **Quên mật khẩu màn 1** — username + email.
 4. **Quên mật khẩu màn 2** — mặc định + mới + nhập lại.
-5. **Đổi mật khẩu / Cập nhật email / Xóa tài khoản** — panel trên Home.
+5. **Home** — bấm avatar/tên → Thông tin tài khoản.
+6. **Thông tin tài khoản** — avatar, tên thường gọi, email, username đọc, Lưu, đổi MK, đăng xuất, xóa.
+7. **Đổi mật khẩu** — panel/overlay trên màn tài khoản.
 
 Copy:
 
@@ -425,6 +494,7 @@ Copy:
 - Sub: “Đăng nhập để gặp lại pet.”
 - H1 quên màn 1: “Quên mật khẩu”
 - H1 quên màn 2: “Đặt mật khẩu mới”
+- H1 thông tin: “Thông tin tài khoản”
 
 ---
 
@@ -436,6 +506,8 @@ Copy:
 | Password < 8 hoặc > 128 | Inline |
 | Confirm không khớp | Inline “Hai mật khẩu chưa giống nhau.” |
 | Email format sai | Inline “Email không hợp lệ.” |
+| Tên thường gọi > 40 | Inline “Tối đa 40 ký tự.” |
+| Ảnh không phải JPEG/PNG/WebP hoặc > 2 MB | Toast mục 6 Avatar; giữ ảnh cũ |
 | Username trùng lúc đăng ký | Mục 7.1 |
 | Login sai | Message chung; lockout 7.2 |
 | Reset màn 1 sai user/email | Generic mục 7.6 |
@@ -456,9 +528,10 @@ Copy:
 5. Gửi SMTP **trước** khi commit email + hash mới. Fail → rollback (không commit).
 6. Lockout 5/30s trên login và `confirm_password_reset`.
 7. Username/email parameterized SQL.
-8. `delete_account`, `change_password`, `update_account_email` cần password hiện tại.
+8. `delete_account` và `change_password` cần password hiện tại. `update_account_profile` / avatar **không**.
 9. SMTP secrets không trên GitHub.
 10. Generic error màn 1 tránh dò username/email.
+11. Avatar: magic-byte, không SVG, không serve file ngoài `{appLocalDataDir}/avatars/`. `sourcePath` chỉ đọc trong `set_account_avatar` rồi bỏ.
 
 Giới hạn chấp nhận: mật khẩu mặc định 8 ký tự đi qua email (SMTP thường plaintext tới mailbox). Ai đọc được inbox thì reset được — đúng ý “chứng minh email”. App local không mã hóa DB.
 
@@ -476,7 +549,7 @@ Mailer inject fake trong unit test (không SMTP thật).
 | Password: reject 7 chars, reject = username, accept 8 | TS + Rust |
 | Email: accept `a.b@x.vn`, reject `a@b`, `a b@x.com` | TS + Rust |
 | Register unique NOCASE | Rust |
-| Register không ghi email | Rust |
+| Register không ghi email, display_name, avatar | Rust |
 | Login sai → cùng error code | Rust |
 | Reset lần đầu: lưu email, đổi hash, gọi mailer 1 lần | Rust |
 | SMTP fail lần đầu: email vẫn NULL, hash cũ | Rust |
@@ -489,9 +562,14 @@ Mailer inject fake trong unit test (không SMTP thật).
 | User 2 không thấy progress user 1 | Rust |
 | Logout clears session | Rust |
 | Lockout after 5 failures | Rust |
-| `update_account_email` rồi reset bằng email cũ fail | Rust |
+| `update_account_profile` lưu tên tiếng Việt + email lowercase | Rust |
+| Profile email rỗng → NULL; reset lần sau như lần đầu | Rust |
+| `update_account_profile` rồi reset bằng email cũ fail | Rust |
+| `set_account_avatar` reject SVG / file > 2 MB | Rust |
+| `clear_account_avatar` xóa file + NULL cột | Rust |
+| User 2 không đọc được avatar path user 1 (file theo user_id) | Rust |
 
-Manual: đăng ký (không email) → logout → quên MK → nhận mail (môi trường có SMTP) → màn 2 → Home cùng pet.
+Manual: đăng ký (không email/tên/avatar) → Home hiện username + chữ cái → Thông tin tài khoản sửa tên/email/ảnh → Home hiện tên + ảnh → logout → quên MK đúng email mới.
 
 ---
 
@@ -500,10 +578,10 @@ Manual: đăng ký (không email) → logout → quên MK → nhận mail (môi 
 Không làm trong PR này. PR này **chỉ spec**.
 
 1. Tests validate + auth commands + fake mailer (TDD).
-2. Migration `accounts` (có `email`) + `user_id` + claim.
-3. Rust auth commands + `mailer.rs`.
+2. Migration `accounts` (`email`, `display_name`, `avatar_file`) + `user_id` + claim.
+3. Rust auth commands + `mailer.rs` + avatar file I/O.
 4. AuthGate + đăng ký/đăng nhập + hai màn quên MK.
-5. Home: username, email, menu đăng xuất / đổi MK / cập nhật email / xóa.
+5. Home: avatar + tên; màn Thông tin tài khoản (sửa email/tên/ảnh, đổi MK, xóa, đăng xuất).
 6. Popup + scheduler: chặn khi chưa session.
 7. `pnpm test` + `cargo test` auth.
 
@@ -523,5 +601,8 @@ Không làm trong PR này. PR này **chỉ spec**.
 | Bắt buộc tài khoản? | Có |
 | Hỏi password mỗi lần mở app? | Không |
 | Nhiều user / máy? | Có, isolated |
+| Màn thông tin tài khoản? | Có — sửa email, tên thường gọi, avatar |
+| Username đổi được? | Không |
+| Hỏi password khi sửa tên/email/ảnh? | Không (đã login). Có khi đổi MK / xóa |
 
 SMTP credentials cần khi implement (không phải lúc review spec).
