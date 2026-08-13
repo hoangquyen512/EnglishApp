@@ -45,6 +45,17 @@ export function nextUnmastered(
   return ordered.find((phrase) => !masteredIds.has(phrase.id)) ?? ordered[0]
 }
 
+export const QUIZ_ROUND = 10
+export const REVIEW_ROUND = 20
+
+export function samplePhrases(
+  phrases: Phrase[],
+  count: number,
+  random = Math.random,
+): Phrase[] {
+  return shuffle(phrases, random).slice(0, Math.min(count, phrases.length))
+}
+
 export function scorePercent(correct: number, total: number): number {
   if (total <= 0) return 0
   return Math.round((correct / total) * 100)

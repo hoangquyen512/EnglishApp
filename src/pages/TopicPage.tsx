@@ -1,7 +1,10 @@
-import type { CSSProperties } from 'react'
+import { useMemo, useState, type CSSProperties } from 'react'
+import { filterPhrases } from '../data/topics'
 import { getPhraseProgress, topicStats } from '../lib/progress'
 import { navigate } from '../lib/router'
 import type { ProgressState, Topic } from '../types'
+
+const LIST_LIMIT = 40
 
 type TopicPageProps = {
   topic: Topic
@@ -10,6 +13,16 @@ type TopicPageProps = {
 
 export function TopicPage({ topic, state }: TopicPageProps) {
   const stats = topicStats(state, topic)
+  const [query, setQuery] = useState('')
+  const [jump, setJump] = useState('1')
+  const filtered = useMemo(() => filterPhrases(topic.phrases, query), [topic, query])
+  const visible = filtered.slice(0, LIST_LIMIT)
+
+  function goToNumber(raw: string) {
+    const n = Number(raw)
+    if (!Number.isInteger(n) || n < 1 || n > topic.phrases.length) return
+    navigate({ name: 'phrase', topicId: topic.id, phraseId: topic.phrases[n - 1].id })
+  }
 
   return (
     <section className="page">
@@ -50,9 +63,47 @@ export function TopicPage({ topic, state }: TopicPageProps) {
         </button>
       </div>
 
+      <form
+        className="jump-bar"
+        onSubmit={(event) => {
+          event.preventDefault()
+          goToNumber(jump)
+        }}
+      >
+        <label>
+          <span className="sr-only">Nhảy tới câu số</span>
+          <input
+            type="number"
+            min={1}
+            max={topic.phrases.length}
+            value={jump}
+            onChange={(event) => setJump(event.target.value)}
+          />
+        </label>
+        <button type="submit" className="btn ghost">
+          Tới câu
+        </button>
+        <label className="jump-search">
+          <span className="sr-only">Tìm câu trong chủ đề</span>
+          <input
+            type="search"
+            placeholder="Tìm trong 1000 câu..."
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+          />
+        </label>
+      </form>
+
+      <p className="meta">
+        {query.trim()
+          ? `Hiển thị ${visible.length}/${filtered.length} câu khớp`
+          : `Hiển thị ${visible.length}/${topic.phrases.length} câu đầu. Dùng ô tìm hoặc số thứ tự để mở câu khác.`}
+      </p>
+
       <ul className="phrase-list">
-        {topic.phrases.map((phrase, index) => {
+        {visible.map((phrase) => {
           const progress = getPhraseProgress(state, phrase.id)
+          const index = topic.phrases.findIndex((item) => item.id === phrase.id)
           return (
             <li key={phrase.id}>
               <button

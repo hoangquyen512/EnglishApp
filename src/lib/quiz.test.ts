@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Phrase } from '../types'
-import { buildQuizQuestion, nextUnmastered, scorePercent } from './quiz'
+import { QUIZ_ROUND, buildQuizQuestion, nextUnmastered, samplePhrases, scorePercent } from './quiz'
 
 const phrases: Phrase[] = [
   { id: '1', en: 'Hello', vi: 'Xin chào', ipa: '', note: '' },
@@ -31,5 +31,18 @@ describe('quiz', () => {
   it('scores a round as a percent', () => {
     expect(scorePercent(3, 4)).toBe(75)
     expect(scorePercent(0, 0)).toBe(0)
+  })
+
+  it('samples a quiz-sized subset without duplicates', () => {
+    const many = Array.from({ length: 30 }, (_, index) => ({
+      id: String(index),
+      en: `Phrase ${index}`,
+      vi: `Câu ${index}`,
+      ipa: '',
+      note: '',
+    }))
+    const sample = samplePhrases(many, QUIZ_ROUND, () => 0.5)
+    expect(sample).toHaveLength(QUIZ_ROUND)
+    expect(new Set(sample.map((phrase) => phrase.id)).size).toBe(QUIZ_ROUND)
   })
 })

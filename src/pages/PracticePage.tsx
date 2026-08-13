@@ -1,9 +1,8 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { SpeakButton } from '../components/SpeakButton'
 import { VocabCard } from '../components/VocabCard'
-import { allPhrases } from '../data/topics'
 import { getPhraseProgress } from '../lib/progress'
-import { buildQuizQuestion, scorePercent } from '../lib/quiz'
+import { QUIZ_ROUND, buildQuizQuestion, samplePhrases, scorePercent } from '../lib/quiz'
 import { navigate } from '../lib/router'
 import type { Phrase, PracticeMode, ProgressState, QuizQuestion, Topic } from '../types'
 
@@ -100,37 +99,40 @@ function QuizPractice({
   state: ProgressState
   onAnswer: (phraseId: string, correct: boolean) => void
 }) {
-  const pool = useMemo(() => allPhrases, [])
+  const [round, setRound] = useState(() => samplePhrases(topic.phrases, QUIZ_ROUND))
   const [step, setStep] = useState(0)
   const [correctCount, setCorrectCount] = useState(0)
   const [picked, setPicked] = useState<number | null>(null)
   const [question, setQuestion] = useState<QuizQuestion>(() =>
-    buildQuizQuestion(topic.phrases[0], pool),
+    buildQuizQuestion(round[0] ?? topic.phrases[0], topic.phrases),
   )
 
-  const finished = step >= topic.phrases.length
-  const current = topic.phrases[Math.min(step, topic.phrases.length - 1)]
+  const finished = step >= round.length
+  const current = round[Math.min(step, Math.max(round.length - 1, 0))]
 
   if (finished) {
     return (
       <div className="result">
         <h1>Xong một vòng</h1>
         <p className="lede">
-          Bạn đúng {correctCount}/{topic.phrases.length} câu (
-          {scorePercent(correctCount, topic.phrases.length)}%).
+          Bạn đúng {correctCount}/{round.length} câu (
+          {scorePercent(correctCount, round.length)}%).
         </p>
         <p className="meta">
-          Trả lời đúng 2 lần liên tiếp để đánh dấu một câu là đã thuộc.
+          Mỗi vòng lấy ngẫu nhiên {QUIZ_ROUND} câu trong chủ đề. Trả lời đúng 2 lần
+          liên tiếp để đánh dấu đã thuộc.
         </p>
         <div className="cta-row">
           <button
             type="button"
             className="btn primary"
             onClick={() => {
+              const nextRound = samplePhrases(topic.phrases, QUIZ_ROUND)
+              setRound(nextRound)
               setStep(0)
               setCorrectCount(0)
               setPicked(null)
-              setQuestion(buildQuizQuestion(topic.phrases[0], pool))
+              setQuestion(buildQuizQuestion(nextRound[0] ?? topic.phrases[0], topic.phrases))
             }}
           >
             Luyện lại
@@ -150,8 +152,8 @@ function QuizPractice({
   return (
     <div>
       <p className="meta">
-        Câu {step + 1}/{topic.phrases.length}
-        {getPhraseProgress(state, current.id).mastered ? ' · đã thuộc' : ''}
+        Câu {step + 1}/{round.length}
+        {current && getPhraseProgress(state, current.id).mastered ? ' · đã thuộc' : ''}
       </p>
       <h2 className="prompt">{question.promptVi}</h2>
       <p className="hint">Chọn câu tiếng Anh đúng</p>
@@ -190,8 +192,8 @@ function QuizPractice({
               const nextStep = step + 1
               setStep(nextStep)
               setPicked(null)
-              if (nextStep < topic.phrases.length) {
-                setQuestion(buildQuizQuestion(topic.phrases[nextStep], pool))
+              if (nextStep < round.length) {
+                setQuestion(buildQuizQuestion(round[nextStep], topic.phrases))
               }
             }}
           >
@@ -210,12 +212,11 @@ export function ReviewQuiz({
   phrases: Phrase[]
   onAnswer: (phraseId: string, correct: boolean) => void
 }) {
-  const pool = useMemo(() => allPhrases, [])
   const [step, setStep] = useState(0)
   const [correctCount, setCorrectCount] = useState(0)
   const [picked, setPicked] = useState<number | null>(null)
   const [question, setQuestion] = useState<QuizQuestion>(() =>
-    buildQuizQuestion(phrases[0], pool),
+    buildQuizQuestion(phrases[0], phrases),
   )
 
   if (step >= phrases.length) {
@@ -275,7 +276,7 @@ export function ReviewQuiz({
               setStep(nextStep)
               setPicked(null)
               if (nextStep < phrases.length) {
-                setQuestion(buildQuizQuestion(phrases[nextStep], pool))
+                setQuestion(buildQuizQuestion(phrases[nextStep], phrases))
               }
             }}
           >

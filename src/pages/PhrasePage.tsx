@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { VocabCard } from '../components/VocabCard'
+import { filterPhrases } from '../data/topics'
 import { getPhraseProgress } from '../lib/progress'
 import { navigate } from '../lib/router'
 import type { ProgressState, Topic } from '../types'
@@ -24,6 +25,16 @@ export function PhrasePage({
   const index = topic.phrases.findIndex((item) => item.id === phraseId)
   const phrase = topic.phrases[index]
   const startX = useRef<number | null>(null)
+  const [jump, setJump] = useState(String(index + 1))
+  const [query, setQuery] = useState('')
+  const matches = useMemo(
+    () => (query.trim() ? filterPhrases(topic.phrases, query).slice(0, 6) : []),
+    [topic, query],
+  )
+
+  useEffect(() => {
+    setJump(String(index + 1))
+  }, [index])
 
   useEffect(() => {
     if (phrase) onSeen(phrase.id)
@@ -40,6 +51,12 @@ export function PhrasePage({
   const prev = topic.phrases[index - 1]
   const next = topic.phrases[index + 1]
   const progress = getPhraseProgress(state, phrase.id)
+
+  function goToNumber(raw: string) {
+    const n = Number(raw)
+    if (!Number.isInteger(n) || n < 1 || n > topic.phrases.length) return
+    navigate({ name: 'phrase', topicId: topic.id, phraseId: topic.phrases[n - 1].id })
+  }
 
   return (
     <section
@@ -67,13 +84,57 @@ export function PhrasePage({
         </p>
       </header>
 
-      <VocabCard phrase={phrase} accent={topic.accent} autoPlay />
+      <form
+        className="jump-bar"
+        onSubmit={(event) => {
+          event.preventDefault()
+          goToNumber(jump)
+        }}
+      >
+        <label>
+          <span className="sr-only">Nhảy tới câu số</span>
+          <input
+            type="number"
+            min={1}
+            max={topic.phrases.length}
+            value={jump}
+            onChange={(event) => setJump(event.target.value)}
+          />
+        </label>
+        <button type="submit" className="btn ghost">
+          Tới câu
+        </button>
+        <label className="jump-search">
+          <span className="sr-only">Tìm câu trong chủ đề</span>
+          <input
+            type="search"
+            placeholder="Tìm câu..."
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+          />
+        </label>
+      </form>
+      {matches.length > 0 ? (
+        <ul className="match-list">
+          {matches.map((item) => (
+            <li key={item.id}>
+              <button
+                type="button"
+                className="match-row"
+                onClick={() => {
+                  setQuery('')
+                  navigate({ name: 'phrase', topicId: topic.id, phraseId: item.id })
+                }}
+              >
+                <strong>{item.en}</strong>
+                <em>{item.vi}</em>
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : null}
 
-      <div className="dots" aria-hidden="true">
-        {topic.phrases.map((item, itemIndex) => (
-          <span key={item.id} className={itemIndex === index ? 'dot on' : 'dot'} />
-        ))}
-      </div>
+      <VocabCard phrase={phrase} accent={topic.accent} autoPlay />
 
       <div className="card-actions">
         <button type="button" className="btn ghost" onClick={() => onToggleSaved(phrase.id)}>

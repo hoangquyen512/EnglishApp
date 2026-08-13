@@ -1,5 +1,5 @@
 import { useMemo, useState, type CSSProperties } from 'react'
-import { searchTopics } from '../data/topics'
+import { firstMatchingPhrase, searchTopics } from '../data/topics'
 import { overallStats, topicStats } from '../lib/progress'
 import { navigate } from '../lib/router'
 import type { ProgressState } from '../types'
@@ -19,7 +19,8 @@ export function HomePage({ state }: HomePageProps) {
         <p className="eyebrow">EnglishApp</p>
         <h1>Câu giao tiếp theo chủ đề</h1>
         <p className="lede">
-          Chọn chủ đề, học từng thẻ: câu tiếng Anh, phiên âm, nghĩa, hình và audio.
+          Mỗi chủ đề có 1.000 câu giao tiếp thông dụng. Học từng thẻ: tiếng Anh, phiên
+          âm, nghĩa, hình và audio.
         </p>
         <div className="overall">
           <strong>
@@ -53,7 +54,7 @@ export function HomePage({ state }: HomePageProps) {
                   navigate({
                     name: 'phrase',
                     topicId: topic.id,
-                    phraseId: topic.phrases[0].id,
+                    phraseId: firstMatchingPhrase(topic, query).id,
                   })
                 }
               >

@@ -1,5 +1,6 @@
 import { allPhrases, topics } from '../data/topics'
 import { reviewPhraseIds } from '../lib/progress'
+import { REVIEW_ROUND } from '../lib/quiz'
 import { ReviewQuiz } from './PracticePage'
 import type { ProgressState } from '../types'
 
@@ -10,7 +11,9 @@ type ReviewPageProps = {
 
 export function ReviewPage({ state, onAnswer }: ReviewPageProps) {
   const ids = reviewPhraseIds(state, topics)
-  const phrases = allPhrases.filter((phrase) => ids.includes(phrase.id))
+  const phrases = allPhrases
+    .filter((phrase) => ids.includes(phrase.id))
+    .slice(0, REVIEW_ROUND)
 
   return (
     <section className="page">
@@ -18,7 +21,8 @@ export function ReviewPage({ state, onAnswer }: ReviewPageProps) {
         <p className="eyebrow">Ôn tập</p>
         <h1>Câu đang học dở</h1>
         <p className="lede">
-          Những câu đã xem nhưng chưa thuộc. Trả lời đúng 2 lần liên tiếp để hoàn thành.
+          Những câu đã xem nhưng chưa thuộc. Mỗi lần ôn tối đa 20 câu. Trả lời đúng 2
+          lần liên tiếp để hoàn thành.
         </p>
       </header>
       {phrases.length === 0 ? (
