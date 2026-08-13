@@ -18,7 +18,7 @@ describe("flashcard deck", () => {
 
 describe("TOEIC card content", () => {
   it("includes word, IPA, image, example, and meaning on every card", () => {
-    expect(TOEIC_CARDS.length).toBeGreaterThanOrEqual(200);
+    expect(TOEIC_CARDS.length).toBe(1000);
     const words = TOEIC_CARDS.map((card) => card.word.toLowerCase());
     expect(new Set(words).size).toBe(words.length);
     for (const card of TOEIC_CARDS) {

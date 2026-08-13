@@ -85,11 +85,11 @@ Study mode is persisted with Zustand so the popup WebView can read the same `con
 
 ## SQLite and user files
 
-SQLite via sqlx only runs one statement per migration version, so schema and seed are split into `src-tauri/migrations/001_*.sql` … `024_*.sql`.
+SQLite via sqlx only runs one statement per migration version, so schema and seed are split into `src-tauri/migrations/001_*.sql` … `025_*.sql`.
 
 The database file is `{appLocalDataDir}/vocab_pet.db`. Settings are `{appDataDir}/settings.json`. Both directories are created at startup through Tauri's path API (`app.path().app_local_data_dir()` / `app_data_dir()` on the Rust side, `@tauri-apps/api/path` on the frontend). `tauri-plugin-sql` is registered with that absolute `sqlite:` URL so migrations apply to the same file the UI opens.
 
-Seed: **433** original TOEIC-style lemmas (IPA, illustration key, example + Vietnamese gloss) from `src/data/toeic-vocabulary.json`, unique index on `vocabulary.word`, 10 original phrases across four topics, three species × three evolution stages, one empty `user_progress` row. `pet_state` is inserted only after onboarding. The phone demo loads the same JSON from `docs/uiux-demo/vocabulary.json`.
+Seed: **1000** original TOEIC-style lemmas (IPA, illustration key, example + Vietnamese gloss) from `src/data/toeic-vocabulary.json`, unique index on `vocabulary.word`, 10 original phrases across four topics, three species × three evolution stages, one empty `user_progress` row. `pet_state` is inserted only after onboarding. The phone demo loads the same JSON from `docs/uiux-demo/vocabulary.json`.
 
 Phrases have no `learning_progress` row (FK is `vocabulary_id` only). Phrase review uses `study_sessions` aggregates.
 

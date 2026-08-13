@@ -10,8 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 TSV = Path(__file__).with_name("toeic-vocab.tsv")
 JSON_OUT = ROOT / "src" / "data" / "toeic-vocabulary.json"
 DEMO_OUT = ROOT / "docs" / "uiux-demo" / "vocabulary.json"
-SQL_INDEX = ROOT / "src-tauri" / "migrations" / "023_vocab_word_unique.sql"
-SQL_SEED = ROOT / "src-tauri" / "migrations" / "024_seed_toeic_lexicon.sql"
+SQL_SEED_NEW = ROOT / "src-tauri" / "migrations" / "025_seed_toeic_lexicon_1000.sql"
+SEED_024 = ROOT / "src-tauri" / "migrations" / "024_seed_toeic_lexicon.sql"
 ARTS = {
     p.stem
     for p in (ROOT / "public" / "arts").glob("*.jpg")
@@ -170,6 +170,37 @@ FALLBACK_IPA = {
     "resume": "/ˈrez.ə.meɪ/",
     "personnel": "/ˌpɝː.səˈnel/",
     "barcode": "/ˈbɑːr.koʊd/",
+    "wifi": "/ˈwaɪ.faɪ/",
+    "carry-on": "/ˈkæri.ɑn/",
+    "no-show": "/ˈnoʊ.ʃoʊ/",
+    "walk-in": "/ˈwɔk.ɪn/",
+    "opt-in": "/ˈɑpt.ɪn/",
+    "opt-out": "/ˈɑpt.aʊt/",
+    "first-aid": "/ˈfɝst.eɪd/",
+    "follow-up": "/ˈfɑloʊ.ʌp/",
+    "eco-friendly": "/ˈikoʊ.frend.li/",
+    "all-inclusive": "/ɔl.ɪnˈklu.sɪv/",
+    "same-day": "/ˈseɪm.deɪ/",
+    "next-day": "/ˈnɛkst.deɪ/",
+    "out-of-pocket": "/aʊt.əvˈpɑk.ɪt/",
+    "shrink-wrap": "/ˈʃrɪŋk.ræp/",
+    "just-in-time": "/dʒʌst.ɪnˈtaɪm/",
+    "a-la-carte": "/ɑ.ləˈkɑrt/",
+    "Q&A": "/kju.ænd.eɪ/",
+    "kpi": "/keɪ.pi.aɪ/",
+    "backorder": "/ˈbæk.ɔr.dɚ/",
+    "minibar": "/ˈmɪn.i.bɑr/",
+    "waitlist": "/ˈweɪt.lɪst/",
+    "rebrand": "/ˌriˈbrænd/",
+    "influencer": "/ˈɪn.flu.ən.sɚ/",
+    "outbox": "/ˈaʊt.bɑks/",
+    "copay": "/ˈkoʊ.peɪ/",
+    "notarize": "/ˈnoʊ.tə.raɪz/",
+    "uptime": "/ˈʌp.taɪm/",
+    "whiteboard": "/ˈwaɪt.bɔrd/",
+    "flipchart": "/ˈflɪp.tʃɑrt/",
+    "mock-up": "/ˈmɑk.ʌp/",
+    "livestream": "/ˈlaɪv.strim/",
 }
 
 
@@ -192,6 +223,8 @@ def main() -> None:
             phonetic = cache.get(word)
         if not ipa_is_usable(phonetic):
             phonetic = cmu.get(word.lower())
+        if not ipa_is_usable(phonetic):
+            phonetic = cmu.get(word.lower().replace("-", ""))
         if not ipa_is_usable(phonetic):
             missing_ipa.append(word)
             continue
@@ -217,13 +250,15 @@ def main() -> None:
     JSON_OUT.write_text(payload, encoding="utf-8")
     DEMO_OUT.write_text(payload, encoding="utf-8")
 
-    SQL_INDEX.write_text(
-        "CREATE UNIQUE INDEX IF NOT EXISTS idx_vocabulary_word ON vocabulary(word);\n",
-        encoding="utf-8",
-    )
+    seeded = set()
+    if SEED_024.exists():
+        import re
 
+        seeded = {word.lower() for word in re.findall(r"\n  \('([^']+)'", SEED_024.read_text(encoding="utf-8"))}
+
+    extra_cards = [card for card in cards if card["word"].lower() not in seeded]
     values = []
-    for card in cards:
+    for card in extra_cards:
         values.append(
             "("
             + ", ".join(
@@ -240,17 +275,19 @@ def main() -> None:
             )
             + ")"
         )
+    if not values:
+        raise SystemExit("no new words for migration 025")
     sql = (
         "INSERT OR IGNORE INTO vocabulary "
         "(word, meaning, example, example_vi, phonetic, part_of_speech, image_key, category)\nVALUES\n  "
         + ",\n  ".join(values)
         + ";\n"
     )
-    SQL_SEED.write_text(sql, encoding="utf-8")
+    SQL_SEED_NEW.write_text(sql, encoding="utf-8")
 
     print(f"wrote {JSON_OUT.relative_to(ROOT)} ({len(cards)} cards)")
     print(f"wrote {DEMO_OUT.relative_to(ROOT)}")
-    print(f"wrote {SQL_SEED.relative_to(ROOT)}")
+    print(f"wrote {SQL_SEED_NEW.relative_to(ROOT)} ({len(extra_cards)} new rows)")
 
 
 if __name__ == "__main__":

@@ -18,16 +18,23 @@ describe("TOEIC lexicon storage", () => {
     );
     expect(uniqueSql).toContain("CREATE UNIQUE INDEX IF NOT EXISTS idx_vocabulary_word");
 
-    const seedSql = readFileSync(
+    const seed024 = readFileSync(
       resolve("src-tauri/migrations/024_seed_toeic_lexicon.sql"),
       "utf8",
     );
-    expect(seedSql.startsWith("INSERT OR IGNORE INTO vocabulary")).toBe(true);
-    expect(seedSql.trim().endsWith(";")).toBe(true);
-    expect((seedSql.match(/\n  \(/g) ?? []).length).toBe(TOEIC_CARDS.length);
+    expect(seed024.startsWith("INSERT OR IGNORE INTO vocabulary")).toBe(true);
+    expect((seed024.match(/\n  \(/g) ?? []).length).toBe(433);
 
-    for (const word of ["invoice", "barcode", "negotiate", "complimentary"]) {
-      expect(seedSql).toContain(`'${word}'`);
+    const seed025 = readFileSync(
+      resolve("src-tauri/migrations/025_seed_toeic_lexicon_1000.sql"),
+      "utf8",
+    );
+    expect(seed025.startsWith("INSERT OR IGNORE INTO vocabulary")).toBe(true);
+    expect(seed025.trim().endsWith(";")).toBe(true);
+    expect((seed025.match(/\n  \(/g) ?? []).length).toBe(TOEIC_CARDS.length - 433);
+    expect(TOEIC_CARDS.length).toBe(1000);
+
+    for (const word of ["invoice", "barcode", "negotiate", "complimentary", "waitlist", "minibar"]) {
       expect(TOEIC_CARDS.some((card) => card.word === word)).toBe(true);
     }
   });

@@ -362,7 +362,7 @@
           var on = document.querySelector("#art img.is-on");
           var word = document.getElementById("word").textContent;
           var ok =
-            CARDS.length >= 200 &&
+            CARDS.length >= 1000 &&
             firstWord === CARDS[0].word &&
             firstArt === CARDS[0].art &&
             word === CARDS[1].word &&
@@ -405,7 +405,7 @@
         return res.json();
       })
       .then(function (rows) {
-        if (!rows || rows.length < 200) throw new Error("short");
+        if (!rows || rows.length < 1000) throw new Error("short");
         boot(mapRows(rows), !TESTING);
       })
       .catch(function () {
