@@ -1,7 +1,8 @@
 import { MISSION_TITLES, TOPIC_LABELS, UI } from "../../constants/ui";
+import { conversationTopics } from "../../features/conversation";
 import type { SessionDto } from "../../features/auth";
 import { speakWord } from "../../features/vocabulary";
-import type { ContentType, DailyMission, PetState, PhraseTopic } from "../../types";
+import type { ContentType, ConversationTopicId, DailyMission, PetState, PhraseTopic } from "../../types";
 import { HomeAccountChip } from "../account/home-account-chip";
 import { FlashcardFace } from "../flashcard/flashcard-face";
 import { useFlashcardPlayer } from "../flashcard/use-flashcard-player";
@@ -14,9 +15,11 @@ interface HomeScreenProps {
   missions: DailyMission[];
   contentType: ContentType;
   topic: PhraseTopic | null;
+  conversationTopic: ConversationTopicId;
   intervalMinutes: number;
   onContentType: (contentType: ContentType) => void;
   onTopic: (topic: PhraseTopic | null) => void;
+  onConversationTopic: (topic: ConversationTopicId) => void;
   onInterval: (minutes: number) => void;
   onStudyNow: () => void;
   session: SessionDto;
@@ -38,9 +41,11 @@ export function HomeScreen({
   missions,
   contentType,
   topic,
+  conversationTopic,
   intervalMinutes,
   onContentType,
   onTopic,
+  onConversationTopic,
   onInterval,
   onStudyNow,
   session,
@@ -49,6 +54,7 @@ export function HomeScreen({
   const player = useFlashcardPlayer({
     contentType,
     topic: contentType === "phrase" ? topic : null,
+    conversationTopic: contentType === "conversation" ? conversationTopic : null,
     autoSpeak: false,
   });
 
@@ -100,7 +106,26 @@ export function HomeScreen({
             >
               {UI.phrases}
             </PrimaryButton>
+            <PrimaryButton
+              variant={contentType === "conversation" ? "primary" : "ghost"}
+              onClick={() => onContentType("conversation")}
+            >
+              {UI.conversation}
+            </PrimaryButton>
           </div>
+          {contentType === "conversation" ? (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {conversationTopics.map((item) => (
+                <PrimaryButton
+                  key={item.id}
+                  variant={conversationTopic === item.id ? "primary" : "ghost"}
+                  onClick={() => onConversationTopic(item.id)}
+                >
+                  {item.emoji} {item.titleVi}
+                </PrimaryButton>
+              ))}
+            </div>
+          ) : null}
           {contentType === "phrase" ? (
             <div className="mt-3 flex flex-wrap gap-2">
               <PrimaryButton variant={topic === null ? "primary" : "ghost"} onClick={() => onTopic(null)}>

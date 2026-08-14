@@ -10,11 +10,12 @@ import {
   shouldAdvanceCard,
   speakWord,
 } from "../../features/vocabulary";
-import type { ContentType, PhraseTopic, StudyFlashcard } from "../../types";
+import type { ContentType, ConversationTopicId, PhraseTopic, StudyFlashcard } from "../../types";
 
 export function useFlashcardPlayer(input: {
   contentType: ContentType;
   topic: PhraseTopic | null;
+  conversationTopic?: ConversationTopicId | null;
   autoSpeak: boolean;
   onAdvance?: (card: StudyFlashcard) => void;
 }) {
@@ -45,7 +46,11 @@ export function useFlashcardPlayer(input: {
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    void getStudyDeck(input.contentType, input.contentType === "phrase" ? input.topic : null)
+    void getStudyDeck(
+      input.contentType,
+      input.contentType === "phrase" ? input.topic : null,
+      input.contentType === "conversation" ? (input.conversationTopic ?? "greetings") : null,
+    )
       .then((next) => {
         if (!cancelled) {
           setDeck(next);
@@ -66,7 +71,7 @@ export function useFlashcardPlayer(input: {
     return () => {
       cancelled = true;
     };
-  }, [input.contentType, input.topic]);
+  }, [input.contentType, input.topic, input.conversationTopic]);
 
   useEffect(() => {
     resetTimer();

@@ -45,6 +45,8 @@ In release builds the main window starts hidden. Use the tray icon:
 
 - Seed vocabulary is original TOEIC-style business English (invoice, deadline, occupancy, …) with IPA, Vietnamese glosses, and example sentences.
 - Communication phrases remain available as a second mode.
+- **Hội thoại** mode ports 12 everyday-conversation topics (1,000 phrases each) from the topic-learning branch.
+- **Hội thoại** mode ports 12 everyday-conversation topics (1,000 phrases each) from the topic-learning branch.
 - Pronunciation uses the system `speechSynthesis` voice (en-US). Illustrations are bundled SVGs so the app works offline.
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for module boundaries and the SQLite schema.

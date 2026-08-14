@@ -6,6 +6,9 @@ const TOPIC_FALLBACK: Record<string, string> = {
 };
 
 export function artSrc(imageKey: string): string {
+  if (imageKey.startsWith("/") || imageKey.startsWith("http")) {
+    return imageKey;
+  }
   const file = TOPIC_FALLBACK[imageKey] ?? imageKey;
   return `/arts/${file}.jpg`;
 }

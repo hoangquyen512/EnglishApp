@@ -1,7 +1,9 @@
 import { addDaysIso, isoNow } from "../../lib/dates";
 import { isTauri } from "../../lib/tauri";
+import { conversationDeck } from "../conversation";
 import type {
   ContentType,
+  ConversationTopicId,
   FlashcardOutcome,
   PhraseTopic,
   StudyFlashcard,
@@ -70,7 +72,12 @@ function vocabToCard(item: Vocabulary): StudyFlashcard {
 export async function getStudyDeck(
   contentType: ContentType,
   topic: PhraseTopic | null,
+  conversationTopic: ConversationTopicId | null = null,
 ): Promise<StudyFlashcard[]> {
+  if (contentType === "conversation") {
+    return shuffle(conversationDeck(conversationTopic ?? "greetings"));
+  }
+
   if (!isTauri()) {
     if (contentType === "phrase") {
       return seedCards().slice(0, 4).map((card, index) => ({
@@ -109,8 +116,9 @@ export async function getStudyDeck(
 export async function getNextCard(
   contentType: ContentType,
   topic: PhraseTopic | null,
+  conversationTopic: ConversationTopicId | null = null,
 ): Promise<StudyFlashcard | null> {
-  const deck = await getStudyDeck(contentType, topic);
+  const deck = await getStudyDeck(contentType, topic, conversationTopic);
   return deck[0] ?? null;
 }
 

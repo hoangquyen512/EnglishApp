@@ -46,6 +46,7 @@ Debug builds (`pnpm tauri dev`) show the main window immediately so onboarding i
 ```
 src/                         React + TS
   components/popup|pet|shared
+  features/conversation      12 topic banks × 1000 everyday phrases + illustration cycle
   features/auth              local username/password (Tauri commands + in-memory browser demo)
   features/vocabulary        deck, 30s timer, TTS, recordFlashcardEvent
   features/pet-state         XP, mood, evolution, daily missions, user_progress

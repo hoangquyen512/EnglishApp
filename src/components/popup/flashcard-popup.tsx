@@ -53,6 +53,7 @@ function AuthenticatedFlashcardStudy() {
   const setPet = useAppStore((state) => state.setPet);
   const contentType = useStudyStore((state) => state.contentType);
   const topic = useStudyStore((state) => state.topic);
+  const conversationTopic = useStudyStore((state) => state.conversationTopic);
 
   const onAdvance = useCallback(
     async (card: { contentId: number; contentType: typeof contentType; topic: typeof topic }) => {
@@ -72,6 +73,7 @@ function AuthenticatedFlashcardStudy() {
   const player = useFlashcardPlayer({
     contentType,
     topic: contentType === "phrase" ? topic : null,
+    conversationTopic: contentType === "conversation" ? conversationTopic : null,
     autoSpeak: true,
     onAdvance,
   });

@@ -1,6 +1,20 @@
-export type ContentType = "vocabulary" | "phrase";
+export type ContentType = "vocabulary" | "phrase" | "conversation";
 
 export type PhraseTopic = "travel" | "food" | "office" | "family";
+
+export type ConversationTopicId =
+  | "greetings"
+  | "cafe"
+  | "restaurant"
+  | "shopping"
+  | "directions"
+  | "hotel"
+  | "health"
+  | "work"
+  | "family"
+  | "phone"
+  | "airport"
+  | "emergency";
 
 export type LearningStatus = "new" | "learning" | "mastered";
 
@@ -115,6 +129,7 @@ export interface StudyFlashcard {
 export interface StudyMode {
   contentType: ContentType;
   topic: PhraseTopic | null;
+  conversationTopic: ConversationTopicId | null;
 }
 
 export interface SubmitAnswerResult {

@@ -16,6 +16,7 @@ export const UI = {
   studyModeTitle: "Chế độ học",
   vocabulary: "Từ vựng",
   phrases: "Câu giao tiếp",
+  conversation: "Hội thoại",
   pickTopic: "Chủ đề",
   allTopics: "Tất cả chủ đề",
   pause: "Tạm dừng",

@@ -1,11 +1,12 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
-import type { ContentType, PhraseTopic, StudyMode } from "../types";
+import type { ContentType, ConversationTopicId, PhraseTopic, StudyMode } from "../types";
 import { userSettingsStorage } from "../lib/user-storage";
 
 interface StudyState extends StudyMode {
   setContentType: (contentType: ContentType) => void;
   setTopic: (topic: PhraseTopic | null) => void;
+  setConversationTopic: (topic: ConversationTopicId) => void;
 }
 
 export const useStudyStore = create<StudyState>()(
@@ -13,12 +14,13 @@ export const useStudyStore = create<StudyState>()(
     (set) => ({
       contentType: "vocabulary",
       topic: null,
+      conversationTopic: "greetings",
       setContentType: (contentType) =>
         set({
           contentType,
-          topic: contentType === "vocabulary" ? null : null,
         }),
       setTopic: (topic) => set({ topic }),
+      setConversationTopic: (conversationTopic) => set({ conversationTopic }),
     }),
     {
       name: "yume-study",

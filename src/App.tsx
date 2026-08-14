@@ -33,8 +33,10 @@ export default function App() {
   const chooseSpecies = useAppStore((state) => state.chooseSpecies);
   const contentType = useStudyStore((state) => state.contentType);
   const topic = useStudyStore((state) => state.topic);
+  const conversationTopic = useStudyStore((state) => state.conversationTopic);
   const setContentType = useStudyStore((state) => state.setContentType);
   const setTopic = useStudyStore((state) => state.setTopic);
+  const setConversationTopic = useStudyStore((state) => state.setConversationTopic);
   const intervalMinutes = useSettingsStore((state) => state.intervalMinutes);
   const setIntervalMinutes = useSettingsStore((state) => state.setIntervalMinutes);
 
@@ -155,9 +157,11 @@ export default function App() {
       missions={missions}
       contentType={contentType}
       topic={topic}
+      conversationTopic={conversationTopic ?? "greetings"}
       intervalMinutes={intervalMinutes}
       onContentType={setContentType}
       onTopic={setTopic}
+      onConversationTopic={setConversationTopic}
       onInterval={setIntervalMinutes}
       onStudyNow={() => void openStudyPopup()}
       session={session}
