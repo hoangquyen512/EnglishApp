@@ -1,4 +1,4 @@
-import { SPRITE_ART_SRC } from "../../assets/pet-art";
+import { SPECIES_PREVIEW_SRC, SPRITE_ART_SRC } from "../../assets/pet-art";
 import { MOOD_EMOJI, SPRITE_EMOJI } from "../../constants/pet";
 import { MOOD_LABELS } from "../../constants/ui";
 import type { PetState } from "../../types";
@@ -10,9 +10,20 @@ interface PetAvatarProps {
   variant?: "desk" | "float";
 }
 
+function adultArtSrc(pet: PetState): string | undefined {
+  if (pet.speciesId != null && SPECIES_PREVIEW_SRC[pet.speciesId]) {
+    return SPECIES_PREVIEW_SRC[pet.speciesId];
+  }
+  if (pet.spriteKey) {
+    const adultKey = pet.spriteKey.replace(/_(egg|young)$/, "_adult");
+    return SPRITE_ART_SRC[adultKey] ?? SPRITE_ART_SRC[pet.spriteKey];
+  }
+  return undefined;
+}
+
 export function PetAvatar({ pet, size = "lg", variant = "desk" }: PetAvatarProps) {
-  const src = pet.spriteKey ? SPRITE_ART_SRC[pet.spriteKey] : undefined;
-  const emoji = pet.spriteKey ? SPRITE_EMOJI[pet.spriteKey] : "🥚";
+  const src = adultArtSrc(pet);
+  const emoji = pet.spriteKey ? SPRITE_EMOJI[pet.spriteKey] : "🐾";
   const box = size === "lg" ? "h-32 w-32" : "h-14 w-14";
   const emojiSize = size === "lg" ? "text-6xl" : "text-3xl";
   const moodSize = size === "lg" ? "text-lg" : "text-sm";

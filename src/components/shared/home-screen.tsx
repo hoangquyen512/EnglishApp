@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { MISSION_TITLES, TOPIC_LABELS, UI } from "../../constants/ui";
 import { conversationTopics } from "../../features/conversation";
 import type { SessionDto } from "../../features/auth";
@@ -6,6 +7,7 @@ import type { ContentType, ConversationTopicId, DailyMission, PetState, PhraseTo
 import { HomeAccountChip } from "../account/home-account-chip";
 import { FlashcardFace } from "../flashcard/flashcard-face";
 import { useFlashcardPlayer } from "../flashcard/use-flashcard-player";
+import { FloatingPetOverlay } from "../pet/floating-pet-overlay";
 import { PetStatus } from "../pet/pet-status";
 import { Panel } from "./panel";
 import { PrimaryButton } from "./primary-button";
@@ -53,6 +55,7 @@ export function HomeScreen({
   onOpenAccount,
   onOpenChat,
 }: HomeScreenProps) {
+  const [floatPet, setFloatPet] = useState(false);
   const player = useFlashcardPlayer({
     contentType,
     topic: contentType === "phrase" ? topic : null,
@@ -61,9 +64,13 @@ export function HomeScreen({
   });
 
   return (
+    <>
     <main className="mx-auto grid min-h-screen max-w-5xl gap-4 bg-cream p-6 md:grid-cols-[280px_1fr]">
       <Panel>
-        <PetStatus pet={pet} onFloatPet={onStudyNow} />
+        <PetStatus
+          pet={pet}
+          onFloatPet={() => setFloatPet(true)}
+        />
       </Panel>
       <div className="flex flex-col gap-4">
         <div className="flex justify-end">
@@ -184,5 +191,9 @@ export function HomeScreen({
         </Panel>
       </div>
     </main>
+    {floatPet ? (
+      <FloatingPetOverlay pet={pet} onDismiss={() => setFloatPet(false)} />
+    ) : null}
+    </>
   );
 }
