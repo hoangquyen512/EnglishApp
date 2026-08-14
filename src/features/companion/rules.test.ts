@@ -149,7 +149,7 @@ describe("buildLlmContext", () => {
     expect(ctx.memorySummary).toBe("talks about work");
     expect(ctx.recent).toHaveLength(10);
     expect(ctx.recent[0]?.body).toBe("m10");
-    expect(ctx.recent.at(-1)?.body).toBe("m19");
+    expect(ctx.recent[ctx.recent.length - 1]?.body).toBe("m19");
     expect(ctx.currentUserMessage).toBe("I am tired");
     expect(ctx.recent.some((m) => m.body === "m0")).toBe(false);
   });
