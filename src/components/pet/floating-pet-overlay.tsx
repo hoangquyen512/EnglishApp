@@ -4,7 +4,7 @@ import { UI } from "../../constants/ui";
 import { recordFlashcardEvent, speakWord } from "../../features/vocabulary";
 import { useAppStore } from "../../stores/app-store";
 import { useStudyStore } from "../../stores/study-store";
-import type { FlashcardOutcome, PetState } from "../../types";
+import type { PetState } from "../../types";
 import { FlashcardFace } from "../flashcard/flashcard-face";
 import { useFlashcardPlayer } from "../flashcard/use-flashcard-player";
 import { IconButton, IconClose } from "../shared/icon-button";
@@ -65,25 +65,6 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
     active: expanded,
     onAdvance,
   });
-
-  const mark = useCallback(
-    async (outcome: FlashcardOutcome) => {
-      if (!player.card) {
-        return;
-      }
-      const result = await recordFlashcardEvent({
-        contentType: player.card.contentType,
-        contentId: player.card.contentId,
-        outcome,
-        topic: player.card.topic,
-      });
-      if (result.pet) {
-        setPet(result.pet);
-      }
-      player.next({ silent: true });
-    },
-    [player, setPet],
-  );
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(pos));
