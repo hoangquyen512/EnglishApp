@@ -94,6 +94,12 @@ export const UI = {
   removePhoto: "Xóa ảnh",
   sentDefaultPassword: "Đã gửi mật khẩu mặc định tới",
   popupNeedLogin: "Mở app để đăng nhập",
+  companion: "Nói với Sora",
+  companionIntro: "Nói chuyện tiếng Anh với Sora. Học khi bạn muốn — không khi bạn đang tâm sự.",
+  companionPlaceholder: "Nói với Sora bằng tiếng Anh…",
+  companionSend: "Gửi",
+  companionCoach: "Gợi ý tiếng Anh",
+  companionError: "Không gửi được. Thử lại.",
 } as const;
 
 export const TOPIC_LABELS: Record<PhraseTopic, string> = {

@@ -246,6 +246,18 @@ fn sqlite_migrations() -> Vec<Migration> {
             sql: include_str!("../migrations/038_accounts_email_idx.sql"),
             kind: MigrationKind::Up,
         },
+        Migration {
+            version: 39,
+            description: "companion_messages",
+            sql: include_str!("../migrations/039_companion_messages.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 40,
+            description: "companion_state",
+            sql: include_str!("../migrations/040_companion_state.sql"),
+            kind: MigrationKind::Up,
+        },
     ]
 }
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AccountScreen } from "./components/account/account-screen";
 import { EditAccountScreen } from "./components/account/edit-account-screen";
+import { CompanionChatScreen } from "./components/companion/companion-chat-screen";
 import { AuthGate } from "./components/auth/auth-gate";
 import { preloadVocabArts } from "./components/flashcard/vocab-illustration";
 import { FlashcardPopup } from "./components/popup/flashcard-popup";
@@ -15,7 +16,7 @@ import { useAuthStore } from "./stores/auth-store";
 import { useSettingsStore } from "./stores/settings-store";
 import { useStudyStore } from "./stores/study-store";
 
-type MainView = "home" | "account" | "edit";
+type MainView = "home" | "account" | "edit" | "chat";
 
 export default function App() {
   const [windowKind, setWindowKind] = useState<"main" | "popup" | null>(null);
@@ -112,6 +113,10 @@ export default function App() {
     );
   }
 
+  if (view === "chat") {
+    return <CompanionChatScreen onBack={() => setView("home")} />;
+  }
+
   if (view === "edit") {
     return (
       <EditAccountScreen
@@ -166,6 +171,7 @@ export default function App() {
       onStudyNow={() => void openStudyPopup()}
       session={session}
       onOpenAccount={() => setView("account")}
+      onOpenChat={() => setView("chat")}
     />
   );
 }

@@ -46,6 +46,7 @@ Debug builds (`pnpm tauri dev`) show the main window immediately so onboarding i
 ```
 src/                         React + TS
   components/popup|pet|shared
+  features/companion         daily chat with Sora (local SQLite, fake LLM fallback; no Next.js)
   features/conversation      12 topic banks × 1000 everyday phrases + illustration cycle
   features/auth              local username/password (Tauri commands + in-memory browser demo)
   features/vocabulary        deck, 30s timer, TTS, recordFlashcardEvent
@@ -89,7 +90,7 @@ Study mode is persisted with Zustand so the popup WebView can read the same `con
 
 ## SQLite and user files
 
-SQLite via sqlx only runs one statement per migration version, so schema and seed are split into `src-tauri/migrations/001_*.sql` … `038_*.sql`. Account tables start at `026_accounts.sql` so they do not collide with TOEIC lexicon migrations `017`–`025`.
+SQLite via sqlx only runs one statement per migration version, so schema and seed are split into `src-tauri/migrations/001_*.sql` … `040_*.sql`. Account tables start at `026_accounts.sql` so they do not collide with TOEIC lexicon migrations `017`–`025`. Companion chat tables are `039`–`040`.
 
 The database file is `{appLocalDataDir}/vocab_pet.db`. Settings are `{appDataDir}/settings.json`. Both directories are created at startup through Tauri's path API (`app.path().app_local_data_dir()` / `app_data_dir()` on the Rust side, `@tauri-apps/api/path` on the frontend). `tauri-plugin-sql` is registered with that absolute `sqlite:` URL so migrations apply to the same file the UI opens.
 
@@ -153,4 +154,19 @@ Flashcards and notifications go through official SQL/notification plugins. Accou
 
 ## Tests
 
-Pure domain tests (`pnpm test`): spaced repetition, choice building, XP/level, mood, streak, mission matching, scheduler interval, auth validation. UI and SQLite need `pnpm tauri dev` on a machine with WebView libraries installed.
+Pure domain tests (`pnpm test`): spaced repetition, choice building, XP/level, mood, streak, mission matching, scheduler interval, auth validation, companion check-in rules. UI and SQLite need `pnpm tauri dev` on a machine with WebView libraries installed.
+
+## Consolidation history (2026-08-14)
+
+Features were ported by hand onto `cursor/toeic-flashcards-e7dc` (branch `consolidation/yume-app-merge`). No `git merge` of parallel Cursor branches.
+
+| Source branch | What was kept |
+| --- | --- |
+| `cursor/toeic-flashcards-e7dc` | Base: Tauri shell, TOEIC 1000-word flashcards |
+| `cursor/rename-yume-sora-2476` | Product name Yume, default pet Sora, icons |
+| `cursor/vocab-pet-scaffold-6115` | Nothing new (exact ancestor of the TOEIC/account/rename work) |
+| `cursor/account-username-password-design-0220` | Local username/password, per-user SQLite rows |
+| `cursor/english-conversation-topics-e7af` | Hội thoại mode (JSON banks + illustrations), not the standalone Vite SPA |
+| `cursor/daily-english-companion-design-a166` | Sora daily chat rules + UI; **not** Next.js / NextAuth. New `companion_*` tables keyed to existing `accounts.id` |
+
+Old Cursor branches were left on the remote until `pnpm test` and `pnpm tauri dev` succeed on `main`.

@@ -24,6 +24,7 @@ interface HomeScreenProps {
   onStudyNow: () => void;
   session: SessionDto;
   onOpenAccount: () => void;
+  onOpenChat: () => void;
 }
 
 function missionLabel(mission: DailyMission): string {
@@ -50,6 +51,7 @@ export function HomeScreen({
   onStudyNow,
   session,
   onOpenAccount,
+  onOpenChat,
 }: HomeScreenProps) {
   const player = useFlashcardPlayer({
     contentType,
@@ -156,6 +158,9 @@ export function HomeScreen({
               className="h-10 w-20 rounded-lg border border-line bg-paper px-2 tabular"
             />
             <PrimaryButton onClick={onStudyNow}>{UI.studyNow}</PrimaryButton>
+            <PrimaryButton variant="ghost" onClick={onOpenChat}>
+              {UI.companion}
+            </PrimaryButton>
           </div>
         </Panel>
         <Panel>

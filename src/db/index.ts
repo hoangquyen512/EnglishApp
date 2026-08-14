@@ -6,3 +6,4 @@ export * from "./missions";
 export * from "./sessions";
 export * from "./progress";
 export { setCurrentUserId, requireUserId, peekCurrentUserId } from "./current-user";
+export * from "./companion";
