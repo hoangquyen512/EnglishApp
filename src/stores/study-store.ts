@@ -21,7 +21,7 @@ export const useStudyStore = create<StudyState>()(
       setTopic: (topic) => set({ topic }),
     }),
     {
-      name: "vocab-pet-study",
+      name: "yume-study",
       storage: createJSONStorage(() => userSettingsStorage),
     },
   ),

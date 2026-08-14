@@ -1,13 +1,16 @@
 import type { MissionType, PetMood, PhraseTopic } from "../types";
 
-export const APP_NAME = "Vocab Pet";
+export const APP_NAME = "Yume";
+export const DEFAULT_PET_NAME = "Sora";
 
 export const UI = {
   openApp: "Mở app",
   studyNow: "Học ngay",
   quit: "Thoát",
-  onboardingTitle: "Chọn người bạn đồng hành",
-  onboardingSubtitle: "Pet lớn lên mỗi khi bạn học flashcard TOEIC.",
+  onboardingTitle: `Chào mừng đến ${APP_NAME}`,
+  onboardingSubtitle: "Chọn người bạn đồng hành. Pet lớn lên mỗi khi bạn học flashcard TOEIC.",
+  petNameLabel: "Tên pet",
+  petNamePlaceholder: DEFAULT_PET_NAME,
   choosePet: "Chọn pet này",
   homeTitle: "Nhà của pet",
   studyModeTitle: "Chế độ học",
@@ -32,7 +35,7 @@ export const UI = {
   vocabBankSize: "{n} từ trong bộ học",
   loading: "Đang tải...",
   noCard: "Chưa có thẻ nào phù hợp.",
-  popupTitle: "Học ngay",
+  popupTitle: APP_NAME,
   xpGained: "Pet vui lên · +{n} XP",
   levelUp: "Lên cấp {n}",
   missionComplete: "Hoàn thành nhiệm vụ",

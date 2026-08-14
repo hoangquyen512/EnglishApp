@@ -1,6 +1,6 @@
 CREATE TABLE pet_state (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  pet_name TEXT DEFAULT 'Pet',
+  pet_name TEXT DEFAULT 'Sora',
   level INTEGER DEFAULT 1,
   xp INTEGER DEFAULT 0,
   mood TEXT DEFAULT 'happy',

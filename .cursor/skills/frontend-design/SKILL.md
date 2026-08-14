@@ -53,8 +53,8 @@ Remember: Claude is capable of extraordinary creative work. Don't hold back, sho
 
 Load this skill **before writing UI** (new screens, restyle, polish). Pair with `.cursor/skills/ui-ux-pro-max/` for contrast, spacing, and accessibility.
 
-Do **not** apply this skill by overwriting an existing, intentional design system. Vocab Pet already has product constraints (desktop tray app, flashcard popup, pet care). Distinctive UI must serve that product, not a generic marketing landing page.
+Do **not** apply this skill by overwriting an existing, intentional design system. Yume already has product constraints (desktop tray app, flashcard popup, pet care). Distinctive UI must serve that product, not a generic marketing landing page.
 
-When redesigning Vocab Pet UI:
+When redesigning Yume UI:
 1. State the aesthetic direction in one short paragraph first (tone, type, color, signature detail).
 2. Then implement tokens + components to match — do not invent a second parallel visual language mid-task.

@@ -1,3 +1,4 @@
+import { DEFAULT_PET_NAME } from "../../constants/ui";
 import { isoNow, todayDate, yesterdayDate } from "../../lib/dates";
 import type { DailyMission, PetSpecies, PetState, TopicProgress, UserProgress } from "../../types";
 import {
@@ -31,15 +32,19 @@ export async function getCurrentPet(): Promise<PetState | null> {
   return getPetState();
 }
 
-export async function adoptSpecies(species: PetSpecies): Promise<PetState> {
+export async function adoptSpecies(
+  species: PetSpecies,
+  petName = DEFAULT_PET_NAME,
+): Promise<PetState> {
   const stages = await listStagesForSpecies(species.id);
   const firstStage = stages[0];
   if (!firstStage) {
     throw new Error(`Species ${species.id} has no evolution stages`);
   }
   const now = isoNow();
+  const resolvedName = petName.trim() || DEFAULT_PET_NAME;
   await insertPetState({
-    petName: species.speciesName,
+    petName: resolvedName,
     speciesId: species.id,
     stageId: firstStage.id,
     lastFedAt: now,

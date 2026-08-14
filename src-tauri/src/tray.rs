@@ -7,10 +7,11 @@ use tauri::App;
 use crate::commands::window::{show_main_window, show_popup_window};
 
 pub fn setup_tray(app: &App) -> tauri::Result<()> {
+    let app_label = MenuItem::with_id(app, "app_name", "Yume", false, None::<&str>)?;
     let open_item = MenuItem::with_id(app, "open", "Mở app", true, None::<&str>)?;
     let study_item = MenuItem::with_id(app, "study", "Học ngay", true, None::<&str>)?;
     let quit_item = MenuItem::with_id(app, "quit", "Thoát", true, None::<&str>)?;
-    let menu = Menu::with_items(app, &[&open_item, &study_item, &quit_item])?;
+    let menu = Menu::with_items(app, &[&app_label, &open_item, &study_item, &quit_item])?;
 
     let icon = app
         .default_window_icon()
@@ -19,7 +20,7 @@ pub fn setup_tray(app: &App) -> tauri::Result<()> {
 
     TrayIconBuilder::new()
         .icon(icon)
-        .tooltip("Vocab Pet")
+        .tooltip("Yume")
         .menu(&menu)
         .show_menu_on_left_click(false)
         .on_menu_event(|app, event| match event.id.as_ref() {

@@ -18,7 +18,7 @@ export const useSettingsStore = create<SettingsState>()(
         }),
     }),
     {
-      name: "vocab-pet-settings",
+      name: "yume-settings",
       storage: createJSONStorage(() => userSettingsStorage),
     },
   ),

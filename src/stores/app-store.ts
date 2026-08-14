@@ -22,7 +22,7 @@ interface AppState {
   missions: DailyMission[];
   progress: UserProgress | null;
   hydrate: () => Promise<void>;
-  chooseSpecies: (species: PetSpecies) => Promise<void>;
+  chooseSpecies: (species: PetSpecies, petName?: string) => Promise<void>;
   reloadMissions: () => Promise<void>;
   setPet: (pet: PetState) => void;
 }
@@ -67,19 +67,19 @@ export const useAppStore = create<AppState>((set, get) => ({
       set({ ready: true, error: message });
     }
   },
-  chooseSpecies: async (species) => {
+  chooseSpecies: async (species, petName) => {
     if (!isTauri()) {
       set({
         pet: {
           ...DEMO_PET,
-          petName: species.speciesName,
+          petName: petName?.trim() || species.speciesName,
           speciesName: species.speciesName,
           speciesId: species.id,
         },
       });
       return;
     }
-    const pet = await adoptSpecies(species);
+    const pet = await adoptSpecies(species, petName);
     set({ pet });
   },
   reloadMissions: async () => {

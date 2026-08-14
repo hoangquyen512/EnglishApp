@@ -1,10 +1,13 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
+import { APP_NAME, DEFAULT_PET_NAME } from "../constants/ui";
 
 interface TauriConf {
+  productName: string;
+  identifier: string;
   app: {
-    windows: Array<{ label: string; width: number; height: number }>;
+    windows: Array<{ label: string; title: string; width: number; height: number }>;
   };
   bundle: {
     targets: string | string[];
@@ -40,5 +43,18 @@ describe("deployment constraints", () => {
     const popup = loadConf().app.windows.find((window) => window.label === "popup");
     expect(popup?.width).toBe(420);
     expect(popup?.height).toBe(680);
+  });
+
+  it("uses the official Yume product name and bundle identifier", () => {
+    const conf = loadConf();
+    expect(APP_NAME).toBe("Yume");
+    expect(DEFAULT_PET_NAME).toBe("Sora");
+    expect(conf.productName).toBe(APP_NAME);
+    expect(conf.identifier).toBe("com.hoangquyen.yume");
+    expect(conf.app.windows.find((window) => window.label === "main")?.title).toBe(APP_NAME);
+    expect(conf.app.windows.find((window) => window.label === "popup")?.title).toBe(APP_NAME);
+
+    const petStateSql = readFileSync(resolve("src-tauri/migrations/003_pet_state.sql"), "utf8");
+    expect(petStateSql).toContain(`pet_name TEXT DEFAULT '${DEFAULT_PET_NAME}'`);
   });
 });

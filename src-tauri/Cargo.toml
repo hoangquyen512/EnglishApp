@@ -1,13 +1,13 @@
 [package]
-name = "vocab-pet-app"
+name = "yume"
 version = "0.1.0"
-description = "Vocab Pet — daily English flashcards with a Tamagotchi-style pet"
-authors = ["Vocab Pet"]
+description = "Yume — daily English flashcards with a Tamagotchi-style pet"
+authors = ["Hoang Quyen"]
 edition = "2021"
 rust-version = "1.85"
 
 [lib]
-name = "vocab_pet_app_lib"
+name = "yume_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
