@@ -66,15 +66,13 @@ export function FlashcardFace({
   if (compact) {
     const posLabel = partOfSpeechLabel(visible.partOfSpeech);
     return (
-      <article className="flex flex-col gap-1.5">
-        <div className="grid grid-cols-[minmax(96px,38%)_1fr] items-stretch gap-2">
-          <div className="flex min-h-[96px] items-center justify-center overflow-hidden rounded-lg bg-paper ring-1 ring-line">
-            <VocabIllustration
-              imageKey={visible.imageKey}
-              className="h-full w-full border-0 bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-full [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
-            />
-          </div>
-          <div className="flex min-w-0 flex-col justify-center rounded-lg bg-paper p-2 shadow-sm ring-1 ring-line">
+      <article className="flex w-full flex-col gap-1.5">
+        <div className="grid w-full grid-cols-[minmax(160px,42%)_1fr] items-center gap-2.5">
+          <VocabIllustration
+            imageKey={visible.imageKey}
+            className="rounded-lg bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-auto [&_img]:max-h-[160px] [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
+          />
+          <div className="relative flex min-w-0 flex-col justify-center rounded-xl bg-paper p-2.5 shadow-card ring-1 ring-line">
             {posLabel ? (
               <p className="text-[9px] font-semibold tracking-[0.02em] text-muted">{posLabel}</p>
             ) : null}
