@@ -1,11 +1,17 @@
 import type { StateStorage } from "zustand/middleware";
+import { readBrowserJson, writeBrowserJson } from "./browser-persist";
 import { isTauri } from "./tauri";
 
+const SETTINGS_KEY = "yume-demo-settings";
 const memory = new Map<string, string>();
+
+function browserSettings(): Record<string, string> {
+  return readBrowserJson<Record<string, string>>(SETTINGS_KEY) ?? Object.fromEntries(memory);
+}
 
 async function readFile(): Promise<Record<string, string>> {
   if (!isTauri()) {
-    return Object.fromEntries(memory);
+    return browserSettings();
   }
   const { invoke } = await import("@tauri-apps/api/core");
   const raw = await invoke<string>("read_app_settings");
@@ -26,6 +32,7 @@ async function writeFile(next: Record<string, string>): Promise<void> {
     for (const [key, value] of Object.entries(next)) {
       memory.set(key, value);
     }
+    writeBrowserJson(SETTINGS_KEY, next);
     return;
   }
   const { invoke } = await import("@tauri-apps/api/core");

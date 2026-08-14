@@ -11,6 +11,7 @@ import type {
   Vocabulary,
 } from "../../types";
 import { TOEIC_CARDS } from "../../data/toeic-cards";
+import { SEED_PHRASES } from "../../data/seed-phrases";
 import { DEMO_PET } from "../../data/demo-pet";
 import {
   getDueOrNewVocabulary,
@@ -80,11 +81,18 @@ export async function getStudyDeck(
 
   if (!isTauri()) {
     if (contentType === "phrase") {
-      return seedCards().slice(0, 4).map((card, index) => ({
-        ...card,
-        contentId: 100 + index,
-        contentType: "phrase",
-        topic: topic ?? "office",
+      const rows = topic ? SEED_PHRASES.filter((item) => item.topic === topic) : SEED_PHRASES;
+      return rows.map((item) => ({
+        contentId: item.id,
+        contentType: "phrase" as const,
+        word: item.phraseEn,
+        phonetic: null,
+        partOfSpeech: null,
+        meaning: item.meaningVi,
+        example: null,
+        exampleVi: null,
+        imageKey: `topic-${item.topic}`,
+        topic: item.topic,
       }));
     }
     return seedCards();

@@ -1,4 +1,5 @@
 import type { SessionDto } from "./types";
+import { readBrowserJson, removeBrowserJson, writeBrowserJson } from "../../lib/browser-persist";
 import {
   normalizeDisplayName,
   normalizeEmail,
@@ -18,10 +19,32 @@ interface Account {
   avatarUrl: string | null;
 }
 
+const AUTH_KEY = "yume-demo-auth";
+
 const accounts: Account[] = [];
 let nextId = 1;
 let sessionUserId: number | null = null;
 const failures = new Map<string, { count: number; until: number }>();
+
+function persist(): void {
+  writeBrowserJson(AUTH_KEY, { accounts, nextId, sessionUserId });
+}
+
+function hydrateFromStorage(): void {
+  const saved = readBrowserJson<{
+    accounts?: Account[];
+    nextId?: number;
+    sessionUserId?: number | null;
+  }>(AUTH_KEY);
+  if (!saved?.accounts) {
+    return;
+  }
+  accounts.splice(0, accounts.length, ...saved.accounts);
+  nextId = saved.nextId ?? accounts.reduce((max, row) => Math.max(max, row.id), 0) + 1;
+  sessionUserId = saved.sessionUserId ?? null;
+}
+
+hydrateFromStorage();
 
 function fail(code: string): never {
   throw new Error(code);
@@ -107,6 +130,7 @@ function dispatch(command: string, args: Record<string, unknown> = {}): unknown 
       };
       accounts.push(account);
       sessionUserId = account.id;
+      persist();
       return Promise.resolve(sessionDto(account));
     }
     case "login_account": {
@@ -120,10 +144,12 @@ function dispatch(command: string, args: Record<string, unknown> = {}): unknown 
       }
       failures.delete(username.toLowerCase());
       sessionUserId = account.id;
+      persist();
       return Promise.resolve(sessionDto(account));
     }
     case "logout_account": {
       sessionUserId = null;
+      persist();
       return Promise.resolve();
     }
     case "change_password": {
@@ -134,6 +160,7 @@ function dispatch(command: string, args: Record<string, unknown> = {}): unknown 
       const passwordError = validatePassword(newPassword, account.username);
       if (passwordError) fail(passwordError);
       account.password = newPassword;
+      persist();
       return Promise.resolve();
     }
     case "request_password_reset": {
@@ -145,6 +172,7 @@ function dispatch(command: string, args: Record<string, unknown> = {}): unknown 
       if (account.email && account.email !== email) fail("reset_failed");
       account.email = email;
       account.password = "default12";
+      persist();
       return Promise.resolve({ ok: true });
     }
     case "confirm_password_reset": {
@@ -162,6 +190,7 @@ function dispatch(command: string, args: Record<string, unknown> = {}): unknown 
       if (passwordError) fail(passwordError);
       account.password = newPassword;
       sessionUserId = account.id;
+      persist();
       return Promise.resolve(sessionDto(account));
     }
     case "update_account_profile": {
@@ -174,6 +203,7 @@ function dispatch(command: string, args: Record<string, unknown> = {}): unknown 
       if (emailError) fail(emailError);
       account.displayName = normalizeDisplayName(displayName);
       account.email = normalizeEmail(email);
+      persist();
       return Promise.resolve(sessionDto(account));
     }
     case "set_account_avatar":
@@ -187,11 +217,13 @@ function dispatch(command: string, args: Record<string, unknown> = {}): unknown 
         fail("invalid_avatar");
       }
       account.avatarUrl = "memory:avatar";
+      persist();
       return Promise.resolve(sessionDto(account));
     }
     case "clear_account_avatar": {
       const account = requireAccount();
       account.avatarUrl = null;
+      persist();
       return Promise.resolve(sessionDto(account));
     }
     case "delete_account": {
@@ -203,6 +235,7 @@ function dispatch(command: string, args: Record<string, unknown> = {}): unknown 
         accounts.splice(index, 1);
       }
       sessionUserId = null;
+      persist();
       return Promise.resolve();
     }
     default:
@@ -215,4 +248,5 @@ export function resetMemoryAuth(): void {
   nextId = 1;
   sessionUserId = null;
   failures.clear();
+  removeBrowserJson(AUTH_KEY);
 }

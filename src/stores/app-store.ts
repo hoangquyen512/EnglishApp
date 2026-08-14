@@ -12,7 +12,21 @@ import {
   todaysMissions,
 } from "../features/pet-state";
 import { isTauri } from "../lib/tauri";
+import { peekCurrentUserId } from "../db/current-user";
+import { readBrowserJson, writeBrowserJson } from "../lib/browser-persist";
 import { resolveUserDataDirs } from "../lib/user-paths";
+
+function demoPetKey(userId: number): string {
+  return `yume-demo-pet:${userId}`;
+}
+
+function loadDemoPet(userId: number): PetState | null {
+  return readBrowserJson<PetState>(demoPetKey(userId));
+}
+
+function saveDemoPet(userId: number, pet: PetState): void {
+  writeBrowserJson(demoPetKey(userId), pet);
+}
 
 interface AppState {
   ready: boolean;
@@ -37,11 +51,12 @@ export const useAppStore = create<AppState>((set, get) => ({
   progress: null,
   hydrate: async () => {
     if (!isTauri()) {
+      const userId = peekCurrentUserId();
       set({
         ready: true,
         error: null,
         species: DEMO_SPECIES,
-        pet: DEMO_PET,
+        pet: userId ? loadDemoPet(userId) : null,
         missions: DEMO_MISSIONS,
         progress: null,
       });
@@ -70,14 +85,17 @@ export const useAppStore = create<AppState>((set, get) => ({
   },
   chooseSpecies: async (species, petName) => {
     if (!isTauri()) {
-      set({
-        pet: {
-          ...DEMO_PET,
-          petName: petName?.trim() || species.speciesName,
-          speciesName: species.speciesName,
-          speciesId: species.id,
-        },
-      });
+      const userId = peekCurrentUserId();
+      const pet = {
+        ...DEMO_PET,
+        petName: petName?.trim() || species.speciesName,
+        speciesName: species.speciesName,
+        speciesId: species.id,
+      };
+      if (userId) {
+        saveDemoPet(userId, pet);
+      }
+      set({ pet });
       return;
     }
     const pet = await adoptSpecies(species, petName);

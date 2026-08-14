@@ -49,4 +49,14 @@ In release builds the main window starts hidden. Use the tray icon:
 - **Nói với Sora** is a local daily companion chat (check-in + optional English chips). It does not use the Next.js stack from the daily-companion branch.
 - Pronunciation uses the system `speechSynthesis` voice (en-US). Illustrations are bundled images so the app works offline.
 
+Phone-only TOEIC mock (no login): [study.html](https://cdn.jsdelivr.net/gh/hoangquyen512/EnglishApp@main/docs/uiux-demo/study.html). See [docs/uiux-demo/README.md](docs/uiux-demo/README.md).
+
+## Web demo
+
+Full app in the browser (register/login, onboard Sora, TOEIC, communication phrases, hội thoại, Nói với Sora):
+
+**https://hoangquyen512.github.io/EnglishApp/**
+
+Accounts, pet, study mode, and chat persist in `localStorage`. Tray, native notifications, and SQLite spaced-repetition need `pnpm tauri build`.
+
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for module boundaries and the SQLite schema.

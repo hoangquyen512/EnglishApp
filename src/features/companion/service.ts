@@ -8,6 +8,8 @@ import {
   updateCompanionState,
   type CompanionMessageRow,
 } from "../../db/companion";
+import { peekCurrentUserId } from "../../db/current-user";
+import { readBrowserJson, writeBrowserJson } from "../../lib/browser-persist";
 import { MEMORY_SUMMARY_MAX, type Level, type Mood } from "./constants";
 import { createFakeLlm } from "./fake-llm";
 import type { CoachChip } from "./llm-types";
@@ -36,6 +38,7 @@ const TIMEZONE = "Asia/Ho_Chi_Minh";
 
 type MemoryMsg = PublicMessage;
 const memoryMessages: MemoryMsg[] = [];
+let loadedFor: number | null = null;
 let memoryState = {
   level: "beginner" as Level,
   mood: "unknown" as Mood,
@@ -44,6 +47,43 @@ let memoryState = {
   lastCheckinOn: null as string | null,
   pending: null as LevelDirection | null,
 };
+
+function emptyMemoryState() {
+  return {
+    level: "beginner" as Level,
+    mood: "unknown" as Mood,
+    moodNote: null as string | null,
+    memorySummary: "",
+    lastCheckinOn: null as string | null,
+    pending: null as LevelDirection | null,
+  };
+}
+
+function chatKey(userId: number): string {
+  return `yume-demo-chat:${userId}`;
+}
+
+function ensureMemoryLoaded(): void {
+  const userId = peekCurrentUserId();
+  if (userId === null || loadedFor === userId) {
+    return;
+  }
+  loadedFor = userId;
+  const saved = readBrowserJson<{ messages?: MemoryMsg[]; state?: typeof memoryState }>(chatKey(userId));
+  memoryMessages.length = 0;
+  if (saved?.messages) {
+    memoryMessages.push(...saved.messages);
+  }
+  memoryState = saved?.state ?? emptyMemoryState();
+}
+
+function persistMemory(): void {
+  const userId = peekCurrentUserId();
+  if (userId === null) {
+    return;
+  }
+  writeBrowserJson(chatKey(userId), { messages: memoryMessages, state: memoryState });
+}
 
 function toPublic(row: CompanionMessageRow): PublicMessage {
   const coach = row.coach_json ? (JSON.parse(row.coach_json) as CoachChip[]) : [];
@@ -60,6 +100,7 @@ function toPublic(row: CompanionMessageRow): PublicMessage {
 
 export async function listThread(): Promise<PublicMessage[]> {
   if (!isTauri()) {
+    ensureMemoryLoaded();
     return [...memoryMessages];
   }
   const rows = await listCompanionMessages();
@@ -102,6 +143,7 @@ export async function ensureDailyCheckin(): Promise<PublicMessage[]> {
     };
     memoryMessages.push(message);
     memoryState.lastCheckinOn = today;
+    persistMemory();
     return [...memoryMessages];
   }
 
@@ -131,6 +173,7 @@ export async function sendCompanionMessage(body: string): Promise<PublicMessage[
   }
   const now = new Date().toISOString();
   if (!isTauri()) {
+    ensureMemoryLoaded();
     memoryMessages.push({
       id: `u-${Date.now()}`,
       role: "user",
@@ -171,6 +214,7 @@ export async function sendCompanionMessage(body: string): Promise<PublicMessage[
       mood: nextMood.mood,
       moodNote: nextMood.moodNote,
     };
+    persistMemory();
     return [...memoryMessages];
   }
 

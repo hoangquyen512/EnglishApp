@@ -170,3 +170,7 @@ Features were ported by hand onto `cursor/toeic-flashcards-e7dc` (branch `consol
 | `cursor/daily-english-companion-design-a166` | Sora daily chat rules + UI; **not** Next.js / NextAuth. New `companion_*` tables keyed to existing `accounts.id` |
 
 Old Cursor branches were left on the remote until `pnpm test` and `pnpm tauri dev` succeed on `main`.
+
+## Web demo
+
+GitHub Pages serves the Vite build (`VITE_BASE=/EnglishApp/`) from `.github/workflows/deploy-demo.yml`. Browser mode uses in-memory/localStorage auth and companion chat instead of SQLite.

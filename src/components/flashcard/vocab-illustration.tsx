@@ -1,3 +1,5 @@
+import { publicUrl } from "../../lib/public-url";
+
 const TOPIC_FALLBACK: Record<string, string> = {
   "topic-travel": "itinerary",
   "topic-food": "complimentary",
@@ -6,11 +8,14 @@ const TOPIC_FALLBACK: Record<string, string> = {
 };
 
 export function artSrc(imageKey: string): string {
-  if (imageKey.startsWith("/") || imageKey.startsWith("http")) {
+  if (imageKey.startsWith("http") || imageKey.startsWith("data:")) {
     return imageKey;
   }
+  if (imageKey.startsWith("/")) {
+    return publicUrl(imageKey);
+  }
   const file = TOPIC_FALLBACK[imageKey] ?? imageKey;
-  return `/arts/${file}.jpg`;
+  return publicUrl(`/arts/${file}.jpg`);
 }
 
 export function preloadVocabArts(keys: string[]): void {

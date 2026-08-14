@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { publicUrl } from "../../lib/public-url";
 
 interface AuthShellProps {
   title: string;
@@ -11,7 +12,7 @@ export function AuthShell({ title, subtitle, children }: AuthShellProps) {
     <main className="flex min-h-screen flex-col items-center justify-center bg-stone-25 px-8 py-8">
       <div className="mb-4 flex flex-col items-center text-center">
         <div className="mb-3 grid h-[72px] w-[72px] place-items-center overflow-hidden rounded-[20px] bg-stone-50">
-          <img src="/yume-icon.png" alt="" width={72} height={72} />
+          <img src={publicUrl("/yume-icon.png")} alt="" width={72} height={72} />
         </div>
         <h1 className="font-display text-[30px] font-bold tracking-tight text-stone-950">{title}</h1>
         <p className="mt-1 text-stone-500">{subtitle}</p>

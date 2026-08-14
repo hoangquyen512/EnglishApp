@@ -6,11 +6,14 @@ UI/UX đã chốt: **Warm Companion** — pet PNG nổi trên màn hình (không
 
 Chạm link này trên Safari / Chrome:
 
-**https://raw.githack.com/hoangquyen512/EnglishApp/cursor/toeic-flashcards-e7dc/docs/uiux-demo/study.html**
+**https://cdn.jsdelivr.net/gh/hoangquyen512/EnglishApp@main/docs/uiux-demo/study.html**
 
-Dự phòng (nếu link trên chậm):
+Dự phòng:
 
-https://htmlpreview.github.io/?https://github.com/hoangquyen512/EnglishApp/blob/cursor/toeic-flashcards-e7dc/docs/uiux-demo/study.html
+- https://raw.githack.com/hoangquyen512/EnglishApp/main/docs/uiux-demo/study.html
+- GitHub Pages (full app): https://hoangquyen512.github.io/EnglishApp/
+
+Demo tài khoản: [account.html](./account.html)
 
 ## Trong demo
 
