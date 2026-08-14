@@ -66,37 +66,37 @@ export function FlashcardFace({
   if (compact) {
     const posLabel = partOfSpeechLabel(visible.partOfSpeech);
     return (
-      <article className="flex w-full flex-col gap-1.5">
-        <div className="grid w-full grid-cols-[minmax(160px,42%)_1fr] items-center gap-2.5">
+      <article className="flex w-full flex-col gap-1">
+        <div className="grid w-full grid-cols-[minmax(72px,40%)_1fr] items-center gap-1.5">
           <VocabIllustration
             imageKey={visible.imageKey}
-            className="rounded-lg bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-auto [&_img]:max-h-[160px] [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
+            className="rounded-md bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-auto [&_img]:max-h-[80px] [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
           />
           <div className="relative flex min-w-0 flex-col justify-center">
             {posLabel ? (
-              <p className="text-[9px] font-semibold tracking-[0.02em] text-muted">{posLabel}</p>
+              <p className="text-[8px] font-semibold tracking-[0.02em] text-muted">{posLabel}</p>
             ) : null}
-            <div className="mt-0.5 flex items-start justify-between gap-1">
-              <h2 lang="en" className="font-specimen text-lg font-semibold leading-tight text-ink">
+            <div className="mt-0.5 flex items-start justify-between gap-0.5">
+              <h2 lang="en" className="font-specimen text-sm font-semibold leading-tight text-ink">
                 {visible.word}
               </h2>
-              <IconButton label={UI.listen} onClick={onSpeak} className="h-7 w-7 shrink-0 bg-cream">
+              <IconButton label={UI.listen} onClick={onSpeak} className="h-6 w-6 shrink-0 bg-cream">
                 <IconSpeaker />
               </IconButton>
             </div>
             {visible.phonetic ? (
-              <p lang="en" className="mt-0.5 text-[11px] text-muted">
+              <p lang="en" className="mt-0.5 text-[9px] text-muted">
                 {visible.phonetic}
               </p>
             ) : null}
-            <p className="mt-1 text-sm font-semibold text-clay-dark">
+            <p className="mt-0.5 text-xs font-semibold text-clay-dark">
               <span className="sr-only">{UI.meaningLabel}: </span>
               {visible.meaning}
             </p>
             {visible.example ? (
               <blockquote
                 lang="en"
-                className="mt-1 line-clamp-2 border-l-2 border-clay pl-1.5 text-[10px] leading-snug text-ink"
+                className="mt-0.5 line-clamp-2 border-l-2 border-clay pl-1 text-[8px] leading-snug text-ink"
               >
                 <span className="sr-only">{UI.exampleLabel}: </span>
                 {visible.example}
@@ -105,28 +105,28 @@ export function FlashcardFace({
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-1">
-          <IconButton label={UI.prevCard} onClick={onPrev} className="h-7 w-7">
+        <div className="flex items-center justify-center gap-0.5">
+          <IconButton label={UI.prevCard} onClick={onPrev} className="h-6 w-6">
             <IconPrev />
           </IconButton>
           <IconButton
             label={paused ? UI.resume : UI.pause}
             onClick={onPauseToggle}
-            className="h-7 w-7"
+            className="h-6 w-6"
           >
             {paused ? <IconPlay /> : <IconPause />}
           </IconButton>
-          <IconButton label={UI.nextCard} onClick={onNext} className="h-7 w-7">
+          <IconButton label={UI.nextCard} onClick={onNext} className="h-6 w-6">
             <IconSkip />
           </IconButton>
         </div>
 
         {showActions && onKnown && onUnknown ? (
-          <div className="grid grid-cols-2 gap-1.5">
-            <PrimaryButton variant="ghost" className="min-h-7 px-2 py-1 text-xs" onClick={onUnknown}>
+          <div className="grid grid-cols-2 gap-1">
+            <PrimaryButton variant="ghost" className="min-h-6 px-1.5 py-0.5 text-[10px]" onClick={onUnknown}>
               {UI.unknown}
             </PrimaryButton>
-            <PrimaryButton className="min-h-7 px-2 py-1 text-xs" onClick={onKnown}>
+            <PrimaryButton className="min-h-6 px-1.5 py-0.5 text-[10px]" onClick={onKnown}>
               {UI.known}
             </PrimaryButton>
           </div>

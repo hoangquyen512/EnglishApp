@@ -138,18 +138,18 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
       <div
         className="pointer-events-auto absolute flex items-end gap-2"
         style={{
-          left: expanded ? Math.max(8, pos.x - 520) : pos.x,
-          top: Math.max(8, pos.y - (expanded ? 180 : 0)),
+          left: expanded ? Math.max(8, pos.x - 270) : pos.x,
+          top: Math.max(8, pos.y - (expanded ? 120 : 0)),
         }}
       >
         {expanded ? (
-          <section className="relative w-[min(500px,calc(100vw-88px))] rounded-2xl bg-cream p-3 pt-4 shadow-card ring-1 ring-line">
-            <div className="absolute right-2 top-2 z-10">
-              <IconButton label={UI.close} onClick={onDismiss} className="h-7 w-7">
+          <section className="relative w-[min(250px,calc(100vw-88px))] rounded-xl bg-cream p-1.5 pt-2 shadow-card ring-1 ring-line">
+            <div className="absolute right-1 top-1 z-10">
+              <IconButton label={UI.close} onClick={onDismiss} className="h-5 w-5">
                 <IconClose />
               </IconButton>
             </div>
-            <div className="pr-8">
+            <div className="pr-5">
               {player.error ? <p className="text-sm text-rose">{player.error}</p> : null}
               {player.loading && !player.card ? <p className="text-xs">{UI.loading}</p> : null}
               {!player.loading && !player.card ? <p className="text-xs">{UI.noCard}</p> : null}
@@ -192,11 +192,7 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
             >
               {UI.close}
             </button>
-          ) : (
-            <p className="text-[9px] font-semibold text-ink drop-shadow-sm">
-              {UI.level} {pet.level} · {UI.xp} {pet.xp}
-            </p>
-          )}
+          ) : null}
         </div>
       </div>
     </div>
