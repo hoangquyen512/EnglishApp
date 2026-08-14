@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { UI } from "../../constants/ui";
+import { partOfSpeechLabel } from "../../features/vocabulary";
 import type { PetState, StudyFlashcard } from "../../types";
 import { PetAvatar } from "../pet/pet-avatar";
 import { artSrc, VocabIllustration } from "./vocab-illustration";
@@ -63,18 +64,17 @@ export function FlashcardFace({
   }, [card]);
 
   if (compact) {
+    const posLabel = partOfSpeechLabel(visible.partOfSpeech);
     return (
       <article className="flex flex-col gap-2">
-        <div className="grid grid-cols-[132px_1fr] gap-3">
+        <div className="grid grid-cols-[minmax(140px,42%)_1fr] items-stretch gap-3">
           <VocabIllustration
             imageKey={visible.imageKey}
-            className="h-[132px] overflow-hidden rounded-xl shadow-card [&_img]:h-full [&_img]:object-cover"
+            className="h-full min-h-[148px] overflow-hidden rounded-xl shadow-card [&_img]:h-full [&_img]:w-full [&_img]:object-cover"
           />
-          <div className="min-w-0 rounded-[16px] bg-paper p-3 shadow-card ring-1 ring-line">
-            {visible.partOfSpeech ? (
-              <p className="text-[10px] font-semibold uppercase tracking-[0.04em] text-muted">
-                {visible.partOfSpeech}
-              </p>
+          <div className="flex min-w-0 flex-col justify-center rounded-[16px] bg-paper p-3 shadow-card ring-1 ring-line">
+            {posLabel ? (
+              <p className="text-[10px] font-semibold tracking-[0.02em] text-muted">{posLabel}</p>
             ) : null}
             <div className="mt-0.5 flex items-start justify-between gap-2">
               <h2 lang="en" className="font-specimen text-2xl font-semibold leading-tight text-ink">
@@ -136,8 +136,10 @@ export function FlashcardFace({
       <VocabIllustration imageKey={visible.imageKey} className="shadow-card" />
 
       <div className="rounded-[20px] bg-paper p-4 shadow-card ring-1 ring-line">
-        {visible.partOfSpeech ? (
-          <p className="text-xs font-semibold uppercase tracking-[0.04em] text-muted">{visible.partOfSpeech}</p>
+        {partOfSpeechLabel(visible.partOfSpeech) ? (
+          <p className="text-xs font-semibold tracking-[0.02em] text-muted">
+            {partOfSpeechLabel(visible.partOfSpeech)}
+          </p>
         ) : null}
         <div className="mt-1 flex items-start justify-between gap-2">
           <h2 lang="en" className="font-specimen text-3xl font-semibold leading-tight text-ink">

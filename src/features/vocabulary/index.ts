@@ -12,7 +12,8 @@ import type {
 } from "../../types";
 import { TOEIC_CARDS } from "../../data/toeic-cards";
 import { SEED_PHRASES } from "../../data/seed-phrases";
-import { DEMO_PET } from "../../data/demo-pet";
+import { peekCurrentUserId } from "../../db/current-user";
+import { loadBrowserPet, rewardBrowserPetForUser } from "../pet-state/demo-pet";
 import {
   getDueOrNewVocabulary,
   getLearningProgress,
@@ -38,6 +39,7 @@ import { countsTowardMastery, sessionIsCorrect, xpForOutcome } from "./outcome";
 export { shuffle, nextDeckIndex, previousDeckIndex } from "./deck";
 export { CARD_INTERVAL_MS, cardProgress, cardRemainingMs, shouldAdvanceCard } from "./timer";
 export { shouldSpeakOnCard, shouldTickAdvance } from "./companion-study";
+export { partOfSpeechLabel } from "./part-of-speech";
 export { speakWord, cancelSpeech, ttsConfig } from "./speech";
 export { xpForOutcome } from "./outcome";
 
@@ -141,13 +143,16 @@ export async function recordFlashcardEvent(input: {
   const isCorrect = sessionIsCorrect(input.outcome);
 
   if (!isTauri()) {
+    const userId = peekCurrentUserId();
+    const before = userId != null ? loadBrowserPet(userId) : null;
+    const pet = userId != null ? rewardBrowserPetForUser(userId, xpGained) : null;
     return {
       isCorrect,
       outcome: input.outcome,
       xpGained,
-      leveledUp: false,
+      leveledUp: Boolean(before && pet && pet.level > before.level),
       completedMissions: [],
-      pet: DEMO_PET,
+      pet,
     };
   }
 
