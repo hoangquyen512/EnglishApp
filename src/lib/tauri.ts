@@ -31,7 +31,9 @@ export async function showMainWindow(): Promise<void> {
 
 export async function showPopupWindow(): Promise<void> {
   if (!isTauri()) {
-    window.open(`${window.location.origin}/?window=popup`, "yume-popup", "width=420,height=680");
+    const popup = new URL(window.location.href);
+    popup.searchParams.set("window", "popup");
+    window.open(popup.toString(), "yume-popup", "width=420,height=680");
     return;
   }
   const { invoke } = await import("@tauri-apps/api/core");
