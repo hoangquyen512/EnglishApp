@@ -156,14 +156,13 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
               {player.card ? (
                 <FlashcardFace
                   compact
+                  showActions={false}
                   card={player.card}
                   paused={player.paused}
                   onPauseToggle={player.togglePause}
                   onPrev={player.prev}
                   onNext={() => player.next()}
                   onSpeak={() => speakWord(player.card!.word)}
-                  onKnown={() => void mark("known")}
-                  onUnknown={() => void mark("unknown")}
                 />
               ) : null}
             </div>
