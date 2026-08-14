@@ -72,7 +72,7 @@ export function FlashcardFace({
             imageKey={visible.imageKey}
             className="rounded-lg bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-auto [&_img]:max-h-[160px] [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
           />
-          <div className="relative flex min-w-0 flex-col justify-center rounded-xl bg-paper p-2.5 shadow-card ring-1 ring-line">
+          <div className="relative flex min-w-0 flex-col justify-center">
             {posLabel ? (
               <p className="text-[9px] font-semibold tracking-[0.02em] text-muted">{posLabel}</p>
             ) : null}

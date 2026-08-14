@@ -143,17 +143,13 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
         }}
       >
         {expanded ? (
-          <section className="relative w-[min(500px,calc(100vw-88px))] bg-transparent p-0">
-            <div className="absolute right-0 top-0 z-10 -translate-y-1 translate-x-1">
-              <IconButton
-                label={UI.close}
-                onClick={onDismiss}
-                className="h-7 w-7 bg-cream/95 shadow-sm ring-1 ring-line"
-              >
+          <section className="relative w-[min(500px,calc(100vw-88px))] rounded-2xl bg-cream p-3 pt-4 shadow-card ring-1 ring-line">
+            <div className="absolute right-2 top-2 z-10">
+              <IconButton label={UI.close} onClick={onDismiss} className="h-7 w-7">
                 <IconClose />
               </IconButton>
             </div>
-            <div>
+            <div className="pr-8">
               {player.error ? <p className="text-sm text-rose">{player.error}</p> : null}
               {player.loading && !player.card ? <p className="text-xs">{UI.loading}</p> : null}
               {!player.loading && !player.card ? <p className="text-xs">{UI.noCard}</p> : null}
