@@ -138,18 +138,18 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
       <div
         className="pointer-events-auto absolute flex items-end gap-2"
         style={{
-          left: expanded ? Math.max(8, pos.x - 480) : pos.x,
-          top: Math.max(8, pos.y - (expanded ? 220 : 0)),
+          left: expanded ? Math.max(8, pos.x - 600) : pos.x,
+          top: Math.max(8, pos.y - (expanded ? 240 : 0)),
         }}
       >
         {expanded ? (
-          <section className="relative w-[min(460px,calc(100vw-140px))] overflow-hidden rounded-[20px] bg-cream p-3 shadow-card ring-1 ring-line">
+          <section className="relative w-[min(560px,calc(100vw-140px))] rounded-[20px] bg-cream p-3 pt-4 shadow-card ring-1 ring-line">
             <div className="absolute right-2 top-2 z-10 flex gap-1">
               <IconButton label={UI.close} onClick={onDismiss}>
                 <IconClose />
               </IconButton>
             </div>
-            <div className="pr-8">
+            <div className="pr-9">
               {player.error ? <p className="text-sm text-rose">{player.error}</p> : null}
               {player.loading && !player.card ? <p>{UI.loading}</p> : null}
               {!player.loading && !player.card ? <p>{UI.noCard}</p> : null}

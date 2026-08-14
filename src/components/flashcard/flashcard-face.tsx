@@ -67,11 +67,13 @@ export function FlashcardFace({
     const posLabel = partOfSpeechLabel(visible.partOfSpeech);
     return (
       <article className="flex flex-col gap-2">
-        <div className="grid grid-cols-[minmax(140px,42%)_1fr] items-stretch gap-3">
-          <VocabIllustration
-            imageKey={visible.imageKey}
-            className="h-full min-h-[148px] overflow-hidden rounded-xl shadow-card [&_img]:h-full [&_img]:w-full [&_img]:object-cover"
-          />
+        <div className="grid grid-cols-[minmax(160px,40%)_1fr] items-stretch gap-3">
+          <div className="min-h-[148px] overflow-hidden rounded-xl shadow-card ring-1 ring-line">
+            <VocabIllustration
+              imageKey={visible.imageKey}
+              className="h-full min-h-[148px] border-0 bg-transparent ring-0 [&_img]:h-full [&_img]:w-full [&_img]:object-cover"
+            />
+          </div>
           <div className="flex min-w-0 flex-col justify-center rounded-[16px] bg-paper p-3 shadow-card ring-1 ring-line">
             {posLabel ? (
               <p className="text-[10px] font-semibold tracking-[0.02em] text-muted">{posLabel}</p>
@@ -119,10 +121,12 @@ export function FlashcardFace({
 
         {showActions && onKnown && onUnknown ? (
           <div className="grid grid-cols-2 gap-2">
-            <PrimaryButton variant="ghost" onClick={onUnknown}>
+            <PrimaryButton variant="ghost" className="min-h-8 px-3 py-1.5 text-sm" onClick={onUnknown}>
               {UI.unknown}
             </PrimaryButton>
-            <PrimaryButton onClick={onKnown}>{UI.known}</PrimaryButton>
+            <PrimaryButton className="min-h-8 px-3 py-1.5 text-sm" onClick={onKnown}>
+              {UI.known}
+            </PrimaryButton>
           </div>
         ) : null}
       </article>
