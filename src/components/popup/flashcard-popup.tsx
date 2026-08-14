@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 import { UI } from "../../constants/ui";
-import { DEMO_PET } from "../../data/demo-pet";
 import { recordFlashcardEvent, speakWord } from "../../features/vocabulary";
 import { dismissStudyPopup } from "../../features/scheduler";
 import { setCompanionWindowBounds } from "../../lib/companion-window";
@@ -50,7 +49,6 @@ export function FlashcardPopup() {
     };
   }, []);
 
-  const displayPet: PetState = pet ?? DEMO_PET;
   const canStudy = Boolean(session && pet);
 
   const openMainForSetup = useCallback(async () => {
@@ -90,13 +88,17 @@ export function FlashcardPopup() {
           expanded={expanded}
           onToggle={() => void toggleExpanded()}
         />
-      ) : !expanded ? (
-        <CompanionPetButton
-          pet={displayPet}
-          onToggle={() => void toggleExpanded()}
-          label={UI.popupNeedLogin}
-        />
-      ) : null}
+      ) : !session && authReady ? (
+        <button
+          type="button"
+          className="rounded-xl bg-cream px-4 py-3 text-sm font-semibold text-ink ring-1 ring-line"
+          onClick={() => void openMainForSetup()}
+        >
+          {UI.popupNeedLogin}
+        </button>
+      ) : (
+        <p className="rounded-xl bg-cream/90 px-3 py-2 text-sm text-ink">{UI.loading}</p>
+      )}
     </div>
   );
 }
@@ -182,9 +184,7 @@ function CompanionStudyShell({
   }, [expanded, player]);
 
   if (!expanded) {
-    return (
-      <CompanionPetButton pet={pet} onToggle={onToggle} label="Mở thẻ học" />
-    );
+    return <CompanionPetButton pet={pet} onToggle={onToggle} label="Mở thẻ học" />;
   }
 
   return (

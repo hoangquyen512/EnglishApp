@@ -63,7 +63,7 @@ export function HomeScreen({
   return (
     <main className="mx-auto grid min-h-screen max-w-5xl gap-4 bg-cream p-6 md:grid-cols-[280px_1fr]">
       <Panel>
-        <PetStatus pet={pet} />
+        <PetStatus pet={pet} onFloatPet={onStudyNow} />
       </Panel>
       <div className="flex flex-col gap-4">
         <div className="flex justify-end">

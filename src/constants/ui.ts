@@ -6,6 +6,7 @@ export const DEFAULT_PET_NAME = "Sora";
 export const UI = {
   openApp: "Mở app",
   studyNow: "Học ngay",
+  floatPet: "Đưa pet ra màn hình",
   quit: "Thoát",
   onboardingTitle: `Chào mừng đến ${APP_NAME}`,
   onboardingSubtitle: "Chọn người bạn đồng hành. Pet lớn lên mỗi khi bạn học flashcard TOEIC.",

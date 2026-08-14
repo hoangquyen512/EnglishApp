@@ -1,13 +1,15 @@
 import { MOOD_LABELS, UI } from "../../constants/ui";
 import { xpProgressPercent } from "../../features/pet-state";
 import type { PetState } from "../../types";
+import { PrimaryButton } from "../shared/primary-button";
 import { PetAvatar } from "./pet-avatar";
 
 interface PetStatusProps {
   pet: PetState;
+  onFloatPet?: () => void;
 }
 
-export function PetStatus({ pet }: PetStatusProps) {
+export function PetStatus({ pet, onFloatPet }: PetStatusProps) {
   const percent = xpProgressPercent(pet.xp);
   const hint = pet.mood === "hungry" ? UI.hungryHint : pet.mood === "sad" ? UI.sadHint : null;
   return (
@@ -41,6 +43,11 @@ export function PetStatus({ pet }: PetStatusProps) {
           <div className="h-full bg-clay" style={{ width: `${percent}%` }} />
         </div>
       </div>
+      {onFloatPet ? (
+        <PrimaryButton className="w-full" onClick={onFloatPet}>
+          {UI.floatPet}
+        </PrimaryButton>
+      ) : null}
     </div>
   );
 }

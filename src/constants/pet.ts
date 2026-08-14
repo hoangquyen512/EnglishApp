@@ -16,6 +16,26 @@ export const SPRITE_EMOJI: Record<string, string> = {
   dragon_adult: "🐉",
 };
 
+/** PNG basename under /pets (no extension), keyed by sprite_key. */
+export const SPRITE_ART: Record<string, string> = {
+  cat_egg: "cat-egg",
+  cat_young: "cat-young",
+  cat_adult: "cat-adult",
+  fox_egg: "fox-egg",
+  fox_young: "fox-young",
+  fox_adult: "fox-adult",
+  dragon_egg: "dragon-egg",
+  dragon_young: "dragon-young",
+  dragon_adult: "dragon-adult",
+};
+
+/** Onboarding preview art (young form) keyed by species id. */
+export const SPECIES_PREVIEW_ART: Record<number, string> = {
+  1: "cat-young",
+  2: "fox-young",
+  3: "dragon-young",
+};
+
 export const MOOD_EMOJI: Record<PetMood, string> = {
   happy: "😊",
   neutral: "😐",
