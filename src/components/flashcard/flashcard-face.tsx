@@ -66,17 +66,17 @@ export function FlashcardFace({
   if (compact) {
     const posLabel = partOfSpeechLabel(visible.partOfSpeech);
     return (
-      <article className="flex w-full flex-col gap-1">
-        <div className="grid w-full grid-cols-[minmax(72px,40%)_1fr] items-center gap-1.5">
+      <article className="flex h-full w-full flex-col gap-2">
+        <div className="grid min-h-0 flex-1 grid-cols-[104px_1fr] items-stretch gap-2.5">
           <VocabIllustration
             imageKey={visible.imageKey}
-            className="rounded-md bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-auto [&_img]:max-h-[80px] [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
+            className="h-full rounded-md bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-full [&_img]:max-h-full [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
           />
-          <div className="relative flex min-w-0 flex-col justify-center">
+          <div className="flex min-w-0 flex-col justify-center gap-1 py-0.5">
             {posLabel ? (
               <p className="text-[8px] font-semibold tracking-[0.02em] text-muted">{posLabel}</p>
             ) : null}
-            <div className="mt-0.5 flex items-start justify-between gap-0.5">
+            <div className="flex items-start justify-between gap-1">
               <h2 lang="en" className="font-specimen text-sm font-semibold leading-tight text-ink">
                 {visible.word}
               </h2>
@@ -85,18 +85,18 @@ export function FlashcardFace({
               </IconButton>
             </div>
             {visible.phonetic ? (
-              <p lang="en" className="mt-0.5 text-[9px] text-muted">
+              <p lang="en" className="text-[9px] leading-none text-muted">
                 {visible.phonetic}
               </p>
             ) : null}
-            <p className="mt-0.5 text-xs font-semibold text-clay-dark">
+            <p className="text-xs font-semibold leading-snug text-clay-dark">
               <span className="sr-only">{UI.meaningLabel}: </span>
               {visible.meaning}
             </p>
             {visible.example ? (
               <blockquote
                 lang="en"
-                className="mt-0.5 line-clamp-2 border-l-2 border-clay pl-1 text-[8px] leading-snug text-ink"
+                className="line-clamp-2 border-l-2 border-clay pl-1.5 text-[8px] leading-snug text-ink"
               >
                 <span className="sr-only">{UI.exampleLabel}: </span>
                 {visible.example}
@@ -105,7 +105,7 @@ export function FlashcardFace({
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-0.5">
+        <div className="flex shrink-0 items-center justify-center gap-1">
           <IconButton label={UI.prevCard} onClick={onPrev} className="h-6 w-6">
             <IconPrev />
           </IconButton>
