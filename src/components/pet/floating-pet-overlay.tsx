@@ -21,15 +21,15 @@ function loadPos(): { x: number; y: number } {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) {
-      return { x: window.innerWidth - 140, y: window.innerHeight - 160 };
+      return { x: window.innerWidth - 88, y: window.innerHeight - 100 };
     }
     const parsed = JSON.parse(raw) as { x?: number; y?: number };
     return {
-      x: typeof parsed.x === "number" ? parsed.x : window.innerWidth - 140,
-      y: typeof parsed.y === "number" ? parsed.y : window.innerHeight - 160,
+      x: typeof parsed.x === "number" ? parsed.x : window.innerWidth - 88,
+      y: typeof parsed.y === "number" ? parsed.y : window.innerHeight - 100,
     };
   } catch {
-    return { x: window.innerWidth - 140, y: window.innerHeight - 160 };
+    return { x: window.innerWidth - 88, y: window.innerHeight - 100 };
   }
 }
 
@@ -138,21 +138,21 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
       <div
         className="pointer-events-auto absolute flex items-end gap-2"
         style={{
-          left: expanded ? Math.max(8, pos.x - 600) : pos.x,
-          top: Math.max(8, pos.y - (expanded ? 240 : 0)),
+          left: expanded ? Math.max(8, pos.x - 300) : pos.x,
+          top: Math.max(8, pos.y - (expanded ? 140 : 0)),
         }}
       >
         {expanded ? (
-          <section className="relative w-[min(560px,calc(100vw-140px))] rounded-[20px] bg-cream p-3 pt-4 shadow-card ring-1 ring-line">
-            <div className="absolute right-2 top-2 z-10 flex gap-1">
-              <IconButton label={UI.close} onClick={onDismiss}>
+          <section className="relative w-[min(280px,calc(100vw-88px))] rounded-2xl bg-cream p-2 pt-3 shadow-card ring-1 ring-line">
+            <div className="absolute right-1.5 top-1.5 z-10 flex gap-1">
+              <IconButton label={UI.close} onClick={onDismiss} className="h-7 w-7">
                 <IconClose />
               </IconButton>
             </div>
-            <div className="pr-9">
+            <div className="pr-7">
               {player.error ? <p className="text-sm text-rose">{player.error}</p> : null}
-              {player.loading && !player.card ? <p>{UI.loading}</p> : null}
-              {!player.loading && !player.card ? <p>{UI.noCard}</p> : null}
+              {player.loading && !player.card ? <p className="text-xs">{UI.loading}</p> : null}
+              {!player.loading && !player.card ? <p className="text-xs">{UI.noCard}</p> : null}
               {player.card ? (
                 <FlashcardFace
                   compact
@@ -170,7 +170,7 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
           </section>
         ) : null}
 
-        <div className="flex shrink-0 flex-col items-center gap-1 pb-1">
+        <div className="flex shrink-0 flex-col items-center gap-1 pb-0.5">
           <button
             type="button"
             aria-label={expanded ? "Thu pet" : "Mở thẻ học"}
@@ -182,18 +182,18 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
               drag.current = null;
             }}
           >
-            <PetAvatar pet={pet} size="lg" variant="float" />
+            <PetAvatar pet={pet} size="sm" variant="float" />
           </button>
           {!expanded ? (
             <button
               type="button"
-              className="rounded-full bg-cream/95 px-2 py-0.5 text-[10px] font-semibold text-muted shadow-sm ring-1 ring-line"
+              className="rounded-full bg-cream/95 px-1.5 py-0.5 text-[9px] font-semibold text-muted shadow-sm ring-1 ring-line"
               onClick={onDismiss}
             >
               {UI.close}
             </button>
           ) : (
-            <p className="text-[11px] font-semibold text-ink drop-shadow-sm">
+            <p className="text-[9px] font-semibold text-ink drop-shadow-sm">
               {UI.level} {pet.level} · {UI.xp} {pet.xp}
             </p>
           )}

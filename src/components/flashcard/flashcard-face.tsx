@@ -66,39 +66,39 @@ export function FlashcardFace({
   if (compact) {
     const posLabel = partOfSpeechLabel(visible.partOfSpeech);
     return (
-      <article className="flex flex-col gap-2">
-        <div className="grid grid-cols-[minmax(160px,40%)_1fr] items-stretch gap-3">
-          <div className="min-h-[148px] overflow-hidden rounded-xl shadow-card ring-1 ring-line">
+      <article className="flex flex-col gap-1.5">
+        <div className="grid grid-cols-[minmax(96px,38%)_1fr] items-stretch gap-2">
+          <div className="flex min-h-[96px] items-center justify-center overflow-hidden rounded-lg bg-paper ring-1 ring-line">
             <VocabIllustration
               imageKey={visible.imageKey}
-              className="h-full min-h-[148px] border-0 bg-transparent ring-0 [&_img]:h-full [&_img]:w-full [&_img]:object-cover"
+              className="h-full w-full border-0 bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-full [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
             />
           </div>
-          <div className="flex min-w-0 flex-col justify-center rounded-[16px] bg-paper p-3 shadow-card ring-1 ring-line">
+          <div className="flex min-w-0 flex-col justify-center rounded-lg bg-paper p-2 shadow-sm ring-1 ring-line">
             {posLabel ? (
-              <p className="text-[10px] font-semibold tracking-[0.02em] text-muted">{posLabel}</p>
+              <p className="text-[9px] font-semibold tracking-[0.02em] text-muted">{posLabel}</p>
             ) : null}
-            <div className="mt-0.5 flex items-start justify-between gap-2">
-              <h2 lang="en" className="font-specimen text-2xl font-semibold leading-tight text-ink">
+            <div className="mt-0.5 flex items-start justify-between gap-1">
+              <h2 lang="en" className="font-specimen text-lg font-semibold leading-tight text-ink">
                 {visible.word}
               </h2>
-              <IconButton label={UI.listen} onClick={onSpeak} className="h-9 w-9 shrink-0 bg-cream">
+              <IconButton label={UI.listen} onClick={onSpeak} className="h-7 w-7 shrink-0 bg-cream">
                 <IconSpeaker />
               </IconButton>
             </div>
             {visible.phonetic ? (
-              <p lang="en" className="mt-0.5 text-sm text-muted">
+              <p lang="en" className="mt-0.5 text-[11px] text-muted">
                 {visible.phonetic}
               </p>
             ) : null}
-            <p className="mt-2 text-base font-semibold text-clay-dark">
+            <p className="mt-1 text-sm font-semibold text-clay-dark">
               <span className="sr-only">{UI.meaningLabel}: </span>
               {visible.meaning}
             </p>
             {visible.example ? (
               <blockquote
                 lang="en"
-                className="mt-2 line-clamp-2 border-l-2 border-clay pl-2 text-xs leading-snug text-ink"
+                className="mt-1 line-clamp-2 border-l-2 border-clay pl-1.5 text-[10px] leading-snug text-ink"
               >
                 <span className="sr-only">{UI.exampleLabel}: </span>
                 {visible.example}
@@ -107,24 +107,28 @@ export function FlashcardFace({
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-2">
-          <IconButton label={UI.prevCard} onClick={onPrev}>
+        <div className="flex items-center justify-center gap-1">
+          <IconButton label={UI.prevCard} onClick={onPrev} className="h-7 w-7">
             <IconPrev />
           </IconButton>
-          <IconButton label={paused ? UI.resume : UI.pause} onClick={onPauseToggle}>
+          <IconButton
+            label={paused ? UI.resume : UI.pause}
+            onClick={onPauseToggle}
+            className="h-7 w-7"
+          >
             {paused ? <IconPlay /> : <IconPause />}
           </IconButton>
-          <IconButton label={UI.nextCard} onClick={onNext}>
+          <IconButton label={UI.nextCard} onClick={onNext} className="h-7 w-7">
             <IconSkip />
           </IconButton>
         </div>
 
         {showActions && onKnown && onUnknown ? (
-          <div className="grid grid-cols-2 gap-2">
-            <PrimaryButton variant="ghost" className="min-h-8 px-3 py-1.5 text-sm" onClick={onUnknown}>
+          <div className="grid grid-cols-2 gap-1.5">
+            <PrimaryButton variant="ghost" className="min-h-7 px-2 py-1 text-xs" onClick={onUnknown}>
               {UI.unknown}
             </PrimaryButton>
-            <PrimaryButton className="min-h-8 px-3 py-1.5 text-sm" onClick={onKnown}>
+            <PrimaryButton className="min-h-7 px-2 py-1 text-xs" onClick={onKnown}>
               {UI.known}
             </PrimaryButton>
           </div>
