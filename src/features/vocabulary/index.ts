@@ -37,6 +37,7 @@ import { countsTowardMastery, sessionIsCorrect, xpForOutcome } from "./outcome";
 
 export { shuffle, nextDeckIndex, previousDeckIndex } from "./deck";
 export { CARD_INTERVAL_MS, cardProgress, cardRemainingMs, shouldAdvanceCard } from "./timer";
+export { shouldSpeakOnCard, shouldTickAdvance } from "./companion-study";
 export { speakWord, cancelSpeech, ttsConfig } from "./speech";
 export { xpForOutcome } from "./outcome";
 
