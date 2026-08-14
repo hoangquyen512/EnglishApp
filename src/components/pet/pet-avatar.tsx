@@ -6,22 +6,25 @@ import type { PetState } from "../../types";
 interface PetAvatarProps {
   pet: PetState;
   size?: "md" | "lg";
+  /** `float` = ChatGPT-style mascot (no cream disc / ring). */
+  variant?: "desk" | "float";
 }
 
-export function PetAvatar({ pet, size = "lg" }: PetAvatarProps) {
+export function PetAvatar({ pet, size = "lg", variant = "desk" }: PetAvatarProps) {
   const src = pet.spriteKey ? SPRITE_ART_SRC[pet.spriteKey] : undefined;
   const emoji = pet.spriteKey ? SPRITE_EMOJI[pet.spriteKey] : "🥚";
   const box = size === "lg" ? "h-32 w-32" : "h-14 w-14";
   const emojiSize = size === "lg" ? "text-6xl" : "text-3xl";
   const moodSize = size === "lg" ? "text-lg" : "text-sm";
+  const shell =
+    variant === "float"
+      ? `relative mx-auto flex ${box} items-center justify-center overflow-visible bg-transparent p-0 pet-bob pet-float-shadow`
+      : `relative mx-auto flex ${box} items-center justify-center overflow-hidden rounded-full bg-cream p-2 ring-1 ring-line pet-bob`;
 
   return (
-    <div
-      className={`relative mx-auto flex ${box} items-center justify-center overflow-hidden rounded-full bg-cream p-2 ring-1 ring-line pet-bob`}
-      title={`${pet.petName} · ${MOOD_LABELS[pet.mood]}`}
-    >
+    <div className={shell} title={`${pet.petName} · ${MOOD_LABELS[pet.mood]}`}>
       {src ? (
-        <img src={src} alt="" className="max-h-full max-w-full object-contain" />
+        <img src={src} alt="" className="max-h-full max-w-full object-contain" draggable={false} />
       ) : (
         <span className={emojiSize} aria-hidden>
           {emoji ?? "🐾"}

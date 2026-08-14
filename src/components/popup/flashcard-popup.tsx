@@ -78,8 +78,8 @@ export function FlashcardPopup() {
 
   return (
     <div
-      className={`flex h-screen w-screen flex-col overflow-hidden text-ink ${
-        expanded ? "bg-transparent p-2" : "items-center justify-center bg-transparent"
+      className={`flex h-screen w-screen overflow-hidden bg-transparent text-ink ${
+        expanded ? "items-stretch justify-end p-2" : "items-center justify-center"
       }`}
     >
       {canStudy ? (
@@ -91,13 +91,13 @@ export function FlashcardPopup() {
       ) : !session && authReady ? (
         <button
           type="button"
-          className="rounded-xl bg-cream px-4 py-3 text-sm font-semibold text-ink ring-1 ring-line"
+          className="rounded-full bg-cream/95 px-4 py-3 text-sm font-semibold text-ink shadow-card ring-1 ring-line"
           onClick={() => void openMainForSetup()}
         >
           {UI.popupNeedLogin}
         </button>
       ) : (
-        <p className="rounded-xl bg-cream/90 px-3 py-2 text-sm text-ink">{UI.loading}</p>
+        <p className="rounded-full bg-cream/90 px-3 py-2 text-sm text-ink shadow-card">{UI.loading}</p>
       )}
     </div>
   );
@@ -188,48 +188,37 @@ function CompanionStudyShell({
   }
 
   return (
-    <div className="flex h-full min-h-0 flex-col overflow-hidden rounded-[20px] bg-cream shadow-card ring-1 ring-line">
-      <header
-        data-tauri-drag-region
-        className="flex shrink-0 items-center justify-between border-b border-line bg-paper px-3 py-2"
-      >
-        <h1 data-tauri-drag-region className="text-sm font-semibold">
-          {UI.popupTitle}
-        </h1>
-        <IconButton label="Đóng cửa sổ học" onClick={() => void dismissStudyPopup()}>
-          <IconClose />
-        </IconButton>
-      </header>
-      <div className="min-h-0 flex-1 overflow-auto p-3">
-        <div className="grid h-full grid-cols-[1fr_auto] gap-3">
-          <div className="min-w-0">
-            {player.error ? <p className="text-sm text-rose">{player.error}</p> : null}
-            {player.loading && !player.card ? <p>{UI.loading}</p> : null}
-            {!player.loading && !player.card ? <p>{UI.noCard}</p> : null}
-            {player.card ? (
-              <FlashcardFace
-                card={player.card}
-                paused={player.paused}
-                onPauseToggle={player.togglePause}
-                onPrev={player.prev}
-                onNext={() => player.next()}
-                onSpeak={() => speakWord(player.card!.word)}
-                onKnown={() => void mark("known")}
-                onUnknown={() => void mark("unknown")}
-              />
-            ) : null}
-          </div>
-          <aside className="flex w-[120px] shrink-0 flex-col items-center gap-2 pt-1">
-            <CompanionPetButton pet={pet} onToggle={onToggle} label="Thu pet" />
-            <p className="text-center text-xs font-semibold text-muted">
-              {UI.level} {pet.level}
-            </p>
-            <p className="text-center text-xs tabular text-muted">
-              {UI.xp} {pet.xp}
-            </p>
-          </aside>
+    <div className="flex h-full min-h-0 w-full items-end gap-2 bg-transparent">
+      <section className="relative min-h-0 min-w-0 flex-1 overflow-auto rounded-[20px] bg-cream p-3 shadow-card ring-1 ring-line">
+        <div className="absolute right-2 top-2 z-10">
+          <IconButton label="Đóng cửa sổ học" onClick={() => void dismissStudyPopup()}>
+            <IconClose />
+          </IconButton>
         </div>
-      </div>
+        <div className="pr-8">
+          {player.error ? <p className="text-sm text-rose">{player.error}</p> : null}
+          {player.loading && !player.card ? <p>{UI.loading}</p> : null}
+          {!player.loading && !player.card ? <p>{UI.noCard}</p> : null}
+          {player.card ? (
+            <FlashcardFace
+              card={player.card}
+              paused={player.paused}
+              onPauseToggle={player.togglePause}
+              onPrev={player.prev}
+              onNext={() => player.next()}
+              onSpeak={() => speakWord(player.card!.word)}
+              onKnown={() => void mark("known")}
+              onUnknown={() => void mark("unknown")}
+            />
+          ) : null}
+        </div>
+      </section>
+      <aside className="flex w-[120px] shrink-0 flex-col items-center gap-1 pb-1">
+        <CompanionPetButton pet={pet} onToggle={onToggle} label="Thu pet" />
+        <p className="text-center text-[11px] font-semibold text-ink drop-shadow-sm">
+          {UI.level} {pet.level} · {UI.xp} {pet.xp}
+        </p>
+      </aside>
     </div>
   );
 }
