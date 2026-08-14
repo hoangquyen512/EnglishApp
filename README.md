@@ -34,11 +34,12 @@ In release builds the main window starts hidden. Use the tray icon:
 
 ## Study flow
 
-1. Name the pet (default **Sora**) and choose a species (Cat / Fox / Dragon).
-2. Watch TOEIC cards on the desk. The pet rotates a card every 30 seconds.
-3. **Học ngay** opens a focused widget: auto-play pronunciation, pause / next, **Đã nhớ** / **Chưa nhớ**.
-4. Viewing a card grants a little XP; marking **Đã nhớ** grants more and advances spaced repetition.
-5. Daily missions still generate automatically.
+1. Create a local username/password account (or log in). Pet data is scoped to that account.
+2. Name the pet (default **Sora**) and choose a species (Cat / Fox / Dragon).
+3. Watch TOEIC cards on the desk. The pet rotates a card every 30 seconds.
+4. **Học ngay** opens a focused widget: auto-play pronunciation, pause / next, **Đã nhớ** / **Chưa nhớ**.
+5. Viewing a card grants a little XP; marking **Đã nhớ** grants more and advances spaced repetition.
+6. Daily missions still generate automatically.
 
 ## Content
 

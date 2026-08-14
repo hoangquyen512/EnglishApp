@@ -1,6 +1,8 @@
 import { MISSION_TITLES, TOPIC_LABELS, UI } from "../../constants/ui";
+import type { SessionDto } from "../../features/auth";
 import { speakWord } from "../../features/vocabulary";
 import type { ContentType, DailyMission, PetState, PhraseTopic } from "../../types";
+import { HomeAccountChip } from "../account/home-account-chip";
 import { FlashcardFace } from "../flashcard/flashcard-face";
 import { useFlashcardPlayer } from "../flashcard/use-flashcard-player";
 import { PetStatus } from "../pet/pet-status";
@@ -17,6 +19,8 @@ interface HomeScreenProps {
   onTopic: (topic: PhraseTopic | null) => void;
   onInterval: (minutes: number) => void;
   onStudyNow: () => void;
+  session: SessionDto;
+  onOpenAccount: () => void;
 }
 
 function missionLabel(mission: DailyMission): string {
@@ -39,6 +43,8 @@ export function HomeScreen({
   onTopic,
   onInterval,
   onStudyNow,
+  session,
+  onOpenAccount,
 }: HomeScreenProps) {
   const player = useFlashcardPlayer({
     contentType,
@@ -52,6 +58,9 @@ export function HomeScreen({
         <PetStatus pet={pet} />
       </Panel>
       <div className="flex flex-col gap-4">
+        <div className="flex justify-end">
+          <HomeAccountChip session={session} onOpen={onOpenAccount} />
+        </div>
         <Panel>
           <h1 className="text-2xl font-bold">{UI.homeTitle}</h1>
           <p className="mt-1 text-sm text-muted">{UI.cardIntervalHint}</p>

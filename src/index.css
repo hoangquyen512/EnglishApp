@@ -86,6 +86,11 @@ body {
   color: var(--color-fg);
 }
 
+button,
+input {
+  font: inherit;
+}
+
 .font-specimen {
   font-family: Fraunces, Georgia, "Times New Roman", serif;
   letter-spacing: -0.02em;

@@ -1,0 +1,1 @@
+ALTER TABLE study_sessions ADD COLUMN user_id INTEGER REFERENCES accounts(id) ON DELETE CASCADE;

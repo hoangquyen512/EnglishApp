@@ -46,18 +46,21 @@ Debug builds (`pnpm tauri dev`) show the main window immediately so onboarding i
 ```
 src/                         React + TS
   components/popup|pet|shared
+  features/auth              local username/password (Tauri commands + in-memory browser demo)
   features/vocabulary        deck, 30s timer, TTS, recordFlashcardEvent
   features/pet-state         XP, mood, evolution, daily missions, user_progress
   features/scheduler         interval timer + notification + popup
-  stores/                    Zustand
-  db/                        SQL wrappers (the only place with SQL strings)
+  stores/                    Zustand (app, auth, settings, study)
+  db/                        SQL wrappers (the only place with SQL strings); scoped by current user_id
   constants/                 UI copy and mission/pet numbers
   types/
 src-tauri/
   src/lib.rs                 plugins, migrations, close-to-hide
   src/tray.rs
+  src/auth/                  argon2 accounts, session, password reset mailer
   src/commands/window.rs     show_main_window / show_popup_window / hide_popup_window
-  migrations/                001 schema, 002 pet columns, 003 seed
+  src/commands/auth.rs       register/login/logout/profile
+  migrations/                001–025 TOEIC schema/seed, 026–038 accounts + per-user columns
 ```
 
 Features export a public `index.ts` only. They may call `db/` and another feature's public API (vocabulary → pet-state after an answer). Components do not embed SQL.
@@ -85,7 +88,7 @@ Study mode is persisted with Zustand so the popup WebView can read the same `con
 
 ## SQLite and user files
 
-SQLite via sqlx only runs one statement per migration version, so schema and seed are split into `src-tauri/migrations/001_*.sql` … `025_*.sql`.
+SQLite via sqlx only runs one statement per migration version, so schema and seed are split into `src-tauri/migrations/001_*.sql` … `038_*.sql`. Account tables start at `026_accounts.sql` so they do not collide with TOEIC lexicon migrations `017`–`025`.
 
 The database file is `{appLocalDataDir}/vocab_pet.db`. Settings are `{appDataDir}/settings.json`. Both directories are created at startup through Tauri's path API (`app.path().app_local_data_dir()` / `app_data_dir()` on the Rust side, `@tauri-apps/api/path` on the frontend). `tauri-plugin-sql` is registered with that absolute `sqlite:` URL so migrations apply to the same file the UI opens.
 
@@ -140,9 +143,13 @@ Automated guard: `pnpm test` includes `src/config/deployment.test.ts`.
 | `user_data_paths` | none | user-scoped dirs + sqlite URL + settings path |
 | `read_app_settings` | none | `{appDataDir}/settings.json` or `{}` |
 | `write_app_settings` | `contents: string` | `Result<(), String>` |
+| `current_session` / `has_accounts` | none | session DTO / bool |
+| `register_account` / `login_account` / `logout_account` | username+password | session DTO |
+| `change_password` / `request_password_reset` / `confirm_password_reset` | passwords / email | `Result` |
+| `update_account_profile` / avatar / `delete_account` | profile fields | session DTO |
 
-SQL and notifications go through official plugins, not custom commands.
+Flashcards and notifications go through official SQL/notification plugins. Account hashing and session writes use `rusqlite` in `src-tauri/src/auth` against the same `vocab_pet.db`.
 
 ## Tests
 
-Pure domain tests (`pnpm test`): spaced repetition, choice building, XP/level, mood, streak, mission matching, scheduler interval. UI and SQLite need `pnpm tauri dev` on a machine with WebView libraries installed.
+Pure domain tests (`pnpm test`): spaced repetition, choice building, XP/level, mood, streak, mission matching, scheduler interval, auth validation. UI and SQLite need `pnpm tauri dev` on a machine with WebView libraries installed.

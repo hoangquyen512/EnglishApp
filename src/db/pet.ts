@@ -1,5 +1,6 @@
 import type { PetEvolutionStage, PetMood, PetSpecies, PetState } from "../types";
 import { execute, select, selectOne } from "./client";
+import { requireUserId } from "./current-user";
 
 interface SpeciesRow {
   id: number;
@@ -99,14 +100,17 @@ export async function getStageForLevel(
 }
 
 export async function getPetState(): Promise<PetState | null> {
+  const userId = requireUserId();
   const row = await selectOne<PetRow>(
     `SELECT p.id, p.pet_name, p.level, p.xp, p.mood, p.streak_days, p.last_fed_at, p.updated_at,
             p.species_id, p.current_stage_id, s.sprite_key, sp.species_name
      FROM pet_state p
      LEFT JOIN pet_evolution_stages s ON s.id = p.current_stage_id
      LEFT JOIN pet_species sp ON sp.id = p.species_id
+     WHERE p.user_id = $1
      ORDER BY p.id ASC
      LIMIT 1`,
+    [userId],
   );
   return row ? mapPet(row) : null;
 }
@@ -117,12 +121,13 @@ export async function insertPetState(input: {
   stageId: number;
   lastFedAt: string;
 }): Promise<void> {
-  await execute("DELETE FROM pet_state");
+  const userId = requireUserId();
+  await execute("DELETE FROM pet_state WHERE user_id = $1", [userId]);
   await execute(
     `INSERT INTO pet_state
-      (pet_name, level, xp, mood, streak_days, last_fed_at, species_id, current_stage_id, updated_at)
-     VALUES ($1, 1, 0, 'happy', 0, $2, $3, $4, $2)`,
-    [input.petName, input.lastFedAt, input.speciesId, input.stageId],
+      (pet_name, level, xp, mood, streak_days, last_fed_at, species_id, current_stage_id, updated_at, user_id)
+     VALUES ($1, 1, 0, 'happy', 0, $2, $3, $4, $2, $5)`,
+    [input.petName, input.lastFedAt, input.speciesId, input.stageId, userId],
   );
 }
 
@@ -138,6 +143,7 @@ export async function updatePetState(input: {
   currentStageId: number | null;
   updatedAt: string;
 }): Promise<void> {
+  const userId = requireUserId();
   await execute(
     `UPDATE pet_state
      SET pet_name = COALESCE($1, pet_name),
@@ -149,7 +155,7 @@ export async function updatePetState(input: {
          species_id = $7,
          current_stage_id = $8,
          updated_at = $9
-     WHERE id = $10`,
+     WHERE id = $10 AND user_id = $11`,
     [
       input.petName ?? null,
       input.level,
@@ -160,6 +166,8 @@ export async function updatePetState(input: {
       input.speciesId,
       input.currentStageId,
       input.updatedAt,
+      input.id,
+      userId,
     ],
   );
 }

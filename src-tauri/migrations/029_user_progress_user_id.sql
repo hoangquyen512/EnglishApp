@@ -1,0 +1,1 @@
+ALTER TABLE user_progress ADD COLUMN user_id INTEGER REFERENCES accounts(id) ON DELETE CASCADE;

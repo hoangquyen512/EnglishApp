@@ -2,7 +2,7 @@ import type { DailyMission, PetSpecies, PetState } from "../types";
 
 export const DEMO_PET: PetState = {
   id: 1,
-  petName: "Mochi",
+  petName: "Sora",
   level: 2,
   xp: 18,
   mood: "happy",

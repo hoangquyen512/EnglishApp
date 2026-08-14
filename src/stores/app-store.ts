@@ -25,6 +25,7 @@ interface AppState {
   chooseSpecies: (species: PetSpecies, petName?: string) => Promise<void>;
   reloadMissions: () => Promise<void>;
   setPet: (pet: PetState) => void;
+  reset: () => void;
 }
 
 export const useAppStore = create<AppState>((set, get) => ({
@@ -91,5 +92,14 @@ export const useAppStore = create<AppState>((set, get) => ({
   setPet: (pet) => {
     set({ pet });
     void get().reloadMissions();
+  },
+  reset: () => {
+    set({
+      ready: false,
+      error: null,
+      pet: null,
+      missions: [],
+      progress: null,
+    });
   },
 }));

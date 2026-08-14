@@ -1,0 +1,1 @@
+ALTER TABLE daily_missions ADD COLUMN user_id INTEGER REFERENCES accounts(id) ON DELETE CASCADE;

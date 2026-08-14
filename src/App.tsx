@@ -1,18 +1,29 @@
 import { useEffect, useState } from "react";
-import { UI } from "./constants/ui";
+import { AccountScreen } from "./components/account/account-screen";
+import { EditAccountScreen } from "./components/account/edit-account-screen";
+import { AuthGate } from "./components/auth/auth-gate";
+import { preloadVocabArts } from "./components/flashcard/vocab-illustration";
 import { FlashcardPopup } from "./components/popup/flashcard-popup";
 import { HomeScreen } from "./components/shared/home-screen";
 import { OnboardingScreen } from "./components/shared/onboarding-screen";
-import { preloadVocabArts } from "./components/flashcard/vocab-illustration";
+import { UI } from "./constants/ui";
 import { TOEIC_ART_KEYS } from "./data/toeic-cards";
 import { openStudyPopup, startScheduler } from "./features/scheduler";
 import { getWindowLabel, showMainWindow } from "./lib/tauri";
 import { useAppStore } from "./stores/app-store";
+import { useAuthStore } from "./stores/auth-store";
 import { useSettingsStore } from "./stores/settings-store";
 import { useStudyStore } from "./stores/study-store";
 
+type MainView = "home" | "account" | "edit";
+
 export default function App() {
   const [windowKind, setWindowKind] = useState<"main" | "popup" | null>(null);
+  const [view, setView] = useState<MainView>("home");
+  const [accountToast, setAccountToast] = useState<string | null>(null);
+  const authReady = useAuthStore((state) => state.ready);
+  const session = useAuthStore((state) => state.session);
+  const hydrateAuth = useAuthStore((state) => state.hydrate);
   const ready = useAppStore((state) => state.ready);
   const error = useAppStore((state) => state.error);
   const pet = useAppStore((state) => state.pet);
@@ -39,22 +50,36 @@ export default function App() {
     if (windowKind !== "main") {
       return;
     }
-    void hydrate();
-  }, [hydrate, windowKind]);
+    void hydrateAuth();
+  }, [hydrateAuth, windowKind]);
 
   useEffect(() => {
-    if (windowKind === "main" && ready && !pet) {
+    if (windowKind !== "main" || !session) {
+      return;
+    }
+    void hydrate();
+  }, [hydrate, session, windowKind]);
+
+  useEffect(() => {
+    if (windowKind === "main" && ready && session && !pet) {
       void showMainWindow();
     }
-  }, [pet, ready, windowKind]);
+  }, [pet, ready, session, windowKind]);
 
   useEffect(() => {
-    if (windowKind !== "main" || !pet) {
+    if (windowKind !== "main" || !pet || !session) {
       return;
     }
     const handle = startScheduler({ intervalMinutes });
     return () => handle.stop();
-  }, [intervalMinutes, pet, windowKind]);
+  }, [intervalMinutes, pet, session, windowKind]);
+
+  useEffect(() => {
+    if (!session) {
+      setView("home");
+      setAccountToast(null);
+    }
+  }, [session]);
 
   if (windowKind === null) {
     return <p className="p-6">{UI.loading}</p>;
@@ -62,6 +87,14 @@ export default function App() {
 
   if (windowKind === "popup") {
     return <FlashcardPopup />;
+  }
+
+  if (!authReady) {
+    return <p className="p-6">{UI.loading}</p>;
+  }
+
+  if (!session) {
+    return <AuthGate />;
   }
 
   if (!ready) {
@@ -74,6 +107,36 @@ export default function App() {
         <h1 className="text-xl font-bold">{UI.dbUnavailable}</h1>
         <p className="mt-2 text-sm">{error}</p>
       </main>
+    );
+  }
+
+  if (view === "edit") {
+    return (
+      <EditAccountScreen
+        session={session}
+        onCancel={() => setView("account")}
+        onSaved={() => {
+          setAccountToast(UI.savedProfile);
+          setView("account");
+        }}
+      />
+    );
+  }
+
+  if (view === "account") {
+    return (
+      <AccountScreen
+        session={session}
+        toast={accountToast}
+        onBack={() => {
+          setAccountToast(null);
+          setView("home");
+        }}
+        onEdit={() => {
+          setAccountToast(null);
+          setView("edit");
+        }}
+      />
     );
   }
 
@@ -97,6 +160,8 @@ export default function App() {
       onTopic={setTopic}
       onInterval={setIntervalMinutes}
       onStudyNow={() => void openStudyPopup()}
+      session={session}
+      onOpenAccount={() => setView("account")}
     />
   );
 }

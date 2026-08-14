@@ -1,5 +1,6 @@
 import type { TopicProgress, UserProgress } from "../types";
 import { execute, selectOne } from "./client";
+import { requireUserId } from "./current-user";
 
 interface ProgressRow {
   id: number;
@@ -39,10 +40,12 @@ function mapProgress(row: ProgressRow): UserProgress {
 }
 
 export async function getUserProgress(): Promise<UserProgress | null> {
+  const userId = requireUserId();
   const row = await selectOne<ProgressRow>(
     `SELECT id, total_words_learned, total_phrases_learned, current_streak, longest_streak,
             progress_by_topic, updated_at
-     FROM user_progress ORDER BY id ASC LIMIT 1`,
+     FROM user_progress WHERE user_id = $1 ORDER BY id ASC LIMIT 1`,
+    [userId],
   );
   return row ? mapProgress(row) : null;
 }
@@ -56,6 +59,7 @@ export async function updateUserProgress(input: {
   progressByTopic: Record<string, TopicProgress>;
   updatedAt: string;
 }): Promise<void> {
+  const userId = requireUserId();
   await execute(
     `UPDATE user_progress
      SET total_words_learned = $1,
@@ -64,7 +68,7 @@ export async function updateUserProgress(input: {
          longest_streak = $4,
          progress_by_topic = $5,
          updated_at = $6
-     WHERE id = $7`,
+     WHERE id = $7 AND user_id = $8`,
     [
       input.totalWordsLearned,
       input.totalPhrasesLearned,
@@ -73,6 +77,7 @@ export async function updateUserProgress(input: {
       JSON.stringify(input.progressByTopic),
       input.updatedAt,
       input.id,
+      userId,
     ],
   );
 }

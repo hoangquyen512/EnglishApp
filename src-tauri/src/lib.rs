@@ -1,9 +1,15 @@
+mod auth;
 mod commands;
 mod tray;
 
 use tauri::Manager;
 use tauri_plugin_sql::{Migration, MigrationKind};
 
+use commands::auth::{
+    change_password, clear_account_avatar, confirm_password_reset, current_session, delete_account,
+    has_accounts, init_auth_state, login_account, logout_account, register_account,
+    request_password_reset, set_account_avatar, set_account_avatar_bytes, update_account_profile,
+};
 use commands::paths::{
     ensure_user_data_dirs, read_app_settings, sqlite_db_url, user_data_paths, write_app_settings,
     SqliteUrl,
@@ -162,6 +168,84 @@ fn sqlite_migrations() -> Vec<Migration> {
             sql: include_str!("../migrations/025_seed_toeic_lexicon_1000.sql"),
             kind: MigrationKind::Up,
         },
+        Migration {
+            version: 26,
+            description: "create_accounts",
+            sql: include_str!("../migrations/026_accounts.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 27,
+            description: "create_app_session",
+            sql: include_str!("../migrations/027_app_session.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 28,
+            description: "pet_state_user_id",
+            sql: include_str!("../migrations/028_pet_state_user_id.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 29,
+            description: "user_progress_user_id",
+            sql: include_str!("../migrations/029_user_progress_user_id.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 30,
+            description: "learning_progress_user_id",
+            sql: include_str!("../migrations/030_learning_progress_user_id.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 31,
+            description: "study_sessions_user_id",
+            sql: include_str!("../migrations/031_study_sessions_user_id.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 32,
+            description: "daily_missions_user_id",
+            sql: include_str!("../migrations/032_daily_missions_user_id.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 33,
+            description: "idx_pet_state_user",
+            sql: include_str!("../migrations/033_pet_state_user_idx.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 34,
+            description: "idx_user_progress_user",
+            sql: include_str!("../migrations/034_user_progress_user_idx.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 35,
+            description: "idx_learning_progress_user",
+            sql: include_str!("../migrations/035_learning_progress_user_idx.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 36,
+            description: "idx_study_sessions_user",
+            sql: include_str!("../migrations/036_study_sessions_user_idx.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 37,
+            description: "idx_daily_missions_user",
+            sql: include_str!("../migrations/037_daily_missions_user_idx.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 38,
+            description: "idx_accounts_email",
+            sql: include_str!("../migrations/038_accounts_email_idx.sql"),
+            kind: MigrationKind::Up,
+        },
     ]
 }
 
@@ -178,6 +262,8 @@ pub fn run() {
                     .build(),
             )?;
             tray::setup_tray(app)?;
+            let auth_state = init_auth_state(&app.handle())?;
+            app.manage(auth_state);
             #[cfg(debug_assertions)]
             {
                 let _ = show_main_window(app.handle().clone());
@@ -191,7 +277,20 @@ pub fn run() {
             user_data_paths,
             sqlite_db_url,
             read_app_settings,
-            write_app_settings
+            write_app_settings,
+            current_session,
+            has_accounts,
+            register_account,
+            login_account,
+            logout_account,
+            change_password,
+            request_password_reset,
+            confirm_password_reset,
+            update_account_profile,
+            set_account_avatar,
+            set_account_avatar_bytes,
+            clear_account_avatar,
+            delete_account
         ])
         .on_window_event(|window, event| {
             if let tauri::WindowEvent::CloseRequested { api, .. } = event {

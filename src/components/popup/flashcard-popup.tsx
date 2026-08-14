@@ -3,13 +3,51 @@ import { UI } from "../../constants/ui";
 import { recordFlashcardEvent, speakWord } from "../../features/vocabulary";
 import { dismissStudyPopup } from "../../features/scheduler";
 import { useAppStore } from "../../stores/app-store";
+import { useAuthStore } from "../../stores/auth-store";
 import { useStudyStore } from "../../stores/study-store";
 import type { FlashcardOutcome } from "../../types";
 import { FlashcardFace } from "../flashcard/flashcard-face";
 import { useFlashcardPlayer } from "../flashcard/use-flashcard-player";
 import { IconButton, IconClose } from "../shared/icon-button";
+import { PrimaryButton } from "../shared/primary-button";
 
 export function FlashcardPopup() {
+  const session = useAuthStore((state) => state.session);
+  const authReady = useAuthStore((state) => state.ready);
+  const hydrateAuth = useAuthStore((state) => state.hydrate);
+
+  useEffect(() => {
+    void hydrateAuth();
+  }, [hydrateAuth]);
+
+  return (
+    <div className="flex h-screen flex-col bg-cream text-ink">
+      <header
+        data-tauri-drag-region
+        className="flex items-center justify-between border-b border-line bg-paper px-3 py-2"
+      >
+        <h1 data-tauri-drag-region className="text-base font-semibold">
+          {UI.popupTitle}
+        </h1>
+        <IconButton label="Đóng cửa sổ học" onClick={() => void dismissStudyPopup()}>
+          <IconClose />
+        </IconButton>
+      </header>
+      <div className="flex-1 overflow-auto p-4">
+        {!authReady ? <p>{UI.loading}</p> : null}
+        {authReady && !session ? (
+          <div className="flex h-full flex-col items-center justify-center gap-4 text-center">
+            <p className="text-lg font-semibold">{UI.popupNeedLogin}</p>
+            <PrimaryButton onClick={() => void dismissStudyPopup()}>{UI.close}</PrimaryButton>
+          </div>
+        ) : null}
+        {session ? <AuthenticatedFlashcardStudy /> : null}
+      </div>
+    </div>
+  );
+}
+
+function AuthenticatedFlashcardStudy() {
   const pet = useAppStore((state) => state.pet);
   const hydrate = useAppStore((state) => state.hydrate);
   const setPet = useAppStore((state) => state.setPet);
@@ -82,36 +120,23 @@ export function FlashcardPopup() {
   }, [player]);
 
   return (
-    <div className="flex h-screen flex-col bg-cream text-ink">
-      <header
-        data-tauri-drag-region
-        className="flex items-center justify-between border-b border-line bg-paper px-3 py-2"
-      >
-        <h1 data-tauri-drag-region className="text-base font-semibold">
-          {UI.popupTitle}
-        </h1>
-        <IconButton label="Đóng cửa sổ học" onClick={() => void dismissStudyPopup()}>
-          <IconClose />
-        </IconButton>
-      </header>
-      <div className="flex-1 overflow-auto p-4">
-        {player.error ? <p className="text-sm text-rose">{player.error}</p> : null}
-        {player.loading && !player.card ? <p>{UI.loading}</p> : null}
-        {!player.loading && !player.card ? <p>{UI.noCard}</p> : null}
-        {player.card ? (
-          <FlashcardFace
-            card={player.card}
-            paused={player.paused}
-            pet={pet}
-            onPauseToggle={player.togglePause}
-            onPrev={player.prev}
-            onNext={() => player.next()}
-            onSpeak={() => speakWord(player.card!.word)}
-            onKnown={() => void mark("known")}
-            onUnknown={() => void mark("unknown")}
-          />
-        ) : null}
-      </div>
-    </div>
+    <>
+      {player.error ? <p className="text-sm text-rose">{player.error}</p> : null}
+      {player.loading && !player.card ? <p>{UI.loading}</p> : null}
+      {!player.loading && !player.card ? <p>{UI.noCard}</p> : null}
+      {player.card ? (
+        <FlashcardFace
+          card={player.card}
+          paused={player.paused}
+          pet={pet}
+          onPauseToggle={player.togglePause}
+          onPrev={player.prev}
+          onNext={() => player.next()}
+          onSpeak={() => speakWord(player.card!.word)}
+          onKnown={() => void mark("known")}
+          onUnknown={() => void mark("unknown")}
+        />
+      ) : null}
+    </>
   );
 }

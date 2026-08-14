@@ -1,5 +1,6 @@
 import type { CefrLevel, Phrase, PhraseTopic } from "../types";
 import { select, selectOne } from "./client";
+import { requireUserId } from "./current-user";
 
 interface PhraseRow {
   id: number;
@@ -47,8 +48,9 @@ export async function getPhraseById(id: number): Promise<Phrase | null> {
 export async function listUnseenOrWrongPhrases(
   topic?: PhraseTopic | null,
 ): Promise<Phrase[]> {
-  const topicClause = topic ? "AND p.topic = $1" : "";
-  const params = topic ? [topic] : [];
+  const userId = requireUserId();
+  const topicClause = topic ? "AND p.topic = $2" : "";
+  const params = topic ? [userId, topic] : [userId];
   const rows = await select<PhraseRow>(
     `SELECT p.id, p.phrase_en, p.meaning_vi, p.topic, p.level, p.created_at
      FROM phrases p
@@ -58,7 +60,7 @@ export async function listUnseenOrWrongPhrases(
               SUM(CASE WHEN is_correct = 0 THEN 1 ELSE 0 END) AS wrong_n,
               MAX(answered_at) AS last_at
        FROM study_sessions
-       WHERE content_type = 'phrase'
+       WHERE content_type = 'phrase' AND user_id = $1
        GROUP BY content_id
      ) s ON s.content_id = p.id
      WHERE 1 = 1 ${topicClause}
