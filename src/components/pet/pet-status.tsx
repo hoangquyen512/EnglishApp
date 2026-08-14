@@ -6,7 +6,7 @@ import { PetAvatar } from "./pet-avatar";
 
 interface PetStatusProps {
   pet: PetState;
-  onFloatPet?: () => void;
+  onFloatPet: () => void;
 }
 
 export function PetStatus({ pet, onFloatPet }: PetStatusProps) {
@@ -43,11 +43,9 @@ export function PetStatus({ pet, onFloatPet }: PetStatusProps) {
           <div className="h-full bg-clay" style={{ width: `${percent}%` }} />
         </div>
       </div>
-      {onFloatPet ? (
-        <PrimaryButton className="w-full" onClick={onFloatPet}>
-          {UI.floatPet}
-        </PrimaryButton>
-      ) : null}
+      <PrimaryButton className="w-full" onClick={onFloatPet}>
+        {UI.floatPet}
+      </PrimaryButton>
     </div>
   );
 }
