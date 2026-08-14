@@ -86,6 +86,13 @@ body {
   color: var(--color-fg);
 }
 
+html.companion-window,
+body.companion-window,
+body.companion-window #root {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
 button,
 input {
   font: inherit;

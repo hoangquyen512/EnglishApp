@@ -280,6 +280,10 @@ pub fn run() {
             {
                 let _ = show_main_window(app.handle().clone());
             }
+            #[cfg(not(debug_assertions))]
+            {
+                let _ = show_popup_window(app.handle().clone());
+            }
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
