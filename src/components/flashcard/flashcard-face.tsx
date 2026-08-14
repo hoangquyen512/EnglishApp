@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { UI } from "../../constants/ui";
 import { partOfSpeechLabel } from "../../features/vocabulary";
 import type { PetState, StudyFlashcard } from "../../types";
@@ -27,6 +27,59 @@ interface FlashcardFaceProps {
   onSpeak: () => void;
   onKnown?: () => void;
   onUnknown?: () => void;
+}
+
+/** Shrinks font until children fit the fixed compact card frame. */
+function CompactFitText({
+  contentKey,
+  children,
+  className = "",
+}: {
+  contentKey: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) {
+      return;
+    }
+
+    const MIN = 7;
+    const MAX = 13;
+
+    const fit = () => {
+      let lo = MIN;
+      let hi = MAX;
+      el.style.fontSize = `${MAX}px`;
+      if (el.scrollHeight <= el.clientHeight + 1) {
+        return;
+      }
+      for (let i = 0; i < 12; i += 1) {
+        const mid = (lo + hi) / 2;
+        el.style.fontSize = `${mid}px`;
+        if (el.scrollHeight <= el.clientHeight + 1) {
+          lo = mid;
+        } else {
+          hi = mid;
+        }
+      }
+      el.style.fontSize = `${lo}px`;
+    };
+
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [contentKey]);
+
+  return (
+    <div ref={ref} className={`overflow-hidden ${className}`}>
+      {children}
+    </div>
+  );
 }
 
 export function FlashcardFace({
@@ -65,43 +118,47 @@ export function FlashcardFace({
 
   if (compact) {
     const posLabel = partOfSpeechLabel(visible.partOfSpeech);
+    const fitKey = `${visible.contentType}-${visible.contentId}-${visible.word}-${visible.meaning}`;
     return (
-      <article className="flex h-full w-full flex-col gap-2">
-        <div className="grid min-h-0 flex-1 grid-cols-[104px_1fr] items-stretch gap-2.5">
+      <article className="flex h-full w-full min-h-0 flex-col gap-2 overflow-hidden">
+        <div className="grid min-h-0 flex-1 grid-cols-[104px_1fr] items-stretch gap-2.5 overflow-hidden">
           <VocabIllustration
             imageKey={visible.imageKey}
-            className="h-full rounded-md bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-full [&_img]:max-h-full [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
+            className="h-full min-h-0 overflow-hidden rounded-md bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-full [&_img]:max-h-full [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
           />
-          <div className="flex min-w-0 flex-col justify-center gap-1 py-0.5">
-            {posLabel ? (
-              <p className="text-[8px] font-semibold tracking-[0.02em] text-muted">{posLabel}</p>
-            ) : null}
-            <div className="flex items-start justify-between gap-1">
-              <h2 lang="en" className="font-specimen text-sm font-semibold leading-tight text-ink">
+          <div className="flex h-full min-h-0 min-w-0 gap-1 overflow-hidden">
+            <CompactFitText
+              contentKey={fitKey}
+              className="h-full min-h-0 min-w-0 flex-1 leading-snug [&>*+*]:mt-[0.35em]"
+            >
+              {posLabel ? (
+                <p className="text-[0.65em] font-semibold tracking-[0.02em] text-muted">{posLabel}</p>
+              ) : null}
+              <h2 lang="en" className="font-specimen text-[1.05em] font-semibold leading-[1.15] text-ink">
                 {visible.word}
               </h2>
-              <IconButton label={UI.listen} onClick={onSpeak} className="h-6 w-6 shrink-0 bg-cream">
-                <IconSpeaker />
-              </IconButton>
-            </div>
-            {visible.phonetic ? (
-              <p lang="en" className="text-[9px] leading-none text-muted">
-                {visible.phonetic}
+              {visible.phonetic ? (
+                <p lang="en" className="text-[0.7em] leading-snug text-muted">
+                  {visible.phonetic}
+                </p>
+              ) : null}
+              <p className="text-[0.9em] font-semibold leading-snug text-clay-dark">
+                <span className="sr-only">{UI.meaningLabel}: </span>
+                {visible.meaning}
               </p>
-            ) : null}
-            <p className="text-xs font-semibold leading-snug text-clay-dark">
-              <span className="sr-only">{UI.meaningLabel}: </span>
-              {visible.meaning}
-            </p>
-            {visible.example ? (
-              <blockquote
-                lang="en"
-                className="line-clamp-2 border-l-2 border-clay pl-1.5 text-[8px] leading-snug text-ink"
-              >
-                <span className="sr-only">{UI.exampleLabel}: </span>
-                {visible.example}
-              </blockquote>
-            ) : null}
+              {visible.example ? (
+                <blockquote
+                  lang="en"
+                  className="line-clamp-2 border-l-2 border-clay pl-[0.4em] text-[0.65em] leading-snug text-ink"
+                >
+                  <span className="sr-only">{UI.exampleLabel}: </span>
+                  {visible.example}
+                </blockquote>
+              ) : null}
+            </CompactFitText>
+            <IconButton label={UI.listen} onClick={onSpeak} className="h-6 w-6 shrink-0 self-start bg-cream">
+              <IconSpeaker />
+            </IconButton>
           </div>
         </div>
 
