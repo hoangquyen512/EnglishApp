@@ -1,5 +1,5 @@
-import { conversationTopics } from "../../data/conversation/topics";
 import type { StudyFlashcard } from "../../types";
+import { conversationTopics } from "../../data/conversation/topics";
 import { conversationContentId } from "./ids";
 import { illustrationSrc } from "./illustration";
 import type { ConversationTopicId } from "./types";
@@ -9,7 +9,7 @@ export { conversationContentId } from "./ids";
 export { illustrationSrc } from "./illustration";
 export { conversationTopics, getConversationTopic, isConversationTopicId } from "../../data/conversation/topics";
 
-export function conversationDeck(topicId: ConversationTopicId): StudyFlashcard[] {
+function cardsForBank(topicId: ConversationTopicId, topicCode: string | null): StudyFlashcard[] {
   const topic = conversationTopics.find((item) => item.id === topicId);
   if (!topic) {
     return [];
@@ -24,6 +24,16 @@ export function conversationDeck(topicId: ConversationTopicId): StudyFlashcard[]
     example: phrase.note || null,
     exampleVi: null,
     imageKey: illustrationSrc(phrase.id),
-    topic: null,
+    topic: topicCode,
   }));
+}
+
+export function conversationDeck(topicId: ConversationTopicId): StudyFlashcard[] {
+  return cardsForBank(topicId, null);
+}
+
+export function conversationDeckForBanks(
+  banks: Array<{ bankId: ConversationTopicId; topicCode: string | null }>,
+): StudyFlashcard[] {
+  return banks.flatMap(({ bankId, topicCode }) => cardsForBank(bankId, topicCode));
 }

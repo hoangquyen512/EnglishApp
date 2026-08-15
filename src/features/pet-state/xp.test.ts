@@ -48,7 +48,7 @@ describe("missions", () => {
         hadWrong: true,
         isCorrect: true,
         contentType: "phrase",
-        topic: "food",
+        topic: "food_dining",
       }, null),
     ).toBe(true);
     expect(
@@ -71,8 +71,21 @@ describe("missions", () => {
           isNew: false,
           hadWrong: false,
           isCorrect: true,
+          contentType: "vocabulary",
+          topic: "travel",
+        },
+        "travel",
+      ),
+    ).toBe(true);
+    expect(
+      missionCountsToward(
+        "topic_practice",
+        {
+          isNew: false,
+          hadWrong: false,
+          isCorrect: true,
           contentType: "phrase",
-          topic: "food",
+          topic: "food_dining",
         },
         "travel",
       ),

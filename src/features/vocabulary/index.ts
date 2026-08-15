@@ -1,29 +1,38 @@
 import { addDaysIso, isoNow } from "../../lib/dates";
 import { isTauri } from "../../lib/tauri";
-import { conversationDeck } from "../conversation";
+import { conversationDeckForBanks } from "../conversation";
 import type {
   ContentType,
-  ConversationTopicId,
   FlashcardOutcome,
-  PhraseTopic,
   StudyFlashcard,
   SubmitAnswerResult,
   Vocabulary,
 } from "../../types";
 import { TOEIC_CARDS } from "../../data/toeic-cards";
 import { SEED_PHRASES } from "../../data/seed-phrases";
-import { DEMO_PET } from "../../data/demo-pet";
+import { peekCurrentUserId } from "../../db/current-user";
+import { loadBrowserPet, rewardBrowserPetForUser } from "../pet-state/demo-pet";
 import {
-  getDueOrNewVocabulary,
+  getDueOrNewVocabularyByTopicIds,
   getLearningProgress,
   getSessionStats,
   insertStudySession,
   lastSessionDate,
   listPhrases,
+  listTopicIdsByCodes,
   listUnseenOrWrongPhrases,
-  listVocabulary,
+  listVocabularyByTopicIds,
   upsertLearningProgress,
 } from "../../db";
+import {
+  getActiveConversationBanks,
+  getActiveLevelPreference,
+  getActiveTopicCodes,
+} from "../learning-program";
+import { mapLegacyPhraseTopic } from "../learning-program/mapping";
+import { phraseLevelAllowed } from "../learning-program/level";
+import { assignVocabTopicCode } from "../learning-program/vocab-heuristic";
+import type { TopicCode } from "../learning-program/catalog";
 import {
   applyMissionProgress,
   applyXpAndRefresh,
@@ -37,23 +46,10 @@ import { countsTowardMastery, sessionIsCorrect, xpForOutcome } from "./outcome";
 
 export { shuffle, nextDeckIndex, previousDeckIndex } from "./deck";
 export { CARD_INTERVAL_MS, cardProgress, cardRemainingMs, shouldAdvanceCard } from "./timer";
+export { shouldSpeakOnCard, shouldTickAdvance } from "./companion-study";
+export { partOfSpeechLabel } from "./part-of-speech";
 export { speakWord, cancelSpeech, ttsConfig } from "./speech";
 export { xpForOutcome } from "./outcome";
-
-function seedCards(): StudyFlashcard[] {
-  return TOEIC_CARDS.map((card, index) => ({
-    contentId: index + 1,
-    contentType: "vocabulary" as const,
-    word: card.word,
-    phonetic: card.phonetic,
-    partOfSpeech: card.partOfSpeech,
-    meaning: card.meaning,
-    example: card.example,
-    exampleVi: card.exampleVi,
-    imageKey: card.imageKey,
-    topic: null,
-  }));
-}
 
 function vocabToCard(item: Vocabulary): StudyFlashcard {
   return {
@@ -66,23 +62,41 @@ function vocabToCard(item: Vocabulary): StudyFlashcard {
     example: item.example,
     exampleVi: item.exampleVi,
     imageKey: item.imageKey ?? item.word,
-    topic: null,
+    topic: item.topic,
   };
 }
 
-export async function getStudyDeck(
-  contentType: ContentType,
-  topic: PhraseTopic | null,
-  conversationTopic: ConversationTopicId | null = null,
-): Promise<StudyFlashcard[]> {
-  if (contentType === "conversation") {
-    return shuffle(conversationDeck(conversationTopic ?? "greetings"));
-  }
+function browserVocabCards(active: TopicCode[]): StudyFlashcard[] {
+  return TOEIC_CARDS.flatMap((card, index) => {
+    const topic = assignVocabTopicCode(card.word);
+    if (!topic || !active.includes(topic)) {
+      return [];
+    }
+    return [
+      {
+        contentId: index + 1,
+        contentType: "vocabulary" as const,
+        word: card.word,
+        phonetic: card.phonetic,
+        partOfSpeech: card.partOfSpeech,
+        meaning: card.meaning,
+        example: card.example,
+        exampleVi: card.exampleVi,
+        imageKey: card.imageKey,
+        topic,
+      },
+    ];
+  });
+}
 
-  if (!isTauri()) {
-    if (contentType === "phrase") {
-      const rows = topic ? SEED_PHRASES.filter((item) => item.topic === topic) : SEED_PHRASES;
-      return rows.map((item) => ({
+function browserPhraseCards(active: TopicCode[], level: "A1" | "A2" | "B1" | "B2"): StudyFlashcard[] {
+  return SEED_PHRASES.flatMap((item) => {
+    const topic = mapLegacyPhraseTopic(item.topic);
+    if (!topic || !active.includes(topic) || !phraseLevelAllowed(item.level, level)) {
+      return [];
+    }
+    return [
+      {
         contentId: item.id,
         contentType: "phrase" as const,
         word: item.phraseEn,
@@ -91,23 +105,43 @@ export async function getStudyDeck(
         meaning: item.meaningVi,
         example: null,
         exampleVi: null,
-        imageKey: `topic-${item.topic}`,
-        topic: item.topic,
-      }));
-    }
-    return seedCards();
+        imageKey: `topic-${topic}`,
+        topic,
+      },
+    ];
+  });
+}
+
+export async function getStudyDeck(contentType: ContentType): Promise<StudyFlashcard[]> {
+  const active = await getActiveTopicCodes();
+
+  if (contentType === "conversation") {
+    const banks = await getActiveConversationBanks();
+    return shuffle(conversationDeckForBanks(banks));
   }
 
+  if (!isTauri()) {
+    if (contentType === "phrase") {
+      const level = await getActiveLevelPreference();
+      return shuffle(browserPhraseCards(active, level));
+    }
+    return shuffle(browserVocabCards(active));
+  }
+
+  const topicIds = await listTopicIdsByCodes(active);
   if (contentType === "vocabulary") {
-    const due = await getDueOrNewVocabulary(isoNow());
-    const all = await listVocabulary();
-    const ordered = due.length > 0 ? [...due, ...all.filter((item) => !due.some((d) => d.id === item.id))] : all;
+    const due = await getDueOrNewVocabularyByTopicIds(isoNow(), topicIds);
+    const all = await listVocabularyByTopicIds(topicIds);
+    const ordered =
+      due.length > 0 ? [...due, ...all.filter((item) => !due.some((d) => d.id === item.id))] : all;
     return shuffle(ordered).map(vocabToCard);
   }
 
-  const candidates = await listUnseenOrWrongPhrases(topic);
-  const fallback = candidates.length > 0 ? candidates : await listPhrases(topic);
-  return shuffle(fallback).map((item) => ({
+  const level = await getActiveLevelPreference();
+  const candidates = await listUnseenOrWrongPhrases(topicIds);
+  const fallback = candidates.length > 0 ? candidates : await listPhrases(topicIds);
+  const filtered = fallback.filter((item) => phraseLevelAllowed(item.level, level));
+  return shuffle(filtered).map((item) => ({
     contentId: item.id,
     contentType: "phrase" as const,
     word: item.phraseEn,
@@ -121,12 +155,8 @@ export async function getStudyDeck(
   }));
 }
 
-export async function getNextCard(
-  contentType: ContentType,
-  topic: PhraseTopic | null,
-  conversationTopic: ConversationTopicId | null = null,
-): Promise<StudyFlashcard | null> {
-  const deck = await getStudyDeck(contentType, topic, conversationTopic);
+export async function getNextCard(contentType: ContentType): Promise<StudyFlashcard | null> {
+  const deck = await getStudyDeck(contentType);
   return deck[0] ?? null;
 }
 
@@ -134,19 +164,22 @@ export async function recordFlashcardEvent(input: {
   contentType: ContentType;
   contentId: number;
   outcome: FlashcardOutcome;
-  topic: PhraseTopic | null;
+  topic: string | null;
 }): Promise<SubmitAnswerResult> {
   const xpGained = xpForOutcome(input.outcome);
   const isCorrect = sessionIsCorrect(input.outcome);
 
   if (!isTauri()) {
+    const userId = peekCurrentUserId();
+    const before = userId != null ? loadBrowserPet(userId) : null;
+    const pet = userId != null ? rewardBrowserPetForUser(userId, xpGained) : null;
     return {
       isCorrect,
       outcome: input.outcome,
       xpGained,
-      leveledUp: false,
+      leveledUp: Boolean(before && pet && pet.level > before.level),
       completedMissions: [],
-      pet: DEMO_PET,
+      pet,
     };
   }
 

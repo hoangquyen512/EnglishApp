@@ -7,18 +7,19 @@ import {
   getStudyDeck,
   nextDeckIndex,
   previousDeckIndex,
-  shouldAdvanceCard,
+  shouldSpeakOnCard,
+  shouldTickAdvance,
   speakWord,
 } from "../../features/vocabulary";
-import type { ContentType, ConversationTopicId, PhraseTopic, StudyFlashcard } from "../../types";
+import type { ContentType, StudyFlashcard } from "../../types";
 
 export function useFlashcardPlayer(input: {
   contentType: ContentType;
-  topic: PhraseTopic | null;
-  conversationTopic?: ConversationTopicId | null;
   autoSpeak: boolean;
+  active?: boolean;
   onAdvance?: (card: StudyFlashcard) => void;
 }) {
+  const active = input.active !== false;
   const [deck, setDeck] = useState<StudyFlashcard[]>([]);
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -46,11 +47,7 @@ export function useFlashcardPlayer(input: {
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    void getStudyDeck(
-      input.contentType,
-      input.contentType === "phrase" ? input.topic : null,
-      input.contentType === "conversation" ? (input.conversationTopic ?? "greetings") : null,
-    )
+    void getStudyDeck(input.contentType)
       .then((next) => {
         if (!cancelled) {
           setDeck(next);
@@ -71,15 +68,21 @@ export function useFlashcardPlayer(input: {
     return () => {
       cancelled = true;
     };
-  }, [input.contentType, input.topic, input.conversationTopic]);
+  }, [input.contentType]);
 
   useEffect(() => {
     resetTimer();
-    if (card && input.autoSpeak) {
+    if (card && shouldSpeakOnCard({ autoSpeak: input.autoSpeak, active })) {
       speakWord(card.word);
     }
     return () => cancelSpeech();
-  }, [card?.contentId, card?.word, input.autoSpeak, resetTimer]);
+  }, [card?.contentId, card?.word, input.autoSpeak, active, resetTimer]);
+
+  useEffect(() => {
+    if (!active) {
+      cancelSpeech();
+    }
+  }, [active]);
 
   const goTo = useCallback(
     (nextIndex: number, announce = false) => {
@@ -94,6 +97,9 @@ export function useFlashcardPlayer(input: {
 
   useEffect(() => {
     const timer = window.setInterval(() => {
+      if (!active) {
+        return;
+      }
       const left = cardRemainingMs({
         startedAt: startedAt.current,
         now: Date.now(),
@@ -102,7 +108,14 @@ export function useFlashcardPlayer(input: {
       });
       setRemaining(left);
       setProgress(cardProgress(left));
-      if (shouldAdvanceCard(left) && !pausedAt.current && deck.length > 0) {
+      if (
+        shouldTickAdvance({
+          active,
+          paused: Boolean(pausedAt.current),
+          remainingMs: left,
+        }) &&
+        deck.length > 0
+      ) {
         startedAt.current = Date.now();
         pausedMs.current = 0;
         const current = deck[index];
@@ -113,7 +126,7 @@ export function useFlashcardPlayer(input: {
       }
     }, 100);
     return () => window.clearInterval(timer);
-  }, [deck, index]);
+  }, [active, deck, index]);
 
   const togglePause = useCallback(() => {
     setPaused((wasPaused) => {

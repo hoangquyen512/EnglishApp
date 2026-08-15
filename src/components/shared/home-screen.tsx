@@ -1,8 +1,13 @@
-import { MISSION_TITLES, TOPIC_LABELS, UI } from "../../constants/ui";
-import { conversationTopics } from "../../features/conversation";
+import { useEffect, useState } from "react";
+import { MISSION_TITLES, UI, topicLabel } from "../../constants/ui";
 import type { SessionDto } from "../../features/auth";
+import {
+  TOPIC_BY_CODE,
+  type TopicCode,
+} from "../../features/learning-program/catalog";
+import { ensureLearningProgram } from "../../features/learning-program";
 import { speakWord } from "../../features/vocabulary";
-import type { ContentType, ConversationTopicId, DailyMission, PetState, PhraseTopic } from "../../types";
+import type { ContentType, DailyMission, PetState } from "../../types";
 import { HomeAccountChip } from "../account/home-account-chip";
 import { FlashcardFace } from "../flashcard/flashcard-face";
 import { useFlashcardPlayer } from "../flashcard/use-flashcard-player";
@@ -14,22 +19,19 @@ interface HomeScreenProps {
   pet: PetState;
   missions: DailyMission[];
   contentType: ContentType;
-  topic: PhraseTopic | null;
-  conversationTopic: ConversationTopicId;
   intervalMinutes: number;
   onContentType: (contentType: ContentType) => void;
-  onTopic: (topic: PhraseTopic | null) => void;
-  onConversationTopic: (topic: ConversationTopicId) => void;
   onInterval: (minutes: number) => void;
   onStudyNow: () => void;
   session: SessionDto;
   onOpenAccount: () => void;
   onOpenChat: () => void;
+  onOpenLearningProgram: () => void;
 }
 
 function missionLabel(mission: DailyMission): string {
   if (mission.missionType === "topic_practice" && mission.topic) {
-    return `${MISSION_TITLES.topic_practice} ${TOPIC_LABELS[mission.topic]} (${mission.targetCount})`;
+    return `${MISSION_TITLES.topic_practice} ${topicLabel(mission.topic)} (${mission.targetCount})`;
   }
   if (mission.missionType === "learn_new") {
     return `${MISSION_TITLES.learn_new} (${mission.targetCount})`;
@@ -41,24 +43,32 @@ export function HomeScreen({
   pet,
   missions,
   contentType,
-  topic,
-  conversationTopic,
   intervalMinutes,
   onContentType,
-  onTopic,
-  onConversationTopic,
   onInterval,
   onStudyNow,
   session,
   onOpenAccount,
   onOpenChat,
+  onOpenLearningProgram,
 }: HomeScreenProps) {
+  const [activeTopics, setActiveTopics] = useState<TopicCode[]>([]);
   const player = useFlashcardPlayer({
     contentType,
-    topic: contentType === "phrase" ? topic : null,
-    conversationTopic: contentType === "conversation" ? conversationTopic : null,
     autoSpeak: false,
   });
+
+  useEffect(() => {
+    let cancelled = false;
+    void ensureLearningProgram().then((program) => {
+      if (!cancelled) {
+        setActiveTopics(program.topicCodes);
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <main className="mx-auto grid min-h-screen max-w-5xl gap-4 bg-cream p-6 md:grid-cols-[280px_1fr]">
@@ -115,35 +125,24 @@ export function HomeScreen({
               {UI.conversation}
             </PrimaryButton>
           </div>
-          {contentType === "conversation" ? (
-            <div className="mt-3 flex flex-wrap gap-2">
-              {conversationTopics.map((item) => (
-                <PrimaryButton
-                  key={item.id}
-                  variant={conversationTopic === item.id ? "primary" : "ghost"}
-                  onClick={() => onConversationTopic(item.id)}
+          <div className="mt-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.04em] text-muted">
+              {UI.learningProgramActive}
+            </p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {activeTopics.map((code) => (
+                <span
+                  key={code}
+                  className="rounded-full border border-line bg-paper px-3 py-1 text-sm text-ink"
                 >
-                  {item.emoji} {item.titleVi}
-                </PrimaryButton>
+                  {TOPIC_BY_CODE.get(code)?.nameVi ?? code}
+                </span>
               ))}
             </div>
-          ) : null}
-          {contentType === "phrase" ? (
-            <div className="mt-3 flex flex-wrap gap-2">
-              <PrimaryButton variant={topic === null ? "primary" : "ghost"} onClick={() => onTopic(null)}>
-                {UI.allTopics}
-              </PrimaryButton>
-              {(Object.keys(TOPIC_LABELS) as PhraseTopic[]).map((key) => (
-                <PrimaryButton
-                  key={key}
-                  variant={topic === key ? "primary" : "ghost"}
-                  onClick={() => onTopic(key)}
-                >
-                  {TOPIC_LABELS[key]}
-                </PrimaryButton>
-              ))}
-            </div>
-          ) : null}
+            <PrimaryButton variant="text" className="mt-2" onClick={onOpenLearningProgram}>
+              {UI.learningProgramEdit}
+            </PrimaryButton>
+          </div>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <label className="text-sm" htmlFor="interval">
               {UI.schedulerLabel}
@@ -171,12 +170,10 @@ export function HomeScreen({
                 key={mission.id}
                 className="flex items-center justify-between rounded-xl bg-cream px-3 py-2 text-sm"
               >
-                <span>
-                  {mission.isCompleted ? "☑ " : "☐ "}
-                  {missionLabel(mission)}
-                </span>
-                <span className="font-semibold tabular">
-                  {mission.currentCount}/{mission.targetCount} · +{mission.xpReward} XP
+                <span>{missionLabel(mission)}</span>
+                <span className="tabular text-muted">
+                  {mission.currentCount}/{mission.targetCount}
+                  {mission.isCompleted ? " ✓" : ""}
                 </span>
               </li>
             ))}

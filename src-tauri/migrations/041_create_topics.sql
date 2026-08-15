@@ -1,0 +1,8 @@
+CREATE TABLE topics (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  code TEXT NOT NULL UNIQUE,
+  name_vi TEXT NOT NULL,
+  name_en TEXT NOT NULL,
+  category TEXT NOT NULL,
+  icon_key TEXT
+);

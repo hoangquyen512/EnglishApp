@@ -13,6 +13,7 @@ interface AccountScreenProps {
   toast: string | null;
   onBack: () => void;
   onEdit: () => void;
+  onLearningProgram: () => void;
 }
 
 function InfoRow({ label, value, muted }: { label: string; value: string; muted?: boolean }) {
@@ -24,7 +25,7 @@ function InfoRow({ label, value, muted }: { label: string; value: string; muted?
   );
 }
 
-export function AccountScreen({ session, toast, onBack, onEdit }: AccountScreenProps) {
+export function AccountScreen({ session, toast, onBack, onEdit, onLearningProgram }: AccountScreenProps) {
   const logout = useAuthStore((state) => state.logout);
   const [logoutOpen, setLogoutOpen] = useState(false);
   const [passwordOpen, setPasswordOpen] = useState(false);
@@ -54,6 +55,7 @@ export function AccountScreen({ session, toast, onBack, onEdit }: AccountScreenP
         <InfoRow label={UI.loginId} value={session.username} />
       </dl>
       <div className="mt-5 flex flex-col gap-2">
+        <PrimaryButton onClick={onLearningProgram}>{UI.learningProgram}</PrimaryButton>
         <PrimaryButton onClick={onEdit}>{UI.editAccount}</PrimaryButton>
         <PrimaryButton variant="ghost" onClick={() => setPasswordOpen(true)}>
           {UI.changePassword}

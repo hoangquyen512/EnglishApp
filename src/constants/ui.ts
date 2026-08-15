@@ -1,4 +1,6 @@
-import type { MissionType, PetMood, PhraseTopic } from "../types";
+import type { MissionType, PetMood } from "../types";
+import type { TopicCode } from "../features/learning-program/catalog";
+import { TOPIC_BY_CODE } from "../features/learning-program/catalog";
 
 export const APP_NAME = "Yume";
 export const DEFAULT_PET_NAME = "Sora";
@@ -6,6 +8,7 @@ export const DEFAULT_PET_NAME = "Sora";
 export const UI = {
   openApp: "Mở app",
   studyNow: "Học ngay",
+  floatPet: "Đưa pet ra màn hình",
   quit: "Thoát",
   onboardingTitle: `Chào mừng đến ${APP_NAME}`,
   onboardingSubtitle: "Chọn người bạn đồng hành. Pet lớn lên mỗi khi bạn học flashcard TOEIC.",
@@ -76,6 +79,8 @@ export const UI = {
   accountTitle: "Thông tin tài khoản",
   editAccountTitle: "Chỉnh sửa thông tin",
   editAccount: "Chỉnh sửa thông tin",
+  petSection: "Pet",
+  changeSpecies: "Loài pet",
   backHome: "Nhà của pet",
   cancel: "Hủy",
   save: "Lưu",
@@ -100,14 +105,27 @@ export const UI = {
   companionSend: "Gửi",
   companionCoach: "Gợi ý tiếng Anh",
   companionError: "Không gửi được. Thử lại.",
+  learningProgram: "Chương trình học",
+  learningProgramTitle: "Chương trình học",
+  learningProgramName: "Tên chương trình",
+  learningProgramLevel: "Trình độ",
+  learningProgramContent: "Loại nội dung ưu tiên",
+  learningProgramTopics: "Chủ đề đang học",
+  learningProgramSave: "Lưu thay đổi",
+  learningProgramSaved: "Đã lưu chương trình học.",
+  learningProgramEdit: "Chỉnh sửa chương trình học",
+  learningProgramActive: "Chủ đề đang học",
+  learningProgramLowContent:
+    "Bộ chủ đề này còn ít nội dung (dưới 15 mục). Bạn vẫn có thể lưu và bổ sung sau.",
+  learningProgramMinTopic: "Giữ ít nhất một chủ đề.",
+  contentPrefVocabulary: "Từ vựng",
+  contentPrefPhrase: "Cụm từ",
+  contentPrefBoth: "Cả hai",
 } as const;
 
-export const TOPIC_LABELS: Record<PhraseTopic, string> = {
-  travel: "Du lịch",
-  food: "Ẩm thực",
-  office: "Công việc",
-  family: "Gia đình",
-};
+export function topicLabel(code: string): string {
+  return TOPIC_BY_CODE.get(code as TopicCode)?.nameVi ?? code;
+}
 
 export const MOOD_LABELS: Record<PetMood, string> = {
   happy: "Vui",
@@ -121,5 +139,3 @@ export const MISSION_TITLES: Record<MissionType, string> = {
   review_wrong: "Ôn lại từ chưa nhớ",
   topic_practice: "Luyện chủ đề",
 };
-
-export const TOPICS: PhraseTopic[] = ["travel", "food", "office", "family"];

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AccountScreen } from "./components/account/account-screen";
 import { EditAccountScreen } from "./components/account/edit-account-screen";
+import { LearningProgramScreen } from "./components/account/learning-program-screen";
 import { CompanionChatScreen } from "./components/companion/companion-chat-screen";
 import { AuthGate } from "./components/auth/auth-gate";
 import { preloadVocabArts } from "./components/flashcard/vocab-illustration";
@@ -10,17 +11,22 @@ import { OnboardingScreen } from "./components/shared/onboarding-screen";
 import { UI } from "./constants/ui";
 import { TOEIC_ART_KEYS } from "./data/toeic-cards";
 import { openStudyPopup, startScheduler } from "./features/scheduler";
+import {
+  defaultContentTypeFromPreference,
+  ensureLearningProgram,
+} from "./features/learning-program";
 import { getWindowLabel, showMainWindow } from "./lib/tauri";
 import { useAppStore } from "./stores/app-store";
 import { useAuthStore } from "./stores/auth-store";
 import { useSettingsStore } from "./stores/settings-store";
 import { useStudyStore } from "./stores/study-store";
 
-type MainView = "home" | "account" | "edit" | "chat";
+type MainView = "home" | "account" | "edit" | "chat" | "learning-program";
 
 export default function App() {
   const [windowKind, setWindowKind] = useState<"main" | "popup" | null>(null);
   const [view, setView] = useState<MainView>("home");
+  const [learningReturn, setLearningReturn] = useState<"home" | "account">("account");
   const [accountToast, setAccountToast] = useState<string | null>(null);
   const authReady = useAuthStore((state) => state.ready);
   const session = useAuthStore((state) => state.session);
@@ -33,11 +39,9 @@ export default function App() {
   const hydrate = useAppStore((state) => state.hydrate);
   const chooseSpecies = useAppStore((state) => state.chooseSpecies);
   const contentType = useStudyStore((state) => state.contentType);
-  const topic = useStudyStore((state) => state.topic);
-  const conversationTopic = useStudyStore((state) => state.conversationTopic);
   const setContentType = useStudyStore((state) => state.setContentType);
-  const setTopic = useStudyStore((state) => state.setTopic);
-  const setConversationTopic = useStudyStore((state) => state.setConversationTopic);
+  const hydratedFromPreference = useStudyStore((state) => state.hydratedFromPreference);
+  const markHydratedFromPreference = useStudyStore((state) => state.markHydratedFromPreference);
   const intervalMinutes = useSettingsStore((state) => state.intervalMinutes);
   const setIntervalMinutes = useSettingsStore((state) => state.setIntervalMinutes);
 
@@ -62,6 +66,16 @@ export default function App() {
     }
     void hydrate();
   }, [hydrate, session, windowKind]);
+
+  useEffect(() => {
+    if (!session || hydratedFromPreference) {
+      return;
+    }
+    void ensureLearningProgram().then((program) => {
+      setContentType(defaultContentTypeFromPreference(program.contentTypePreference));
+      markHydratedFromPreference();
+    });
+  }, [session, hydratedFromPreference, setContentType, markHydratedFromPreference]);
 
   useEffect(() => {
     if (windowKind === "main" && ready && session && !pet) {
@@ -130,6 +144,18 @@ export default function App() {
     );
   }
 
+  if (view === "learning-program") {
+    return (
+      <LearningProgramScreen
+        onBack={() => setView(learningReturn)}
+        onSaved={() => {
+          setAccountToast(UI.learningProgramSaved);
+          setView(learningReturn);
+        }}
+      />
+    );
+  }
+
   if (view === "account") {
     return (
       <AccountScreen
@@ -142,6 +168,11 @@ export default function App() {
         onEdit={() => {
           setAccountToast(null);
           setView("edit");
+        }}
+        onLearningProgram={() => {
+          setAccountToast(null);
+          setLearningReturn("account");
+          setView("learning-program");
         }}
       />
     );
@@ -161,17 +192,17 @@ export default function App() {
       pet={pet}
       missions={missions}
       contentType={contentType}
-      topic={topic}
-      conversationTopic={conversationTopic ?? "greetings"}
       intervalMinutes={intervalMinutes}
       onContentType={setContentType}
-      onTopic={setTopic}
-      onConversationTopic={setConversationTopic}
       onInterval={setIntervalMinutes}
       onStudyNow={() => void openStudyPopup()}
       session={session}
       onOpenAccount={() => setView("account")}
       onOpenChat={() => setView("chat")}
+      onOpenLearningProgram={() => {
+        setLearningReturn("home");
+        setView("learning-program");
+      }}
     />
   );
 }

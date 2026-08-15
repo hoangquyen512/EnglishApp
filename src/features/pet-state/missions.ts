@@ -1,20 +1,23 @@
 import { DAILY_MISSION_COUNT, MISSION_POOL, pickRandomTopic } from "../../constants/missions";
 import { todayDate } from "../../lib/dates";
-import type { ContentType, DailyMission, MissionType, PhraseTopic } from "../../types";
+import type { ContentType, DailyMission, MissionType } from "../../types";
 import { insertMission, listMissionsForDate, updateMissionProgress } from "../../db/missions";
+import { getTopicIdByCode } from "../../db/learning-program";
+import { getActiveTopicCodes } from "../learning-program";
+import { isTauri } from "../../lib/tauri";
 
 export interface MissionEvent {
   isNew: boolean;
   hadWrong: boolean;
   isCorrect: boolean;
   contentType: ContentType;
-  topic: PhraseTopic | null;
+  topic: string | null;
 }
 
 export function missionCountsToward(
   missionType: MissionType,
   event: MissionEvent,
-  missionTopic: PhraseTopic | null,
+  missionTopic: string | null,
 ): boolean {
   if (missionType === "learn_new") {
     return event.isNew;
@@ -22,12 +25,7 @@ export function missionCountsToward(
   if (missionType === "review_wrong") {
     return event.hadWrong;
   }
-  return (
-    event.isCorrect &&
-    event.contentType === "phrase" &&
-    missionTopic !== null &&
-    event.topic === missionTopic
-  );
+  return event.isCorrect && missionTopic !== null && event.topic === missionTopic;
 }
 
 export async function ensureDailyMissions(now = new Date()): Promise<DailyMission[]> {
@@ -37,12 +35,16 @@ export async function ensureDailyMissions(now = new Date()): Promise<DailyMissio
     return existing;
   }
 
+  const active = await getActiveTopicCodes();
   for (const template of MISSION_POOL.slice(0, DAILY_MISSION_COUNT)) {
+    const topic = template.withRandomTopic ? pickRandomTopic(active) : null;
+    const topicId = topic && isTauri() ? await getTopicIdByCode(topic) : null;
     await insertMission({
       missionDate: date,
       missionType: template.missionType,
       targetCount: template.targetCount,
-      topic: template.withRandomTopic ? pickRandomTopic() : null,
+      topic,
+      topicId,
       xpReward: template.xpReward,
     });
   }

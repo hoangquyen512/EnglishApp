@@ -1,5 +1,6 @@
-import type { MissionType, PhraseTopic } from "../types";
-import { TOPICS } from "./ui";
+import type { MissionType } from "../types";
+import type { TopicCode } from "../features/learning-program/catalog";
+import { DEFAULT_ACTIVE_TOPIC_CODES } from "../features/learning-program/catalog";
 
 export interface MissionTemplate {
   missionType: MissionType;
@@ -31,7 +32,13 @@ export const MISSION_POOL: MissionTemplate[] = [
 
 export const DAILY_MISSION_COUNT = 3;
 
-export function pickRandomTopic(random = Math.random): PhraseTopic {
-  const index = Math.floor(random() * TOPICS.length);
-  return TOPICS[index] ?? "travel";
+export function pickRandomTopic(
+  active: TopicCode[] = DEFAULT_ACTIVE_TOPIC_CODES,
+  random = Math.random,
+): TopicCode | null {
+  if (active.length === 0) {
+    return null;
+  }
+  const index = Math.floor(random() * active.length);
+  return active[index] ?? null;
 }

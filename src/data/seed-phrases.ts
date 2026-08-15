@@ -1,12 +1,14 @@
-import type { CefrLevel, PhraseTopic } from "../types";
+import type { CefrLevel } from "../types";
 
-export const SEED_PHRASES: {
+export interface SeedPhrase {
   id: number;
   phraseEn: string;
   meaningVi: string;
-  topic: PhraseTopic;
+  topic: "travel" | "food" | "office" | "family";
   level: CefrLevel;
-}[] = [
+}
+
+export const SEED_PHRASES: SeedPhrase[] = [
   { id: 1, phraseEn: "Where is the nearest station?", meaningVi: "Nhà ga gần nhất ở đâu?", topic: "travel", level: "A2" },
   { id: 2, phraseEn: "I would like a round-trip ticket.", meaningVi: "Tôi muốn mua vé khứ hồi.", topic: "travel", level: "A2" },
   { id: 3, phraseEn: "How long does the flight take?", meaningVi: "Chuyến bay mất bao lâu?", topic: "travel", level: "A2" },

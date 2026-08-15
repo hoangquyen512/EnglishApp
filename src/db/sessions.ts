@@ -69,17 +69,18 @@ export async function topicCorrectCounts(): Promise<
 > {
   const userId = requireUserId();
   return select<{ topic: string; learned: number; mastered: number }>(
-    `SELECT p.topic AS topic,
+    `SELECT COALESCE(t.code, p.topic) AS topic,
             COUNT(DISTINCT CASE WHEN s.correct_n >= 1 THEN p.id END) AS learned,
             COUNT(DISTINCT CASE WHEN s.correct_n >= 3 THEN p.id END) AS mastered
      FROM phrases p
+     LEFT JOIN topics t ON t.id = p.topic_id
      LEFT JOIN (
        SELECT content_id, SUM(CASE WHEN is_correct = 1 THEN 1 ELSE 0 END) AS correct_n
        FROM study_sessions
        WHERE content_type = 'phrase' AND user_id = $1
        GROUP BY content_id
      ) s ON s.content_id = p.id
-     GROUP BY p.topic`,
+     GROUP BY COALESCE(t.code, p.topic)`,
     [userId],
   );
 }

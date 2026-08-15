@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { conversationTopics } from "../../data/conversation/topics";
-import { conversationDeck } from "./index";
+import { conversationDeck, conversationDeckForBanks } from "./index";
 
 describe("conversation topics", () => {
   it("has twelve topics with 1000 unique phrases each", () => {
@@ -15,5 +15,14 @@ describe("conversation topics", () => {
     expect(deck[0]?.word).toBe("Hi, how are you today?");
     expect(deck[0]?.imageKey).toBe("/illustrations/greet-1.jpg");
     expect(deck[0]?.contentType).toBe("conversation");
+  });
+
+  it("builds a multi-bank deck from active program topics", () => {
+    const deck = conversationDeckForBanks([
+      { bankId: "greetings", topicCode: "small_talk_greetings" },
+      { bankId: "cafe", topicCode: "food_dining" },
+    ]);
+    expect(deck.length).toBe(2000);
+    expect(deck.some((card) => card.topic === "food_dining")).toBe(true);
   });
 });

@@ -12,6 +12,8 @@ interface VocabularyRow {
   part_of_speech: string | null;
   image_key: string | null;
   category: string | null;
+  topic_id: number | null;
+  topic_code: string | null;
   created_at: string;
 }
 
@@ -25,8 +27,8 @@ interface ProgressRow {
   status: LearningStatus;
 }
 
-const VOCAB_COLUMNS =
-  "id, word, meaning, example, example_vi, phonetic, part_of_speech, image_key, category, created_at";
+const VOCAB_COLUMNS = `v.id, v.word, v.meaning, v.example, v.example_vi, v.phonetic, v.part_of_speech,
+  v.image_key, v.category, v.topic_id, t.code AS topic_code, v.created_at`;
 
 function mapVocab(row: VocabularyRow): Vocabulary {
   return {
@@ -39,6 +41,8 @@ function mapVocab(row: VocabularyRow): Vocabulary {
     partOfSpeech: row.part_of_speech,
     imageKey: row.image_key,
     category: row.category,
+    topicId: row.topic_id,
+    topic: row.topic_code,
     createdAt: row.created_at,
   };
 }
@@ -57,14 +61,36 @@ function mapProgress(row: ProgressRow): LearningProgress {
 
 export async function listVocabulary(): Promise<Vocabulary[]> {
   const rows = await select<VocabularyRow>(
-    `SELECT ${VOCAB_COLUMNS} FROM vocabulary ORDER BY id ASC`,
+    `SELECT ${VOCAB_COLUMNS}
+     FROM vocabulary v
+     LEFT JOIN topics t ON t.id = v.topic_id
+     ORDER BY v.id ASC`,
+  );
+  return rows.map(mapVocab);
+}
+
+export async function listVocabularyByTopicIds(topicIds: number[]): Promise<Vocabulary[]> {
+  if (topicIds.length === 0) {
+    return [];
+  }
+  const placeholders = topicIds.map((_, index) => `$${index + 1}`).join(", ");
+  const rows = await select<VocabularyRow>(
+    `SELECT ${VOCAB_COLUMNS}
+     FROM vocabulary v
+     LEFT JOIN topics t ON t.id = v.topic_id
+     WHERE v.topic_id IN (${placeholders})
+     ORDER BY v.id ASC`,
+    topicIds,
   );
   return rows.map(mapVocab);
 }
 
 export async function getVocabularyById(id: number): Promise<Vocabulary | null> {
   const row = await selectOne<VocabularyRow>(
-    `SELECT ${VOCAB_COLUMNS} FROM vocabulary WHERE id = $1`,
+    `SELECT ${VOCAB_COLUMNS}
+     FROM vocabulary v
+     LEFT JOIN topics t ON t.id = v.topic_id
+     WHERE v.id = $1`,
     [id],
   );
   return row ? mapVocab(row) : null;
@@ -73,12 +99,35 @@ export async function getVocabularyById(id: number): Promise<Vocabulary | null> 
 export async function getDueOrNewVocabulary(nowIso: string): Promise<Vocabulary[]> {
   const userId = requireUserId();
   const rows = await select<VocabularyRow>(
-    `SELECT v.id, v.word, v.meaning, v.example, v.example_vi, v.phonetic, v.part_of_speech, v.image_key, v.category, v.created_at
+    `SELECT ${VOCAB_COLUMNS}
      FROM vocabulary v
+     LEFT JOIN topics t ON t.id = v.topic_id
      LEFT JOIN learning_progress p ON p.vocabulary_id = v.id AND p.user_id = $2
      WHERE p.id IS NULL OR p.next_review_at IS NULL OR p.next_review_at <= $1
      ORDER BY CASE WHEN p.status = 'new' OR p.id IS NULL THEN 0 ELSE 1 END, p.next_review_at ASC, v.id ASC`,
     [nowIso, userId],
+  );
+  return rows.map(mapVocab);
+}
+
+export async function getDueOrNewVocabularyByTopicIds(
+  nowIso: string,
+  topicIds: number[],
+): Promise<Vocabulary[]> {
+  if (topicIds.length === 0) {
+    return [];
+  }
+  const userId = requireUserId();
+  const placeholders = topicIds.map((_, index) => `$${index + 3}`).join(", ");
+  const rows = await select<VocabularyRow>(
+    `SELECT ${VOCAB_COLUMNS}
+     FROM vocabulary v
+     LEFT JOIN topics t ON t.id = v.topic_id
+     LEFT JOIN learning_progress p ON p.vocabulary_id = v.id AND p.user_id = $2
+     WHERE v.topic_id IN (${placeholders})
+       AND (p.id IS NULL OR p.next_review_at IS NULL OR p.next_review_at <= $1)
+     ORDER BY CASE WHEN p.status = 'new' OR p.id IS NULL THEN 0 ELSE 1 END, p.next_review_at ASC, v.id ASC`,
+    [nowIso, userId, ...topicIds],
   );
   return rows.map(mapVocab);
 }

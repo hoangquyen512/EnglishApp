@@ -1,7 +1,5 @@
 export type ContentType = "vocabulary" | "phrase" | "conversation";
 
-export type PhraseTopic = "travel" | "food" | "office" | "family";
-
 export type ConversationTopicId =
   | "greetings"
   | "cafe"
@@ -36,6 +34,8 @@ export interface Vocabulary {
   partOfSpeech: string | null;
   imageKey: string | null;
   category: string | null;
+  topicId: number | null;
+  topic: string | null;
   createdAt: string;
 }
 
@@ -43,7 +43,8 @@ export interface Phrase {
   id: number;
   phraseEn: string;
   meaningVi: string;
-  topic: PhraseTopic;
+  topic: string;
+  topicId: number | null;
   level: CefrLevel;
   createdAt: string;
 }
@@ -93,7 +94,8 @@ export interface DailyMission {
   missionType: MissionType;
   targetCount: number;
   currentCount: number;
-  topic: PhraseTopic | null;
+  topic: string | null;
+  topicId: number | null;
   xpReward: number;
   isCompleted: boolean;
 }
@@ -123,13 +125,11 @@ export interface StudyFlashcard {
   example: string | null;
   exampleVi: string | null;
   imageKey: string;
-  topic: PhraseTopic | null;
+  topic: string | null;
 }
 
 export interface StudyMode {
   contentType: ContentType;
-  topic: PhraseTopic | null;
-  conversationTopic: ConversationTopicId | null;
 }
 
 export interface SubmitAnswerResult {
