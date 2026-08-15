@@ -390,10 +390,10 @@ pub fn run() {
             tray::setup_tray(app)?;
             let auth_state = init_auth_state(&app.handle())?;
             app.manage(auth_state);
-            #[cfg(debug_assertions)]
-            {
-                let _ = show_main_window(app.handle().clone());
-            }
+            // Release builds also start with the main window visible. Windows are
+            // created with visible:false so the tray can own lifecycle; without
+            // this call a packaged app looks like it "won't start".
+            let _ = show_main_window(app.handle().clone());
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
