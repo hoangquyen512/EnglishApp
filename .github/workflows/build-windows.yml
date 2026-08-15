@@ -112,7 +112,14 @@ jobs:
           Write-Host "tauri build exit=$code"
           if (Test-Path tauri-build.log) {
             Write-Host "===== tauri-build.log ====="
-            Get-Content tauri-build.log -Tail 120
+            Get-Content tauri-build.log
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "```"
+            Get-Content tauri-build.log | Add-Content -Path $env:GITHUB_STEP_SUMMARY
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "```"
+            $tail = (Get-Content tauri-build.log -Tail 30) -join "`n"
+            if ($code -ne 0) {
+              Write-Host "::error::Tauri build failed:`n$tail"
+            }
           }
           if ($code -ne 0) { exit $code }
 
