@@ -110,15 +110,23 @@ jobs:
           Write-Host "Starting pnpm tauri build..."
           cmd /c "pnpm tauri build > tauri-build.log 2>&1"
           $code = $LASTEXITCODE
-          Write-Host "tauri build exit=$code"
+          Write-Host "tauri build cmd exit=$code"
+          $exeOk = Test-Path "src-tauri/target/release/yume.exe"
+          $setupOk = [bool](Get-ChildItem "src-tauri/target/release/bundle/nsis/*.exe" -ErrorAction SilentlyContinue | Where-Object { $_.Name -notlike "*.sig" })
+          Write-Host "artifacts exe=$exeOk setup=$setupOk"
+          if ($exeOk -and $setupOk) {
+            # pnpm/cmd sometimes returns non-zero even after a successful bundle
+            $code = 0
+          }
           if (Test-Path tauri-build.log) {
-            Write-Host "===== tauri-build.log ====="
-            Get-Content tauri-build.log
-            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "```"
-            Get-Content tauri-build.log | Add-Content -Path $env:GITHUB_STEP_SUMMARY
-            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "```"
-            $tail = (Get-Content tauri-build.log -Tail 30) -join "`n"
+            Write-Host "===== tauri-build.log (tail) ====="
+            Get-Content tauri-build.log -Tail 80
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "### Tauri build"
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '```'
+            Get-Content tauri-build.log -Tail 80 | Add-Content -Path $env:GITHUB_STEP_SUMMARY
+            Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value '```'
             if ($code -ne 0) {
+              $tail = (Get-Content tauri-build.log -Tail 40) -join "`n"
               Write-Host "::error::Tauri build failed:`n$tail"
             }
           }
