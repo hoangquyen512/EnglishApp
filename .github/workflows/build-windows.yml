@@ -17,7 +17,8 @@ on:
 
 concurrency:
   group: build-windows-${{ github.ref }}
-  cancel-in-progress: true
+  # Windows Tauri builds take a long time; do not cancel in-progress runs on every push
+  cancel-in-progress: false
 
 permissions:
   contents: write
