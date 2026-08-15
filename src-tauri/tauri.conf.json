@@ -24,11 +24,10 @@
       {
         "label": "popup",
         "title": "Yume",
-        "width": 120,
-        "height": 120,
+        "width": 420,
+        "height": 680,
         "resizable": false,
         "decorations": false,
-        "transparent": true,
         "alwaysOnTop": true,
         "visible": false,
         "skipTaskbar": true,

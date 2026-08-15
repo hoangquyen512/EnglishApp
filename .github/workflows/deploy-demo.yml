@@ -17,9 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # version comes from package.json packageManager — do not also set `version:` here
       - uses: pnpm/action-setup@v4
-        with:
-          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -28,7 +27,7 @@ jobs:
       - run: pnpm test
       - run: pnpm build
         env:
-          VITE_BASE: /EnglishApp/
+          VITE_BASE: ./
       - run: |
           cp dist/index.html dist/404.html
           touch dist/.nojekyll
