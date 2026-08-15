@@ -372,6 +372,30 @@ fn sqlite_migrations() -> Vec<Migration> {
             sql: include_str!("../migrations/059_seed_learning_program_topics.sql"),
             kind: MigrationKind::Up,
         },
+        Migration {
+            version: 60,
+            description: "content_import_state",
+            sql: include_str!("../migrations/060_content_import_state.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 61,
+            description: "phrases_en_topic_unique",
+            sql: include_str!("../migrations/061_phrases_en_topic_unique.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 62,
+            description: "clear_topic_conversation_banks",
+            sql: include_str!("../migrations/062_clear_topic_conversation_banks.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 63,
+            description: "seed_topic_banks_one_to_one",
+            sql: include_str!("../migrations/063_seed_topic_banks_one_to_one.sql"),
+            kind: MigrationKind::Up,
+        },
     ]
 }
 
@@ -379,8 +403,6 @@ fn sqlite_migrations() -> Vec<Migration> {
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_notification::init())
-        .plugin(tauri_plugin_updater::Builder::new().build())
-        .plugin(tauri_plugin_process::init())
         .setup(|app| {
             let paths = ensure_user_data_dirs(&app.handle().clone())?;
             app.manage(SqliteUrl(paths.sqlite_url.clone()));

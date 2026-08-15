@@ -5,6 +5,13 @@ export async function checkAndInstallDesktopUpdate(): Promise<void> {
   if (!isTauri()) {
     return;
   }
+  // Native updater plugins are enabled only after CI signing is configured.
+  // Until then this is a no-op so startup never breaks.
+  try {
+    await import("@tauri-apps/plugin-updater");
+  } catch {
+    return;
+  }
   try {
     const { check } = await import("@tauri-apps/plugin-updater");
     const update = await check();

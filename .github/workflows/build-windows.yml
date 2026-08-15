@@ -86,11 +86,41 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build frontend
+        run: pnpm build
+
       - name: Build Tauri Windows app
+        shell: pwsh
         env:
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
-        run: pnpm tauri build
+        run: |
+          if ($env:YUME_SIGNED -ne 'true') {
+            Remove-Item Env:\TAURI_SIGNING_PRIVATE_KEY -ErrorAction SilentlyContinue
+            Remove-Item Env:\TAURI_SIGNING_PRIVATE_KEY_PASSWORD -ErrorAction SilentlyContinue
+            Write-Host "Signing env cleared (unsigned nightly)"
+          }
+          # Frontend already built above — skip beforeBuildCommand
+          $utf8 = New-Object System.Text.UTF8Encoding $false
+          $confPath = Join-Path $pwd "src-tauri/tauri.conf.json"
+          $conf = [System.IO.File]::ReadAllText($confPath)
+          $conf = $conf -replace '"beforeBuildCommand"\s*:\s*"[^"]*"', '"beforeBuildCommand": ""'
+          [System.IO.File]::WriteAllText($confPath, $conf, $utf8)
+          pnpm tauri build 2>&1 | Tee-Object -FilePath tauri-build.log
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "===== tauri-build.log (tail) ====="
+            Get-Content tauri-build.log -Tail 100
+            exit $LASTEXITCODE
+          }
+
+      - name: Upload build log on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tauri-build-log
+          path: tauri-build.log
+          if-no-files-found: ignore
+          retention-days: 7
 
       - name: Stage release assets
         shell: pwsh
