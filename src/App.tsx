@@ -3,6 +3,7 @@ import { AccountScreen } from "./components/account/account-screen";
 import { EditAccountScreen } from "./components/account/edit-account-screen";
 import { LearningProgramScreen } from "./components/account/learning-program-screen";
 import { CompanionChatScreen } from "./components/companion/companion-chat-screen";
+import { QuickLookupScreen } from "./components/quick-lookup/quick-lookup-screen";
 import { AuthGate } from "./components/auth/auth-gate";
 import { preloadVocabArts } from "./components/flashcard/vocab-illustration";
 import { FlashcardPopup } from "./components/popup/flashcard-popup";
@@ -15,13 +16,13 @@ import {
   defaultContentTypeFromPreference,
   ensureLearningProgram,
 } from "./features/learning-program";
-import { getWindowLabel, showMainWindow } from "./lib/tauri";
+import { getWindowLabel, isTauri, showMainWindow } from "./lib/tauri";
 import { useAppStore } from "./stores/app-store";
 import { useAuthStore } from "./stores/auth-store";
 import { useSettingsStore } from "./stores/settings-store";
 import { useStudyStore } from "./stores/study-store";
 
-type MainView = "home" | "account" | "edit" | "chat" | "learning-program";
+type MainView = "home" | "account" | "edit" | "chat" | "learning-program" | "quick-lookup";
 
 export default function App() {
   const [windowKind, setWindowKind] = useState<"main" | "popup" | null>(null);
@@ -100,6 +101,23 @@ export default function App() {
     }
   }, [session]);
 
+  useEffect(() => {
+    if (windowKind !== "main" || !isTauri()) {
+      return;
+    }
+    let unlisten: (() => void) | undefined;
+    void import("@tauri-apps/api/event").then(({ listen }) =>
+      listen("navigate-quick-lookup", () => {
+        setView("quick-lookup");
+      }).then((fn) => {
+        unlisten = fn;
+      }),
+    );
+    return () => {
+      unlisten?.();
+    };
+  }, [windowKind]);
+
   if (windowKind === null) {
     return <p className="p-6">{UI.loading}</p>;
   }
@@ -117,7 +135,7 @@ export default function App() {
   }
 
   if (!ready) {
-    return <p className="p-6">{UI.loading}</p>;
+    return <p className="p-6">Đang chuẩn bị dữ liệu...</p>;
   }
 
   if (error && !pet) {
@@ -131,6 +149,10 @@ export default function App() {
 
   if (view === "chat") {
     return <CompanionChatScreen onBack={() => setView("home")} />;
+  }
+
+  if (view === "quick-lookup") {
+    return <QuickLookupScreen onBack={() => setView("home")} />;
   }
 
   if (view === "edit") {
@@ -201,6 +223,7 @@ export default function App() {
       session={session}
       onOpenAccount={() => setView("account")}
       onOpenChat={() => setView("chat")}
+      onOpenQuickLookup={() => setView("quick-lookup")}
       onOpenLearningProgram={() => {
         setLearningReturn("home");
         setView("learning-program");

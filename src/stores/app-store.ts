@@ -81,7 +81,6 @@ export const useAppStore = create<AppState>((set, get) => ({
       await resolveUserDataDirs();
       const species = await listSpecies();
       await ensureLearningProgram();
-      await ensurePhase1LexiconImported();
       await ensureDailyMissions();
       await refreshUserProgress();
       const pet = await refreshMood();
@@ -94,6 +93,10 @@ export const useAppStore = create<AppState>((set, get) => ({
         pet: pet ?? (await getCurrentPet()),
         missions,
         progress,
+      });
+      // 8k row first-run import must not block the post-login UI.
+      void ensurePhase1LexiconImported().catch((importError) => {
+        console.error("phase1 lexicon import failed", importError);
       });
     } catch (err) {
       const message = err instanceof Error ? err.message : "Failed to load app";

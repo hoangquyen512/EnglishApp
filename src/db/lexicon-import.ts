@@ -8,6 +8,10 @@ import { execute, selectOne } from "./client";
 import { getTopicIdByCode } from "./learning-program";
 import type { TopicCode } from "../features/learning-program/catalog";
 
+const INSERT_CHUNK = 50;
+
+let importInFlight: Promise<void> | null = null;
+
 async function getImportVersion(dataset: string, topicCode: string): Promise<string | null> {
   const row = await selectOne<{ content_version: string }>(
     `SELECT content_version FROM content_import_state
@@ -32,19 +36,17 @@ async function importVocabularyForTopic(code: TopicCode): Promise<void> {
   const topicId = await getTopicIdByCode(code);
   if (topicId == null) return;
   const rows = PHASE1_VOCABULARY[code] ?? [];
-  for (const row of rows) {
-    await execute(
-      `INSERT INTO vocabulary (word, meaning, example, example_vi, phonetic, part_of_speech, image_key, category, topic_id)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, 'topic', $8)
-       ON CONFLICT(word) DO UPDATE SET
-         meaning = excluded.meaning,
-         example = excluded.example,
-         example_vi = excluded.example_vi,
-         phonetic = excluded.phonetic,
-         part_of_speech = excluded.part_of_speech,
-         image_key = excluded.image_key,
-         topic_id = excluded.topic_id`,
-      [
+  await execute("BEGIN");
+  try {
+    for (let i = 0; i < rows.length; i += INSERT_CHUNK) {
+      const chunk = rows.slice(i, i + INSERT_CHUNK);
+      const placeholders = chunk
+        .map((_, index) => {
+          const base = index * 8;
+          return `($${base + 1}, $${base + 2}, $${base + 3}, $${base + 4}, $${base + 5}, $${base + 6}, $${base + 7}, 'topic', $${base + 8})`;
+        })
+        .join(", ");
+      const params = chunk.flatMap((row) => [
         row.word,
         row.meaning,
         row.example,
@@ -53,31 +55,71 @@ async function importVocabularyForTopic(code: TopicCode): Promise<void> {
         row.partOfSpeech,
         row.imageKey,
         topicId,
-      ],
-    );
+      ]);
+      await execute(
+        `INSERT INTO vocabulary (word, meaning, example, example_vi, phonetic, part_of_speech, image_key, category, topic_id)
+         VALUES ${placeholders}
+         ON CONFLICT(word) DO UPDATE SET
+           meaning = excluded.meaning,
+           example = excluded.example,
+           example_vi = excluded.example_vi,
+           phonetic = excluded.phonetic,
+           part_of_speech = excluded.part_of_speech,
+           image_key = excluded.image_key,
+           topic_id = excluded.topic_id`,
+        params,
+      );
+    }
+    await setImportVersion("vocabulary", code, CONTENT_VERSION);
+    await execute("COMMIT");
+  } catch (error) {
+    try {
+      await execute("ROLLBACK");
+    } catch {
+      // ignore rollback failure after a failed batch
+    }
+    throw error;
   }
-  await setImportVersion("vocabulary", code, CONTENT_VERSION);
 }
 
 async function importPhrasesForTopic(code: TopicCode): Promise<void> {
   const topicId = await getTopicIdByCode(code);
   if (topicId == null) return;
   const rows = PHASE1_PHRASES[code] ?? [];
-  for (const row of rows) {
-    await execute(
-      `INSERT INTO phrases (phrase_en, meaning_vi, topic, topic_id, level)
-       VALUES ($1, $2, $3, $4, $5)
-       ON CONFLICT(phrase_en, topic_id) DO UPDATE SET
-         meaning_vi = excluded.meaning_vi,
-         topic = excluded.topic,
-         level = excluded.level`,
-      [row.en, row.vi, code, topicId, row.level],
-    );
+  await execute("BEGIN");
+  try {
+    for (let i = 0; i < rows.length; i += INSERT_CHUNK) {
+      const chunk = rows.slice(i, i + INSERT_CHUNK);
+      const placeholders = chunk
+        .map((_, index) => {
+          const base = index * 5;
+          return `($${base + 1}, $${base + 2}, $${base + 3}, $${base + 4}, $${base + 5})`;
+        })
+        .join(", ");
+      const params = chunk.flatMap((row) => [row.en, row.vi, code, topicId, row.level]);
+      await execute(
+        `INSERT INTO phrases (phrase_en, meaning_vi, topic, topic_id, level)
+         VALUES ${placeholders}
+         ON CONFLICT(phrase_en, topic_id) DO UPDATE SET
+           meaning_vi = excluded.meaning_vi,
+           topic = excluded.topic,
+           level = excluded.level`,
+        params,
+      );
+    }
+    await setImportVersion("phrases", code, CONTENT_VERSION);
+    await execute("COMMIT");
+  } catch (error) {
+    try {
+      await execute("ROLLBACK");
+    } catch {
+      // ignore rollback failure after a failed batch
+    }
+    throw error;
   }
-  await setImportVersion("phrases", code, CONTENT_VERSION);
 }
 
-export async function ensurePhase1LexiconImported(): Promise<void> {
+async function runPhase1LexiconImport(): Promise<void> {
   for (const code of PHASE1_TOPIC_CODES) {
     const vocabVersion = await getImportVersion("vocabulary", code);
     if (vocabVersion !== CONTENT_VERSION) {
@@ -88,4 +130,14 @@ export async function ensurePhase1LexiconImported(): Promise<void> {
       await importPhrasesForTopic(code);
     }
   }
+}
+
+/** Idempotent import of phase-1 lexicon. Safe to call multiple times; shares one in-flight job. */
+export async function ensurePhase1LexiconImported(): Promise<void> {
+  if (!importInFlight) {
+    importInFlight = runPhase1LexiconImport().finally(() => {
+      importInFlight = null;
+    });
+  }
+  await importInFlight;
 }
