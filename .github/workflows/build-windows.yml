@@ -100,18 +100,21 @@ jobs:
             Remove-Item Env:\TAURI_SIGNING_PRIVATE_KEY_PASSWORD -ErrorAction SilentlyContinue
             Write-Host "Signing env cleared (unsigned nightly)"
           }
-          # Frontend already built above — skip beforeBuildCommand
           $utf8 = New-Object System.Text.UTF8Encoding $false
           $confPath = Join-Path $pwd "src-tauri/tauri.conf.json"
           $conf = [System.IO.File]::ReadAllText($confPath)
           $conf = $conf -replace '"beforeBuildCommand"\s*:\s*"[^"]*"', '"beforeBuildCommand": ""'
           [System.IO.File]::WriteAllText($confPath, $conf, $utf8)
-          pnpm tauri build 2>&1 | Tee-Object -FilePath tauri-build.log
-          if ($LASTEXITCODE -ne 0) {
-            Write-Host "===== tauri-build.log (tail) ====="
-            Get-Content tauri-build.log -Tail 100
-            exit $LASTEXITCODE
+          node -e "JSON.parse(require('fs').readFileSync('src-tauri/tauri.conf.json','utf8')); console.log('tauri.conf.json ok')"
+          Write-Host "Starting pnpm tauri build..."
+          cmd /c "pnpm tauri build > tauri-build.log 2>&1"
+          $code = $LASTEXITCODE
+          Write-Host "tauri build exit=$code"
+          if (Test-Path tauri-build.log) {
+            Write-Host "===== tauri-build.log ====="
+            Get-Content tauri-build.log -Tail 120
           }
+          if ($code -ne 0) { exit $code }
 
       - name: Upload build log on failure
         if: failure()
