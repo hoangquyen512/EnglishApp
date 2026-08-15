@@ -1,5 +1,7 @@
 import { create } from "zustand";
+import { getDb } from "../db/client";
 import { setCurrentUserId } from "../db/current-user";
+import { isTauri } from "../lib/tauri";
 import { useAppStore } from "./app-store";
 import {
   changePassword as changePasswordApi,
@@ -52,9 +54,19 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     set({ session, hasAccounts: get().hasAccounts || session !== null });
   },
   hydrate: async () => {
-    const [session, accountsExist] = await Promise.all([currentSession(), hasAccounts()]);
-    apply(session);
-    set({ ready: true, session, hasAccounts: accountsExist });
+    try {
+      // Packaged apps must run SQL migrations before auth queries `accounts`.
+      if (isTauri()) {
+        await getDb();
+      }
+      const [session, accountsExist] = await Promise.all([currentSession(), hasAccounts()]);
+      apply(session);
+      set({ ready: true, session, hasAccounts: accountsExist });
+    } catch (error) {
+      console.error("auth hydrate failed", error);
+      apply(null);
+      set({ ready: true, session: null, hasAccounts: false });
+    }
   },
   register: async (username, password) => {
     const session = await registerAccount(username, password);

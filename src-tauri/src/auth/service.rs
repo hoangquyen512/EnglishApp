@@ -314,10 +314,17 @@ pub fn current_session(runtime: &AuthRuntime) -> Result<Option<SessionDto>, Stri
 
 pub fn has_accounts(runtime: &AuthRuntime) -> Result<bool, String> {
     let conn = open(&runtime.db_path)?;
-    let count: i64 = conn
-        .query_row("SELECT COUNT(*) FROM accounts", [], |row| row.get(0))
-        .map_err(|err| err.to_string())?;
-    Ok(count > 0)
+    match conn.query_row("SELECT COUNT(*) FROM accounts", [], |row| row.get::<_, i64>(0)) {
+        Ok(count) => Ok(count > 0),
+        Err(err) => {
+            let message = err.to_string();
+            if message.contains("no such table") {
+                Ok(false)
+            } else {
+                Err(message)
+            }
+        }
+    }
 }
 
 pub fn register_account(

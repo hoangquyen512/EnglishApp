@@ -16,9 +16,14 @@ export async function getWindowLabel(): Promise<"main" | "popup"> {
   if (!isTauri()) {
     return "main";
   }
-  const { getCurrentWebviewWindow } = await import("@tauri-apps/api/webviewWindow");
-  const label = getCurrentWebviewWindow().label;
-  return label === "popup" ? "popup" : "main";
+  try {
+    const { getCurrentWebviewWindow } = await import("@tauri-apps/api/webviewWindow");
+    const label = getCurrentWebviewWindow().label;
+    return label === "popup" ? "popup" : "main";
+  } catch (error) {
+    console.warn("getWindowLabel fallback to main", error);
+    return "main";
+  }
 }
 
 export async function showMainWindow(): Promise<void> {
