@@ -53,10 +53,16 @@ jobs:
         run: |
           $v = "0.1.$env:GITHUB_RUN_NUMBER"
           Write-Host "Nightly version $v"
-          (Get-Content package.json -Raw) -replace '"version":\s*"[^"]+"', "`"version`": `"$v`"" |
-            Set-Content package.json -NoNewline -Encoding utf8
-          (Get-Content src-tauri/tauri.conf.json -Raw) -replace '"version":\s*"[^"]+"', "`"version`": `"$v`"" |
-            Set-Content src-tauri/tauri.conf.json -NoNewline -Encoding utf8
+          $utf8 = New-Object System.Text.UTF8Encoding $false
+          function Write-NoBom([string]$path, [string]$text) {
+            [System.IO.File]::WriteAllText((Join-Path $pwd $path), $text, $utf8)
+          }
+          $pkg = [System.IO.File]::ReadAllText((Join-Path $pwd "package.json"))
+          $pkg = [regex]::Replace($pkg, '"version"\s*:\s*"[^"]+"', "`"version`": `"$v`"", 1)
+          Write-NoBom "package.json" $pkg
+          $conf = [System.IO.File]::ReadAllText((Join-Path $pwd "src-tauri/tauri.conf.json"))
+          $conf = [regex]::Replace($conf, '"version"\s*:\s*"[^"]+"', "`"version`": `"$v`"", 1)
+          Write-NoBom "src-tauri/tauri.conf.json" $conf
           echo "YUME_VERSION=$v" >> $env:GITHUB_ENV
 
       - name: Enable updater artifacts when signing key is present
@@ -64,12 +70,15 @@ jobs:
         env:
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
         run: |
+          $utf8 = New-Object System.Text.UTF8Encoding $false
           if ([string]::IsNullOrWhiteSpace($env:TAURI_SIGNING_PRIVATE_KEY)) {
             Write-Host "No TAURI_SIGNING_PRIVATE_KEY — building without updater signatures"
             echo "YUME_SIGNED=false" >> $env:GITHUB_ENV
           } else {
-            (Get-Content src-tauri/tauri.conf.json -Raw) -replace '"createUpdaterArtifacts":\s*false', '"createUpdaterArtifacts": true' |
-              Set-Content src-tauri/tauri.conf.json -NoNewline -Encoding utf8
+            $confPath = Join-Path $pwd "src-tauri/tauri.conf.json"
+            $conf = [System.IO.File]::ReadAllText($confPath)
+            $conf = $conf -replace '"createUpdaterArtifacts":\s*false', '"createUpdaterArtifacts": true'
+            [System.IO.File]::WriteAllText($confPath, $conf, $utf8)
             echo "YUME_SIGNED=true" >> $env:GITHUB_ENV
             Write-Host "Signing key present — updater artifacts enabled"
           }
