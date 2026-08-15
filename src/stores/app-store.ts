@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import type { DailyMission, PetSpecies, PetState, UserProgress } from "../types";
-import { DEMO_MISSIONS, DEMO_PET, DEMO_SPECIES } from "../data/demo-pet";
+import { DEMO_MISSIONS, DEMO_SPECIES } from "../data/demo-pet";
 import {
   adoptSpecies,
   ensureDailyMissions,
@@ -11,6 +11,7 @@ import {
   refreshUserProgress,
   todaysMissions,
 } from "../features/pet-state";
+import { alignPetToSpecies, buildAdoptedDemoPet } from "../features/pet-state/demo-pet";
 import { isTauri } from "../lib/tauri";
 import { peekCurrentUserId } from "../db/current-user";
 import { readBrowserJson, writeBrowserJson } from "../lib/browser-persist";
@@ -54,11 +55,23 @@ export const useAppStore = create<AppState>((set, get) => ({
   hydrate: async () => {
     if (!isTauri()) {
       const userId = peekCurrentUserId();
+      const loaded = userId ? loadDemoPet(userId) : null;
+      const pet = loaded ? alignPetToSpecies(loaded, DEMO_SPECIES) : null;
+      if (
+        userId &&
+        pet &&
+        loaded &&
+        (pet.spriteKey !== loaded.spriteKey ||
+          pet.currentStageId !== loaded.currentStageId ||
+          pet.speciesName !== loaded.speciesName)
+      ) {
+        saveDemoPet(userId, pet);
+      }
       set({
         ready: true,
         error: null,
         species: DEMO_SPECIES,
-        pet: userId ? loadDemoPet(userId) : null,
+        pet,
         missions: DEMO_MISSIONS,
         progress: null,
       });
@@ -90,12 +103,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   chooseSpecies: async (species, petName) => {
     if (!isTauri()) {
       const userId = peekCurrentUserId();
-      const pet = {
-        ...DEMO_PET,
-        petName: petName?.trim() || species.speciesName,
-        speciesName: species.speciesName,
-        speciesId: species.id,
-      };
+      const pet = buildAdoptedDemoPet(species, petName);
       if (userId) {
         saveDemoPet(userId, pet);
       }
@@ -122,6 +130,7 @@ export const useAppStore = create<AppState>((set, get) => ({
       pet: null,
       missions: [],
       progress: null,
+      species: [],
     });
   },
 }));

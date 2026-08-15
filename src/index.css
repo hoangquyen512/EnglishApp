@@ -86,6 +86,18 @@ body {
   color: var(--color-fg);
 }
 
+html.companion-window,
+body.companion-window,
+body.companion-window #root {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.pet-float-shadow img,
+.pet-float-shadow > span[aria-hidden] {
+  filter: drop-shadow(0 10px 18px rgba(31, 25, 21, 0.28));
+}
+
 button,
 input {
   font: inherit;

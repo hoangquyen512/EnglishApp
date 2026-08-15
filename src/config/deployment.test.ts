@@ -7,7 +7,16 @@ interface TauriConf {
   productName: string;
   identifier: string;
   app: {
-    windows: Array<{ label: string; title: string; width: number; height: number }>;
+    windows: Array<{
+      label: string;
+      title: string;
+      width: number;
+      height: number;
+      transparent?: boolean;
+      alwaysOnTop?: boolean;
+      decorations?: boolean;
+      skipTaskbar?: boolean;
+    }>;
   };
   bundle: {
     targets: string | string[];
@@ -39,10 +48,14 @@ describe("deployment constraints", () => {
     expect(conf.bundle.windows?.nsis?.installMode).toBe("currentUser");
   });
 
-  it("sizes the study popup for a TOEIC flashcard", () => {
+  it("configures the companion popup as a small transparent always-on-top window", () => {
     const popup = loadConf().app.windows.find((window) => window.label === "popup");
-    expect(popup?.width).toBe(420);
-    expect(popup?.height).toBe(680);
+    expect(popup?.width).toBe(120);
+    expect(popup?.height).toBe(120);
+    expect(popup?.transparent).toBe(true);
+    expect(popup?.alwaysOnTop).toBe(true);
+    expect(popup?.decorations).toBe(false);
+    expect(popup?.skipTaskbar).toBe(true);
   });
 
   it("uses the official Yume product name and bundle identifier", () => {
