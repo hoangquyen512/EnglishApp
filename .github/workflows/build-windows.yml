@@ -1,0 +1,68 @@
+name: Build Windows desktop
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, feature/learning-program]
+    paths:
+      - ".github/workflows/build-windows.yml"
+      - "src-tauri/**"
+      - "src/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "index.html"
+      - "vite.config.*"
+      - "tsconfig*.json"
+
+concurrency:
+  group: build-windows-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Rust cache
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri -> target
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Tauri Windows app
+        run: pnpm tauri build
+
+      - name: Upload NSIS installer (current-user, no admin)
+        uses: actions/upload-artifact@v4
+        with:
+          name: yume-windows-nsis
+          path: src-tauri/target/release/bundle/nsis/*.exe
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload portable exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: yume-windows-portable
+          path: src-tauri/target/release/yume.exe
+          if-no-files-found: error
+          retention-days: 14
