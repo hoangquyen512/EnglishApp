@@ -10,6 +10,7 @@ import type {
 } from "../../types";
 import { TOEIC_CARDS } from "../../data/toeic-cards";
 import { SEED_PHRASES } from "../../data/seed-phrases";
+import { PHASE1_PHRASES, PHASE1_VOCABULARY } from "../../data/lexicon/phase1";
 import { peekCurrentUserId } from "../../db/current-user";
 import { loadBrowserPet, rewardBrowserPetForUser } from "../pet-state/demo-pet";
 import {
@@ -67,6 +68,24 @@ function vocabToCard(item: Vocabulary): StudyFlashcard {
 }
 
 function browserVocabCards(active: TopicCode[]): StudyFlashcard[] {
+  const fromPhase1 = active.flatMap((code) => {
+    const rows = PHASE1_VOCABULARY[code] ?? [];
+    return rows.map((card, index) => ({
+      contentId: index + 1 + code.length * 10_000,
+      contentType: "vocabulary" as const,
+      word: card.word,
+      phonetic: card.phonetic,
+      partOfSpeech: card.partOfSpeech,
+      meaning: card.meaning,
+      example: card.example,
+      exampleVi: card.exampleVi,
+      imageKey: card.imageKey,
+      topic: code,
+    }));
+  });
+  if (fromPhase1.length > 0) {
+    return fromPhase1;
+  }
   return TOEIC_CARDS.flatMap((card, index) => {
     const topic = assignVocabTopicCode(card.word);
     if (!topic || !active.includes(topic)) {
@@ -90,6 +109,26 @@ function browserVocabCards(active: TopicCode[]): StudyFlashcard[] {
 }
 
 function browserPhraseCards(active: TopicCode[], level: "A1" | "A2" | "B1" | "B2"): StudyFlashcard[] {
+  const fromPhase1 = active.flatMap((code) => {
+    const rows = PHASE1_PHRASES[code] ?? [];
+    return rows
+      .filter((item) => phraseLevelAllowed(item.level, level))
+      .map((item, index) => ({
+        contentId: index + 1 + code.length * 10_000,
+        contentType: "phrase" as const,
+        word: item.en,
+        phonetic: item.ipa || null,
+        partOfSpeech: null,
+        meaning: item.vi,
+        example: null,
+        exampleVi: null,
+        imageKey: `topic-${code}`,
+        topic: code,
+      }));
+  });
+  if (fromPhase1.length > 0) {
+    return fromPhase1;
+  }
   return SEED_PHRASES.flatMap((item) => {
     const topic = mapLegacyPhraseTopic(item.topic);
     if (!topic || !active.includes(topic) || !phraseLevelAllowed(item.level, level)) {

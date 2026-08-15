@@ -1,18 +1,7 @@
 export type ContentType = "vocabulary" | "phrase" | "conversation";
 
-export type ConversationTopicId =
-  | "greetings"
-  | "cafe"
-  | "restaurant"
-  | "shopping"
-  | "directions"
-  | "hotel"
-  | "health"
-  | "work"
-  | "family"
-  | "phone"
-  | "airport"
-  | "emergency";
+export type { TopicCode as ConversationTopicId } from "../features/learning-program/catalog";
+export type { TopicCode } from "../features/learning-program/catalog";
 
 export type LearningStatus = "new" | "learning" | "mastered";
 

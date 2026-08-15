@@ -16,6 +16,7 @@ import { peekCurrentUserId } from "../db/current-user";
 import { readBrowserJson, writeBrowserJson } from "../lib/browser-persist";
 import { resolveUserDataDirs } from "../lib/user-paths";
 import { ensureLearningProgram } from "../features/learning-program";
+import { ensurePhase1LexiconImported } from "../db/lexicon-import";
 
 function demoPetKey(userId: number): string {
   return `yume-demo-pet:${userId}`;
@@ -67,6 +68,7 @@ export const useAppStore = create<AppState>((set, get) => ({
       await resolveUserDataDirs();
       const species = await listSpecies();
       await ensureLearningProgram();
+      await ensurePhase1LexiconImported();
       await ensureDailyMissions();
       await refreshUserProgress();
       const pet = await refreshMood();

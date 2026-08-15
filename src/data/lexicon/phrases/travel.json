@@ -1,0 +1,7002 @@
+[
+  {
+    "id": "travel-1",
+    "en": "I have a reservation under Nguyen.",
+    "vi": "Tôi đã đặt phòng dưới tên Nguyễn.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-2",
+    "en": "What time is check-in and check-out?",
+    "vi": "Nhận phòng và trả phòng lúc mấy giờ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-3",
+    "en": "Is breakfast included?",
+    "vi": "Giá phòng đã gồm bữa sáng chưa?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-4",
+    "en": "The Wi-Fi password, please?",
+    "vi": "Cho hỏi mật khẩu Wi-Fi?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-5",
+    "en": "Could I have an extra towel?",
+    "vi": "Cho tôi thêm một khăn tắm được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-6",
+    "en": "The air conditioner is not working.",
+    "vi": "Máy lạnh không hoạt động.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-7",
+    "en": "Can I leave my luggage here?",
+    "vi": "Tôi gửi hành lý ở đây được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-8",
+    "en": "I would like a wake-up call at 6 a.m.",
+    "vi": "Nhờ đánh thức lúc 6 giờ sáng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-9",
+    "en": "The booking is under Nguyen.",
+    "vi": "Đơn đặt phòng mang tên Nguyen.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-10",
+    "en": "Can you find the booking for Nguyen?",
+    "vi": "Bạn tìm giúp đơn của Nguyen được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-11",
+    "en": "I have a reservation under Tran.",
+    "vi": "Tôi đã đặt phòng dưới tên Tran.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-12",
+    "en": "The booking is under Tran.",
+    "vi": "Đơn đặt phòng mang tên Tran.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-13",
+    "en": "Can you find the booking for Tran?",
+    "vi": "Bạn tìm giúp đơn của Tran được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-14",
+    "en": "I have a reservation under Le.",
+    "vi": "Tôi đã đặt phòng dưới tên Le.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-15",
+    "en": "The booking is under Le.",
+    "vi": "Đơn đặt phòng mang tên Le.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-16",
+    "en": "Can you find the booking for Le?",
+    "vi": "Bạn tìm giúp đơn của Le được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-17",
+    "en": "I have a reservation under Pham.",
+    "vi": "Tôi đã đặt phòng dưới tên Pham.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-18",
+    "en": "The booking is under Pham.",
+    "vi": "Đơn đặt phòng mang tên Pham.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-19",
+    "en": "Can you find the booking for Pham?",
+    "vi": "Bạn tìm giúp đơn của Pham được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-20",
+    "en": "I have a reservation under Hoang.",
+    "vi": "Tôi đã đặt phòng dưới tên Hoang.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-21",
+    "en": "The booking is under Hoang.",
+    "vi": "Đơn đặt phòng mang tên Hoang.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-22",
+    "en": "Can you find the booking for Hoang?",
+    "vi": "Bạn tìm giúp đơn của Hoang được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-23",
+    "en": "I have a reservation under Vu.",
+    "vi": "Tôi đã đặt phòng dưới tên Vu.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-24",
+    "en": "The booking is under Vu.",
+    "vi": "Đơn đặt phòng mang tên Vu.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-25",
+    "en": "Can you find the booking for Vu?",
+    "vi": "Bạn tìm giúp đơn của Vu được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-26",
+    "en": "I have a reservation under Dang.",
+    "vi": "Tôi đã đặt phòng dưới tên Dang.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-27",
+    "en": "The booking is under Dang.",
+    "vi": "Đơn đặt phòng mang tên Dang.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-28",
+    "en": "Can you find the booking for Dang?",
+    "vi": "Bạn tìm giúp đơn của Dang được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-29",
+    "en": "I have a reservation under Bui.",
+    "vi": "Tôi đã đặt phòng dưới tên Bui.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-30",
+    "en": "The booking is under Bui.",
+    "vi": "Đơn đặt phòng mang tên Bui.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-31",
+    "en": "Can you find the booking for Bui?",
+    "vi": "Bạn tìm giúp đơn của Bui được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-32",
+    "en": "I have a reservation under Do.",
+    "vi": "Tôi đã đặt phòng dưới tên Do.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-33",
+    "en": "The booking is under Do.",
+    "vi": "Đơn đặt phòng mang tên Do.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-34",
+    "en": "Can you find the booking for Do?",
+    "vi": "Bạn tìm giúp đơn của Do được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-35",
+    "en": "I have a reservation under Ngo.",
+    "vi": "Tôi đã đặt phòng dưới tên Ngo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-36",
+    "en": "The booking is under Ngo.",
+    "vi": "Đơn đặt phòng mang tên Ngo.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-37",
+    "en": "Can you find the booking for Ngo?",
+    "vi": "Bạn tìm giúp đơn của Ngo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-38",
+    "en": "I need an extra towel, please.",
+    "vi": "Tôi cần thêm một khăn tắm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-39",
+    "en": "Can you send an extra towel to my room?",
+    "vi": "Nhờ gửi thêm một khăn tắm lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-40",
+    "en": "I would like an extra towel, please.",
+    "vi": "Cho tôi thêm một khăn tắm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-41",
+    "en": "Could I have an extra pillow?",
+    "vi": "Cho tôi thêm một gối được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-42",
+    "en": "I need an extra pillow, please.",
+    "vi": "Tôi cần thêm một gối.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-43",
+    "en": "Can you send an extra pillow to my room?",
+    "vi": "Nhờ gửi thêm một gối lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-44",
+    "en": "I would like an extra pillow, please.",
+    "vi": "Cho tôi thêm một gối.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-45",
+    "en": "Could I have an extra blanket?",
+    "vi": "Cho tôi thêm một chăn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-46",
+    "en": "I need an extra blanket, please.",
+    "vi": "Tôi cần thêm một chăn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-47",
+    "en": "Can you send an extra blanket to my room?",
+    "vi": "Nhờ gửi thêm một chăn lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-48",
+    "en": "I would like an extra blanket, please.",
+    "vi": "Cho tôi thêm một chăn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-49",
+    "en": "Could I have a toothbrush?",
+    "vi": "Cho tôi một bàn chải được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-50",
+    "en": "I need a toothbrush, please.",
+    "vi": "Tôi cần một bàn chải.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-51",
+    "en": "Can you send a toothbrush to my room?",
+    "vi": "Nhờ gửi một bàn chải lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-52",
+    "en": "I would like a toothbrush, please.",
+    "vi": "Cho tôi một bàn chải.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-53",
+    "en": "Could I have some water?",
+    "vi": "Cho tôi ít nước được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-54",
+    "en": "I need some water, please.",
+    "vi": "Tôi cần ít nước.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-55",
+    "en": "Can you send some water to my room?",
+    "vi": "Nhờ gửi ít nước lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-56",
+    "en": "I would like some water, please.",
+    "vi": "Cho tôi ít nước.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-57",
+    "en": "Could I have a hair dryer?",
+    "vi": "Cho tôi một máy sấy tóc được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-58",
+    "en": "I need a hair dryer, please.",
+    "vi": "Tôi cần một máy sấy tóc.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-59",
+    "en": "Can you send a hair dryer to my room?",
+    "vi": "Nhờ gửi một máy sấy tóc lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-60",
+    "en": "I would like a hair dryer, please.",
+    "vi": "Cho tôi một máy sấy tóc.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-61",
+    "en": "Could I have an adapter?",
+    "vi": "Cho tôi một ổ chuyển được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-62",
+    "en": "I need an adapter, please.",
+    "vi": "Tôi cần một ổ chuyển.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-63",
+    "en": "Can you send an adapter to my room?",
+    "vi": "Nhờ gửi một ổ chuyển lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-64",
+    "en": "I would like an adapter, please.",
+    "vi": "Cho tôi một ổ chuyển.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-65",
+    "en": "Could I have a late checkout?",
+    "vi": "Cho tôi trả phòng muộn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-66",
+    "en": "I need a late checkout, please.",
+    "vi": "Tôi cần trả phòng muộn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-67",
+    "en": "Can you send a late checkout to my room?",
+    "vi": "Nhờ gửi trả phòng muộn lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-68",
+    "en": "I would like a late checkout, please.",
+    "vi": "Cho tôi trả phòng muộn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-69",
+    "en": "Could I have a wake-up call?",
+    "vi": "Cho tôi một cuộc gọi đánh thức được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-70",
+    "en": "I need a wake-up call, please.",
+    "vi": "Tôi cần một cuộc gọi đánh thức.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-71",
+    "en": "Can you send a wake-up call to my room?",
+    "vi": "Nhờ gửi một cuộc gọi đánh thức lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-72",
+    "en": "I would like a wake-up call, please.",
+    "vi": "Cho tôi một cuộc gọi đánh thức.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-73",
+    "en": "Could I have the Wi-Fi password?",
+    "vi": "Cho tôi mật khẩu Wi-Fi được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-74",
+    "en": "I need the Wi-Fi password, please.",
+    "vi": "Tôi cần mật khẩu Wi-Fi.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-75",
+    "en": "Can you send the Wi-Fi password to my room?",
+    "vi": "Nhờ gửi mật khẩu Wi-Fi lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-76",
+    "en": "I would like the Wi-Fi password, please.",
+    "vi": "Cho tôi mật khẩu Wi-Fi.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-77",
+    "en": "Could I have an extra hanger?",
+    "vi": "Cho tôi thêm móc áo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-78",
+    "en": "I need an extra hanger, please.",
+    "vi": "Tôi cần thêm móc áo.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-79",
+    "en": "Can you send an extra hanger to my room?",
+    "vi": "Nhờ gửi thêm móc áo lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-80",
+    "en": "I would like an extra hanger, please.",
+    "vi": "Cho tôi thêm móc áo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-81",
+    "en": "Could I have a bottle of water?",
+    "vi": "Cho tôi một chai nước được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-82",
+    "en": "I need a bottle of water, please.",
+    "vi": "Tôi cần một chai nước.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-83",
+    "en": "Can you send a bottle of water to my room?",
+    "vi": "Nhờ gửi một chai nước lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-84",
+    "en": "I would like a bottle of water, please.",
+    "vi": "Cho tôi một chai nước.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-85",
+    "en": "Could I have an iron?",
+    "vi": "Cho tôi một bàn ủi được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-86",
+    "en": "I need an iron, please.",
+    "vi": "Tôi cần một bàn ủi.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-87",
+    "en": "Can you send an iron to my room?",
+    "vi": "Nhờ gửi một bàn ủi lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-88",
+    "en": "I would like an iron, please.",
+    "vi": "Cho tôi một bàn ủi.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-89",
+    "en": "Could I have a city map?",
+    "vi": "Cho tôi một bản đồ thành phố được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-90",
+    "en": "I need a city map, please.",
+    "vi": "Tôi cần một bản đồ thành phố.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-91",
+    "en": "Can you send a city map to my room?",
+    "vi": "Nhờ gửi một bản đồ thành phố lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-92",
+    "en": "I would like a city map, please.",
+    "vi": "Cho tôi một bản đồ thành phố.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-93",
+    "en": "I would like a single room for one night.",
+    "vi": "Tôi muốn phòng đơn một đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-94",
+    "en": "Do you have a single room for one night?",
+    "vi": "Còn phòng đơn một đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-95",
+    "en": "I would like a single room for two nights.",
+    "vi": "Tôi muốn phòng đơn hai đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-96",
+    "en": "Do you have a single room for two nights?",
+    "vi": "Còn phòng đơn hai đêm không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-97",
+    "en": "I would like a single room for three nights.",
+    "vi": "Tôi muốn phòng đơn ba đêm.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-98",
+    "en": "Do you have a single room for three nights?",
+    "vi": "Còn phòng đơn ba đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-99",
+    "en": "I would like a single room for four nights.",
+    "vi": "Tôi muốn phòng đơn bốn đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-100",
+    "en": "Do you have a single room for four nights?",
+    "vi": "Còn phòng đơn bốn đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-101",
+    "en": "I would like a single room for five nights.",
+    "vi": "Tôi muốn phòng đơn năm đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-102",
+    "en": "Do you have a single room for five nights?",
+    "vi": "Còn phòng đơn năm đêm không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-103",
+    "en": "I would like a single room for a week.",
+    "vi": "Tôi muốn phòng đơn một tuần.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-104",
+    "en": "Do you have a single room for a week?",
+    "vi": "Còn phòng đơn một tuần không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-105",
+    "en": "Is a single room available?",
+    "vi": "Còn phòng đơn không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-106",
+    "en": "How much is a single room?",
+    "vi": "phòng đơn giá bao nhiêu?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-107",
+    "en": "Can I see a single room?",
+    "vi": "Tôi xem phòng đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-108",
+    "en": "I would like a double room for one night.",
+    "vi": "Tôi muốn phòng đôi một đêm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-109",
+    "en": "Do you have a double room for one night?",
+    "vi": "Còn phòng đôi một đêm không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-110",
+    "en": "I would like a double room for two nights.",
+    "vi": "Tôi muốn phòng đôi hai đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-111",
+    "en": "Do you have a double room for two nights?",
+    "vi": "Còn phòng đôi hai đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-112",
+    "en": "I would like a double room for three nights.",
+    "vi": "Tôi muốn phòng đôi ba đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-113",
+    "en": "Do you have a double room for three nights?",
+    "vi": "Còn phòng đôi ba đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-114",
+    "en": "I would like a double room for four nights.",
+    "vi": "Tôi muốn phòng đôi bốn đêm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-115",
+    "en": "Do you have a double room for four nights?",
+    "vi": "Còn phòng đôi bốn đêm không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-116",
+    "en": "I would like a double room for five nights.",
+    "vi": "Tôi muốn phòng đôi năm đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-117",
+    "en": "Do you have a double room for five nights?",
+    "vi": "Còn phòng đôi năm đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-118",
+    "en": "I would like a double room for a week.",
+    "vi": "Tôi muốn phòng đôi một tuần.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-119",
+    "en": "Do you have a double room for a week?",
+    "vi": "Còn phòng đôi một tuần không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-120",
+    "en": "Is a double room available?",
+    "vi": "Còn phòng đôi không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-121",
+    "en": "How much is a double room?",
+    "vi": "phòng đôi giá bao nhiêu?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-122",
+    "en": "Can I see a double room?",
+    "vi": "Tôi xem phòng đôi được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-123",
+    "en": "I would like a twin room for one night.",
+    "vi": "Tôi muốn phòng hai giường một đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-124",
+    "en": "Do you have a twin room for one night?",
+    "vi": "Còn phòng hai giường một đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-125",
+    "en": "I would like a twin room for two nights.",
+    "vi": "Tôi muốn phòng hai giường hai đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-126",
+    "en": "Do you have a twin room for two nights?",
+    "vi": "Còn phòng hai giường hai đêm không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-127",
+    "en": "I would like a twin room for three nights.",
+    "vi": "Tôi muốn phòng hai giường ba đêm.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-128",
+    "en": "Do you have a twin room for three nights?",
+    "vi": "Còn phòng hai giường ba đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-129",
+    "en": "I would like a twin room for four nights.",
+    "vi": "Tôi muốn phòng hai giường bốn đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-130",
+    "en": "Do you have a twin room for four nights?",
+    "vi": "Còn phòng hai giường bốn đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-131",
+    "en": "I would like a twin room for five nights.",
+    "vi": "Tôi muốn phòng hai giường năm đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-132",
+    "en": "Do you have a twin room for five nights?",
+    "vi": "Còn phòng hai giường năm đêm không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-133",
+    "en": "I would like a twin room for a week.",
+    "vi": "Tôi muốn phòng hai giường một tuần.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-134",
+    "en": "Do you have a twin room for a week?",
+    "vi": "Còn phòng hai giường một tuần không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-135",
+    "en": "Is a twin room available?",
+    "vi": "Còn phòng hai giường không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-136",
+    "en": "How much is a twin room?",
+    "vi": "phòng hai giường giá bao nhiêu?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-137",
+    "en": "Can I see a twin room?",
+    "vi": "Tôi xem phòng hai giường được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-138",
+    "en": "I would like a family room for one night.",
+    "vi": "Tôi muốn phòng gia đình một đêm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-139",
+    "en": "Do you have a family room for one night?",
+    "vi": "Còn phòng gia đình một đêm không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-140",
+    "en": "I would like a family room for two nights.",
+    "vi": "Tôi muốn phòng gia đình hai đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-141",
+    "en": "Do you have a family room for two nights?",
+    "vi": "Còn phòng gia đình hai đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-142",
+    "en": "I would like a family room for three nights.",
+    "vi": "Tôi muốn phòng gia đình ba đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-143",
+    "en": "Do you have a family room for three nights?",
+    "vi": "Còn phòng gia đình ba đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-144",
+    "en": "I would like a family room for four nights.",
+    "vi": "Tôi muốn phòng gia đình bốn đêm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-145",
+    "en": "Do you have a family room for four nights?",
+    "vi": "Còn phòng gia đình bốn đêm không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-146",
+    "en": "I would like a family room for five nights.",
+    "vi": "Tôi muốn phòng gia đình năm đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-147",
+    "en": "Do you have a family room for five nights?",
+    "vi": "Còn phòng gia đình năm đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-148",
+    "en": "I would like a family room for a week.",
+    "vi": "Tôi muốn phòng gia đình một tuần.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-149",
+    "en": "Do you have a family room for a week?",
+    "vi": "Còn phòng gia đình một tuần không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-150",
+    "en": "Is a family room available?",
+    "vi": "Còn phòng gia đình không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-151",
+    "en": "How much is a family room?",
+    "vi": "phòng gia đình giá bao nhiêu?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-152",
+    "en": "Can I see a family room?",
+    "vi": "Tôi xem phòng gia đình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-153",
+    "en": "I would like a suite for one night.",
+    "vi": "Tôi muốn phòng suite một đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-154",
+    "en": "Do you have a suite for one night?",
+    "vi": "Còn phòng suite một đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-155",
+    "en": "I would like a suite for two nights.",
+    "vi": "Tôi muốn phòng suite hai đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-156",
+    "en": "Do you have a suite for two nights?",
+    "vi": "Còn phòng suite hai đêm không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-157",
+    "en": "I would like a suite for three nights.",
+    "vi": "Tôi muốn phòng suite ba đêm.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-158",
+    "en": "Do you have a suite for three nights?",
+    "vi": "Còn phòng suite ba đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-159",
+    "en": "I would like a suite for four nights.",
+    "vi": "Tôi muốn phòng suite bốn đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-160",
+    "en": "Do you have a suite for four nights?",
+    "vi": "Còn phòng suite bốn đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-161",
+    "en": "I would like a suite for five nights.",
+    "vi": "Tôi muốn phòng suite năm đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-162",
+    "en": "Do you have a suite for five nights?",
+    "vi": "Còn phòng suite năm đêm không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-163",
+    "en": "I would like a suite for a week.",
+    "vi": "Tôi muốn phòng suite một tuần.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-164",
+    "en": "Do you have a suite for a week?",
+    "vi": "Còn phòng suite một tuần không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-165",
+    "en": "Is a suite available?",
+    "vi": "Còn phòng suite không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-166",
+    "en": "How much is a suite?",
+    "vi": "phòng suite giá bao nhiêu?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-167",
+    "en": "Can I see a suite?",
+    "vi": "Tôi xem phòng suite được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-168",
+    "en": "I would like a quiet room for one night.",
+    "vi": "Tôi muốn phòng yên tĩnh một đêm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-169",
+    "en": "Do you have a quiet room for one night?",
+    "vi": "Còn phòng yên tĩnh một đêm không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-170",
+    "en": "I would like a quiet room for two nights.",
+    "vi": "Tôi muốn phòng yên tĩnh hai đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-171",
+    "en": "Do you have a quiet room for two nights?",
+    "vi": "Còn phòng yên tĩnh hai đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-172",
+    "en": "I would like a quiet room for three nights.",
+    "vi": "Tôi muốn phòng yên tĩnh ba đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-173",
+    "en": "Do you have a quiet room for three nights?",
+    "vi": "Còn phòng yên tĩnh ba đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-174",
+    "en": "I would like a quiet room for four nights.",
+    "vi": "Tôi muốn phòng yên tĩnh bốn đêm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-175",
+    "en": "Do you have a quiet room for four nights?",
+    "vi": "Còn phòng yên tĩnh bốn đêm không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-176",
+    "en": "I would like a quiet room for five nights.",
+    "vi": "Tôi muốn phòng yên tĩnh năm đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-177",
+    "en": "Do you have a quiet room for five nights?",
+    "vi": "Còn phòng yên tĩnh năm đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-178",
+    "en": "I would like a quiet room for a week.",
+    "vi": "Tôi muốn phòng yên tĩnh một tuần.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-179",
+    "en": "Do you have a quiet room for a week?",
+    "vi": "Còn phòng yên tĩnh một tuần không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-180",
+    "en": "Is a quiet room available?",
+    "vi": "Còn phòng yên tĩnh không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-181",
+    "en": "How much is a quiet room?",
+    "vi": "phòng yên tĩnh giá bao nhiêu?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-182",
+    "en": "Can I see a quiet room?",
+    "vi": "Tôi xem phòng yên tĩnh được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-183",
+    "en": "I would like a room with a view for one night.",
+    "vi": "Tôi muốn phòng nhìn ra view một đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-184",
+    "en": "Do you have a room with a view for one night?",
+    "vi": "Còn phòng nhìn ra view một đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-185",
+    "en": "I would like a room with a view for two nights.",
+    "vi": "Tôi muốn phòng nhìn ra view hai đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-186",
+    "en": "Do you have a room with a view for two nights?",
+    "vi": "Còn phòng nhìn ra view hai đêm không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-187",
+    "en": "I would like a room with a view for three nights.",
+    "vi": "Tôi muốn phòng nhìn ra view ba đêm.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-188",
+    "en": "Do you have a room with a view for three nights?",
+    "vi": "Còn phòng nhìn ra view ba đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-189",
+    "en": "I would like a room with a view for four nights.",
+    "vi": "Tôi muốn phòng nhìn ra view bốn đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-190",
+    "en": "Do you have a room with a view for four nights?",
+    "vi": "Còn phòng nhìn ra view bốn đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-191",
+    "en": "I would like a room with a view for five nights.",
+    "vi": "Tôi muốn phòng nhìn ra view năm đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-192",
+    "en": "Do you have a room with a view for five nights?",
+    "vi": "Còn phòng nhìn ra view năm đêm không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-193",
+    "en": "I would like a room with a view for a week.",
+    "vi": "Tôi muốn phòng nhìn ra view một tuần.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-194",
+    "en": "Do you have a room with a view for a week?",
+    "vi": "Còn phòng nhìn ra view một tuần không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-195",
+    "en": "Is a room with a view available?",
+    "vi": "Còn phòng nhìn ra view không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-196",
+    "en": "How much is a room with a view?",
+    "vi": "phòng nhìn ra view giá bao nhiêu?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-197",
+    "en": "Can I see a room with a view?",
+    "vi": "Tôi xem phòng nhìn ra view được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-198",
+    "en": "I would like a non-smoking room for one night.",
+    "vi": "Tôi muốn phòng không hút thuốc một đêm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-199",
+    "en": "Do you have a non-smoking room for one night?",
+    "vi": "Còn phòng không hút thuốc một đêm không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-200",
+    "en": "I would like a non-smoking room for two nights.",
+    "vi": "Tôi muốn phòng không hút thuốc hai đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-201",
+    "en": "Do you have a non-smoking room for two nights?",
+    "vi": "Còn phòng không hút thuốc hai đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-202",
+    "en": "I would like a non-smoking room for three nights.",
+    "vi": "Tôi muốn phòng không hút thuốc ba đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-203",
+    "en": "Do you have a non-smoking room for three nights?",
+    "vi": "Còn phòng không hút thuốc ba đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-204",
+    "en": "I would like a non-smoking room for four nights.",
+    "vi": "Tôi muốn phòng không hút thuốc bốn đêm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-205",
+    "en": "Do you have a non-smoking room for four nights?",
+    "vi": "Còn phòng không hút thuốc bốn đêm không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-206",
+    "en": "I would like a non-smoking room for five nights.",
+    "vi": "Tôi muốn phòng không hút thuốc năm đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-207",
+    "en": "Do you have a non-smoking room for five nights?",
+    "vi": "Còn phòng không hút thuốc năm đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-208",
+    "en": "I would like a non-smoking room for a week.",
+    "vi": "Tôi muốn phòng không hút thuốc một tuần.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-209",
+    "en": "Do you have a non-smoking room for a week?",
+    "vi": "Còn phòng không hút thuốc một tuần không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-210",
+    "en": "Is a non-smoking room available?",
+    "vi": "Còn phòng không hút thuốc không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-211",
+    "en": "How much is a non-smoking room?",
+    "vi": "phòng không hút thuốc giá bao nhiêu?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-212",
+    "en": "Can I see a non-smoking room?",
+    "vi": "Tôi xem phòng không hút thuốc được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-213",
+    "en": "I would like an accessible room for one night.",
+    "vi": "Tôi muốn phòng cho người khuyết tật một đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-214",
+    "en": "Do you have an accessible room for one night?",
+    "vi": "Còn phòng cho người khuyết tật một đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-215",
+    "en": "I would like an accessible room for two nights.",
+    "vi": "Tôi muốn phòng cho người khuyết tật hai đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-216",
+    "en": "Do you have an accessible room for two nights?",
+    "vi": "Còn phòng cho người khuyết tật hai đêm không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-217",
+    "en": "I would like an accessible room for three nights.",
+    "vi": "Tôi muốn phòng cho người khuyết tật ba đêm.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-218",
+    "en": "Do you have an accessible room for three nights?",
+    "vi": "Còn phòng cho người khuyết tật ba đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-219",
+    "en": "I would like an accessible room for four nights.",
+    "vi": "Tôi muốn phòng cho người khuyết tật bốn đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-220",
+    "en": "Do you have an accessible room for four nights?",
+    "vi": "Còn phòng cho người khuyết tật bốn đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-221",
+    "en": "I would like an accessible room for five nights.",
+    "vi": "Tôi muốn phòng cho người khuyết tật năm đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-222",
+    "en": "Do you have an accessible room for five nights?",
+    "vi": "Còn phòng cho người khuyết tật năm đêm không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-223",
+    "en": "I would like an accessible room for a week.",
+    "vi": "Tôi muốn phòng cho người khuyết tật một tuần.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-224",
+    "en": "Do you have an accessible room for a week?",
+    "vi": "Còn phòng cho người khuyết tật một tuần không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-225",
+    "en": "Is an accessible room available?",
+    "vi": "Còn phòng cho người khuyết tật không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-226",
+    "en": "How much is an accessible room?",
+    "vi": "phòng cho người khuyết tật giá bao nhiêu?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-227",
+    "en": "Can I see an accessible room?",
+    "vi": "Tôi xem phòng cho người khuyết tật được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-228",
+    "en": "I would like a king room for one night.",
+    "vi": "Tôi muốn phòng giường king một đêm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-229",
+    "en": "Do you have a king room for one night?",
+    "vi": "Còn phòng giường king một đêm không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-230",
+    "en": "I would like a king room for two nights.",
+    "vi": "Tôi muốn phòng giường king hai đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-231",
+    "en": "Do you have a king room for two nights?",
+    "vi": "Còn phòng giường king hai đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-232",
+    "en": "I would like a king room for three nights.",
+    "vi": "Tôi muốn phòng giường king ba đêm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-233",
+    "en": "Do you have a king room for three nights?",
+    "vi": "Còn phòng giường king ba đêm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-234",
+    "en": "I would like a king room for four nights.",
+    "vi": "Tôi muốn phòng giường king bốn đêm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-235",
+    "en": "Do you have a king room for four nights?",
+    "vi": "Còn phòng giường king bốn đêm không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-236",
+    "en": "I would like a king room for five nights.",
+    "vi": "Tôi muốn phòng giường king năm đêm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-237",
+    "en": "Do you have a king room for five nights?",
+    "vi": "Còn phòng giường king năm đêm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-238",
+    "en": "I would like a king room for a week.",
+    "vi": "Tôi muốn phòng giường king một tuần.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-239",
+    "en": "Do you have a king room for a week?",
+    "vi": "Còn phòng giường king một tuần không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-240",
+    "en": "Is a king room available?",
+    "vi": "Còn phòng giường king không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-241",
+    "en": "How much is a king room?",
+    "vi": "phòng giường king giá bao nhiêu?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-242",
+    "en": "Can I see a king room?",
+    "vi": "Tôi xem phòng giường king được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-243",
+    "en": "I am in room 201.",
+    "vi": "Tôi ở phòng 201.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-244",
+    "en": "Can you send it to room 201?",
+    "vi": "Nhờ gửi lên phòng 201.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-245",
+    "en": "Is room 201 ready?",
+    "vi": "Phòng 201 đã sẵn sàng chưa?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-246",
+    "en": "The key for room 201 does not work.",
+    "vi": "Thẻ phòng 201 không mở được.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-247",
+    "en": "I am in room 305.",
+    "vi": "Tôi ở phòng 305.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-248",
+    "en": "Can you send it to room 305?",
+    "vi": "Nhờ gửi lên phòng 305.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-249",
+    "en": "Is room 305 ready?",
+    "vi": "Phòng 305 đã sẵn sàng chưa?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-250",
+    "en": "The key for room 305 does not work.",
+    "vi": "Thẻ phòng 305 không mở được.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-251",
+    "en": "I am in room 412.",
+    "vi": "Tôi ở phòng 412.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-252",
+    "en": "Can you send it to room 412?",
+    "vi": "Nhờ gửi lên phòng 412.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-253",
+    "en": "Is room 412 ready?",
+    "vi": "Phòng 412 đã sẵn sàng chưa?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-254",
+    "en": "The key for room 412 does not work.",
+    "vi": "Thẻ phòng 412 không mở được.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-255",
+    "en": "I am in room 508.",
+    "vi": "Tôi ở phòng 508.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-256",
+    "en": "Can you send it to room 508?",
+    "vi": "Nhờ gửi lên phòng 508.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-257",
+    "en": "Is room 508 ready?",
+    "vi": "Phòng 508 đã sẵn sàng chưa?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-258",
+    "en": "The key for room 508 does not work.",
+    "vi": "Thẻ phòng 508 không mở được.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-259",
+    "en": "I am in room 612.",
+    "vi": "Tôi ở phòng 612.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-260",
+    "en": "Can you send it to room 612?",
+    "vi": "Nhờ gửi lên phòng 612.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-261",
+    "en": "Is room 612 ready?",
+    "vi": "Phòng 612 đã sẵn sàng chưa?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-262",
+    "en": "The key for room 612 does not work.",
+    "vi": "Thẻ phòng 612 không mở được.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-263",
+    "en": "I am in room 703.",
+    "vi": "Tôi ở phòng 703.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-264",
+    "en": "Can you send it to room 703?",
+    "vi": "Nhờ gửi lên phòng 703.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-265",
+    "en": "Is room 703 ready?",
+    "vi": "Phòng 703 đã sẵn sàng chưa?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-266",
+    "en": "The key for room 703 does not work.",
+    "vi": "Thẻ phòng 703 không mở được.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-267",
+    "en": "I am in room 809.",
+    "vi": "Tôi ở phòng 809.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-268",
+    "en": "Can you send it to room 809?",
+    "vi": "Nhờ gửi lên phòng 809.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-269",
+    "en": "Is room 809 ready?",
+    "vi": "Phòng 809 đã sẵn sàng chưa?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-270",
+    "en": "The key for room 809 does not work.",
+    "vi": "Thẻ phòng 809 không mở được.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-271",
+    "en": "I am in room 910.",
+    "vi": "Tôi ở phòng 910.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-272",
+    "en": "Can you send it to room 910?",
+    "vi": "Nhờ gửi lên phòng 910.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-273",
+    "en": "Is room 910 ready?",
+    "vi": "Phòng 910 đã sẵn sàng chưa?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-274",
+    "en": "The key for room 910 does not work.",
+    "vi": "Thẻ phòng 910 không mở được.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-275",
+    "en": "I am in room 1002.",
+    "vi": "Tôi ở phòng 1002.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-276",
+    "en": "Can you send it to room 1002?",
+    "vi": "Nhờ gửi lên phòng 1002.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-277",
+    "en": "Is room 1002 ready?",
+    "vi": "Phòng 1002 đã sẵn sàng chưa?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-278",
+    "en": "The key for room 1002 does not work.",
+    "vi": "Thẻ phòng 1002 không mở được.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-279",
+    "en": "I am in room 1215.",
+    "vi": "Tôi ở phòng 1215.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-280",
+    "en": "Can you send it to room 1215?",
+    "vi": "Nhờ gửi lên phòng 1215.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-281",
+    "en": "Is room 1215 ready?",
+    "vi": "Phòng 1215 đã sẵn sàng chưa?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-282",
+    "en": "The key for room 1215 does not work.",
+    "vi": "Thẻ phòng 1215 không mở được.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-283",
+    "en": "Where is the gym?",
+    "vi": "phòng gym ở đâu?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-284",
+    "en": "How do I get to the gym?",
+    "vi": "Đi phòng gym thế nào?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-285",
+    "en": "Is the gym open?",
+    "vi": "phòng gym có đang mở không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-286",
+    "en": "What time does the gym open?",
+    "vi": "phòng gym mở cửa lúc mấy giờ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-287",
+    "en": "Where is the pool?",
+    "vi": "hồ bơi ở đâu?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-288",
+    "en": "How do I get to the pool?",
+    "vi": "Đi hồ bơi thế nào?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-289",
+    "en": "Is the pool open?",
+    "vi": "hồ bơi có đang mở không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-290",
+    "en": "What time does the pool open?",
+    "vi": "hồ bơi mở cửa lúc mấy giờ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-291",
+    "en": "Where is the restaurant?",
+    "vi": "nhà hàng ở đâu?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-292",
+    "en": "How do I get to the restaurant?",
+    "vi": "Đi nhà hàng thế nào?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-293",
+    "en": "Is the restaurant open?",
+    "vi": "nhà hàng có đang mở không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-294",
+    "en": "What time does the restaurant open?",
+    "vi": "nhà hàng mở cửa lúc mấy giờ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-295",
+    "en": "Where is the lobby?",
+    "vi": "sảnh ở đâu?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-296",
+    "en": "How do I get to the lobby?",
+    "vi": "Đi sảnh thế nào?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-297",
+    "en": "Is the lobby open?",
+    "vi": "sảnh có đang mở không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-298",
+    "en": "What time does the lobby open?",
+    "vi": "sảnh mở cửa lúc mấy giờ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-299",
+    "en": "Where is the elevator?",
+    "vi": "thang máy ở đâu?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-300",
+    "en": "How do I get to the elevator?",
+    "vi": "Đi thang máy thế nào?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-301",
+    "en": "Is the elevator open?",
+    "vi": "thang máy có đang mở không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-302",
+    "en": "What time does the elevator open?",
+    "vi": "thang máy mở cửa lúc mấy giờ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-303",
+    "en": "Where is the spa?",
+    "vi": "spa ở đâu?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-304",
+    "en": "How do I get to the spa?",
+    "vi": "Đi spa thế nào?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-305",
+    "en": "Is the spa open?",
+    "vi": "spa có đang mở không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-306",
+    "en": "What time does the spa open?",
+    "vi": "spa mở cửa lúc mấy giờ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-307",
+    "en": "Where is the parking lot?",
+    "vi": "bãi xe ở đâu?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-308",
+    "en": "How do I get to the parking lot?",
+    "vi": "Đi bãi xe thế nào?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-309",
+    "en": "Is the parking lot open?",
+    "vi": "bãi xe có đang mở không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-310",
+    "en": "What time does the parking lot open?",
+    "vi": "bãi xe mở cửa lúc mấy giờ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-311",
+    "en": "Where is the business center?",
+    "vi": "trung tâm dịch vụ ở đâu?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-312",
+    "en": "How do I get to the business center?",
+    "vi": "Đi trung tâm dịch vụ thế nào?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-313",
+    "en": "Is the business center open?",
+    "vi": "trung tâm dịch vụ có đang mở không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-314",
+    "en": "What time does the business center open?",
+    "vi": "trung tâm dịch vụ mở cửa lúc mấy giờ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-315",
+    "en": "The shower is not working.",
+    "vi": "Vòi sen không hoạt động.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-316",
+    "en": "The TV is not working.",
+    "vi": "Tivi không hoạt động.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-317",
+    "en": "There is no hot water.",
+    "vi": "Không có nước nóng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-318",
+    "en": "The room is too noisy.",
+    "vi": "Phòng quá ồn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-319",
+    "en": "I need to check out.",
+    "vi": "Tôi muốn trả phòng.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-320",
+    "en": "Can I extend my stay?",
+    "vi": "Tôi ở thêm được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-321",
+    "en": "Is parking free?",
+    "vi": "Đỗ xe có miễn phí không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-322",
+    "en": "Can I pay by card?",
+    "vi": "Tôi trả thẻ được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-323",
+    "en": "Is breakfast included, please?",
+    "vi": "Giá phòng đã gồm bữa sáng chưa ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-324",
+    "en": "Could I have an extra towel, please?",
+    "vi": "Cho tôi thêm một khăn tắm được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-325",
+    "en": "Can I leave my luggage here, please?",
+    "vi": "Tôi gửi hành lý ở đây được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-326",
+    "en": "Can you find the booking for Nguyen, please?",
+    "vi": "Bạn tìm giúp đơn của Nguyen được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-327",
+    "en": "Can you find the booking for Tran, please?",
+    "vi": "Bạn tìm giúp đơn của Tran được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-328",
+    "en": "Can you find the booking for Le, please?",
+    "vi": "Bạn tìm giúp đơn của Le được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-329",
+    "en": "Can you find the booking for Pham, please?",
+    "vi": "Bạn tìm giúp đơn của Pham được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-330",
+    "en": "Can you find the booking for Hoang, please?",
+    "vi": "Bạn tìm giúp đơn của Hoang được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-331",
+    "en": "Can you find the booking for Vu, please?",
+    "vi": "Bạn tìm giúp đơn của Vu được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-332",
+    "en": "Can you find the booking for Dang, please?",
+    "vi": "Bạn tìm giúp đơn của Dang được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-333",
+    "en": "Can you find the booking for Bui, please?",
+    "vi": "Bạn tìm giúp đơn của Bui được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-334",
+    "en": "Can you find the booking for Do, please?",
+    "vi": "Bạn tìm giúp đơn của Do được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-335",
+    "en": "Can you find the booking for Ngo, please?",
+    "vi": "Bạn tìm giúp đơn của Ngo được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-336",
+    "en": "Can you send an extra towel to my room, please?",
+    "vi": "Nhờ gửi thêm một khăn tắm lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-337",
+    "en": "Could I have an extra pillow, please?",
+    "vi": "Cho tôi thêm một gối được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-338",
+    "en": "Can you send an extra pillow to my room, please?",
+    "vi": "Nhờ gửi thêm một gối lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-339",
+    "en": "Could I have an extra blanket, please?",
+    "vi": "Cho tôi thêm một chăn được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-340",
+    "en": "Can you send an extra blanket to my room, please?",
+    "vi": "Nhờ gửi thêm một chăn lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-341",
+    "en": "Could I have a toothbrush, please?",
+    "vi": "Cho tôi một bàn chải được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-342",
+    "en": "Can you send a toothbrush to my room, please?",
+    "vi": "Nhờ gửi một bàn chải lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-343",
+    "en": "Could I have some water, please?",
+    "vi": "Cho tôi ít nước được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-344",
+    "en": "Can you send some water to my room, please?",
+    "vi": "Nhờ gửi ít nước lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-345",
+    "en": "Could I have a hair dryer, please?",
+    "vi": "Cho tôi một máy sấy tóc được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-346",
+    "en": "Can you send a hair dryer to my room, please?",
+    "vi": "Nhờ gửi một máy sấy tóc lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-347",
+    "en": "Could I have an adapter, please?",
+    "vi": "Cho tôi một ổ chuyển được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-348",
+    "en": "Can you send an adapter to my room, please?",
+    "vi": "Nhờ gửi một ổ chuyển lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-349",
+    "en": "Could I have a late checkout, please?",
+    "vi": "Cho tôi trả phòng muộn được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-350",
+    "en": "Can you send a late checkout to my room, please?",
+    "vi": "Nhờ gửi trả phòng muộn lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-351",
+    "en": "Could I have a wake-up call, please?",
+    "vi": "Cho tôi một cuộc gọi đánh thức được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-352",
+    "en": "Can you send a wake-up call to my room, please?",
+    "vi": "Nhờ gửi một cuộc gọi đánh thức lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-353",
+    "en": "Could I have the Wi-Fi password, please?",
+    "vi": "Cho tôi mật khẩu Wi-Fi được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-354",
+    "en": "Can you send the Wi-Fi password to my room, please?",
+    "vi": "Nhờ gửi mật khẩu Wi-Fi lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-355",
+    "en": "Could I have an extra hanger, please?",
+    "vi": "Cho tôi thêm móc áo được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-356",
+    "en": "Can you send an extra hanger to my room, please?",
+    "vi": "Nhờ gửi thêm móc áo lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-357",
+    "en": "Could I have a bottle of water, please?",
+    "vi": "Cho tôi một chai nước được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-358",
+    "en": "Can you send a bottle of water to my room, please?",
+    "vi": "Nhờ gửi một chai nước lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-359",
+    "en": "Could I have an iron, please?",
+    "vi": "Cho tôi một bàn ủi được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-360",
+    "en": "Can you send an iron to my room, please?",
+    "vi": "Nhờ gửi một bàn ủi lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-361",
+    "en": "Could I have a city map, please?",
+    "vi": "Cho tôi một bản đồ thành phố được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-362",
+    "en": "Can you send a city map to my room, please?",
+    "vi": "Nhờ gửi một bản đồ thành phố lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-363",
+    "en": "Do you have a single room for one night, please?",
+    "vi": "Còn phòng đơn một đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-364",
+    "en": "Do you have a single room for two nights, please?",
+    "vi": "Còn phòng đơn hai đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-365",
+    "en": "Do you have a single room for three nights, please?",
+    "vi": "Còn phòng đơn ba đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-366",
+    "en": "Do you have a single room for four nights, please?",
+    "vi": "Còn phòng đơn bốn đêm không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-367",
+    "en": "Do you have a single room for five nights, please?",
+    "vi": "Còn phòng đơn năm đêm không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-368",
+    "en": "Do you have a single room for a week, please?",
+    "vi": "Còn phòng đơn một tuần không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-369",
+    "en": "Is a single room available, please?",
+    "vi": "Còn phòng đơn không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-370",
+    "en": "Can I see a single room, please?",
+    "vi": "Tôi xem phòng đơn được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-371",
+    "en": "Do you have a double room for one night, please?",
+    "vi": "Còn phòng đôi một đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-372",
+    "en": "Do you have a double room for two nights, please?",
+    "vi": "Còn phòng đôi hai đêm không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-373",
+    "en": "Do you have a double room for three nights, please?",
+    "vi": "Còn phòng đôi ba đêm không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-374",
+    "en": "Do you have a double room for four nights, please?",
+    "vi": "Còn phòng đôi bốn đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-375",
+    "en": "Do you have a double room for five nights, please?",
+    "vi": "Còn phòng đôi năm đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-376",
+    "en": "Do you have a double room for a week, please?",
+    "vi": "Còn phòng đôi một tuần không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-377",
+    "en": "Is a double room available, please?",
+    "vi": "Còn phòng đôi không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-378",
+    "en": "Can I see a double room, please?",
+    "vi": "Tôi xem phòng đôi được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-379",
+    "en": "Do you have a twin room for one night, please?",
+    "vi": "Còn phòng hai giường một đêm không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-380",
+    "en": "Do you have a twin room for two nights, please?",
+    "vi": "Còn phòng hai giường hai đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-381",
+    "en": "Do you have a twin room for three nights, please?",
+    "vi": "Còn phòng hai giường ba đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-382",
+    "en": "Do you have a twin room for four nights, please?",
+    "vi": "Còn phòng hai giường bốn đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-383",
+    "en": "Do you have a twin room for five nights, please?",
+    "vi": "Còn phòng hai giường năm đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-384",
+    "en": "Do you have a twin room for a week, please?",
+    "vi": "Còn phòng hai giường một tuần không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-385",
+    "en": "Is a twin room available, please?",
+    "vi": "Còn phòng hai giường không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-386",
+    "en": "Can I see a twin room, please?",
+    "vi": "Tôi xem phòng hai giường được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-387",
+    "en": "Do you have a family room for one night, please?",
+    "vi": "Còn phòng gia đình một đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-388",
+    "en": "Do you have a family room for two nights, please?",
+    "vi": "Còn phòng gia đình hai đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-389",
+    "en": "Do you have a family room for three nights, please?",
+    "vi": "Còn phòng gia đình ba đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-390",
+    "en": "Do you have a family room for four nights, please?",
+    "vi": "Còn phòng gia đình bốn đêm không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-391",
+    "en": "Do you have a family room for five nights, please?",
+    "vi": "Còn phòng gia đình năm đêm không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-392",
+    "en": "Do you have a family room for a week, please?",
+    "vi": "Còn phòng gia đình một tuần không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-393",
+    "en": "Is a family room available, please?",
+    "vi": "Còn phòng gia đình không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-394",
+    "en": "Can I see a family room, please?",
+    "vi": "Tôi xem phòng gia đình được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-395",
+    "en": "Do you have a suite for one night, please?",
+    "vi": "Còn phòng suite một đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-396",
+    "en": "Do you have a suite for two nights, please?",
+    "vi": "Còn phòng suite hai đêm không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-397",
+    "en": "Do you have a suite for three nights, please?",
+    "vi": "Còn phòng suite ba đêm không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-398",
+    "en": "Do you have a suite for four nights, please?",
+    "vi": "Còn phòng suite bốn đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-399",
+    "en": "Do you have a suite for five nights, please?",
+    "vi": "Còn phòng suite năm đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-400",
+    "en": "Do you have a suite for a week, please?",
+    "vi": "Còn phòng suite một tuần không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-401",
+    "en": "Is a suite available, please?",
+    "vi": "Còn phòng suite không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-402",
+    "en": "Can I see a suite, please?",
+    "vi": "Tôi xem phòng suite được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-403",
+    "en": "Do you have a quiet room for one night, please?",
+    "vi": "Còn phòng yên tĩnh một đêm không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-404",
+    "en": "Do you have a quiet room for two nights, please?",
+    "vi": "Còn phòng yên tĩnh hai đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-405",
+    "en": "Do you have a quiet room for three nights, please?",
+    "vi": "Còn phòng yên tĩnh ba đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-406",
+    "en": "Do you have a quiet room for four nights, please?",
+    "vi": "Còn phòng yên tĩnh bốn đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-407",
+    "en": "Do you have a quiet room for five nights, please?",
+    "vi": "Còn phòng yên tĩnh năm đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-408",
+    "en": "Do you have a quiet room for a week, please?",
+    "vi": "Còn phòng yên tĩnh một tuần không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-409",
+    "en": "Is a quiet room available, please?",
+    "vi": "Còn phòng yên tĩnh không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-410",
+    "en": "Can I see a quiet room, please?",
+    "vi": "Tôi xem phòng yên tĩnh được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-411",
+    "en": "Do you have a room with a view for one night, please?",
+    "vi": "Còn phòng nhìn ra view một đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-412",
+    "en": "Do you have a room with a view for two nights, please?",
+    "vi": "Còn phòng nhìn ra view hai đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-413",
+    "en": "Do you have a room with a view for three nights, please?",
+    "vi": "Còn phòng nhìn ra view ba đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-414",
+    "en": "Do you have a room with a view for four nights, please?",
+    "vi": "Còn phòng nhìn ra view bốn đêm không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-415",
+    "en": "Do you have a room with a view for five nights, please?",
+    "vi": "Còn phòng nhìn ra view năm đêm không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-416",
+    "en": "Do you have a room with a view for a week, please?",
+    "vi": "Còn phòng nhìn ra view một tuần không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-417",
+    "en": "Is a room with a view available, please?",
+    "vi": "Còn phòng nhìn ra view không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-418",
+    "en": "Can I see a room with a view, please?",
+    "vi": "Tôi xem phòng nhìn ra view được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-419",
+    "en": "Do you have a non-smoking room for one night, please?",
+    "vi": "Còn phòng không hút thuốc một đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-420",
+    "en": "Do you have a non-smoking room for two nights, please?",
+    "vi": "Còn phòng không hút thuốc hai đêm không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-421",
+    "en": "Do you have a non-smoking room for three nights, please?",
+    "vi": "Còn phòng không hút thuốc ba đêm không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-422",
+    "en": "Do you have a non-smoking room for four nights, please?",
+    "vi": "Còn phòng không hút thuốc bốn đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-423",
+    "en": "Do you have a non-smoking room for five nights, please?",
+    "vi": "Còn phòng không hút thuốc năm đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-424",
+    "en": "Do you have a non-smoking room for a week, please?",
+    "vi": "Còn phòng không hút thuốc một tuần không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-425",
+    "en": "Is a non-smoking room available, please?",
+    "vi": "Còn phòng không hút thuốc không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-426",
+    "en": "Can I see a non-smoking room, please?",
+    "vi": "Tôi xem phòng không hút thuốc được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-427",
+    "en": "Do you have an accessible room for one night, please?",
+    "vi": "Còn phòng cho người khuyết tật một đêm không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-428",
+    "en": "Do you have an accessible room for two nights, please?",
+    "vi": "Còn phòng cho người khuyết tật hai đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-429",
+    "en": "Do you have an accessible room for three nights, please?",
+    "vi": "Còn phòng cho người khuyết tật ba đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-430",
+    "en": "Do you have an accessible room for four nights, please?",
+    "vi": "Còn phòng cho người khuyết tật bốn đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-431",
+    "en": "Do you have an accessible room for five nights, please?",
+    "vi": "Còn phòng cho người khuyết tật năm đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-432",
+    "en": "Do you have an accessible room for a week, please?",
+    "vi": "Còn phòng cho người khuyết tật một tuần không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-433",
+    "en": "Is an accessible room available, please?",
+    "vi": "Còn phòng cho người khuyết tật không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-434",
+    "en": "Can I see an accessible room, please?",
+    "vi": "Tôi xem phòng cho người khuyết tật được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-435",
+    "en": "Do you have a king room for one night, please?",
+    "vi": "Còn phòng giường king một đêm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-436",
+    "en": "Do you have a king room for two nights, please?",
+    "vi": "Còn phòng giường king hai đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-437",
+    "en": "Do you have a king room for three nights, please?",
+    "vi": "Còn phòng giường king ba đêm không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-438",
+    "en": "Do you have a king room for four nights, please?",
+    "vi": "Còn phòng giường king bốn đêm không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-439",
+    "en": "Do you have a king room for five nights, please?",
+    "vi": "Còn phòng giường king năm đêm không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-440",
+    "en": "Do you have a king room for a week, please?",
+    "vi": "Còn phòng giường king một tuần không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-441",
+    "en": "Is a king room available, please?",
+    "vi": "Còn phòng giường king không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-442",
+    "en": "Can I see a king room, please?",
+    "vi": "Tôi xem phòng giường king được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-443",
+    "en": "Can you send it to room 201, please?",
+    "vi": "Nhờ gửi lên phòng 201.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-444",
+    "en": "Is room 201 ready, please?",
+    "vi": "Phòng 201 đã sẵn sàng chưa ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-445",
+    "en": "Can you send it to room 305, please?",
+    "vi": "Nhờ gửi lên phòng 305.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-446",
+    "en": "Is room 305 ready, please?",
+    "vi": "Phòng 305 đã sẵn sàng chưa ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-447",
+    "en": "Can you send it to room 412, please?",
+    "vi": "Nhờ gửi lên phòng 412.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-448",
+    "en": "Is room 412 ready, please?",
+    "vi": "Phòng 412 đã sẵn sàng chưa ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-449",
+    "en": "Can you send it to room 508, please?",
+    "vi": "Nhờ gửi lên phòng 508.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-450",
+    "en": "Is room 508 ready, please?",
+    "vi": "Phòng 508 đã sẵn sàng chưa ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-451",
+    "en": "Can you send it to room 612, please?",
+    "vi": "Nhờ gửi lên phòng 612.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-452",
+    "en": "Is room 612 ready, please?",
+    "vi": "Phòng 612 đã sẵn sàng chưa ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-453",
+    "en": "Can you send it to room 703, please?",
+    "vi": "Nhờ gửi lên phòng 703.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-454",
+    "en": "Is room 703 ready, please?",
+    "vi": "Phòng 703 đã sẵn sàng chưa ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-455",
+    "en": "Can you send it to room 809, please?",
+    "vi": "Nhờ gửi lên phòng 809.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-456",
+    "en": "Is room 809 ready, please?",
+    "vi": "Phòng 809 đã sẵn sàng chưa ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-457",
+    "en": "Can you send it to room 910, please?",
+    "vi": "Nhờ gửi lên phòng 910.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-458",
+    "en": "Is room 910 ready, please?",
+    "vi": "Phòng 910 đã sẵn sàng chưa ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-459",
+    "en": "Can you send it to room 1002, please?",
+    "vi": "Nhờ gửi lên phòng 1002.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-460",
+    "en": "Is room 1002 ready, please?",
+    "vi": "Phòng 1002 đã sẵn sàng chưa ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-461",
+    "en": "Can you send it to room 1215, please?",
+    "vi": "Nhờ gửi lên phòng 1215.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-462",
+    "en": "Is room 1215 ready, please?",
+    "vi": "Phòng 1215 đã sẵn sàng chưa ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-463",
+    "en": "Is the gym open, please?",
+    "vi": "phòng gym có đang mở không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-464",
+    "en": "Is the pool open, please?",
+    "vi": "hồ bơi có đang mở không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-465",
+    "en": "Is the restaurant open, please?",
+    "vi": "nhà hàng có đang mở không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-466",
+    "en": "Is the lobby open, please?",
+    "vi": "sảnh có đang mở không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-467",
+    "en": "Is the elevator open, please?",
+    "vi": "thang máy có đang mở không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-468",
+    "en": "Is the spa open, please?",
+    "vi": "spa có đang mở không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-469",
+    "en": "Is the parking lot open, please?",
+    "vi": "bãi xe có đang mở không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-470",
+    "en": "Is the business center open, please?",
+    "vi": "trung tâm dịch vụ có đang mở không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-471",
+    "en": "Can I extend my stay, please?",
+    "vi": "Tôi ở thêm được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-472",
+    "en": "Is parking free, please?",
+    "vi": "Đỗ xe có miễn phí không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-473",
+    "en": "Can I pay by card, please?",
+    "vi": "Tôi trả thẻ được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-474",
+    "en": "This morning, I have a reservation under Nguyen.",
+    "vi": "Sáng nay, tôi đã đặt phòng dưới tên Nguyễn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-475",
+    "en": "This afternoon, I have a reservation under Nguyen.",
+    "vi": "Chiều nay, tôi đã đặt phòng dưới tên Nguyễn.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-476",
+    "en": "This evening, I have a reservation under Nguyen.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Nguyễn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-477",
+    "en": "Today, I have a reservation under Nguyen.",
+    "vi": "Hôm nay, tôi đã đặt phòng dưới tên Nguyễn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-478",
+    "en": "Tomorrow, I have a reservation under Nguyen.",
+    "vi": "Ngày mai, tôi đã đặt phòng dưới tên Nguyễn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-479",
+    "en": "Tonight, I have a reservation under Nguyen.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Nguyễn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-480",
+    "en": "Now, I have a reservation under Nguyen.",
+    "vi": "Bây giờ, tôi đã đặt phòng dưới tên Nguyễn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-481",
+    "en": "This morning, what time is check-in and check-out?",
+    "vi": "Sáng nay, nhận phòng và trả phòng lúc mấy giờ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-482",
+    "en": "This afternoon, what time is check-in and check-out?",
+    "vi": "Chiều nay, nhận phòng và trả phòng lúc mấy giờ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-483",
+    "en": "This evening, what time is check-in and check-out?",
+    "vi": "Tối nay, nhận phòng và trả phòng lúc mấy giờ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-484",
+    "en": "Today, what time is check-in and check-out?",
+    "vi": "Hôm nay, nhận phòng và trả phòng lúc mấy giờ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-485",
+    "en": "Tomorrow, what time is check-in and check-out?",
+    "vi": "Ngày mai, nhận phòng và trả phòng lúc mấy giờ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-486",
+    "en": "Tonight, what time is check-in and check-out?",
+    "vi": "Tối nay, nhận phòng và trả phòng lúc mấy giờ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-487",
+    "en": "Now, what time is check-in and check-out?",
+    "vi": "Bây giờ, nhận phòng và trả phòng lúc mấy giờ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-488",
+    "en": "This morning, is breakfast included?",
+    "vi": "Sáng nay, giá phòng đã gồm bữa sáng chưa?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-489",
+    "en": "This afternoon, is breakfast included?",
+    "vi": "Chiều nay, giá phòng đã gồm bữa sáng chưa?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-490",
+    "en": "This evening, is breakfast included?",
+    "vi": "Tối nay, giá phòng đã gồm bữa sáng chưa?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-491",
+    "en": "Today, is breakfast included?",
+    "vi": "Hôm nay, giá phòng đã gồm bữa sáng chưa?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-492",
+    "en": "Tomorrow, is breakfast included?",
+    "vi": "Ngày mai, giá phòng đã gồm bữa sáng chưa?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-493",
+    "en": "Tonight, is breakfast included?",
+    "vi": "Tối nay, giá phòng đã gồm bữa sáng chưa?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-494",
+    "en": "Now, is breakfast included?",
+    "vi": "Bây giờ, giá phòng đã gồm bữa sáng chưa?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-495",
+    "en": "This morning, could I have an extra towel?",
+    "vi": "Sáng nay, cho tôi thêm một khăn tắm được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-496",
+    "en": "This afternoon, could I have an extra towel?",
+    "vi": "Chiều nay, cho tôi thêm một khăn tắm được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-497",
+    "en": "This evening, could I have an extra towel?",
+    "vi": "Tối nay, cho tôi thêm một khăn tắm được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-498",
+    "en": "Today, could I have an extra towel?",
+    "vi": "Hôm nay, cho tôi thêm một khăn tắm được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-499",
+    "en": "Tomorrow, could I have an extra towel?",
+    "vi": "Ngày mai, cho tôi thêm một khăn tắm được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-500",
+    "en": "Tonight, could I have an extra towel?",
+    "vi": "Tối nay, cho tôi thêm một khăn tắm được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-501",
+    "en": "Now, could I have an extra towel?",
+    "vi": "Bây giờ, cho tôi thêm một khăn tắm được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-502",
+    "en": "This morning, can I leave my luggage here?",
+    "vi": "Sáng nay, tôi gửi hành lý ở đây được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-503",
+    "en": "This afternoon, can I leave my luggage here?",
+    "vi": "Chiều nay, tôi gửi hành lý ở đây được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-504",
+    "en": "This evening, can I leave my luggage here?",
+    "vi": "Tối nay, tôi gửi hành lý ở đây được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-505",
+    "en": "Today, can I leave my luggage here?",
+    "vi": "Hôm nay, tôi gửi hành lý ở đây được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-506",
+    "en": "Tomorrow, can I leave my luggage here?",
+    "vi": "Ngày mai, tôi gửi hành lý ở đây được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-507",
+    "en": "Tonight, can I leave my luggage here?",
+    "vi": "Tối nay, tôi gửi hành lý ở đây được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-508",
+    "en": "Now, can I leave my luggage here?",
+    "vi": "Bây giờ, tôi gửi hành lý ở đây được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-509",
+    "en": "This morning, can you find the booking for Nguyen?",
+    "vi": "Sáng nay, bạn tìm giúp đơn của Nguyen được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-510",
+    "en": "This afternoon, can you find the booking for Nguyen?",
+    "vi": "Chiều nay, bạn tìm giúp đơn của Nguyen được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-511",
+    "en": "This evening, can you find the booking for Nguyen?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Nguyen được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-512",
+    "en": "Today, can you find the booking for Nguyen?",
+    "vi": "Hôm nay, bạn tìm giúp đơn của Nguyen được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-513",
+    "en": "Tomorrow, can you find the booking for Nguyen?",
+    "vi": "Ngày mai, bạn tìm giúp đơn của Nguyen được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-514",
+    "en": "Tonight, can you find the booking for Nguyen?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Nguyen được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-515",
+    "en": "Now, can you find the booking for Nguyen?",
+    "vi": "Bây giờ, bạn tìm giúp đơn của Nguyen được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-516",
+    "en": "This morning, I have a reservation under Tran.",
+    "vi": "Sáng nay, tôi đã đặt phòng dưới tên Tran.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-517",
+    "en": "This afternoon, I have a reservation under Tran.",
+    "vi": "Chiều nay, tôi đã đặt phòng dưới tên Tran.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-518",
+    "en": "This evening, I have a reservation under Tran.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Tran.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-519",
+    "en": "Today, I have a reservation under Tran.",
+    "vi": "Hôm nay, tôi đã đặt phòng dưới tên Tran.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-520",
+    "en": "Tomorrow, I have a reservation under Tran.",
+    "vi": "Ngày mai, tôi đã đặt phòng dưới tên Tran.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-521",
+    "en": "Tonight, I have a reservation under Tran.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Tran.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-522",
+    "en": "Now, I have a reservation under Tran.",
+    "vi": "Bây giờ, tôi đã đặt phòng dưới tên Tran.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-523",
+    "en": "This morning, can you find the booking for Tran?",
+    "vi": "Sáng nay, bạn tìm giúp đơn của Tran được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-524",
+    "en": "This afternoon, can you find the booking for Tran?",
+    "vi": "Chiều nay, bạn tìm giúp đơn của Tran được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-525",
+    "en": "This evening, can you find the booking for Tran?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Tran được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-526",
+    "en": "Today, can you find the booking for Tran?",
+    "vi": "Hôm nay, bạn tìm giúp đơn của Tran được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-527",
+    "en": "Tomorrow, can you find the booking for Tran?",
+    "vi": "Ngày mai, bạn tìm giúp đơn của Tran được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-528",
+    "en": "Tonight, can you find the booking for Tran?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Tran được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-529",
+    "en": "Now, can you find the booking for Tran?",
+    "vi": "Bây giờ, bạn tìm giúp đơn của Tran được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-530",
+    "en": "This morning, I have a reservation under Le.",
+    "vi": "Sáng nay, tôi đã đặt phòng dưới tên Le.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-531",
+    "en": "This afternoon, I have a reservation under Le.",
+    "vi": "Chiều nay, tôi đã đặt phòng dưới tên Le.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-532",
+    "en": "This evening, I have a reservation under Le.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Le.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-533",
+    "en": "Today, I have a reservation under Le.",
+    "vi": "Hôm nay, tôi đã đặt phòng dưới tên Le.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-534",
+    "en": "Tomorrow, I have a reservation under Le.",
+    "vi": "Ngày mai, tôi đã đặt phòng dưới tên Le.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-535",
+    "en": "Tonight, I have a reservation under Le.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Le.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-536",
+    "en": "Now, I have a reservation under Le.",
+    "vi": "Bây giờ, tôi đã đặt phòng dưới tên Le.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-537",
+    "en": "This morning, can you find the booking for Le?",
+    "vi": "Sáng nay, bạn tìm giúp đơn của Le được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-538",
+    "en": "This afternoon, can you find the booking for Le?",
+    "vi": "Chiều nay, bạn tìm giúp đơn của Le được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-539",
+    "en": "This evening, can you find the booking for Le?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Le được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-540",
+    "en": "Today, can you find the booking for Le?",
+    "vi": "Hôm nay, bạn tìm giúp đơn của Le được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-541",
+    "en": "Tomorrow, can you find the booking for Le?",
+    "vi": "Ngày mai, bạn tìm giúp đơn của Le được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-542",
+    "en": "Tonight, can you find the booking for Le?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Le được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-543",
+    "en": "Now, can you find the booking for Le?",
+    "vi": "Bây giờ, bạn tìm giúp đơn của Le được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-544",
+    "en": "This morning, I have a reservation under Pham.",
+    "vi": "Sáng nay, tôi đã đặt phòng dưới tên Pham.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-545",
+    "en": "This afternoon, I have a reservation under Pham.",
+    "vi": "Chiều nay, tôi đã đặt phòng dưới tên Pham.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-546",
+    "en": "This evening, I have a reservation under Pham.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Pham.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-547",
+    "en": "Today, I have a reservation under Pham.",
+    "vi": "Hôm nay, tôi đã đặt phòng dưới tên Pham.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-548",
+    "en": "Tomorrow, I have a reservation under Pham.",
+    "vi": "Ngày mai, tôi đã đặt phòng dưới tên Pham.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-549",
+    "en": "Tonight, I have a reservation under Pham.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Pham.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-550",
+    "en": "Now, I have a reservation under Pham.",
+    "vi": "Bây giờ, tôi đã đặt phòng dưới tên Pham.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-551",
+    "en": "This morning, can you find the booking for Pham?",
+    "vi": "Sáng nay, bạn tìm giúp đơn của Pham được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-552",
+    "en": "This afternoon, can you find the booking for Pham?",
+    "vi": "Chiều nay, bạn tìm giúp đơn của Pham được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-553",
+    "en": "This evening, can you find the booking for Pham?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Pham được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-554",
+    "en": "Today, can you find the booking for Pham?",
+    "vi": "Hôm nay, bạn tìm giúp đơn của Pham được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-555",
+    "en": "Tomorrow, can you find the booking for Pham?",
+    "vi": "Ngày mai, bạn tìm giúp đơn của Pham được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-556",
+    "en": "Tonight, can you find the booking for Pham?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Pham được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-557",
+    "en": "Now, can you find the booking for Pham?",
+    "vi": "Bây giờ, bạn tìm giúp đơn của Pham được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-558",
+    "en": "This morning, I have a reservation under Hoang.",
+    "vi": "Sáng nay, tôi đã đặt phòng dưới tên Hoang.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-559",
+    "en": "This afternoon, I have a reservation under Hoang.",
+    "vi": "Chiều nay, tôi đã đặt phòng dưới tên Hoang.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-560",
+    "en": "This evening, I have a reservation under Hoang.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Hoang.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-561",
+    "en": "Today, I have a reservation under Hoang.",
+    "vi": "Hôm nay, tôi đã đặt phòng dưới tên Hoang.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-562",
+    "en": "Tomorrow, I have a reservation under Hoang.",
+    "vi": "Ngày mai, tôi đã đặt phòng dưới tên Hoang.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-563",
+    "en": "Tonight, I have a reservation under Hoang.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Hoang.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-564",
+    "en": "Now, I have a reservation under Hoang.",
+    "vi": "Bây giờ, tôi đã đặt phòng dưới tên Hoang.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-565",
+    "en": "This morning, can you find the booking for Hoang?",
+    "vi": "Sáng nay, bạn tìm giúp đơn của Hoang được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-566",
+    "en": "This afternoon, can you find the booking for Hoang?",
+    "vi": "Chiều nay, bạn tìm giúp đơn của Hoang được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-567",
+    "en": "This evening, can you find the booking for Hoang?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Hoang được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-568",
+    "en": "Today, can you find the booking for Hoang?",
+    "vi": "Hôm nay, bạn tìm giúp đơn của Hoang được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-569",
+    "en": "Tomorrow, can you find the booking for Hoang?",
+    "vi": "Ngày mai, bạn tìm giúp đơn của Hoang được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-570",
+    "en": "Tonight, can you find the booking for Hoang?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Hoang được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-571",
+    "en": "Now, can you find the booking for Hoang?",
+    "vi": "Bây giờ, bạn tìm giúp đơn của Hoang được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-572",
+    "en": "This morning, I have a reservation under Vu.",
+    "vi": "Sáng nay, tôi đã đặt phòng dưới tên Vu.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-573",
+    "en": "This afternoon, I have a reservation under Vu.",
+    "vi": "Chiều nay, tôi đã đặt phòng dưới tên Vu.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-574",
+    "en": "This evening, I have a reservation under Vu.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Vu.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-575",
+    "en": "Today, I have a reservation under Vu.",
+    "vi": "Hôm nay, tôi đã đặt phòng dưới tên Vu.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-576",
+    "en": "Tomorrow, I have a reservation under Vu.",
+    "vi": "Ngày mai, tôi đã đặt phòng dưới tên Vu.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-577",
+    "en": "Tonight, I have a reservation under Vu.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Vu.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-578",
+    "en": "Now, I have a reservation under Vu.",
+    "vi": "Bây giờ, tôi đã đặt phòng dưới tên Vu.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-579",
+    "en": "This morning, can you find the booking for Vu?",
+    "vi": "Sáng nay, bạn tìm giúp đơn của Vu được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-580",
+    "en": "This afternoon, can you find the booking for Vu?",
+    "vi": "Chiều nay, bạn tìm giúp đơn của Vu được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-581",
+    "en": "This evening, can you find the booking for Vu?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Vu được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-582",
+    "en": "Today, can you find the booking for Vu?",
+    "vi": "Hôm nay, bạn tìm giúp đơn của Vu được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-583",
+    "en": "Tomorrow, can you find the booking for Vu?",
+    "vi": "Ngày mai, bạn tìm giúp đơn của Vu được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-584",
+    "en": "Tonight, can you find the booking for Vu?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Vu được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-585",
+    "en": "Now, can you find the booking for Vu?",
+    "vi": "Bây giờ, bạn tìm giúp đơn của Vu được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-586",
+    "en": "This morning, I have a reservation under Dang.",
+    "vi": "Sáng nay, tôi đã đặt phòng dưới tên Dang.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-587",
+    "en": "This afternoon, I have a reservation under Dang.",
+    "vi": "Chiều nay, tôi đã đặt phòng dưới tên Dang.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-588",
+    "en": "This evening, I have a reservation under Dang.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Dang.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-589",
+    "en": "Today, I have a reservation under Dang.",
+    "vi": "Hôm nay, tôi đã đặt phòng dưới tên Dang.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-590",
+    "en": "Tomorrow, I have a reservation under Dang.",
+    "vi": "Ngày mai, tôi đã đặt phòng dưới tên Dang.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-591",
+    "en": "Tonight, I have a reservation under Dang.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Dang.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-592",
+    "en": "Now, I have a reservation under Dang.",
+    "vi": "Bây giờ, tôi đã đặt phòng dưới tên Dang.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-593",
+    "en": "This morning, can you find the booking for Dang?",
+    "vi": "Sáng nay, bạn tìm giúp đơn của Dang được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-594",
+    "en": "This afternoon, can you find the booking for Dang?",
+    "vi": "Chiều nay, bạn tìm giúp đơn của Dang được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-595",
+    "en": "This evening, can you find the booking for Dang?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Dang được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-596",
+    "en": "Today, can you find the booking for Dang?",
+    "vi": "Hôm nay, bạn tìm giúp đơn của Dang được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-597",
+    "en": "Tomorrow, can you find the booking for Dang?",
+    "vi": "Ngày mai, bạn tìm giúp đơn của Dang được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-598",
+    "en": "Tonight, can you find the booking for Dang?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Dang được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-599",
+    "en": "Now, can you find the booking for Dang?",
+    "vi": "Bây giờ, bạn tìm giúp đơn của Dang được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-600",
+    "en": "This morning, I have a reservation under Bui.",
+    "vi": "Sáng nay, tôi đã đặt phòng dưới tên Bui.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-601",
+    "en": "This afternoon, I have a reservation under Bui.",
+    "vi": "Chiều nay, tôi đã đặt phòng dưới tên Bui.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-602",
+    "en": "This evening, I have a reservation under Bui.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Bui.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-603",
+    "en": "Today, I have a reservation under Bui.",
+    "vi": "Hôm nay, tôi đã đặt phòng dưới tên Bui.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-604",
+    "en": "Tomorrow, I have a reservation under Bui.",
+    "vi": "Ngày mai, tôi đã đặt phòng dưới tên Bui.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-605",
+    "en": "Tonight, I have a reservation under Bui.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Bui.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-606",
+    "en": "Now, I have a reservation under Bui.",
+    "vi": "Bây giờ, tôi đã đặt phòng dưới tên Bui.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-607",
+    "en": "This morning, can you find the booking for Bui?",
+    "vi": "Sáng nay, bạn tìm giúp đơn của Bui được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-608",
+    "en": "This afternoon, can you find the booking for Bui?",
+    "vi": "Chiều nay, bạn tìm giúp đơn của Bui được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-609",
+    "en": "This evening, can you find the booking for Bui?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Bui được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-610",
+    "en": "Today, can you find the booking for Bui?",
+    "vi": "Hôm nay, bạn tìm giúp đơn của Bui được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-611",
+    "en": "Tomorrow, can you find the booking for Bui?",
+    "vi": "Ngày mai, bạn tìm giúp đơn của Bui được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-612",
+    "en": "Tonight, can you find the booking for Bui?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Bui được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-613",
+    "en": "Now, can you find the booking for Bui?",
+    "vi": "Bây giờ, bạn tìm giúp đơn của Bui được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-614",
+    "en": "This morning, I have a reservation under Do.",
+    "vi": "Sáng nay, tôi đã đặt phòng dưới tên Do.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-615",
+    "en": "This afternoon, I have a reservation under Do.",
+    "vi": "Chiều nay, tôi đã đặt phòng dưới tên Do.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-616",
+    "en": "This evening, I have a reservation under Do.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Do.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-617",
+    "en": "Today, I have a reservation under Do.",
+    "vi": "Hôm nay, tôi đã đặt phòng dưới tên Do.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-618",
+    "en": "Tomorrow, I have a reservation under Do.",
+    "vi": "Ngày mai, tôi đã đặt phòng dưới tên Do.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-619",
+    "en": "Tonight, I have a reservation under Do.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Do.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-620",
+    "en": "Now, I have a reservation under Do.",
+    "vi": "Bây giờ, tôi đã đặt phòng dưới tên Do.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-621",
+    "en": "This morning, can you find the booking for Do?",
+    "vi": "Sáng nay, bạn tìm giúp đơn của Do được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-622",
+    "en": "This afternoon, can you find the booking for Do?",
+    "vi": "Chiều nay, bạn tìm giúp đơn của Do được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-623",
+    "en": "This evening, can you find the booking for Do?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Do được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-624",
+    "en": "Today, can you find the booking for Do?",
+    "vi": "Hôm nay, bạn tìm giúp đơn của Do được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-625",
+    "en": "Tomorrow, can you find the booking for Do?",
+    "vi": "Ngày mai, bạn tìm giúp đơn của Do được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-626",
+    "en": "Tonight, can you find the booking for Do?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Do được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-627",
+    "en": "Now, can you find the booking for Do?",
+    "vi": "Bây giờ, bạn tìm giúp đơn của Do được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-628",
+    "en": "This morning, I have a reservation under Ngo.",
+    "vi": "Sáng nay, tôi đã đặt phòng dưới tên Ngo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-629",
+    "en": "This afternoon, I have a reservation under Ngo.",
+    "vi": "Chiều nay, tôi đã đặt phòng dưới tên Ngo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-630",
+    "en": "This evening, I have a reservation under Ngo.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Ngo.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-631",
+    "en": "Today, I have a reservation under Ngo.",
+    "vi": "Hôm nay, tôi đã đặt phòng dưới tên Ngo.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-632",
+    "en": "Tomorrow, I have a reservation under Ngo.",
+    "vi": "Ngày mai, tôi đã đặt phòng dưới tên Ngo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-633",
+    "en": "Tonight, I have a reservation under Ngo.",
+    "vi": "Tối nay, tôi đã đặt phòng dưới tên Ngo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-634",
+    "en": "Now, I have a reservation under Ngo.",
+    "vi": "Bây giờ, tôi đã đặt phòng dưới tên Ngo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-635",
+    "en": "This morning, can you find the booking for Ngo?",
+    "vi": "Sáng nay, bạn tìm giúp đơn của Ngo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-636",
+    "en": "This afternoon, can you find the booking for Ngo?",
+    "vi": "Chiều nay, bạn tìm giúp đơn của Ngo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-637",
+    "en": "This evening, can you find the booking for Ngo?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Ngo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-638",
+    "en": "Today, can you find the booking for Ngo?",
+    "vi": "Hôm nay, bạn tìm giúp đơn của Ngo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-639",
+    "en": "Tomorrow, can you find the booking for Ngo?",
+    "vi": "Ngày mai, bạn tìm giúp đơn của Ngo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-640",
+    "en": "Tonight, can you find the booking for Ngo?",
+    "vi": "Tối nay, bạn tìm giúp đơn của Ngo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-641",
+    "en": "Now, can you find the booking for Ngo?",
+    "vi": "Bây giờ, bạn tìm giúp đơn của Ngo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-642",
+    "en": "This morning, I need an extra towel, please.",
+    "vi": "Sáng nay, tôi cần thêm một khăn tắm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-643",
+    "en": "This afternoon, I need an extra towel, please.",
+    "vi": "Chiều nay, tôi cần thêm một khăn tắm.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-644",
+    "en": "This evening, I need an extra towel, please.",
+    "vi": "Tối nay, tôi cần thêm một khăn tắm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-645",
+    "en": "Today, I need an extra towel, please.",
+    "vi": "Hôm nay, tôi cần thêm một khăn tắm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-646",
+    "en": "Tomorrow, I need an extra towel, please.",
+    "vi": "Ngày mai, tôi cần thêm một khăn tắm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-647",
+    "en": "Tonight, I need an extra towel, please.",
+    "vi": "Tối nay, tôi cần thêm một khăn tắm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-648",
+    "en": "Now, I need an extra towel, please.",
+    "vi": "Bây giờ, tôi cần thêm một khăn tắm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-649",
+    "en": "This morning, can you send an extra towel to my room?",
+    "vi": "Sáng nay, nhờ gửi thêm một khăn tắm lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-650",
+    "en": "This afternoon, can you send an extra towel to my room?",
+    "vi": "Chiều nay, nhờ gửi thêm một khăn tắm lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-651",
+    "en": "This evening, can you send an extra towel to my room?",
+    "vi": "Tối nay, nhờ gửi thêm một khăn tắm lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-652",
+    "en": "Today, can you send an extra towel to my room?",
+    "vi": "Hôm nay, nhờ gửi thêm một khăn tắm lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-653",
+    "en": "Tomorrow, can you send an extra towel to my room?",
+    "vi": "Ngày mai, nhờ gửi thêm một khăn tắm lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-654",
+    "en": "Tonight, can you send an extra towel to my room?",
+    "vi": "Tối nay, nhờ gửi thêm một khăn tắm lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-655",
+    "en": "Now, can you send an extra towel to my room?",
+    "vi": "Bây giờ, nhờ gửi thêm một khăn tắm lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-656",
+    "en": "This morning, I would like an extra towel, please.",
+    "vi": "Sáng nay, cho tôi thêm một khăn tắm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-657",
+    "en": "This afternoon, I would like an extra towel, please.",
+    "vi": "Chiều nay, cho tôi thêm một khăn tắm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-658",
+    "en": "This evening, I would like an extra towel, please.",
+    "vi": "Tối nay, cho tôi thêm một khăn tắm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-659",
+    "en": "Today, I would like an extra towel, please.",
+    "vi": "Hôm nay, cho tôi thêm một khăn tắm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-660",
+    "en": "Tomorrow, I would like an extra towel, please.",
+    "vi": "Ngày mai, cho tôi thêm một khăn tắm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-661",
+    "en": "Tonight, I would like an extra towel, please.",
+    "vi": "Tối nay, cho tôi thêm một khăn tắm.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-662",
+    "en": "Now, I would like an extra towel, please.",
+    "vi": "Bây giờ, cho tôi thêm một khăn tắm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-663",
+    "en": "This morning, could I have an extra pillow?",
+    "vi": "Sáng nay, cho tôi thêm một gối được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-664",
+    "en": "This afternoon, could I have an extra pillow?",
+    "vi": "Chiều nay, cho tôi thêm một gối được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-665",
+    "en": "This evening, could I have an extra pillow?",
+    "vi": "Tối nay, cho tôi thêm một gối được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-666",
+    "en": "Today, could I have an extra pillow?",
+    "vi": "Hôm nay, cho tôi thêm một gối được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-667",
+    "en": "Tomorrow, could I have an extra pillow?",
+    "vi": "Ngày mai, cho tôi thêm một gối được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-668",
+    "en": "Tonight, could I have an extra pillow?",
+    "vi": "Tối nay, cho tôi thêm một gối được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-669",
+    "en": "Now, could I have an extra pillow?",
+    "vi": "Bây giờ, cho tôi thêm một gối được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-670",
+    "en": "This morning, I need an extra pillow, please.",
+    "vi": "Sáng nay, tôi cần thêm một gối.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-671",
+    "en": "This afternoon, I need an extra pillow, please.",
+    "vi": "Chiều nay, tôi cần thêm một gối.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-672",
+    "en": "This evening, I need an extra pillow, please.",
+    "vi": "Tối nay, tôi cần thêm một gối.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-673",
+    "en": "Today, I need an extra pillow, please.",
+    "vi": "Hôm nay, tôi cần thêm một gối.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-674",
+    "en": "Tomorrow, I need an extra pillow, please.",
+    "vi": "Ngày mai, tôi cần thêm một gối.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-675",
+    "en": "Tonight, I need an extra pillow, please.",
+    "vi": "Tối nay, tôi cần thêm một gối.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-676",
+    "en": "Now, I need an extra pillow, please.",
+    "vi": "Bây giờ, tôi cần thêm một gối.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-677",
+    "en": "This morning, can you send an extra pillow to my room?",
+    "vi": "Sáng nay, nhờ gửi thêm một gối lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-678",
+    "en": "This afternoon, can you send an extra pillow to my room?",
+    "vi": "Chiều nay, nhờ gửi thêm một gối lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-679",
+    "en": "This evening, can you send an extra pillow to my room?",
+    "vi": "Tối nay, nhờ gửi thêm một gối lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-680",
+    "en": "Today, can you send an extra pillow to my room?",
+    "vi": "Hôm nay, nhờ gửi thêm một gối lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-681",
+    "en": "Tomorrow, can you send an extra pillow to my room?",
+    "vi": "Ngày mai, nhờ gửi thêm một gối lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-682",
+    "en": "Tonight, can you send an extra pillow to my room?",
+    "vi": "Tối nay, nhờ gửi thêm một gối lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-683",
+    "en": "Now, can you send an extra pillow to my room?",
+    "vi": "Bây giờ, nhờ gửi thêm một gối lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-684",
+    "en": "This morning, I would like an extra pillow, please.",
+    "vi": "Sáng nay, cho tôi thêm một gối.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-685",
+    "en": "This afternoon, I would like an extra pillow, please.",
+    "vi": "Chiều nay, cho tôi thêm một gối.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-686",
+    "en": "This evening, I would like an extra pillow, please.",
+    "vi": "Tối nay, cho tôi thêm một gối.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-687",
+    "en": "Today, I would like an extra pillow, please.",
+    "vi": "Hôm nay, cho tôi thêm một gối.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-688",
+    "en": "Tomorrow, I would like an extra pillow, please.",
+    "vi": "Ngày mai, cho tôi thêm một gối.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-689",
+    "en": "Tonight, I would like an extra pillow, please.",
+    "vi": "Tối nay, cho tôi thêm một gối.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-690",
+    "en": "Now, I would like an extra pillow, please.",
+    "vi": "Bây giờ, cho tôi thêm một gối.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-691",
+    "en": "This morning, could I have an extra blanket?",
+    "vi": "Sáng nay, cho tôi thêm một chăn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-692",
+    "en": "This afternoon, could I have an extra blanket?",
+    "vi": "Chiều nay, cho tôi thêm một chăn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-693",
+    "en": "This evening, could I have an extra blanket?",
+    "vi": "Tối nay, cho tôi thêm một chăn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-694",
+    "en": "Today, could I have an extra blanket?",
+    "vi": "Hôm nay, cho tôi thêm một chăn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-695",
+    "en": "Tomorrow, could I have an extra blanket?",
+    "vi": "Ngày mai, cho tôi thêm một chăn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-696",
+    "en": "Tonight, could I have an extra blanket?",
+    "vi": "Tối nay, cho tôi thêm một chăn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-697",
+    "en": "Now, could I have an extra blanket?",
+    "vi": "Bây giờ, cho tôi thêm một chăn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-698",
+    "en": "This morning, I need an extra blanket, please.",
+    "vi": "Sáng nay, tôi cần thêm một chăn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-699",
+    "en": "This afternoon, I need an extra blanket, please.",
+    "vi": "Chiều nay, tôi cần thêm một chăn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-700",
+    "en": "This evening, I need an extra blanket, please.",
+    "vi": "Tối nay, tôi cần thêm một chăn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-701",
+    "en": "Today, I need an extra blanket, please.",
+    "vi": "Hôm nay, tôi cần thêm một chăn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-702",
+    "en": "Tomorrow, I need an extra blanket, please.",
+    "vi": "Ngày mai, tôi cần thêm một chăn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-703",
+    "en": "Tonight, I need an extra blanket, please.",
+    "vi": "Tối nay, tôi cần thêm một chăn.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-704",
+    "en": "Now, I need an extra blanket, please.",
+    "vi": "Bây giờ, tôi cần thêm một chăn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-705",
+    "en": "This morning, can you send an extra blanket to my room?",
+    "vi": "Sáng nay, nhờ gửi thêm một chăn lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-706",
+    "en": "This afternoon, can you send an extra blanket to my room?",
+    "vi": "Chiều nay, nhờ gửi thêm một chăn lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-707",
+    "en": "This evening, can you send an extra blanket to my room?",
+    "vi": "Tối nay, nhờ gửi thêm một chăn lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-708",
+    "en": "Today, can you send an extra blanket to my room?",
+    "vi": "Hôm nay, nhờ gửi thêm một chăn lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-709",
+    "en": "Tomorrow, can you send an extra blanket to my room?",
+    "vi": "Ngày mai, nhờ gửi thêm một chăn lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-710",
+    "en": "Tonight, can you send an extra blanket to my room?",
+    "vi": "Tối nay, nhờ gửi thêm một chăn lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-711",
+    "en": "Now, can you send an extra blanket to my room?",
+    "vi": "Bây giờ, nhờ gửi thêm một chăn lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-712",
+    "en": "This morning, I would like an extra blanket, please.",
+    "vi": "Sáng nay, cho tôi thêm một chăn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-713",
+    "en": "This afternoon, I would like an extra blanket, please.",
+    "vi": "Chiều nay, cho tôi thêm một chăn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-714",
+    "en": "This evening, I would like an extra blanket, please.",
+    "vi": "Tối nay, cho tôi thêm một chăn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-715",
+    "en": "Today, I would like an extra blanket, please.",
+    "vi": "Hôm nay, cho tôi thêm một chăn.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-716",
+    "en": "Tomorrow, I would like an extra blanket, please.",
+    "vi": "Ngày mai, cho tôi thêm một chăn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-717",
+    "en": "Tonight, I would like an extra blanket, please.",
+    "vi": "Tối nay, cho tôi thêm một chăn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-718",
+    "en": "Now, I would like an extra blanket, please.",
+    "vi": "Bây giờ, cho tôi thêm một chăn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-719",
+    "en": "This morning, could I have a toothbrush?",
+    "vi": "Sáng nay, cho tôi một bàn chải được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-720",
+    "en": "This afternoon, could I have a toothbrush?",
+    "vi": "Chiều nay, cho tôi một bàn chải được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-721",
+    "en": "This evening, could I have a toothbrush?",
+    "vi": "Tối nay, cho tôi một bàn chải được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-722",
+    "en": "Today, could I have a toothbrush?",
+    "vi": "Hôm nay, cho tôi một bàn chải được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-723",
+    "en": "Tomorrow, could I have a toothbrush?",
+    "vi": "Ngày mai, cho tôi một bàn chải được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-724",
+    "en": "Tonight, could I have a toothbrush?",
+    "vi": "Tối nay, cho tôi một bàn chải được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-725",
+    "en": "Now, could I have a toothbrush?",
+    "vi": "Bây giờ, cho tôi một bàn chải được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-726",
+    "en": "This morning, I need a toothbrush, please.",
+    "vi": "Sáng nay, tôi cần một bàn chải.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-727",
+    "en": "This afternoon, I need a toothbrush, please.",
+    "vi": "Chiều nay, tôi cần một bàn chải.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-728",
+    "en": "This evening, I need a toothbrush, please.",
+    "vi": "Tối nay, tôi cần một bàn chải.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-729",
+    "en": "Today, I need a toothbrush, please.",
+    "vi": "Hôm nay, tôi cần một bàn chải.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-730",
+    "en": "Tomorrow, I need a toothbrush, please.",
+    "vi": "Ngày mai, tôi cần một bàn chải.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-731",
+    "en": "Tonight, I need a toothbrush, please.",
+    "vi": "Tối nay, tôi cần một bàn chải.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-732",
+    "en": "Now, I need a toothbrush, please.",
+    "vi": "Bây giờ, tôi cần một bàn chải.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-733",
+    "en": "This morning, can you send a toothbrush to my room?",
+    "vi": "Sáng nay, nhờ gửi một bàn chải lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-734",
+    "en": "This afternoon, can you send a toothbrush to my room?",
+    "vi": "Chiều nay, nhờ gửi một bàn chải lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-735",
+    "en": "This evening, can you send a toothbrush to my room?",
+    "vi": "Tối nay, nhờ gửi một bàn chải lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-736",
+    "en": "Today, can you send a toothbrush to my room?",
+    "vi": "Hôm nay, nhờ gửi một bàn chải lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-737",
+    "en": "Tomorrow, can you send a toothbrush to my room?",
+    "vi": "Ngày mai, nhờ gửi một bàn chải lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-738",
+    "en": "Tonight, can you send a toothbrush to my room?",
+    "vi": "Tối nay, nhờ gửi một bàn chải lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-739",
+    "en": "Now, can you send a toothbrush to my room?",
+    "vi": "Bây giờ, nhờ gửi một bàn chải lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-740",
+    "en": "This morning, I would like a toothbrush, please.",
+    "vi": "Sáng nay, cho tôi một bàn chải.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-741",
+    "en": "This afternoon, I would like a toothbrush, please.",
+    "vi": "Chiều nay, cho tôi một bàn chải.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-742",
+    "en": "This evening, I would like a toothbrush, please.",
+    "vi": "Tối nay, cho tôi một bàn chải.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-743",
+    "en": "Today, I would like a toothbrush, please.",
+    "vi": "Hôm nay, cho tôi một bàn chải.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-744",
+    "en": "Tomorrow, I would like a toothbrush, please.",
+    "vi": "Ngày mai, cho tôi một bàn chải.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-745",
+    "en": "Tonight, I would like a toothbrush, please.",
+    "vi": "Tối nay, cho tôi một bàn chải.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-746",
+    "en": "Now, I would like a toothbrush, please.",
+    "vi": "Bây giờ, cho tôi một bàn chải.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-747",
+    "en": "This morning, could I have some water?",
+    "vi": "Sáng nay, cho tôi ít nước được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-748",
+    "en": "This afternoon, could I have some water?",
+    "vi": "Chiều nay, cho tôi ít nước được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-749",
+    "en": "This evening, could I have some water?",
+    "vi": "Tối nay, cho tôi ít nước được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-750",
+    "en": "Today, could I have some water?",
+    "vi": "Hôm nay, cho tôi ít nước được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-751",
+    "en": "Tomorrow, could I have some water?",
+    "vi": "Ngày mai, cho tôi ít nước được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-752",
+    "en": "Tonight, could I have some water?",
+    "vi": "Tối nay, cho tôi ít nước được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-753",
+    "en": "Now, could I have some water?",
+    "vi": "Bây giờ, cho tôi ít nước được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-754",
+    "en": "This morning, I need some water, please.",
+    "vi": "Sáng nay, tôi cần ít nước.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-755",
+    "en": "This afternoon, I need some water, please.",
+    "vi": "Chiều nay, tôi cần ít nước.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-756",
+    "en": "This evening, I need some water, please.",
+    "vi": "Tối nay, tôi cần ít nước.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-757",
+    "en": "Today, I need some water, please.",
+    "vi": "Hôm nay, tôi cần ít nước.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-758",
+    "en": "Tomorrow, I need some water, please.",
+    "vi": "Ngày mai, tôi cần ít nước.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-759",
+    "en": "Tonight, I need some water, please.",
+    "vi": "Tối nay, tôi cần ít nước.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-760",
+    "en": "Now, I need some water, please.",
+    "vi": "Bây giờ, tôi cần ít nước.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-761",
+    "en": "This morning, can you send some water to my room?",
+    "vi": "Sáng nay, nhờ gửi ít nước lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-762",
+    "en": "This afternoon, can you send some water to my room?",
+    "vi": "Chiều nay, nhờ gửi ít nước lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-763",
+    "en": "This evening, can you send some water to my room?",
+    "vi": "Tối nay, nhờ gửi ít nước lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-764",
+    "en": "Today, can you send some water to my room?",
+    "vi": "Hôm nay, nhờ gửi ít nước lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-765",
+    "en": "Tomorrow, can you send some water to my room?",
+    "vi": "Ngày mai, nhờ gửi ít nước lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-766",
+    "en": "Tonight, can you send some water to my room?",
+    "vi": "Tối nay, nhờ gửi ít nước lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-767",
+    "en": "Now, can you send some water to my room?",
+    "vi": "Bây giờ, nhờ gửi ít nước lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-768",
+    "en": "This morning, I would like some water, please.",
+    "vi": "Sáng nay, cho tôi ít nước.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-769",
+    "en": "This afternoon, I would like some water, please.",
+    "vi": "Chiều nay, cho tôi ít nước.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-770",
+    "en": "This evening, I would like some water, please.",
+    "vi": "Tối nay, cho tôi ít nước.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-771",
+    "en": "Today, I would like some water, please.",
+    "vi": "Hôm nay, cho tôi ít nước.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-772",
+    "en": "Tomorrow, I would like some water, please.",
+    "vi": "Ngày mai, cho tôi ít nước.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-773",
+    "en": "Tonight, I would like some water, please.",
+    "vi": "Tối nay, cho tôi ít nước.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-774",
+    "en": "Now, I would like some water, please.",
+    "vi": "Bây giờ, cho tôi ít nước.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-775",
+    "en": "This morning, could I have a hair dryer?",
+    "vi": "Sáng nay, cho tôi một máy sấy tóc được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-776",
+    "en": "This afternoon, could I have a hair dryer?",
+    "vi": "Chiều nay, cho tôi một máy sấy tóc được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-777",
+    "en": "This evening, could I have a hair dryer?",
+    "vi": "Tối nay, cho tôi một máy sấy tóc được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-778",
+    "en": "Today, could I have a hair dryer?",
+    "vi": "Hôm nay, cho tôi một máy sấy tóc được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-779",
+    "en": "Tomorrow, could I have a hair dryer?",
+    "vi": "Ngày mai, cho tôi một máy sấy tóc được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-780",
+    "en": "Tonight, could I have a hair dryer?",
+    "vi": "Tối nay, cho tôi một máy sấy tóc được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-781",
+    "en": "Now, could I have a hair dryer?",
+    "vi": "Bây giờ, cho tôi một máy sấy tóc được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-782",
+    "en": "This morning, I need a hair dryer, please.",
+    "vi": "Sáng nay, tôi cần một máy sấy tóc.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-783",
+    "en": "This afternoon, I need a hair dryer, please.",
+    "vi": "Chiều nay, tôi cần một máy sấy tóc.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-784",
+    "en": "This evening, I need a hair dryer, please.",
+    "vi": "Tối nay, tôi cần một máy sấy tóc.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-785",
+    "en": "Today, I need a hair dryer, please.",
+    "vi": "Hôm nay, tôi cần một máy sấy tóc.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-786",
+    "en": "Tomorrow, I need a hair dryer, please.",
+    "vi": "Ngày mai, tôi cần một máy sấy tóc.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-787",
+    "en": "Tonight, I need a hair dryer, please.",
+    "vi": "Tối nay, tôi cần một máy sấy tóc.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-788",
+    "en": "Now, I need a hair dryer, please.",
+    "vi": "Bây giờ, tôi cần một máy sấy tóc.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-789",
+    "en": "This morning, can you send a hair dryer to my room?",
+    "vi": "Sáng nay, nhờ gửi một máy sấy tóc lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-790",
+    "en": "This afternoon, can you send a hair dryer to my room?",
+    "vi": "Chiều nay, nhờ gửi một máy sấy tóc lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-791",
+    "en": "This evening, can you send a hair dryer to my room?",
+    "vi": "Tối nay, nhờ gửi một máy sấy tóc lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-792",
+    "en": "Today, can you send a hair dryer to my room?",
+    "vi": "Hôm nay, nhờ gửi một máy sấy tóc lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-793",
+    "en": "Tomorrow, can you send a hair dryer to my room?",
+    "vi": "Ngày mai, nhờ gửi một máy sấy tóc lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-794",
+    "en": "Tonight, can you send a hair dryer to my room?",
+    "vi": "Tối nay, nhờ gửi một máy sấy tóc lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-795",
+    "en": "Now, can you send a hair dryer to my room?",
+    "vi": "Bây giờ, nhờ gửi một máy sấy tóc lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-796",
+    "en": "This morning, I would like a hair dryer, please.",
+    "vi": "Sáng nay, cho tôi một máy sấy tóc.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-797",
+    "en": "This afternoon, I would like a hair dryer, please.",
+    "vi": "Chiều nay, cho tôi một máy sấy tóc.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-798",
+    "en": "This evening, I would like a hair dryer, please.",
+    "vi": "Tối nay, cho tôi một máy sấy tóc.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-799",
+    "en": "Today, I would like a hair dryer, please.",
+    "vi": "Hôm nay, cho tôi một máy sấy tóc.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-800",
+    "en": "Tomorrow, I would like a hair dryer, please.",
+    "vi": "Ngày mai, cho tôi một máy sấy tóc.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-801",
+    "en": "Tonight, I would like a hair dryer, please.",
+    "vi": "Tối nay, cho tôi một máy sấy tóc.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-802",
+    "en": "Now, I would like a hair dryer, please.",
+    "vi": "Bây giờ, cho tôi một máy sấy tóc.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-803",
+    "en": "This morning, could I have an adapter?",
+    "vi": "Sáng nay, cho tôi một ổ chuyển được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-804",
+    "en": "This afternoon, could I have an adapter?",
+    "vi": "Chiều nay, cho tôi một ổ chuyển được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-805",
+    "en": "This evening, could I have an adapter?",
+    "vi": "Tối nay, cho tôi một ổ chuyển được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-806",
+    "en": "Today, could I have an adapter?",
+    "vi": "Hôm nay, cho tôi một ổ chuyển được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-807",
+    "en": "Tomorrow, could I have an adapter?",
+    "vi": "Ngày mai, cho tôi một ổ chuyển được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-808",
+    "en": "Tonight, could I have an adapter?",
+    "vi": "Tối nay, cho tôi một ổ chuyển được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-809",
+    "en": "Now, could I have an adapter?",
+    "vi": "Bây giờ, cho tôi một ổ chuyển được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-810",
+    "en": "This morning, I need an adapter, please.",
+    "vi": "Sáng nay, tôi cần một ổ chuyển.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-811",
+    "en": "This afternoon, I need an adapter, please.",
+    "vi": "Chiều nay, tôi cần một ổ chuyển.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-812",
+    "en": "This evening, I need an adapter, please.",
+    "vi": "Tối nay, tôi cần một ổ chuyển.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-813",
+    "en": "Today, I need an adapter, please.",
+    "vi": "Hôm nay, tôi cần một ổ chuyển.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-814",
+    "en": "Tomorrow, I need an adapter, please.",
+    "vi": "Ngày mai, tôi cần một ổ chuyển.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-815",
+    "en": "Tonight, I need an adapter, please.",
+    "vi": "Tối nay, tôi cần một ổ chuyển.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-816",
+    "en": "Now, I need an adapter, please.",
+    "vi": "Bây giờ, tôi cần một ổ chuyển.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-817",
+    "en": "This morning, can you send an adapter to my room?",
+    "vi": "Sáng nay, nhờ gửi một ổ chuyển lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-818",
+    "en": "This afternoon, can you send an adapter to my room?",
+    "vi": "Chiều nay, nhờ gửi một ổ chuyển lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-819",
+    "en": "This evening, can you send an adapter to my room?",
+    "vi": "Tối nay, nhờ gửi một ổ chuyển lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-820",
+    "en": "Today, can you send an adapter to my room?",
+    "vi": "Hôm nay, nhờ gửi một ổ chuyển lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-821",
+    "en": "Tomorrow, can you send an adapter to my room?",
+    "vi": "Ngày mai, nhờ gửi một ổ chuyển lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-822",
+    "en": "Tonight, can you send an adapter to my room?",
+    "vi": "Tối nay, nhờ gửi một ổ chuyển lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-823",
+    "en": "Now, can you send an adapter to my room?",
+    "vi": "Bây giờ, nhờ gửi một ổ chuyển lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-824",
+    "en": "This morning, I would like an adapter, please.",
+    "vi": "Sáng nay, cho tôi một ổ chuyển.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-825",
+    "en": "This afternoon, I would like an adapter, please.",
+    "vi": "Chiều nay, cho tôi một ổ chuyển.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-826",
+    "en": "This evening, I would like an adapter, please.",
+    "vi": "Tối nay, cho tôi một ổ chuyển.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-827",
+    "en": "Today, I would like an adapter, please.",
+    "vi": "Hôm nay, cho tôi một ổ chuyển.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-828",
+    "en": "Tomorrow, I would like an adapter, please.",
+    "vi": "Ngày mai, cho tôi một ổ chuyển.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-829",
+    "en": "Tonight, I would like an adapter, please.",
+    "vi": "Tối nay, cho tôi một ổ chuyển.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-830",
+    "en": "Now, I would like an adapter, please.",
+    "vi": "Bây giờ, cho tôi một ổ chuyển.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-831",
+    "en": "This morning, could I have a late checkout?",
+    "vi": "Sáng nay, cho tôi trả phòng muộn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-832",
+    "en": "This afternoon, could I have a late checkout?",
+    "vi": "Chiều nay, cho tôi trả phòng muộn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-833",
+    "en": "This evening, could I have a late checkout?",
+    "vi": "Tối nay, cho tôi trả phòng muộn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-834",
+    "en": "Today, could I have a late checkout?",
+    "vi": "Hôm nay, cho tôi trả phòng muộn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-835",
+    "en": "Tomorrow, could I have a late checkout?",
+    "vi": "Ngày mai, cho tôi trả phòng muộn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-836",
+    "en": "Tonight, could I have a late checkout?",
+    "vi": "Tối nay, cho tôi trả phòng muộn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-837",
+    "en": "Now, could I have a late checkout?",
+    "vi": "Bây giờ, cho tôi trả phòng muộn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-838",
+    "en": "This morning, I need a late checkout, please.",
+    "vi": "Sáng nay, tôi cần trả phòng muộn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-839",
+    "en": "This afternoon, I need a late checkout, please.",
+    "vi": "Chiều nay, tôi cần trả phòng muộn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-840",
+    "en": "This evening, I need a late checkout, please.",
+    "vi": "Tối nay, tôi cần trả phòng muộn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-841",
+    "en": "Today, I need a late checkout, please.",
+    "vi": "Hôm nay, tôi cần trả phòng muộn.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-842",
+    "en": "Tomorrow, I need a late checkout, please.",
+    "vi": "Ngày mai, tôi cần trả phòng muộn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-843",
+    "en": "Tonight, I need a late checkout, please.",
+    "vi": "Tối nay, tôi cần trả phòng muộn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-844",
+    "en": "Now, I need a late checkout, please.",
+    "vi": "Bây giờ, tôi cần trả phòng muộn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-845",
+    "en": "This morning, can you send a late checkout to my room?",
+    "vi": "Sáng nay, nhờ gửi trả phòng muộn lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-846",
+    "en": "This afternoon, can you send a late checkout to my room?",
+    "vi": "Chiều nay, nhờ gửi trả phòng muộn lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-847",
+    "en": "This evening, can you send a late checkout to my room?",
+    "vi": "Tối nay, nhờ gửi trả phòng muộn lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-848",
+    "en": "Today, can you send a late checkout to my room?",
+    "vi": "Hôm nay, nhờ gửi trả phòng muộn lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-849",
+    "en": "Tomorrow, can you send a late checkout to my room?",
+    "vi": "Ngày mai, nhờ gửi trả phòng muộn lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-850",
+    "en": "Tonight, can you send a late checkout to my room?",
+    "vi": "Tối nay, nhờ gửi trả phòng muộn lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-851",
+    "en": "Now, can you send a late checkout to my room?",
+    "vi": "Bây giờ, nhờ gửi trả phòng muộn lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-852",
+    "en": "This morning, I would like a late checkout, please.",
+    "vi": "Sáng nay, cho tôi trả phòng muộn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-853",
+    "en": "This afternoon, I would like a late checkout, please.",
+    "vi": "Chiều nay, cho tôi trả phòng muộn.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-854",
+    "en": "This evening, I would like a late checkout, please.",
+    "vi": "Tối nay, cho tôi trả phòng muộn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-855",
+    "en": "Today, I would like a late checkout, please.",
+    "vi": "Hôm nay, cho tôi trả phòng muộn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-856",
+    "en": "Tomorrow, I would like a late checkout, please.",
+    "vi": "Ngày mai, cho tôi trả phòng muộn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-857",
+    "en": "Tonight, I would like a late checkout, please.",
+    "vi": "Tối nay, cho tôi trả phòng muộn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-858",
+    "en": "Now, I would like a late checkout, please.",
+    "vi": "Bây giờ, cho tôi trả phòng muộn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-859",
+    "en": "This morning, could I have a wake-up call?",
+    "vi": "Sáng nay, cho tôi một cuộc gọi đánh thức được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-860",
+    "en": "This afternoon, could I have a wake-up call?",
+    "vi": "Chiều nay, cho tôi một cuộc gọi đánh thức được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-861",
+    "en": "This evening, could I have a wake-up call?",
+    "vi": "Tối nay, cho tôi một cuộc gọi đánh thức được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-862",
+    "en": "Today, could I have a wake-up call?",
+    "vi": "Hôm nay, cho tôi một cuộc gọi đánh thức được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-863",
+    "en": "Tomorrow, could I have a wake-up call?",
+    "vi": "Ngày mai, cho tôi một cuộc gọi đánh thức được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-864",
+    "en": "Tonight, could I have a wake-up call?",
+    "vi": "Tối nay, cho tôi một cuộc gọi đánh thức được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-865",
+    "en": "Now, could I have a wake-up call?",
+    "vi": "Bây giờ, cho tôi một cuộc gọi đánh thức được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-866",
+    "en": "This morning, I need a wake-up call, please.",
+    "vi": "Sáng nay, tôi cần một cuộc gọi đánh thức.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-867",
+    "en": "This afternoon, I need a wake-up call, please.",
+    "vi": "Chiều nay, tôi cần một cuộc gọi đánh thức.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-868",
+    "en": "This evening, I need a wake-up call, please.",
+    "vi": "Tối nay, tôi cần một cuộc gọi đánh thức.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-869",
+    "en": "Today, I need a wake-up call, please.",
+    "vi": "Hôm nay, tôi cần một cuộc gọi đánh thức.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-870",
+    "en": "Tomorrow, I need a wake-up call, please.",
+    "vi": "Ngày mai, tôi cần một cuộc gọi đánh thức.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-871",
+    "en": "Tonight, I need a wake-up call, please.",
+    "vi": "Tối nay, tôi cần một cuộc gọi đánh thức.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-872",
+    "en": "Now, I need a wake-up call, please.",
+    "vi": "Bây giờ, tôi cần một cuộc gọi đánh thức.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-873",
+    "en": "This morning, can you send a wake-up call to my room?",
+    "vi": "Sáng nay, nhờ gửi một cuộc gọi đánh thức lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-874",
+    "en": "This afternoon, can you send a wake-up call to my room?",
+    "vi": "Chiều nay, nhờ gửi một cuộc gọi đánh thức lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-875",
+    "en": "This evening, can you send a wake-up call to my room?",
+    "vi": "Tối nay, nhờ gửi một cuộc gọi đánh thức lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-876",
+    "en": "Today, can you send a wake-up call to my room?",
+    "vi": "Hôm nay, nhờ gửi một cuộc gọi đánh thức lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-877",
+    "en": "Tomorrow, can you send a wake-up call to my room?",
+    "vi": "Ngày mai, nhờ gửi một cuộc gọi đánh thức lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-878",
+    "en": "Tonight, can you send a wake-up call to my room?",
+    "vi": "Tối nay, nhờ gửi một cuộc gọi đánh thức lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-879",
+    "en": "Now, can you send a wake-up call to my room?",
+    "vi": "Bây giờ, nhờ gửi một cuộc gọi đánh thức lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-880",
+    "en": "This morning, I would like a wake-up call, please.",
+    "vi": "Sáng nay, cho tôi một cuộc gọi đánh thức.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-881",
+    "en": "This afternoon, I would like a wake-up call, please.",
+    "vi": "Chiều nay, cho tôi một cuộc gọi đánh thức.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-882",
+    "en": "This evening, I would like a wake-up call, please.",
+    "vi": "Tối nay, cho tôi một cuộc gọi đánh thức.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-883",
+    "en": "Today, I would like a wake-up call, please.",
+    "vi": "Hôm nay, cho tôi một cuộc gọi đánh thức.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-884",
+    "en": "Tomorrow, I would like a wake-up call, please.",
+    "vi": "Ngày mai, cho tôi một cuộc gọi đánh thức.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-885",
+    "en": "Tonight, I would like a wake-up call, please.",
+    "vi": "Tối nay, cho tôi một cuộc gọi đánh thức.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-886",
+    "en": "Now, I would like a wake-up call, please.",
+    "vi": "Bây giờ, cho tôi một cuộc gọi đánh thức.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-887",
+    "en": "This morning, could I have the Wi-Fi password?",
+    "vi": "Sáng nay, cho tôi mật khẩu Wi-Fi được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-888",
+    "en": "This afternoon, could I have the Wi-Fi password?",
+    "vi": "Chiều nay, cho tôi mật khẩu Wi-Fi được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-889",
+    "en": "This evening, could I have the Wi-Fi password?",
+    "vi": "Tối nay, cho tôi mật khẩu Wi-Fi được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-890",
+    "en": "Today, could I have the Wi-Fi password?",
+    "vi": "Hôm nay, cho tôi mật khẩu Wi-Fi được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-891",
+    "en": "Tomorrow, could I have the Wi-Fi password?",
+    "vi": "Ngày mai, cho tôi mật khẩu Wi-Fi được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-892",
+    "en": "Tonight, could I have the Wi-Fi password?",
+    "vi": "Tối nay, cho tôi mật khẩu Wi-Fi được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-893",
+    "en": "Now, could I have the Wi-Fi password?",
+    "vi": "Bây giờ, cho tôi mật khẩu Wi-Fi được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-894",
+    "en": "This morning, I need the Wi-Fi password, please.",
+    "vi": "Sáng nay, tôi cần mật khẩu Wi-Fi.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-895",
+    "en": "This afternoon, I need the Wi-Fi password, please.",
+    "vi": "Chiều nay, tôi cần mật khẩu Wi-Fi.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-896",
+    "en": "This evening, I need the Wi-Fi password, please.",
+    "vi": "Tối nay, tôi cần mật khẩu Wi-Fi.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-897",
+    "en": "Today, I need the Wi-Fi password, please.",
+    "vi": "Hôm nay, tôi cần mật khẩu Wi-Fi.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-898",
+    "en": "Tomorrow, I need the Wi-Fi password, please.",
+    "vi": "Ngày mai, tôi cần mật khẩu Wi-Fi.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-899",
+    "en": "Tonight, I need the Wi-Fi password, please.",
+    "vi": "Tối nay, tôi cần mật khẩu Wi-Fi.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-900",
+    "en": "Now, I need the Wi-Fi password, please.",
+    "vi": "Bây giờ, tôi cần mật khẩu Wi-Fi.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-901",
+    "en": "This morning, can you send the Wi-Fi password to my room?",
+    "vi": "Sáng nay, nhờ gửi mật khẩu Wi-Fi lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-902",
+    "en": "This afternoon, can you send the Wi-Fi password to my room?",
+    "vi": "Chiều nay, nhờ gửi mật khẩu Wi-Fi lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-903",
+    "en": "This evening, can you send the Wi-Fi password to my room?",
+    "vi": "Tối nay, nhờ gửi mật khẩu Wi-Fi lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-904",
+    "en": "Today, can you send the Wi-Fi password to my room?",
+    "vi": "Hôm nay, nhờ gửi mật khẩu Wi-Fi lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-905",
+    "en": "Tomorrow, can you send the Wi-Fi password to my room?",
+    "vi": "Ngày mai, nhờ gửi mật khẩu Wi-Fi lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-906",
+    "en": "Tonight, can you send the Wi-Fi password to my room?",
+    "vi": "Tối nay, nhờ gửi mật khẩu Wi-Fi lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-907",
+    "en": "Now, can you send the Wi-Fi password to my room?",
+    "vi": "Bây giờ, nhờ gửi mật khẩu Wi-Fi lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-908",
+    "en": "This morning, I would like the Wi-Fi password, please.",
+    "vi": "Sáng nay, cho tôi mật khẩu Wi-Fi.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-909",
+    "en": "This afternoon, I would like the Wi-Fi password, please.",
+    "vi": "Chiều nay, cho tôi mật khẩu Wi-Fi.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-910",
+    "en": "This evening, I would like the Wi-Fi password, please.",
+    "vi": "Tối nay, cho tôi mật khẩu Wi-Fi.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-911",
+    "en": "Today, I would like the Wi-Fi password, please.",
+    "vi": "Hôm nay, cho tôi mật khẩu Wi-Fi.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-912",
+    "en": "Tomorrow, I would like the Wi-Fi password, please.",
+    "vi": "Ngày mai, cho tôi mật khẩu Wi-Fi.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-913",
+    "en": "Tonight, I would like the Wi-Fi password, please.",
+    "vi": "Tối nay, cho tôi mật khẩu Wi-Fi.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-914",
+    "en": "Now, I would like the Wi-Fi password, please.",
+    "vi": "Bây giờ, cho tôi mật khẩu Wi-Fi.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-915",
+    "en": "This morning, could I have an extra hanger?",
+    "vi": "Sáng nay, cho tôi thêm móc áo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-916",
+    "en": "This afternoon, could I have an extra hanger?",
+    "vi": "Chiều nay, cho tôi thêm móc áo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-917",
+    "en": "This evening, could I have an extra hanger?",
+    "vi": "Tối nay, cho tôi thêm móc áo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-918",
+    "en": "Today, could I have an extra hanger?",
+    "vi": "Hôm nay, cho tôi thêm móc áo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-919",
+    "en": "Tomorrow, could I have an extra hanger?",
+    "vi": "Ngày mai, cho tôi thêm móc áo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-920",
+    "en": "Tonight, could I have an extra hanger?",
+    "vi": "Tối nay, cho tôi thêm móc áo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-921",
+    "en": "Now, could I have an extra hanger?",
+    "vi": "Bây giờ, cho tôi thêm móc áo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-922",
+    "en": "This morning, I need an extra hanger, please.",
+    "vi": "Sáng nay, tôi cần thêm móc áo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-923",
+    "en": "This afternoon, I need an extra hanger, please.",
+    "vi": "Chiều nay, tôi cần thêm móc áo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-924",
+    "en": "This evening, I need an extra hanger, please.",
+    "vi": "Tối nay, tôi cần thêm móc áo.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-925",
+    "en": "Today, I need an extra hanger, please.",
+    "vi": "Hôm nay, tôi cần thêm móc áo.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-926",
+    "en": "Tomorrow, I need an extra hanger, please.",
+    "vi": "Ngày mai, tôi cần thêm móc áo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-927",
+    "en": "Tonight, I need an extra hanger, please.",
+    "vi": "Tối nay, tôi cần thêm móc áo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-928",
+    "en": "Now, I need an extra hanger, please.",
+    "vi": "Bây giờ, tôi cần thêm móc áo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-929",
+    "en": "This morning, can you send an extra hanger to my room?",
+    "vi": "Sáng nay, nhờ gửi thêm móc áo lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-930",
+    "en": "This afternoon, can you send an extra hanger to my room?",
+    "vi": "Chiều nay, nhờ gửi thêm móc áo lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-931",
+    "en": "This evening, can you send an extra hanger to my room?",
+    "vi": "Tối nay, nhờ gửi thêm móc áo lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-932",
+    "en": "Today, can you send an extra hanger to my room?",
+    "vi": "Hôm nay, nhờ gửi thêm móc áo lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-933",
+    "en": "Tomorrow, can you send an extra hanger to my room?",
+    "vi": "Ngày mai, nhờ gửi thêm móc áo lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-934",
+    "en": "Tonight, can you send an extra hanger to my room?",
+    "vi": "Tối nay, nhờ gửi thêm móc áo lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-935",
+    "en": "Now, can you send an extra hanger to my room?",
+    "vi": "Bây giờ, nhờ gửi thêm móc áo lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-936",
+    "en": "This morning, I would like an extra hanger, please.",
+    "vi": "Sáng nay, cho tôi thêm móc áo.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-937",
+    "en": "This afternoon, I would like an extra hanger, please.",
+    "vi": "Chiều nay, cho tôi thêm móc áo.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-938",
+    "en": "This evening, I would like an extra hanger, please.",
+    "vi": "Tối nay, cho tôi thêm móc áo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-939",
+    "en": "Today, I would like an extra hanger, please.",
+    "vi": "Hôm nay, cho tôi thêm móc áo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-940",
+    "en": "Tomorrow, I would like an extra hanger, please.",
+    "vi": "Ngày mai, cho tôi thêm móc áo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-941",
+    "en": "Tonight, I would like an extra hanger, please.",
+    "vi": "Tối nay, cho tôi thêm móc áo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-942",
+    "en": "Now, I would like an extra hanger, please.",
+    "vi": "Bây giờ, cho tôi thêm móc áo.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-943",
+    "en": "This morning, could I have a bottle of water?",
+    "vi": "Sáng nay, cho tôi một chai nước được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-944",
+    "en": "This afternoon, could I have a bottle of water?",
+    "vi": "Chiều nay, cho tôi một chai nước được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-945",
+    "en": "This evening, could I have a bottle of water?",
+    "vi": "Tối nay, cho tôi một chai nước được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-946",
+    "en": "Today, could I have a bottle of water?",
+    "vi": "Hôm nay, cho tôi một chai nước được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-947",
+    "en": "Tomorrow, could I have a bottle of water?",
+    "vi": "Ngày mai, cho tôi một chai nước được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-948",
+    "en": "Tonight, could I have a bottle of water?",
+    "vi": "Tối nay, cho tôi một chai nước được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-949",
+    "en": "Now, could I have a bottle of water?",
+    "vi": "Bây giờ, cho tôi một chai nước được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-950",
+    "en": "This morning, I need a bottle of water, please.",
+    "vi": "Sáng nay, tôi cần một chai nước.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-951",
+    "en": "This afternoon, I need a bottle of water, please.",
+    "vi": "Chiều nay, tôi cần một chai nước.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-952",
+    "en": "This evening, I need a bottle of water, please.",
+    "vi": "Tối nay, tôi cần một chai nước.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-953",
+    "en": "Today, I need a bottle of water, please.",
+    "vi": "Hôm nay, tôi cần một chai nước.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-954",
+    "en": "Tomorrow, I need a bottle of water, please.",
+    "vi": "Ngày mai, tôi cần một chai nước.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-955",
+    "en": "Tonight, I need a bottle of water, please.",
+    "vi": "Tối nay, tôi cần một chai nước.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-956",
+    "en": "Now, I need a bottle of water, please.",
+    "vi": "Bây giờ, tôi cần một chai nước.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-957",
+    "en": "This morning, can you send a bottle of water to my room?",
+    "vi": "Sáng nay, nhờ gửi một chai nước lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-958",
+    "en": "This afternoon, can you send a bottle of water to my room?",
+    "vi": "Chiều nay, nhờ gửi một chai nước lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-959",
+    "en": "This evening, can you send a bottle of water to my room?",
+    "vi": "Tối nay, nhờ gửi một chai nước lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-960",
+    "en": "Today, can you send a bottle of water to my room?",
+    "vi": "Hôm nay, nhờ gửi một chai nước lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-961",
+    "en": "Tomorrow, can you send a bottle of water to my room?",
+    "vi": "Ngày mai, nhờ gửi một chai nước lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-962",
+    "en": "Tonight, can you send a bottle of water to my room?",
+    "vi": "Tối nay, nhờ gửi một chai nước lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-963",
+    "en": "Now, can you send a bottle of water to my room?",
+    "vi": "Bây giờ, nhờ gửi một chai nước lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-964",
+    "en": "This morning, I would like a bottle of water, please.",
+    "vi": "Sáng nay, cho tôi một chai nước.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-965",
+    "en": "This afternoon, I would like a bottle of water, please.",
+    "vi": "Chiều nay, cho tôi một chai nước.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-966",
+    "en": "This evening, I would like a bottle of water, please.",
+    "vi": "Tối nay, cho tôi một chai nước.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-967",
+    "en": "Today, I would like a bottle of water, please.",
+    "vi": "Hôm nay, cho tôi một chai nước.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-968",
+    "en": "Tomorrow, I would like a bottle of water, please.",
+    "vi": "Ngày mai, cho tôi một chai nước.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-969",
+    "en": "Tonight, I would like a bottle of water, please.",
+    "vi": "Tối nay, cho tôi một chai nước.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-970",
+    "en": "Now, I would like a bottle of water, please.",
+    "vi": "Bây giờ, cho tôi một chai nước.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-971",
+    "en": "This morning, could I have an iron?",
+    "vi": "Sáng nay, cho tôi một bàn ủi được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-972",
+    "en": "This afternoon, could I have an iron?",
+    "vi": "Chiều nay, cho tôi một bàn ủi được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-973",
+    "en": "This evening, could I have an iron?",
+    "vi": "Tối nay, cho tôi một bàn ủi được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-974",
+    "en": "Today, could I have an iron?",
+    "vi": "Hôm nay, cho tôi một bàn ủi được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-975",
+    "en": "Tomorrow, could I have an iron?",
+    "vi": "Ngày mai, cho tôi một bàn ủi được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-976",
+    "en": "Tonight, could I have an iron?",
+    "vi": "Tối nay, cho tôi một bàn ủi được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-977",
+    "en": "Now, could I have an iron?",
+    "vi": "Bây giờ, cho tôi một bàn ủi được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-978",
+    "en": "This morning, I need an iron, please.",
+    "vi": "Sáng nay, tôi cần một bàn ủi.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-979",
+    "en": "This afternoon, I need an iron, please.",
+    "vi": "Chiều nay, tôi cần một bàn ủi.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-980",
+    "en": "This evening, I need an iron, please.",
+    "vi": "Tối nay, tôi cần một bàn ủi.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-981",
+    "en": "Today, I need an iron, please.",
+    "vi": "Hôm nay, tôi cần một bàn ủi.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-982",
+    "en": "Tomorrow, I need an iron, please.",
+    "vi": "Ngày mai, tôi cần một bàn ủi.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-983",
+    "en": "Tonight, I need an iron, please.",
+    "vi": "Tối nay, tôi cần một bàn ủi.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-984",
+    "en": "Now, I need an iron, please.",
+    "vi": "Bây giờ, tôi cần một bàn ủi.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-985",
+    "en": "This morning, can you send an iron to my room?",
+    "vi": "Sáng nay, nhờ gửi một bàn ủi lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-986",
+    "en": "This afternoon, can you send an iron to my room?",
+    "vi": "Chiều nay, nhờ gửi một bàn ủi lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-987",
+    "en": "This evening, can you send an iron to my room?",
+    "vi": "Tối nay, nhờ gửi một bàn ủi lên phòng giúp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-988",
+    "en": "Today, can you send an iron to my room?",
+    "vi": "Hôm nay, nhờ gửi một bàn ủi lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-989",
+    "en": "Tomorrow, can you send an iron to my room?",
+    "vi": "Ngày mai, nhờ gửi một bàn ủi lên phòng giúp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-990",
+    "en": "Tonight, can you send an iron to my room?",
+    "vi": "Tối nay, nhờ gửi một bàn ủi lên phòng giúp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-991",
+    "en": "Now, can you send an iron to my room?",
+    "vi": "Bây giờ, nhờ gửi một bàn ủi lên phòng giúp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-992",
+    "en": "This morning, I would like an iron, please.",
+    "vi": "Sáng nay, cho tôi một bàn ủi.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-993",
+    "en": "This afternoon, I would like an iron, please.",
+    "vi": "Chiều nay, cho tôi một bàn ủi.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-994",
+    "en": "This evening, I would like an iron, please.",
+    "vi": "Tối nay, cho tôi một bàn ủi.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-995",
+    "en": "Today, I would like an iron, please.",
+    "vi": "Hôm nay, cho tôi một bàn ủi.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-996",
+    "en": "Tomorrow, I would like an iron, please.",
+    "vi": "Ngày mai, cho tôi một bàn ủi.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-997",
+    "en": "Tonight, I would like an iron, please.",
+    "vi": "Tối nay, cho tôi một bàn ủi.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "travel-998",
+    "en": "Now, I would like an iron, please.",
+    "vi": "Bây giờ, cho tôi một bàn ủi.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-999",
+    "en": "This morning, could I have a city map?",
+    "vi": "Sáng nay, cho tôi một bản đồ thành phố được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "travel-1000",
+    "en": "This afternoon, could I have a city map?",
+    "vi": "Chiều nay, cho tôi một bản đồ thành phố được không?",
+    "level": "B1",
+    "ipa": ""
+  }
+]

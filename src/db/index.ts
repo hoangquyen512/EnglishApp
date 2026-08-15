@@ -6,5 +6,6 @@ export * from "./missions";
 export * from "./sessions";
 export * from "./progress";
 export * from "./learning-program";
+export * from "./lexicon-import";
 export { setCurrentUserId, requireUserId, peekCurrentUserId } from "./current-user";
 export * from "./companion";

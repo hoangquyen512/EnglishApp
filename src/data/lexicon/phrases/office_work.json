@@ -1,0 +1,7002 @@
+[
+  {
+    "id": "office_work-1",
+    "en": "Could we schedule a meeting this week?",
+    "vi": "Chúng ta xếp một cuộc họp tuần này được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-2",
+    "en": "I will send you an email to confirm.",
+    "vi": "Tôi sẽ gửi email để xác nhận.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-3",
+    "en": "Sorry, I am running a few minutes late.",
+    "vi": "Xin lỗi, tôi sẽ đến muộn vài phút.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-4",
+    "en": "Could you speak a bit more slowly?",
+    "vi": "Bạn nói chậm hơn một chút được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-5",
+    "en": "Let me check and get back to you.",
+    "vi": "Để tôi kiểm tra rồi phản hồi lại.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-6",
+    "en": "The deadline is Friday.",
+    "vi": "Hạn chót là thứ Sáu.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-7",
+    "en": "I will take the day off tomorrow.",
+    "vi": "Ngày mai tôi xin nghỉ.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-8",
+    "en": "Thanks for your help on this.",
+    "vi": "Cảm ơn bạn đã hỗ trợ việc này.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-9",
+    "en": "Can we meet on Monday?",
+    "vi": "Chúng ta họp vào thứ Hai được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-10",
+    "en": "The deadline is Monday.",
+    "vi": "Hạn chót là thứ Hai.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-11",
+    "en": "I am off on Monday.",
+    "vi": "thứ Hai tôi nghỉ.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-12",
+    "en": "I will send it by Monday.",
+    "vi": "Tôi sẽ gửi trước thứ Hai.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-13",
+    "en": "Are you free on Monday?",
+    "vi": "thứ Hai bạn có rảnh không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-14",
+    "en": "Can we move the meeting to Monday?",
+    "vi": "Chúng ta dời họp sang thứ Hai được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-15",
+    "en": "Can we meet on Tuesday?",
+    "vi": "Chúng ta họp vào thứ Ba được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-16",
+    "en": "The deadline is Tuesday.",
+    "vi": "Hạn chót là thứ Ba.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-17",
+    "en": "I am off on Tuesday.",
+    "vi": "thứ Ba tôi nghỉ.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-18",
+    "en": "I will send it by Tuesday.",
+    "vi": "Tôi sẽ gửi trước thứ Ba.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-19",
+    "en": "Are you free on Tuesday?",
+    "vi": "thứ Ba bạn có rảnh không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-20",
+    "en": "Can we move the meeting to Tuesday?",
+    "vi": "Chúng ta dời họp sang thứ Ba được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-21",
+    "en": "Can we meet on Wednesday?",
+    "vi": "Chúng ta họp vào thứ Tư được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-22",
+    "en": "The deadline is Wednesday.",
+    "vi": "Hạn chót là thứ Tư.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-23",
+    "en": "I am off on Wednesday.",
+    "vi": "thứ Tư tôi nghỉ.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-24",
+    "en": "I will send it by Wednesday.",
+    "vi": "Tôi sẽ gửi trước thứ Tư.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-25",
+    "en": "Are you free on Wednesday?",
+    "vi": "thứ Tư bạn có rảnh không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-26",
+    "en": "Can we move the meeting to Wednesday?",
+    "vi": "Chúng ta dời họp sang thứ Tư được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-27",
+    "en": "Can we meet on Thursday?",
+    "vi": "Chúng ta họp vào thứ Năm được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-28",
+    "en": "The deadline is Thursday.",
+    "vi": "Hạn chót là thứ Năm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-29",
+    "en": "I am off on Thursday.",
+    "vi": "thứ Năm tôi nghỉ.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-30",
+    "en": "I will send it by Thursday.",
+    "vi": "Tôi sẽ gửi trước thứ Năm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-31",
+    "en": "Are you free on Thursday?",
+    "vi": "thứ Năm bạn có rảnh không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-32",
+    "en": "Can we move the meeting to Thursday?",
+    "vi": "Chúng ta dời họp sang thứ Năm được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-33",
+    "en": "Can we meet on Friday?",
+    "vi": "Chúng ta họp vào thứ Sáu được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-34",
+    "en": "I am off on Friday.",
+    "vi": "thứ Sáu tôi nghỉ.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-35",
+    "en": "I will send it by Friday.",
+    "vi": "Tôi sẽ gửi trước thứ Sáu.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-36",
+    "en": "Are you free on Friday?",
+    "vi": "thứ Sáu bạn có rảnh không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-37",
+    "en": "Can we move the meeting to Friday?",
+    "vi": "Chúng ta dời họp sang thứ Sáu được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-38",
+    "en": "Can we meet on Saturday?",
+    "vi": "Chúng ta họp vào thứ Bảy được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-39",
+    "en": "The deadline is Saturday.",
+    "vi": "Hạn chót là thứ Bảy.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-40",
+    "en": "I am off on Saturday.",
+    "vi": "thứ Bảy tôi nghỉ.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-41",
+    "en": "I will send it by Saturday.",
+    "vi": "Tôi sẽ gửi trước thứ Bảy.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-42",
+    "en": "Are you free on Saturday?",
+    "vi": "thứ Bảy bạn có rảnh không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-43",
+    "en": "Can we move the meeting to Saturday?",
+    "vi": "Chúng ta dời họp sang thứ Bảy được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-44",
+    "en": "Can we meet on Sunday?",
+    "vi": "Chúng ta họp vào Chủ nhật được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-45",
+    "en": "The deadline is Sunday.",
+    "vi": "Hạn chót là Chủ nhật.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-46",
+    "en": "I am off on Sunday.",
+    "vi": "Chủ nhật tôi nghỉ.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-47",
+    "en": "I will send it by Sunday.",
+    "vi": "Tôi sẽ gửi trước Chủ nhật.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-48",
+    "en": "Are you free on Sunday?",
+    "vi": "Chủ nhật bạn có rảnh không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-49",
+    "en": "Can we move the meeting to Sunday?",
+    "vi": "Chúng ta dời họp sang Chủ nhật được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-50",
+    "en": "Can we meet on tomorrow?",
+    "vi": "Chúng ta họp vào ngày mai được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-51",
+    "en": "The deadline is tomorrow.",
+    "vi": "Hạn chót là ngày mai.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-52",
+    "en": "I am off on tomorrow.",
+    "vi": "ngày mai tôi nghỉ.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-53",
+    "en": "I will send it by tomorrow.",
+    "vi": "Tôi sẽ gửi trước ngày mai.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-54",
+    "en": "Are you free on tomorrow?",
+    "vi": "ngày mai bạn có rảnh không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-55",
+    "en": "Can we move the meeting to tomorrow?",
+    "vi": "Chúng ta dời họp sang ngày mai được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-56",
+    "en": "Can we meet on today?",
+    "vi": "Chúng ta họp vào hôm nay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-57",
+    "en": "The deadline is today.",
+    "vi": "Hạn chót là hôm nay.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-58",
+    "en": "I am off on today.",
+    "vi": "hôm nay tôi nghỉ.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-59",
+    "en": "I will send it by today.",
+    "vi": "Tôi sẽ gửi trước hôm nay.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-60",
+    "en": "Are you free on today?",
+    "vi": "hôm nay bạn có rảnh không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-61",
+    "en": "Can we move the meeting to today?",
+    "vi": "Chúng ta dời họp sang hôm nay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-62",
+    "en": "Can we meet on next week?",
+    "vi": "Chúng ta họp vào tuần sau được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-63",
+    "en": "The deadline is next week.",
+    "vi": "Hạn chót là tuần sau.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-64",
+    "en": "I am off on next week.",
+    "vi": "tuần sau tôi nghỉ.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-65",
+    "en": "I will send it by next week.",
+    "vi": "Tôi sẽ gửi trước tuần sau.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-66",
+    "en": "Are you free on next week?",
+    "vi": "tuần sau bạn có rảnh không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-67",
+    "en": "Can we move the meeting to next week?",
+    "vi": "Chúng ta dời họp sang tuần sau được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-68",
+    "en": "I will send the report today.",
+    "vi": "Hôm nay tôi sẽ gửi báo cáo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-69",
+    "en": "Can you review the report?",
+    "vi": "Bạn xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-70",
+    "en": "I have finished the report.",
+    "vi": "Tôi đã xong báo cáo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-71",
+    "en": "I need more time for the report.",
+    "vi": "Tôi cần thêm thời gian cho báo cáo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-72",
+    "en": "Who is working on the report?",
+    "vi": "Ai đang làm báo cáo?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-73",
+    "en": "Please update the report.",
+    "vi": "Làm ơn cập nhật báo cáo.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-74",
+    "en": "I cannot open the report.",
+    "vi": "Tôi không mở được báo cáo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-75",
+    "en": "Can we discuss the report?",
+    "vi": "Chúng ta bàn báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-76",
+    "en": "Can Anna review the report?",
+    "vi": "Anna xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-77",
+    "en": "Can Minh review the report?",
+    "vi": "Minh xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-78",
+    "en": "Can Linh review the report?",
+    "vi": "Linh xem giúp báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-79",
+    "en": "Can Hoa review the report?",
+    "vi": "Hoa xem giúp báo cáo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-80",
+    "en": "Can Nam review the report?",
+    "vi": "Nam xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-81",
+    "en": "Can Lan review the report?",
+    "vi": "Lan xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-82",
+    "en": "Can Khoa review the report?",
+    "vi": "Khoa xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-83",
+    "en": "Can Trang review the report?",
+    "vi": "Trang xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-84",
+    "en": "I will send the email today.",
+    "vi": "Hôm nay tôi sẽ gửi email.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-85",
+    "en": "Can you review the email?",
+    "vi": "Bạn xem giúp email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-86",
+    "en": "I have finished the email.",
+    "vi": "Tôi đã xong email.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-87",
+    "en": "I need more time for the email.",
+    "vi": "Tôi cần thêm thời gian cho email.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-88",
+    "en": "Who is working on the email?",
+    "vi": "Ai đang làm email?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-89",
+    "en": "Please update the email.",
+    "vi": "Làm ơn cập nhật email.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-90",
+    "en": "I cannot open the email.",
+    "vi": "Tôi không mở được email.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-91",
+    "en": "Can we discuss the email?",
+    "vi": "Chúng ta bàn email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-92",
+    "en": "Can Anna review the email?",
+    "vi": "Anna xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-93",
+    "en": "Can Minh review the email?",
+    "vi": "Minh xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-94",
+    "en": "Can Linh review the email?",
+    "vi": "Linh xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-95",
+    "en": "Can Hoa review the email?",
+    "vi": "Hoa xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-96",
+    "en": "Can Nam review the email?",
+    "vi": "Nam xem giúp email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-97",
+    "en": "Can Lan review the email?",
+    "vi": "Lan xem giúp email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-98",
+    "en": "Can Khoa review the email?",
+    "vi": "Khoa xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-99",
+    "en": "Can Trang review the email?",
+    "vi": "Trang xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-100",
+    "en": "I will send the presentation today.",
+    "vi": "Hôm nay tôi sẽ gửi bài thuyết trình.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-101",
+    "en": "Can you review the presentation?",
+    "vi": "Bạn xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-102",
+    "en": "I have finished the presentation.",
+    "vi": "Tôi đã xong bài thuyết trình.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-103",
+    "en": "I need more time for the presentation.",
+    "vi": "Tôi cần thêm thời gian cho bài thuyết trình.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-104",
+    "en": "Who is working on the presentation?",
+    "vi": "Ai đang làm bài thuyết trình?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-105",
+    "en": "Please update the presentation.",
+    "vi": "Làm ơn cập nhật bài thuyết trình.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-106",
+    "en": "I cannot open the presentation.",
+    "vi": "Tôi không mở được bài thuyết trình.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-107",
+    "en": "Can we discuss the presentation?",
+    "vi": "Chúng ta bàn bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-108",
+    "en": "Can Anna review the presentation?",
+    "vi": "Anna xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-109",
+    "en": "Can Minh review the presentation?",
+    "vi": "Minh xem giúp bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-110",
+    "en": "Can Linh review the presentation?",
+    "vi": "Linh xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-111",
+    "en": "Can Hoa review the presentation?",
+    "vi": "Hoa xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-112",
+    "en": "Can Nam review the presentation?",
+    "vi": "Nam xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-113",
+    "en": "Can Lan review the presentation?",
+    "vi": "Lan xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-114",
+    "en": "Can Khoa review the presentation?",
+    "vi": "Khoa xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-115",
+    "en": "Can Trang review the presentation?",
+    "vi": "Trang xem giúp bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-116",
+    "en": "I will send the meeting notes today.",
+    "vi": "Hôm nay tôi sẽ gửi biên bản họp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-117",
+    "en": "Can you review the meeting notes?",
+    "vi": "Bạn xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-118",
+    "en": "I have finished the meeting notes.",
+    "vi": "Tôi đã xong biên bản họp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-119",
+    "en": "I need more time for the meeting notes.",
+    "vi": "Tôi cần thêm thời gian cho biên bản họp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-120",
+    "en": "Who is working on the meeting notes?",
+    "vi": "Ai đang làm biên bản họp?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-121",
+    "en": "Please update the meeting notes.",
+    "vi": "Làm ơn cập nhật biên bản họp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-122",
+    "en": "I cannot open the meeting notes.",
+    "vi": "Tôi không mở được biên bản họp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-123",
+    "en": "Can we discuss the meeting notes?",
+    "vi": "Chúng ta bàn biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-124",
+    "en": "Can Anna review the meeting notes?",
+    "vi": "Anna xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-125",
+    "en": "Can Minh review the meeting notes?",
+    "vi": "Minh xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-126",
+    "en": "Can Linh review the meeting notes?",
+    "vi": "Linh xem giúp biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-127",
+    "en": "Can Hoa review the meeting notes?",
+    "vi": "Hoa xem giúp biên bản họp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-128",
+    "en": "Can Nam review the meeting notes?",
+    "vi": "Nam xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-129",
+    "en": "Can Lan review the meeting notes?",
+    "vi": "Lan xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-130",
+    "en": "Can Khoa review the meeting notes?",
+    "vi": "Khoa xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-131",
+    "en": "Can Trang review the meeting notes?",
+    "vi": "Trang xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-132",
+    "en": "I will send the invoice today.",
+    "vi": "Hôm nay tôi sẽ gửi hóa đơn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-133",
+    "en": "Can you review the invoice?",
+    "vi": "Bạn xem giúp hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-134",
+    "en": "I have finished the invoice.",
+    "vi": "Tôi đã xong hóa đơn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-135",
+    "en": "I need more time for the invoice.",
+    "vi": "Tôi cần thêm thời gian cho hóa đơn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-136",
+    "en": "Who is working on the invoice?",
+    "vi": "Ai đang làm hóa đơn?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-137",
+    "en": "Please update the invoice.",
+    "vi": "Làm ơn cập nhật hóa đơn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-138",
+    "en": "I cannot open the invoice.",
+    "vi": "Tôi không mở được hóa đơn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-139",
+    "en": "Can we discuss the invoice?",
+    "vi": "Chúng ta bàn hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-140",
+    "en": "Can Anna review the invoice?",
+    "vi": "Anna xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-141",
+    "en": "Can Minh review the invoice?",
+    "vi": "Minh xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-142",
+    "en": "Can Linh review the invoice?",
+    "vi": "Linh xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-143",
+    "en": "Can Hoa review the invoice?",
+    "vi": "Hoa xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-144",
+    "en": "Can Nam review the invoice?",
+    "vi": "Nam xem giúp hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-145",
+    "en": "Can Lan review the invoice?",
+    "vi": "Lan xem giúp hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-146",
+    "en": "Can Khoa review the invoice?",
+    "vi": "Khoa xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-147",
+    "en": "Can Trang review the invoice?",
+    "vi": "Trang xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-148",
+    "en": "I will send the contract today.",
+    "vi": "Hôm nay tôi sẽ gửi hợp đồng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-149",
+    "en": "Can you review the contract?",
+    "vi": "Bạn xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-150",
+    "en": "I have finished the contract.",
+    "vi": "Tôi đã xong hợp đồng.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-151",
+    "en": "I need more time for the contract.",
+    "vi": "Tôi cần thêm thời gian cho hợp đồng.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-152",
+    "en": "Who is working on the contract?",
+    "vi": "Ai đang làm hợp đồng?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-153",
+    "en": "Please update the contract.",
+    "vi": "Làm ơn cập nhật hợp đồng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-154",
+    "en": "I cannot open the contract.",
+    "vi": "Tôi không mở được hợp đồng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-155",
+    "en": "Can we discuss the contract?",
+    "vi": "Chúng ta bàn hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-156",
+    "en": "Can Anna review the contract?",
+    "vi": "Anna xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-157",
+    "en": "Can Minh review the contract?",
+    "vi": "Minh xem giúp hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-158",
+    "en": "Can Linh review the contract?",
+    "vi": "Linh xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-159",
+    "en": "Can Hoa review the contract?",
+    "vi": "Hoa xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-160",
+    "en": "Can Nam review the contract?",
+    "vi": "Nam xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-161",
+    "en": "Can Lan review the contract?",
+    "vi": "Lan xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-162",
+    "en": "Can Khoa review the contract?",
+    "vi": "Khoa xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-163",
+    "en": "Can Trang review the contract?",
+    "vi": "Trang xem giúp hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-164",
+    "en": "I will send the design today.",
+    "vi": "Hôm nay tôi sẽ gửi bản thiết kế.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-165",
+    "en": "Can you review the design?",
+    "vi": "Bạn xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-166",
+    "en": "I have finished the design.",
+    "vi": "Tôi đã xong bản thiết kế.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-167",
+    "en": "I need more time for the design.",
+    "vi": "Tôi cần thêm thời gian cho bản thiết kế.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-168",
+    "en": "Who is working on the design?",
+    "vi": "Ai đang làm bản thiết kế?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-169",
+    "en": "Please update the design.",
+    "vi": "Làm ơn cập nhật bản thiết kế.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-170",
+    "en": "I cannot open the design.",
+    "vi": "Tôi không mở được bản thiết kế.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-171",
+    "en": "Can we discuss the design?",
+    "vi": "Chúng ta bàn bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-172",
+    "en": "Can Anna review the design?",
+    "vi": "Anna xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-173",
+    "en": "Can Minh review the design?",
+    "vi": "Minh xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-174",
+    "en": "Can Linh review the design?",
+    "vi": "Linh xem giúp bản thiết kế được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-175",
+    "en": "Can Hoa review the design?",
+    "vi": "Hoa xem giúp bản thiết kế được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-176",
+    "en": "Can Nam review the design?",
+    "vi": "Nam xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-177",
+    "en": "Can Lan review the design?",
+    "vi": "Lan xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-178",
+    "en": "Can Khoa review the design?",
+    "vi": "Khoa xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-179",
+    "en": "Can Trang review the design?",
+    "vi": "Trang xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-180",
+    "en": "I will send the schedule today.",
+    "vi": "Hôm nay tôi sẽ gửi lịch.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-181",
+    "en": "Can you review the schedule?",
+    "vi": "Bạn xem giúp lịch được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-182",
+    "en": "I have finished the schedule.",
+    "vi": "Tôi đã xong lịch.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-183",
+    "en": "I need more time for the schedule.",
+    "vi": "Tôi cần thêm thời gian cho lịch.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-184",
+    "en": "Who is working on the schedule?",
+    "vi": "Ai đang làm lịch?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-185",
+    "en": "Please update the schedule.",
+    "vi": "Làm ơn cập nhật lịch.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-186",
+    "en": "I cannot open the schedule.",
+    "vi": "Tôi không mở được lịch.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-187",
+    "en": "Can we discuss the schedule?",
+    "vi": "Chúng ta bàn lịch được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-188",
+    "en": "Can Anna review the schedule?",
+    "vi": "Anna xem giúp lịch được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-189",
+    "en": "Can Minh review the schedule?",
+    "vi": "Minh xem giúp lịch được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-190",
+    "en": "Can Linh review the schedule?",
+    "vi": "Linh xem giúp lịch được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-191",
+    "en": "Can Hoa review the schedule?",
+    "vi": "Hoa xem giúp lịch được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-192",
+    "en": "Can Nam review the schedule?",
+    "vi": "Nam xem giúp lịch được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-193",
+    "en": "Can Lan review the schedule?",
+    "vi": "Lan xem giúp lịch được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-194",
+    "en": "Can Khoa review the schedule?",
+    "vi": "Khoa xem giúp lịch được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-195",
+    "en": "Can Trang review the schedule?",
+    "vi": "Trang xem giúp lịch được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-196",
+    "en": "I will send the update today.",
+    "vi": "Hôm nay tôi sẽ gửi bản cập nhật.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-197",
+    "en": "Can you review the update?",
+    "vi": "Bạn xem giúp bản cập nhật được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-198",
+    "en": "I have finished the update.",
+    "vi": "Tôi đã xong bản cập nhật.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-199",
+    "en": "I need more time for the update.",
+    "vi": "Tôi cần thêm thời gian cho bản cập nhật.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-200",
+    "en": "Who is working on the update?",
+    "vi": "Ai đang làm bản cập nhật?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-201",
+    "en": "Please update the update.",
+    "vi": "Làm ơn cập nhật bản cập nhật.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-202",
+    "en": "I cannot open the update.",
+    "vi": "Tôi không mở được bản cập nhật.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-203",
+    "en": "Can we discuss the update?",
+    "vi": "Chúng ta bàn bản cập nhật được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-204",
+    "en": "Can Anna review the update?",
+    "vi": "Anna xem giúp bản cập nhật được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-205",
+    "en": "Can Minh review the update?",
+    "vi": "Minh xem giúp bản cập nhật được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-206",
+    "en": "Can Linh review the update?",
+    "vi": "Linh xem giúp bản cập nhật được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-207",
+    "en": "Can Hoa review the update?",
+    "vi": "Hoa xem giúp bản cập nhật được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-208",
+    "en": "Can Nam review the update?",
+    "vi": "Nam xem giúp bản cập nhật được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-209",
+    "en": "Can Lan review the update?",
+    "vi": "Lan xem giúp bản cập nhật được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-210",
+    "en": "Can Khoa review the update?",
+    "vi": "Khoa xem giúp bản cập nhật được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-211",
+    "en": "Can Trang review the update?",
+    "vi": "Trang xem giúp bản cập nhật được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-212",
+    "en": "I will send the file today.",
+    "vi": "Hôm nay tôi sẽ gửi tệp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-213",
+    "en": "Can you review the file?",
+    "vi": "Bạn xem giúp tệp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-214",
+    "en": "I have finished the file.",
+    "vi": "Tôi đã xong tệp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-215",
+    "en": "I need more time for the file.",
+    "vi": "Tôi cần thêm thời gian cho tệp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-216",
+    "en": "Who is working on the file?",
+    "vi": "Ai đang làm tệp?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-217",
+    "en": "Please update the file.",
+    "vi": "Làm ơn cập nhật tệp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-218",
+    "en": "I cannot open the file.",
+    "vi": "Tôi không mở được tệp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-219",
+    "en": "Can we discuss the file?",
+    "vi": "Chúng ta bàn tệp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-220",
+    "en": "Can Anna review the file?",
+    "vi": "Anna xem giúp tệp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-221",
+    "en": "Can Minh review the file?",
+    "vi": "Minh xem giúp tệp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-222",
+    "en": "Can Linh review the file?",
+    "vi": "Linh xem giúp tệp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-223",
+    "en": "Can Hoa review the file?",
+    "vi": "Hoa xem giúp tệp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-224",
+    "en": "Can Nam review the file?",
+    "vi": "Nam xem giúp tệp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-225",
+    "en": "Can Lan review the file?",
+    "vi": "Lan xem giúp tệp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-226",
+    "en": "Can Khoa review the file?",
+    "vi": "Khoa xem giúp tệp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-227",
+    "en": "Can Trang review the file?",
+    "vi": "Trang xem giúp tệp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-228",
+    "en": "I will send the budget today.",
+    "vi": "Hôm nay tôi sẽ gửi ngân sách.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-229",
+    "en": "Can you review the budget?",
+    "vi": "Bạn xem giúp ngân sách được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-230",
+    "en": "I have finished the budget.",
+    "vi": "Tôi đã xong ngân sách.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-231",
+    "en": "I need more time for the budget.",
+    "vi": "Tôi cần thêm thời gian cho ngân sách.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-232",
+    "en": "Who is working on the budget?",
+    "vi": "Ai đang làm ngân sách?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-233",
+    "en": "Please update the budget.",
+    "vi": "Làm ơn cập nhật ngân sách.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-234",
+    "en": "I cannot open the budget.",
+    "vi": "Tôi không mở được ngân sách.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-235",
+    "en": "Can we discuss the budget?",
+    "vi": "Chúng ta bàn ngân sách được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-236",
+    "en": "Can Anna review the budget?",
+    "vi": "Anna xem giúp ngân sách được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-237",
+    "en": "Can Minh review the budget?",
+    "vi": "Minh xem giúp ngân sách được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-238",
+    "en": "Can Linh review the budget?",
+    "vi": "Linh xem giúp ngân sách được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-239",
+    "en": "Can Hoa review the budget?",
+    "vi": "Hoa xem giúp ngân sách được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-240",
+    "en": "Can Nam review the budget?",
+    "vi": "Nam xem giúp ngân sách được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-241",
+    "en": "Can Lan review the budget?",
+    "vi": "Lan xem giúp ngân sách được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-242",
+    "en": "Can Khoa review the budget?",
+    "vi": "Khoa xem giúp ngân sách được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-243",
+    "en": "Can Trang review the budget?",
+    "vi": "Trang xem giúp ngân sách được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-244",
+    "en": "I will send the proposal today.",
+    "vi": "Hôm nay tôi sẽ gửi đề xuất.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-245",
+    "en": "Can you review the proposal?",
+    "vi": "Bạn xem giúp đề xuất được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-246",
+    "en": "I have finished the proposal.",
+    "vi": "Tôi đã xong đề xuất.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-247",
+    "en": "I need more time for the proposal.",
+    "vi": "Tôi cần thêm thời gian cho đề xuất.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-248",
+    "en": "Who is working on the proposal?",
+    "vi": "Ai đang làm đề xuất?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-249",
+    "en": "Please update the proposal.",
+    "vi": "Làm ơn cập nhật đề xuất.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-250",
+    "en": "I cannot open the proposal.",
+    "vi": "Tôi không mở được đề xuất.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-251",
+    "en": "Can we discuss the proposal?",
+    "vi": "Chúng ta bàn đề xuất được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-252",
+    "en": "Can Anna review the proposal?",
+    "vi": "Anna xem giúp đề xuất được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-253",
+    "en": "Can Minh review the proposal?",
+    "vi": "Minh xem giúp đề xuất được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-254",
+    "en": "Can Linh review the proposal?",
+    "vi": "Linh xem giúp đề xuất được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-255",
+    "en": "Can Hoa review the proposal?",
+    "vi": "Hoa xem giúp đề xuất được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-256",
+    "en": "Can Nam review the proposal?",
+    "vi": "Nam xem giúp đề xuất được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-257",
+    "en": "Can Lan review the proposal?",
+    "vi": "Lan xem giúp đề xuất được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-258",
+    "en": "Can Khoa review the proposal?",
+    "vi": "Khoa xem giúp đề xuất được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-259",
+    "en": "Can Trang review the proposal?",
+    "vi": "Trang xem giúp đề xuất được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-260",
+    "en": "Could we schedule a meeting this week, please?",
+    "vi": "Chúng ta xếp một cuộc họp tuần này được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-261",
+    "en": "Could you speak a bit more slowly, please?",
+    "vi": "Bạn nói chậm hơn một chút được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-262",
+    "en": "Can we meet on Monday, please?",
+    "vi": "Chúng ta họp vào thứ Hai được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-263",
+    "en": "Are you free on Monday, please?",
+    "vi": "thứ Hai bạn có rảnh không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-264",
+    "en": "Can we move the meeting to Monday, please?",
+    "vi": "Chúng ta dời họp sang thứ Hai được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-265",
+    "en": "Can we meet on Tuesday, please?",
+    "vi": "Chúng ta họp vào thứ Ba được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-266",
+    "en": "Are you free on Tuesday, please?",
+    "vi": "thứ Ba bạn có rảnh không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-267",
+    "en": "Can we move the meeting to Tuesday, please?",
+    "vi": "Chúng ta dời họp sang thứ Ba được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-268",
+    "en": "Can we meet on Wednesday, please?",
+    "vi": "Chúng ta họp vào thứ Tư được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-269",
+    "en": "Are you free on Wednesday, please?",
+    "vi": "thứ Tư bạn có rảnh không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-270",
+    "en": "Can we move the meeting to Wednesday, please?",
+    "vi": "Chúng ta dời họp sang thứ Tư được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-271",
+    "en": "Can we meet on Thursday, please?",
+    "vi": "Chúng ta họp vào thứ Năm được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-272",
+    "en": "Are you free on Thursday, please?",
+    "vi": "thứ Năm bạn có rảnh không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-273",
+    "en": "Can we move the meeting to Thursday, please?",
+    "vi": "Chúng ta dời họp sang thứ Năm được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-274",
+    "en": "Can we meet on Friday, please?",
+    "vi": "Chúng ta họp vào thứ Sáu được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-275",
+    "en": "Are you free on Friday, please?",
+    "vi": "thứ Sáu bạn có rảnh không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-276",
+    "en": "Can we move the meeting to Friday, please?",
+    "vi": "Chúng ta dời họp sang thứ Sáu được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-277",
+    "en": "Can we meet on Saturday, please?",
+    "vi": "Chúng ta họp vào thứ Bảy được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-278",
+    "en": "Are you free on Saturday, please?",
+    "vi": "thứ Bảy bạn có rảnh không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-279",
+    "en": "Can we move the meeting to Saturday, please?",
+    "vi": "Chúng ta dời họp sang thứ Bảy được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-280",
+    "en": "Can we meet on Sunday, please?",
+    "vi": "Chúng ta họp vào Chủ nhật được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-281",
+    "en": "Are you free on Sunday, please?",
+    "vi": "Chủ nhật bạn có rảnh không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-282",
+    "en": "Can we move the meeting to Sunday, please?",
+    "vi": "Chúng ta dời họp sang Chủ nhật được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-283",
+    "en": "Can we meet on tomorrow, please?",
+    "vi": "Chúng ta họp vào ngày mai được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-284",
+    "en": "Are you free on tomorrow, please?",
+    "vi": "ngày mai bạn có rảnh không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-285",
+    "en": "Can we move the meeting to tomorrow, please?",
+    "vi": "Chúng ta dời họp sang ngày mai được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-286",
+    "en": "Can we meet on today, please?",
+    "vi": "Chúng ta họp vào hôm nay được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-287",
+    "en": "Are you free on today, please?",
+    "vi": "hôm nay bạn có rảnh không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-288",
+    "en": "Can we move the meeting to today, please?",
+    "vi": "Chúng ta dời họp sang hôm nay được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-289",
+    "en": "Can we meet on next week, please?",
+    "vi": "Chúng ta họp vào tuần sau được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-290",
+    "en": "Are you free on next week, please?",
+    "vi": "tuần sau bạn có rảnh không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-291",
+    "en": "Can we move the meeting to next week, please?",
+    "vi": "Chúng ta dời họp sang tuần sau được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-292",
+    "en": "Can you review the report, please?",
+    "vi": "Bạn xem giúp báo cáo được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-293",
+    "en": "Can we discuss the report, please?",
+    "vi": "Chúng ta bàn báo cáo được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-294",
+    "en": "Can Anna review the report, please?",
+    "vi": "Anna xem giúp báo cáo được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-295",
+    "en": "Can Minh review the report, please?",
+    "vi": "Minh xem giúp báo cáo được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-296",
+    "en": "Can Linh review the report, please?",
+    "vi": "Linh xem giúp báo cáo được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-297",
+    "en": "Can Hoa review the report, please?",
+    "vi": "Hoa xem giúp báo cáo được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-298",
+    "en": "Can Nam review the report, please?",
+    "vi": "Nam xem giúp báo cáo được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-299",
+    "en": "Can Lan review the report, please?",
+    "vi": "Lan xem giúp báo cáo được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-300",
+    "en": "Can Khoa review the report, please?",
+    "vi": "Khoa xem giúp báo cáo được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-301",
+    "en": "Can Trang review the report, please?",
+    "vi": "Trang xem giúp báo cáo được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-302",
+    "en": "Can you review the email, please?",
+    "vi": "Bạn xem giúp email được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-303",
+    "en": "Can we discuss the email, please?",
+    "vi": "Chúng ta bàn email được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-304",
+    "en": "Can Anna review the email, please?",
+    "vi": "Anna xem giúp email được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-305",
+    "en": "Can Minh review the email, please?",
+    "vi": "Minh xem giúp email được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-306",
+    "en": "Can Linh review the email, please?",
+    "vi": "Linh xem giúp email được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-307",
+    "en": "Can Hoa review the email, please?",
+    "vi": "Hoa xem giúp email được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-308",
+    "en": "Can Nam review the email, please?",
+    "vi": "Nam xem giúp email được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-309",
+    "en": "Can Lan review the email, please?",
+    "vi": "Lan xem giúp email được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-310",
+    "en": "Can Khoa review the email, please?",
+    "vi": "Khoa xem giúp email được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-311",
+    "en": "Can Trang review the email, please?",
+    "vi": "Trang xem giúp email được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-312",
+    "en": "Can you review the presentation, please?",
+    "vi": "Bạn xem giúp bài thuyết trình được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-313",
+    "en": "Can we discuss the presentation, please?",
+    "vi": "Chúng ta bàn bài thuyết trình được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-314",
+    "en": "Can Anna review the presentation, please?",
+    "vi": "Anna xem giúp bài thuyết trình được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-315",
+    "en": "Can Minh review the presentation, please?",
+    "vi": "Minh xem giúp bài thuyết trình được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-316",
+    "en": "Can Linh review the presentation, please?",
+    "vi": "Linh xem giúp bài thuyết trình được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-317",
+    "en": "Can Hoa review the presentation, please?",
+    "vi": "Hoa xem giúp bài thuyết trình được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-318",
+    "en": "Can Nam review the presentation, please?",
+    "vi": "Nam xem giúp bài thuyết trình được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-319",
+    "en": "Can Lan review the presentation, please?",
+    "vi": "Lan xem giúp bài thuyết trình được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-320",
+    "en": "Can Khoa review the presentation, please?",
+    "vi": "Khoa xem giúp bài thuyết trình được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-321",
+    "en": "Can Trang review the presentation, please?",
+    "vi": "Trang xem giúp bài thuyết trình được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-322",
+    "en": "Can you review the meeting notes, please?",
+    "vi": "Bạn xem giúp biên bản họp được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-323",
+    "en": "Can we discuss the meeting notes, please?",
+    "vi": "Chúng ta bàn biên bản họp được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-324",
+    "en": "Can Anna review the meeting notes, please?",
+    "vi": "Anna xem giúp biên bản họp được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-325",
+    "en": "Can Minh review the meeting notes, please?",
+    "vi": "Minh xem giúp biên bản họp được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-326",
+    "en": "Can Linh review the meeting notes, please?",
+    "vi": "Linh xem giúp biên bản họp được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-327",
+    "en": "Can Hoa review the meeting notes, please?",
+    "vi": "Hoa xem giúp biên bản họp được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-328",
+    "en": "Can Nam review the meeting notes, please?",
+    "vi": "Nam xem giúp biên bản họp được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-329",
+    "en": "Can Lan review the meeting notes, please?",
+    "vi": "Lan xem giúp biên bản họp được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-330",
+    "en": "Can Khoa review the meeting notes, please?",
+    "vi": "Khoa xem giúp biên bản họp được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-331",
+    "en": "Can Trang review the meeting notes, please?",
+    "vi": "Trang xem giúp biên bản họp được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-332",
+    "en": "Can you review the invoice, please?",
+    "vi": "Bạn xem giúp hóa đơn được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-333",
+    "en": "Can we discuss the invoice, please?",
+    "vi": "Chúng ta bàn hóa đơn được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-334",
+    "en": "Can Anna review the invoice, please?",
+    "vi": "Anna xem giúp hóa đơn được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-335",
+    "en": "Can Minh review the invoice, please?",
+    "vi": "Minh xem giúp hóa đơn được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-336",
+    "en": "Can Linh review the invoice, please?",
+    "vi": "Linh xem giúp hóa đơn được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-337",
+    "en": "Can Hoa review the invoice, please?",
+    "vi": "Hoa xem giúp hóa đơn được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-338",
+    "en": "Can Nam review the invoice, please?",
+    "vi": "Nam xem giúp hóa đơn được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-339",
+    "en": "Can Lan review the invoice, please?",
+    "vi": "Lan xem giúp hóa đơn được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-340",
+    "en": "Can Khoa review the invoice, please?",
+    "vi": "Khoa xem giúp hóa đơn được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-341",
+    "en": "Can Trang review the invoice, please?",
+    "vi": "Trang xem giúp hóa đơn được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-342",
+    "en": "Can you review the contract, please?",
+    "vi": "Bạn xem giúp hợp đồng được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-343",
+    "en": "Can we discuss the contract, please?",
+    "vi": "Chúng ta bàn hợp đồng được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-344",
+    "en": "Can Anna review the contract, please?",
+    "vi": "Anna xem giúp hợp đồng được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-345",
+    "en": "Can Minh review the contract, please?",
+    "vi": "Minh xem giúp hợp đồng được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-346",
+    "en": "Can Linh review the contract, please?",
+    "vi": "Linh xem giúp hợp đồng được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-347",
+    "en": "Can Hoa review the contract, please?",
+    "vi": "Hoa xem giúp hợp đồng được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-348",
+    "en": "Can Nam review the contract, please?",
+    "vi": "Nam xem giúp hợp đồng được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-349",
+    "en": "Can Lan review the contract, please?",
+    "vi": "Lan xem giúp hợp đồng được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-350",
+    "en": "Can Khoa review the contract, please?",
+    "vi": "Khoa xem giúp hợp đồng được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-351",
+    "en": "Can Trang review the contract, please?",
+    "vi": "Trang xem giúp hợp đồng được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-352",
+    "en": "Can you review the design, please?",
+    "vi": "Bạn xem giúp bản thiết kế được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-353",
+    "en": "Can we discuss the design, please?",
+    "vi": "Chúng ta bàn bản thiết kế được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-354",
+    "en": "Can Anna review the design, please?",
+    "vi": "Anna xem giúp bản thiết kế được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-355",
+    "en": "Can Minh review the design, please?",
+    "vi": "Minh xem giúp bản thiết kế được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-356",
+    "en": "Can Linh review the design, please?",
+    "vi": "Linh xem giúp bản thiết kế được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-357",
+    "en": "Can Hoa review the design, please?",
+    "vi": "Hoa xem giúp bản thiết kế được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-358",
+    "en": "Can Nam review the design, please?",
+    "vi": "Nam xem giúp bản thiết kế được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-359",
+    "en": "Can Lan review the design, please?",
+    "vi": "Lan xem giúp bản thiết kế được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-360",
+    "en": "Can Khoa review the design, please?",
+    "vi": "Khoa xem giúp bản thiết kế được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-361",
+    "en": "Can Trang review the design, please?",
+    "vi": "Trang xem giúp bản thiết kế được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-362",
+    "en": "Can you review the schedule, please?",
+    "vi": "Bạn xem giúp lịch được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-363",
+    "en": "Can we discuss the schedule, please?",
+    "vi": "Chúng ta bàn lịch được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-364",
+    "en": "Can Anna review the schedule, please?",
+    "vi": "Anna xem giúp lịch được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-365",
+    "en": "Can Minh review the schedule, please?",
+    "vi": "Minh xem giúp lịch được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-366",
+    "en": "Can Linh review the schedule, please?",
+    "vi": "Linh xem giúp lịch được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-367",
+    "en": "Can Hoa review the schedule, please?",
+    "vi": "Hoa xem giúp lịch được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-368",
+    "en": "Can Nam review the schedule, please?",
+    "vi": "Nam xem giúp lịch được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-369",
+    "en": "Can Lan review the schedule, please?",
+    "vi": "Lan xem giúp lịch được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-370",
+    "en": "Can Khoa review the schedule, please?",
+    "vi": "Khoa xem giúp lịch được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-371",
+    "en": "Can Trang review the schedule, please?",
+    "vi": "Trang xem giúp lịch được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-372",
+    "en": "Can you review the update, please?",
+    "vi": "Bạn xem giúp bản cập nhật được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-373",
+    "en": "Can we discuss the update, please?",
+    "vi": "Chúng ta bàn bản cập nhật được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-374",
+    "en": "Can Anna review the update, please?",
+    "vi": "Anna xem giúp bản cập nhật được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-375",
+    "en": "Can Minh review the update, please?",
+    "vi": "Minh xem giúp bản cập nhật được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-376",
+    "en": "Can Linh review the update, please?",
+    "vi": "Linh xem giúp bản cập nhật được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-377",
+    "en": "Can Hoa review the update, please?",
+    "vi": "Hoa xem giúp bản cập nhật được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-378",
+    "en": "Can Nam review the update, please?",
+    "vi": "Nam xem giúp bản cập nhật được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-379",
+    "en": "Can Lan review the update, please?",
+    "vi": "Lan xem giúp bản cập nhật được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-380",
+    "en": "Can Khoa review the update, please?",
+    "vi": "Khoa xem giúp bản cập nhật được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-381",
+    "en": "Can Trang review the update, please?",
+    "vi": "Trang xem giúp bản cập nhật được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-382",
+    "en": "Can you review the file, please?",
+    "vi": "Bạn xem giúp tệp được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-383",
+    "en": "Can we discuss the file, please?",
+    "vi": "Chúng ta bàn tệp được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-384",
+    "en": "Can Anna review the file, please?",
+    "vi": "Anna xem giúp tệp được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-385",
+    "en": "Can Minh review the file, please?",
+    "vi": "Minh xem giúp tệp được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-386",
+    "en": "Can Linh review the file, please?",
+    "vi": "Linh xem giúp tệp được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-387",
+    "en": "Can Hoa review the file, please?",
+    "vi": "Hoa xem giúp tệp được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-388",
+    "en": "Can Nam review the file, please?",
+    "vi": "Nam xem giúp tệp được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-389",
+    "en": "Can Lan review the file, please?",
+    "vi": "Lan xem giúp tệp được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-390",
+    "en": "Can Khoa review the file, please?",
+    "vi": "Khoa xem giúp tệp được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-391",
+    "en": "Can Trang review the file, please?",
+    "vi": "Trang xem giúp tệp được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-392",
+    "en": "Can you review the budget, please?",
+    "vi": "Bạn xem giúp ngân sách được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-393",
+    "en": "Can we discuss the budget, please?",
+    "vi": "Chúng ta bàn ngân sách được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-394",
+    "en": "Can Anna review the budget, please?",
+    "vi": "Anna xem giúp ngân sách được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-395",
+    "en": "Can Minh review the budget, please?",
+    "vi": "Minh xem giúp ngân sách được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-396",
+    "en": "Can Linh review the budget, please?",
+    "vi": "Linh xem giúp ngân sách được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-397",
+    "en": "Can Hoa review the budget, please?",
+    "vi": "Hoa xem giúp ngân sách được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-398",
+    "en": "Can Nam review the budget, please?",
+    "vi": "Nam xem giúp ngân sách được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-399",
+    "en": "Can Lan review the budget, please?",
+    "vi": "Lan xem giúp ngân sách được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-400",
+    "en": "Can Khoa review the budget, please?",
+    "vi": "Khoa xem giúp ngân sách được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-401",
+    "en": "Can Trang review the budget, please?",
+    "vi": "Trang xem giúp ngân sách được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-402",
+    "en": "Can you review the proposal, please?",
+    "vi": "Bạn xem giúp đề xuất được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-403",
+    "en": "Can we discuss the proposal, please?",
+    "vi": "Chúng ta bàn đề xuất được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-404",
+    "en": "Can Anna review the proposal, please?",
+    "vi": "Anna xem giúp đề xuất được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-405",
+    "en": "Can Minh review the proposal, please?",
+    "vi": "Minh xem giúp đề xuất được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-406",
+    "en": "Can Linh review the proposal, please?",
+    "vi": "Linh xem giúp đề xuất được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-407",
+    "en": "Can Hoa review the proposal, please?",
+    "vi": "Hoa xem giúp đề xuất được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-408",
+    "en": "Can Nam review the proposal, please?",
+    "vi": "Nam xem giúp đề xuất được không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-409",
+    "en": "Can Lan review the proposal, please?",
+    "vi": "Lan xem giúp đề xuất được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-410",
+    "en": "Can Khoa review the proposal, please?",
+    "vi": "Khoa xem giúp đề xuất được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-411",
+    "en": "Can Trang review the proposal, please?",
+    "vi": "Trang xem giúp đề xuất được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-412",
+    "en": "This morning, I will send you an email to confirm.",
+    "vi": "Sáng nay, tôi sẽ gửi email để xác nhận.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-413",
+    "en": "This afternoon, I will send you an email to confirm.",
+    "vi": "Chiều nay, tôi sẽ gửi email để xác nhận.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-414",
+    "en": "This evening, I will send you an email to confirm.",
+    "vi": "Tối nay, tôi sẽ gửi email để xác nhận.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-415",
+    "en": "Today, I will send you an email to confirm.",
+    "vi": "Hôm nay, tôi sẽ gửi email để xác nhận.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-416",
+    "en": "Tomorrow, I will send you an email to confirm.",
+    "vi": "Ngày mai, tôi sẽ gửi email để xác nhận.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-417",
+    "en": "Tonight, I will send you an email to confirm.",
+    "vi": "Tối nay, tôi sẽ gửi email để xác nhận.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-418",
+    "en": "Now, I will send you an email to confirm.",
+    "vi": "Bây giờ, tôi sẽ gửi email để xác nhận.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-419",
+    "en": "This morning, could you speak a bit more slowly?",
+    "vi": "Sáng nay, bạn nói chậm hơn một chút được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-420",
+    "en": "This afternoon, could you speak a bit more slowly?",
+    "vi": "Chiều nay, bạn nói chậm hơn một chút được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-421",
+    "en": "This evening, could you speak a bit more slowly?",
+    "vi": "Tối nay, bạn nói chậm hơn một chút được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-422",
+    "en": "Today, could you speak a bit more slowly?",
+    "vi": "Hôm nay, bạn nói chậm hơn một chút được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-423",
+    "en": "Tomorrow, could you speak a bit more slowly?",
+    "vi": "Ngày mai, bạn nói chậm hơn một chút được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-424",
+    "en": "Tonight, could you speak a bit more slowly?",
+    "vi": "Tối nay, bạn nói chậm hơn một chút được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-425",
+    "en": "Now, could you speak a bit more slowly?",
+    "vi": "Bây giờ, bạn nói chậm hơn một chút được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-426",
+    "en": "This morning, can you review the report?",
+    "vi": "Sáng nay, bạn xem giúp báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-427",
+    "en": "This afternoon, can you review the report?",
+    "vi": "Chiều nay, bạn xem giúp báo cáo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-428",
+    "en": "This evening, can you review the report?",
+    "vi": "Tối nay, bạn xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-429",
+    "en": "Today, can you review the report?",
+    "vi": "Hôm nay, bạn xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-430",
+    "en": "Tomorrow, can you review the report?",
+    "vi": "Ngày mai, bạn xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-431",
+    "en": "Tonight, can you review the report?",
+    "vi": "Tối nay, bạn xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-432",
+    "en": "Now, can you review the report?",
+    "vi": "Bây giờ, bạn xem giúp báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-433",
+    "en": "This morning, I need more time for the report.",
+    "vi": "Sáng nay, tôi cần thêm thời gian cho báo cáo.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-434",
+    "en": "This afternoon, I need more time for the report.",
+    "vi": "Chiều nay, tôi cần thêm thời gian cho báo cáo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-435",
+    "en": "This evening, I need more time for the report.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho báo cáo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-436",
+    "en": "Today, I need more time for the report.",
+    "vi": "Hôm nay, tôi cần thêm thời gian cho báo cáo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-437",
+    "en": "Tomorrow, I need more time for the report.",
+    "vi": "Ngày mai, tôi cần thêm thời gian cho báo cáo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-438",
+    "en": "Tonight, I need more time for the report.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho báo cáo.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-439",
+    "en": "Now, I need more time for the report.",
+    "vi": "Bây giờ, tôi cần thêm thời gian cho báo cáo.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-440",
+    "en": "This morning, please update the report.",
+    "vi": "Sáng nay, làm ơn cập nhật báo cáo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-441",
+    "en": "This afternoon, please update the report.",
+    "vi": "Chiều nay, làm ơn cập nhật báo cáo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-442",
+    "en": "This evening, please update the report.",
+    "vi": "Tối nay, làm ơn cập nhật báo cáo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-443",
+    "en": "Today, please update the report.",
+    "vi": "Hôm nay, làm ơn cập nhật báo cáo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-444",
+    "en": "Tomorrow, please update the report.",
+    "vi": "Ngày mai, làm ơn cập nhật báo cáo.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-445",
+    "en": "Tonight, please update the report.",
+    "vi": "Tối nay, làm ơn cập nhật báo cáo.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-446",
+    "en": "Now, please update the report.",
+    "vi": "Bây giờ, làm ơn cập nhật báo cáo.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-447",
+    "en": "This morning, can we discuss the report?",
+    "vi": "Sáng nay, chúng ta bàn báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-448",
+    "en": "This afternoon, can we discuss the report?",
+    "vi": "Chiều nay, chúng ta bàn báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-449",
+    "en": "This evening, can we discuss the report?",
+    "vi": "Tối nay, chúng ta bàn báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-450",
+    "en": "Today, can we discuss the report?",
+    "vi": "Hôm nay, chúng ta bàn báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-451",
+    "en": "Tomorrow, can we discuss the report?",
+    "vi": "Ngày mai, chúng ta bàn báo cáo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-452",
+    "en": "Tonight, can we discuss the report?",
+    "vi": "Tối nay, chúng ta bàn báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-453",
+    "en": "Now, can we discuss the report?",
+    "vi": "Bây giờ, chúng ta bàn báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-454",
+    "en": "This morning, can Anna review the report?",
+    "vi": "Sáng nay, Anna xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-455",
+    "en": "This afternoon, can Anna review the report?",
+    "vi": "Chiều nay, Anna xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-456",
+    "en": "This evening, can Anna review the report?",
+    "vi": "Tối nay, Anna xem giúp báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-457",
+    "en": "Today, can Anna review the report?",
+    "vi": "Hôm nay, Anna xem giúp báo cáo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-458",
+    "en": "Tomorrow, can Anna review the report?",
+    "vi": "Ngày mai, Anna xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-459",
+    "en": "Tonight, can Anna review the report?",
+    "vi": "Tối nay, Anna xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-460",
+    "en": "Now, can Anna review the report?",
+    "vi": "Bây giờ, Anna xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-461",
+    "en": "This morning, can Minh review the report?",
+    "vi": "Sáng nay, Minh xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-462",
+    "en": "This afternoon, can Minh review the report?",
+    "vi": "Chiều nay, Minh xem giúp báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-463",
+    "en": "This evening, can Minh review the report?",
+    "vi": "Tối nay, Minh xem giúp báo cáo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-464",
+    "en": "Today, can Minh review the report?",
+    "vi": "Hôm nay, Minh xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-465",
+    "en": "Tomorrow, can Minh review the report?",
+    "vi": "Ngày mai, Minh xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-466",
+    "en": "Tonight, can Minh review the report?",
+    "vi": "Tối nay, Minh xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-467",
+    "en": "Now, can Minh review the report?",
+    "vi": "Bây giờ, Minh xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-468",
+    "en": "This morning, can Linh review the report?",
+    "vi": "Sáng nay, Linh xem giúp báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-469",
+    "en": "This afternoon, can Linh review the report?",
+    "vi": "Chiều nay, Linh xem giúp báo cáo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-470",
+    "en": "This evening, can Linh review the report?",
+    "vi": "Tối nay, Linh xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-471",
+    "en": "Today, can Linh review the report?",
+    "vi": "Hôm nay, Linh xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-472",
+    "en": "Tomorrow, can Linh review the report?",
+    "vi": "Ngày mai, Linh xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-473",
+    "en": "Tonight, can Linh review the report?",
+    "vi": "Tối nay, Linh xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-474",
+    "en": "Now, can Linh review the report?",
+    "vi": "Bây giờ, Linh xem giúp báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-475",
+    "en": "This morning, can Hoa review the report?",
+    "vi": "Sáng nay, Hoa xem giúp báo cáo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-476",
+    "en": "This afternoon, can Hoa review the report?",
+    "vi": "Chiều nay, Hoa xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-477",
+    "en": "This evening, can Hoa review the report?",
+    "vi": "Tối nay, Hoa xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-478",
+    "en": "Today, can Hoa review the report?",
+    "vi": "Hôm nay, Hoa xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-479",
+    "en": "Tomorrow, can Hoa review the report?",
+    "vi": "Ngày mai, Hoa xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-480",
+    "en": "Tonight, can Hoa review the report?",
+    "vi": "Tối nay, Hoa xem giúp báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-481",
+    "en": "Now, can Hoa review the report?",
+    "vi": "Bây giờ, Hoa xem giúp báo cáo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-482",
+    "en": "This morning, can Nam review the report?",
+    "vi": "Sáng nay, Nam xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-483",
+    "en": "This afternoon, can Nam review the report?",
+    "vi": "Chiều nay, Nam xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-484",
+    "en": "This evening, can Nam review the report?",
+    "vi": "Tối nay, Nam xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-485",
+    "en": "Today, can Nam review the report?",
+    "vi": "Hôm nay, Nam xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-486",
+    "en": "Tomorrow, can Nam review the report?",
+    "vi": "Ngày mai, Nam xem giúp báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-487",
+    "en": "Tonight, can Nam review the report?",
+    "vi": "Tối nay, Nam xem giúp báo cáo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-488",
+    "en": "Now, can Nam review the report?",
+    "vi": "Bây giờ, Nam xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-489",
+    "en": "This morning, can Lan review the report?",
+    "vi": "Sáng nay, Lan xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-490",
+    "en": "This afternoon, can Lan review the report?",
+    "vi": "Chiều nay, Lan xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-491",
+    "en": "This evening, can Lan review the report?",
+    "vi": "Tối nay, Lan xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-492",
+    "en": "Today, can Lan review the report?",
+    "vi": "Hôm nay, Lan xem giúp báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-493",
+    "en": "Tomorrow, can Lan review the report?",
+    "vi": "Ngày mai, Lan xem giúp báo cáo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-494",
+    "en": "Tonight, can Lan review the report?",
+    "vi": "Tối nay, Lan xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-495",
+    "en": "Now, can Lan review the report?",
+    "vi": "Bây giờ, Lan xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-496",
+    "en": "This morning, can Khoa review the report?",
+    "vi": "Sáng nay, Khoa xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-497",
+    "en": "This afternoon, can Khoa review the report?",
+    "vi": "Chiều nay, Khoa xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-498",
+    "en": "This evening, can Khoa review the report?",
+    "vi": "Tối nay, Khoa xem giúp báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-499",
+    "en": "Today, can Khoa review the report?",
+    "vi": "Hôm nay, Khoa xem giúp báo cáo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-500",
+    "en": "Tomorrow, can Khoa review the report?",
+    "vi": "Ngày mai, Khoa xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-501",
+    "en": "Tonight, can Khoa review the report?",
+    "vi": "Tối nay, Khoa xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-502",
+    "en": "Now, can Khoa review the report?",
+    "vi": "Bây giờ, Khoa xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-503",
+    "en": "This morning, can Trang review the report?",
+    "vi": "Sáng nay, Trang xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-504",
+    "en": "This afternoon, can Trang review the report?",
+    "vi": "Chiều nay, Trang xem giúp báo cáo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-505",
+    "en": "This evening, can Trang review the report?",
+    "vi": "Tối nay, Trang xem giúp báo cáo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-506",
+    "en": "Today, can Trang review the report?",
+    "vi": "Hôm nay, Trang xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-507",
+    "en": "Tomorrow, can Trang review the report?",
+    "vi": "Ngày mai, Trang xem giúp báo cáo được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-508",
+    "en": "Tonight, can Trang review the report?",
+    "vi": "Tối nay, Trang xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-509",
+    "en": "Now, can Trang review the report?",
+    "vi": "Bây giờ, Trang xem giúp báo cáo được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-510",
+    "en": "This morning, can you review the email?",
+    "vi": "Sáng nay, bạn xem giúp email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-511",
+    "en": "This afternoon, can you review the email?",
+    "vi": "Chiều nay, bạn xem giúp email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-512",
+    "en": "This evening, can you review the email?",
+    "vi": "Tối nay, bạn xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-513",
+    "en": "Today, can you review the email?",
+    "vi": "Hôm nay, bạn xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-514",
+    "en": "Tomorrow, can you review the email?",
+    "vi": "Ngày mai, bạn xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-515",
+    "en": "Tonight, can you review the email?",
+    "vi": "Tối nay, bạn xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-516",
+    "en": "Now, can you review the email?",
+    "vi": "Bây giờ, bạn xem giúp email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-517",
+    "en": "This morning, I need more time for the email.",
+    "vi": "Sáng nay, tôi cần thêm thời gian cho email.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-518",
+    "en": "This afternoon, I need more time for the email.",
+    "vi": "Chiều nay, tôi cần thêm thời gian cho email.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-519",
+    "en": "This evening, I need more time for the email.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho email.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-520",
+    "en": "Today, I need more time for the email.",
+    "vi": "Hôm nay, tôi cần thêm thời gian cho email.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-521",
+    "en": "Tomorrow, I need more time for the email.",
+    "vi": "Ngày mai, tôi cần thêm thời gian cho email.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-522",
+    "en": "Tonight, I need more time for the email.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho email.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-523",
+    "en": "Now, I need more time for the email.",
+    "vi": "Bây giờ, tôi cần thêm thời gian cho email.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-524",
+    "en": "This morning, please update the email.",
+    "vi": "Sáng nay, làm ơn cập nhật email.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-525",
+    "en": "This afternoon, please update the email.",
+    "vi": "Chiều nay, làm ơn cập nhật email.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-526",
+    "en": "This evening, please update the email.",
+    "vi": "Tối nay, làm ơn cập nhật email.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-527",
+    "en": "Today, please update the email.",
+    "vi": "Hôm nay, làm ơn cập nhật email.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-528",
+    "en": "Tomorrow, please update the email.",
+    "vi": "Ngày mai, làm ơn cập nhật email.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-529",
+    "en": "Tonight, please update the email.",
+    "vi": "Tối nay, làm ơn cập nhật email.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-530",
+    "en": "Now, please update the email.",
+    "vi": "Bây giờ, làm ơn cập nhật email.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-531",
+    "en": "This morning, can we discuss the email?",
+    "vi": "Sáng nay, chúng ta bàn email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-532",
+    "en": "This afternoon, can we discuss the email?",
+    "vi": "Chiều nay, chúng ta bàn email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-533",
+    "en": "This evening, can we discuss the email?",
+    "vi": "Tối nay, chúng ta bàn email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-534",
+    "en": "Today, can we discuss the email?",
+    "vi": "Hôm nay, chúng ta bàn email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-535",
+    "en": "Tomorrow, can we discuss the email?",
+    "vi": "Ngày mai, chúng ta bàn email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-536",
+    "en": "Tonight, can we discuss the email?",
+    "vi": "Tối nay, chúng ta bàn email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-537",
+    "en": "Now, can we discuss the email?",
+    "vi": "Bây giờ, chúng ta bàn email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-538",
+    "en": "This morning, can Anna review the email?",
+    "vi": "Sáng nay, Anna xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-539",
+    "en": "This afternoon, can Anna review the email?",
+    "vi": "Chiều nay, Anna xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-540",
+    "en": "This evening, can Anna review the email?",
+    "vi": "Tối nay, Anna xem giúp email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-541",
+    "en": "Today, can Anna review the email?",
+    "vi": "Hôm nay, Anna xem giúp email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-542",
+    "en": "Tomorrow, can Anna review the email?",
+    "vi": "Ngày mai, Anna xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-543",
+    "en": "Tonight, can Anna review the email?",
+    "vi": "Tối nay, Anna xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-544",
+    "en": "Now, can Anna review the email?",
+    "vi": "Bây giờ, Anna xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-545",
+    "en": "This morning, can Minh review the email?",
+    "vi": "Sáng nay, Minh xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-546",
+    "en": "This afternoon, can Minh review the email?",
+    "vi": "Chiều nay, Minh xem giúp email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-547",
+    "en": "This evening, can Minh review the email?",
+    "vi": "Tối nay, Minh xem giúp email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-548",
+    "en": "Today, can Minh review the email?",
+    "vi": "Hôm nay, Minh xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-549",
+    "en": "Tomorrow, can Minh review the email?",
+    "vi": "Ngày mai, Minh xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-550",
+    "en": "Tonight, can Minh review the email?",
+    "vi": "Tối nay, Minh xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-551",
+    "en": "Now, can Minh review the email?",
+    "vi": "Bây giờ, Minh xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-552",
+    "en": "This morning, can Linh review the email?",
+    "vi": "Sáng nay, Linh xem giúp email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-553",
+    "en": "This afternoon, can Linh review the email?",
+    "vi": "Chiều nay, Linh xem giúp email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-554",
+    "en": "This evening, can Linh review the email?",
+    "vi": "Tối nay, Linh xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-555",
+    "en": "Today, can Linh review the email?",
+    "vi": "Hôm nay, Linh xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-556",
+    "en": "Tomorrow, can Linh review the email?",
+    "vi": "Ngày mai, Linh xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-557",
+    "en": "Tonight, can Linh review the email?",
+    "vi": "Tối nay, Linh xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-558",
+    "en": "Now, can Linh review the email?",
+    "vi": "Bây giờ, Linh xem giúp email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-559",
+    "en": "This morning, can Hoa review the email?",
+    "vi": "Sáng nay, Hoa xem giúp email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-560",
+    "en": "This afternoon, can Hoa review the email?",
+    "vi": "Chiều nay, Hoa xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-561",
+    "en": "This evening, can Hoa review the email?",
+    "vi": "Tối nay, Hoa xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-562",
+    "en": "Today, can Hoa review the email?",
+    "vi": "Hôm nay, Hoa xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-563",
+    "en": "Tomorrow, can Hoa review the email?",
+    "vi": "Ngày mai, Hoa xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-564",
+    "en": "Tonight, can Hoa review the email?",
+    "vi": "Tối nay, Hoa xem giúp email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-565",
+    "en": "Now, can Hoa review the email?",
+    "vi": "Bây giờ, Hoa xem giúp email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-566",
+    "en": "This morning, can Nam review the email?",
+    "vi": "Sáng nay, Nam xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-567",
+    "en": "This afternoon, can Nam review the email?",
+    "vi": "Chiều nay, Nam xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-568",
+    "en": "This evening, can Nam review the email?",
+    "vi": "Tối nay, Nam xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-569",
+    "en": "Today, can Nam review the email?",
+    "vi": "Hôm nay, Nam xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-570",
+    "en": "Tomorrow, can Nam review the email?",
+    "vi": "Ngày mai, Nam xem giúp email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-571",
+    "en": "Tonight, can Nam review the email?",
+    "vi": "Tối nay, Nam xem giúp email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-572",
+    "en": "Now, can Nam review the email?",
+    "vi": "Bây giờ, Nam xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-573",
+    "en": "This morning, can Lan review the email?",
+    "vi": "Sáng nay, Lan xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-574",
+    "en": "This afternoon, can Lan review the email?",
+    "vi": "Chiều nay, Lan xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-575",
+    "en": "This evening, can Lan review the email?",
+    "vi": "Tối nay, Lan xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-576",
+    "en": "Today, can Lan review the email?",
+    "vi": "Hôm nay, Lan xem giúp email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-577",
+    "en": "Tomorrow, can Lan review the email?",
+    "vi": "Ngày mai, Lan xem giúp email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-578",
+    "en": "Tonight, can Lan review the email?",
+    "vi": "Tối nay, Lan xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-579",
+    "en": "Now, can Lan review the email?",
+    "vi": "Bây giờ, Lan xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-580",
+    "en": "This morning, can Khoa review the email?",
+    "vi": "Sáng nay, Khoa xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-581",
+    "en": "This afternoon, can Khoa review the email?",
+    "vi": "Chiều nay, Khoa xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-582",
+    "en": "This evening, can Khoa review the email?",
+    "vi": "Tối nay, Khoa xem giúp email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-583",
+    "en": "Today, can Khoa review the email?",
+    "vi": "Hôm nay, Khoa xem giúp email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-584",
+    "en": "Tomorrow, can Khoa review the email?",
+    "vi": "Ngày mai, Khoa xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-585",
+    "en": "Tonight, can Khoa review the email?",
+    "vi": "Tối nay, Khoa xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-586",
+    "en": "Now, can Khoa review the email?",
+    "vi": "Bây giờ, Khoa xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-587",
+    "en": "This morning, can Trang review the email?",
+    "vi": "Sáng nay, Trang xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-588",
+    "en": "This afternoon, can Trang review the email?",
+    "vi": "Chiều nay, Trang xem giúp email được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-589",
+    "en": "This evening, can Trang review the email?",
+    "vi": "Tối nay, Trang xem giúp email được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-590",
+    "en": "Today, can Trang review the email?",
+    "vi": "Hôm nay, Trang xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-591",
+    "en": "Tomorrow, can Trang review the email?",
+    "vi": "Ngày mai, Trang xem giúp email được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-592",
+    "en": "Tonight, can Trang review the email?",
+    "vi": "Tối nay, Trang xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-593",
+    "en": "Now, can Trang review the email?",
+    "vi": "Bây giờ, Trang xem giúp email được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-594",
+    "en": "This morning, can you review the presentation?",
+    "vi": "Sáng nay, bạn xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-595",
+    "en": "This afternoon, can you review the presentation?",
+    "vi": "Chiều nay, bạn xem giúp bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-596",
+    "en": "This evening, can you review the presentation?",
+    "vi": "Tối nay, bạn xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-597",
+    "en": "Today, can you review the presentation?",
+    "vi": "Hôm nay, bạn xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-598",
+    "en": "Tomorrow, can you review the presentation?",
+    "vi": "Ngày mai, bạn xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-599",
+    "en": "Tonight, can you review the presentation?",
+    "vi": "Tối nay, bạn xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-600",
+    "en": "Now, can you review the presentation?",
+    "vi": "Bây giờ, bạn xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-601",
+    "en": "This morning, I need more time for the presentation.",
+    "vi": "Sáng nay, tôi cần thêm thời gian cho bài thuyết trình.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-602",
+    "en": "This afternoon, I need more time for the presentation.",
+    "vi": "Chiều nay, tôi cần thêm thời gian cho bài thuyết trình.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-603",
+    "en": "This evening, I need more time for the presentation.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho bài thuyết trình.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-604",
+    "en": "Today, I need more time for the presentation.",
+    "vi": "Hôm nay, tôi cần thêm thời gian cho bài thuyết trình.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-605",
+    "en": "Tomorrow, I need more time for the presentation.",
+    "vi": "Ngày mai, tôi cần thêm thời gian cho bài thuyết trình.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-606",
+    "en": "Tonight, I need more time for the presentation.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho bài thuyết trình.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-607",
+    "en": "Now, I need more time for the presentation.",
+    "vi": "Bây giờ, tôi cần thêm thời gian cho bài thuyết trình.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-608",
+    "en": "This morning, please update the presentation.",
+    "vi": "Sáng nay, làm ơn cập nhật bài thuyết trình.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-609",
+    "en": "This afternoon, please update the presentation.",
+    "vi": "Chiều nay, làm ơn cập nhật bài thuyết trình.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-610",
+    "en": "This evening, please update the presentation.",
+    "vi": "Tối nay, làm ơn cập nhật bài thuyết trình.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-611",
+    "en": "Today, please update the presentation.",
+    "vi": "Hôm nay, làm ơn cập nhật bài thuyết trình.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-612",
+    "en": "Tomorrow, please update the presentation.",
+    "vi": "Ngày mai, làm ơn cập nhật bài thuyết trình.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-613",
+    "en": "Tonight, please update the presentation.",
+    "vi": "Tối nay, làm ơn cập nhật bài thuyết trình.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-614",
+    "en": "Now, please update the presentation.",
+    "vi": "Bây giờ, làm ơn cập nhật bài thuyết trình.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-615",
+    "en": "This morning, can we discuss the presentation?",
+    "vi": "Sáng nay, chúng ta bàn bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-616",
+    "en": "This afternoon, can we discuss the presentation?",
+    "vi": "Chiều nay, chúng ta bàn bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-617",
+    "en": "This evening, can we discuss the presentation?",
+    "vi": "Tối nay, chúng ta bàn bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-618",
+    "en": "Today, can we discuss the presentation?",
+    "vi": "Hôm nay, chúng ta bàn bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-619",
+    "en": "Tomorrow, can we discuss the presentation?",
+    "vi": "Ngày mai, chúng ta bàn bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-620",
+    "en": "Tonight, can we discuss the presentation?",
+    "vi": "Tối nay, chúng ta bàn bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-621",
+    "en": "Now, can we discuss the presentation?",
+    "vi": "Bây giờ, chúng ta bàn bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-622",
+    "en": "This morning, can Anna review the presentation?",
+    "vi": "Sáng nay, Anna xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-623",
+    "en": "This afternoon, can Anna review the presentation?",
+    "vi": "Chiều nay, Anna xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-624",
+    "en": "This evening, can Anna review the presentation?",
+    "vi": "Tối nay, Anna xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-625",
+    "en": "Today, can Anna review the presentation?",
+    "vi": "Hôm nay, Anna xem giúp bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-626",
+    "en": "Tomorrow, can Anna review the presentation?",
+    "vi": "Ngày mai, Anna xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-627",
+    "en": "Tonight, can Anna review the presentation?",
+    "vi": "Tối nay, Anna xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-628",
+    "en": "Now, can Anna review the presentation?",
+    "vi": "Bây giờ, Anna xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-629",
+    "en": "This morning, can Minh review the presentation?",
+    "vi": "Sáng nay, Minh xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-630",
+    "en": "This afternoon, can Minh review the presentation?",
+    "vi": "Chiều nay, Minh xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-631",
+    "en": "This evening, can Minh review the presentation?",
+    "vi": "Tối nay, Minh xem giúp bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-632",
+    "en": "Today, can Minh review the presentation?",
+    "vi": "Hôm nay, Minh xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-633",
+    "en": "Tomorrow, can Minh review the presentation?",
+    "vi": "Ngày mai, Minh xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-634",
+    "en": "Tonight, can Minh review the presentation?",
+    "vi": "Tối nay, Minh xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-635",
+    "en": "Now, can Minh review the presentation?",
+    "vi": "Bây giờ, Minh xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-636",
+    "en": "This morning, can Linh review the presentation?",
+    "vi": "Sáng nay, Linh xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-637",
+    "en": "This afternoon, can Linh review the presentation?",
+    "vi": "Chiều nay, Linh xem giúp bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-638",
+    "en": "This evening, can Linh review the presentation?",
+    "vi": "Tối nay, Linh xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-639",
+    "en": "Today, can Linh review the presentation?",
+    "vi": "Hôm nay, Linh xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-640",
+    "en": "Tomorrow, can Linh review the presentation?",
+    "vi": "Ngày mai, Linh xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-641",
+    "en": "Tonight, can Linh review the presentation?",
+    "vi": "Tối nay, Linh xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-642",
+    "en": "Now, can Linh review the presentation?",
+    "vi": "Bây giờ, Linh xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-643",
+    "en": "This morning, can Hoa review the presentation?",
+    "vi": "Sáng nay, Hoa xem giúp bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-644",
+    "en": "This afternoon, can Hoa review the presentation?",
+    "vi": "Chiều nay, Hoa xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-645",
+    "en": "This evening, can Hoa review the presentation?",
+    "vi": "Tối nay, Hoa xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-646",
+    "en": "Today, can Hoa review the presentation?",
+    "vi": "Hôm nay, Hoa xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-647",
+    "en": "Tomorrow, can Hoa review the presentation?",
+    "vi": "Ngày mai, Hoa xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-648",
+    "en": "Tonight, can Hoa review the presentation?",
+    "vi": "Tối nay, Hoa xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-649",
+    "en": "Now, can Hoa review the presentation?",
+    "vi": "Bây giờ, Hoa xem giúp bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-650",
+    "en": "This morning, can Nam review the presentation?",
+    "vi": "Sáng nay, Nam xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-651",
+    "en": "This afternoon, can Nam review the presentation?",
+    "vi": "Chiều nay, Nam xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-652",
+    "en": "This evening, can Nam review the presentation?",
+    "vi": "Tối nay, Nam xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-653",
+    "en": "Today, can Nam review the presentation?",
+    "vi": "Hôm nay, Nam xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-654",
+    "en": "Tomorrow, can Nam review the presentation?",
+    "vi": "Ngày mai, Nam xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-655",
+    "en": "Tonight, can Nam review the presentation?",
+    "vi": "Tối nay, Nam xem giúp bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-656",
+    "en": "Now, can Nam review the presentation?",
+    "vi": "Bây giờ, Nam xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-657",
+    "en": "This morning, can Lan review the presentation?",
+    "vi": "Sáng nay, Lan xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-658",
+    "en": "This afternoon, can Lan review the presentation?",
+    "vi": "Chiều nay, Lan xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-659",
+    "en": "This evening, can Lan review the presentation?",
+    "vi": "Tối nay, Lan xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-660",
+    "en": "Today, can Lan review the presentation?",
+    "vi": "Hôm nay, Lan xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-661",
+    "en": "Tomorrow, can Lan review the presentation?",
+    "vi": "Ngày mai, Lan xem giúp bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-662",
+    "en": "Tonight, can Lan review the presentation?",
+    "vi": "Tối nay, Lan xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-663",
+    "en": "Now, can Lan review the presentation?",
+    "vi": "Bây giờ, Lan xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-664",
+    "en": "This morning, can Khoa review the presentation?",
+    "vi": "Sáng nay, Khoa xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-665",
+    "en": "This afternoon, can Khoa review the presentation?",
+    "vi": "Chiều nay, Khoa xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-666",
+    "en": "This evening, can Khoa review the presentation?",
+    "vi": "Tối nay, Khoa xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-667",
+    "en": "Today, can Khoa review the presentation?",
+    "vi": "Hôm nay, Khoa xem giúp bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-668",
+    "en": "Tomorrow, can Khoa review the presentation?",
+    "vi": "Ngày mai, Khoa xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-669",
+    "en": "Tonight, can Khoa review the presentation?",
+    "vi": "Tối nay, Khoa xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-670",
+    "en": "Now, can Khoa review the presentation?",
+    "vi": "Bây giờ, Khoa xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-671",
+    "en": "This morning, can Trang review the presentation?",
+    "vi": "Sáng nay, Trang xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-672",
+    "en": "This afternoon, can Trang review the presentation?",
+    "vi": "Chiều nay, Trang xem giúp bài thuyết trình được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-673",
+    "en": "This evening, can Trang review the presentation?",
+    "vi": "Tối nay, Trang xem giúp bài thuyết trình được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-674",
+    "en": "Today, can Trang review the presentation?",
+    "vi": "Hôm nay, Trang xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-675",
+    "en": "Tomorrow, can Trang review the presentation?",
+    "vi": "Ngày mai, Trang xem giúp bài thuyết trình được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-676",
+    "en": "Tonight, can Trang review the presentation?",
+    "vi": "Tối nay, Trang xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-677",
+    "en": "Now, can Trang review the presentation?",
+    "vi": "Bây giờ, Trang xem giúp bài thuyết trình được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-678",
+    "en": "This morning, can you review the meeting notes?",
+    "vi": "Sáng nay, bạn xem giúp biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-679",
+    "en": "This afternoon, can you review the meeting notes?",
+    "vi": "Chiều nay, bạn xem giúp biên bản họp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-680",
+    "en": "This evening, can you review the meeting notes?",
+    "vi": "Tối nay, bạn xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-681",
+    "en": "Today, can you review the meeting notes?",
+    "vi": "Hôm nay, bạn xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-682",
+    "en": "Tomorrow, can you review the meeting notes?",
+    "vi": "Ngày mai, bạn xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-683",
+    "en": "Tonight, can you review the meeting notes?",
+    "vi": "Tối nay, bạn xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-684",
+    "en": "Now, can you review the meeting notes?",
+    "vi": "Bây giờ, bạn xem giúp biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-685",
+    "en": "This morning, I need more time for the meeting notes.",
+    "vi": "Sáng nay, tôi cần thêm thời gian cho biên bản họp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-686",
+    "en": "This afternoon, I need more time for the meeting notes.",
+    "vi": "Chiều nay, tôi cần thêm thời gian cho biên bản họp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-687",
+    "en": "This evening, I need more time for the meeting notes.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho biên bản họp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-688",
+    "en": "Today, I need more time for the meeting notes.",
+    "vi": "Hôm nay, tôi cần thêm thời gian cho biên bản họp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-689",
+    "en": "Tomorrow, I need more time for the meeting notes.",
+    "vi": "Ngày mai, tôi cần thêm thời gian cho biên bản họp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-690",
+    "en": "Tonight, I need more time for the meeting notes.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho biên bản họp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-691",
+    "en": "Now, I need more time for the meeting notes.",
+    "vi": "Bây giờ, tôi cần thêm thời gian cho biên bản họp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-692",
+    "en": "This morning, please update the meeting notes.",
+    "vi": "Sáng nay, làm ơn cập nhật biên bản họp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-693",
+    "en": "This afternoon, please update the meeting notes.",
+    "vi": "Chiều nay, làm ơn cập nhật biên bản họp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-694",
+    "en": "This evening, please update the meeting notes.",
+    "vi": "Tối nay, làm ơn cập nhật biên bản họp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-695",
+    "en": "Today, please update the meeting notes.",
+    "vi": "Hôm nay, làm ơn cập nhật biên bản họp.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-696",
+    "en": "Tomorrow, please update the meeting notes.",
+    "vi": "Ngày mai, làm ơn cập nhật biên bản họp.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-697",
+    "en": "Tonight, please update the meeting notes.",
+    "vi": "Tối nay, làm ơn cập nhật biên bản họp.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-698",
+    "en": "Now, please update the meeting notes.",
+    "vi": "Bây giờ, làm ơn cập nhật biên bản họp.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-699",
+    "en": "This morning, can we discuss the meeting notes?",
+    "vi": "Sáng nay, chúng ta bàn biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-700",
+    "en": "This afternoon, can we discuss the meeting notes?",
+    "vi": "Chiều nay, chúng ta bàn biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-701",
+    "en": "This evening, can we discuss the meeting notes?",
+    "vi": "Tối nay, chúng ta bàn biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-702",
+    "en": "Today, can we discuss the meeting notes?",
+    "vi": "Hôm nay, chúng ta bàn biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-703",
+    "en": "Tomorrow, can we discuss the meeting notes?",
+    "vi": "Ngày mai, chúng ta bàn biên bản họp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-704",
+    "en": "Tonight, can we discuss the meeting notes?",
+    "vi": "Tối nay, chúng ta bàn biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-705",
+    "en": "Now, can we discuss the meeting notes?",
+    "vi": "Bây giờ, chúng ta bàn biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-706",
+    "en": "This morning, can Anna review the meeting notes?",
+    "vi": "Sáng nay, Anna xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-707",
+    "en": "This afternoon, can Anna review the meeting notes?",
+    "vi": "Chiều nay, Anna xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-708",
+    "en": "This evening, can Anna review the meeting notes?",
+    "vi": "Tối nay, Anna xem giúp biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-709",
+    "en": "Today, can Anna review the meeting notes?",
+    "vi": "Hôm nay, Anna xem giúp biên bản họp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-710",
+    "en": "Tomorrow, can Anna review the meeting notes?",
+    "vi": "Ngày mai, Anna xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-711",
+    "en": "Tonight, can Anna review the meeting notes?",
+    "vi": "Tối nay, Anna xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-712",
+    "en": "Now, can Anna review the meeting notes?",
+    "vi": "Bây giờ, Anna xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-713",
+    "en": "This morning, can Minh review the meeting notes?",
+    "vi": "Sáng nay, Minh xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-714",
+    "en": "This afternoon, can Minh review the meeting notes?",
+    "vi": "Chiều nay, Minh xem giúp biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-715",
+    "en": "This evening, can Minh review the meeting notes?",
+    "vi": "Tối nay, Minh xem giúp biên bản họp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-716",
+    "en": "Today, can Minh review the meeting notes?",
+    "vi": "Hôm nay, Minh xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-717",
+    "en": "Tomorrow, can Minh review the meeting notes?",
+    "vi": "Ngày mai, Minh xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-718",
+    "en": "Tonight, can Minh review the meeting notes?",
+    "vi": "Tối nay, Minh xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-719",
+    "en": "Now, can Minh review the meeting notes?",
+    "vi": "Bây giờ, Minh xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-720",
+    "en": "This morning, can Linh review the meeting notes?",
+    "vi": "Sáng nay, Linh xem giúp biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-721",
+    "en": "This afternoon, can Linh review the meeting notes?",
+    "vi": "Chiều nay, Linh xem giúp biên bản họp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-722",
+    "en": "This evening, can Linh review the meeting notes?",
+    "vi": "Tối nay, Linh xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-723",
+    "en": "Today, can Linh review the meeting notes?",
+    "vi": "Hôm nay, Linh xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-724",
+    "en": "Tomorrow, can Linh review the meeting notes?",
+    "vi": "Ngày mai, Linh xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-725",
+    "en": "Tonight, can Linh review the meeting notes?",
+    "vi": "Tối nay, Linh xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-726",
+    "en": "Now, can Linh review the meeting notes?",
+    "vi": "Bây giờ, Linh xem giúp biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-727",
+    "en": "This morning, can Hoa review the meeting notes?",
+    "vi": "Sáng nay, Hoa xem giúp biên bản họp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-728",
+    "en": "This afternoon, can Hoa review the meeting notes?",
+    "vi": "Chiều nay, Hoa xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-729",
+    "en": "This evening, can Hoa review the meeting notes?",
+    "vi": "Tối nay, Hoa xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-730",
+    "en": "Today, can Hoa review the meeting notes?",
+    "vi": "Hôm nay, Hoa xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-731",
+    "en": "Tomorrow, can Hoa review the meeting notes?",
+    "vi": "Ngày mai, Hoa xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-732",
+    "en": "Tonight, can Hoa review the meeting notes?",
+    "vi": "Tối nay, Hoa xem giúp biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-733",
+    "en": "Now, can Hoa review the meeting notes?",
+    "vi": "Bây giờ, Hoa xem giúp biên bản họp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-734",
+    "en": "This morning, can Nam review the meeting notes?",
+    "vi": "Sáng nay, Nam xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-735",
+    "en": "This afternoon, can Nam review the meeting notes?",
+    "vi": "Chiều nay, Nam xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-736",
+    "en": "This evening, can Nam review the meeting notes?",
+    "vi": "Tối nay, Nam xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-737",
+    "en": "Today, can Nam review the meeting notes?",
+    "vi": "Hôm nay, Nam xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-738",
+    "en": "Tomorrow, can Nam review the meeting notes?",
+    "vi": "Ngày mai, Nam xem giúp biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-739",
+    "en": "Tonight, can Nam review the meeting notes?",
+    "vi": "Tối nay, Nam xem giúp biên bản họp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-740",
+    "en": "Now, can Nam review the meeting notes?",
+    "vi": "Bây giờ, Nam xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-741",
+    "en": "This morning, can Lan review the meeting notes?",
+    "vi": "Sáng nay, Lan xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-742",
+    "en": "This afternoon, can Lan review the meeting notes?",
+    "vi": "Chiều nay, Lan xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-743",
+    "en": "This evening, can Lan review the meeting notes?",
+    "vi": "Tối nay, Lan xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-744",
+    "en": "Today, can Lan review the meeting notes?",
+    "vi": "Hôm nay, Lan xem giúp biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-745",
+    "en": "Tomorrow, can Lan review the meeting notes?",
+    "vi": "Ngày mai, Lan xem giúp biên bản họp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-746",
+    "en": "Tonight, can Lan review the meeting notes?",
+    "vi": "Tối nay, Lan xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-747",
+    "en": "Now, can Lan review the meeting notes?",
+    "vi": "Bây giờ, Lan xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-748",
+    "en": "This morning, can Khoa review the meeting notes?",
+    "vi": "Sáng nay, Khoa xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-749",
+    "en": "This afternoon, can Khoa review the meeting notes?",
+    "vi": "Chiều nay, Khoa xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-750",
+    "en": "This evening, can Khoa review the meeting notes?",
+    "vi": "Tối nay, Khoa xem giúp biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-751",
+    "en": "Today, can Khoa review the meeting notes?",
+    "vi": "Hôm nay, Khoa xem giúp biên bản họp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-752",
+    "en": "Tomorrow, can Khoa review the meeting notes?",
+    "vi": "Ngày mai, Khoa xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-753",
+    "en": "Tonight, can Khoa review the meeting notes?",
+    "vi": "Tối nay, Khoa xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-754",
+    "en": "Now, can Khoa review the meeting notes?",
+    "vi": "Bây giờ, Khoa xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-755",
+    "en": "This morning, can Trang review the meeting notes?",
+    "vi": "Sáng nay, Trang xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-756",
+    "en": "This afternoon, can Trang review the meeting notes?",
+    "vi": "Chiều nay, Trang xem giúp biên bản họp được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-757",
+    "en": "This evening, can Trang review the meeting notes?",
+    "vi": "Tối nay, Trang xem giúp biên bản họp được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-758",
+    "en": "Today, can Trang review the meeting notes?",
+    "vi": "Hôm nay, Trang xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-759",
+    "en": "Tomorrow, can Trang review the meeting notes?",
+    "vi": "Ngày mai, Trang xem giúp biên bản họp được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-760",
+    "en": "Tonight, can Trang review the meeting notes?",
+    "vi": "Tối nay, Trang xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-761",
+    "en": "Now, can Trang review the meeting notes?",
+    "vi": "Bây giờ, Trang xem giúp biên bản họp được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-762",
+    "en": "This morning, can you review the invoice?",
+    "vi": "Sáng nay, bạn xem giúp hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-763",
+    "en": "This afternoon, can you review the invoice?",
+    "vi": "Chiều nay, bạn xem giúp hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-764",
+    "en": "This evening, can you review the invoice?",
+    "vi": "Tối nay, bạn xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-765",
+    "en": "Today, can you review the invoice?",
+    "vi": "Hôm nay, bạn xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-766",
+    "en": "Tomorrow, can you review the invoice?",
+    "vi": "Ngày mai, bạn xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-767",
+    "en": "Tonight, can you review the invoice?",
+    "vi": "Tối nay, bạn xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-768",
+    "en": "Now, can you review the invoice?",
+    "vi": "Bây giờ, bạn xem giúp hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-769",
+    "en": "This morning, I need more time for the invoice.",
+    "vi": "Sáng nay, tôi cần thêm thời gian cho hóa đơn.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-770",
+    "en": "This afternoon, I need more time for the invoice.",
+    "vi": "Chiều nay, tôi cần thêm thời gian cho hóa đơn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-771",
+    "en": "This evening, I need more time for the invoice.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho hóa đơn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-772",
+    "en": "Today, I need more time for the invoice.",
+    "vi": "Hôm nay, tôi cần thêm thời gian cho hóa đơn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-773",
+    "en": "Tomorrow, I need more time for the invoice.",
+    "vi": "Ngày mai, tôi cần thêm thời gian cho hóa đơn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-774",
+    "en": "Tonight, I need more time for the invoice.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho hóa đơn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-775",
+    "en": "Now, I need more time for the invoice.",
+    "vi": "Bây giờ, tôi cần thêm thời gian cho hóa đơn.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-776",
+    "en": "This morning, please update the invoice.",
+    "vi": "Sáng nay, làm ơn cập nhật hóa đơn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-777",
+    "en": "This afternoon, please update the invoice.",
+    "vi": "Chiều nay, làm ơn cập nhật hóa đơn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-778",
+    "en": "This evening, please update the invoice.",
+    "vi": "Tối nay, làm ơn cập nhật hóa đơn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-779",
+    "en": "Today, please update the invoice.",
+    "vi": "Hôm nay, làm ơn cập nhật hóa đơn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-780",
+    "en": "Tomorrow, please update the invoice.",
+    "vi": "Ngày mai, làm ơn cập nhật hóa đơn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-781",
+    "en": "Tonight, please update the invoice.",
+    "vi": "Tối nay, làm ơn cập nhật hóa đơn.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-782",
+    "en": "Now, please update the invoice.",
+    "vi": "Bây giờ, làm ơn cập nhật hóa đơn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-783",
+    "en": "This morning, can we discuss the invoice?",
+    "vi": "Sáng nay, chúng ta bàn hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-784",
+    "en": "This afternoon, can we discuss the invoice?",
+    "vi": "Chiều nay, chúng ta bàn hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-785",
+    "en": "This evening, can we discuss the invoice?",
+    "vi": "Tối nay, chúng ta bàn hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-786",
+    "en": "Today, can we discuss the invoice?",
+    "vi": "Hôm nay, chúng ta bàn hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-787",
+    "en": "Tomorrow, can we discuss the invoice?",
+    "vi": "Ngày mai, chúng ta bàn hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-788",
+    "en": "Tonight, can we discuss the invoice?",
+    "vi": "Tối nay, chúng ta bàn hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-789",
+    "en": "Now, can we discuss the invoice?",
+    "vi": "Bây giờ, chúng ta bàn hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-790",
+    "en": "This morning, can Anna review the invoice?",
+    "vi": "Sáng nay, Anna xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-791",
+    "en": "This afternoon, can Anna review the invoice?",
+    "vi": "Chiều nay, Anna xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-792",
+    "en": "This evening, can Anna review the invoice?",
+    "vi": "Tối nay, Anna xem giúp hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-793",
+    "en": "Today, can Anna review the invoice?",
+    "vi": "Hôm nay, Anna xem giúp hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-794",
+    "en": "Tomorrow, can Anna review the invoice?",
+    "vi": "Ngày mai, Anna xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-795",
+    "en": "Tonight, can Anna review the invoice?",
+    "vi": "Tối nay, Anna xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-796",
+    "en": "Now, can Anna review the invoice?",
+    "vi": "Bây giờ, Anna xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-797",
+    "en": "This morning, can Minh review the invoice?",
+    "vi": "Sáng nay, Minh xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-798",
+    "en": "This afternoon, can Minh review the invoice?",
+    "vi": "Chiều nay, Minh xem giúp hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-799",
+    "en": "This evening, can Minh review the invoice?",
+    "vi": "Tối nay, Minh xem giúp hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-800",
+    "en": "Today, can Minh review the invoice?",
+    "vi": "Hôm nay, Minh xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-801",
+    "en": "Tomorrow, can Minh review the invoice?",
+    "vi": "Ngày mai, Minh xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-802",
+    "en": "Tonight, can Minh review the invoice?",
+    "vi": "Tối nay, Minh xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-803",
+    "en": "Now, can Minh review the invoice?",
+    "vi": "Bây giờ, Minh xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-804",
+    "en": "This morning, can Linh review the invoice?",
+    "vi": "Sáng nay, Linh xem giúp hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-805",
+    "en": "This afternoon, can Linh review the invoice?",
+    "vi": "Chiều nay, Linh xem giúp hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-806",
+    "en": "This evening, can Linh review the invoice?",
+    "vi": "Tối nay, Linh xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-807",
+    "en": "Today, can Linh review the invoice?",
+    "vi": "Hôm nay, Linh xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-808",
+    "en": "Tomorrow, can Linh review the invoice?",
+    "vi": "Ngày mai, Linh xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-809",
+    "en": "Tonight, can Linh review the invoice?",
+    "vi": "Tối nay, Linh xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-810",
+    "en": "Now, can Linh review the invoice?",
+    "vi": "Bây giờ, Linh xem giúp hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-811",
+    "en": "This morning, can Hoa review the invoice?",
+    "vi": "Sáng nay, Hoa xem giúp hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-812",
+    "en": "This afternoon, can Hoa review the invoice?",
+    "vi": "Chiều nay, Hoa xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-813",
+    "en": "This evening, can Hoa review the invoice?",
+    "vi": "Tối nay, Hoa xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-814",
+    "en": "Today, can Hoa review the invoice?",
+    "vi": "Hôm nay, Hoa xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-815",
+    "en": "Tomorrow, can Hoa review the invoice?",
+    "vi": "Ngày mai, Hoa xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-816",
+    "en": "Tonight, can Hoa review the invoice?",
+    "vi": "Tối nay, Hoa xem giúp hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-817",
+    "en": "Now, can Hoa review the invoice?",
+    "vi": "Bây giờ, Hoa xem giúp hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-818",
+    "en": "This morning, can Nam review the invoice?",
+    "vi": "Sáng nay, Nam xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-819",
+    "en": "This afternoon, can Nam review the invoice?",
+    "vi": "Chiều nay, Nam xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-820",
+    "en": "This evening, can Nam review the invoice?",
+    "vi": "Tối nay, Nam xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-821",
+    "en": "Today, can Nam review the invoice?",
+    "vi": "Hôm nay, Nam xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-822",
+    "en": "Tomorrow, can Nam review the invoice?",
+    "vi": "Ngày mai, Nam xem giúp hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-823",
+    "en": "Tonight, can Nam review the invoice?",
+    "vi": "Tối nay, Nam xem giúp hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-824",
+    "en": "Now, can Nam review the invoice?",
+    "vi": "Bây giờ, Nam xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-825",
+    "en": "This morning, can Lan review the invoice?",
+    "vi": "Sáng nay, Lan xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-826",
+    "en": "This afternoon, can Lan review the invoice?",
+    "vi": "Chiều nay, Lan xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-827",
+    "en": "This evening, can Lan review the invoice?",
+    "vi": "Tối nay, Lan xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-828",
+    "en": "Today, can Lan review the invoice?",
+    "vi": "Hôm nay, Lan xem giúp hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-829",
+    "en": "Tomorrow, can Lan review the invoice?",
+    "vi": "Ngày mai, Lan xem giúp hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-830",
+    "en": "Tonight, can Lan review the invoice?",
+    "vi": "Tối nay, Lan xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-831",
+    "en": "Now, can Lan review the invoice?",
+    "vi": "Bây giờ, Lan xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-832",
+    "en": "This morning, can Khoa review the invoice?",
+    "vi": "Sáng nay, Khoa xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-833",
+    "en": "This afternoon, can Khoa review the invoice?",
+    "vi": "Chiều nay, Khoa xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-834",
+    "en": "This evening, can Khoa review the invoice?",
+    "vi": "Tối nay, Khoa xem giúp hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-835",
+    "en": "Today, can Khoa review the invoice?",
+    "vi": "Hôm nay, Khoa xem giúp hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-836",
+    "en": "Tomorrow, can Khoa review the invoice?",
+    "vi": "Ngày mai, Khoa xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-837",
+    "en": "Tonight, can Khoa review the invoice?",
+    "vi": "Tối nay, Khoa xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-838",
+    "en": "Now, can Khoa review the invoice?",
+    "vi": "Bây giờ, Khoa xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-839",
+    "en": "This morning, can Trang review the invoice?",
+    "vi": "Sáng nay, Trang xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-840",
+    "en": "This afternoon, can Trang review the invoice?",
+    "vi": "Chiều nay, Trang xem giúp hóa đơn được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-841",
+    "en": "This evening, can Trang review the invoice?",
+    "vi": "Tối nay, Trang xem giúp hóa đơn được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-842",
+    "en": "Today, can Trang review the invoice?",
+    "vi": "Hôm nay, Trang xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-843",
+    "en": "Tomorrow, can Trang review the invoice?",
+    "vi": "Ngày mai, Trang xem giúp hóa đơn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-844",
+    "en": "Tonight, can Trang review the invoice?",
+    "vi": "Tối nay, Trang xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-845",
+    "en": "Now, can Trang review the invoice?",
+    "vi": "Bây giờ, Trang xem giúp hóa đơn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-846",
+    "en": "This morning, can you review the contract?",
+    "vi": "Sáng nay, bạn xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-847",
+    "en": "This afternoon, can you review the contract?",
+    "vi": "Chiều nay, bạn xem giúp hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-848",
+    "en": "This evening, can you review the contract?",
+    "vi": "Tối nay, bạn xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-849",
+    "en": "Today, can you review the contract?",
+    "vi": "Hôm nay, bạn xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-850",
+    "en": "Tomorrow, can you review the contract?",
+    "vi": "Ngày mai, bạn xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-851",
+    "en": "Tonight, can you review the contract?",
+    "vi": "Tối nay, bạn xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-852",
+    "en": "Now, can you review the contract?",
+    "vi": "Bây giờ, bạn xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-853",
+    "en": "This morning, I need more time for the contract.",
+    "vi": "Sáng nay, tôi cần thêm thời gian cho hợp đồng.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-854",
+    "en": "This afternoon, I need more time for the contract.",
+    "vi": "Chiều nay, tôi cần thêm thời gian cho hợp đồng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-855",
+    "en": "This evening, I need more time for the contract.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho hợp đồng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-856",
+    "en": "Today, I need more time for the contract.",
+    "vi": "Hôm nay, tôi cần thêm thời gian cho hợp đồng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-857",
+    "en": "Tomorrow, I need more time for the contract.",
+    "vi": "Ngày mai, tôi cần thêm thời gian cho hợp đồng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-858",
+    "en": "Tonight, I need more time for the contract.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho hợp đồng.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-859",
+    "en": "Now, I need more time for the contract.",
+    "vi": "Bây giờ, tôi cần thêm thời gian cho hợp đồng.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-860",
+    "en": "This morning, please update the contract.",
+    "vi": "Sáng nay, làm ơn cập nhật hợp đồng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-861",
+    "en": "This afternoon, please update the contract.",
+    "vi": "Chiều nay, làm ơn cập nhật hợp đồng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-862",
+    "en": "This evening, please update the contract.",
+    "vi": "Tối nay, làm ơn cập nhật hợp đồng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-863",
+    "en": "Today, please update the contract.",
+    "vi": "Hôm nay, làm ơn cập nhật hợp đồng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-864",
+    "en": "Tomorrow, please update the contract.",
+    "vi": "Ngày mai, làm ơn cập nhật hợp đồng.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-865",
+    "en": "Tonight, please update the contract.",
+    "vi": "Tối nay, làm ơn cập nhật hợp đồng.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-866",
+    "en": "Now, please update the contract.",
+    "vi": "Bây giờ, làm ơn cập nhật hợp đồng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-867",
+    "en": "This morning, can we discuss the contract?",
+    "vi": "Sáng nay, chúng ta bàn hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-868",
+    "en": "This afternoon, can we discuss the contract?",
+    "vi": "Chiều nay, chúng ta bàn hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-869",
+    "en": "This evening, can we discuss the contract?",
+    "vi": "Tối nay, chúng ta bàn hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-870",
+    "en": "Today, can we discuss the contract?",
+    "vi": "Hôm nay, chúng ta bàn hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-871",
+    "en": "Tomorrow, can we discuss the contract?",
+    "vi": "Ngày mai, chúng ta bàn hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-872",
+    "en": "Tonight, can we discuss the contract?",
+    "vi": "Tối nay, chúng ta bàn hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-873",
+    "en": "Now, can we discuss the contract?",
+    "vi": "Bây giờ, chúng ta bàn hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-874",
+    "en": "This morning, can Anna review the contract?",
+    "vi": "Sáng nay, Anna xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-875",
+    "en": "This afternoon, can Anna review the contract?",
+    "vi": "Chiều nay, Anna xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-876",
+    "en": "This evening, can Anna review the contract?",
+    "vi": "Tối nay, Anna xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-877",
+    "en": "Today, can Anna review the contract?",
+    "vi": "Hôm nay, Anna xem giúp hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-878",
+    "en": "Tomorrow, can Anna review the contract?",
+    "vi": "Ngày mai, Anna xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-879",
+    "en": "Tonight, can Anna review the contract?",
+    "vi": "Tối nay, Anna xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-880",
+    "en": "Now, can Anna review the contract?",
+    "vi": "Bây giờ, Anna xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-881",
+    "en": "This morning, can Minh review the contract?",
+    "vi": "Sáng nay, Minh xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-882",
+    "en": "This afternoon, can Minh review the contract?",
+    "vi": "Chiều nay, Minh xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-883",
+    "en": "This evening, can Minh review the contract?",
+    "vi": "Tối nay, Minh xem giúp hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-884",
+    "en": "Today, can Minh review the contract?",
+    "vi": "Hôm nay, Minh xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-885",
+    "en": "Tomorrow, can Minh review the contract?",
+    "vi": "Ngày mai, Minh xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-886",
+    "en": "Tonight, can Minh review the contract?",
+    "vi": "Tối nay, Minh xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-887",
+    "en": "Now, can Minh review the contract?",
+    "vi": "Bây giờ, Minh xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-888",
+    "en": "This morning, can Linh review the contract?",
+    "vi": "Sáng nay, Linh xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-889",
+    "en": "This afternoon, can Linh review the contract?",
+    "vi": "Chiều nay, Linh xem giúp hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-890",
+    "en": "This evening, can Linh review the contract?",
+    "vi": "Tối nay, Linh xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-891",
+    "en": "Today, can Linh review the contract?",
+    "vi": "Hôm nay, Linh xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-892",
+    "en": "Tomorrow, can Linh review the contract?",
+    "vi": "Ngày mai, Linh xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-893",
+    "en": "Tonight, can Linh review the contract?",
+    "vi": "Tối nay, Linh xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-894",
+    "en": "Now, can Linh review the contract?",
+    "vi": "Bây giờ, Linh xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-895",
+    "en": "This morning, can Hoa review the contract?",
+    "vi": "Sáng nay, Hoa xem giúp hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-896",
+    "en": "This afternoon, can Hoa review the contract?",
+    "vi": "Chiều nay, Hoa xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-897",
+    "en": "This evening, can Hoa review the contract?",
+    "vi": "Tối nay, Hoa xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-898",
+    "en": "Today, can Hoa review the contract?",
+    "vi": "Hôm nay, Hoa xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-899",
+    "en": "Tomorrow, can Hoa review the contract?",
+    "vi": "Ngày mai, Hoa xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-900",
+    "en": "Tonight, can Hoa review the contract?",
+    "vi": "Tối nay, Hoa xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-901",
+    "en": "Now, can Hoa review the contract?",
+    "vi": "Bây giờ, Hoa xem giúp hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-902",
+    "en": "This morning, can Nam review the contract?",
+    "vi": "Sáng nay, Nam xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-903",
+    "en": "This afternoon, can Nam review the contract?",
+    "vi": "Chiều nay, Nam xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-904",
+    "en": "This evening, can Nam review the contract?",
+    "vi": "Tối nay, Nam xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-905",
+    "en": "Today, can Nam review the contract?",
+    "vi": "Hôm nay, Nam xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-906",
+    "en": "Tomorrow, can Nam review the contract?",
+    "vi": "Ngày mai, Nam xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-907",
+    "en": "Tonight, can Nam review the contract?",
+    "vi": "Tối nay, Nam xem giúp hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-908",
+    "en": "Now, can Nam review the contract?",
+    "vi": "Bây giờ, Nam xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-909",
+    "en": "This morning, can Lan review the contract?",
+    "vi": "Sáng nay, Lan xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-910",
+    "en": "This afternoon, can Lan review the contract?",
+    "vi": "Chiều nay, Lan xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-911",
+    "en": "This evening, can Lan review the contract?",
+    "vi": "Tối nay, Lan xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-912",
+    "en": "Today, can Lan review the contract?",
+    "vi": "Hôm nay, Lan xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-913",
+    "en": "Tomorrow, can Lan review the contract?",
+    "vi": "Ngày mai, Lan xem giúp hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-914",
+    "en": "Tonight, can Lan review the contract?",
+    "vi": "Tối nay, Lan xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-915",
+    "en": "Now, can Lan review the contract?",
+    "vi": "Bây giờ, Lan xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-916",
+    "en": "This morning, can Khoa review the contract?",
+    "vi": "Sáng nay, Khoa xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-917",
+    "en": "This afternoon, can Khoa review the contract?",
+    "vi": "Chiều nay, Khoa xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-918",
+    "en": "This evening, can Khoa review the contract?",
+    "vi": "Tối nay, Khoa xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-919",
+    "en": "Today, can Khoa review the contract?",
+    "vi": "Hôm nay, Khoa xem giúp hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-920",
+    "en": "Tomorrow, can Khoa review the contract?",
+    "vi": "Ngày mai, Khoa xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-921",
+    "en": "Tonight, can Khoa review the contract?",
+    "vi": "Tối nay, Khoa xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-922",
+    "en": "Now, can Khoa review the contract?",
+    "vi": "Bây giờ, Khoa xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-923",
+    "en": "This morning, can Trang review the contract?",
+    "vi": "Sáng nay, Trang xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-924",
+    "en": "This afternoon, can Trang review the contract?",
+    "vi": "Chiều nay, Trang xem giúp hợp đồng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-925",
+    "en": "This evening, can Trang review the contract?",
+    "vi": "Tối nay, Trang xem giúp hợp đồng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-926",
+    "en": "Today, can Trang review the contract?",
+    "vi": "Hôm nay, Trang xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-927",
+    "en": "Tomorrow, can Trang review the contract?",
+    "vi": "Ngày mai, Trang xem giúp hợp đồng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-928",
+    "en": "Tonight, can Trang review the contract?",
+    "vi": "Tối nay, Trang xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-929",
+    "en": "Now, can Trang review the contract?",
+    "vi": "Bây giờ, Trang xem giúp hợp đồng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-930",
+    "en": "This morning, can you review the design?",
+    "vi": "Sáng nay, bạn xem giúp bản thiết kế được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-931",
+    "en": "This afternoon, can you review the design?",
+    "vi": "Chiều nay, bạn xem giúp bản thiết kế được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-932",
+    "en": "This evening, can you review the design?",
+    "vi": "Tối nay, bạn xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-933",
+    "en": "Today, can you review the design?",
+    "vi": "Hôm nay, bạn xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-934",
+    "en": "Tomorrow, can you review the design?",
+    "vi": "Ngày mai, bạn xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-935",
+    "en": "Tonight, can you review the design?",
+    "vi": "Tối nay, bạn xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-936",
+    "en": "Now, can you review the design?",
+    "vi": "Bây giờ, bạn xem giúp bản thiết kế được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-937",
+    "en": "This morning, I need more time for the design.",
+    "vi": "Sáng nay, tôi cần thêm thời gian cho bản thiết kế.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-938",
+    "en": "This afternoon, I need more time for the design.",
+    "vi": "Chiều nay, tôi cần thêm thời gian cho bản thiết kế.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-939",
+    "en": "This evening, I need more time for the design.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho bản thiết kế.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-940",
+    "en": "Today, I need more time for the design.",
+    "vi": "Hôm nay, tôi cần thêm thời gian cho bản thiết kế.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-941",
+    "en": "Tomorrow, I need more time for the design.",
+    "vi": "Ngày mai, tôi cần thêm thời gian cho bản thiết kế.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-942",
+    "en": "Tonight, I need more time for the design.",
+    "vi": "Tối nay, tôi cần thêm thời gian cho bản thiết kế.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-943",
+    "en": "Now, I need more time for the design.",
+    "vi": "Bây giờ, tôi cần thêm thời gian cho bản thiết kế.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-944",
+    "en": "This morning, please update the design.",
+    "vi": "Sáng nay, làm ơn cập nhật bản thiết kế.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-945",
+    "en": "This afternoon, please update the design.",
+    "vi": "Chiều nay, làm ơn cập nhật bản thiết kế.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-946",
+    "en": "This evening, please update the design.",
+    "vi": "Tối nay, làm ơn cập nhật bản thiết kế.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-947",
+    "en": "Today, please update the design.",
+    "vi": "Hôm nay, làm ơn cập nhật bản thiết kế.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-948",
+    "en": "Tomorrow, please update the design.",
+    "vi": "Ngày mai, làm ơn cập nhật bản thiết kế.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-949",
+    "en": "Tonight, please update the design.",
+    "vi": "Tối nay, làm ơn cập nhật bản thiết kế.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-950",
+    "en": "Now, please update the design.",
+    "vi": "Bây giờ, làm ơn cập nhật bản thiết kế.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-951",
+    "en": "This morning, can we discuss the design?",
+    "vi": "Sáng nay, chúng ta bàn bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-952",
+    "en": "This afternoon, can we discuss the design?",
+    "vi": "Chiều nay, chúng ta bàn bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-953",
+    "en": "This evening, can we discuss the design?",
+    "vi": "Tối nay, chúng ta bàn bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-954",
+    "en": "Today, can we discuss the design?",
+    "vi": "Hôm nay, chúng ta bàn bản thiết kế được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-955",
+    "en": "Tomorrow, can we discuss the design?",
+    "vi": "Ngày mai, chúng ta bàn bản thiết kế được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-956",
+    "en": "Tonight, can we discuss the design?",
+    "vi": "Tối nay, chúng ta bàn bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-957",
+    "en": "Now, can we discuss the design?",
+    "vi": "Bây giờ, chúng ta bàn bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-958",
+    "en": "This morning, can Anna review the design?",
+    "vi": "Sáng nay, Anna xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-959",
+    "en": "This afternoon, can Anna review the design?",
+    "vi": "Chiều nay, Anna xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-960",
+    "en": "This evening, can Anna review the design?",
+    "vi": "Tối nay, Anna xem giúp bản thiết kế được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-961",
+    "en": "Today, can Anna review the design?",
+    "vi": "Hôm nay, Anna xem giúp bản thiết kế được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-962",
+    "en": "Tomorrow, can Anna review the design?",
+    "vi": "Ngày mai, Anna xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-963",
+    "en": "Tonight, can Anna review the design?",
+    "vi": "Tối nay, Anna xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-964",
+    "en": "Now, can Anna review the design?",
+    "vi": "Bây giờ, Anna xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-965",
+    "en": "This morning, can Minh review the design?",
+    "vi": "Sáng nay, Minh xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-966",
+    "en": "This afternoon, can Minh review the design?",
+    "vi": "Chiều nay, Minh xem giúp bản thiết kế được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-967",
+    "en": "This evening, can Minh review the design?",
+    "vi": "Tối nay, Minh xem giúp bản thiết kế được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-968",
+    "en": "Today, can Minh review the design?",
+    "vi": "Hôm nay, Minh xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-969",
+    "en": "Tomorrow, can Minh review the design?",
+    "vi": "Ngày mai, Minh xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-970",
+    "en": "Tonight, can Minh review the design?",
+    "vi": "Tối nay, Minh xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-971",
+    "en": "Now, can Minh review the design?",
+    "vi": "Bây giờ, Minh xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-972",
+    "en": "This morning, can Linh review the design?",
+    "vi": "Sáng nay, Linh xem giúp bản thiết kế được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-973",
+    "en": "This afternoon, can Linh review the design?",
+    "vi": "Chiều nay, Linh xem giúp bản thiết kế được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-974",
+    "en": "This evening, can Linh review the design?",
+    "vi": "Tối nay, Linh xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-975",
+    "en": "Today, can Linh review the design?",
+    "vi": "Hôm nay, Linh xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-976",
+    "en": "Tomorrow, can Linh review the design?",
+    "vi": "Ngày mai, Linh xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-977",
+    "en": "Tonight, can Linh review the design?",
+    "vi": "Tối nay, Linh xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-978",
+    "en": "Now, can Linh review the design?",
+    "vi": "Bây giờ, Linh xem giúp bản thiết kế được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-979",
+    "en": "This morning, can Hoa review the design?",
+    "vi": "Sáng nay, Hoa xem giúp bản thiết kế được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-980",
+    "en": "This afternoon, can Hoa review the design?",
+    "vi": "Chiều nay, Hoa xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-981",
+    "en": "This evening, can Hoa review the design?",
+    "vi": "Tối nay, Hoa xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-982",
+    "en": "Today, can Hoa review the design?",
+    "vi": "Hôm nay, Hoa xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-983",
+    "en": "Tomorrow, can Hoa review the design?",
+    "vi": "Ngày mai, Hoa xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-984",
+    "en": "Tonight, can Hoa review the design?",
+    "vi": "Tối nay, Hoa xem giúp bản thiết kế được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-985",
+    "en": "Now, can Hoa review the design?",
+    "vi": "Bây giờ, Hoa xem giúp bản thiết kế được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-986",
+    "en": "This morning, can Nam review the design?",
+    "vi": "Sáng nay, Nam xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-987",
+    "en": "This afternoon, can Nam review the design?",
+    "vi": "Chiều nay, Nam xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-988",
+    "en": "This evening, can Nam review the design?",
+    "vi": "Tối nay, Nam xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-989",
+    "en": "Today, can Nam review the design?",
+    "vi": "Hôm nay, Nam xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-990",
+    "en": "Tomorrow, can Nam review the design?",
+    "vi": "Ngày mai, Nam xem giúp bản thiết kế được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-991",
+    "en": "Tonight, can Nam review the design?",
+    "vi": "Tối nay, Nam xem giúp bản thiết kế được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-992",
+    "en": "Now, can Nam review the design?",
+    "vi": "Bây giờ, Nam xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-993",
+    "en": "This morning, can Lan review the design?",
+    "vi": "Sáng nay, Lan xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-994",
+    "en": "This afternoon, can Lan review the design?",
+    "vi": "Chiều nay, Lan xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-995",
+    "en": "This evening, can Lan review the design?",
+    "vi": "Tối nay, Lan xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-996",
+    "en": "Today, can Lan review the design?",
+    "vi": "Hôm nay, Lan xem giúp bản thiết kế được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-997",
+    "en": "Tomorrow, can Lan review the design?",
+    "vi": "Ngày mai, Lan xem giúp bản thiết kế được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-998",
+    "en": "Tonight, can Lan review the design?",
+    "vi": "Tối nay, Lan xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-999",
+    "en": "Now, can Lan review the design?",
+    "vi": "Bây giờ, Lan xem giúp bản thiết kế được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "office_work-1000",
+    "en": "This morning, can Khoa review the design?",
+    "vi": "Sáng nay, Khoa xem giúp bản thiết kế được không?",
+    "level": "B1",
+    "ipa": ""
+  }
+]

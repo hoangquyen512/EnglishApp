@@ -36,12 +36,10 @@ describe("legacy phrase mapping", () => {
 describe("conversation bank mapping", () => {
   it("unions banks for active catalog topics without duplicates", () => {
     expect(conversationBanksForTopics(["food_dining", "travel"])).toEqual([
-      "cafe",
-      "restaurant",
-      "airport",
-      "hotel",
+      "food_dining",
+      "travel",
     ]);
-    expect(conversationBanksForTopics(["weather"])).toEqual([]);
+    expect(conversationBanksForTopics(["weather"])).toEqual(["weather"]);
   });
 });
 

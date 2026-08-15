@@ -1,0 +1,7002 @@
+[
+  {
+    "id": "food_dining-1",
+    "en": "A table for two, please.",
+    "vi": "Cho bàn hai người.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-2",
+    "en": "What do you recommend?",
+    "vi": "Bạn gợi ý món nào?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-3",
+    "en": "I am allergic to peanuts.",
+    "vi": "Tôi bị dị ứng đậu phộng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-4",
+    "en": "I would like the grilled chicken, please.",
+    "vi": "Cho tôi món gà nướng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-5",
+    "en": "Can we have some water, please?",
+    "vi": "Cho chúng tôi ít nước được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-6",
+    "en": "This is not what I ordered.",
+    "vi": "Đây không phải món tôi đã gọi.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-7",
+    "en": "Could we have the bill, please?",
+    "vi": "Cho chúng tôi xin hóa đơn.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-8",
+    "en": "We will split the bill.",
+    "vi": "Chúng tôi sẽ chia hóa đơn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-9",
+    "en": "A table for one, please.",
+    "vi": "Cho bàn một người.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-10",
+    "en": "Do you have a table for one?",
+    "vi": "Có bàn một người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-11",
+    "en": "We are a party of one.",
+    "vi": "Chúng tôi một người.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-12",
+    "en": "Do you have a table for two?",
+    "vi": "Có bàn hai người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-13",
+    "en": "We are a party of two.",
+    "vi": "Chúng tôi hai người.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-14",
+    "en": "A table for three, please.",
+    "vi": "Cho bàn ba người.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-15",
+    "en": "Do you have a table for three?",
+    "vi": "Có bàn ba người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-16",
+    "en": "We are a party of three.",
+    "vi": "Chúng tôi ba người.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-17",
+    "en": "A table for four, please.",
+    "vi": "Cho bàn bốn người.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-18",
+    "en": "Do you have a table for four?",
+    "vi": "Có bàn bốn người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-19",
+    "en": "We are a party of four.",
+    "vi": "Chúng tôi bốn người.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-20",
+    "en": "A table for five, please.",
+    "vi": "Cho bàn năm người.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-21",
+    "en": "Do you have a table for five?",
+    "vi": "Có bàn năm người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-22",
+    "en": "We are a party of five.",
+    "vi": "Chúng tôi năm người.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-23",
+    "en": "A table for six, please.",
+    "vi": "Cho bàn sáu người.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-24",
+    "en": "Do you have a table for six?",
+    "vi": "Có bàn sáu người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-25",
+    "en": "We are a party of six.",
+    "vi": "Chúng tôi sáu người.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-26",
+    "en": "A table for seven, please.",
+    "vi": "Cho bàn bảy người.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-27",
+    "en": "Do you have a table for seven?",
+    "vi": "Có bàn bảy người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-28",
+    "en": "We are a party of seven.",
+    "vi": "Chúng tôi bảy người.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-29",
+    "en": "A table for eight, please.",
+    "vi": "Cho bàn tám người.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-30",
+    "en": "Do you have a table for eight?",
+    "vi": "Có bàn tám người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-31",
+    "en": "We are a party of eight.",
+    "vi": "Chúng tôi tám người.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-32",
+    "en": "Does this dish contain peanuts?",
+    "vi": "Món này có đậu phộng không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-33",
+    "en": "Please no peanuts.",
+    "vi": "Làm ơn đừng cho đậu phộng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-34",
+    "en": "I am allergic to shrimp.",
+    "vi": "Tôi bị dị ứng tôm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-35",
+    "en": "Does this dish contain shrimp?",
+    "vi": "Món này có tôm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-36",
+    "en": "Please no shrimp.",
+    "vi": "Làm ơn đừng cho tôm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-37",
+    "en": "I am allergic to milk.",
+    "vi": "Tôi bị dị ứng sữa.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-38",
+    "en": "Does this dish contain milk?",
+    "vi": "Món này có sữa không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-39",
+    "en": "Please no milk.",
+    "vi": "Làm ơn đừng cho sữa.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-40",
+    "en": "I am allergic to eggs.",
+    "vi": "Tôi bị dị ứng trứng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-41",
+    "en": "Does this dish contain eggs?",
+    "vi": "Món này có trứng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-42",
+    "en": "Please no eggs.",
+    "vi": "Làm ơn đừng cho trứng.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-43",
+    "en": "I am allergic to gluten.",
+    "vi": "Tôi bị dị ứng gluten.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-44",
+    "en": "Does this dish contain gluten?",
+    "vi": "Món này có gluten không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-45",
+    "en": "Please no gluten.",
+    "vi": "Làm ơn đừng cho gluten.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-46",
+    "en": "I am allergic to soy.",
+    "vi": "Tôi bị dị ứng đậu nành.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-47",
+    "en": "Does this dish contain soy?",
+    "vi": "Món này có đậu nành không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-48",
+    "en": "Please no soy.",
+    "vi": "Làm ơn đừng cho đậu nành.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-49",
+    "en": "I am allergic to fish.",
+    "vi": "Tôi bị dị ứng cá.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-50",
+    "en": "Does this dish contain fish?",
+    "vi": "Món này có cá không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-51",
+    "en": "Please no fish.",
+    "vi": "Làm ơn đừng cho cá.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-52",
+    "en": "I am allergic to sesame.",
+    "vi": "Tôi bị dị ứng mè.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-53",
+    "en": "Does this dish contain sesame?",
+    "vi": "Món này có mè không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-54",
+    "en": "Please no sesame.",
+    "vi": "Làm ơn đừng cho mè.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-55",
+    "en": "Can I have the grilled chicken?",
+    "vi": "Cho tôi gà nướng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-56",
+    "en": "Is the grilled chicken spicy?",
+    "vi": "Món gà nướng có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-57",
+    "en": "What is in the grilled chicken?",
+    "vi": "Món gà nướng gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-58",
+    "en": "Do you recommend the grilled chicken?",
+    "vi": "Bạn có gợi ý món gà nướng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-59",
+    "en": "I will have the grilled chicken.",
+    "vi": "Tôi gọi món gà nướng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-60",
+    "en": "Can we share the grilled chicken?",
+    "vi": "Chúng tôi chia món gà nướng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-61",
+    "en": "Can I have the grilled chicken without chili?",
+    "vi": "Món gà nướng không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-62",
+    "en": "Is the grilled chicken good here?",
+    "vi": "Ở đây món gà nướng có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-63",
+    "en": "I would like the fried rice, please.",
+    "vi": "Cho tôi món cơm chiên.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-64",
+    "en": "Can I have the fried rice?",
+    "vi": "Cho tôi cơm chiên được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-65",
+    "en": "Is the fried rice spicy?",
+    "vi": "Món cơm chiên có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-66",
+    "en": "What is in the fried rice?",
+    "vi": "Món cơm chiên gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-67",
+    "en": "Do you recommend the fried rice?",
+    "vi": "Bạn có gợi ý món cơm chiên không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-68",
+    "en": "I will have the fried rice.",
+    "vi": "Tôi gọi món cơm chiên.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-69",
+    "en": "Can we share the fried rice?",
+    "vi": "Chúng tôi chia món cơm chiên được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-70",
+    "en": "Can I have the fried rice without chili?",
+    "vi": "Món cơm chiên không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-71",
+    "en": "Is the fried rice good here?",
+    "vi": "Ở đây món cơm chiên có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-72",
+    "en": "I would like the pho, please.",
+    "vi": "Cho tôi món phở.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-73",
+    "en": "Can I have the pho?",
+    "vi": "Cho tôi phở được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-74",
+    "en": "Is the pho spicy?",
+    "vi": "Món phở có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-75",
+    "en": "What is in the pho?",
+    "vi": "Món phở gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-76",
+    "en": "Do you recommend the pho?",
+    "vi": "Bạn có gợi ý món phở không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-77",
+    "en": "I will have the pho.",
+    "vi": "Tôi gọi món phở.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-78",
+    "en": "Can we share the pho?",
+    "vi": "Chúng tôi chia món phở được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-79",
+    "en": "Can I have the pho without chili?",
+    "vi": "Món phở không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-80",
+    "en": "Is the pho good here?",
+    "vi": "Ở đây món phở có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-81",
+    "en": "I would like the beef noodles, please.",
+    "vi": "Cho tôi món bún bò.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-82",
+    "en": "Can I have the beef noodles?",
+    "vi": "Cho tôi bún bò được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-83",
+    "en": "Is the beef noodles spicy?",
+    "vi": "Món bún bò có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-84",
+    "en": "What is in the beef noodles?",
+    "vi": "Món bún bò gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-85",
+    "en": "Do you recommend the beef noodles?",
+    "vi": "Bạn có gợi ý món bún bò không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-86",
+    "en": "I will have the beef noodles.",
+    "vi": "Tôi gọi món bún bò.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-87",
+    "en": "Can we share the beef noodles?",
+    "vi": "Chúng tôi chia món bún bò được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-88",
+    "en": "Can I have the beef noodles without chili?",
+    "vi": "Món bún bò không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-89",
+    "en": "Is the beef noodles good here?",
+    "vi": "Ở đây món bún bò có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-90",
+    "en": "I would like the spring rolls, please.",
+    "vi": "Cho tôi món chả giò.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-91",
+    "en": "Can I have the spring rolls?",
+    "vi": "Cho tôi chả giò được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-92",
+    "en": "Is the spring rolls spicy?",
+    "vi": "Món chả giò có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-93",
+    "en": "What is in the spring rolls?",
+    "vi": "Món chả giò gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-94",
+    "en": "Do you recommend the spring rolls?",
+    "vi": "Bạn có gợi ý món chả giò không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-95",
+    "en": "I will have the spring rolls.",
+    "vi": "Tôi gọi món chả giò.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-96",
+    "en": "Can we share the spring rolls?",
+    "vi": "Chúng tôi chia món chả giò được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-97",
+    "en": "Can I have the spring rolls without chili?",
+    "vi": "Món chả giò không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-98",
+    "en": "Is the spring rolls good here?",
+    "vi": "Ở đây món chả giò có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-99",
+    "en": "I would like the grilled fish, please.",
+    "vi": "Cho tôi món cá nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-100",
+    "en": "Can I have the grilled fish?",
+    "vi": "Cho tôi cá nướng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-101",
+    "en": "Is the grilled fish spicy?",
+    "vi": "Món cá nướng có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-102",
+    "en": "What is in the grilled fish?",
+    "vi": "Món cá nướng gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-103",
+    "en": "Do you recommend the grilled fish?",
+    "vi": "Bạn có gợi ý món cá nướng không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-104",
+    "en": "I will have the grilled fish.",
+    "vi": "Tôi gọi món cá nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-105",
+    "en": "Can we share the grilled fish?",
+    "vi": "Chúng tôi chia món cá nướng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-106",
+    "en": "Can I have the grilled fish without chili?",
+    "vi": "Món cá nướng không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-107",
+    "en": "Is the grilled fish good here?",
+    "vi": "Ở đây món cá nướng có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-108",
+    "en": "I would like the vegetable soup, please.",
+    "vi": "Cho tôi món canh rau.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-109",
+    "en": "Can I have the vegetable soup?",
+    "vi": "Cho tôi canh rau được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-110",
+    "en": "Is the vegetable soup spicy?",
+    "vi": "Món canh rau có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-111",
+    "en": "What is in the vegetable soup?",
+    "vi": "Món canh rau gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-112",
+    "en": "Do you recommend the vegetable soup?",
+    "vi": "Bạn có gợi ý món canh rau không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-113",
+    "en": "I will have the vegetable soup.",
+    "vi": "Tôi gọi món canh rau.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-114",
+    "en": "Can we share the vegetable soup?",
+    "vi": "Chúng tôi chia món canh rau được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-115",
+    "en": "Can I have the vegetable soup without chili?",
+    "vi": "Món canh rau không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-116",
+    "en": "Is the vegetable soup good here?",
+    "vi": "Ở đây món canh rau có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-117",
+    "en": "I would like the steak, please.",
+    "vi": "Cho tôi món bít tết.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-118",
+    "en": "Can I have the steak?",
+    "vi": "Cho tôi bít tết được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-119",
+    "en": "Is the steak spicy?",
+    "vi": "Món bít tết có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-120",
+    "en": "What is in the steak?",
+    "vi": "Món bít tết gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-121",
+    "en": "Do you recommend the steak?",
+    "vi": "Bạn có gợi ý món bít tết không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-122",
+    "en": "I will have the steak.",
+    "vi": "Tôi gọi món bít tết.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-123",
+    "en": "Can we share the steak?",
+    "vi": "Chúng tôi chia món bít tết được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-124",
+    "en": "Can I have the steak without chili?",
+    "vi": "Món bít tết không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-125",
+    "en": "Is the steak good here?",
+    "vi": "Ở đây món bít tết có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-126",
+    "en": "I would like the pasta, please.",
+    "vi": "Cho tôi món mì Ý.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-127",
+    "en": "Can I have the pasta?",
+    "vi": "Cho tôi mì Ý được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-128",
+    "en": "Is the pasta spicy?",
+    "vi": "Món mì Ý có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-129",
+    "en": "What is in the pasta?",
+    "vi": "Món mì Ý gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-130",
+    "en": "Do you recommend the pasta?",
+    "vi": "Bạn có gợi ý món mì Ý không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-131",
+    "en": "I will have the pasta.",
+    "vi": "Tôi gọi món mì Ý.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-132",
+    "en": "Can we share the pasta?",
+    "vi": "Chúng tôi chia món mì Ý được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-133",
+    "en": "Can I have the pasta without chili?",
+    "vi": "Món mì Ý không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-134",
+    "en": "Is the pasta good here?",
+    "vi": "Ở đây món mì Ý có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-135",
+    "en": "I would like the pizza, please.",
+    "vi": "Cho tôi món pizza.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-136",
+    "en": "Can I have the pizza?",
+    "vi": "Cho tôi pizza được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-137",
+    "en": "Is the pizza spicy?",
+    "vi": "Món pizza có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-138",
+    "en": "What is in the pizza?",
+    "vi": "Món pizza gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-139",
+    "en": "Do you recommend the pizza?",
+    "vi": "Bạn có gợi ý món pizza không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-140",
+    "en": "I will have the pizza.",
+    "vi": "Tôi gọi món pizza.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-141",
+    "en": "Can we share the pizza?",
+    "vi": "Chúng tôi chia món pizza được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-142",
+    "en": "Can I have the pizza without chili?",
+    "vi": "Món pizza không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-143",
+    "en": "Is the pizza good here?",
+    "vi": "Ở đây món pizza có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-144",
+    "en": "I would like the sushi, please.",
+    "vi": "Cho tôi món sushi.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-145",
+    "en": "Can I have the sushi?",
+    "vi": "Cho tôi sushi được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-146",
+    "en": "Is the sushi spicy?",
+    "vi": "Món sushi có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-147",
+    "en": "What is in the sushi?",
+    "vi": "Món sushi gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-148",
+    "en": "Do you recommend the sushi?",
+    "vi": "Bạn có gợi ý món sushi không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-149",
+    "en": "I will have the sushi.",
+    "vi": "Tôi gọi món sushi.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-150",
+    "en": "Can we share the sushi?",
+    "vi": "Chúng tôi chia món sushi được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-151",
+    "en": "Can I have the sushi without chili?",
+    "vi": "Món sushi không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-152",
+    "en": "Is the sushi good here?",
+    "vi": "Ở đây món sushi có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-153",
+    "en": "I would like the salad, please.",
+    "vi": "Cho tôi món salad.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-154",
+    "en": "Can I have the salad?",
+    "vi": "Cho tôi salad được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-155",
+    "en": "Is the salad spicy?",
+    "vi": "Món salad có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-156",
+    "en": "What is in the salad?",
+    "vi": "Món salad gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-157",
+    "en": "Do you recommend the salad?",
+    "vi": "Bạn có gợi ý món salad không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-158",
+    "en": "I will have the salad.",
+    "vi": "Tôi gọi món salad.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-159",
+    "en": "Can we share the salad?",
+    "vi": "Chúng tôi chia món salad được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-160",
+    "en": "Can I have the salad without chili?",
+    "vi": "Món salad không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-161",
+    "en": "Is the salad good here?",
+    "vi": "Ở đây món salad có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-162",
+    "en": "I would like the tofu, please.",
+    "vi": "Cho tôi món đậu phụ.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-163",
+    "en": "Can I have the tofu?",
+    "vi": "Cho tôi đậu phụ được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-164",
+    "en": "Is the tofu spicy?",
+    "vi": "Món đậu phụ có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-165",
+    "en": "What is in the tofu?",
+    "vi": "Món đậu phụ gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-166",
+    "en": "Do you recommend the tofu?",
+    "vi": "Bạn có gợi ý món đậu phụ không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-167",
+    "en": "I will have the tofu.",
+    "vi": "Tôi gọi món đậu phụ.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-168",
+    "en": "Can we share the tofu?",
+    "vi": "Chúng tôi chia món đậu phụ được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-169",
+    "en": "Can I have the tofu without chili?",
+    "vi": "Món đậu phụ không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-170",
+    "en": "Is the tofu good here?",
+    "vi": "Ở đây món đậu phụ có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-171",
+    "en": "I would like the shrimp, please.",
+    "vi": "Cho tôi món tôm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-172",
+    "en": "Can I have the shrimp?",
+    "vi": "Cho tôi tôm được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-173",
+    "en": "Is the shrimp spicy?",
+    "vi": "Món tôm có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-174",
+    "en": "What is in the shrimp?",
+    "vi": "Món tôm gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-175",
+    "en": "Do you recommend the shrimp?",
+    "vi": "Bạn có gợi ý món tôm không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-176",
+    "en": "I will have the shrimp.",
+    "vi": "Tôi gọi món tôm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-177",
+    "en": "Can we share the shrimp?",
+    "vi": "Chúng tôi chia món tôm được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-178",
+    "en": "Can I have the shrimp without chili?",
+    "vi": "Món tôm không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-179",
+    "en": "Is the shrimp good here?",
+    "vi": "Ở đây món tôm có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-180",
+    "en": "I would like the pork ribs, please.",
+    "vi": "Cho tôi món sườn heo.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-181",
+    "en": "Can I have the pork ribs?",
+    "vi": "Cho tôi sườn heo được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-182",
+    "en": "Is the pork ribs spicy?",
+    "vi": "Món sườn heo có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-183",
+    "en": "What is in the pork ribs?",
+    "vi": "Món sườn heo gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-184",
+    "en": "Do you recommend the pork ribs?",
+    "vi": "Bạn có gợi ý món sườn heo không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-185",
+    "en": "I will have the pork ribs.",
+    "vi": "Tôi gọi món sườn heo.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-186",
+    "en": "Can we share the pork ribs?",
+    "vi": "Chúng tôi chia món sườn heo được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-187",
+    "en": "Can I have the pork ribs without chili?",
+    "vi": "Món sườn heo không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-188",
+    "en": "Is the pork ribs good here?",
+    "vi": "Ở đây món sườn heo có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-189",
+    "en": "I would like the rice paper rolls, please.",
+    "vi": "Cho tôi món gỏi cuốn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-190",
+    "en": "Can I have the rice paper rolls?",
+    "vi": "Cho tôi gỏi cuốn được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-191",
+    "en": "Is the rice paper rolls spicy?",
+    "vi": "Món gỏi cuốn có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-192",
+    "en": "What is in the rice paper rolls?",
+    "vi": "Món gỏi cuốn gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-193",
+    "en": "Do you recommend the rice paper rolls?",
+    "vi": "Bạn có gợi ý món gỏi cuốn không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-194",
+    "en": "I will have the rice paper rolls.",
+    "vi": "Tôi gọi món gỏi cuốn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-195",
+    "en": "Can we share the rice paper rolls?",
+    "vi": "Chúng tôi chia món gỏi cuốn được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-196",
+    "en": "Can I have the rice paper rolls without chili?",
+    "vi": "Món gỏi cuốn không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-197",
+    "en": "Is the rice paper rolls good here?",
+    "vi": "Ở đây món gỏi cuốn có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-198",
+    "en": "I would like the chicken curry, please.",
+    "vi": "Cho tôi món cà ri gà.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-199",
+    "en": "Can I have the chicken curry?",
+    "vi": "Cho tôi cà ri gà được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-200",
+    "en": "Is the chicken curry spicy?",
+    "vi": "Món cà ri gà có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-201",
+    "en": "What is in the chicken curry?",
+    "vi": "Món cà ri gà gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-202",
+    "en": "Do you recommend the chicken curry?",
+    "vi": "Bạn có gợi ý món cà ri gà không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-203",
+    "en": "I will have the chicken curry.",
+    "vi": "Tôi gọi món cà ri gà.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-204",
+    "en": "Can we share the chicken curry?",
+    "vi": "Chúng tôi chia món cà ri gà được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-205",
+    "en": "Can I have the chicken curry without chili?",
+    "vi": "Món cà ri gà không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-206",
+    "en": "Is the chicken curry good here?",
+    "vi": "Ở đây món cà ri gà có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-207",
+    "en": "I would like the tom yum, please.",
+    "vi": "Cho tôi món tom yum.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-208",
+    "en": "Can I have the tom yum?",
+    "vi": "Cho tôi tom yum được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-209",
+    "en": "Is the tom yum spicy?",
+    "vi": "Món tom yum có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-210",
+    "en": "What is in the tom yum?",
+    "vi": "Món tom yum gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-211",
+    "en": "Do you recommend the tom yum?",
+    "vi": "Bạn có gợi ý món tom yum không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-212",
+    "en": "I will have the tom yum.",
+    "vi": "Tôi gọi món tom yum.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-213",
+    "en": "Can we share the tom yum?",
+    "vi": "Chúng tôi chia món tom yum được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-214",
+    "en": "Can I have the tom yum without chili?",
+    "vi": "Món tom yum không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-215",
+    "en": "Is the tom yum good here?",
+    "vi": "Ở đây món tom yum có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-216",
+    "en": "I would like the fried noodles, please.",
+    "vi": "Cho tôi món mì xào.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-217",
+    "en": "Can I have the fried noodles?",
+    "vi": "Cho tôi mì xào được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-218",
+    "en": "Is the fried noodles spicy?",
+    "vi": "Món mì xào có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-219",
+    "en": "What is in the fried noodles?",
+    "vi": "Món mì xào gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-220",
+    "en": "Do you recommend the fried noodles?",
+    "vi": "Bạn có gợi ý món mì xào không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-221",
+    "en": "I will have the fried noodles.",
+    "vi": "Tôi gọi món mì xào.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-222",
+    "en": "Can we share the fried noodles?",
+    "vi": "Chúng tôi chia món mì xào được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-223",
+    "en": "Can I have the fried noodles without chili?",
+    "vi": "Món mì xào không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-224",
+    "en": "Is the fried noodles good here?",
+    "vi": "Ở đây món mì xào có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-225",
+    "en": "I would like the grilled beef, please.",
+    "vi": "Cho tôi món bò nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-226",
+    "en": "Can I have the grilled beef?",
+    "vi": "Cho tôi bò nướng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-227",
+    "en": "Is the grilled beef spicy?",
+    "vi": "Món bò nướng có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-228",
+    "en": "What is in the grilled beef?",
+    "vi": "Món bò nướng gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-229",
+    "en": "Do you recommend the grilled beef?",
+    "vi": "Bạn có gợi ý món bò nướng không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-230",
+    "en": "I will have the grilled beef.",
+    "vi": "Tôi gọi món bò nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-231",
+    "en": "Can we share the grilled beef?",
+    "vi": "Chúng tôi chia món bò nướng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-232",
+    "en": "Can I have the grilled beef without chili?",
+    "vi": "Món bò nướng không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-233",
+    "en": "Is the grilled beef good here?",
+    "vi": "Ở đây món bò nướng có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-234",
+    "en": "I would like the broken rice, please.",
+    "vi": "Cho tôi món cơm tấm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-235",
+    "en": "Can I have the broken rice?",
+    "vi": "Cho tôi cơm tấm được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-236",
+    "en": "Is the broken rice spicy?",
+    "vi": "Món cơm tấm có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-237",
+    "en": "What is in the broken rice?",
+    "vi": "Món cơm tấm gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-238",
+    "en": "Do you recommend the broken rice?",
+    "vi": "Bạn có gợi ý món cơm tấm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-239",
+    "en": "I will have the broken rice.",
+    "vi": "Tôi gọi món cơm tấm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-240",
+    "en": "Can we share the broken rice?",
+    "vi": "Chúng tôi chia món cơm tấm được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-241",
+    "en": "Can I have the broken rice without chili?",
+    "vi": "Món cơm tấm không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-242",
+    "en": "Is the broken rice good here?",
+    "vi": "Ở đây món cơm tấm có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-243",
+    "en": "I would like the bun cha, please.",
+    "vi": "Cho tôi món bún chả.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-244",
+    "en": "Can I have the bun cha?",
+    "vi": "Cho tôi bún chả được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-245",
+    "en": "Is the bun cha spicy?",
+    "vi": "Món bún chả có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-246",
+    "en": "What is in the bun cha?",
+    "vi": "Món bún chả gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-247",
+    "en": "Do you recommend the bun cha?",
+    "vi": "Bạn có gợi ý món bún chả không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-248",
+    "en": "I will have the bun cha.",
+    "vi": "Tôi gọi món bún chả.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-249",
+    "en": "Can we share the bun cha?",
+    "vi": "Chúng tôi chia món bún chả được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-250",
+    "en": "Can I have the bun cha without chili?",
+    "vi": "Món bún chả không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-251",
+    "en": "Is the bun cha good here?",
+    "vi": "Ở đây món bún chả có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-252",
+    "en": "I would like the banh mi, please.",
+    "vi": "Cho tôi món bánh mì.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-253",
+    "en": "Can I have the banh mi?",
+    "vi": "Cho tôi bánh mì được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-254",
+    "en": "Is the banh mi spicy?",
+    "vi": "Món bánh mì có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-255",
+    "en": "What is in the banh mi?",
+    "vi": "Món bánh mì gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-256",
+    "en": "Do you recommend the banh mi?",
+    "vi": "Bạn có gợi ý món bánh mì không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-257",
+    "en": "I will have the banh mi.",
+    "vi": "Tôi gọi món bánh mì.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-258",
+    "en": "Can we share the banh mi?",
+    "vi": "Chúng tôi chia món bánh mì được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-259",
+    "en": "Can I have the banh mi without chili?",
+    "vi": "Món bánh mì không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-260",
+    "en": "Is the banh mi good here?",
+    "vi": "Ở đây món bánh mì có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-261",
+    "en": "I would like the seafood hotpot, please.",
+    "vi": "Cho tôi món lẩu hải sản.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-262",
+    "en": "Can I have the seafood hotpot?",
+    "vi": "Cho tôi lẩu hải sản được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-263",
+    "en": "Is the seafood hotpot spicy?",
+    "vi": "Món lẩu hải sản có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-264",
+    "en": "What is in the seafood hotpot?",
+    "vi": "Món lẩu hải sản gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-265",
+    "en": "Do you recommend the seafood hotpot?",
+    "vi": "Bạn có gợi ý món lẩu hải sản không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-266",
+    "en": "I will have the seafood hotpot.",
+    "vi": "Tôi gọi món lẩu hải sản.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-267",
+    "en": "Can we share the seafood hotpot?",
+    "vi": "Chúng tôi chia món lẩu hải sản được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-268",
+    "en": "Can I have the seafood hotpot without chili?",
+    "vi": "Món lẩu hải sản không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-269",
+    "en": "Is the seafood hotpot good here?",
+    "vi": "Ở đây món lẩu hải sản có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-270",
+    "en": "Do you have a table for one, please?",
+    "vi": "Có bàn một người không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-271",
+    "en": "Do you have a table for two, please?",
+    "vi": "Có bàn hai người không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-272",
+    "en": "Do you have a table for three, please?",
+    "vi": "Có bàn ba người không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-273",
+    "en": "Do you have a table for four, please?",
+    "vi": "Có bàn bốn người không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-274",
+    "en": "Do you have a table for five, please?",
+    "vi": "Có bàn năm người không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-275",
+    "en": "Do you have a table for six, please?",
+    "vi": "Có bàn sáu người không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-276",
+    "en": "Do you have a table for seven, please?",
+    "vi": "Có bàn bảy người không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-277",
+    "en": "Do you have a table for eight, please?",
+    "vi": "Có bàn tám người không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-278",
+    "en": "Does this dish contain peanuts, please?",
+    "vi": "Món này có đậu phộng không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-279",
+    "en": "Does this dish contain shrimp, please?",
+    "vi": "Món này có tôm không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-280",
+    "en": "Does this dish contain milk, please?",
+    "vi": "Món này có sữa không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-281",
+    "en": "Does this dish contain eggs, please?",
+    "vi": "Món này có trứng không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-282",
+    "en": "Does this dish contain gluten, please?",
+    "vi": "Món này có gluten không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-283",
+    "en": "Does this dish contain soy, please?",
+    "vi": "Món này có đậu nành không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-284",
+    "en": "Does this dish contain fish, please?",
+    "vi": "Món này có cá không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-285",
+    "en": "Does this dish contain sesame, please?",
+    "vi": "Món này có mè không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-286",
+    "en": "Can I have the grilled chicken, please?",
+    "vi": "Cho tôi gà nướng được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-287",
+    "en": "Is the grilled chicken spicy, please?",
+    "vi": "Món gà nướng có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-288",
+    "en": "Do you recommend the grilled chicken, please?",
+    "vi": "Bạn có gợi ý món gà nướng không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-289",
+    "en": "Can we share the grilled chicken, please?",
+    "vi": "Chúng tôi chia món gà nướng được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-290",
+    "en": "Can I have the grilled chicken without chili, please?",
+    "vi": "Món gà nướng không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-291",
+    "en": "Is the grilled chicken good here, please?",
+    "vi": "Ở đây món gà nướng có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-292",
+    "en": "Can I have the fried rice, please?",
+    "vi": "Cho tôi cơm chiên được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-293",
+    "en": "Is the fried rice spicy, please?",
+    "vi": "Món cơm chiên có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-294",
+    "en": "Do you recommend the fried rice, please?",
+    "vi": "Bạn có gợi ý món cơm chiên không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-295",
+    "en": "Can we share the fried rice, please?",
+    "vi": "Chúng tôi chia món cơm chiên được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-296",
+    "en": "Can I have the fried rice without chili, please?",
+    "vi": "Món cơm chiên không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-297",
+    "en": "Is the fried rice good here, please?",
+    "vi": "Ở đây món cơm chiên có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-298",
+    "en": "Can I have the pho, please?",
+    "vi": "Cho tôi phở được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-299",
+    "en": "Is the pho spicy, please?",
+    "vi": "Món phở có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-300",
+    "en": "Do you recommend the pho, please?",
+    "vi": "Bạn có gợi ý món phở không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-301",
+    "en": "Can we share the pho, please?",
+    "vi": "Chúng tôi chia món phở được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-302",
+    "en": "Can I have the pho without chili, please?",
+    "vi": "Món phở không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-303",
+    "en": "Is the pho good here, please?",
+    "vi": "Ở đây món phở có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-304",
+    "en": "Can I have the beef noodles, please?",
+    "vi": "Cho tôi bún bò được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-305",
+    "en": "Is the beef noodles spicy, please?",
+    "vi": "Món bún bò có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-306",
+    "en": "Do you recommend the beef noodles, please?",
+    "vi": "Bạn có gợi ý món bún bò không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-307",
+    "en": "Can we share the beef noodles, please?",
+    "vi": "Chúng tôi chia món bún bò được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-308",
+    "en": "Can I have the beef noodles without chili, please?",
+    "vi": "Món bún bò không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-309",
+    "en": "Is the beef noodles good here, please?",
+    "vi": "Ở đây món bún bò có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-310",
+    "en": "Can I have the spring rolls, please?",
+    "vi": "Cho tôi chả giò được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-311",
+    "en": "Is the spring rolls spicy, please?",
+    "vi": "Món chả giò có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-312",
+    "en": "Do you recommend the spring rolls, please?",
+    "vi": "Bạn có gợi ý món chả giò không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-313",
+    "en": "Can we share the spring rolls, please?",
+    "vi": "Chúng tôi chia món chả giò được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-314",
+    "en": "Can I have the spring rolls without chili, please?",
+    "vi": "Món chả giò không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-315",
+    "en": "Is the spring rolls good here, please?",
+    "vi": "Ở đây món chả giò có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-316",
+    "en": "Can I have the grilled fish, please?",
+    "vi": "Cho tôi cá nướng được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-317",
+    "en": "Is the grilled fish spicy, please?",
+    "vi": "Món cá nướng có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-318",
+    "en": "Do you recommend the grilled fish, please?",
+    "vi": "Bạn có gợi ý món cá nướng không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-319",
+    "en": "Can we share the grilled fish, please?",
+    "vi": "Chúng tôi chia món cá nướng được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-320",
+    "en": "Can I have the grilled fish without chili, please?",
+    "vi": "Món cá nướng không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-321",
+    "en": "Is the grilled fish good here, please?",
+    "vi": "Ở đây món cá nướng có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-322",
+    "en": "Can I have the vegetable soup, please?",
+    "vi": "Cho tôi canh rau được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-323",
+    "en": "Is the vegetable soup spicy, please?",
+    "vi": "Món canh rau có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-324",
+    "en": "Do you recommend the vegetable soup, please?",
+    "vi": "Bạn có gợi ý món canh rau không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-325",
+    "en": "Can we share the vegetable soup, please?",
+    "vi": "Chúng tôi chia món canh rau được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-326",
+    "en": "Can I have the vegetable soup without chili, please?",
+    "vi": "Món canh rau không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-327",
+    "en": "Is the vegetable soup good here, please?",
+    "vi": "Ở đây món canh rau có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-328",
+    "en": "Can I have the steak, please?",
+    "vi": "Cho tôi bít tết được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-329",
+    "en": "Is the steak spicy, please?",
+    "vi": "Món bít tết có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-330",
+    "en": "Do you recommend the steak, please?",
+    "vi": "Bạn có gợi ý món bít tết không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-331",
+    "en": "Can we share the steak, please?",
+    "vi": "Chúng tôi chia món bít tết được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-332",
+    "en": "Can I have the steak without chili, please?",
+    "vi": "Món bít tết không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-333",
+    "en": "Is the steak good here, please?",
+    "vi": "Ở đây món bít tết có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-334",
+    "en": "Can I have the pasta, please?",
+    "vi": "Cho tôi mì Ý được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-335",
+    "en": "Is the pasta spicy, please?",
+    "vi": "Món mì Ý có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-336",
+    "en": "Do you recommend the pasta, please?",
+    "vi": "Bạn có gợi ý món mì Ý không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-337",
+    "en": "Can we share the pasta, please?",
+    "vi": "Chúng tôi chia món mì Ý được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-338",
+    "en": "Can I have the pasta without chili, please?",
+    "vi": "Món mì Ý không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-339",
+    "en": "Is the pasta good here, please?",
+    "vi": "Ở đây món mì Ý có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-340",
+    "en": "Can I have the pizza, please?",
+    "vi": "Cho tôi pizza được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-341",
+    "en": "Is the pizza spicy, please?",
+    "vi": "Món pizza có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-342",
+    "en": "Do you recommend the pizza, please?",
+    "vi": "Bạn có gợi ý món pizza không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-343",
+    "en": "Can we share the pizza, please?",
+    "vi": "Chúng tôi chia món pizza được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-344",
+    "en": "Can I have the pizza without chili, please?",
+    "vi": "Món pizza không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-345",
+    "en": "Is the pizza good here, please?",
+    "vi": "Ở đây món pizza có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-346",
+    "en": "Can I have the sushi, please?",
+    "vi": "Cho tôi sushi được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-347",
+    "en": "Is the sushi spicy, please?",
+    "vi": "Món sushi có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-348",
+    "en": "Do you recommend the sushi, please?",
+    "vi": "Bạn có gợi ý món sushi không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-349",
+    "en": "Can we share the sushi, please?",
+    "vi": "Chúng tôi chia món sushi được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-350",
+    "en": "Can I have the sushi without chili, please?",
+    "vi": "Món sushi không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-351",
+    "en": "Is the sushi good here, please?",
+    "vi": "Ở đây món sushi có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-352",
+    "en": "Can I have the salad, please?",
+    "vi": "Cho tôi salad được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-353",
+    "en": "Is the salad spicy, please?",
+    "vi": "Món salad có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-354",
+    "en": "Do you recommend the salad, please?",
+    "vi": "Bạn có gợi ý món salad không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-355",
+    "en": "Can we share the salad, please?",
+    "vi": "Chúng tôi chia món salad được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-356",
+    "en": "Can I have the salad without chili, please?",
+    "vi": "Món salad không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-357",
+    "en": "Is the salad good here, please?",
+    "vi": "Ở đây món salad có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-358",
+    "en": "Can I have the tofu, please?",
+    "vi": "Cho tôi đậu phụ được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-359",
+    "en": "Is the tofu spicy, please?",
+    "vi": "Món đậu phụ có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-360",
+    "en": "Do you recommend the tofu, please?",
+    "vi": "Bạn có gợi ý món đậu phụ không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-361",
+    "en": "Can we share the tofu, please?",
+    "vi": "Chúng tôi chia món đậu phụ được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-362",
+    "en": "Can I have the tofu without chili, please?",
+    "vi": "Món đậu phụ không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-363",
+    "en": "Is the tofu good here, please?",
+    "vi": "Ở đây món đậu phụ có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-364",
+    "en": "Can I have the shrimp, please?",
+    "vi": "Cho tôi tôm được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-365",
+    "en": "Is the shrimp spicy, please?",
+    "vi": "Món tôm có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-366",
+    "en": "Do you recommend the shrimp, please?",
+    "vi": "Bạn có gợi ý món tôm không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-367",
+    "en": "Can we share the shrimp, please?",
+    "vi": "Chúng tôi chia món tôm được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-368",
+    "en": "Can I have the shrimp without chili, please?",
+    "vi": "Món tôm không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-369",
+    "en": "Is the shrimp good here, please?",
+    "vi": "Ở đây món tôm có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-370",
+    "en": "Can I have the pork ribs, please?",
+    "vi": "Cho tôi sườn heo được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-371",
+    "en": "Is the pork ribs spicy, please?",
+    "vi": "Món sườn heo có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-372",
+    "en": "Do you recommend the pork ribs, please?",
+    "vi": "Bạn có gợi ý món sườn heo không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-373",
+    "en": "Can we share the pork ribs, please?",
+    "vi": "Chúng tôi chia món sườn heo được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-374",
+    "en": "Can I have the pork ribs without chili, please?",
+    "vi": "Món sườn heo không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-375",
+    "en": "Is the pork ribs good here, please?",
+    "vi": "Ở đây món sườn heo có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-376",
+    "en": "Can I have the rice paper rolls, please?",
+    "vi": "Cho tôi gỏi cuốn được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-377",
+    "en": "Is the rice paper rolls spicy, please?",
+    "vi": "Món gỏi cuốn có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-378",
+    "en": "Do you recommend the rice paper rolls, please?",
+    "vi": "Bạn có gợi ý món gỏi cuốn không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-379",
+    "en": "Can we share the rice paper rolls, please?",
+    "vi": "Chúng tôi chia món gỏi cuốn được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-380",
+    "en": "Can I have the rice paper rolls without chili, please?",
+    "vi": "Món gỏi cuốn không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-381",
+    "en": "Is the rice paper rolls good here, please?",
+    "vi": "Ở đây món gỏi cuốn có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-382",
+    "en": "Can I have the chicken curry, please?",
+    "vi": "Cho tôi cà ri gà được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-383",
+    "en": "Is the chicken curry spicy, please?",
+    "vi": "Món cà ri gà có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-384",
+    "en": "Do you recommend the chicken curry, please?",
+    "vi": "Bạn có gợi ý món cà ri gà không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-385",
+    "en": "Can we share the chicken curry, please?",
+    "vi": "Chúng tôi chia món cà ri gà được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-386",
+    "en": "Can I have the chicken curry without chili, please?",
+    "vi": "Món cà ri gà không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-387",
+    "en": "Is the chicken curry good here, please?",
+    "vi": "Ở đây món cà ri gà có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-388",
+    "en": "Can I have the tom yum, please?",
+    "vi": "Cho tôi tom yum được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-389",
+    "en": "Is the tom yum spicy, please?",
+    "vi": "Món tom yum có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-390",
+    "en": "Do you recommend the tom yum, please?",
+    "vi": "Bạn có gợi ý món tom yum không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-391",
+    "en": "Can we share the tom yum, please?",
+    "vi": "Chúng tôi chia món tom yum được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-392",
+    "en": "Can I have the tom yum without chili, please?",
+    "vi": "Món tom yum không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-393",
+    "en": "Is the tom yum good here, please?",
+    "vi": "Ở đây món tom yum có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-394",
+    "en": "Can I have the fried noodles, please?",
+    "vi": "Cho tôi mì xào được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-395",
+    "en": "Is the fried noodles spicy, please?",
+    "vi": "Món mì xào có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-396",
+    "en": "Do you recommend the fried noodles, please?",
+    "vi": "Bạn có gợi ý món mì xào không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-397",
+    "en": "Can we share the fried noodles, please?",
+    "vi": "Chúng tôi chia món mì xào được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-398",
+    "en": "Can I have the fried noodles without chili, please?",
+    "vi": "Món mì xào không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-399",
+    "en": "Is the fried noodles good here, please?",
+    "vi": "Ở đây món mì xào có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-400",
+    "en": "Can I have the grilled beef, please?",
+    "vi": "Cho tôi bò nướng được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-401",
+    "en": "Is the grilled beef spicy, please?",
+    "vi": "Món bò nướng có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-402",
+    "en": "Do you recommend the grilled beef, please?",
+    "vi": "Bạn có gợi ý món bò nướng không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-403",
+    "en": "Can we share the grilled beef, please?",
+    "vi": "Chúng tôi chia món bò nướng được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-404",
+    "en": "Can I have the grilled beef without chili, please?",
+    "vi": "Món bò nướng không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-405",
+    "en": "Is the grilled beef good here, please?",
+    "vi": "Ở đây món bò nướng có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-406",
+    "en": "Can I have the broken rice, please?",
+    "vi": "Cho tôi cơm tấm được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-407",
+    "en": "Is the broken rice spicy, please?",
+    "vi": "Món cơm tấm có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-408",
+    "en": "Do you recommend the broken rice, please?",
+    "vi": "Bạn có gợi ý món cơm tấm không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-409",
+    "en": "Can we share the broken rice, please?",
+    "vi": "Chúng tôi chia món cơm tấm được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-410",
+    "en": "Can I have the broken rice without chili, please?",
+    "vi": "Món cơm tấm không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-411",
+    "en": "Is the broken rice good here, please?",
+    "vi": "Ở đây món cơm tấm có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-412",
+    "en": "Can I have the bun cha, please?",
+    "vi": "Cho tôi bún chả được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-413",
+    "en": "Is the bun cha spicy, please?",
+    "vi": "Món bún chả có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-414",
+    "en": "Do you recommend the bun cha, please?",
+    "vi": "Bạn có gợi ý món bún chả không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-415",
+    "en": "Can we share the bun cha, please?",
+    "vi": "Chúng tôi chia món bún chả được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-416",
+    "en": "Can I have the bun cha without chili, please?",
+    "vi": "Món bún chả không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-417",
+    "en": "Is the bun cha good here, please?",
+    "vi": "Ở đây món bún chả có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-418",
+    "en": "Can I have the banh mi, please?",
+    "vi": "Cho tôi bánh mì được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-419",
+    "en": "Is the banh mi spicy, please?",
+    "vi": "Món bánh mì có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-420",
+    "en": "Do you recommend the banh mi, please?",
+    "vi": "Bạn có gợi ý món bánh mì không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-421",
+    "en": "Can we share the banh mi, please?",
+    "vi": "Chúng tôi chia món bánh mì được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-422",
+    "en": "Can I have the banh mi without chili, please?",
+    "vi": "Món bánh mì không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-423",
+    "en": "Is the banh mi good here, please?",
+    "vi": "Ở đây món bánh mì có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-424",
+    "en": "Can I have the seafood hotpot, please?",
+    "vi": "Cho tôi lẩu hải sản được không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-425",
+    "en": "Is the seafood hotpot spicy, please?",
+    "vi": "Món lẩu hải sản có cay không ạ?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-426",
+    "en": "Do you recommend the seafood hotpot, please?",
+    "vi": "Bạn có gợi ý món lẩu hải sản không ạ?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-427",
+    "en": "Can we share the seafood hotpot, please?",
+    "vi": "Chúng tôi chia món lẩu hải sản được không ạ?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-428",
+    "en": "Can I have the seafood hotpot without chili, please?",
+    "vi": "Món lẩu hải sản không cay được không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-429",
+    "en": "Is the seafood hotpot good here, please?",
+    "vi": "Ở đây món lẩu hải sản có ngon không ạ?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-430",
+    "en": "This morning, what do you recommend?",
+    "vi": "Sáng nay, bạn gợi ý món nào?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-431",
+    "en": "This afternoon, what do you recommend?",
+    "vi": "Chiều nay, bạn gợi ý món nào?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-432",
+    "en": "This evening, what do you recommend?",
+    "vi": "Tối nay, bạn gợi ý món nào?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-433",
+    "en": "Today, what do you recommend?",
+    "vi": "Hôm nay, bạn gợi ý món nào?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-434",
+    "en": "Tomorrow, what do you recommend?",
+    "vi": "Ngày mai, bạn gợi ý món nào?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-435",
+    "en": "Tonight, what do you recommend?",
+    "vi": "Tối nay, bạn gợi ý món nào?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-436",
+    "en": "Now, what do you recommend?",
+    "vi": "Bây giờ, bạn gợi ý món nào?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-437",
+    "en": "This morning, I would like the grilled chicken, please.",
+    "vi": "Sáng nay, cho tôi món gà nướng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-438",
+    "en": "This afternoon, I would like the grilled chicken, please.",
+    "vi": "Chiều nay, cho tôi món gà nướng.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-439",
+    "en": "This evening, I would like the grilled chicken, please.",
+    "vi": "Tối nay, cho tôi món gà nướng.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-440",
+    "en": "Today, I would like the grilled chicken, please.",
+    "vi": "Hôm nay, cho tôi món gà nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-441",
+    "en": "Tomorrow, I would like the grilled chicken, please.",
+    "vi": "Ngày mai, cho tôi món gà nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-442",
+    "en": "Tonight, I would like the grilled chicken, please.",
+    "vi": "Tối nay, cho tôi món gà nướng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-443",
+    "en": "Now, I would like the grilled chicken, please.",
+    "vi": "Bây giờ, cho tôi món gà nướng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-444",
+    "en": "This morning, can we have some water, please?",
+    "vi": "Sáng nay, cho chúng tôi ít nước được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-445",
+    "en": "This afternoon, can we have some water, please?",
+    "vi": "Chiều nay, cho chúng tôi ít nước được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-446",
+    "en": "This evening, can we have some water, please?",
+    "vi": "Tối nay, cho chúng tôi ít nước được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-447",
+    "en": "Today, can we have some water, please?",
+    "vi": "Hôm nay, cho chúng tôi ít nước được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-448",
+    "en": "Tomorrow, can we have some water, please?",
+    "vi": "Ngày mai, cho chúng tôi ít nước được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-449",
+    "en": "Tonight, can we have some water, please?",
+    "vi": "Tối nay, cho chúng tôi ít nước được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-450",
+    "en": "Now, can we have some water, please?",
+    "vi": "Bây giờ, cho chúng tôi ít nước được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-451",
+    "en": "This morning, could we have the bill, please?",
+    "vi": "Sáng nay, cho chúng tôi xin hóa đơn.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-452",
+    "en": "This afternoon, could we have the bill, please?",
+    "vi": "Chiều nay, cho chúng tôi xin hóa đơn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-453",
+    "en": "This evening, could we have the bill, please?",
+    "vi": "Tối nay, cho chúng tôi xin hóa đơn.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-454",
+    "en": "Today, could we have the bill, please?",
+    "vi": "Hôm nay, cho chúng tôi xin hóa đơn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-455",
+    "en": "Tomorrow, could we have the bill, please?",
+    "vi": "Ngày mai, cho chúng tôi xin hóa đơn.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-456",
+    "en": "Tonight, could we have the bill, please?",
+    "vi": "Tối nay, cho chúng tôi xin hóa đơn.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-457",
+    "en": "Now, could we have the bill, please?",
+    "vi": "Bây giờ, cho chúng tôi xin hóa đơn.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-458",
+    "en": "This morning, do you have a table for one?",
+    "vi": "Sáng nay, có bàn một người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-459",
+    "en": "This afternoon, do you have a table for one?",
+    "vi": "Chiều nay, có bàn một người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-460",
+    "en": "This evening, do you have a table for one?",
+    "vi": "Tối nay, có bàn một người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-461",
+    "en": "Today, do you have a table for one?",
+    "vi": "Hôm nay, có bàn một người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-462",
+    "en": "Tomorrow, do you have a table for one?",
+    "vi": "Ngày mai, có bàn một người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-463",
+    "en": "Tonight, do you have a table for one?",
+    "vi": "Tối nay, có bàn một người không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-464",
+    "en": "Now, do you have a table for one?",
+    "vi": "Bây giờ, có bàn một người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-465",
+    "en": "This morning, do you have a table for two?",
+    "vi": "Sáng nay, có bàn hai người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-466",
+    "en": "This afternoon, do you have a table for two?",
+    "vi": "Chiều nay, có bàn hai người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-467",
+    "en": "This evening, do you have a table for two?",
+    "vi": "Tối nay, có bàn hai người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-468",
+    "en": "Today, do you have a table for two?",
+    "vi": "Hôm nay, có bàn hai người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-469",
+    "en": "Tomorrow, do you have a table for two?",
+    "vi": "Ngày mai, có bàn hai người không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-470",
+    "en": "Tonight, do you have a table for two?",
+    "vi": "Tối nay, có bàn hai người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-471",
+    "en": "Now, do you have a table for two?",
+    "vi": "Bây giờ, có bàn hai người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-472",
+    "en": "This morning, do you have a table for three?",
+    "vi": "Sáng nay, có bàn ba người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-473",
+    "en": "This afternoon, do you have a table for three?",
+    "vi": "Chiều nay, có bàn ba người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-474",
+    "en": "This evening, do you have a table for three?",
+    "vi": "Tối nay, có bàn ba người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-475",
+    "en": "Today, do you have a table for three?",
+    "vi": "Hôm nay, có bàn ba người không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-476",
+    "en": "Tomorrow, do you have a table for three?",
+    "vi": "Ngày mai, có bàn ba người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-477",
+    "en": "Tonight, do you have a table for three?",
+    "vi": "Tối nay, có bàn ba người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-478",
+    "en": "Now, do you have a table for three?",
+    "vi": "Bây giờ, có bàn ba người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-479",
+    "en": "This morning, do you have a table for four?",
+    "vi": "Sáng nay, có bàn bốn người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-480",
+    "en": "This afternoon, do you have a table for four?",
+    "vi": "Chiều nay, có bàn bốn người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-481",
+    "en": "This evening, do you have a table for four?",
+    "vi": "Tối nay, có bàn bốn người không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-482",
+    "en": "Today, do you have a table for four?",
+    "vi": "Hôm nay, có bàn bốn người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-483",
+    "en": "Tomorrow, do you have a table for four?",
+    "vi": "Ngày mai, có bàn bốn người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-484",
+    "en": "Tonight, do you have a table for four?",
+    "vi": "Tối nay, có bàn bốn người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-485",
+    "en": "Now, do you have a table for four?",
+    "vi": "Bây giờ, có bàn bốn người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-486",
+    "en": "This morning, do you have a table for five?",
+    "vi": "Sáng nay, có bàn năm người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-487",
+    "en": "This afternoon, do you have a table for five?",
+    "vi": "Chiều nay, có bàn năm người không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-488",
+    "en": "This evening, do you have a table for five?",
+    "vi": "Tối nay, có bàn năm người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-489",
+    "en": "Today, do you have a table for five?",
+    "vi": "Hôm nay, có bàn năm người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-490",
+    "en": "Tomorrow, do you have a table for five?",
+    "vi": "Ngày mai, có bàn năm người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-491",
+    "en": "Tonight, do you have a table for five?",
+    "vi": "Tối nay, có bàn năm người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-492",
+    "en": "Now, do you have a table for five?",
+    "vi": "Bây giờ, có bàn năm người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-493",
+    "en": "This morning, do you have a table for six?",
+    "vi": "Sáng nay, có bàn sáu người không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-494",
+    "en": "This afternoon, do you have a table for six?",
+    "vi": "Chiều nay, có bàn sáu người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-495",
+    "en": "This evening, do you have a table for six?",
+    "vi": "Tối nay, có bàn sáu người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-496",
+    "en": "Today, do you have a table for six?",
+    "vi": "Hôm nay, có bàn sáu người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-497",
+    "en": "Tomorrow, do you have a table for six?",
+    "vi": "Ngày mai, có bàn sáu người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-498",
+    "en": "Tonight, do you have a table for six?",
+    "vi": "Tối nay, có bàn sáu người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-499",
+    "en": "Now, do you have a table for six?",
+    "vi": "Bây giờ, có bàn sáu người không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-500",
+    "en": "This morning, do you have a table for seven?",
+    "vi": "Sáng nay, có bàn bảy người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-501",
+    "en": "This afternoon, do you have a table for seven?",
+    "vi": "Chiều nay, có bàn bảy người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-502",
+    "en": "This evening, do you have a table for seven?",
+    "vi": "Tối nay, có bàn bảy người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-503",
+    "en": "Today, do you have a table for seven?",
+    "vi": "Hôm nay, có bàn bảy người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-504",
+    "en": "Tomorrow, do you have a table for seven?",
+    "vi": "Ngày mai, có bàn bảy người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-505",
+    "en": "Tonight, do you have a table for seven?",
+    "vi": "Tối nay, có bàn bảy người không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-506",
+    "en": "Now, do you have a table for seven?",
+    "vi": "Bây giờ, có bàn bảy người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-507",
+    "en": "This morning, do you have a table for eight?",
+    "vi": "Sáng nay, có bàn tám người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-508",
+    "en": "This afternoon, do you have a table for eight?",
+    "vi": "Chiều nay, có bàn tám người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-509",
+    "en": "This evening, do you have a table for eight?",
+    "vi": "Tối nay, có bàn tám người không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-510",
+    "en": "Today, do you have a table for eight?",
+    "vi": "Hôm nay, có bàn tám người không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-511",
+    "en": "Tomorrow, do you have a table for eight?",
+    "vi": "Ngày mai, có bàn tám người không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-512",
+    "en": "Tonight, do you have a table for eight?",
+    "vi": "Tối nay, có bàn tám người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-513",
+    "en": "Now, do you have a table for eight?",
+    "vi": "Bây giờ, có bàn tám người không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-514",
+    "en": "This morning, does this dish contain peanuts?",
+    "vi": "Sáng nay, món này có đậu phộng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-515",
+    "en": "This afternoon, does this dish contain peanuts?",
+    "vi": "Chiều nay, món này có đậu phộng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-516",
+    "en": "This evening, does this dish contain peanuts?",
+    "vi": "Tối nay, món này có đậu phộng không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-517",
+    "en": "Today, does this dish contain peanuts?",
+    "vi": "Hôm nay, món này có đậu phộng không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-518",
+    "en": "Tomorrow, does this dish contain peanuts?",
+    "vi": "Ngày mai, món này có đậu phộng không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-519",
+    "en": "Tonight, does this dish contain peanuts?",
+    "vi": "Tối nay, món này có đậu phộng không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-520",
+    "en": "Now, does this dish contain peanuts?",
+    "vi": "Bây giờ, món này có đậu phộng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-521",
+    "en": "This morning, please no peanuts.",
+    "vi": "Sáng nay, làm ơn đừng cho đậu phộng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-522",
+    "en": "This afternoon, please no peanuts.",
+    "vi": "Chiều nay, làm ơn đừng cho đậu phộng.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-523",
+    "en": "This evening, please no peanuts.",
+    "vi": "Tối nay, làm ơn đừng cho đậu phộng.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-524",
+    "en": "Today, please no peanuts.",
+    "vi": "Hôm nay, làm ơn đừng cho đậu phộng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-525",
+    "en": "Tomorrow, please no peanuts.",
+    "vi": "Ngày mai, làm ơn đừng cho đậu phộng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-526",
+    "en": "Tonight, please no peanuts.",
+    "vi": "Tối nay, làm ơn đừng cho đậu phộng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-527",
+    "en": "Now, please no peanuts.",
+    "vi": "Bây giờ, làm ơn đừng cho đậu phộng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-528",
+    "en": "This morning, does this dish contain shrimp?",
+    "vi": "Sáng nay, món này có tôm không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-529",
+    "en": "This afternoon, does this dish contain shrimp?",
+    "vi": "Chiều nay, món này có tôm không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-530",
+    "en": "This evening, does this dish contain shrimp?",
+    "vi": "Tối nay, món này có tôm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-531",
+    "en": "Today, does this dish contain shrimp?",
+    "vi": "Hôm nay, món này có tôm không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-532",
+    "en": "Tomorrow, does this dish contain shrimp?",
+    "vi": "Ngày mai, món này có tôm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-533",
+    "en": "Tonight, does this dish contain shrimp?",
+    "vi": "Tối nay, món này có tôm không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-534",
+    "en": "Now, does this dish contain shrimp?",
+    "vi": "Bây giờ, món này có tôm không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-535",
+    "en": "This morning, please no shrimp.",
+    "vi": "Sáng nay, làm ơn đừng cho tôm.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-536",
+    "en": "This afternoon, please no shrimp.",
+    "vi": "Chiều nay, làm ơn đừng cho tôm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-537",
+    "en": "This evening, please no shrimp.",
+    "vi": "Tối nay, làm ơn đừng cho tôm.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-538",
+    "en": "Today, please no shrimp.",
+    "vi": "Hôm nay, làm ơn đừng cho tôm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-539",
+    "en": "Tomorrow, please no shrimp.",
+    "vi": "Ngày mai, làm ơn đừng cho tôm.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-540",
+    "en": "Tonight, please no shrimp.",
+    "vi": "Tối nay, làm ơn đừng cho tôm.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-541",
+    "en": "Now, please no shrimp.",
+    "vi": "Bây giờ, làm ơn đừng cho tôm.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-542",
+    "en": "This morning, does this dish contain milk?",
+    "vi": "Sáng nay, món này có sữa không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-543",
+    "en": "This afternoon, does this dish contain milk?",
+    "vi": "Chiều nay, món này có sữa không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-544",
+    "en": "This evening, does this dish contain milk?",
+    "vi": "Tối nay, món này có sữa không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-545",
+    "en": "Today, does this dish contain milk?",
+    "vi": "Hôm nay, món này có sữa không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-546",
+    "en": "Tomorrow, does this dish contain milk?",
+    "vi": "Ngày mai, món này có sữa không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-547",
+    "en": "Tonight, does this dish contain milk?",
+    "vi": "Tối nay, món này có sữa không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-548",
+    "en": "Now, does this dish contain milk?",
+    "vi": "Bây giờ, món này có sữa không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-549",
+    "en": "This morning, please no milk.",
+    "vi": "Sáng nay, làm ơn đừng cho sữa.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-550",
+    "en": "This afternoon, please no milk.",
+    "vi": "Chiều nay, làm ơn đừng cho sữa.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-551",
+    "en": "This evening, please no milk.",
+    "vi": "Tối nay, làm ơn đừng cho sữa.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-552",
+    "en": "Today, please no milk.",
+    "vi": "Hôm nay, làm ơn đừng cho sữa.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-553",
+    "en": "Tomorrow, please no milk.",
+    "vi": "Ngày mai, làm ơn đừng cho sữa.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-554",
+    "en": "Tonight, please no milk.",
+    "vi": "Tối nay, làm ơn đừng cho sữa.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-555",
+    "en": "Now, please no milk.",
+    "vi": "Bây giờ, làm ơn đừng cho sữa.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-556",
+    "en": "This morning, does this dish contain eggs?",
+    "vi": "Sáng nay, món này có trứng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-557",
+    "en": "This afternoon, does this dish contain eggs?",
+    "vi": "Chiều nay, món này có trứng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-558",
+    "en": "This evening, does this dish contain eggs?",
+    "vi": "Tối nay, món này có trứng không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-559",
+    "en": "Today, does this dish contain eggs?",
+    "vi": "Hôm nay, món này có trứng không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-560",
+    "en": "Tomorrow, does this dish contain eggs?",
+    "vi": "Ngày mai, món này có trứng không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-561",
+    "en": "Tonight, does this dish contain eggs?",
+    "vi": "Tối nay, món này có trứng không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-562",
+    "en": "Now, does this dish contain eggs?",
+    "vi": "Bây giờ, món này có trứng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-563",
+    "en": "This morning, please no eggs.",
+    "vi": "Sáng nay, làm ơn đừng cho trứng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-564",
+    "en": "This afternoon, please no eggs.",
+    "vi": "Chiều nay, làm ơn đừng cho trứng.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-565",
+    "en": "This evening, please no eggs.",
+    "vi": "Tối nay, làm ơn đừng cho trứng.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-566",
+    "en": "Today, please no eggs.",
+    "vi": "Hôm nay, làm ơn đừng cho trứng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-567",
+    "en": "Tomorrow, please no eggs.",
+    "vi": "Ngày mai, làm ơn đừng cho trứng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-568",
+    "en": "Tonight, please no eggs.",
+    "vi": "Tối nay, làm ơn đừng cho trứng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-569",
+    "en": "Now, please no eggs.",
+    "vi": "Bây giờ, làm ơn đừng cho trứng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-570",
+    "en": "This morning, does this dish contain gluten?",
+    "vi": "Sáng nay, món này có gluten không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-571",
+    "en": "This afternoon, does this dish contain gluten?",
+    "vi": "Chiều nay, món này có gluten không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-572",
+    "en": "This evening, does this dish contain gluten?",
+    "vi": "Tối nay, món này có gluten không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-573",
+    "en": "Today, does this dish contain gluten?",
+    "vi": "Hôm nay, món này có gluten không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-574",
+    "en": "Tomorrow, does this dish contain gluten?",
+    "vi": "Ngày mai, món này có gluten không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-575",
+    "en": "Tonight, does this dish contain gluten?",
+    "vi": "Tối nay, món này có gluten không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-576",
+    "en": "Now, does this dish contain gluten?",
+    "vi": "Bây giờ, món này có gluten không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-577",
+    "en": "This morning, please no gluten.",
+    "vi": "Sáng nay, làm ơn đừng cho gluten.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-578",
+    "en": "This afternoon, please no gluten.",
+    "vi": "Chiều nay, làm ơn đừng cho gluten.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-579",
+    "en": "This evening, please no gluten.",
+    "vi": "Tối nay, làm ơn đừng cho gluten.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-580",
+    "en": "Today, please no gluten.",
+    "vi": "Hôm nay, làm ơn đừng cho gluten.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-581",
+    "en": "Tomorrow, please no gluten.",
+    "vi": "Ngày mai, làm ơn đừng cho gluten.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-582",
+    "en": "Tonight, please no gluten.",
+    "vi": "Tối nay, làm ơn đừng cho gluten.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-583",
+    "en": "Now, please no gluten.",
+    "vi": "Bây giờ, làm ơn đừng cho gluten.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-584",
+    "en": "This morning, does this dish contain soy?",
+    "vi": "Sáng nay, món này có đậu nành không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-585",
+    "en": "This afternoon, does this dish contain soy?",
+    "vi": "Chiều nay, món này có đậu nành không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-586",
+    "en": "This evening, does this dish contain soy?",
+    "vi": "Tối nay, món này có đậu nành không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-587",
+    "en": "Today, does this dish contain soy?",
+    "vi": "Hôm nay, món này có đậu nành không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-588",
+    "en": "Tomorrow, does this dish contain soy?",
+    "vi": "Ngày mai, món này có đậu nành không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-589",
+    "en": "Tonight, does this dish contain soy?",
+    "vi": "Tối nay, món này có đậu nành không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-590",
+    "en": "Now, does this dish contain soy?",
+    "vi": "Bây giờ, món này có đậu nành không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-591",
+    "en": "This morning, please no soy.",
+    "vi": "Sáng nay, làm ơn đừng cho đậu nành.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-592",
+    "en": "This afternoon, please no soy.",
+    "vi": "Chiều nay, làm ơn đừng cho đậu nành.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-593",
+    "en": "This evening, please no soy.",
+    "vi": "Tối nay, làm ơn đừng cho đậu nành.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-594",
+    "en": "Today, please no soy.",
+    "vi": "Hôm nay, làm ơn đừng cho đậu nành.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-595",
+    "en": "Tomorrow, please no soy.",
+    "vi": "Ngày mai, làm ơn đừng cho đậu nành.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-596",
+    "en": "Tonight, please no soy.",
+    "vi": "Tối nay, làm ơn đừng cho đậu nành.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-597",
+    "en": "Now, please no soy.",
+    "vi": "Bây giờ, làm ơn đừng cho đậu nành.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-598",
+    "en": "This morning, does this dish contain fish?",
+    "vi": "Sáng nay, món này có cá không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-599",
+    "en": "This afternoon, does this dish contain fish?",
+    "vi": "Chiều nay, món này có cá không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-600",
+    "en": "This evening, does this dish contain fish?",
+    "vi": "Tối nay, món này có cá không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-601",
+    "en": "Today, does this dish contain fish?",
+    "vi": "Hôm nay, món này có cá không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-602",
+    "en": "Tomorrow, does this dish contain fish?",
+    "vi": "Ngày mai, món này có cá không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-603",
+    "en": "Tonight, does this dish contain fish?",
+    "vi": "Tối nay, món này có cá không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-604",
+    "en": "Now, does this dish contain fish?",
+    "vi": "Bây giờ, món này có cá không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-605",
+    "en": "This morning, please no fish.",
+    "vi": "Sáng nay, làm ơn đừng cho cá.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-606",
+    "en": "This afternoon, please no fish.",
+    "vi": "Chiều nay, làm ơn đừng cho cá.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-607",
+    "en": "This evening, please no fish.",
+    "vi": "Tối nay, làm ơn đừng cho cá.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-608",
+    "en": "Today, please no fish.",
+    "vi": "Hôm nay, làm ơn đừng cho cá.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-609",
+    "en": "Tomorrow, please no fish.",
+    "vi": "Ngày mai, làm ơn đừng cho cá.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-610",
+    "en": "Tonight, please no fish.",
+    "vi": "Tối nay, làm ơn đừng cho cá.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-611",
+    "en": "Now, please no fish.",
+    "vi": "Bây giờ, làm ơn đừng cho cá.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-612",
+    "en": "This morning, does this dish contain sesame?",
+    "vi": "Sáng nay, món này có mè không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-613",
+    "en": "This afternoon, does this dish contain sesame?",
+    "vi": "Chiều nay, món này có mè không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-614",
+    "en": "This evening, does this dish contain sesame?",
+    "vi": "Tối nay, món này có mè không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-615",
+    "en": "Today, does this dish contain sesame?",
+    "vi": "Hôm nay, món này có mè không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-616",
+    "en": "Tomorrow, does this dish contain sesame?",
+    "vi": "Ngày mai, món này có mè không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-617",
+    "en": "Tonight, does this dish contain sesame?",
+    "vi": "Tối nay, món này có mè không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-618",
+    "en": "Now, does this dish contain sesame?",
+    "vi": "Bây giờ, món này có mè không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-619",
+    "en": "This morning, please no sesame.",
+    "vi": "Sáng nay, làm ơn đừng cho mè.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-620",
+    "en": "This afternoon, please no sesame.",
+    "vi": "Chiều nay, làm ơn đừng cho mè.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-621",
+    "en": "This evening, please no sesame.",
+    "vi": "Tối nay, làm ơn đừng cho mè.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-622",
+    "en": "Today, please no sesame.",
+    "vi": "Hôm nay, làm ơn đừng cho mè.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-623",
+    "en": "Tomorrow, please no sesame.",
+    "vi": "Ngày mai, làm ơn đừng cho mè.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-624",
+    "en": "Tonight, please no sesame.",
+    "vi": "Tối nay, làm ơn đừng cho mè.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-625",
+    "en": "Now, please no sesame.",
+    "vi": "Bây giờ, làm ơn đừng cho mè.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-626",
+    "en": "This morning, can I have the grilled chicken?",
+    "vi": "Sáng nay, cho tôi gà nướng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-627",
+    "en": "This afternoon, can I have the grilled chicken?",
+    "vi": "Chiều nay, cho tôi gà nướng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-628",
+    "en": "This evening, can I have the grilled chicken?",
+    "vi": "Tối nay, cho tôi gà nướng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-629",
+    "en": "Today, can I have the grilled chicken?",
+    "vi": "Hôm nay, cho tôi gà nướng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-630",
+    "en": "Tomorrow, can I have the grilled chicken?",
+    "vi": "Ngày mai, cho tôi gà nướng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-631",
+    "en": "Tonight, can I have the grilled chicken?",
+    "vi": "Tối nay, cho tôi gà nướng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-632",
+    "en": "Now, can I have the grilled chicken?",
+    "vi": "Bây giờ, cho tôi gà nướng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-633",
+    "en": "This morning, is the grilled chicken spicy?",
+    "vi": "Sáng nay, món gà nướng có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-634",
+    "en": "This afternoon, is the grilled chicken spicy?",
+    "vi": "Chiều nay, món gà nướng có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-635",
+    "en": "This evening, is the grilled chicken spicy?",
+    "vi": "Tối nay, món gà nướng có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-636",
+    "en": "Today, is the grilled chicken spicy?",
+    "vi": "Hôm nay, món gà nướng có cay không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-637",
+    "en": "Tomorrow, is the grilled chicken spicy?",
+    "vi": "Ngày mai, món gà nướng có cay không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-638",
+    "en": "Tonight, is the grilled chicken spicy?",
+    "vi": "Tối nay, món gà nướng có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-639",
+    "en": "Now, is the grilled chicken spicy?",
+    "vi": "Bây giờ, món gà nướng có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-640",
+    "en": "This morning, what is in the grilled chicken?",
+    "vi": "Sáng nay, món gà nướng gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-641",
+    "en": "This afternoon, what is in the grilled chicken?",
+    "vi": "Chiều nay, món gà nướng gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-642",
+    "en": "This evening, what is in the grilled chicken?",
+    "vi": "Tối nay, món gà nướng gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-643",
+    "en": "Today, what is in the grilled chicken?",
+    "vi": "Hôm nay, món gà nướng gồm những gì?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-644",
+    "en": "Tomorrow, what is in the grilled chicken?",
+    "vi": "Ngày mai, món gà nướng gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-645",
+    "en": "Tonight, what is in the grilled chicken?",
+    "vi": "Tối nay, món gà nướng gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-646",
+    "en": "Now, what is in the grilled chicken?",
+    "vi": "Bây giờ, món gà nướng gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-647",
+    "en": "This morning, do you recommend the grilled chicken?",
+    "vi": "Sáng nay, bạn có gợi ý món gà nướng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-648",
+    "en": "This afternoon, do you recommend the grilled chicken?",
+    "vi": "Chiều nay, bạn có gợi ý món gà nướng không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-649",
+    "en": "This evening, do you recommend the grilled chicken?",
+    "vi": "Tối nay, bạn có gợi ý món gà nướng không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-650",
+    "en": "Today, do you recommend the grilled chicken?",
+    "vi": "Hôm nay, bạn có gợi ý món gà nướng không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-651",
+    "en": "Tomorrow, do you recommend the grilled chicken?",
+    "vi": "Ngày mai, bạn có gợi ý món gà nướng không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-652",
+    "en": "Tonight, do you recommend the grilled chicken?",
+    "vi": "Tối nay, bạn có gợi ý món gà nướng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-653",
+    "en": "Now, do you recommend the grilled chicken?",
+    "vi": "Bây giờ, bạn có gợi ý món gà nướng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-654",
+    "en": "This morning, I will have the grilled chicken.",
+    "vi": "Sáng nay, tôi gọi món gà nướng.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-655",
+    "en": "This afternoon, I will have the grilled chicken.",
+    "vi": "Chiều nay, tôi gọi món gà nướng.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-656",
+    "en": "This evening, I will have the grilled chicken.",
+    "vi": "Tối nay, tôi gọi món gà nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-657",
+    "en": "Today, I will have the grilled chicken.",
+    "vi": "Hôm nay, tôi gọi món gà nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-658",
+    "en": "Tomorrow, I will have the grilled chicken.",
+    "vi": "Ngày mai, tôi gọi món gà nướng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-659",
+    "en": "Tonight, I will have the grilled chicken.",
+    "vi": "Tối nay, tôi gọi món gà nướng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-660",
+    "en": "Now, I will have the grilled chicken.",
+    "vi": "Bây giờ, tôi gọi món gà nướng.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-661",
+    "en": "This morning, can we share the grilled chicken?",
+    "vi": "Sáng nay, chúng tôi chia món gà nướng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-662",
+    "en": "This afternoon, can we share the grilled chicken?",
+    "vi": "Chiều nay, chúng tôi chia món gà nướng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-663",
+    "en": "This evening, can we share the grilled chicken?",
+    "vi": "Tối nay, chúng tôi chia món gà nướng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-664",
+    "en": "Today, can we share the grilled chicken?",
+    "vi": "Hôm nay, chúng tôi chia món gà nướng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-665",
+    "en": "Tomorrow, can we share the grilled chicken?",
+    "vi": "Ngày mai, chúng tôi chia món gà nướng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-666",
+    "en": "Tonight, can we share the grilled chicken?",
+    "vi": "Tối nay, chúng tôi chia món gà nướng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-667",
+    "en": "Now, can we share the grilled chicken?",
+    "vi": "Bây giờ, chúng tôi chia món gà nướng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-668",
+    "en": "This morning, can I have the grilled chicken without chili?",
+    "vi": "Sáng nay, món gà nướng không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-669",
+    "en": "This afternoon, can I have the grilled chicken without chili?",
+    "vi": "Chiều nay, món gà nướng không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-670",
+    "en": "This evening, can I have the grilled chicken without chili?",
+    "vi": "Tối nay, món gà nướng không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-671",
+    "en": "Today, can I have the grilled chicken without chili?",
+    "vi": "Hôm nay, món gà nướng không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-672",
+    "en": "Tomorrow, can I have the grilled chicken without chili?",
+    "vi": "Ngày mai, món gà nướng không cay được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-673",
+    "en": "Tonight, can I have the grilled chicken without chili?",
+    "vi": "Tối nay, món gà nướng không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-674",
+    "en": "Now, can I have the grilled chicken without chili?",
+    "vi": "Bây giờ, món gà nướng không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-675",
+    "en": "This morning, is the grilled chicken good here?",
+    "vi": "Sáng nay, ở đây món gà nướng có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-676",
+    "en": "This afternoon, is the grilled chicken good here?",
+    "vi": "Chiều nay, ở đây món gà nướng có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-677",
+    "en": "This evening, is the grilled chicken good here?",
+    "vi": "Tối nay, ở đây món gà nướng có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-678",
+    "en": "Today, is the grilled chicken good here?",
+    "vi": "Hôm nay, ở đây món gà nướng có ngon không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-679",
+    "en": "Tomorrow, is the grilled chicken good here?",
+    "vi": "Ngày mai, ở đây món gà nướng có ngon không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-680",
+    "en": "Tonight, is the grilled chicken good here?",
+    "vi": "Tối nay, ở đây món gà nướng có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-681",
+    "en": "Now, is the grilled chicken good here?",
+    "vi": "Bây giờ, ở đây món gà nướng có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-682",
+    "en": "This morning, I would like the fried rice, please.",
+    "vi": "Sáng nay, cho tôi món cơm chiên.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-683",
+    "en": "This afternoon, I would like the fried rice, please.",
+    "vi": "Chiều nay, cho tôi món cơm chiên.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-684",
+    "en": "This evening, I would like the fried rice, please.",
+    "vi": "Tối nay, cho tôi món cơm chiên.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-685",
+    "en": "Today, I would like the fried rice, please.",
+    "vi": "Hôm nay, cho tôi món cơm chiên.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-686",
+    "en": "Tomorrow, I would like the fried rice, please.",
+    "vi": "Ngày mai, cho tôi món cơm chiên.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-687",
+    "en": "Tonight, I would like the fried rice, please.",
+    "vi": "Tối nay, cho tôi món cơm chiên.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-688",
+    "en": "Now, I would like the fried rice, please.",
+    "vi": "Bây giờ, cho tôi món cơm chiên.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-689",
+    "en": "This morning, can I have the fried rice?",
+    "vi": "Sáng nay, cho tôi cơm chiên được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-690",
+    "en": "This afternoon, can I have the fried rice?",
+    "vi": "Chiều nay, cho tôi cơm chiên được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-691",
+    "en": "This evening, can I have the fried rice?",
+    "vi": "Tối nay, cho tôi cơm chiên được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-692",
+    "en": "Today, can I have the fried rice?",
+    "vi": "Hôm nay, cho tôi cơm chiên được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-693",
+    "en": "Tomorrow, can I have the fried rice?",
+    "vi": "Ngày mai, cho tôi cơm chiên được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-694",
+    "en": "Tonight, can I have the fried rice?",
+    "vi": "Tối nay, cho tôi cơm chiên được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-695",
+    "en": "Now, can I have the fried rice?",
+    "vi": "Bây giờ, cho tôi cơm chiên được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-696",
+    "en": "This morning, is the fried rice spicy?",
+    "vi": "Sáng nay, món cơm chiên có cay không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-697",
+    "en": "This afternoon, is the fried rice spicy?",
+    "vi": "Chiều nay, món cơm chiên có cay không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-698",
+    "en": "This evening, is the fried rice spicy?",
+    "vi": "Tối nay, món cơm chiên có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-699",
+    "en": "Today, is the fried rice spicy?",
+    "vi": "Hôm nay, món cơm chiên có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-700",
+    "en": "Tomorrow, is the fried rice spicy?",
+    "vi": "Ngày mai, món cơm chiên có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-701",
+    "en": "Tonight, is the fried rice spicy?",
+    "vi": "Tối nay, món cơm chiên có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-702",
+    "en": "Now, is the fried rice spicy?",
+    "vi": "Bây giờ, món cơm chiên có cay không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-703",
+    "en": "This morning, what is in the fried rice?",
+    "vi": "Sáng nay, món cơm chiên gồm những gì?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-704",
+    "en": "This afternoon, what is in the fried rice?",
+    "vi": "Chiều nay, món cơm chiên gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-705",
+    "en": "This evening, what is in the fried rice?",
+    "vi": "Tối nay, món cơm chiên gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-706",
+    "en": "Today, what is in the fried rice?",
+    "vi": "Hôm nay, món cơm chiên gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-707",
+    "en": "Tomorrow, what is in the fried rice?",
+    "vi": "Ngày mai, món cơm chiên gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-708",
+    "en": "Tonight, what is in the fried rice?",
+    "vi": "Tối nay, món cơm chiên gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-709",
+    "en": "Now, what is in the fried rice?",
+    "vi": "Bây giờ, món cơm chiên gồm những gì?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-710",
+    "en": "This morning, do you recommend the fried rice?",
+    "vi": "Sáng nay, bạn có gợi ý món cơm chiên không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-711",
+    "en": "This afternoon, do you recommend the fried rice?",
+    "vi": "Chiều nay, bạn có gợi ý món cơm chiên không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-712",
+    "en": "This evening, do you recommend the fried rice?",
+    "vi": "Tối nay, bạn có gợi ý món cơm chiên không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-713",
+    "en": "Today, do you recommend the fried rice?",
+    "vi": "Hôm nay, bạn có gợi ý món cơm chiên không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-714",
+    "en": "Tomorrow, do you recommend the fried rice?",
+    "vi": "Ngày mai, bạn có gợi ý món cơm chiên không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-715",
+    "en": "Tonight, do you recommend the fried rice?",
+    "vi": "Tối nay, bạn có gợi ý món cơm chiên không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-716",
+    "en": "Now, do you recommend the fried rice?",
+    "vi": "Bây giờ, bạn có gợi ý món cơm chiên không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-717",
+    "en": "This morning, I will have the fried rice.",
+    "vi": "Sáng nay, tôi gọi món cơm chiên.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-718",
+    "en": "This afternoon, I will have the fried rice.",
+    "vi": "Chiều nay, tôi gọi món cơm chiên.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-719",
+    "en": "This evening, I will have the fried rice.",
+    "vi": "Tối nay, tôi gọi món cơm chiên.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-720",
+    "en": "Today, I will have the fried rice.",
+    "vi": "Hôm nay, tôi gọi món cơm chiên.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-721",
+    "en": "Tomorrow, I will have the fried rice.",
+    "vi": "Ngày mai, tôi gọi món cơm chiên.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-722",
+    "en": "Tonight, I will have the fried rice.",
+    "vi": "Tối nay, tôi gọi món cơm chiên.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-723",
+    "en": "Now, I will have the fried rice.",
+    "vi": "Bây giờ, tôi gọi món cơm chiên.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-724",
+    "en": "This morning, can we share the fried rice?",
+    "vi": "Sáng nay, chúng tôi chia món cơm chiên được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-725",
+    "en": "This afternoon, can we share the fried rice?",
+    "vi": "Chiều nay, chúng tôi chia món cơm chiên được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-726",
+    "en": "This evening, can we share the fried rice?",
+    "vi": "Tối nay, chúng tôi chia món cơm chiên được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-727",
+    "en": "Today, can we share the fried rice?",
+    "vi": "Hôm nay, chúng tôi chia món cơm chiên được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-728",
+    "en": "Tomorrow, can we share the fried rice?",
+    "vi": "Ngày mai, chúng tôi chia món cơm chiên được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-729",
+    "en": "Tonight, can we share the fried rice?",
+    "vi": "Tối nay, chúng tôi chia món cơm chiên được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-730",
+    "en": "Now, can we share the fried rice?",
+    "vi": "Bây giờ, chúng tôi chia món cơm chiên được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-731",
+    "en": "This morning, can I have the fried rice without chili?",
+    "vi": "Sáng nay, món cơm chiên không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-732",
+    "en": "This afternoon, can I have the fried rice without chili?",
+    "vi": "Chiều nay, món cơm chiên không cay được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-733",
+    "en": "This evening, can I have the fried rice without chili?",
+    "vi": "Tối nay, món cơm chiên không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-734",
+    "en": "Today, can I have the fried rice without chili?",
+    "vi": "Hôm nay, món cơm chiên không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-735",
+    "en": "Tomorrow, can I have the fried rice without chili?",
+    "vi": "Ngày mai, món cơm chiên không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-736",
+    "en": "Tonight, can I have the fried rice without chili?",
+    "vi": "Tối nay, món cơm chiên không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-737",
+    "en": "Now, can I have the fried rice without chili?",
+    "vi": "Bây giờ, món cơm chiên không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-738",
+    "en": "This morning, is the fried rice good here?",
+    "vi": "Sáng nay, ở đây món cơm chiên có ngon không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-739",
+    "en": "This afternoon, is the fried rice good here?",
+    "vi": "Chiều nay, ở đây món cơm chiên có ngon không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-740",
+    "en": "This evening, is the fried rice good here?",
+    "vi": "Tối nay, ở đây món cơm chiên có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-741",
+    "en": "Today, is the fried rice good here?",
+    "vi": "Hôm nay, ở đây món cơm chiên có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-742",
+    "en": "Tomorrow, is the fried rice good here?",
+    "vi": "Ngày mai, ở đây món cơm chiên có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-743",
+    "en": "Tonight, is the fried rice good here?",
+    "vi": "Tối nay, ở đây món cơm chiên có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-744",
+    "en": "Now, is the fried rice good here?",
+    "vi": "Bây giờ, ở đây món cơm chiên có ngon không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-745",
+    "en": "This morning, I would like the pho, please.",
+    "vi": "Sáng nay, cho tôi món phở.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-746",
+    "en": "This afternoon, I would like the pho, please.",
+    "vi": "Chiều nay, cho tôi món phở.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-747",
+    "en": "This evening, I would like the pho, please.",
+    "vi": "Tối nay, cho tôi món phở.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-748",
+    "en": "Today, I would like the pho, please.",
+    "vi": "Hôm nay, cho tôi món phở.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-749",
+    "en": "Tomorrow, I would like the pho, please.",
+    "vi": "Ngày mai, cho tôi món phở.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-750",
+    "en": "Tonight, I would like the pho, please.",
+    "vi": "Tối nay, cho tôi món phở.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-751",
+    "en": "Now, I would like the pho, please.",
+    "vi": "Bây giờ, cho tôi món phở.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-752",
+    "en": "This morning, can I have the pho?",
+    "vi": "Sáng nay, cho tôi phở được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-753",
+    "en": "This afternoon, can I have the pho?",
+    "vi": "Chiều nay, cho tôi phở được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-754",
+    "en": "This evening, can I have the pho?",
+    "vi": "Tối nay, cho tôi phở được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-755",
+    "en": "Today, can I have the pho?",
+    "vi": "Hôm nay, cho tôi phở được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-756",
+    "en": "Tomorrow, can I have the pho?",
+    "vi": "Ngày mai, cho tôi phở được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-757",
+    "en": "Tonight, can I have the pho?",
+    "vi": "Tối nay, cho tôi phở được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-758",
+    "en": "Now, can I have the pho?",
+    "vi": "Bây giờ, cho tôi phở được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-759",
+    "en": "This morning, is the pho spicy?",
+    "vi": "Sáng nay, món phở có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-760",
+    "en": "This afternoon, is the pho spicy?",
+    "vi": "Chiều nay, món phở có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-761",
+    "en": "This evening, is the pho spicy?",
+    "vi": "Tối nay, món phở có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-762",
+    "en": "Today, is the pho spicy?",
+    "vi": "Hôm nay, món phở có cay không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-763",
+    "en": "Tomorrow, is the pho spicy?",
+    "vi": "Ngày mai, món phở có cay không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-764",
+    "en": "Tonight, is the pho spicy?",
+    "vi": "Tối nay, món phở có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-765",
+    "en": "Now, is the pho spicy?",
+    "vi": "Bây giờ, món phở có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-766",
+    "en": "This morning, what is in the pho?",
+    "vi": "Sáng nay, món phở gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-767",
+    "en": "This afternoon, what is in the pho?",
+    "vi": "Chiều nay, món phở gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-768",
+    "en": "This evening, what is in the pho?",
+    "vi": "Tối nay, món phở gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-769",
+    "en": "Today, what is in the pho?",
+    "vi": "Hôm nay, món phở gồm những gì?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-770",
+    "en": "Tomorrow, what is in the pho?",
+    "vi": "Ngày mai, món phở gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-771",
+    "en": "Tonight, what is in the pho?",
+    "vi": "Tối nay, món phở gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-772",
+    "en": "Now, what is in the pho?",
+    "vi": "Bây giờ, món phở gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-773",
+    "en": "This morning, do you recommend the pho?",
+    "vi": "Sáng nay, bạn có gợi ý món phở không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-774",
+    "en": "This afternoon, do you recommend the pho?",
+    "vi": "Chiều nay, bạn có gợi ý món phở không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-775",
+    "en": "This evening, do you recommend the pho?",
+    "vi": "Tối nay, bạn có gợi ý món phở không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-776",
+    "en": "Today, do you recommend the pho?",
+    "vi": "Hôm nay, bạn có gợi ý món phở không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-777",
+    "en": "Tomorrow, do you recommend the pho?",
+    "vi": "Ngày mai, bạn có gợi ý món phở không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-778",
+    "en": "Tonight, do you recommend the pho?",
+    "vi": "Tối nay, bạn có gợi ý món phở không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-779",
+    "en": "Now, do you recommend the pho?",
+    "vi": "Bây giờ, bạn có gợi ý món phở không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-780",
+    "en": "This morning, I will have the pho.",
+    "vi": "Sáng nay, tôi gọi món phở.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-781",
+    "en": "This afternoon, I will have the pho.",
+    "vi": "Chiều nay, tôi gọi món phở.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-782",
+    "en": "This evening, I will have the pho.",
+    "vi": "Tối nay, tôi gọi món phở.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-783",
+    "en": "Today, I will have the pho.",
+    "vi": "Hôm nay, tôi gọi món phở.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-784",
+    "en": "Tomorrow, I will have the pho.",
+    "vi": "Ngày mai, tôi gọi món phở.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-785",
+    "en": "Tonight, I will have the pho.",
+    "vi": "Tối nay, tôi gọi món phở.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-786",
+    "en": "Now, I will have the pho.",
+    "vi": "Bây giờ, tôi gọi món phở.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-787",
+    "en": "This morning, can we share the pho?",
+    "vi": "Sáng nay, chúng tôi chia món phở được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-788",
+    "en": "This afternoon, can we share the pho?",
+    "vi": "Chiều nay, chúng tôi chia món phở được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-789",
+    "en": "This evening, can we share the pho?",
+    "vi": "Tối nay, chúng tôi chia món phở được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-790",
+    "en": "Today, can we share the pho?",
+    "vi": "Hôm nay, chúng tôi chia món phở được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-791",
+    "en": "Tomorrow, can we share the pho?",
+    "vi": "Ngày mai, chúng tôi chia món phở được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-792",
+    "en": "Tonight, can we share the pho?",
+    "vi": "Tối nay, chúng tôi chia món phở được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-793",
+    "en": "Now, can we share the pho?",
+    "vi": "Bây giờ, chúng tôi chia món phở được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-794",
+    "en": "This morning, can I have the pho without chili?",
+    "vi": "Sáng nay, món phở không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-795",
+    "en": "This afternoon, can I have the pho without chili?",
+    "vi": "Chiều nay, món phở không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-796",
+    "en": "This evening, can I have the pho without chili?",
+    "vi": "Tối nay, món phở không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-797",
+    "en": "Today, can I have the pho without chili?",
+    "vi": "Hôm nay, món phở không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-798",
+    "en": "Tomorrow, can I have the pho without chili?",
+    "vi": "Ngày mai, món phở không cay được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-799",
+    "en": "Tonight, can I have the pho without chili?",
+    "vi": "Tối nay, món phở không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-800",
+    "en": "Now, can I have the pho without chili?",
+    "vi": "Bây giờ, món phở không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-801",
+    "en": "This morning, is the pho good here?",
+    "vi": "Sáng nay, ở đây món phở có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-802",
+    "en": "This afternoon, is the pho good here?",
+    "vi": "Chiều nay, ở đây món phở có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-803",
+    "en": "This evening, is the pho good here?",
+    "vi": "Tối nay, ở đây món phở có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-804",
+    "en": "Today, is the pho good here?",
+    "vi": "Hôm nay, ở đây món phở có ngon không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-805",
+    "en": "Tomorrow, is the pho good here?",
+    "vi": "Ngày mai, ở đây món phở có ngon không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-806",
+    "en": "Tonight, is the pho good here?",
+    "vi": "Tối nay, ở đây món phở có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-807",
+    "en": "Now, is the pho good here?",
+    "vi": "Bây giờ, ở đây món phở có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-808",
+    "en": "This morning, I would like the beef noodles, please.",
+    "vi": "Sáng nay, cho tôi món bún bò.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-809",
+    "en": "This afternoon, I would like the beef noodles, please.",
+    "vi": "Chiều nay, cho tôi món bún bò.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-810",
+    "en": "This evening, I would like the beef noodles, please.",
+    "vi": "Tối nay, cho tôi món bún bò.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-811",
+    "en": "Today, I would like the beef noodles, please.",
+    "vi": "Hôm nay, cho tôi món bún bò.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-812",
+    "en": "Tomorrow, I would like the beef noodles, please.",
+    "vi": "Ngày mai, cho tôi món bún bò.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-813",
+    "en": "Tonight, I would like the beef noodles, please.",
+    "vi": "Tối nay, cho tôi món bún bò.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-814",
+    "en": "Now, I would like the beef noodles, please.",
+    "vi": "Bây giờ, cho tôi món bún bò.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-815",
+    "en": "This morning, can I have the beef noodles?",
+    "vi": "Sáng nay, cho tôi bún bò được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-816",
+    "en": "This afternoon, can I have the beef noodles?",
+    "vi": "Chiều nay, cho tôi bún bò được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-817",
+    "en": "This evening, can I have the beef noodles?",
+    "vi": "Tối nay, cho tôi bún bò được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-818",
+    "en": "Today, can I have the beef noodles?",
+    "vi": "Hôm nay, cho tôi bún bò được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-819",
+    "en": "Tomorrow, can I have the beef noodles?",
+    "vi": "Ngày mai, cho tôi bún bò được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-820",
+    "en": "Tonight, can I have the beef noodles?",
+    "vi": "Tối nay, cho tôi bún bò được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-821",
+    "en": "Now, can I have the beef noodles?",
+    "vi": "Bây giờ, cho tôi bún bò được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-822",
+    "en": "This morning, is the beef noodles spicy?",
+    "vi": "Sáng nay, món bún bò có cay không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-823",
+    "en": "This afternoon, is the beef noodles spicy?",
+    "vi": "Chiều nay, món bún bò có cay không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-824",
+    "en": "This evening, is the beef noodles spicy?",
+    "vi": "Tối nay, món bún bò có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-825",
+    "en": "Today, is the beef noodles spicy?",
+    "vi": "Hôm nay, món bún bò có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-826",
+    "en": "Tomorrow, is the beef noodles spicy?",
+    "vi": "Ngày mai, món bún bò có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-827",
+    "en": "Tonight, is the beef noodles spicy?",
+    "vi": "Tối nay, món bún bò có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-828",
+    "en": "Now, is the beef noodles spicy?",
+    "vi": "Bây giờ, món bún bò có cay không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-829",
+    "en": "This morning, what is in the beef noodles?",
+    "vi": "Sáng nay, món bún bò gồm những gì?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-830",
+    "en": "This afternoon, what is in the beef noodles?",
+    "vi": "Chiều nay, món bún bò gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-831",
+    "en": "This evening, what is in the beef noodles?",
+    "vi": "Tối nay, món bún bò gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-832",
+    "en": "Today, what is in the beef noodles?",
+    "vi": "Hôm nay, món bún bò gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-833",
+    "en": "Tomorrow, what is in the beef noodles?",
+    "vi": "Ngày mai, món bún bò gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-834",
+    "en": "Tonight, what is in the beef noodles?",
+    "vi": "Tối nay, món bún bò gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-835",
+    "en": "Now, what is in the beef noodles?",
+    "vi": "Bây giờ, món bún bò gồm những gì?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-836",
+    "en": "This morning, do you recommend the beef noodles?",
+    "vi": "Sáng nay, bạn có gợi ý món bún bò không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-837",
+    "en": "This afternoon, do you recommend the beef noodles?",
+    "vi": "Chiều nay, bạn có gợi ý món bún bò không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-838",
+    "en": "This evening, do you recommend the beef noodles?",
+    "vi": "Tối nay, bạn có gợi ý món bún bò không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-839",
+    "en": "Today, do you recommend the beef noodles?",
+    "vi": "Hôm nay, bạn có gợi ý món bún bò không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-840",
+    "en": "Tomorrow, do you recommend the beef noodles?",
+    "vi": "Ngày mai, bạn có gợi ý món bún bò không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-841",
+    "en": "Tonight, do you recommend the beef noodles?",
+    "vi": "Tối nay, bạn có gợi ý món bún bò không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-842",
+    "en": "Now, do you recommend the beef noodles?",
+    "vi": "Bây giờ, bạn có gợi ý món bún bò không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-843",
+    "en": "This morning, I will have the beef noodles.",
+    "vi": "Sáng nay, tôi gọi món bún bò.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-844",
+    "en": "This afternoon, I will have the beef noodles.",
+    "vi": "Chiều nay, tôi gọi món bún bò.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-845",
+    "en": "This evening, I will have the beef noodles.",
+    "vi": "Tối nay, tôi gọi món bún bò.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-846",
+    "en": "Today, I will have the beef noodles.",
+    "vi": "Hôm nay, tôi gọi món bún bò.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-847",
+    "en": "Tomorrow, I will have the beef noodles.",
+    "vi": "Ngày mai, tôi gọi món bún bò.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-848",
+    "en": "Tonight, I will have the beef noodles.",
+    "vi": "Tối nay, tôi gọi món bún bò.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-849",
+    "en": "Now, I will have the beef noodles.",
+    "vi": "Bây giờ, tôi gọi món bún bò.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-850",
+    "en": "This morning, can we share the beef noodles?",
+    "vi": "Sáng nay, chúng tôi chia món bún bò được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-851",
+    "en": "This afternoon, can we share the beef noodles?",
+    "vi": "Chiều nay, chúng tôi chia món bún bò được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-852",
+    "en": "This evening, can we share the beef noodles?",
+    "vi": "Tối nay, chúng tôi chia món bún bò được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-853",
+    "en": "Today, can we share the beef noodles?",
+    "vi": "Hôm nay, chúng tôi chia món bún bò được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-854",
+    "en": "Tomorrow, can we share the beef noodles?",
+    "vi": "Ngày mai, chúng tôi chia món bún bò được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-855",
+    "en": "Tonight, can we share the beef noodles?",
+    "vi": "Tối nay, chúng tôi chia món bún bò được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-856",
+    "en": "Now, can we share the beef noodles?",
+    "vi": "Bây giờ, chúng tôi chia món bún bò được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-857",
+    "en": "This morning, can I have the beef noodles without chili?",
+    "vi": "Sáng nay, món bún bò không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-858",
+    "en": "This afternoon, can I have the beef noodles without chili?",
+    "vi": "Chiều nay, món bún bò không cay được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-859",
+    "en": "This evening, can I have the beef noodles without chili?",
+    "vi": "Tối nay, món bún bò không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-860",
+    "en": "Today, can I have the beef noodles without chili?",
+    "vi": "Hôm nay, món bún bò không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-861",
+    "en": "Tomorrow, can I have the beef noodles without chili?",
+    "vi": "Ngày mai, món bún bò không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-862",
+    "en": "Tonight, can I have the beef noodles without chili?",
+    "vi": "Tối nay, món bún bò không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-863",
+    "en": "Now, can I have the beef noodles without chili?",
+    "vi": "Bây giờ, món bún bò không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-864",
+    "en": "This morning, is the beef noodles good here?",
+    "vi": "Sáng nay, ở đây món bún bò có ngon không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-865",
+    "en": "This afternoon, is the beef noodles good here?",
+    "vi": "Chiều nay, ở đây món bún bò có ngon không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-866",
+    "en": "This evening, is the beef noodles good here?",
+    "vi": "Tối nay, ở đây món bún bò có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-867",
+    "en": "Today, is the beef noodles good here?",
+    "vi": "Hôm nay, ở đây món bún bò có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-868",
+    "en": "Tomorrow, is the beef noodles good here?",
+    "vi": "Ngày mai, ở đây món bún bò có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-869",
+    "en": "Tonight, is the beef noodles good here?",
+    "vi": "Tối nay, ở đây món bún bò có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-870",
+    "en": "Now, is the beef noodles good here?",
+    "vi": "Bây giờ, ở đây món bún bò có ngon không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-871",
+    "en": "This morning, I would like the spring rolls, please.",
+    "vi": "Sáng nay, cho tôi món chả giò.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-872",
+    "en": "This afternoon, I would like the spring rolls, please.",
+    "vi": "Chiều nay, cho tôi món chả giò.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-873",
+    "en": "This evening, I would like the spring rolls, please.",
+    "vi": "Tối nay, cho tôi món chả giò.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-874",
+    "en": "Today, I would like the spring rolls, please.",
+    "vi": "Hôm nay, cho tôi món chả giò.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-875",
+    "en": "Tomorrow, I would like the spring rolls, please.",
+    "vi": "Ngày mai, cho tôi món chả giò.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-876",
+    "en": "Tonight, I would like the spring rolls, please.",
+    "vi": "Tối nay, cho tôi món chả giò.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-877",
+    "en": "Now, I would like the spring rolls, please.",
+    "vi": "Bây giờ, cho tôi món chả giò.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-878",
+    "en": "This morning, can I have the spring rolls?",
+    "vi": "Sáng nay, cho tôi chả giò được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-879",
+    "en": "This afternoon, can I have the spring rolls?",
+    "vi": "Chiều nay, cho tôi chả giò được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-880",
+    "en": "This evening, can I have the spring rolls?",
+    "vi": "Tối nay, cho tôi chả giò được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-881",
+    "en": "Today, can I have the spring rolls?",
+    "vi": "Hôm nay, cho tôi chả giò được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-882",
+    "en": "Tomorrow, can I have the spring rolls?",
+    "vi": "Ngày mai, cho tôi chả giò được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-883",
+    "en": "Tonight, can I have the spring rolls?",
+    "vi": "Tối nay, cho tôi chả giò được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-884",
+    "en": "Now, can I have the spring rolls?",
+    "vi": "Bây giờ, cho tôi chả giò được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-885",
+    "en": "This morning, is the spring rolls spicy?",
+    "vi": "Sáng nay, món chả giò có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-886",
+    "en": "This afternoon, is the spring rolls spicy?",
+    "vi": "Chiều nay, món chả giò có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-887",
+    "en": "This evening, is the spring rolls spicy?",
+    "vi": "Tối nay, món chả giò có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-888",
+    "en": "Today, is the spring rolls spicy?",
+    "vi": "Hôm nay, món chả giò có cay không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-889",
+    "en": "Tomorrow, is the spring rolls spicy?",
+    "vi": "Ngày mai, món chả giò có cay không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-890",
+    "en": "Tonight, is the spring rolls spicy?",
+    "vi": "Tối nay, món chả giò có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-891",
+    "en": "Now, is the spring rolls spicy?",
+    "vi": "Bây giờ, món chả giò có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-892",
+    "en": "This morning, what is in the spring rolls?",
+    "vi": "Sáng nay, món chả giò gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-893",
+    "en": "This afternoon, what is in the spring rolls?",
+    "vi": "Chiều nay, món chả giò gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-894",
+    "en": "This evening, what is in the spring rolls?",
+    "vi": "Tối nay, món chả giò gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-895",
+    "en": "Today, what is in the spring rolls?",
+    "vi": "Hôm nay, món chả giò gồm những gì?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-896",
+    "en": "Tomorrow, what is in the spring rolls?",
+    "vi": "Ngày mai, món chả giò gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-897",
+    "en": "Tonight, what is in the spring rolls?",
+    "vi": "Tối nay, món chả giò gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-898",
+    "en": "Now, what is in the spring rolls?",
+    "vi": "Bây giờ, món chả giò gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-899",
+    "en": "This morning, do you recommend the spring rolls?",
+    "vi": "Sáng nay, bạn có gợi ý món chả giò không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-900",
+    "en": "This afternoon, do you recommend the spring rolls?",
+    "vi": "Chiều nay, bạn có gợi ý món chả giò không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-901",
+    "en": "This evening, do you recommend the spring rolls?",
+    "vi": "Tối nay, bạn có gợi ý món chả giò không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-902",
+    "en": "Today, do you recommend the spring rolls?",
+    "vi": "Hôm nay, bạn có gợi ý món chả giò không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-903",
+    "en": "Tomorrow, do you recommend the spring rolls?",
+    "vi": "Ngày mai, bạn có gợi ý món chả giò không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-904",
+    "en": "Tonight, do you recommend the spring rolls?",
+    "vi": "Tối nay, bạn có gợi ý món chả giò không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-905",
+    "en": "Now, do you recommend the spring rolls?",
+    "vi": "Bây giờ, bạn có gợi ý món chả giò không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-906",
+    "en": "This morning, I will have the spring rolls.",
+    "vi": "Sáng nay, tôi gọi món chả giò.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-907",
+    "en": "This afternoon, I will have the spring rolls.",
+    "vi": "Chiều nay, tôi gọi món chả giò.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-908",
+    "en": "This evening, I will have the spring rolls.",
+    "vi": "Tối nay, tôi gọi món chả giò.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-909",
+    "en": "Today, I will have the spring rolls.",
+    "vi": "Hôm nay, tôi gọi món chả giò.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-910",
+    "en": "Tomorrow, I will have the spring rolls.",
+    "vi": "Ngày mai, tôi gọi món chả giò.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-911",
+    "en": "Tonight, I will have the spring rolls.",
+    "vi": "Tối nay, tôi gọi món chả giò.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-912",
+    "en": "Now, I will have the spring rolls.",
+    "vi": "Bây giờ, tôi gọi món chả giò.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-913",
+    "en": "This morning, can we share the spring rolls?",
+    "vi": "Sáng nay, chúng tôi chia món chả giò được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-914",
+    "en": "This afternoon, can we share the spring rolls?",
+    "vi": "Chiều nay, chúng tôi chia món chả giò được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-915",
+    "en": "This evening, can we share the spring rolls?",
+    "vi": "Tối nay, chúng tôi chia món chả giò được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-916",
+    "en": "Today, can we share the spring rolls?",
+    "vi": "Hôm nay, chúng tôi chia món chả giò được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-917",
+    "en": "Tomorrow, can we share the spring rolls?",
+    "vi": "Ngày mai, chúng tôi chia món chả giò được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-918",
+    "en": "Tonight, can we share the spring rolls?",
+    "vi": "Tối nay, chúng tôi chia món chả giò được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-919",
+    "en": "Now, can we share the spring rolls?",
+    "vi": "Bây giờ, chúng tôi chia món chả giò được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-920",
+    "en": "This morning, can I have the spring rolls without chili?",
+    "vi": "Sáng nay, món chả giò không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-921",
+    "en": "This afternoon, can I have the spring rolls without chili?",
+    "vi": "Chiều nay, món chả giò không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-922",
+    "en": "This evening, can I have the spring rolls without chili?",
+    "vi": "Tối nay, món chả giò không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-923",
+    "en": "Today, can I have the spring rolls without chili?",
+    "vi": "Hôm nay, món chả giò không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-924",
+    "en": "Tomorrow, can I have the spring rolls without chili?",
+    "vi": "Ngày mai, món chả giò không cay được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-925",
+    "en": "Tonight, can I have the spring rolls without chili?",
+    "vi": "Tối nay, món chả giò không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-926",
+    "en": "Now, can I have the spring rolls without chili?",
+    "vi": "Bây giờ, món chả giò không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-927",
+    "en": "This morning, is the spring rolls good here?",
+    "vi": "Sáng nay, ở đây món chả giò có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-928",
+    "en": "This afternoon, is the spring rolls good here?",
+    "vi": "Chiều nay, ở đây món chả giò có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-929",
+    "en": "This evening, is the spring rolls good here?",
+    "vi": "Tối nay, ở đây món chả giò có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-930",
+    "en": "Today, is the spring rolls good here?",
+    "vi": "Hôm nay, ở đây món chả giò có ngon không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-931",
+    "en": "Tomorrow, is the spring rolls good here?",
+    "vi": "Ngày mai, ở đây món chả giò có ngon không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-932",
+    "en": "Tonight, is the spring rolls good here?",
+    "vi": "Tối nay, ở đây món chả giò có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-933",
+    "en": "Now, is the spring rolls good here?",
+    "vi": "Bây giờ, ở đây món chả giò có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-934",
+    "en": "This morning, I would like the grilled fish, please.",
+    "vi": "Sáng nay, cho tôi món cá nướng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-935",
+    "en": "This afternoon, I would like the grilled fish, please.",
+    "vi": "Chiều nay, cho tôi món cá nướng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-936",
+    "en": "This evening, I would like the grilled fish, please.",
+    "vi": "Tối nay, cho tôi món cá nướng.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-937",
+    "en": "Today, I would like the grilled fish, please.",
+    "vi": "Hôm nay, cho tôi món cá nướng.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-938",
+    "en": "Tomorrow, I would like the grilled fish, please.",
+    "vi": "Ngày mai, cho tôi món cá nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-939",
+    "en": "Tonight, I would like the grilled fish, please.",
+    "vi": "Tối nay, cho tôi món cá nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-940",
+    "en": "Now, I would like the grilled fish, please.",
+    "vi": "Bây giờ, cho tôi món cá nướng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-941",
+    "en": "This morning, can I have the grilled fish?",
+    "vi": "Sáng nay, cho tôi cá nướng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-942",
+    "en": "This afternoon, can I have the grilled fish?",
+    "vi": "Chiều nay, cho tôi cá nướng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-943",
+    "en": "This evening, can I have the grilled fish?",
+    "vi": "Tối nay, cho tôi cá nướng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-944",
+    "en": "Today, can I have the grilled fish?",
+    "vi": "Hôm nay, cho tôi cá nướng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-945",
+    "en": "Tomorrow, can I have the grilled fish?",
+    "vi": "Ngày mai, cho tôi cá nướng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-946",
+    "en": "Tonight, can I have the grilled fish?",
+    "vi": "Tối nay, cho tôi cá nướng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-947",
+    "en": "Now, can I have the grilled fish?",
+    "vi": "Bây giờ, cho tôi cá nướng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-948",
+    "en": "This morning, is the grilled fish spicy?",
+    "vi": "Sáng nay, món cá nướng có cay không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-949",
+    "en": "This afternoon, is the grilled fish spicy?",
+    "vi": "Chiều nay, món cá nướng có cay không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-950",
+    "en": "This evening, is the grilled fish spicy?",
+    "vi": "Tối nay, món cá nướng có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-951",
+    "en": "Today, is the grilled fish spicy?",
+    "vi": "Hôm nay, món cá nướng có cay không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-952",
+    "en": "Tomorrow, is the grilled fish spicy?",
+    "vi": "Ngày mai, món cá nướng có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-953",
+    "en": "Tonight, is the grilled fish spicy?",
+    "vi": "Tối nay, món cá nướng có cay không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-954",
+    "en": "Now, is the grilled fish spicy?",
+    "vi": "Bây giờ, món cá nướng có cay không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-955",
+    "en": "This morning, what is in the grilled fish?",
+    "vi": "Sáng nay, món cá nướng gồm những gì?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-956",
+    "en": "This afternoon, what is in the grilled fish?",
+    "vi": "Chiều nay, món cá nướng gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-957",
+    "en": "This evening, what is in the grilled fish?",
+    "vi": "Tối nay, món cá nướng gồm những gì?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-958",
+    "en": "Today, what is in the grilled fish?",
+    "vi": "Hôm nay, món cá nướng gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-959",
+    "en": "Tomorrow, what is in the grilled fish?",
+    "vi": "Ngày mai, món cá nướng gồm những gì?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-960",
+    "en": "Tonight, what is in the grilled fish?",
+    "vi": "Tối nay, món cá nướng gồm những gì?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-961",
+    "en": "Now, what is in the grilled fish?",
+    "vi": "Bây giờ, món cá nướng gồm những gì?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-962",
+    "en": "This morning, do you recommend the grilled fish?",
+    "vi": "Sáng nay, bạn có gợi ý món cá nướng không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-963",
+    "en": "This afternoon, do you recommend the grilled fish?",
+    "vi": "Chiều nay, bạn có gợi ý món cá nướng không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-964",
+    "en": "This evening, do you recommend the grilled fish?",
+    "vi": "Tối nay, bạn có gợi ý món cá nướng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-965",
+    "en": "Today, do you recommend the grilled fish?",
+    "vi": "Hôm nay, bạn có gợi ý món cá nướng không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-966",
+    "en": "Tomorrow, do you recommend the grilled fish?",
+    "vi": "Ngày mai, bạn có gợi ý món cá nướng không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-967",
+    "en": "Tonight, do you recommend the grilled fish?",
+    "vi": "Tối nay, bạn có gợi ý món cá nướng không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-968",
+    "en": "Now, do you recommend the grilled fish?",
+    "vi": "Bây giờ, bạn có gợi ý món cá nướng không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-969",
+    "en": "This morning, I will have the grilled fish.",
+    "vi": "Sáng nay, tôi gọi món cá nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-970",
+    "en": "This afternoon, I will have the grilled fish.",
+    "vi": "Chiều nay, tôi gọi món cá nướng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-971",
+    "en": "This evening, I will have the grilled fish.",
+    "vi": "Tối nay, tôi gọi món cá nướng.",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-972",
+    "en": "Today, I will have the grilled fish.",
+    "vi": "Hôm nay, tôi gọi món cá nướng.",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-973",
+    "en": "Tomorrow, I will have the grilled fish.",
+    "vi": "Ngày mai, tôi gọi món cá nướng.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-974",
+    "en": "Tonight, I will have the grilled fish.",
+    "vi": "Tối nay, tôi gọi món cá nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-975",
+    "en": "Now, I will have the grilled fish.",
+    "vi": "Bây giờ, tôi gọi món cá nướng.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-976",
+    "en": "This morning, can we share the grilled fish?",
+    "vi": "Sáng nay, chúng tôi chia món cá nướng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-977",
+    "en": "This afternoon, can we share the grilled fish?",
+    "vi": "Chiều nay, chúng tôi chia món cá nướng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-978",
+    "en": "This evening, can we share the grilled fish?",
+    "vi": "Tối nay, chúng tôi chia món cá nướng được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-979",
+    "en": "Today, can we share the grilled fish?",
+    "vi": "Hôm nay, chúng tôi chia món cá nướng được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-980",
+    "en": "Tomorrow, can we share the grilled fish?",
+    "vi": "Ngày mai, chúng tôi chia món cá nướng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-981",
+    "en": "Tonight, can we share the grilled fish?",
+    "vi": "Tối nay, chúng tôi chia món cá nướng được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-982",
+    "en": "Now, can we share the grilled fish?",
+    "vi": "Bây giờ, chúng tôi chia món cá nướng được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-983",
+    "en": "This morning, can I have the grilled fish without chili?",
+    "vi": "Sáng nay, món cá nướng không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-984",
+    "en": "This afternoon, can I have the grilled fish without chili?",
+    "vi": "Chiều nay, món cá nướng không cay được không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-985",
+    "en": "This evening, can I have the grilled fish without chili?",
+    "vi": "Tối nay, món cá nướng không cay được không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-986",
+    "en": "Today, can I have the grilled fish without chili?",
+    "vi": "Hôm nay, món cá nướng không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-987",
+    "en": "Tomorrow, can I have the grilled fish without chili?",
+    "vi": "Ngày mai, món cá nướng không cay được không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-988",
+    "en": "Tonight, can I have the grilled fish without chili?",
+    "vi": "Tối nay, món cá nướng không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-989",
+    "en": "Now, can I have the grilled fish without chili?",
+    "vi": "Bây giờ, món cá nướng không cay được không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-990",
+    "en": "This morning, is the grilled fish good here?",
+    "vi": "Sáng nay, ở đây món cá nướng có ngon không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-991",
+    "en": "This afternoon, is the grilled fish good here?",
+    "vi": "Chiều nay, ở đây món cá nướng có ngon không?",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-992",
+    "en": "This evening, is the grilled fish good here?",
+    "vi": "Tối nay, ở đây món cá nướng có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-993",
+    "en": "Today, is the grilled fish good here?",
+    "vi": "Hôm nay, ở đây món cá nướng có ngon không?",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-994",
+    "en": "Tomorrow, is the grilled fish good here?",
+    "vi": "Ngày mai, ở đây món cá nướng có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-995",
+    "en": "Tonight, is the grilled fish good here?",
+    "vi": "Tối nay, ở đây món cá nướng có ngon không?",
+    "level": "B1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-996",
+    "en": "Now, is the grilled fish good here?",
+    "vi": "Bây giờ, ở đây món cá nướng có ngon không?",
+    "level": "B2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-997",
+    "en": "This morning, I would like the vegetable soup, please.",
+    "vi": "Sáng nay, cho tôi món canh rau.",
+    "level": "A1",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-998",
+    "en": "This afternoon, I would like the vegetable soup, please.",
+    "vi": "Chiều nay, cho tôi món canh rau.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-999",
+    "en": "This evening, I would like the vegetable soup, please.",
+    "vi": "Tối nay, cho tôi món canh rau.",
+    "level": "A2",
+    "ipa": ""
+  },
+  {
+    "id": "food_dining-1000",
+    "en": "Today, I would like the vegetable soup, please.",
+    "vi": "Hôm nay, cho tôi món canh rau.",
+    "level": "B1",
+    "ipa": ""
+  }
+]
