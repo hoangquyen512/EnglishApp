@@ -30,10 +30,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      # version comes from package.json packageManager — do not also set `version:` here
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -60,6 +59,21 @@ jobs:
             Set-Content src-tauri/tauri.conf.json -NoNewline -Encoding utf8
           echo "YUME_VERSION=$v" >> $env:GITHUB_ENV
 
+      - name: Enable updater artifacts when signing key is present
+        shell: pwsh
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+        run: |
+          if ([string]::IsNullOrWhiteSpace($env:TAURI_SIGNING_PRIVATE_KEY)) {
+            Write-Host "No TAURI_SIGNING_PRIVATE_KEY — building without updater signatures"
+            echo "YUME_SIGNED=false" >> $env:GITHUB_ENV
+          } else {
+            (Get-Content src-tauri/tauri.conf.json -Raw) -replace '"createUpdaterArtifacts":\s*false', '"createUpdaterArtifacts": true' |
+              Set-Content src-tauri/tauri.conf.json -NoNewline -Encoding utf8
+            echo "YUME_SIGNED=true" >> $env:GITHUB_ENV
+            Write-Host "Signing key present — updater artifacts enabled"
+          }
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -78,23 +92,28 @@ jobs:
           $setup = Get-ChildItem $nsisDir -Filter "*.exe" | Where-Object { $_.Name -notlike "*.sig" } | Select-Object -First 1
           if (-not $setup) { throw "NSIS installer not found" }
           Copy-Item $setup.FullName (Join-Path $stage "Yume-setup.exe")
-          $sig = Get-ChildItem $nsisDir -Filter "*.sig" | Select-Object -First 1
-          if (-not $sig) { throw "Updater signature (.sig) not found — is TAURI_SIGNING_PRIVATE_KEY set?" }
-          Copy-Item $sig.FullName (Join-Path $stage "Yume-setup.exe.sig")
           Copy-Item "src-tauri/target/release/yume.exe" (Join-Path $stage "yume.exe")
-          $signature = (Get-Content $sig.FullName -Raw).Trim()
-          $latest = @{
-            version = $env:YUME_VERSION
-            notes = "Yume desktop nightly $env:YUME_VERSION (run $($env:GITHUB_RUN_NUMBER))"
-            pub_date = (Get-Date).ToUniversalTime().ToString("o")
-            platforms = @{
-              "windows-x86_64" = @{
-                signature = $signature
-                url = "https://github.com/hoangquyen512/EnglishApp/releases/download/desktop-nightly/Yume-setup.exe"
+
+          $sig = Get-ChildItem $nsisDir -Filter "*.sig" -ErrorAction SilentlyContinue | Select-Object -First 1
+          if ($sig) {
+            Copy-Item $sig.FullName (Join-Path $stage "Yume-setup.exe.sig")
+            $signature = (Get-Content $sig.FullName -Raw).Trim()
+            $latest = [ordered]@{
+              version = $env:YUME_VERSION
+              notes = "Yume desktop nightly $($env:YUME_VERSION) (run $($env:GITHUB_RUN_NUMBER))"
+              pub_date = (Get-Date).ToUniversalTime().ToString("o")
+              platforms = [ordered]@{
+                "windows-x86_64" = [ordered]@{
+                  signature = $signature
+                  url = "https://github.com/hoangquyen512/EnglishApp/releases/download/desktop-nightly/Yume-setup.exe"
+                }
               }
             }
+            ($latest | ConvertTo-Json -Depth 6) | Set-Content (Join-Path $stage "latest.json") -Encoding utf8
+            Write-Host "Staged signed updater metadata"
+          } else {
+            Write-Host "No .sig — portable/installer only (in-app updater inactive until secret is set)"
           }
-          $latest | ConvertTo-Json -Depth 6 | Set-Content (Join-Path $stage "latest.json") -Encoding utf8
           Get-ChildItem $stage | Format-Table Name, Length
 
       - name: Upload NSIS installer artifact
@@ -119,17 +138,16 @@ jobs:
           tag_name: desktop-nightly
           name: Yume Desktop Nightly
           prerelease: true
+          make_latest: false
           body: |
             Rolling Windows desktop build `${{ env.YUME_VERSION }}`.
 
-            **Quick launch (no admin):** download `yume.exe`, or run `scripts/yume-desktop.ps1` from the repo.
-
-            Installed builds also auto-check this release for updates.
+            **Quick launch (no admin):** run `scripts/Yume-Desktop.cmd` or download `yume.exe`.
           files: |
             release-assets/Yume-setup.exe
-            release-assets/Yume-setup.exe.sig
             release-assets/yume.exe
+            release-assets/Yume-setup.exe.sig
             release-assets/latest.json
-          fail_on_unmatched_files: true
+          fail_on_unmatched_files: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
