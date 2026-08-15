@@ -4,6 +4,7 @@ import {
   PHASE1_TOPIC_CODES,
   PHASE1_VOCABULARY,
 } from "../data/lexicon/phase1";
+import { isPlaceholderVocabWord } from "../data/lexicon/quality";
 import { execute, selectOne } from "./client";
 import { getTopicIdByCode } from "./learning-program";
 import type { TopicCode } from "../features/learning-program/catalog";
@@ -32,10 +33,21 @@ async function setImportVersion(dataset: string, topicCode: string, version: str
   );
 }
 
+async function purgePlaceholderVocabulary(): Promise<void> {
+  await execute(
+    `DELETE FROM vocabulary
+     WHERE word LIKE '%-term-%'
+        OR word LIKE 'itemfamily%'
+        OR word LIKE 'itemfooddining%'
+        OR word LIKE 'itemofficework%'
+        OR word LIKE 'itemtravel%'`,
+  );
+}
+
 async function importVocabularyForTopic(code: TopicCode): Promise<void> {
   const topicId = await getTopicIdByCode(code);
   if (topicId == null) return;
-  const rows = PHASE1_VOCABULARY[code] ?? [];
+  const rows = (PHASE1_VOCABULARY[code] ?? []).filter((row) => !isPlaceholderVocabWord(row.word));
   await execute("BEGIN");
   try {
     for (let i = 0; i < rows.length; i += INSERT_CHUNK) {
@@ -120,6 +132,7 @@ async function importPhrasesForTopic(code: TopicCode): Promise<void> {
 }
 
 async function runPhase1LexiconImport(): Promise<void> {
+  await purgePlaceholderVocabulary();
   for (const code of PHASE1_TOPIC_CODES) {
     const vocabVersion = await getImportVersion("vocabulary", code);
     if (vocabVersion !== CONTENT_VERSION) {

@@ -1,21 +1,18 @@
 import { publicUrl } from "../../lib/public-url";
+import { resolveVocabArt } from "../../features/vocabulary/art";
 
-const TOPIC_FALLBACK: Record<string, string> = {
-  "topic-travel": "itinerary",
-  "topic-food": "complimentary",
-  "topic-office": "memo",
-  "topic-family": "reservation",
-};
-
-export function artSrc(imageKey: string): string {
+export function artSrc(imageKey: string, topic?: string | null): string {
   if (imageKey.startsWith("http") || imageKey.startsWith("data:")) {
     return imageKey;
   }
-  if (imageKey.startsWith("/")) {
-    return publicUrl(imageKey);
-  }
-  const file = TOPIC_FALLBACK[imageKey] ?? imageKey;
-  return publicUrl(`/arts/${file}.jpg`);
+  const resolved = imageKey.startsWith("/")
+    ? imageKey
+    : resolveVocabArt({
+        imageKey,
+        word: imageKey,
+        topic: topic ?? (imageKey.startsWith("topic-") ? imageKey.slice("topic-".length) : null),
+      });
+  return publicUrl(resolved);
 }
 
 export function preloadVocabArts(keys: string[]): void {
@@ -30,14 +27,27 @@ export function preloadVocabArts(keys: string[]): void {
 
 interface VocabIllustrationProps {
   imageKey: string;
+  topic?: string | null;
   className?: string;
 }
 
-export function VocabIllustration({ imageKey, className = "" }: VocabIllustrationProps) {
-  const src = artSrc(imageKey);
+export function VocabIllustration({ imageKey, topic, className = "" }: VocabIllustrationProps) {
+  const primary = artSrc(imageKey, topic);
+  const fallback = publicUrl("/illustrations/fam-1.jpg");
   return (
     <div className={`bg-cream ring-1 ring-line ${className}`}>
-      <img src={src} alt="" className="block h-auto w-full object-contain" />
+      <img
+        src={primary}
+        alt=""
+        className="block h-auto w-full object-contain"
+        onError={(event) => {
+          if (event.currentTarget.dataset.fallback === "1") {
+            return;
+          }
+          event.currentTarget.dataset.fallback = "1";
+          event.currentTarget.src = fallback;
+        }}
+      />
     </div>
   );
 }

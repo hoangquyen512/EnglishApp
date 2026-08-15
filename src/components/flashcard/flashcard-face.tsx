@@ -107,7 +107,7 @@ export function FlashcardFace({
     };
     img.onload = apply;
     img.onerror = apply;
-    img.src = artSrc(card.imageKey);
+    img.src = artSrc(card.imageKey, card.topic);
     if (img.complete && img.naturalWidth > 0) {
       apply();
     }
@@ -124,6 +124,7 @@ export function FlashcardFace({
         <div className="grid min-h-0 flex-1 grid-cols-[104px_1fr] items-stretch gap-2.5 overflow-hidden">
           <VocabIllustration
             imageKey={visible.imageKey}
+            topic={visible.topic}
             className="h-full min-h-0 overflow-hidden rounded-md bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-full [&_img]:max-h-full [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
           />
           <div className="flex h-full min-h-0 min-w-0 gap-1 overflow-hidden">
@@ -196,7 +197,7 @@ export function FlashcardFace({
     <article className="flex flex-col gap-3">
       <p className="text-xs font-semibold uppercase tracking-[0.04em] text-muted">{UI.cardIntervalHint}</p>
 
-      <VocabIllustration imageKey={visible.imageKey} className="shadow-card" />
+      <VocabIllustration imageKey={visible.imageKey} topic={visible.topic} className="shadow-card" />
 
       <div className="rounded-[20px] bg-paper p-4 shadow-card ring-1 ring-line">
         {partOfSpeechLabel(visible.partOfSpeech) ? (

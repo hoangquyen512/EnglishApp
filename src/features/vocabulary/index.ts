@@ -44,6 +44,8 @@ import {
 import { applyReview } from "./spaced-repetition";
 import { shuffle } from "./deck";
 import { countsTowardMastery, sessionIsCorrect, xpForOutcome } from "./outcome";
+import { resolveVocabArt } from "./art";
+import { isPlaceholderVocabWord, usableVocabPhonetic } from "../../data/lexicon/quality";
 
 export { shuffle, nextDeckIndex, previousDeckIndex } from "./deck";
 export { CARD_INTERVAL_MS, cardProgress, cardRemainingMs, shouldAdvanceCard } from "./timer";
@@ -57,12 +59,16 @@ function vocabToCard(item: Vocabulary): StudyFlashcard {
     contentId: item.id,
     contentType: "vocabulary",
     word: item.word,
-    phonetic: item.phonetic,
+    phonetic: usableVocabPhonetic(item.phonetic),
     partOfSpeech: item.partOfSpeech,
     meaning: item.meaning,
     example: item.example,
     exampleVi: item.exampleVi,
-    imageKey: item.imageKey ?? item.word,
+    imageKey: resolveVocabArt({
+      imageKey: item.imageKey,
+      word: item.word,
+      topic: item.topic,
+    }),
     topic: item.topic,
   };
 }
@@ -70,18 +76,24 @@ function vocabToCard(item: Vocabulary): StudyFlashcard {
 function browserVocabCards(active: TopicCode[]): StudyFlashcard[] {
   const fromPhase1 = active.flatMap((code) => {
     const rows = PHASE1_VOCABULARY[code] ?? [];
-    return rows.map((card, index) => ({
-      contentId: index + 1 + code.length * 10_000,
-      contentType: "vocabulary" as const,
-      word: card.word,
-      phonetic: card.phonetic,
-      partOfSpeech: card.partOfSpeech,
-      meaning: card.meaning,
-      example: card.example,
-      exampleVi: card.exampleVi,
-      imageKey: card.imageKey,
-      topic: code,
-    }));
+    return rows
+      .filter((card) => !isPlaceholderVocabWord(card.word))
+      .map((card, index) => ({
+        contentId: index + 1 + code.length * 10_000,
+        contentType: "vocabulary" as const,
+        word: card.word,
+        phonetic: usableVocabPhonetic(card.phonetic),
+        partOfSpeech: card.partOfSpeech,
+        meaning: card.meaning,
+        example: card.example,
+        exampleVi: card.exampleVi,
+        imageKey: resolveVocabArt({
+          imageKey: card.imageKey,
+          word: card.word,
+          topic: code,
+        }),
+        topic: code,
+      }));
   });
   if (fromPhase1.length > 0) {
     return fromPhase1;
@@ -101,7 +113,11 @@ function browserVocabCards(active: TopicCode[]): StudyFlashcard[] {
         meaning: card.meaning,
         example: card.example,
         exampleVi: card.exampleVi,
-        imageKey: card.imageKey,
+        imageKey: resolveVocabArt({
+          imageKey: card.imageKey,
+          word: card.word,
+          topic,
+        }),
         topic,
       },
     ];
@@ -122,7 +138,11 @@ function browserPhraseCards(active: TopicCode[], level: "A1" | "A2" | "B1" | "B2
         meaning: item.vi,
         example: null,
         exampleVi: null,
-        imageKey: `topic-${code}`,
+        imageKey: resolveVocabArt({
+          imageKey: `topic-${code}`,
+          word: item.en,
+          topic: code,
+        }),
         topic: code,
       }));
   });
@@ -144,7 +164,11 @@ function browserPhraseCards(active: TopicCode[], level: "A1" | "A2" | "B1" | "B2
         meaning: item.meaningVi,
         example: null,
         exampleVi: null,
-        imageKey: `topic-${topic}`,
+        imageKey: resolveVocabArt({
+          imageKey: `topic-${topic}`,
+          word: item.phraseEn,
+          topic,
+        }),
         topic,
       },
     ];
@@ -173,7 +197,7 @@ export async function getStudyDeck(contentType: ContentType): Promise<StudyFlash
     const all = await listVocabularyByTopicIds(topicIds);
     const ordered =
       due.length > 0 ? [...due, ...all.filter((item) => !due.some((d) => d.id === item.id))] : all;
-    return shuffle(ordered).map(vocabToCard);
+    return shuffle(ordered.filter((item) => !isPlaceholderVocabWord(item.word))).map(vocabToCard);
   }
 
   const level = await getActiveLevelPreference();
@@ -189,7 +213,11 @@ export async function getStudyDeck(contentType: ContentType): Promise<StudyFlash
     meaning: item.meaningVi,
     example: null,
     exampleVi: null,
-    imageKey: `topic-${item.topic}`,
+    imageKey: resolveVocabArt({
+      imageKey: `topic-${item.topic}`,
+      word: item.phraseEn,
+      topic: item.topic,
+    }),
     topic: item.topic,
   }));
 }
