@@ -39,11 +39,9 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
   const drag = useRef<{ ox: number; oy: number; moved: boolean } | null>(null);
   const setPet = useAppStore((state) => state.setPet);
   const contentType = useStudyStore((state) => state.contentType);
-  const topic = useStudyStore((state) => state.topic);
-  const conversationTopic = useStudyStore((state) => state.conversationTopic);
 
   const onAdvance = useCallback(
-    async (card: { contentId: number; contentType: typeof contentType; topic: typeof topic }) => {
+    async (card: { contentId: number; contentType: typeof contentType; topic: string | null }) => {
       const result = await recordFlashcardEvent({
         contentType: card.contentType,
         contentId: card.contentId,
@@ -59,8 +57,6 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
 
   const player = useFlashcardPlayer({
     contentType,
-    topic: contentType === "phrase" ? topic : null,
-    conversationTopic: contentType === "conversation" ? conversationTopic : null,
     autoSpeak: true,
     active: expanded,
     onAdvance,
