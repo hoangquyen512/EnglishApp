@@ -16,6 +16,7 @@ import {
   ensureLearningProgram,
 } from "./features/learning-program";
 import { getWindowLabel, showMainWindow } from "./lib/tauri";
+import { checkAndInstallDesktopUpdate } from "./lib/updater";
 import { useAppStore } from "./stores/app-store";
 import { useAuthStore } from "./stores/auth-store";
 import { useSettingsStore } from "./stores/settings-store";
@@ -58,6 +59,7 @@ export default function App() {
       return;
     }
     void hydrateAuth();
+    void checkAndInstallDesktopUpdate();
   }, [hydrateAuth, windowKind]);
 
   useEffect(() => {

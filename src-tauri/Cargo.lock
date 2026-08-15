@@ -5293,23 +5293,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
 
 [[package]]
-name = "yume"
-version = "0.1.0"
-dependencies = [
- "argon2",
- "lettre",
- "password-hash",
- "rand 0.8.7",
- "rusqlite",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "tauri-plugin-notification",
- "tauri-plugin-sql",
-]
-
-[[package]]
 name = "vswhom"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6108,6 +6091,23 @@ dependencies = [
  "quote",
  "syn 2.0.119",
  "synstructure",
+]
+
+[[package]]
+name = "yume"
+version = "0.1.0"
+dependencies = [
+ "argon2",
+ "lettre",
+ "password-hash",
+ "rand 0.8.7",
+ "rusqlite",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-notification",
+ "tauri-plugin-sql",
 ]
 
 [[package]]

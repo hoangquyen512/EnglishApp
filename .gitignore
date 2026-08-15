@@ -26,3 +26,6 @@ dist-ssr
 # Git worktrees for feature comparison
 .worktrees/
 
+# Updater signing keys (never commit)
+.secrets/
+

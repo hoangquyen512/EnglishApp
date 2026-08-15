@@ -13,10 +13,14 @@ on:
       - "index.html"
       - "vite.config.*"
       - "tsconfig*.json"
+      - "scripts/yume-desktop.ps1"
 
 concurrency:
   group: build-windows-${{ github.ref }}
   cancel-in-progress: true
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -45,24 +49,87 @@ jobs:
         with:
           workspaces: src-tauri -> target
 
+      - name: Bump nightly version
+        shell: pwsh
+        run: |
+          $v = "0.1.$env:GITHUB_RUN_NUMBER"
+          Write-Host "Nightly version $v"
+          (Get-Content package.json -Raw) -replace '"version":\s*"[^"]+"', "`"version`": `"$v`"" |
+            Set-Content package.json -NoNewline -Encoding utf8
+          (Get-Content src-tauri/tauri.conf.json -Raw) -replace '"version":\s*"[^"]+"', "`"version`": `"$v`"" |
+            Set-Content src-tauri/tauri.conf.json -NoNewline -Encoding utf8
+          echo "YUME_VERSION=$v" >> $env:GITHUB_ENV
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Build Tauri Windows app
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         run: pnpm tauri build
 
-      - name: Upload NSIS installer (current-user, no admin)
+      - name: Stage release assets
+        shell: pwsh
+        run: |
+          $stage = "release-assets"
+          New-Item -ItemType Directory -Force -Path $stage | Out-Null
+          $nsisDir = "src-tauri/target/release/bundle/nsis"
+          $setup = Get-ChildItem $nsisDir -Filter "*.exe" | Where-Object { $_.Name -notlike "*.sig" } | Select-Object -First 1
+          if (-not $setup) { throw "NSIS installer not found" }
+          Copy-Item $setup.FullName (Join-Path $stage "Yume-setup.exe")
+          $sig = Get-ChildItem $nsisDir -Filter "*.sig" | Select-Object -First 1
+          if (-not $sig) { throw "Updater signature (.sig) not found — is TAURI_SIGNING_PRIVATE_KEY set?" }
+          Copy-Item $sig.FullName (Join-Path $stage "Yume-setup.exe.sig")
+          Copy-Item "src-tauri/target/release/yume.exe" (Join-Path $stage "yume.exe")
+          $signature = (Get-Content $sig.FullName -Raw).Trim()
+          $latest = @{
+            version = $env:YUME_VERSION
+            notes = "Yume desktop nightly $env:YUME_VERSION (run $($env:GITHUB_RUN_NUMBER))"
+            pub_date = (Get-Date).ToUniversalTime().ToString("o")
+            platforms = @{
+              "windows-x86_64" = @{
+                signature = $signature
+                url = "https://github.com/hoangquyen512/EnglishApp/releases/download/desktop-nightly/Yume-setup.exe"
+              }
+            }
+          }
+          $latest | ConvertTo-Json -Depth 6 | Set-Content (Join-Path $stage "latest.json") -Encoding utf8
+          Get-ChildItem $stage | Format-Table Name, Length
+
+      - name: Upload NSIS installer artifact
         uses: actions/upload-artifact@v4
         with:
           name: yume-windows-nsis
-          path: src-tauri/target/release/bundle/nsis/*.exe
+          path: release-assets/Yume-setup.exe
           if-no-files-found: error
           retention-days: 14
 
-      - name: Upload portable exe
+      - name: Upload portable exe artifact
         uses: actions/upload-artifact@v4
         with:
           name: yume-windows-portable
-          path: src-tauri/target/release/yume.exe
+          path: release-assets/yume.exe
           if-no-files-found: error
           retention-days: 14
+
+      - name: Publish desktop-nightly release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: desktop-nightly
+          name: Yume Desktop Nightly
+          prerelease: true
+          body: |
+            Rolling Windows desktop build `${{ env.YUME_VERSION }}`.
+
+            **Quick launch (no admin):** download `yume.exe`, or run `scripts/yume-desktop.ps1` from the repo.
+
+            Installed builds also auto-check this release for updates.
+          files: |
+            release-assets/Yume-setup.exe
+            release-assets/Yume-setup.exe.sig
+            release-assets/yume.exe
+            release-assets/latest.json
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
