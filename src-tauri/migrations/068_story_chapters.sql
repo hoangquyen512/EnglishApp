@@ -1,0 +1,13 @@
+CREATE TABLE story_chapters (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  story_id INTEGER NOT NULL REFERENCES stories(id) ON DELETE CASCADE,
+  chapter_no INTEGER NOT NULL,
+  slug TEXT NOT NULL,
+  title_en TEXT NOT NULL,
+  title_vi TEXT NOT NULL,
+  estimated_read_minutes INTEGER,
+  order_no INTEGER NOT NULL,
+  status TEXT NOT NULL DEFAULT 'draft',
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

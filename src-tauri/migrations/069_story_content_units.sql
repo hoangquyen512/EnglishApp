@@ -1,0 +1,7 @@
+CREATE TABLE story_content_units (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  chapter_id INTEGER NOT NULL REFERENCES story_chapters(id) ON DELETE CASCADE,
+  unit_type TEXT NOT NULL,
+  order_no INTEGER NOT NULL,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

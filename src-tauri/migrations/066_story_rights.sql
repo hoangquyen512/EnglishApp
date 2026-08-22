@@ -1,0 +1,20 @@
+CREATE TABLE story_rights (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  story_id INTEGER NOT NULL REFERENCES stories(id) ON DELETE CASCADE,
+  source_id INTEGER NOT NULL REFERENCES story_sources(id),
+  source_story_url TEXT,
+  original_license TEXT,
+  license_url TEXT,
+  rights_status TEXT NOT NULL,
+  commercial_use_allowed INTEGER NOT NULL DEFAULT 0,
+  attribution_required INTEGER NOT NULL DEFAULT 0,
+  attribution_text TEXT,
+  author_credit TEXT,
+  illustrator_credit TEXT,
+  translator_credit TEXT,
+  territory_notes TEXT,
+  verified_at TEXT,
+  verified_by TEXT,
+  evidence_url TEXT,
+  notes TEXT
+);

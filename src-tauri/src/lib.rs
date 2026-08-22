@@ -396,6 +396,78 @@ fn sqlite_migrations() -> Vec<Migration> {
             sql: include_str!("../migrations/063_seed_topic_banks_one_to_one.sql"),
             kind: MigrationKind::Up,
         },
+        Migration {
+            version: 65,
+            description: "story_sources",
+            sql: include_str!("../migrations/065_story_sources.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 66,
+            description: "story_rights",
+            sql: include_str!("../migrations/066_story_rights.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 67,
+            description: "stories",
+            sql: include_str!("../migrations/067_stories.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 68,
+            description: "story_chapters",
+            sql: include_str!("../migrations/068_story_chapters.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 69,
+            description: "story_content_units",
+            sql: include_str!("../migrations/069_story_content_units.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 70,
+            description: "story_sentences",
+            sql: include_str!("../migrations/070_story_sentences.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 71,
+            description: "story_sentence_translations",
+            sql: include_str!("../migrations/071_story_sentence_translations.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 72,
+            description: "story_featured_vocabulary",
+            sql: include_str!("../migrations/072_story_featured_vocabulary.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 73,
+            description: "user_story_progress",
+            sql: include_str!("../migrations/073_user_story_progress.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 74,
+            description: "user_story_favorites",
+            sql: include_str!("../migrations/074_user_story_favorites.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 75,
+            description: "user_story_bookmarks",
+            sql: include_str!("../migrations/075_user_story_bookmarks.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
+            version: 76,
+            description: "user_story_vocabulary",
+            sql: include_str!("../migrations/076_user_story_vocabulary.sql"),
+            kind: MigrationKind::Up,
+        },
     ]
 }
 
