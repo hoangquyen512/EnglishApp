@@ -7,6 +7,7 @@ import { preloadVocabArts } from "./components/flashcard/vocab-illustration";
 import { FlashcardPopup } from "./components/popup/flashcard-popup";
 import { HomeScreen } from "./components/shared/home-screen";
 import { OnboardingScreen } from "./components/shared/onboarding-screen";
+import { StoryReaderScreen } from "./components/stories/story-reader-screen";
 import { UI } from "./constants/ui";
 import { TOEIC_ART_KEYS } from "./data/toeic-cards";
 import { startScheduler } from "./features/scheduler";
@@ -20,13 +21,17 @@ import { useAuthStore } from "./stores/auth-store";
 import { useSettingsStore } from "./stores/settings-store";
 import { useStudyStore } from "./stores/study-store";
 
-type MainView = "home" | "account" | "edit" | "learning-program";
+type MainView = "home" | "account" | "edit" | "learning-program" | "story-reader";
 
 export default function App() {
   const [windowKind, setWindowKind] = useState<"main" | "popup" | null>(null);
   const [view, setView] = useState<MainView>("home");
   const [learningReturn, setLearningReturn] = useState<"home" | "account">("account");
   const [openLookupSignal, setOpenLookupSignal] = useState(0);
+  const [openStorySignal, setOpenStorySignal] = useState(0);
+  const [readerTarget, setReaderTarget] = useState<{ storyId: number; chapterId: number } | null>(
+    null,
+  );
   const [accountToast, setAccountToast] = useState<string | null>(null);
   const authReady = useAuthStore((state) => state.ready);
   const session = useAuthStore((state) => state.session);
@@ -201,6 +206,25 @@ export default function App() {
     );
   }
 
+  if (view === "story-reader" && readerTarget) {
+    return (
+      <StoryReaderScreen
+        storyId={readerTarget.storyId}
+        chapterId={readerTarget.chapterId}
+        streakDays={pet.streakDays}
+        session={session}
+        onOpenAccount={() => setView("account")}
+        onBack={() => {
+          setView("home");
+          setOpenStorySignal((value) => value + 1);
+        }}
+        onOpenChapter={(chapterId) =>
+          setReaderTarget((target) => (target ? { ...target, chapterId } : target))
+        }
+      />
+    );
+  }
+
   return (
     <HomeScreen
       pet={pet}
@@ -208,7 +232,12 @@ export default function App() {
       onContentType={setContentType}
       session={session}
       onOpenAccount={() => setView("account")}
+      onOpenReader={(storyId, chapterId) => {
+        setReaderTarget({ storyId, chapterId });
+        setView("story-reader");
+      }}
       openLookupSignal={openLookupSignal}
+      openStorySignal={openStorySignal}
     />
   );
 }

@@ -1612,6 +1612,28 @@ input.no-focus-ring:focus-visible {
   gap: 10px;
 }
 
+.yume-story-reader__account,
+.yume-story-reader__language {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.yume-story-reader__account {
+  justify-self: end;
+}
+
+.yume-story-reader__heading {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1.8fr);
+  align-items: center;
+  gap: 10px 16px;
+}
+
+.yume-story-reader__heading .yume-story-reader__progress {
+  grid-column: 1 / -1;
+}
+
 .yume-story-reader__breadcrumb {
   margin: 0;
   color: var(--color-fg-sub);
@@ -1670,6 +1692,11 @@ input.no-focus-ring:focus-visible {
   border-color: rgba(196, 181, 253, 0.5);
   background: rgba(167, 139, 250, 0.18);
   color: var(--color-fg);
+}
+
+.yume-story-reader__toolbar-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
 }
 
 .yume-story-reader__progress {
@@ -1733,6 +1760,11 @@ input.no-focus-ring:focus-visible {
   border-bottom: 0;
 }
 
+.yume-story-reader__unit--en,
+.yume-story-reader__unit--vi {
+  grid-template-columns: 1fr;
+}
+
 .yume-story-reader__col-en,
 .yume-story-reader__col-vi {
   margin: 0;
@@ -1741,6 +1773,15 @@ input.no-focus-ring:focus-visible {
 
 .yume-story-reader__col-vi {
   color: #d8d0e9;
+}
+
+.yume-story-reader__featured {
+  border-radius: 5px;
+  padding: 1px 3px;
+  background: rgba(245, 181, 107, 0.2);
+  color: #fde68a;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .yume-story-reader__vocab-panel {
@@ -1759,6 +1800,40 @@ input.no-focus-ring:focus-visible {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-fg-sub);
+}
+
+.yume-story-reader__vocab-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.yume-story-reader__vocab-list li {
+  padding: 9px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  background: rgba(5, 7, 37, 0.24);
+}
+
+.yume-story-reader__vocab-list strong {
+  color: #fde68a;
+  font-family: Fraunces, Georgia, "Times New Roman", serif;
+  font-size: 15px;
+}
+
+.yume-story-reader__vocab-list span {
+  margin-left: 6px;
+  color: var(--color-fg-muted);
+  font-size: 10px;
+}
+
+.yume-story-reader__vocab-list p {
+  margin: 3px 0 0;
+  color: var(--color-fg-sub);
+  font-size: 11px;
+  line-height: 1.4;
 }
 
 .yume-story-reader__nav {
@@ -1835,6 +1910,18 @@ input.no-focus-ring:focus-visible {
   .yume-story-reader__topbar {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .yume-story-reader__account {
+    justify-self: center;
+  }
+
+  .yume-story-reader__heading {
+    grid-template-columns: 1fr;
+  }
+
+  .yume-story-reader__heading .yume-story-reader__progress {
+    grid-column: auto;
   }
 }
 

@@ -19,6 +19,8 @@ interface HomeScreenProps {
   onOpenReader?: (storyId: number, chapterId: number) => void;
   /** Increment to force the Tra từ nhanh panel open (tray / deep link). */
   openLookupSignal?: number;
+  /** Increment to return from Reader with the story library selected. */
+  openStorySignal?: number;
 }
 
 function welcomeGreeting(displayName: string, now = new Date()): string {
@@ -72,6 +74,7 @@ export function HomeScreen({
   onOpenAccount,
   onOpenReader = () => undefined,
   openLookupSignal = 0,
+  openStorySignal = 0,
 }: HomeScreenProps) {
   void _contentType;
   void _onContentType;
@@ -92,6 +95,12 @@ export function HomeScreen({
       setActiveAction("lookup");
     }
   }, [openLookupSignal]);
+
+  useEffect(() => {
+    if (openStorySignal > 0) {
+      setActiveAction("story");
+    }
+  }, [openStorySignal]);
 
   const startStudy = () => setFloatPet(true);
 
