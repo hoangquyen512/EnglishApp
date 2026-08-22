@@ -23,12 +23,17 @@ export function ConfirmDialog({
   onCancel,
 }: ConfirmDialogProps) {
   return (
-    <div className="fixed inset-0 z-20 grid place-items-center bg-stone-950/40 p-6">
-      <div role="dialog" aria-modal="true" aria-labelledby="dialog-title" className="w-full max-w-md rounded-[20px] bg-white p-6 shadow-lg">
-        <h2 id="dialog-title" className="text-xl font-bold">
+    <div className="fixed inset-0 z-20 grid place-items-center bg-cosmic-base/70 p-6 backdrop-blur-sm">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="dialog-title"
+        className="yume-panel w-full max-w-md p-6 shadow-glow"
+      >
+        <h2 id="dialog-title" className="font-display text-xl font-bold text-ink">
           {title}
         </h2>
-        <p className="mt-2 text-sm text-stone-500">{body}</p>
+        <p className="mt-2 text-sm text-muted">{body}</p>
         {children}
         <div className="mt-5 flex justify-end gap-2">
           <PrimaryButton type="button" variant="ghost" onClick={onCancel}>

@@ -13,11 +13,11 @@ export function HomeAccountChip({ session, onOpen }: HomeAccountChipProps) {
     <button
       type="button"
       onClick={onOpen}
-      className="inline-flex items-center gap-2 rounded-full border border-stone-100 bg-white py-1 pl-1 pr-3 hover:border-stone-800"
+      className="inline-flex items-center gap-2 rounded-full border border-line bg-paper/80 py-1 pl-1 pr-3 backdrop-blur-sm hover:border-clay hover:shadow-glow"
       aria-label={label}
     >
       <UserAvatar session={session} size="sm" />
-      <span className={`text-sm ${named ? "text-stone-800" : "text-stone-500"}`}>{label}</span>
+      <span className={`text-sm ${named ? "text-ink" : "text-muted"}`}>{label}</span>
     </button>
   );
 }

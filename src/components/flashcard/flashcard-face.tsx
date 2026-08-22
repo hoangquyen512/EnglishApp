@@ -3,6 +3,7 @@ import { UI } from "../../constants/ui";
 import { partOfSpeechLabel } from "../../features/vocabulary";
 import type { PetState, StudyFlashcard } from "../../types";
 import { PetAvatar } from "../pet/pet-avatar";
+import { compactFlashcardView } from "./compact-view";
 import { artSrc, VocabIllustration } from "./vocab-illustration";
 import {
   IconButton,
@@ -117,20 +118,33 @@ export function FlashcardFace({
   }, [card]);
 
   if (compact) {
-    const posLabel = partOfSpeechLabel(visible.partOfSpeech);
+    const view = compactFlashcardView(visible);
+    const posLabel = view.showPartOfSpeech ? partOfSpeechLabel(visible.partOfSpeech) : null;
     const fitKey = `${visible.contentType}-${visible.contentId}-${visible.word}-${visible.meaning}`;
     return (
       <article className="flex h-full w-full min-h-0 flex-col gap-2 overflow-hidden">
-        <div className="grid min-h-0 flex-1 grid-cols-[104px_1fr] items-stretch gap-2.5 overflow-hidden">
-          <VocabIllustration
-            imageKey={visible.imageKey}
-            topic={visible.topic}
-            className="h-full min-h-0 overflow-hidden rounded-md bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-full [&_img]:max-h-full [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
-          />
-          <div className="flex h-full min-h-0 min-w-0 gap-1 overflow-hidden">
+        <div
+          className={
+            view.showIllustration
+              ? "grid min-h-0 flex-1 grid-cols-[104px_1fr] items-stretch gap-2.5 overflow-hidden"
+              : "flex min-h-0 flex-1 overflow-hidden"
+          }
+        >
+          {view.showIllustration ? (
+            <VocabIllustration
+              imageKey={visible.imageKey}
+              topic={visible.topic}
+              className="h-full min-h-0 overflow-hidden rounded-md bg-transparent ring-0 [&_img]:mx-auto [&_img]:h-full [&_img]:max-h-full [&_img]:w-full [&_img]:object-contain [&_img]:object-center"
+            />
+          ) : null}
+          <div className="flex h-full min-h-0 min-w-0 flex-1 gap-1 overflow-hidden">
             <CompactFitText
               contentKey={fitKey}
-              className="h-full min-h-0 min-w-0 flex-1 leading-snug [&>*+*]:mt-[0.35em]"
+              className={
+                view.showIllustration
+                  ? "h-full min-h-0 min-w-0 flex-1 leading-snug [&>*+*]:mt-[0.35em]"
+                  : "flex h-full min-h-0 min-w-0 flex-1 flex-col justify-center leading-snug [&>*+*]:mt-[0.4em]"
+              }
             >
               {posLabel ? (
                 <p className="text-[0.65em] font-semibold tracking-[0.02em] text-muted">{posLabel}</p>
@@ -138,7 +152,7 @@ export function FlashcardFace({
               <h2 lang="en" className="font-specimen text-[1.05em] font-semibold leading-[1.15] text-ink">
                 {visible.word}
               </h2>
-              {visible.phonetic ? (
+              {view.showPhonetic && visible.phonetic ? (
                 <p lang="en" className="text-[0.7em] leading-snug text-muted">
                   {visible.phonetic}
                 </p>
@@ -147,7 +161,7 @@ export function FlashcardFace({
                 <span className="sr-only">{UI.meaningLabel}: </span>
                 {visible.meaning}
               </p>
-              {visible.example ? (
+              {view.showExample && visible.example ? (
                 <blockquote
                   lang="en"
                   className="line-clamp-2 border-l-2 border-clay pl-[0.4em] text-[0.65em] leading-snug text-ink"
@@ -155,6 +169,11 @@ export function FlashcardFace({
                   <span className="sr-only">{UI.exampleLabel}: </span>
                   {visible.example}
                 </blockquote>
+              ) : null}
+              {view.showExampleVi && visible.exampleVi ? (
+                <p className="line-clamp-2 pl-[0.4em] text-[0.6em] leading-snug text-muted">
+                  {visible.exampleVi}
+                </p>
               ) : null}
             </CompactFitText>
             <IconButton label={UI.listen} onClick={onSpeak} className="h-6 w-6 shrink-0 self-start bg-cream">
@@ -199,7 +218,7 @@ export function FlashcardFace({
 
       <VocabIllustration imageKey={visible.imageKey} topic={visible.topic} className="shadow-card" />
 
-      <div className="rounded-[20px] bg-paper p-4 shadow-card ring-1 ring-line">
+      <div className="yume-panel rounded-[20px] p-4">
         {partOfSpeechLabel(visible.partOfSpeech) ? (
           <p className="text-xs font-semibold tracking-[0.02em] text-muted">
             {partOfSpeechLabel(visible.partOfSpeech)}

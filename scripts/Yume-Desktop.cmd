@@ -1,3 +1,4 @@
 @echo off
-REM Double-click to fetch the latest Yume desktop nightly and launch it.
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0yume-desktop.ps1"
+REM Latest source in the browser (no admin / no Visual Studio).
+REM Optional: -Nightly to download GitHub portable yume.exe
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0yume-desktop.ps1" %*

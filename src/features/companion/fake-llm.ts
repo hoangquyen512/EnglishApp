@@ -1,5 +1,6 @@
 import type { Mood } from "./constants";
 import { PET_NAME } from "./constants";
+import { composeLocalReply } from "./compose-reply";
 import type { LlmClient, LlmTurnInput, LlmTurnResult } from "./llm-types";
 
 const CRISIS = /\b(kill myself|suicide|end my life|want to die|tự tử|muốn chết)\b/i;
@@ -64,9 +65,12 @@ export function createFakeLlm(): LlmClient {
       }
 
       const vietnamese = /[ăâêôơưđáàảãạéèẻẽẹíìỉĩịóòỏõọúùủũụýỳỷỹỵ]/i.test(input.currentUserMessage);
+      const lastCompanionReply = [...input.recent]
+        .reverse()
+        .find((item) => item.role === "companion")?.body;
       const reply = vietnamese
         ? "I hear you. Want to try that in English? I can help."
-        : `That sounds real. What happened next?`;
+        : composeLocalReply({ text: input.currentUserMessage, lastCompanionReply });
 
       return {
         reply,

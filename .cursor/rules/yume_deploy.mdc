@@ -1,0 +1,29 @@
+---
+description: Locked installer and data-path constraints for Yume. Use when editing tauri.conf.json, packaging, updater, or src/config/deployment tests.
+alwaysApply: false
+globs: src-tauri/tauri.conf.json,src/config/**
+---
+
+# Yume deployment
+
+Guarded by `src/config/deployment.test.ts` and `src-tauri/tauri.conf.json`. Do not reverse.
+
+## Installers (no admin)
+
+| Platform | Ship | Do not ship |
+| --- | --- | --- |
+| Windows | NSIS `.exe` with `installMode: currentUser` | WiX `.msi`, `perMachine`, `both` (UAC + Program Files) |
+| macOS | `.app` + drag-and-drop `.dmg` | `.pkg` |
+
+`bundle.targets` is the explicit list `["nsis", "app", "dmg"]` — never `"all"`.
+
+Windows current-user NSIS installs under `%LOCALAPPDATA%`. Registry: `HKCU`. A standard user must install with **no UAC prompt**.
+
+## Data writes (always user-scoped)
+
+| File | Path API |
+| --- | --- |
+| SQLite `vocab_pet.db` | `appLocalDataDir()` |
+| `settings.json` | `appDataDir()` |
+
+Identifier: `com.hoangquyen.yume`. Never write into the install directory, Program Files, `/Applications`, or `/Library`.

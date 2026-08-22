@@ -1,0 +1,67 @@
+---
+description: Yume product map — what the app is, stack, windows, and where domain logic lives. Use when starting a session, navigating the repo, or before changing features.
+alwaysApply: true
+---
+
+# Yume project
+
+**Yume** is a Windows + macOS desktop app: daily TOEIC flashcards with a Tamagotchi-style pet (default name **Sora**, renameable via `pet_state.pet_name`).
+
+## Stack
+
+| Layer | Choice |
+| --- | --- |
+| Shell | Tauri 2 (Rust + system WebView, not Electron) |
+| UI | React 18 function components + TailwindCSS |
+| State | Zustand (`src/stores/`) |
+| Persistence | SQLite via `tauri-plugin-sql`; browser demo uses `localStorage` |
+| Tests | Vitest (`pnpm test`) |
+| Package manager | pnpm |
+
+Read [`docs/ARCHITECTURE.md`](../../docs/ARCHITECTURE.md) before changing XP, SRS, mood, missions, windows, or installers. Those numbers are product law, not suggestions.
+
+## Process and windows
+
+OS tray: **Mở app** / **Học ngay** / **Thoát**.
+
+- **main** (`1280x800`): onboarding, home, settings, missions. Hidden by default in release; debug `pnpm tauri dev` shows it.
+- **popup**: always-on-top floating companion (no chrome, `skipTaskbar`). Click pet to expand a study card.
+
+Both windows load the same SPA. `getCurrentWebviewWindow().label` selects the tree. Closing a window **hides** it; only **Thoát** quits.
+
+## Domain vs native
+
+Flashcards, XP, mood, evolution, missions, SRS, and study timers live in **TypeScript** (`src/features/`).
+
+Rust is limited to tray, show/hide windows, plugin wiring, SQL migrations, and local username/password auth. Do not move XP/SRS/mood into Rust.
+
+## Feature layout
+
+```
+src/components/     UI (popup, pet, shared, flashcard, auth, account)
+src/features/       domain modules — public API is index.ts only
+src/stores/         Zustand
+src/db/             the only TypeScript place with SQL strings
+src/constants/      UI copy and numeric product laws
+src-tauri/          tray, windows, migrations, auth
+```
+
+Features may call `src/db/` and another feature's public API. Components do not embed SQL.
+
+## Pet / study laws (literal)
+
+- Card rotate ~30s while expanded. **Đã nhớ** = known; viewing still feeds the pet a little.
+- XP: viewed **+2**, known **+5**, unknown **0**. `XP_PER_LEVEL = 50` (overflow keeps remainder).
+- SRS known intervals: **1 / 3 / 7 / 14** days. `mastered` at **5** known marks. Unknown resets interval to 0.
+- Mood from `last_fed_at`: 0d happy → 1d neutral → 2d sad → 3d+ hungry. **The pet never dies.**
+
+## Commands
+
+```bash
+pnpm install
+pnpm test
+pnpm dev          # browser preview (no tray / SQLite)
+pnpm tauri dev
+pnpm tauri build  # NSIS current-user .exe + macOS .dmg
+pnpm sync-ai-rules
+```

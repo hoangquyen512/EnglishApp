@@ -21,9 +21,9 @@ export const SPRITE_ART_SRC: Record<string, string> = {
   dragon_adult: dragonAdult,
 };
 
-/** Onboarding / edit-account previews keyed by species id. */
+/** Onboarding / edit-account previews keyed by species id (adult form). */
 export const SPECIES_PREVIEW_SRC: Record<number, string> = {
-  1: catYoung,
-  2: foxYoung,
-  3: dragonYoung,
+  1: catAdult,
+  2: foxAdult,
+  3: dragonAdult,
 };

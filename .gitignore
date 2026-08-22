@@ -26,6 +26,14 @@ dist-ssr
 # Git worktrees for feature comparison
 .worktrees/
 
+# Extracted skill zip / local scratch
+tmp-ai-config-sync/
+
+# Skill junctions created by `pnpm sync-ai-rules` (source is .cursor/skills/)
+.agents/skills/
+.claude/skills/
+.claude/commands/
+
 # Updater signing keys (never commit)
 .secrets/
 

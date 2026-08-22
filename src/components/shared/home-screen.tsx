@@ -122,6 +122,21 @@ export function HomeScreen({
     { id: "lookup", icon: <IconBook />, label: UI.quickLookupTitle, hint: UI.homeLookupShortHint },
   ];
 
+  const startStudy = () => setFloatPet(true);
+
+  const runQuickAction = (id: HomeQuickAction) => {
+    setActiveAction(id);
+    if (id === "story") {
+      onContentType("phrase");
+    }
+  };
+
+  const quickActions: Array<{ id: HomeQuickAction; icon: ReactNode; label: string; hint: string }> = [
+    { id: "chat", icon: <IconChat />, label: UI.companion, hint: UI.homeChatShortHint },
+    { id: "story", icon: <IconStory />, label: UI.homeDailyStory, hint: UI.homeStoryShortHint },
+    { id: "lookup", icon: <IconBook />, label: UI.quickLookupTitle, hint: UI.homeLookupShortHint },
+  ];
+
   return (
     <>
       <main className={homeClassName}>

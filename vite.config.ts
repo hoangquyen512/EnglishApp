@@ -32,5 +32,22 @@ export default defineConfig(async () => ({
     watch: {
       ignored: ["**/src-tauri/**"],
     },
+    proxy: {
+      "/lookup-dict": {
+        target: "https://api.dictionaryapi.dev",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/lookup-dict/, ""),
+      },
+      "/lookup-wiki": {
+        target: "https://en.wiktionary.org",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/lookup-wiki/, ""),
+      },
+      "/lookup-translate": {
+        target: "https://api.mymemory.translated.net",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/lookup-translate/, ""),
+      },
+    },
   },
 }));

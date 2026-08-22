@@ -1,9 +1,16 @@
 import { addDaysIso, isoNow } from "../../lib/dates";
 import { isTauri } from "../../lib/tauri";
 import { conversationDeckForBanks } from "../conversation";
+import {
+  communicationCardsForLevel,
+  mergeCommunicationDecks,
+  type CommunicationSourceCard,
+} from "../conversation/merge";
+import { studyModeFromStored } from "./study-mode";
 import type {
   ContentType,
   FlashcardOutcome,
+  Phrase,
   StudyFlashcard,
   SubmitAnswerResult,
   Vocabulary,
@@ -21,7 +28,6 @@ import {
   lastSessionDate,
   listPhrases,
   listTopicIdsByCodes,
-  listUnseenOrWrongPhrases,
   listVocabularyByTopicIds,
   upsertLearningProgress,
 } from "../../db";
@@ -31,7 +37,6 @@ import {
   getActiveTopicCodes,
 } from "../learning-program";
 import { mapLegacyPhraseTopic } from "../learning-program/mapping";
-import { phraseLevelAllowed } from "../learning-program/level";
 import { assignVocabTopicCode } from "../learning-program/vocab-heuristic";
 import type { TopicCode } from "../learning-program/catalog";
 import {
@@ -45,7 +50,8 @@ import { applyReview } from "./spaced-repetition";
 import { shuffle } from "./deck";
 import { countsTowardMastery, sessionIsCorrect, xpForOutcome } from "./outcome";
 import { resolveVocabArt } from "./art";
-import { isPlaceholderVocabWord, usableVocabPhonetic } from "../../data/lexicon/quality";
+import { isPlaceholderVocabWord } from "../../data/lexicon/quality";
+import { resolveVocabUsage } from "../../data/lexicon/usage";
 
 export { shuffle, nextDeckIndex, previousDeckIndex } from "./deck";
 export { CARD_INTERVAL_MS, cardProgress, cardRemainingMs, shouldAdvanceCard } from "./timer";
@@ -55,15 +61,16 @@ export { speakWord, cancelSpeech, ttsConfig } from "./speech";
 export { xpForOutcome } from "./outcome";
 
 function vocabToCard(item: Vocabulary): StudyFlashcard {
+  const usage = resolveVocabUsage(item);
   return {
     contentId: item.id,
     contentType: "vocabulary",
     word: item.word,
-    phonetic: usableVocabPhonetic(item.phonetic),
+    phonetic: usage.phonetic,
     partOfSpeech: item.partOfSpeech,
-    meaning: item.meaning,
-    example: item.example,
-    exampleVi: item.exampleVi,
+    meaning: usage.meaning,
+    example: usage.example,
+    exampleVi: usage.exampleVi,
     imageKey: resolveVocabArt({
       imageKey: item.imageKey,
       word: item.word,
@@ -78,22 +85,25 @@ function browserVocabCards(active: TopicCode[]): StudyFlashcard[] {
     const rows = PHASE1_VOCABULARY[code] ?? [];
     return rows
       .filter((card) => !isPlaceholderVocabWord(card.word))
-      .map((card, index) => ({
-        contentId: index + 1 + code.length * 10_000,
-        contentType: "vocabulary" as const,
-        word: card.word,
-        phonetic: usableVocabPhonetic(card.phonetic),
-        partOfSpeech: card.partOfSpeech,
-        meaning: card.meaning,
-        example: card.example,
-        exampleVi: card.exampleVi,
-        imageKey: resolveVocabArt({
-          imageKey: card.imageKey,
+      .map((card, index) => {
+        const usage = resolveVocabUsage(card);
+        return {
+          contentId: index + 1 + code.length * 10_000,
+          contentType: "vocabulary" as const,
           word: card.word,
+          phonetic: usage.phonetic,
+          partOfSpeech: card.partOfSpeech,
+          meaning: usage.meaning,
+          example: usage.example,
+          exampleVi: usage.exampleVi,
+          imageKey: resolveVocabArt({
+            imageKey: card.imageKey,
+            word: card.word,
+            topic: code,
+          }),
           topic: code,
-        }),
-        topic: code,
-      }));
+        };
+      });
   });
   if (fromPhase1.length > 0) {
     return fromPhase1;
@@ -124,102 +134,108 @@ function browserVocabCards(active: TopicCode[]): StudyFlashcard[] {
   });
 }
 
-function browserPhraseCards(active: TopicCode[], level: "A1" | "A2" | "B1" | "B2"): StudyFlashcard[] {
+function phraseToCard(input: {
+  contentId: number;
+  word: string;
+  meaning: string;
+  phonetic: string | null;
+  topic: string;
+}): StudyFlashcard {
+  return {
+    contentId: input.contentId,
+    contentType: "phrase",
+    word: input.word,
+    phonetic: input.phonetic,
+    partOfSpeech: null,
+    meaning: input.meaning,
+    example: null,
+    exampleVi: null,
+    imageKey: resolveVocabArt({
+      imageKey: `topic-${input.topic}`,
+      word: input.word,
+      topic: input.topic,
+    }),
+    topic: input.topic,
+  };
+}
+
+function browserPhraseSources(active: TopicCode[]): CommunicationSourceCard[] {
   const fromPhase1 = active.flatMap((code) => {
     const rows = PHASE1_PHRASES[code] ?? [];
-    return rows
-      .filter((item) => phraseLevelAllowed(item.level, level))
-      .map((item, index) => ({
+    return rows.map((item, index) => ({
+      card: phraseToCard({
         contentId: index + 1 + code.length * 10_000,
-        contentType: "phrase" as const,
         word: item.en,
-        phonetic: item.ipa || null,
-        partOfSpeech: null,
         meaning: item.vi,
-        example: null,
-        exampleVi: null,
-        imageKey: resolveVocabArt({
-          imageKey: `topic-${code}`,
-          word: item.en,
-          topic: code,
-        }),
+        phonetic: item.ipa || null,
         topic: code,
-      }));
+      }),
+      level: item.level,
+    }));
   });
   if (fromPhase1.length > 0) {
     return fromPhase1;
   }
   return SEED_PHRASES.flatMap((item) => {
     const topic = mapLegacyPhraseTopic(item.topic);
-    if (!topic || !active.includes(topic) || !phraseLevelAllowed(item.level, level)) {
+    if (!topic || !active.includes(topic)) {
       return [];
     }
     return [
       {
-        contentId: item.id,
-        contentType: "phrase" as const,
-        word: item.phraseEn,
-        phonetic: null,
-        partOfSpeech: null,
-        meaning: item.meaningVi,
-        example: null,
-        exampleVi: null,
-        imageKey: resolveVocabArt({
-          imageKey: `topic-${topic}`,
+        card: phraseToCard({
+          contentId: item.id,
           word: item.phraseEn,
+          meaning: item.meaningVi,
+          phonetic: null,
           topic,
         }),
-        topic,
+        level: item.level,
       },
     ];
   });
 }
 
-export async function getStudyDeck(contentType: ContentType): Promise<StudyFlashcard[]> {
-  const active = await getActiveTopicCodes();
+async function tauriPhraseSources(active: TopicCode[]): Promise<CommunicationSourceCard[]> {
+  const topicIds = await listTopicIdsByCodes(active);
+  const rows = await listPhrases(topicIds);
+  return rows.map((item: Phrase) => ({
+    card: phraseToCard({
+      contentId: item.id,
+      word: item.phraseEn,
+      meaning: item.meaningVi,
+      phonetic: null,
+      topic: item.topic,
+    }),
+    level: item.level,
+  }));
+}
 
-  if (contentType === "conversation") {
-    const banks = await getActiveConversationBanks();
-    return shuffle(conversationDeckForBanks(banks));
+async function communicationStudyDeck(): Promise<StudyFlashcard[]> {
+  const active = await getActiveTopicCodes();
+  const level = await getActiveLevelPreference();
+  const banks = await getActiveConversationBanks();
+  const conversations = conversationDeckForBanks(banks).map((card) => ({ card }));
+  const phrases = isTauri() ? await tauriPhraseSources(active) : browserPhraseSources(active);
+  return shuffle(communicationCardsForLevel(mergeCommunicationDecks(phrases, conversations), level));
+}
+
+export async function getStudyDeck(contentType: ContentType): Promise<StudyFlashcard[]> {
+  if (studyModeFromStored(contentType) === "phrase") {
+    return communicationStudyDeck();
   }
 
+  const active = await getActiveTopicCodes();
   if (!isTauri()) {
-    if (contentType === "phrase") {
-      const level = await getActiveLevelPreference();
-      return shuffle(browserPhraseCards(active, level));
-    }
     return shuffle(browserVocabCards(active));
   }
 
   const topicIds = await listTopicIdsByCodes(active);
-  if (contentType === "vocabulary") {
-    const due = await getDueOrNewVocabularyByTopicIds(isoNow(), topicIds);
-    const all = await listVocabularyByTopicIds(topicIds);
-    const ordered =
-      due.length > 0 ? [...due, ...all.filter((item) => !due.some((d) => d.id === item.id))] : all;
-    return shuffle(ordered.filter((item) => !isPlaceholderVocabWord(item.word))).map(vocabToCard);
-  }
-
-  const level = await getActiveLevelPreference();
-  const candidates = await listUnseenOrWrongPhrases(topicIds);
-  const fallback = candidates.length > 0 ? candidates : await listPhrases(topicIds);
-  const filtered = fallback.filter((item) => phraseLevelAllowed(item.level, level));
-  return shuffle(filtered).map((item) => ({
-    contentId: item.id,
-    contentType: "phrase" as const,
-    word: item.phraseEn,
-    phonetic: null,
-    partOfSpeech: null,
-    meaning: item.meaningVi,
-    example: null,
-    exampleVi: null,
-    imageKey: resolveVocabArt({
-      imageKey: `topic-${item.topic}`,
-      word: item.phraseEn,
-      topic: item.topic,
-    }),
-    topic: item.topic,
-  }));
+  const due = await getDueOrNewVocabularyByTopicIds(isoNow(), topicIds);
+  const all = await listVocabularyByTopicIds(topicIds);
+  const ordered =
+    due.length > 0 ? [...due, ...all.filter((item) => !due.some((d) => d.id === item.id))] : all;
+  return shuffle(ordered.filter((item) => !isPlaceholderVocabWord(item.word))).map(vocabToCard);
 }
 
 export async function getNextCard(contentType: ContentType): Promise<StudyFlashcard | null> {

@@ -1,0 +1,35 @@
+---
+description: Tauri/Rust native layer — tray, windows, plugins, migrations, local auth only. Use when editing src-tauri, Rust commands, or SQL migrations.
+alwaysApply: false
+globs: src-tauri/**
+---
+
+# Yume Tauri / Rust
+
+Rust stays thin. Domain (flashcards, XP, mood, missions, SRS) is TypeScript.
+
+## Allowed in `src-tauri/`
+
+- Tray (`src/tray.rs`) and window show/hide (`commands/window.rs`)
+- Plugin wiring and startup in `src/lib.rs`
+- SQL migrations registered in `sqlite_migrations()` — **one statement per version file**
+- Local auth (argon2, session, password reset) in `src/auth/` + `commands/auth.rs`
+- User-scoped paths: SQLite under `appLocalDataDir`, settings under `appDataDir`
+
+## Migrations
+
+- Add `src-tauri/migrations/NNN_*.sql` **and** a matching `Migration { version: NNN, ... }` entry in `lib.rs`. Skipping either side breaks packaged apps.
+- sqlx / tauri-plugin-sql runs **one statement per migration version**. Split schema vs seed if needed.
+- Do not edit an already-shipped migration in place. Add a new version.
+
+## Windows
+
+- Close = hide. Only tray **Thoát** exits.
+- Do not reverse: popup `alwaysOnTop`, `skipTaskbar`, no decorations; main starts `visible: false` in release.
+- Commands already exist: `show_main_window`, `show_popup_window`, `hide_popup_window`, path/settings helpers. Reuse them.
+
+## Do not
+
+- Do not write into the install directory / Program Files / `/Applications`.
+- Do not switch Windows installer to WiX `.msi` or `perMachine` from Rust/config side — see `yume-deploy`.
+- Do not add a second database file. Auth and study share `vocab_pet.db`.

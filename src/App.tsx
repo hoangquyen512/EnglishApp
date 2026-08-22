@@ -26,7 +26,6 @@ type MainView = "home" | "account" | "edit" | "learning-program" | "story-reader
 export default function App() {
   const [windowKind, setWindowKind] = useState<"main" | "popup" | null>(null);
   const [view, setView] = useState<MainView>("home");
-  const [learningReturn, setLearningReturn] = useState<"home" | "account">("account");
   const [openLookupSignal, setOpenLookupSignal] = useState(0);
   const [openStorySignal, setOpenStorySignal] = useState(0);
   const [readerTarget, setReaderTarget] = useState<{ storyId: number; chapterId: number } | null>(
@@ -166,10 +165,15 @@ export default function App() {
   if (view === "learning-program") {
     return (
       <LearningProgramScreen
-        onBack={() => setView(learningReturn)}
+        session={session}
+        onHome={() => {
+          setAccountToast(null);
+          setView("home");
+        }}
+        onCancel={() => setView("account")}
         onSaved={() => {
           setAccountToast(UI.learningProgramSaved);
-          setView(learningReturn);
+          setView("account");
         }}
       />
     );
@@ -190,7 +194,6 @@ export default function App() {
         }}
         onLearningProgram={() => {
           setAccountToast(null);
-          setLearningReturn("account");
           setView("learning-program");
         }}
       />
