@@ -1417,6 +1417,17 @@ input.no-focus-ring:focus-visible {
   line-height: 1.35;
 }
 
+.yume-story-card__open {
+  margin-top: 7px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #c4b5fd;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .yume-story-card__meta {
   display: flex;
   flex-wrap: wrap;
@@ -1436,6 +1447,12 @@ input.no-focus-ring:focus-visible {
   background: rgba(255, 255, 255, 0.05);
   color: #fda4af;
   cursor: pointer;
+}
+
+.yume-story-card__favorite:hover,
+.yume-story-card__favorite[aria-pressed="true"] {
+  border-color: rgba(251, 113, 133, 0.48);
+  background: rgba(251, 113, 133, 0.12);
 }
 
 .yume-story-empty,
@@ -1516,6 +1533,31 @@ input.no-focus-ring:focus-visible {
 .yume-story-chapter-row.is-selected {
   border-color: rgba(196, 181, 253, 0.45);
   background: rgba(167, 139, 250, 0.14);
+}
+
+.yume-story-chapter-row span {
+  display: grid;
+  gap: 2px;
+}
+
+.yume-story-chapter-row strong {
+  color: var(--color-fg);
+  font-size: 10px;
+}
+
+.yume-story-chapter-row small {
+  color: var(--color-fg-muted);
+  font-size: 9px;
+}
+
+.yume-story-chip:focus-visible,
+.yume-story-card__open:focus-visible,
+.yume-story-card__favorite:focus-visible,
+.yume-story-chapter-row:focus-visible,
+.yume-story-cta:focus-visible,
+.yume-story-library__search:focus-within {
+  outline: 2px solid #c4b5fd;
+  outline-offset: 2px;
 }
 
 .yume-story-cta {

@@ -1,16 +1,14 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { APP_NAME, HOME_MOOD_STATUS, UI } from "../../constants/ui";
-import { cycleIndex, homeRightPanel, type HomeQuickAction } from "../../features/companion";
-import { getStudyDeck, partOfSpeechLabel, speakWord } from "../../features/vocabulary";
+import { homeRightPanel, type HomeQuickAction } from "../../features/companion";
 import type { SessionDto } from "../../features/auth";
-import type { ContentType, PetState, StudyFlashcard } from "../../types";
-import { publicUrl } from "../../lib/public-url";
+import type { ContentType, PetState } from "../../types";
 import { UserAvatar } from "../account/user-avatar";
 import { HomeCompanionChatPanel } from "../companion/home-companion-chat-panel";
-import { artSrc } from "../flashcard/vocab-illustration";
 import { FloatingPetOverlay } from "../pet/floating-pet-overlay";
 import { PetAvatar } from "../pet/pet-avatar";
 import { HomeQuickLookupPanel } from "../quick-lookup/home-quick-lookup-panel";
+import { HomeStoryLibrary } from "../stories/home-story-library";
 
 interface HomeScreenProps {
   pet: PetState;
@@ -18,11 +16,10 @@ interface HomeScreenProps {
   onContentType: (contentType: ContentType) => void;
   session: SessionDto;
   onOpenAccount: () => void;
+  onOpenReader?: (storyId: number, chapterId: number) => void;
   /** Increment to force the Tra từ nhanh panel open (tray / deep link). */
   openLookupSignal?: number;
 }
-
-const HOME_FEED_LIMIT = 10;
 
 function welcomeGreeting(displayName: string, now = new Date()): string {
   const hour = now.getHours();
@@ -39,23 +36,6 @@ function skyEyebrow(now = new Date()): string {
 
 function padDays(n: number): string {
   return String(Math.max(0, n)).padStart(2, "0");
-}
-
-function formatVocabMeaning(card: StudyFlashcard): string {
-  const pos = partOfSpeechLabel(card.partOfSpeech);
-  if (pos) {
-    return `(${pos}) ${card.meaning}`;
-  }
-  return card.meaning;
-}
-
-function IconSpeaker() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <path d="M11 5 6 9H3v6h3l5 4V5z" />
-      <path d="M15.5 8.5a4.5 4.5 0 0 1 0 7" />
-    </svg>
-  );
 }
 
 function IconBook() {
@@ -84,89 +64,28 @@ function IconStory() {
   );
 }
 
-function FeedCardHead({ icon, title }: { icon: ReactNode; title: string }) {
-  return (
-    <header className="yume-home-feed__head">
-      <span className="yume-home-feed__badge" aria-hidden>
-        {icon}
-      </span>
-      <h2>{title}</h2>
-    </header>
-  );
-}
-
-function FeedNav({
-  prevLabel,
-  nextLabel,
-  counter,
-  onPrev,
-  onNext,
-}: {
-  prevLabel: string;
-  nextLabel: string;
-  counter: string;
-  onPrev: () => void;
-  onNext: () => void;
-}) {
-  return (
-    <footer className="yume-home-feed__nav">
-      <button type="button" className="yume-home-feed__nav-btn" onClick={onPrev}>
-        ← {prevLabel}
-      </button>
-      <span className="yume-home-feed__counter">{counter}</span>
-      <button type="button" className="yume-home-feed__nav-btn yume-home-feed__nav-btn--primary" onClick={onNext}>
-        {nextLabel} →
-      </button>
-    </footer>
-  );
-}
-
-function FeedArt({
-  imageKey,
-  topic,
-  variant,
-}: {
-  imageKey: string;
-  topic?: string | null;
-  variant: "vocab" | "phrase";
-}) {
-  return (
-    <div className={`yume-home-feed__art yume-home-feed__art--${variant}`} aria-hidden>
-      <img
-        src={artSrc(imageKey, topic)}
-        alt=""
-        onError={(event) => {
-          if (event.currentTarget.dataset.fallback === "1") {
-            return;
-          }
-          event.currentTarget.dataset.fallback = "1";
-          event.currentTarget.src = publicUrl("/illustrations/fam-1.jpg");
-        }}
-      />
-    </div>
-  );
-}
-
 export function HomeScreen({
   pet,
   contentType: _contentType,
-  onContentType,
+  onContentType: _onContentType,
   session,
   onOpenAccount,
+  onOpenReader = () => undefined,
   openLookupSignal = 0,
 }: HomeScreenProps) {
   void _contentType;
+  void _onContentType;
   const [floatPet, setFloatPet] = useState(false);
   const [activeAction, setActiveAction] = useState<HomeQuickAction | null>(null);
-  const [vocabDeck, setVocabDeck] = useState<StudyFlashcard[]>([]);
-  const [phraseDeck, setPhraseDeck] = useState<StudyFlashcard[]>([]);
-  const [vocabIndex, setVocabIndex] = useState(0);
-  const [phraseIndex, setPhraseIndex] = useState(0);
   const displayName = session.displayName?.trim() || session.username;
   const panel = homeRightPanel(activeAction);
   const compactRight = panel === "lookup" || panel === "chat";
-  const vocab = vocabDeck[vocabIndex] ?? null;
-  const phrase = phraseDeck[phraseIndex] ?? null;
+  const homeClassName =
+    panel === "story"
+      ? "yume-shell yume-home yume-home--stories"
+      : compactRight
+        ? "yume-shell yume-home yume-home--panel"
+        : "yume-shell yume-home";
 
   useEffect(() => {
     if (openLookupSignal > 0) {
@@ -174,33 +93,10 @@ export function HomeScreen({
     }
   }, [openLookupSignal]);
 
-  useEffect(() => {
-    let cancelled = false;
-    void (async () => {
-      const [vocabCards, phraseCards] = await Promise.all([
-        getStudyDeck("vocabulary"),
-        getStudyDeck("phrase"),
-      ]);
-      if (cancelled) {
-        return;
-      }
-      setVocabDeck(vocabCards.slice(0, HOME_FEED_LIMIT));
-      setPhraseDeck(phraseCards.slice(0, HOME_FEED_LIMIT));
-      setVocabIndex(0);
-      setPhraseIndex(0);
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
   const startStudy = () => setFloatPet(true);
 
   const runQuickAction = (id: HomeQuickAction) => {
     setActiveAction(id);
-    if (id === "story") {
-      onContentType("phrase");
-    }
   };
 
   const quickActions: Array<{ id: HomeQuickAction; icon: ReactNode; label: string; hint: string }> = [
@@ -211,7 +107,7 @@ export function HomeScreen({
 
   return (
     <>
-      <main className={compactRight ? "yume-shell yume-home yume-home--panel" : "yume-shell yume-home"}>
+      <main className={homeClassName}>
         <div className="yume-shell__noise" aria-hidden />
 
         <header className="yume-home__topbar">
@@ -333,122 +229,7 @@ export function HomeScreen({
             </section>
           ) : null}
 
-          {panel === "story" ? (
-            <div className="yume-home__feed" aria-label="Bài học đề xuất">
-              <article className="yume-home-feed-card yume-home-feed-card--vocab">
-                <FeedCardHead icon={<IconBook />} title={UI.homeFeedVocabTitle} />
-                {vocab ? (
-                  <>
-                    <div className="yume-home-feed__body">
-                      <div className="yume-home-feed__copy">
-                        <div className="yume-home-feed__term">
-                          <h3>{vocab.word}</h3>
-                          <button
-                            type="button"
-                            className="yume-home-feed__speak"
-                            aria-label={UI.listen}
-                            onClick={() => speakWord(vocab.word)}
-                          >
-                            <IconSpeaker />
-                          </button>
-                        </div>
-                        {vocab.phonetic ? <p className="yume-home-feed__ipa">{vocab.phonetic}</p> : null}
-                        <p className="yume-home-feed__meaning">{formatVocabMeaning(vocab)}</p>
-                        {vocab.example || vocab.exampleVi ? (
-                          <div className="yume-home-feed__example">
-                            {vocab.example ? <p>{vocab.example}</p> : null}
-                            {vocab.exampleVi ? <p>{vocab.exampleVi}</p> : null}
-                          </div>
-                        ) : null}
-                      </div>
-                      <FeedArt imageKey={vocab.imageKey} topic={vocab.topic} variant="vocab" />
-                    </div>
-                    <FeedNav
-                      prevLabel={UI.homeFeedPrevWord}
-                      nextLabel={UI.homeFeedNextWord}
-                      counter={`${vocabIndex + 1} / ${vocabDeck.length}`}
-                      onPrev={() => setVocabIndex((i) => cycleIndex(i, -1, vocabDeck.length))}
-                      onNext={() => setVocabIndex((i) => cycleIndex(i, 1, vocabDeck.length))}
-                    />
-                  </>
-                ) : (
-                  <p className="yume-home-feed__empty">{UI.loading}</p>
-                )}
-              </article>
-
-              <article className="yume-home-feed-card yume-home-feed-card--phrase">
-                <FeedCardHead icon={<IconChat />} title={UI.homeFeedPhraseTitle} />
-                {phrase ? (
-                  <>
-                    <div className="yume-home-feed__body">
-                      <div className="yume-home-feed__copy">
-                        <div className="yume-home-feed__term">
-                          <h3>{phrase.word}</h3>
-                          <button
-                            type="button"
-                            className="yume-home-feed__speak"
-                            aria-label={UI.listen}
-                            onClick={() => speakWord(phrase.word)}
-                          >
-                            <IconSpeaker />
-                          </button>
-                        </div>
-                        {phrase.phonetic ? <p className="yume-home-feed__ipa">{phrase.phonetic}</p> : null}
-                        <p className="yume-home-feed__meaning">{phrase.meaning}</p>
-                        {phrase.example || phrase.exampleVi ? (
-                          <div className="yume-home-feed__example">
-                            <p className="yume-home-feed__hint">{UI.homeFeedSuggestedAnswer}</p>
-                            {phrase.example ? <p>{phrase.example}</p> : null}
-                            {phrase.exampleVi ? <p>{phrase.exampleVi}</p> : null}
-                          </div>
-                        ) : null}
-                      </div>
-                      <FeedArt imageKey={phrase.imageKey} topic={phrase.topic} variant="phrase" />
-                    </div>
-                    <FeedNav
-                      prevLabel={UI.homeFeedPrevPhrase}
-                      nextLabel={UI.homeFeedNextPhrase}
-                      counter={`${phraseIndex + 1} / ${phraseDeck.length}`}
-                      onPrev={() => setPhraseIndex((i) => cycleIndex(i, -1, phraseDeck.length))}
-                      onNext={() => setPhraseIndex((i) => cycleIndex(i, 1, phraseDeck.length))}
-                    />
-                  </>
-                ) : (
-                  <p className="yume-home-feed__empty">{UI.loading}</p>
-                )}
-              </article>
-
-              <article className="yume-home-feed-card yume-home-feed-card--story">
-                <FeedCardHead icon={<IconStory />} title={UI.homeFeedStoryTitle} />
-                <div className="yume-home-feed__story">
-                  <div className="yume-home-feed__art yume-home-feed__art--story" aria-hidden />
-                  <div className="yume-home-feed__story-copy">
-                    <div className="yume-home-feed__story-title-row">
-                      <h3>The Little Star</h3>
-                      <div className="yume-home-feed__tags">
-                        <span className="yume-home-feed__tag yume-home-feed__tag--purple">{UI.homeFeedTagBilingual}</span>
-                        <span className="yume-home-feed__tag yume-home-feed__tag--green">{UI.homeFeedTagEasy}</span>
-                      </div>
-                    </div>
-                    <p>
-                      A tiny star wanted to shine a little brighter each night — and learned that small steps still
-                      light the sky.
-                    </p>
-                    <p>Một ngôi sao bé muốn sáng hơn mỗi đêm — và học rằng bước nhỏ vẫn thắp sáng bầu trời.</p>
-                    <button type="button" className="yume-home-feed__read" onClick={startStudy}>
-                      <span aria-hidden>📖</span> {UI.homeFeedReadNow}
-                    </button>
-                  </div>
-                  <div className="yume-home-feed__art yume-home-feed__art--story-side" aria-hidden />
-                </div>
-                <div className="yume-home-feed__story-foot">
-                  <button type="button" className="yume-home-feed__more" onClick={() => runQuickAction("story")}>
-                    {UI.homeFeedMoreStories} →
-                  </button>
-                </div>
-              </article>
-            </div>
-          ) : null}
+          {panel === "story" ? <HomeStoryLibrary onOpenReader={onOpenReader} /> : null}
         </section>
       </main>
 
