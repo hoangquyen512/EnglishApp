@@ -1,25 +1,37 @@
-import { useCallback, useEffect, useState, type ReactNode, type UIEvent } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+  type UIEvent,
+} from "react";
 import { APP_NAME, UI } from "../../constants/ui";
 import type { SessionDto } from "../../features/auth";
 import {
-  READER_PREF_KEYS,
+  READER_FONT_SIZES,
+  addStoryBookmark,
   adjacentChapterId,
   ensureStoriesSeeded,
   getChapterContent,
+  getStoryProgress,
   getStoryDetail,
+  isChapterNearComplete,
   listChapters,
   listFeaturedVocabulary,
-  normalizeLanguageMode,
+  persistReaderPreference,
+  readReaderPreferences,
+  removeStoryBookmark,
+  saveStoryProgress,
   type ChapterContent,
   type FeaturedVocabulary,
+  type ReaderFontSize,
   type ReaderLanguageMode,
+  type ReaderTheme,
   type StoryChapter,
   type StoryDetail,
 } from "../../features/stories";
 import { UserAvatar } from "../account/user-avatar";
-
-type ReaderFontSize = "sm" | "md" | "lg" | "xl";
-type ReaderTheme = "galaxy" | "dark";
 
 interface StoryReaderScreenProps {
   storyId: number;
@@ -39,12 +51,20 @@ interface ReaderData {
   featured: FeaturedVocabulary[];
 }
 
+interface ProgressSnapshot {
+  storyId: number;
+  chapterId: number;
+  contentUnitId: number | null;
+  progressPercentage: number;
+  completedAt: string | null;
+}
+
 export interface FeaturedTextPart {
   text: string;
   featured: boolean;
 }
 
-const FONT_SIZES: ReaderFontSize[] = ["sm", "md", "lg", "xl"];
+const PROGRESS_SAVE_DELAY_MS = 5_000;
 
 function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -68,23 +88,6 @@ export function splitFeaturedText(text: string, lemmas: string[]): FeaturedTextP
   }
   if (cursor < text.length) parts.push({ text: text.slice(cursor), featured: false });
   return parts;
-}
-
-function readPreference<T extends string>(key: string, allowed: readonly T[], fallback: T): T {
-  try {
-    const value = window.localStorage.getItem(key) as T | null;
-    return value && allowed.includes(value) ? value : fallback;
-  } catch {
-    return fallback;
-  }
-}
-
-function savePreference(key: string, value: string): void {
-  try {
-    window.localStorage.setItem(key, value);
-  } catch {
-    // Reader preferences remain available for the current session.
-  }
 }
 
 function HighlightedText({ text, lemmas }: { text: string; lemmas: string[] }) {
@@ -112,35 +115,77 @@ export function StoryReaderScreen({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [languageMode, setLanguageMode] = useState<ReaderLanguageMode>(() =>
-    normalizeLanguageMode(
-      typeof window === "undefined"
-        ? null
-        : window.localStorage.getItem(READER_PREF_KEYS.languageMode),
-    ),
+  const [languageMode, setLanguageMode] = useState<ReaderLanguageMode>(
+    () =>
+      readReaderPreferences(
+        typeof window === "undefined" ? null : window.localStorage,
+      ).languageMode,
   );
-  const [fontSize, setFontSize] = useState<ReaderFontSize>(() =>
-    readPreference(READER_PREF_KEYS.fontSize, FONT_SIZES, "md"),
+  const [fontSize, setFontSize] = useState<ReaderFontSize>(
+    () =>
+      readReaderPreferences(
+        typeof window === "undefined" ? null : window.localStorage,
+      ).fontSize,
   );
-  const [theme, setTheme] = useState<ReaderTheme>(() =>
-    readPreference(READER_PREF_KEYS.theme, ["galaxy", "dark"] as const, "galaxy"),
+  const [theme, setTheme] = useState<ReaderTheme>(
+    () =>
+      readReaderPreferences(
+        typeof window === "undefined" ? null : window.localStorage,
+      ).theme,
   );
+  const [bookmarked, setBookmarked] = useState(false);
+  const [bookmarkPending, setBookmarkPending] = useState(false);
+  const progressSnapshotRef = useRef<ProgressSnapshot | null>(null);
+  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const persistProgressSnapshot = useCallback((snapshot: ProgressSnapshot | null) => {
+    if (!snapshot) return Promise.resolve();
+    return saveStoryProgress({
+      storyId: snapshot.storyId,
+      chapterId: snapshot.chapterId,
+      contentUnitId: snapshot.contentUnitId,
+      progressPercentage: snapshot.progressPercentage,
+      lastReadAt: new Date().toISOString(),
+      completedAt: snapshot.completedAt,
+    });
+  }, []);
+
+  const flushProgress = useCallback(() => {
+    if (saveTimerRef.current !== null) {
+      clearTimeout(saveTimerRef.current);
+      saveTimerRef.current = null;
+    }
+    void persistProgressSnapshot(progressSnapshotRef.current);
+  }, [persistProgressSnapshot]);
 
   const load = useCallback(async () => {
     setLoading(true);
     setError(false);
     try {
       await ensureStoriesSeeded();
-      const [story, chapters, content, featured] = await Promise.all([
+      const [story, chapters, content, featured, savedProgress] = await Promise.all([
         getStoryDetail(storyId),
         listChapters(storyId),
         getChapterContent(chapterId),
         listFeaturedVocabulary(chapterId),
+        getStoryProgress(storyId),
       ]);
       const chapter = chapters.find((item) => item.id === chapterId);
       if (!story || !chapter) throw new Error("Story chapter is unavailable");
+      const chapterProgress =
+        savedProgress?.chapterId === chapterId ? savedProgress.progressPercentage : 0;
       setData({ story, chapter, chapters, content, featured });
-      setProgress(0);
+      setProgress(chapterProgress);
+      setBookmarked(false);
+      progressSnapshotRef.current = {
+        storyId,
+        chapterId,
+        contentUnitId:
+          savedProgress?.chapterId === chapterId ? savedProgress.contentUnitId : null,
+        progressPercentage: chapterProgress,
+        completedAt:
+          savedProgress?.chapterId === chapterId ? savedProgress.completedAt : null,
+      };
     } catch {
       setData(null);
       setError(true);
@@ -153,27 +198,107 @@ export function StoryReaderScreen({
     void load();
   }, [load]);
 
+  useEffect(() => {
+    const saveWhenHidden = () => {
+      if (document.visibilityState === "hidden") flushProgress();
+    };
+    document.addEventListener("visibilitychange", saveWhenHidden);
+    return () => {
+      document.removeEventListener("visibilitychange", saveWhenHidden);
+      flushProgress();
+    };
+  }, [chapterId, flushProgress, storyId]);
+
   const setMode = (mode: ReaderLanguageMode) => {
     setLanguageMode(mode);
-    savePreference(READER_PREF_KEYS.languageMode, mode);
+    persistReaderPreference(
+      typeof window === "undefined" ? null : window.localStorage,
+      "languageMode",
+      mode,
+    );
   };
 
   const cycleFontSize = () => {
-    const next = FONT_SIZES[(FONT_SIZES.indexOf(fontSize) + 1) % FONT_SIZES.length]!;
+    const next =
+      READER_FONT_SIZES[
+        (READER_FONT_SIZES.indexOf(fontSize) + 1) % READER_FONT_SIZES.length
+      ]!;
     setFontSize(next);
-    savePreference(READER_PREF_KEYS.fontSize, next);
+    persistReaderPreference(
+      typeof window === "undefined" ? null : window.localStorage,
+      "fontSize",
+      next,
+    );
   };
 
   const toggleTheme = () => {
     const next = theme === "galaxy" ? "dark" : "galaxy";
     setTheme(next);
-    savePreference(READER_PREF_KEYS.theme, next);
+    persistReaderPreference(
+      typeof window === "undefined" ? null : window.localStorage,
+      "theme",
+      next,
+    );
   };
 
   const updateProgress = (event: UIEvent<HTMLElement>) => {
     const element = event.currentTarget;
     const available = element.scrollHeight - element.clientHeight;
-    setProgress(available <= 0 ? 100 : Math.min(100, Math.round((element.scrollTop / available) * 100)));
+    const nextProgress =
+      available <= 0
+        ? 100
+        : Math.min(100, Math.round((element.scrollTop / available) * 100));
+    let contentUnitId: number | null = null;
+    const readingLine = element.scrollTop + element.clientHeight * 0.25;
+    for (const unit of element.querySelectorAll<HTMLElement>("[data-content-unit-id]")) {
+      if (unit.offsetTop > readingLine) break;
+      contentUnitId = Number(unit.dataset.contentUnitId);
+    }
+    setProgress(nextProgress);
+    progressSnapshotRef.current = {
+      storyId,
+      chapterId,
+      contentUnitId,
+      progressPercentage: nextProgress,
+      completedAt: progressSnapshotRef.current?.completedAt ?? null,
+    };
+    if (saveTimerRef.current !== null) clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = setTimeout(() => {
+      saveTimerRef.current = null;
+      void persistProgressSnapshot(progressSnapshotRef.current);
+    }, PROGRESS_SAVE_DELAY_MS);
+  };
+
+  const toggleBookmark = async () => {
+    if (bookmarkPending) return;
+    setBookmarkPending(true);
+    try {
+      const input = { storyId, chapterId };
+      if (bookmarked) await removeStoryBookmark(input);
+      else await addStoryBookmark(input);
+      setBookmarked((current) => !current);
+    } catch {
+      // Keep the current bookmark state when persistence is unavailable.
+    } finally {
+      setBookmarkPending(false);
+    }
+  };
+
+  const openAdjacentChapter = (targetChapterId: number, completeWhenNear: boolean) => {
+    if (
+      completeWhenNear &&
+      progressSnapshotRef.current &&
+      isChapterNearComplete(progressSnapshotRef.current.progressPercentage)
+    ) {
+      progressSnapshotRef.current = {
+        ...progressSnapshotRef.current,
+        progressPercentage: 100,
+        completedAt: new Date().toISOString(),
+      };
+      setProgress(100);
+    }
+    flushProgress();
+    onOpenChapter(targetChapterId);
   };
 
   if (loading) {
@@ -289,8 +414,18 @@ export function StoryReaderScreen({
           <button type="button" className="yume-story-reader__toolbar-btn" disabled>
             {UI.storyReaderListen}
           </button>
-          <button type="button" className="yume-story-reader__toolbar-btn" disabled>
-            {UI.storyReaderSave}
+          <button
+            type="button"
+            className={
+              bookmarked
+                ? "yume-story-reader__toolbar-btn is-active"
+                : "yume-story-reader__toolbar-btn"
+            }
+            aria-pressed={bookmarked}
+            disabled={bookmarkPending}
+            onClick={() => void toggleBookmark()}
+          >
+            {UI.storyReaderBookmark}
           </button>
           <button type="button" className="yume-story-reader__toolbar-btn" onClick={cycleFontSize}>
             {UI.storyReaderFontSize}: {fontLabel}
@@ -366,7 +501,9 @@ export function StoryReaderScreen({
           type="button"
           className="yume-story-reader__nav-btn"
           disabled={previousId === null}
-          onClick={() => previousId !== null && onOpenChapter(previousId)}
+          onClick={() =>
+            previousId !== null && openAdjacentChapter(previousId, false)
+          }
         >
           ← {UI.storyReaderPrevChapter}
         </button>
@@ -377,7 +514,7 @@ export function StoryReaderScreen({
           type="button"
           className="yume-story-reader__nav-btn"
           disabled={nextId === null}
-          onClick={() => nextId !== null && onOpenChapter(nextId)}
+          onClick={() => nextId !== null && openAdjacentChapter(nextId, true)}
         >
           {UI.storyReaderNextChapter} →
         </button>

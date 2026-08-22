@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { normalizeLanguageMode, READER_PREF_KEYS } from "./language-mode";
+import { normalizeLanguageMode } from "./language-mode";
+import { READER_PREF_KEYS } from "./reader-prefs";
 
 describe("normalizeLanguageMode", () => {
   it("defaults to bilingual for null", () => {
