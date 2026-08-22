@@ -9,3 +9,4 @@ export * from "./learning-program";
 export * from "./lexicon-import";
 export { setCurrentUserId, requireUserId, peekCurrentUserId } from "./current-user";
 export * from "./companion";
+export * from "./stories";
