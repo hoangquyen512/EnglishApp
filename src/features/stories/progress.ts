@@ -17,3 +17,12 @@ export function storyProgressLabel(completedChapters: number, totalChapters: num
 export function isChapterNearComplete(progressPercentage: number): boolean {
   return progressPercentage >= 90;
 }
+
+export function chapterCompletedAt(
+  progressPercentage: number,
+  previousCompletedAt: string | null,
+  nowIso: string,
+): string | null {
+  if (previousCompletedAt) return previousCompletedAt;
+  return isChapterNearComplete(progressPercentage) ? nowIso : null;
+}

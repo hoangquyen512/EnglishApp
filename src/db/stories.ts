@@ -881,6 +881,30 @@ export async function insertStoryBookmark(input: StoryBookmarkInput): Promise<vo
   }
 }
 
+export async function hasStoryBookmark(
+  storyId: number,
+  chapterId: number,
+  sentenceId: number | null = null,
+): Promise<boolean> {
+  const userId = requireUserId();
+  if (!isTauri()) {
+    return readBrowserStore().bookmarks.some(
+      (item) =>
+        item.userId === userId &&
+        item.storyId === storyId &&
+        item.chapterId === chapterId &&
+        item.sentenceId === sentenceId,
+    );
+  }
+  const row = await selectOne<{ id: number }>(
+    `SELECT id FROM user_story_bookmarks
+     WHERE user_id = $1 AND story_id = $2 AND chapter_id = $3
+       AND (($4 IS NULL AND sentence_id IS NULL) OR sentence_id = $4)`,
+    [userId, storyId, chapterId, sentenceId],
+  );
+  return row !== null;
+}
+
 export async function deleteStoryBookmark(input: StoryBookmarkInput): Promise<void> {
   const userId = requireUserId();
   if (!isTauri()) {

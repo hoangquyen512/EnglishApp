@@ -12,10 +12,12 @@ import {
   READER_FONT_SIZES,
   addStoryBookmark,
   adjacentChapterId,
+  chapterCompletedAt,
   ensureStoriesSeeded,
   getChapterContent,
   getStoryProgress,
   getStoryDetail,
+  hasStoryBookmark,
   isChapterNearComplete,
   listChapters,
   listFeaturedVocabulary,
@@ -163,20 +165,22 @@ export function StoryReaderScreen({
     setError(false);
     try {
       await ensureStoriesSeeded();
-      const [story, chapters, content, featured, savedProgress] = await Promise.all([
-        getStoryDetail(storyId),
-        listChapters(storyId),
-        getChapterContent(chapterId),
-        listFeaturedVocabulary(chapterId),
-        getStoryProgress(storyId),
-      ]);
+      const [story, chapters, content, featured, savedProgress, savedBookmark] =
+        await Promise.all([
+          getStoryDetail(storyId),
+          listChapters(storyId),
+          getChapterContent(chapterId),
+          listFeaturedVocabulary(chapterId),
+          getStoryProgress(storyId),
+          hasStoryBookmark(storyId, chapterId),
+        ]);
       const chapter = chapters.find((item) => item.id === chapterId);
       if (!story || !chapter) throw new Error("Story chapter is unavailable");
       const chapterProgress =
         savedProgress?.chapterId === chapterId ? savedProgress.progressPercentage : 0;
       setData({ story, chapter, chapters, content, featured });
       setProgress(chapterProgress);
-      setBookmarked(false);
+      setBookmarked(savedBookmark);
       progressSnapshotRef.current = {
         storyId,
         chapterId,
@@ -260,7 +264,11 @@ export function StoryReaderScreen({
       chapterId,
       contentUnitId,
       progressPercentage: nextProgress,
-      completedAt: progressSnapshotRef.current?.completedAt ?? null,
+      completedAt: chapterCompletedAt(
+        nextProgress,
+        progressSnapshotRef.current?.completedAt ?? null,
+        new Date().toISOString(),
+      ),
     };
     if (saveTimerRef.current !== null) clearTimeout(saveTimerRef.current);
     saveTimerRef.current = setTimeout(() => {

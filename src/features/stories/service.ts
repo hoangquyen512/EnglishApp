@@ -3,6 +3,7 @@ import {
   deleteStoryBookmark,
   getProgress,
   getPublishedStory,
+  hasStoryBookmark as getBookmarkState,
   insertStoryBookmark,
   insertChapter,
   insertContentUnit,
@@ -337,6 +338,10 @@ export function toggleStoryFavorite(storyId: number): Promise<boolean> {
 
 export function addStoryBookmark(input: StoryBookmarkInput): Promise<void> {
   return insertStoryBookmark(input);
+}
+
+export function hasStoryBookmark(storyId: number, chapterId: number): Promise<boolean> {
+  return getBookmarkState(storyId, chapterId);
 }
 
 export function removeStoryBookmark(input: StoryBookmarkInput): Promise<void> {
