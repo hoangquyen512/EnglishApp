@@ -1775,13 +1775,36 @@ input.no-focus-ring:focus-visible {
   color: #d8d0e9;
 }
 
-.yume-story-reader__featured {
+.yume-story-reader__featured,
+.yume-story-reader__word--featured {
   border-radius: 5px;
   padding: 1px 3px;
   background: rgba(245, 181, 107, 0.2);
   color: #fde68a;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+}
+
+.yume-story-reader__word {
+  display: inline;
+  min-width: 0;
+  border: 0;
+  border-radius: 4px;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.yume-story-reader__word:hover {
+  background: rgba(196, 181, 253, 0.16);
+  color: #f5f3ff;
+}
+
+.yume-story-reader__word--featured {
+  color: #fde68a;
 }
 
 .yume-story-reader__vocab-panel {
@@ -1817,6 +1840,20 @@ input.no-focus-ring:focus-visible {
   background: rgba(5, 7, 37, 0.24);
 }
 
+.yume-story-reader__vocab-item {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.yume-story-reader__vocab-item:hover strong {
+  color: #fff3b5;
+}
+
 .yume-story-reader__vocab-list strong {
   color: #fde68a;
   font-family: Fraunces, Georgia, "Times New Roman", serif;
@@ -1834,6 +1871,133 @@ input.no-focus-ring:focus-visible {
   color: var(--color-fg-sub);
   font-size: 11px;
   line-height: 1.4;
+}
+
+.yume-word-popover {
+  position: fixed;
+  z-index: 20;
+  width: min(280px, calc(100vw - 24px));
+  box-sizing: border-box;
+  padding: 16px;
+  border: 1px solid rgba(196, 181, 253, 0.42);
+  border-radius: 16px;
+  background:
+    linear-gradient(145deg, rgba(57, 42, 110, 0.96), rgba(9, 10, 39, 0.98)),
+    var(--color-surface);
+  box-shadow: 0 18px 50px rgba(3, 5, 26, 0.62);
+  backdrop-filter: blur(20px);
+}
+
+.yume-word-popover__close {
+  position: absolute;
+  inset-block-start: 8px;
+  inset-inline-end: 8px;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-fg-muted);
+  cursor: pointer;
+}
+
+.yume-word-popover__close:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-fg);
+}
+
+.yume-word-popover__status {
+  margin: 8px 32px 4px 0;
+  color: var(--color-fg-sub);
+  font-size: 11px;
+}
+
+.yume-word-popover__status--error {
+  color: #fda4af;
+}
+
+.yume-word-popover__title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding-inline-end: 28px;
+}
+
+.yume-word-popover__title strong {
+  color: #fde68a;
+  font-family: Fraunces, Georgia, "Times New Roman", serif;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+
+.yume-word-popover__title span {
+  color: var(--color-fg-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+}
+
+.yume-word-popover__pos {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 8px;
+  border: 1px solid rgba(196, 181, 253, 0.28);
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.18);
+  color: #ede9fe;
+  font-size: 10px;
+}
+
+.yume-word-popover__meaning {
+  margin: 10px 0 12px;
+  color: var(--color-fg);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.yume-word-popover__save {
+  width: 100%;
+}
+
+.yume-story-vocab-modal__backdrop {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(3, 5, 26, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.yume-story-vocab-modal {
+  position: relative;
+  width: min(520px, 100%);
+  max-height: min(620px, calc(100dvh - 40px));
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 18px;
+  border: 1px solid rgba(196, 181, 253, 0.38);
+  border-radius: 20px;
+  background: linear-gradient(155deg, rgba(48, 36, 94, 0.98), rgba(9, 10, 39, 0.99));
+  box-shadow: 0 24px 70px rgba(3, 5, 26, 0.7);
+}
+
+.yume-story-vocab-modal header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-inline-end: 34px;
+}
+
+.yume-story-vocab-modal h2 {
+  margin: 0;
+  color: var(--color-fg);
+  font-family: Fraunces, Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 600;
 }
 
 .yume-story-reader__nav {

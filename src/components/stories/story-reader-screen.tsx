@@ -8,6 +8,7 @@ import {
 } from "react";
 import { APP_NAME, UI } from "../../constants/ui";
 import type { SessionDto } from "../../features/auth";
+import type { DictionaryCacheEntry } from "../../features/quick-lookup";
 import {
   READER_FONT_SIZES,
   addStoryBookmark,
@@ -34,6 +35,10 @@ import {
   type StoryDetail,
 } from "../../features/stories";
 import { UserAvatar } from "../account/user-avatar";
+import {
+  WordPopover,
+  type StoryWordSelection,
+} from "./word-popover";
 
 interface StoryReaderScreenProps {
   storyId: number;
@@ -66,6 +71,11 @@ export interface FeaturedTextPart {
   featured: boolean;
 }
 
+export interface EnglishWordPart {
+  text: string;
+  word: string | null;
+}
+
 const PROGRESS_SAVE_DELAY_MS = 5_000;
 
 function escapeRegExp(value: string): string {
@@ -92,16 +102,18 @@ export function splitFeaturedText(text: string, lemmas: string[]): FeaturedTextP
   return parts;
 }
 
-function HighlightedText({ text, lemmas }: { text: string; lemmas: string[] }) {
-  return splitFeaturedText(text, lemmas).map((part, index) =>
-    part.featured ? (
-      <mark className="yume-story-reader__featured" key={`${part.text}-${index}`}>
-        {part.text}
-      </mark>
-    ) : (
-      <span key={`${part.text}-${index}`}>{part.text}</span>
-    ),
-  );
+export function splitEnglishWords(text: string): EnglishWordPart[] {
+  const parts: EnglishWordPart[] = [];
+  const pattern = /[A-Za-z]+(?:['’][A-Za-z]+)*/g;
+  let cursor = 0;
+  for (const match of text.matchAll(pattern)) {
+    const index = match.index ?? 0;
+    if (index > cursor) parts.push({ text: text.slice(cursor, index), word: null });
+    parts.push({ text: match[0], word: match[0] });
+    cursor = index + match[0].length;
+  }
+  if (cursor < text.length) parts.push({ text: text.slice(cursor), word: null });
+  return parts;
 }
 
 export function StoryReaderScreen({
@@ -137,6 +149,9 @@ export function StoryReaderScreen({
   );
   const [bookmarked, setBookmarked] = useState(false);
   const [bookmarkPending, setBookmarkPending] = useState(false);
+  const [selectedWord, setSelectedWord] = useState<StoryWordSelection | null>(null);
+  const [savedWords, setSavedWords] = useState<DictionaryCacheEntry[]>([]);
+  const [showVocabularyModal, setShowVocabularyModal] = useState(false);
   const progressSnapshotRef = useRef<ProgressSnapshot | null>(null);
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -212,6 +227,15 @@ export function StoryReaderScreen({
       flushProgress();
     };
   }, [chapterId, flushProgress, storyId]);
+
+  useEffect(() => {
+    if (!showVocabularyModal) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setShowVocabularyModal(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [showVocabularyModal]);
 
   const setMode = (mode: ReaderLanguageMode) => {
     setLanguageMode(mode);
@@ -345,6 +369,58 @@ export function StoryReaderScreen({
     xl: UI.storyReaderFontXl,
   }[fontSize];
 
+  const openWord = (
+    word: string,
+    sentence: ChapterContent["units"][number]["sentences"][number],
+    target: HTMLElement,
+  ) => {
+    const rect = target.getBoundingClientRect();
+    const maxLeft = Math.max(12, window.innerWidth - 304);
+    setSelectedWord({
+      word,
+      storyId,
+      chapterId,
+      sentenceId: sentence.id,
+      sentenceEn: sentence.en,
+      sentenceVi: sentence.vi,
+      anchorX: Math.min(Math.max(12, rect.left), maxLeft),
+      anchorY: Math.min(rect.bottom + 8, Math.max(12, window.innerHeight - 280)),
+    });
+  };
+
+  const openFeaturedWord = (item: FeaturedVocabulary, target: HTMLElement) => {
+    const sentences = content.units.flatMap((unit) => unit.sentences);
+    const matchingSentence =
+      sentences.find((sentence) =>
+        sentence.en.toLocaleLowerCase().includes(item.lemma.toLocaleLowerCase()),
+      ) ?? sentences[0];
+    if (matchingSentence) openWord(item.word, matchingSentence, target);
+  };
+
+  const renderEnglishSentence = (
+    sentence: ChapterContent["units"][number]["sentences"][number],
+  ): ReactNode =>
+    splitEnglishWords(sentence.en).map((part, index) => {
+      if (!part.word) return <span key={`${sentence.id}-text-${index}`}>{part.text}</span>;
+      const isFeatured = featuredLemmas.some(
+        (lemma) => lemma.toLocaleLowerCase() === part.word!.toLocaleLowerCase(),
+      );
+      return (
+        <button
+          type="button"
+          className={
+            isFeatured
+              ? "yume-story-reader__word yume-story-reader__word--featured"
+              : "yume-story-reader__word"
+          }
+          key={`${sentence.id}-word-${index}`}
+          onClick={(event) => openWord(part.word!, sentence, event.currentTarget)}
+        >
+          {part.text}
+        </button>
+      );
+    });
+
   const renderSentences = (): ReactNode =>
     content.units.map((unit) => (
       <article
@@ -356,7 +432,7 @@ export function StoryReaderScreen({
           <p className="yume-story-reader__col-en">
             {unit.sentences.map((sentence, index) => (
               <span key={sentence.id}>
-                <HighlightedText text={sentence.en} lemmas={featuredLemmas} />
+                {renderEnglishSentence(sentence)}
                 {index < unit.sentences.length - 1 ? " " : null}
               </span>
             ))}
@@ -492,13 +568,23 @@ export function StoryReaderScreen({
           <ul className="yume-story-reader__vocab-list">
             {featured.map((item) => (
               <li key={item.id}>
-                <strong>{item.word}</strong>
-                {item.ipa ? <span>{item.ipa}</span> : null}
-                <p>{item.meaningVi}</p>
+                <button
+                  type="button"
+                  className="yume-story-reader__vocab-item"
+                  onClick={(event) => openFeaturedWord(item, event.currentTarget)}
+                >
+                  <strong>{item.word}</strong>
+                  {item.ipa ? <span>{item.ipa}</span> : null}
+                  <p>{item.meaningVi}</p>
+                </button>
               </li>
             ))}
           </ul>
-          <button type="button" className="yume-story-reader__toolbar-btn" disabled>
+          <button
+            type="button"
+            className="yume-story-reader__toolbar-btn"
+            onClick={() => setShowVocabularyModal(true)}
+          >
             {UI.storyReaderViewAllVocab}
           </button>
         </aside>
@@ -527,6 +613,64 @@ export function StoryReaderScreen({
           {UI.storyReaderNextChapter} →
         </button>
       </nav>
+
+      {selectedWord ? (
+        <WordPopover
+          selection={selectedWord}
+          onClose={() => setSelectedWord(null)}
+          onSaved={(entry) =>
+            setSavedWords((current) => [
+              entry,
+              ...current.filter((item) => item.word !== entry.word),
+            ])
+          }
+        />
+      ) : null}
+
+      {showVocabularyModal ? (
+        <div
+          className="yume-story-vocab-modal__backdrop"
+          role="presentation"
+          onMouseDown={() => setShowVocabularyModal(false)}
+        >
+          <section
+            className="yume-story-vocab-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="story-vocab-modal-title"
+            onMouseDown={(event) => event.stopPropagation()}
+          >
+            <header>
+              <h2 id="story-vocab-modal-title">{UI.storyReaderFeaturedVocab}</h2>
+              <button
+                type="button"
+                className="yume-word-popover__close"
+                aria-label={UI.close}
+                onClick={() => setShowVocabularyModal(false)}
+              >
+                ×
+              </button>
+            </header>
+            <ul className="yume-story-reader__vocab-list">
+              {featured.map((item) => (
+                <li key={`featured-${item.id}`}>
+                  <strong>{item.word}</strong>
+                  {item.ipa ? <span>{item.ipa}</span> : null}
+                  {item.partOfSpeech ? <span>· {item.partOfSpeech}</span> : null}
+                  <p>{item.meaningVi}</p>
+                </li>
+              ))}
+              {savedWords.map((item) => (
+                <li key={`saved-${item.word}`}>
+                  <strong>{item.word}</strong>
+                  {item.phoneticIpa ? <span>{item.phoneticIpa}</span> : null}
+                  <p>{item.meaningVi}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      ) : null}
     </main>
   );
 }
