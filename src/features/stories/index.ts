@@ -8,3 +8,4 @@ export * from "./reader-prefs";
 export * from "./seed";
 export * from "./content-map";
 export * from "./service";
+export * from "./tts";

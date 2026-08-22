@@ -14,6 +14,7 @@ import {
   addStoryBookmark,
   adjacentChapterId,
   chapterCompletedAt,
+  createWebTts,
   ensureStoriesSeeded,
   getChapterContent,
   getStoryProgress,
@@ -152,6 +153,7 @@ export function StoryReaderScreen({
   const [selectedWord, setSelectedWord] = useState<StoryWordSelection | null>(null);
   const [savedWords, setSavedWords] = useState<DictionaryCacheEntry[]>([]);
   const [showVocabularyModal, setShowVocabularyModal] = useState(false);
+  const [tts] = useState(() => createWebTts());
   const progressSnapshotRef = useRef<ProgressSnapshot | null>(null);
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -216,6 +218,8 @@ export function StoryReaderScreen({
   useEffect(() => {
     void load();
   }, [load]);
+
+  useEffect(() => () => tts.stop(), [chapterId, tts]);
 
   useEffect(() => {
     const saveWhenHidden = () => {
@@ -433,6 +437,15 @@ export function StoryReaderScreen({
             {unit.sentences.map((sentence, index) => (
               <span key={sentence.id}>
                 {renderEnglishSentence(sentence)}
+                <button
+                  type="button"
+                  className="yume-story-reader__word"
+                  aria-label={`Nghe câu: ${sentence.en}`}
+                  disabled={!tts.supported}
+                  onClick={() => tts.speakSentence(sentence.en)}
+                >
+                  🔊
+                </button>
                 {index < unit.sentences.length - 1 ? " " : null}
               </span>
             ))}
@@ -495,7 +508,18 @@ export function StoryReaderScreen({
           </p>
         </div>
         <div className="yume-story-reader__toolbar">
-          <button type="button" className="yume-story-reader__toolbar-btn" disabled>
+          <button
+            type="button"
+            className="yume-story-reader__toolbar-btn"
+            disabled={!tts.supported}
+            onClick={() =>
+              tts.speakChapter(
+                content.units.flatMap((unit) =>
+                  unit.sentences.map((sentence) => sentence.en),
+                ),
+              )
+            }
+          >
             {UI.storyReaderListen}
           </button>
           <button
@@ -576,6 +600,15 @@ export function StoryReaderScreen({
                   <strong>{item.word}</strong>
                   {item.ipa ? <span>{item.ipa}</span> : null}
                   <p>{item.meaningVi}</p>
+                </button>
+                <button
+                  type="button"
+                  className="yume-story-reader__toolbar-btn"
+                  aria-label={`Nghe từ ${item.word}`}
+                  disabled={!tts.supported}
+                  onClick={() => tts.speakText(item.word)}
+                >
+                  🔊
                 </button>
               </li>
             ))}
@@ -658,6 +691,15 @@ export function StoryReaderScreen({
                   {item.ipa ? <span>{item.ipa}</span> : null}
                   {item.partOfSpeech ? <span>· {item.partOfSpeech}</span> : null}
                   <p>{item.meaningVi}</p>
+                  <button
+                    type="button"
+                    className="yume-story-reader__toolbar-btn"
+                    aria-label={`Nghe từ ${item.word}`}
+                    disabled={!tts.supported}
+                    onClick={() => tts.speakText(item.word)}
+                  >
+                    🔊
+                  </button>
                 </li>
               ))}
               {savedWords.map((item) => (
@@ -665,6 +707,15 @@ export function StoryReaderScreen({
                   <strong>{item.word}</strong>
                   {item.phoneticIpa ? <span>{item.phoneticIpa}</span> : null}
                   <p>{item.meaningVi}</p>
+                  <button
+                    type="button"
+                    className="yume-story-reader__toolbar-btn"
+                    aria-label={`Nghe từ ${item.word}`}
+                    disabled={!tts.supported}
+                    onClick={() => tts.speakText(item.word)}
+                  >
+                    🔊
+                  </button>
                 </li>
               ))}
             </ul>
