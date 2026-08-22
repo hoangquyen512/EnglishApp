@@ -22,6 +22,7 @@ function row(overrides: Partial<StoryListRow> & Pick<StoryListRow, "id">): Story
     source_type: "INTERNAL_DEMO",
     is_favorite: 0,
     completed_chapters: 0,
+    has_progress: 0,
     ...overrides,
   };
 }
@@ -36,5 +37,13 @@ describe("mapStorySummaries", () => {
     ];
 
     expect(mapStorySummaries(rows).map((story) => story.id)).toEqual([1, 4]);
+  });
+
+  it("surfaces an existing progress row before chapter one is completed", () => {
+    const [summary] = mapStorySummaries([
+      row({ id: 1, has_progress: 1, completed_chapters: 0 }),
+    ]);
+
+    expect(summary).toMatchObject({ hasProgress: true, completedChapters: 0 });
   });
 });

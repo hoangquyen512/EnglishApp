@@ -24,8 +24,10 @@ import {
   listChapters,
   listFeaturedVocabulary,
   persistReaderPreference,
+  progressPercentageFromScroll,
   readReaderPreferences,
   removeStoryBookmark,
+  resumeScrollTop,
   saveStoryProgress,
   type ChapterContent,
   type FeaturedVocabulary,
@@ -78,6 +80,16 @@ export interface EnglishWordPart {
 }
 
 const PROGRESS_SAVE_DELAY_MS = 5_000;
+
+function formatCopy(
+  template: string,
+  values: Record<string, string | number>,
+): string {
+  return Object.entries(values).reduce(
+    (copy, [key, value]) => copy.replace(`{${key}}`, String(value)),
+    template,
+  );
+}
 
 function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -156,6 +168,8 @@ export function StoryReaderScreen({
   const [tts] = useState(() => createWebTts());
   const progressSnapshotRef = useRef<ProgressSnapshot | null>(null);
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const contentRef = useRef<HTMLElement | null>(null);
+  const progressReadyRef = useRef(false);
 
   const persistProgressSnapshot = useCallback((snapshot: ProgressSnapshot | null) => {
     if (!snapshot) return Promise.resolve();
@@ -178,6 +192,7 @@ export function StoryReaderScreen({
   }, [persistProgressSnapshot]);
 
   const load = useCallback(async () => {
+    progressReadyRef.current = false;
     setLoading(true);
     setError(false);
     try {
@@ -273,17 +288,21 @@ export function StoryReaderScreen({
     );
   };
 
-  const updateProgress = (event: UIEvent<HTMLElement>) => {
-    const element = event.currentTarget;
-    const available = element.scrollHeight - element.clientHeight;
-    const nextProgress =
-      available <= 0
-        ? 100
-        : Math.min(100, Math.round((element.scrollTop / available) * 100));
+  const updateProgressForElement = useCallback((element: HTMLElement) => {
+    if (!progressReadyRef.current) return;
+    const nextProgress = progressPercentageFromScroll(
+      element.scrollTop,
+      element.scrollHeight,
+      element.clientHeight,
+      progressSnapshotRef.current?.progressPercentage ?? 0,
+    );
     let contentUnitId: number | null = null;
     const readingLine = element.scrollTop + element.clientHeight * 0.25;
+    const containerTop = element.getBoundingClientRect().top;
     for (const unit of element.querySelectorAll<HTMLElement>("[data-content-unit-id]")) {
-      if (unit.offsetTop > readingLine) break;
+      const unitTop =
+        unit.getBoundingClientRect().top - containerTop + element.scrollTop;
+      if (unitTop > readingLine) break;
       contentUnitId = Number(unit.dataset.contentUnitId);
     }
     setProgress(nextProgress);
@@ -303,7 +322,46 @@ export function StoryReaderScreen({
       saveTimerRef.current = null;
       void persistProgressSnapshot(progressSnapshotRef.current);
     }, PROGRESS_SAVE_DELAY_MS);
+  }, [chapterId, persistProgressSnapshot, storyId]);
+
+  const updateProgress = (event: UIEvent<HTMLElement>) => {
+    updateProgressForElement(event.currentTarget);
   };
+
+  useEffect(() => {
+    const element = contentRef.current;
+    const snapshot = progressSnapshotRef.current;
+    if (!data || !element || !snapshot || snapshot.chapterId !== chapterId) return;
+
+    const restoreAndMeasure = () => {
+      const savedUnit = snapshot.contentUnitId
+        ? element.querySelector<HTMLElement>(
+            `[data-content-unit-id="${snapshot.contentUnitId}"]`,
+          )
+        : null;
+      if (savedUnit) {
+        const containerTop = element.getBoundingClientRect().top;
+        element.scrollTop =
+          savedUnit.getBoundingClientRect().top - containerTop + element.scrollTop;
+      } else {
+        element.scrollTop = resumeScrollTop(
+          snapshot.progressPercentage,
+          element.scrollHeight,
+          element.clientHeight,
+        );
+      }
+      progressReadyRef.current = true;
+      updateProgressForElement(element);
+    };
+
+    const frame = window.requestAnimationFrame(restoreAndMeasure);
+    const measureOnResize = () => updateProgressForElement(element);
+    window.addEventListener("resize", measureOnResize);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("resize", measureOnResize);
+    };
+  }, [chapterId, data, fontSize, languageMode, updateProgressForElement]);
 
   const toggleBookmark = async () => {
     if (bookmarkPending) return;
@@ -440,7 +498,9 @@ export function StoryReaderScreen({
                 <button
                   type="button"
                   className="yume-story-reader__word"
-                  aria-label={`Nghe câu: ${sentence.en}`}
+                  aria-label={formatCopy(UI.storyReaderListenSentence, {
+                    sentence: sentence.en,
+                  })}
                   disabled={!tts.supported}
                   onClick={() => tts.speakSentence(sentence.en)}
                 >
@@ -504,7 +564,11 @@ export function StoryReaderScreen({
         <div className="yume-story-reader__titles">
           <h1 id="reader-title">{story.titleEn}</h1>
           <p>
-            Chương {chapter.chapterNo}: {chapter.titleVi} · {chapter.titleEn}
+            {formatCopy(UI.storyReaderChapterTitle, {
+              chapter: chapter.chapterNo,
+              titleVi: chapter.titleVi,
+              titleEn: chapter.titleEn,
+            })}
           </p>
         </div>
         <div className="yume-story-reader__toolbar">
@@ -533,7 +597,7 @@ export function StoryReaderScreen({
             disabled={bookmarkPending}
             onClick={() => void toggleBookmark()}
           >
-            {UI.storyReaderBookmark}
+            {UI.storyReaderSave}
           </button>
           <button type="button" className="yume-story-reader__toolbar-btn" onClick={cycleFontSize}>
             {UI.storyReaderFontSize}: {fontLabel}
@@ -542,7 +606,10 @@ export function StoryReaderScreen({
             {UI.storyReaderTheme}:{" "}
             {theme === "galaxy" ? UI.storyReaderThemeGalaxy : UI.storyReaderThemeDark}
           </button>
-          <div className="yume-story-reader__language" aria-label="Ngôn ngữ đọc">
+          <div
+            className="yume-story-reader__language"
+            aria-label={UI.storyReaderLanguageLabel}
+          >
             {(
               [
                 ["bilingual", UI.storyReaderLangBilingual],
@@ -580,6 +647,7 @@ export function StoryReaderScreen({
 
       <div className="yume-story-reader__main">
         <section
+          ref={contentRef}
           className="yume-story-reader__content"
           data-font-size={fontSize}
           onScroll={updateProgress}
@@ -604,7 +672,9 @@ export function StoryReaderScreen({
                 <button
                   type="button"
                   className="yume-story-reader__toolbar-btn"
-                  aria-label={`Nghe từ ${item.word}`}
+                  aria-label={formatCopy(UI.storyReaderListenWord, {
+                    word: item.word,
+                  })}
                   disabled={!tts.supported}
                   onClick={() => tts.speakText(item.word)}
                 >
@@ -694,7 +764,9 @@ export function StoryReaderScreen({
                   <button
                     type="button"
                     className="yume-story-reader__toolbar-btn"
-                    aria-label={`Nghe từ ${item.word}`}
+                    aria-label={formatCopy(UI.storyReaderListenWord, {
+                      word: item.word,
+                    })}
                     disabled={!tts.supported}
                     onClick={() => tts.speakText(item.word)}
                   >
@@ -710,7 +782,9 @@ export function StoryReaderScreen({
                   <button
                     type="button"
                     className="yume-story-reader__toolbar-btn"
-                    aria-label={`Nghe từ ${item.word}`}
+                    aria-label={formatCopy(UI.storyReaderListenWord, {
+                      word: item.word,
+                    })}
                     disabled={!tts.supported}
                     onClick={() => tts.speakText(item.word)}
                   >

@@ -1,9 +1,10 @@
 import { UI } from "../../constants/ui";
-import type { StoryChapter, StorySummary } from "../../features/stories";
+import type { StoryChapter, StoryDetail, StorySummary } from "../../features/stories";
 import { publicUrl } from "../../lib/public-url";
 
 export interface StoryDetailPanelProps {
   story: StorySummary;
+  detail: StoryDetail | null;
   chapters: StoryChapter[];
   selectedChapterId: number | null;
   onSelectChapter: (chapterId: number) => void;
@@ -40,6 +41,7 @@ function IconShare() {
 
 export function StoryDetailPanel({
   story,
+  detail,
   chapters,
   selectedChapterId,
   onSelectChapter,
@@ -138,6 +140,12 @@ export function StoryDetailPanel({
 
       {story.authorName ? (
         <p className="yume-story-library__subtitle">{story.authorName}</p>
+      ) : null}
+      {detail?.attributionRequired && detail.attributionText ? (
+        <section className="yume-story-detail__attribution">
+          <strong>{UI.storyAttribution}</strong>
+          <p>{detail.attributionText}</p>
+        </section>
       ) : null}
     </aside>
   );

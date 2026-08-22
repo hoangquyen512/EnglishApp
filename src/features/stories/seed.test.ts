@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { A_NEW_FRIEND_CH1 } from "../../data/stories/a-new-friend-ch1";
 import { DEMO_STORIES } from "../../data/stories/demo-catalog";
-import { buildDemoSeedPlan } from "./seed";
+import { buildDemoSeedPlan, findMissingDemoStories } from "./seed";
 
 describe("DEMO_STORIES", () => {
   it("lists six library stories", () => {
@@ -73,5 +73,21 @@ describe("buildDemoSeedPlan", () => {
       const first = story.chapters[0]!;
       expect(first.units.length).toBeGreaterThanOrEqual(1);
     }
+  });
+});
+
+describe("findMissingDemoStories", () => {
+  it("returns missing demos even when another published story exists", () => {
+    expect(
+      findMissingDemoStories(["the-lost-star", "external-story"]).map(
+        (story) => story.slug,
+      ),
+    ).toEqual([
+      "a-new-friend",
+      "milo-and-the-moon",
+      "a-day-at-the-park",
+      "the-brave-little-bird",
+      "soras-secret-garden",
+    ]);
   });
 });

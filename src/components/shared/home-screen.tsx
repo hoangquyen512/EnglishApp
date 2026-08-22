@@ -26,14 +26,22 @@ interface HomeScreenProps {
 function welcomeGreeting(displayName: string, now = new Date()): string {
   const hour = now.getHours();
   const part =
-    hour < 12 ? "Chào buổi sáng" : hour < 18 ? "Chào buổi chiều" : "Chào buổi tối";
+    hour < 12
+      ? UI.homeGreetingMorning
+      : hour < 18
+        ? UI.homeGreetingAfternoon
+        : UI.homeGreetingEvening;
   return `${part}, ${displayName}.`;
 }
 
 function skyEyebrow(now = new Date()): string {
   const day = now.getDate();
   const month = now.getMonth() + 1;
-  return `+ ${UI.homeSkyLabel} · ${day} tháng ${month} +`.toUpperCase();
+  return UI.homeSkyDate
+    .replace("{sky}", UI.homeSkyLabel)
+    .replace("{day}", String(day))
+    .replace("{month}", String(month))
+    .toUpperCase();
 }
 
 function padDays(n: number): string {
@@ -202,7 +210,7 @@ export function HomeScreen({
               </strong>
             </div>
 
-            <nav className="yume-home__quick-actions" aria-label="Lối tắt">
+            <nav className="yume-home__quick-actions" aria-label={UI.homeQuickActionsLabel}>
               {quickActions.map((action) => (
                 <button
                   key={action.id}

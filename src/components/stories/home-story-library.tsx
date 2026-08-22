@@ -3,12 +3,14 @@ import { UI } from "../../constants/ui";
 import {
   ensureStoriesSeeded,
   filterAndSortStories,
+  getStoryDetail,
   getStoryProgress,
   listChapters,
   listStorySummaries,
   toggleStoryFavorite,
   type StoryChapter,
   type StoryFilter,
+  type StoryDetail,
   type StorySort,
   type StorySummary,
 } from "../../features/stories";
@@ -63,6 +65,7 @@ function IconHeart({ filled }: { filled: boolean }) {
 export function HomeStoryLibrary({ onOpenReader }: HomeStoryLibraryProps) {
   const [stories, setStories] = useState<StorySummary[]>([]);
   const [chapters, setChapters] = useState<StoryChapter[]>([]);
+  const [storyDetail, setStoryDetail] = useState<StoryDetail | null>(null);
   const [search, setSearch] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [filter, setFilter] = useState<StoryFilter>("all");
@@ -103,19 +106,23 @@ export function HomeStoryLibrary({ onOpenReader }: HomeStoryLibraryProps) {
   useEffect(() => {
     if (!selectedStoryId) {
       setChapters([]);
+      setStoryDetail(null);
       setSelectedChapterId(null);
       return;
     }
     let cancelled = false;
-    void listChapters(selectedStoryId)
-      .then((nextChapters) => {
+    setStoryDetail(null);
+    void Promise.all([listChapters(selectedStoryId), getStoryDetail(selectedStoryId)])
+      .then(([nextChapters, nextDetail]) => {
         if (cancelled) return;
         setChapters(nextChapters);
+        setStoryDetail(nextDetail);
         setSelectedChapterId(nextChapters[0]?.id ?? null);
       })
       .catch(() => {
         if (!cancelled) {
           setChapters([]);
+          setStoryDetail(null);
           setSelectedChapterId(null);
         }
       });
@@ -174,7 +181,7 @@ export function HomeStoryLibrary({ onOpenReader }: HomeStoryLibraryProps) {
   };
 
   const openOrSelect = async (story: StorySummary) => {
-    if (story.completedChapters > 0) {
+    if (story.hasProgress) {
       const progress = await getStoryProgress(story.id);
       if (progress?.chapterId) {
         onOpenReader(story.id, progress.chapterId);
@@ -281,7 +288,7 @@ export function HomeStoryLibrary({ onOpenReader }: HomeStoryLibraryProps) {
                       className="yume-story-card__open"
                       onClick={() => void openOrSelect(story)}
                     >
-                      {story.completedChapters > 0
+                      {story.hasProgress
                         ? UI.storyContinueReading
                         : UI.storyViewStory}
                     </button>
@@ -304,6 +311,7 @@ export function HomeStoryLibrary({ onOpenReader }: HomeStoryLibraryProps) {
       {selectedStory ? (
         <StoryDetailPanel
           story={selectedStory}
+          detail={storyDetail}
           chapters={chapters}
           selectedChapterId={selectedChapterId}
           onSelectChapter={setSelectedChapterId}

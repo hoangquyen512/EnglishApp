@@ -31,11 +31,9 @@ function matchesFilter(story: StorySummary, filter: StoryFilter): boolean {
     case "all":
       return true;
     case "new":
-      return story.completedChapters === 0;
+      return !story.hasProgress;
     case "reading":
-      return (
-        story.completedChapters > 0 && story.completedChapters < story.chapterCount
-      );
+      return story.hasProgress && story.completedChapters < story.chapterCount;
     case "favorite":
       return story.isFavorite;
     case "children":

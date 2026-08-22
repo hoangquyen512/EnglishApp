@@ -207,4 +207,9 @@ export function buildDemoSeedPlan(): DemoSeedPlan {
   };
 }
 
+export function findMissingDemoStories(existingSlugs: readonly string[]): DemoSeedStory[] {
+  const existing = new Set(existingSlugs);
+  return buildDemoSeedPlan().stories.filter((story) => !existing.has(story.slug));
+}
+
 export { DEMO_STORIES, A_NEW_FRIEND_CH1 };

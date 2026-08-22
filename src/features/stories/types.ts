@@ -38,4 +38,5 @@ export type StorySummary = {
   popularScore: number;
   isFavorite: boolean;
   completedChapters: number;
+  hasProgress: boolean;
 };

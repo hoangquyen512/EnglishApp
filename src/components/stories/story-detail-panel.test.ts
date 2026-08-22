@@ -2,7 +2,7 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it, vi } from "vitest";
 import { UI } from "../../constants/ui";
-import type { StorySummary } from "../../features/stories";
+import type { StoryDetail, StorySummary } from "../../features/stories";
 import { StoryDetailPanel } from "./story-detail-panel";
 
 const story: StorySummary = {
@@ -21,6 +21,16 @@ const story: StorySummary = {
   popularScore: 10,
   isFavorite: false,
   completedChapters: 0,
+  hasProgress: false,
+};
+
+const detail: StoryDetail = {
+  ...story,
+  authorName: null,
+  publicationYear: null,
+  rightsStatus: "LICENSED",
+  attributionRequired: true,
+  attributionText: "Yume internal demo story.",
 };
 
 describe("StoryDetailPanel", () => {
@@ -28,6 +38,7 @@ describe("StoryDetailPanel", () => {
     const html = renderToStaticMarkup(
       createElement(StoryDetailPanel, {
         story,
+        detail,
         chapters: [
           {
             id: 11,
@@ -50,6 +61,8 @@ describe("StoryDetailPanel", () => {
 
     expect(html).toContain(UI.storyChapters);
     expect(html).toContain(UI.storyReadSelectedChapter);
+    expect(html.replace("&amp;", "&")).toContain(UI.storyAttribution);
+    expect(html).toContain("Yume internal demo story.");
     expect(html).not.toMatch(/lock|khóa/i);
   });
 });

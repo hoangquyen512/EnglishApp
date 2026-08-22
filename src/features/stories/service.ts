@@ -1,6 +1,6 @@
 import {
-  countPublishedStories,
   deleteStoryBookmark,
+  findStorySourceId,
   getProgress,
   getPublishedStory,
   hasStoryBookmark as getBookmarkState,
@@ -18,6 +18,7 @@ import {
   listPublishedChapters,
   listPublishedStories,
   listSavedUserStoryVocabulary,
+  listStorySlugs,
   toggleFavorite,
   upsertProgress,
   upsertUserStoryVocabulary,
@@ -27,7 +28,7 @@ import {
 } from "../../db/stories";
 import { mapContentUnits } from "./content-map";
 import { canPublishStory } from "./publish";
-import { buildDemoSeedPlan } from "./seed";
+import { buildDemoSeedPlan, findMissingDemoStories } from "./seed";
 import type { CefrLevel, StorySummary } from "./types";
 
 const DEMO_POPULAR_SCORE = new Map(
@@ -37,15 +38,17 @@ const DEMO_POPULAR_SCORE = new Map(
 let seedInFlight: Promise<void> | null = null;
 
 async function insertDemoStories(): Promise<void> {
-  if ((await countPublishedStories()) > 0) return;
-
   const plan = buildDemoSeedPlan();
-  const sourceId = await insertSource({
-    name: plan.sourceName,
-    sourceType: plan.sourceType,
-  });
+  const missingStories = findMissingDemoStories(await listStorySlugs());
+  if (missingStories.length === 0) return;
+  const sourceId =
+    (await findStorySourceId(plan.sourceName, plan.sourceType)) ??
+    (await insertSource({
+      name: plan.sourceName,
+      sourceType: plan.sourceType,
+    }));
 
-  for (const story of plan.stories) {
+  for (const story of missingStories) {
     const storyId = await insertStory({
       slug: story.slug,
       titleEn: story.titleEn,
@@ -151,6 +154,7 @@ export function mapStorySummaries(rows: StoryListRow[]): StorySummary[] {
       popularScore: row.popular_score || DEMO_POPULAR_SCORE.get(row.slug) || 0,
       isFavorite: row.is_favorite === 1,
       completedChapters: row.completed_chapters,
+      hasProgress: row.has_progress === 1,
     }));
 }
 

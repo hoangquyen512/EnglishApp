@@ -138,7 +138,7 @@ export default function App() {
   }
 
   if (!ready) {
-    return <p className="p-6">Đang chuẩn bị dữ liệu...</p>;
+    return <p className="p-6">{UI.preparingData}</p>;
   }
 
   if (error && !pet) {

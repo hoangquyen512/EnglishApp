@@ -18,6 +18,29 @@ export function isChapterNearComplete(progressPercentage: number): boolean {
   return progressPercentage >= 90;
 }
 
+export function progressPercentageFromScroll(
+  scrollTop: number,
+  scrollHeight: number,
+  clientHeight: number,
+  storedPercentage: number,
+): number {
+  const available = scrollHeight - clientHeight;
+  const computed =
+    available <= 0
+      ? 100
+      : Math.min(100, Math.max(0, Math.round((scrollTop / available) * 100)));
+  return Math.max(storedPercentage, computed);
+}
+
+export function resumeScrollTop(
+  progressPercentage: number,
+  scrollHeight: number,
+  clientHeight: number,
+): number {
+  const available = Math.max(0, scrollHeight - clientHeight);
+  return available * (Math.min(100, Math.max(0, progressPercentage)) / 100);
+}
+
 export function chapterCompletedAt(
   progressPercentage: number,
   previousCompletedAt: string | null,

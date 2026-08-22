@@ -17,6 +17,7 @@ function story(overrides: Partial<StorySummary> & Pick<StorySummary, "id" | "tit
     popularScore: 0,
     isFavorite: false,
     completedChapters: 0,
+    hasProgress: false,
     ...overrides,
   };
 }
@@ -45,6 +46,7 @@ const FIXTURE: StorySummary[] = [
     estimatedReadMinutes: 15,
     createdAt: "2026-01-02T00:00:00.000Z",
     popularScore: 100,
+    hasProgress: true,
     completedChapters: 2,
     chapterCount: 5,
   }),
@@ -58,6 +60,7 @@ const FIXTURE: StorySummary[] = [
     estimatedReadMinutes: 30,
     createdAt: "2026-01-01T00:00:00.000Z",
     popularScore: 10,
+    hasProgress: true,
     completedChapters: 5,
     chapterCount: 5,
   }),
@@ -98,6 +101,30 @@ describe("filterAndSortStories", () => {
       sort: "newest",
     });
     expect(result.map((s) => s.id)).toEqual([2]);
+  });
+
+  it("treats chapter-one progress as reading without counting it completed", () => {
+    const chapterOneProgress = story({
+      id: 4,
+      titleEn: "Started Story",
+      hasProgress: true,
+      completedChapters: 0,
+    });
+
+    expect(
+      filterAndSortStories([chapterOneProgress], {
+        search: "",
+        filter: "reading",
+        sort: "newest",
+      }).map((item) => item.id),
+    ).toEqual([4]);
+    expect(
+      filterAndSortStories([chapterOneProgress], {
+        search: "",
+        filter: "new",
+        sort: "newest",
+      }),
+    ).toEqual([]);
   });
 
   it("filters by children genre", () => {

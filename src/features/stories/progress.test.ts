@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
   chapterCompletedAt,
+  progressPercentageFromScroll,
+  resumeScrollTop,
   isChapterNearComplete,
   storyProgressLabel,
   storyProgressRatio,
@@ -46,5 +48,21 @@ describe("chapterCompletedAt", () => {
         "2026-08-22T03:30:00.000Z",
       ),
     ).toBe("2026-08-22T03:00:00.000Z");
+  });
+});
+
+describe("progressPercentageFromScroll", () => {
+  it("completes content that does not need scrolling", () => {
+    expect(progressPercentageFromScroll(0, 500, 500, 0)).toBe(100);
+  });
+
+  it("does not regress below persisted progress after resume", () => {
+    expect(progressPercentageFromScroll(100, 1_000, 500, 80)).toBe(80);
+  });
+});
+
+describe("resumeScrollTop", () => {
+  it("converts saved percentage into a scroll offset", () => {
+    expect(resumeScrollTop(80, 1_000, 500)).toBe(400);
   });
 });

@@ -1722,6 +1722,7 @@ input.no-focus-ring:focus-visible {
 }
 
 .yume-story-reader__content {
+  position: relative;
   min-height: 0;
   overflow: auto;
   padding: 14px 16px;

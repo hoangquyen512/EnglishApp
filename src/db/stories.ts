@@ -25,6 +25,7 @@ export interface StoryListRow {
   source_type: string;
   is_favorite: number;
   completed_chapters: number;
+  has_progress: number;
 }
 
 export interface StoryProgressRow {
@@ -258,6 +259,32 @@ export async function countPublishedStories(): Promise<number> {
     "SELECT COUNT(*) AS count FROM stories WHERE status = 'published'",
   );
   return row?.count ?? 0;
+}
+
+export async function listStorySlugs(): Promise<string[]> {
+  if (!isTauri()) {
+    return readBrowserStore().stories.map((story) => story.slug);
+  }
+  const rows = await select<{ slug: string }>("SELECT slug FROM stories");
+  return rows.map((row) => row.slug);
+}
+
+export async function findStorySourceId(
+  name: string,
+  sourceType: string,
+): Promise<number | null> {
+  if (!isTauri()) {
+    return (
+      readBrowserStore().sources.find(
+        (source) => source.name === name && source.sourceType === sourceType,
+      )?.id ?? null
+    );
+  }
+  const row = await selectOne<{ id: number }>(
+    "SELECT id FROM story_sources WHERE name = $1 AND source_type = $2 ORDER BY id LIMIT 1",
+    [name, sourceType],
+  );
+  return row?.id ?? null;
 }
 
 export async function insertSource(input: {
@@ -547,6 +574,7 @@ export async function listPublishedStories(): Promise<StoryListRow[]> {
             ? 1
             : 0,
           completed_chapters: completedChapters,
+          has_progress: progress ? 1 : 0,
         };
       });
   }
@@ -572,7 +600,8 @@ export async function listPublishedStories(): Promise<StoryListRow[]> {
          WHEN usp.completed_at IS NOT NULL THEN COALESCE(current_chapter.order_no, 0)
          WHEN COALESCE(current_chapter.order_no, 0) > 1 THEN current_chapter.order_no - 1
          ELSE 0
-       END AS completed_chapters
+       END AS completed_chapters,
+       CASE WHEN usp.id IS NULL THEN 0 ELSE 1 END AS has_progress
      FROM stories s
      JOIN story_sources ss ON ss.id = s.source_id
      JOIN story_rights sr ON sr.story_id = s.id
