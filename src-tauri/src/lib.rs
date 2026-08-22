@@ -397,6 +397,12 @@ fn sqlite_migrations() -> Vec<Migration> {
             kind: MigrationKind::Up,
         },
         Migration {
+            version: 64,
+            description: "dictionary_cache",
+            sql: include_str!("../migrations/064_dictionary_cache.sql"),
+            kind: MigrationKind::Up,
+        },
+        Migration {
             version: 65,
             description: "story_sources",
             sql: include_str!("../migrations/065_story_sources.sql"),
