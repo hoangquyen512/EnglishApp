@@ -5,4 +5,5 @@ export * from "./filter-sort";
 export * from "./chapter-nav";
 export * from "./language-mode";
 export * from "./seed";
+export * from "./content-map";
 export * from "./service";
