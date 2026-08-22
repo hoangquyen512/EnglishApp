@@ -1,7 +1,7 @@
 import type { StudyFlashcard } from "../../types";
 import { conversationTopics } from "../../data/conversation/topics";
 import { conversationContentId } from "./ids";
-import { illustrationSrc } from "./illustration";
+import { illustrationSrcForPhrase } from "./illustration";
 import type { ConversationTopicId } from "./types";
 
 export type { ConversationPhrase, ConversationTopic, ConversationTopicId } from "./types";
@@ -28,7 +28,7 @@ function cardsForBank(topicId: ConversationTopicId, topicCode: string | null): S
     meaning: phrase.vi,
     example: phrase.note || null,
     exampleVi: null,
-    imageKey: illustrationSrc(phrase.id),
+    imageKey: illustrationSrcForPhrase(phrase.id, phrase.en),
     topic: topicCode,
   }));
 }

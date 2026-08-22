@@ -221,6 +221,7 @@ export default function App() {
           setView("home");
           setOpenStorySignal((value) => value + 1);
         }}
+        onGoHome={() => setView("home")}
         onOpenChapter={(chapterId) =>
           setReaderTarget((target) => (target ? { ...target, chapterId } : target))
         }

@@ -1,6 +1,16 @@
 import type { ReactNode } from "react";
 import { APP_NAME, UI } from "../../constants/ui";
 import type { SessionDto } from "../../features/auth";
+import {
+  IconBell,
+  IconCommunity,
+  IconHelp,
+  IconHome,
+  IconMissions,
+  IconPet,
+  IconProfile,
+  IconSettings,
+} from "../shared/yume-icons";
 import { UserAvatar } from "./user-avatar";
 
 export type SettingsNavId =
@@ -12,84 +22,6 @@ export type SettingsNavId =
   | "settings"
   | "notifications"
   | "help";
-
-function IconHome() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5z" />
-    </svg>
-  );
-}
-
-function IconPet() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <circle cx="12" cy="13" r="5" />
-      <circle cx="7" cy="8" r="1.4" fill="currentColor" stroke="none" />
-      <circle cx="17" cy="8" r="1.4" fill="currentColor" stroke="none" />
-      <circle cx="5.5" cy="12" r="1.3" fill="currentColor" stroke="none" />
-      <circle cx="18.5" cy="12" r="1.3" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
-function IconMissions() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <path d="M8 4h8v3H8z" />
-      <path d="M6 7h12v13H6z" />
-      <path d="M9 11h6M9 15h4" />
-    </svg>
-  );
-}
-
-function IconCommunity() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <circle cx="9" cy="9" r="3" />
-      <circle cx="16" cy="10" r="2.5" />
-      <path d="M3.5 19c.8-2.6 2.9-4 5.5-4s4.7 1.4 5.5 4" />
-      <path d="M13.5 19c.5-1.8 1.8-3 3.8-3 1.5 0 2.7.7 3.4 1.9" />
-    </svg>
-  );
-}
-
-function IconProfile() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <circle cx="12" cy="8" r="3.5" />
-      <path d="M5 19c1.2-3 3.5-4.5 7-4.5s5.8 1.5 7 4.5" />
-    </svg>
-  );
-}
-
-function IconSettings() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <circle cx="12" cy="12" r="3" />
-      <path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9c.3.6.9 1 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" />
-    </svg>
-  );
-}
-
-function IconBell() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <path d="M6 16h12l-1-2V10a5 5 0 0 0-10 0v4l-1 2z" />
-      <path d="M10 18a2 2 0 0 0 4 0" />
-    </svg>
-  );
-}
-
-function IconHelp() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M9.5 9.5a2.5 2.5 0 1 1 3.7 2.2c-.8.4-1.2.9-1.2 1.8V14" />
-      <circle cx="12" cy="17" r="0.8" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
 
 function SidebarNavItem({
   id,

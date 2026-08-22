@@ -19,6 +19,9 @@ import {
   listPublishedStories,
   listSavedUserStoryVocabulary,
   listStorySlugs,
+  findChapterIdByStorySlugAndChapterNo,
+  repairDemoStoryCovers,
+  replaceChapterContent,
   toggleFavorite,
   upsertProgress,
   upsertUserStoryVocabulary,
@@ -27,8 +30,9 @@ import {
   type StoryListRow,
 } from "../../db/stories";
 import { mapContentUnits } from "./content-map";
+import { demoStoryCoverRepairsBySlug } from "./cover-url";
 import { canPublishStory } from "./publish";
-import { buildDemoSeedPlan, findMissingDemoStories } from "./seed";
+import { buildDemoSeedPlan, findMissingDemoStories, demoChapterNeedsContentRepair } from "./seed";
 import type { CefrLevel, StorySummary } from "./types";
 
 const DEMO_POPULAR_SCORE = new Map(
@@ -38,6 +42,9 @@ const DEMO_POPULAR_SCORE = new Map(
 let seedInFlight: Promise<void> | null = null;
 
 async function insertDemoStories(): Promise<void> {
+  await repairDemoStoryCovers(demoStoryCoverRepairsBySlug());
+  await repairDemoStoryContent();
+
   const plan = buildDemoSeedPlan();
   const missingStories = findMissingDemoStories(await listStorySlugs());
   if (missingStories.length === 0) return;
@@ -115,6 +122,63 @@ async function insertDemoStories(): Promise<void> {
           orderNo: featured.orderNo,
         });
       }
+    }
+  }
+}
+
+function groupStoredChapterUnits(
+  rows: Awaited<ReturnType<typeof listChapterContentRows>>,
+): Array<{ enSentences: string[] }> {
+  const units = new Map<number, { orderNo: number; enSentences: string[] }>();
+  for (const row of rows) {
+    if (!row.sentence_id) continue;
+    const existing = units.get(row.unit_id) ?? {
+      orderNo: row.unit_order_no,
+      enSentences: [],
+    };
+    existing.enSentences.push(row.source_text ?? "");
+    units.set(row.unit_id, existing);
+  }
+  return [...units.values()]
+    .sort((left, right) => left.orderNo - right.orderNo)
+    .map((unit) => ({ enSentences: unit.enSentences }));
+}
+
+async function repairDemoStoryContent(): Promise<void> {
+  const plan = buildDemoSeedPlan();
+  for (const story of plan.stories) {
+    for (const chapter of story.chapters) {
+      const chapterId = await findChapterIdByStorySlugAndChapterNo(
+        story.slug,
+        chapter.chapterNo,
+      );
+      if (!chapterId) continue;
+
+      const rows = await listChapterContentRows(chapterId);
+      const storedUnits = groupStoredChapterUnits(rows);
+      const canonicalUnits = chapter.units.map((unit) => ({
+        enSentences: unit.enSentences,
+      }));
+      if (!demoChapterNeedsContentRepair(storedUnits, canonicalUnits)) continue;
+
+      await replaceChapterContent({
+        chapterId,
+        cefrLevel: story.cefrLevel,
+        units: chapter.units.map((unit) => ({
+          type: unit.type,
+          orderNo: unit.orderNo,
+          enSentences: unit.enSentences,
+          viSentences: unit.viSentences,
+        })),
+        featured: chapter.featured.map((item) => ({
+          word: item.word,
+          lemma: item.lemma,
+          ipa: item.ipa,
+          partOfSpeech: item.partOfSpeech,
+          meaningVi: item.meaningVi,
+          orderNo: item.orderNo,
+        })),
+      });
     }
   }
 }

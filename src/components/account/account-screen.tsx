@@ -1,4 +1,14 @@
 import { useState, type ReactNode } from "react";
+import {
+  IconAt,
+  IconChevronRight,
+  IconEdit,
+  IconLock,
+  IconLogout,
+  IconMail,
+  IconPerson,
+  IconStudy,
+} from "../shared/yume-icons";
 import { APP_NAME, UI } from "../../constants/ui";
 import type { SessionDto } from "../../features/auth";
 import { useAuthStore } from "../../stores/auth-store";
@@ -13,80 +23,6 @@ interface AccountScreenProps {
   onBack: () => void;
   onEdit: () => void;
   onLearningProgram: () => void;
-}
-
-function IconCap() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <path d="M3 9.5 12 5l9 4.5-9 4.5L3 9.5z" />
-      <path d="M7 12.2v3.3c0 .9 2.2 2.5 5 2.5s5-1.6 5-2.5v-3.3" />
-      <path d="M21 10v5" />
-    </svg>
-  );
-}
-
-function IconEdit() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <path d="M12 20h9" />
-      <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4 11.5-11.5z" />
-    </svg>
-  );
-}
-
-function IconLock() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <rect x="5" y="11" width="14" height="10" rx="2" />
-      <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-    </svg>
-  );
-}
-
-function IconLogout() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <path d="M10 17l5-5-5-5" />
-      <path d="M15 12H4" />
-      <path d="M14 19h4a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4" />
-    </svg>
-  );
-}
-
-function IconPerson() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <circle cx="12" cy="8" r="3.5" />
-      <path d="M5 19c1.2-3 3.5-4.5 7-4.5s5.8 1.5 7 4.5" />
-    </svg>
-  );
-}
-
-function IconMail() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <rect x="3" y="5" width="18" height="14" rx="2" />
-      <path d="m4 7 8 6 8-6" />
-    </svg>
-  );
-}
-
-function IconAt() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden>
-      <circle cx="12" cy="12" r="7.5" />
-      <path d="M16 12v1.2a2.3 2.3 0 0 0 4.2 1.2A7.5 7.5 0 1 1 18.5 7" />
-      <circle cx="12" cy="12" r="2.8" />
-    </svg>
-  );
-}
-
-function IconChevron() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-      <path d="m9 6 6 6-6 6" />
-    </svg>
-  );
 }
 
 function InfoRow({
@@ -134,7 +70,7 @@ function ActionCard({
         <span className="yume-account__action-desc">{description}</span>
       </span>
       <span className="yume-account__action-arrow" aria-hidden>
-        <IconChevron />
+        <IconChevronRight size={16} />
       </span>
     </button>
   );
@@ -202,15 +138,15 @@ export function AccountScreen({ session, toast, onBack, onEdit, onLearningProgra
                     label={UI.displayName}
                     value={session.displayName?.trim() || UI.emailNotSaved}
                     muted={!session.displayName}
-                    icon={<IconPerson />}
+                    icon={<IconPerson size={16} />}
                   />
                   <InfoRow
                     label={UI.email}
                     value={session.email || UI.emailNotSaved}
                     muted={!session.email}
-                    icon={<IconMail />}
+                    icon={<IconMail size={16} />}
                   />
-                  <InfoRow label={UI.loginId} value={session.username} icon={<IconAt />} />
+                  <InfoRow label={UI.loginId} value={session.username} icon={<IconAt size={16} />} />
                 </dl>
               </section>
 
@@ -218,28 +154,28 @@ export function AccountScreen({ session, toast, onBack, onEdit, onLearningProgra
                 <ActionCard
                   label={UI.learningProgram}
                   description={UI.accountActionLearningDesc}
-                  icon={<IconCap />}
+                  icon={<IconStudy size={20} />}
                   tone="violet"
                   onClick={onLearningProgram}
                 />
                 <ActionCard
                   label={UI.editAccount}
                   description={UI.accountActionEditDesc}
-                  icon={<IconEdit />}
+                  icon={<IconEdit size={20} />}
                   tone="blue"
                   onClick={onEdit}
                 />
                 <ActionCard
                   label={UI.changePassword}
                   description={UI.accountActionPasswordDesc}
-                  icon={<IconLock />}
+                  icon={<IconLock size={20} />}
                   tone="green"
                   onClick={() => setPasswordOpen(true)}
                 />
                 <ActionCard
                   label={UI.logout}
                   description={UI.accountActionLogoutDesc}
-                  icon={<IconLogout />}
+                  icon={<IconLogout size={20} />}
                   tone="rose"
                   onClick={() => setLogoutOpen(true)}
                 />

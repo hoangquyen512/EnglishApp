@@ -19,44 +19,13 @@ import { openStudyPopup } from "../../features/scheduler";
 import { useSettingsStore } from "../../stores/settings-store";
 import { SettingsShell, type SettingsNavId } from "./settings-shell";
 import { GalaxySelect } from "../shared/galaxy-select";
+import { IconBolt, IconCheck, IconHeart, IconSparkle } from "../shared/yume-icons";
 
 interface LearningProgramScreenProps {
   session: SessionDto;
   onHome: () => void;
   onCancel: () => void;
   onSaved?: () => void;
-}
-
-function IconCheck() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" aria-hidden>
-      <path d="M5 12.5 10 17.5 19 7" />
-    </svg>
-  );
-}
-
-function IconBolt() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M13 2 4 14h7l-1 8 10-14h-7l1-6z" />
-    </svg>
-  );
-}
-
-function IconSparkle() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M12 2.5 13.8 9 20.5 10.8 13.8 12.6 12 19.5 10.2 12.6 3.5 10.8 10.2 9 12 2.5z" />
-    </svg>
-  );
-}
-
-function IconHeart() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M12 20.4 10.4 19C5.4 14.6 2 11.5 2 7.8A4.6 4.6 0 0 1 6.7 3.2 5 5 0 0 1 12 5.5a5 5 0 0 1 5.3-2.3A4.6 4.6 0 0 1 22 7.8c0 3.7-3.4 6.8-8.4 11.2L12 20.4z" />
-    </svg>
-  );
 }
 
 export function LearningProgramScreen({

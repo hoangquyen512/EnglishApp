@@ -269,6 +269,155 @@ export async function listStorySlugs(): Promise<string[]> {
   return rows.map((row) => row.slug);
 }
 
+export async function repairDemoStoryCovers(
+  updates: ReadonlyArray<{ slug: string; coverUrl: string }>,
+): Promise<void> {
+  if (updates.length === 0) return;
+
+  if (!isTauri()) {
+    const store = readBrowserStore();
+    const bySlug = new Map(updates.map((item) => [item.slug, item.coverUrl]));
+    let changed = false;
+    for (const story of store.stories) {
+      const nextCover = bySlug.get(story.slug);
+      if (!nextCover) continue;
+      if (story.coverUrl !== nextCover) {
+        story.coverUrl = nextCover;
+        changed = true;
+      }
+    }
+    if (changed) writeBrowserStore(store);
+    return;
+  }
+
+  for (const { slug, coverUrl } of updates) {
+    await execute(
+      `UPDATE stories
+       SET cover_url = $1
+       WHERE slug = $2
+         AND (cover_url IS NULL OR cover_url = '' OR cover_url != $1)`,
+      [coverUrl, slug],
+    );
+  }
+}
+
+export async function findChapterIdByStorySlugAndChapterNo(
+  slug: string,
+  chapterNo: number,
+): Promise<number | null> {
+  if (!isTauri()) {
+    const story = readBrowserStore().stories.find((item) => item.slug === slug);
+    return story?.chapters.find((chapter) => chapter.chapterNo === chapterNo)?.id ?? null;
+  }
+  const row = await selectOne<{ id: number }>(
+    `SELECT sc.id
+     FROM story_chapters sc
+     JOIN stories s ON s.id = sc.story_id
+     WHERE s.slug = $1 AND sc.chapter_no = $2
+     ORDER BY sc.id
+     LIMIT 1`,
+    [slug, chapterNo],
+  );
+  return row?.id ?? null;
+}
+
+export async function replaceChapterContent(input: {
+  chapterId: number;
+  cefrLevel: string;
+  units: Array<{
+    type: string;
+    orderNo: number;
+    enSentences: string[];
+    viSentences: string[];
+  }>;
+  featured: Array<{
+    word: string;
+    lemma: string;
+    ipa: string;
+    partOfSpeech: string;
+    meaningVi: string;
+    orderNo: number;
+  }>;
+}): Promise<void> {
+  if (!isTauri()) {
+    const store = readBrowserStore();
+    const chapters = store.stories.flatMap((story) => story.chapters);
+    const chapter = chapters.find((item) => item.id === input.chapterId);
+    if (!chapter) return;
+
+    let nextUnitId =
+      chapters.flatMap((item) => item.units).reduce((highest, unit) => Math.max(highest, unit.id), 0) + 1;
+    let nextSentenceId =
+      chapters
+        .flatMap((item) => item.units)
+        .flatMap((unit) => unit.sentences)
+        .reduce((highest, sentence) => Math.max(highest, sentence.id), 0) + 1;
+    let nextFeaturedId =
+      chapters
+        .flatMap((item) => item.featured)
+        .reduce((highest, item) => Math.max(highest, item.id), 0) + 1;
+
+    chapter.units = input.units.map((unit) => ({
+      id: nextUnitId++,
+      unitType: unit.type,
+      orderNo: unit.orderNo,
+      sentences: unit.enSentences.map((sourceText, index) => ({
+        id: nextSentenceId++,
+        orderNo: index + 1,
+        sourceText,
+        translation: unit.viSentences[index] ?? "",
+      })),
+    }));
+    chapter.featured = input.featured.map((item) => ({
+      id: nextFeaturedId++,
+      sentenceId: null,
+      word: item.word,
+      lemma: item.lemma,
+      ipa: item.ipa,
+      partOfSpeech: item.partOfSpeech,
+      meaningVi: item.meaningVi,
+      orderNo: item.orderNo,
+    }));
+    writeBrowserStore(store);
+    return;
+  }
+
+  await execute("DELETE FROM story_featured_vocabulary WHERE chapter_id = $1", [input.chapterId]);
+  await execute("DELETE FROM story_content_units WHERE chapter_id = $1", [input.chapterId]);
+
+  for (const unit of input.units) {
+    const contentUnitId = await insertContentUnit({
+      chapterId: input.chapterId,
+      unitType: unit.type,
+      orderNo: unit.orderNo,
+    });
+    for (let index = 0; index < unit.enSentences.length; index += 1) {
+      const sentenceId = await insertSentence({
+        contentUnitId,
+        orderNo: index + 1,
+        sourceText: unit.enSentences[index]!,
+        cefrLevel: input.cefrLevel,
+      });
+      await insertSentenceTranslation({
+        sentenceId,
+        text: unit.viSentences[index] ?? "",
+      });
+    }
+  }
+
+  for (const featured of input.featured) {
+    await insertFeaturedVocabulary({
+      chapterId: input.chapterId,
+      word: featured.word,
+      lemma: featured.lemma,
+      ipa: featured.ipa,
+      partOfSpeech: featured.partOfSpeech,
+      meaningVi: featured.meaningVi,
+      orderNo: featured.orderNo,
+    });
+  }
+}
+
 export async function findStorySourceId(
   name: string,
   sourceType: string,

@@ -1,14 +1,12 @@
-import {
-  A_NEW_FRIEND_CHAPTER_TITLES,
-  DEMO_STORIES,
-  OTHER_STORY_CH1_STUBS,
-  type DemoStoryMeta,
-} from "../../data/stories/demo-catalog";
-import {
-  A_NEW_FRIEND_CH1,
-  type ContentUnitType,
-  type FeaturedVocab,
-} from "../../data/stories/a-new-friend-ch1";
+import { getDemoChaptersForStory } from "../../data/stories/content";
+import { chapterHasPlaceholderContent } from "../../data/stories/placeholder";
+import { DEMO_STORIES, type DemoStoryMeta } from "../../data/stories/demo-catalog";
+import { demoStoryCoverUrl } from "./cover-url";
+import type {
+  ContentUnitType,
+  DemoChapterUnit,
+  FeaturedVocab,
+} from "../../data/stories/types";
 import type { CefrLevel, RightsStatus, StoryStatus } from "./types";
 
 export type { DemoStoryMeta, FeaturedVocab, ContentUnitType };
@@ -74,24 +72,9 @@ function unitId(chapterIdValue: number, orderNo: number): number {
   return chapterIdValue * 10 + orderNo;
 }
 
-function placeholderUnit(
-  chapterIdValue: number,
-  orderNo: number,
-  en: string,
-  vi: string,
-): DemoSeedUnit {
-  return {
-    id: unitId(chapterIdValue, orderNo),
-    type: "paragraph",
-    orderNo,
-    enSentences: [en],
-    viSentences: [vi],
-  };
-}
-
 function mapUnits(
   chapterIdValue: number,
-  units: Array<{ type: ContentUnitType; enSentences: string[]; viSentences: string[] }>,
+  units: DemoChapterUnit[],
 ): DemoSeedUnit[] {
   return units.map((unit, index) => ({
     id: unitId(chapterIdValue, index + 1),
@@ -102,80 +85,32 @@ function mapUnits(
   }));
 }
 
-function buildANewFriendChapters(storyId: number): DemoSeedChapter[] {
-  return A_NEW_FRIEND_CHAPTER_TITLES.map((meta, index) => {
+function buildChapters(storyId: number, meta: DemoStoryMeta): DemoSeedChapter[] {
+  const definitions = getDemoChaptersForStory(meta.slug, meta.chapterCount);
+  return definitions.map((definition, index) => {
     const chapterNo = index + 1;
     const id = chapterId(storyId, chapterNo);
-    const isFirst = chapterNo === 1;
-
     return {
       id,
       storyId,
       chapterNo,
-      slug: meta.slug,
-      titleEn: meta.titleEn,
-      titleVi: meta.titleVi,
-      estimatedReadMinutes: 2,
+      slug: definition.slug,
+      titleEn: definition.titleEn,
+      titleVi: definition.titleVi,
+      estimatedReadMinutes: chapterNo === 1 ? 3 : 2,
       orderNo: chapterNo,
-      units: isFirst
-        ? mapUnits(id, A_NEW_FRIEND_CH1.units)
-        : [
-            placeholderUnit(
-              id,
-              1,
-              `This chapter continues the story of Sora and Blu — ${meta.titleEn}.`,
-              `Chương này tiếp tục câu chuyện của Sora và Blu — ${meta.titleVi}.`,
-            ),
-          ],
-      featured: isFirst ? A_NEW_FRIEND_CH1.featured : [],
+      units: mapUnits(id, definition.units),
+      featured: (definition.featured ?? []).map((item, featuredIndex) => ({
+        ...item,
+        orderNo: featuredIndex + 1,
+      })),
     };
   });
-}
-
-function buildStubChapters(storyId: number, meta: DemoStoryMeta): DemoSeedChapter[] {
-  const chapters: DemoSeedChapter[] = [];
-  const stub = OTHER_STORY_CH1_STUBS[meta.slug];
-
-  for (let chapterNo = 1; chapterNo <= meta.chapterCount; chapterNo += 1) {
-    const id = chapterId(storyId, chapterNo);
-    const isFirst = chapterNo === 1;
-    const titleEn = isFirst && stub ? stub.titleEn : `Chapter ${chapterNo}`;
-    const titleVi = isFirst && stub ? stub.titleVi : `Chương ${chapterNo}`;
-
-    chapters.push({
-      id,
-      storyId,
-      chapterNo,
-      slug: isFirst ? "chapter-1" : `chapter-${chapterNo}`,
-      titleEn,
-      titleVi,
-      estimatedReadMinutes: isFirst ? 2 : 1,
-      orderNo: chapterNo,
-      units: isFirst && stub
-        ? [placeholderUnit(id, 1, stub.en, stub.vi)]
-        : [
-            placeholderUnit(
-              id,
-              1,
-              `Placeholder content for ${meta.titleEn}, chapter ${chapterNo}.`,
-              `Nội dung mẫu cho ${meta.titleVi}, chương ${chapterNo}.`,
-            ),
-          ],
-      featured: [],
-    });
-  }
-
-  return chapters;
 }
 
 export function buildDemoSeedPlan(): DemoSeedPlan {
   const stories: DemoSeedStory[] = DEMO_STORIES.map((meta, index) => {
     const id = index + 1;
-    const chapters =
-      meta.slug === "a-new-friend"
-        ? buildANewFriendChapters(id)
-        : buildStubChapters(id, meta);
-
     return {
       id,
       slug: meta.slug,
@@ -183,7 +118,7 @@ export function buildDemoSeedPlan(): DemoSeedPlan {
       titleVi: meta.titleVi,
       descriptionEn: meta.descriptionEn,
       descriptionVi: meta.descriptionVi,
-      coverUrl: `/covers/stories/${meta.coverKey}.webp`,
+      coverUrl: demoStoryCoverUrl(meta.coverKey),
       coverKey: meta.coverKey,
       cefrLevel: meta.cefrLevel,
       genre: meta.genre,
@@ -196,7 +131,7 @@ export function buildDemoSeedPlan(): DemoSeedPlan {
       sourceType: "INTERNAL_DEMO",
       attributionRequired: true,
       attributionText: ATTRIBUTION_TEXT,
-      chapters,
+      chapters: buildChapters(id, meta),
     };
   });
 
@@ -212,4 +147,19 @@ export function findMissingDemoStories(existingSlugs: readonly string[]): DemoSe
   return buildDemoSeedPlan().stories.filter((story) => !existing.has(story.slug));
 }
 
-export { DEMO_STORIES, A_NEW_FRIEND_CH1 };
+export function demoChapterNeedsContentRepair(
+  storedUnits: ReadonlyArray<{ enSentences: readonly string[] }>,
+  canonicalUnits: ReadonlyArray<{ enSentences: readonly string[] }>,
+): boolean {
+  if (chapterHasPlaceholderContent(storedUnits)) return true;
+  if (storedUnits.length !== canonicalUnits.length) return true;
+  for (let index = 0; index < storedUnits.length; index += 1) {
+    const stored = storedUnits[index]?.enSentences.join(" ") ?? "";
+    const canonical = canonicalUnits[index]?.enSentences.join(" ") ?? "";
+    if (stored !== canonical) return true;
+  }
+  return false;
+}
+
+export { DEMO_STORIES } from "../../data/stories/demo-catalog";
+export { A_NEW_FRIEND_CH1 } from "../../data/stories/a-new-friend-ch1";

@@ -2,8 +2,8 @@ import { describe, expect, it } from "vitest";
 import { cycleIndex, formatCompanionTime, homeRightPanel } from "./home-panel";
 
 describe("homeRightPanel", () => {
-  it("defaults to story when no sidebar action is selected", () => {
-    expect(homeRightPanel(null)).toBe("story");
+  it("returns null when no sidebar action is selected (default feed)", () => {
+    expect(homeRightPanel(null)).toBeNull();
   });
 
   it("keeps the selected sidebar action", () => {

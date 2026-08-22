@@ -66,6 +66,19 @@ describe("buildDemoSeedPlan", () => {
     ]);
   });
 
+  it("gives every story readable chapters without placeholder text", () => {
+    const plan = buildDemoSeedPlan();
+    for (const story of plan.stories) {
+      expect(story.chapters.length).toBe(story.chapterCount);
+      for (const chapter of story.chapters) {
+        expect(chapter.units.length).toBeGreaterThanOrEqual(3);
+        const first = chapter.units[0]?.enSentences[0] ?? "";
+        expect(first).not.toMatch(/placeholder content|nội dung mẫu/i);
+        expect(first).not.toMatch(/continues the story of sora/i);
+      }
+    }
+  });
+
   it("gives every story at least one readable chapter", () => {
     const plan = buildDemoSeedPlan();
     for (const story of plan.stories) {

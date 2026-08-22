@@ -49,6 +49,7 @@ import {
 import { applyReview } from "./spaced-repetition";
 import { shuffle } from "./deck";
 import { countsTowardMastery, sessionIsCorrect, xpForOutcome } from "./outcome";
+import { resolveCommunicationArt } from "../conversation/illustration";
 import { resolveVocabArt } from "./art";
 import { isPlaceholderVocabWord } from "../../data/lexicon/quality";
 import { resolveVocabUsage } from "../../data/lexicon/usage";
@@ -75,6 +76,7 @@ function vocabToCard(item: Vocabulary): StudyFlashcard {
       imageKey: item.imageKey,
       word: item.word,
       topic: item.topic,
+      example: usage.example,
     }),
     topic: item.topic,
   };
@@ -100,6 +102,7 @@ function browserVocabCards(active: TopicCode[]): StudyFlashcard[] {
             imageKey: card.imageKey,
             word: card.word,
             topic: code,
+            example: usage.example,
           }),
           topic: code,
         };
@@ -127,6 +130,7 @@ function browserVocabCards(active: TopicCode[]): StudyFlashcard[] {
           imageKey: card.imageKey,
           word: card.word,
           topic,
+          example: card.example,
         }),
         topic,
       },
@@ -140,6 +144,7 @@ function phraseToCard(input: {
   meaning: string;
   phonetic: string | null;
   topic: string;
+  phraseId?: string | null;
 }): StudyFlashcard {
   return {
     contentId: input.contentId,
@@ -150,10 +155,10 @@ function phraseToCard(input: {
     meaning: input.meaning,
     example: null,
     exampleVi: null,
-    imageKey: resolveVocabArt({
-      imageKey: `topic-${input.topic}`,
-      word: input.word,
+    imageKey: resolveCommunicationArt({
+      sentence: input.word,
       topic: input.topic,
+      phraseId: input.phraseId,
     }),
     topic: input.topic,
   };
@@ -169,6 +174,7 @@ function browserPhraseSources(active: TopicCode[]): CommunicationSourceCard[] {
         meaning: item.vi,
         phonetic: item.ipa || null,
         topic: code,
+        phraseId: item.id,
       }),
       level: item.level,
     }));
@@ -189,6 +195,7 @@ function browserPhraseSources(active: TopicCode[]): CommunicationSourceCard[] {
           meaning: item.meaningVi,
           phonetic: null,
           topic,
+          phraseId: `${topic}-${item.id}`,
         }),
         level: item.level,
       },

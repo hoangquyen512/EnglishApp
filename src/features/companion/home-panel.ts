@@ -1,8 +1,8 @@
 export type HomeQuickAction = "lookup" | "chat" | "story";
 
-/** Right-side home panel: null sidebar selection shows the daily story lesson. */
-export function homeRightPanel(activeAction: HomeQuickAction | null): HomeQuickAction {
-  return activeAction ?? "story";
+/** Right-side home panel; null shows the default vocab/phrase/story feed. */
+export function homeRightPanel(activeAction: HomeQuickAction | null): HomeQuickAction | null {
+  return activeAction;
 }
 
 /** Cycle a carousel index with wrap-around (Home vocab / phrase stubs). */

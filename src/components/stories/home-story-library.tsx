@@ -14,7 +14,8 @@ import {
   type StorySort,
   type StorySummary,
 } from "../../features/stories";
-import { publicUrl } from "../../lib/public-url";
+import { IconHeart, IconSearch } from "../shared/yume-icons";
+import { StoryCover } from "./story-cover";
 import { StoryDetailPanel } from "./story-detail-panel";
 
 export interface HomeStoryLibraryProps {
@@ -45,21 +46,9 @@ function format(template: string, values: Record<string, number>): string {
   );
 }
 
-function IconSearch() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
-      <circle cx="11" cy="11" r="7" />
-      <path d="m20 20-4-4" />
-    </svg>
-  );
-}
-
-function IconHeart({ filled }: { filled: boolean }) {
-  return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill={filled ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8" aria-hidden>
-      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
-    </svg>
-  );
+function storyProgressPercent(story: StorySummary): number {
+  if (story.chapterCount <= 0) return 0;
+  return Math.min(100, Math.round((story.completedChapters / story.chapterCount) * 100));
 }
 
 export function HomeStoryLibrary({ onOpenReader }: HomeStoryLibraryProps) {
@@ -192,25 +181,27 @@ export function HomeStoryLibrary({ onOpenReader }: HomeStoryLibraryProps) {
   };
 
   return (
-    <>
+    <div className="yume-story-library-layout">
       <section className="yume-story-surface yume-story-library" aria-labelledby="story-library-title">
         <header className="yume-story-library__head">
           <p className="yume-story-library__eyebrow">{UI.storyLibraryEyebrow}</p>
-          <h2 id="story-library-title">{UI.storyLibraryTitle}</h2>
+          <div className="yume-story-library__title-row">
+            <h2 id="story-library-title">{UI.storyLibraryTitle}</h2>
+            <label className="yume-story-library__search">
+              <IconSearch size={13} />
+              <input
+                type="search"
+                value={search}
+                aria-label={UI.storySearchPlaceholder}
+                placeholder={UI.storySearchPlaceholder}
+                onChange={(event) => setSearch(event.target.value)}
+              />
+            </label>
+          </div>
           <p className="yume-story-library__subtitle">{UI.storyLibrarySubtitle}</p>
         </header>
 
         <div className="yume-story-library__toolbar">
-          <label className="yume-story-library__search">
-            <IconSearch />
-            <input
-              type="search"
-              value={search}
-              aria-label={UI.storySearchPlaceholder}
-              placeholder={UI.storySearchPlaceholder}
-              onChange={(event) => setSearch(event.target.value)}
-            />
-          </label>
           <div className="yume-story-library__filters" aria-label={UI.storyFilterLabel}>
             {FILTERS.map((item) => (
               <button
@@ -239,7 +230,7 @@ export function HomeStoryLibrary({ onOpenReader }: HomeStoryLibraryProps) {
           </div>
         </div>
 
-        <div className="yume-story-library__list" aria-live="polite">
+        <div className="yume-story-scroll-panel yume-story-library__list" aria-live="polite">
           {loading ? <p className="yume-story-empty">{UI.storyLoading}</p> : null}
           {error ? (
             <div className="yume-story-error">
@@ -258,7 +249,9 @@ export function HomeStoryLibrary({ onOpenReader }: HomeStoryLibraryProps) {
             </div>
           ) : null}
           {!loading && !error
-            ? visibleStories.map((story) => (
+            ? visibleStories.map((story) => {
+                const progressPercent = storyProgressPercent(story);
+                return (
                 <article
                   key={story.id}
                   className={
@@ -267,32 +260,46 @@ export function HomeStoryLibrary({ onOpenReader }: HomeStoryLibraryProps) {
                       : "yume-story-card"
                   }
                 >
-                  <img className="yume-story-card__cover" src={publicUrl(story.coverUrl)} alt="" />
-                  <div className="yume-story-card__body">
-                    <h3>{story.titleEn}</h3>
-                    <p>{story.titleVi}</p>
-                    <p>{story.descriptionVi}</p>
-                    <div className="yume-story-card__meta">
-                      <span>{story.cefrLevel}</span>
-                      <span>{format(UI.storyChapterCount, { n: story.chapterCount })}</span>
-                      <span>{format(UI.storyChapterMinutes, { n: story.estimatedReadMinutes })}</span>
-                      <span>
-                        {format(UI.storyProgressRead, {
-                          read: story.completedChapters,
-                          total: story.chapterCount,
-                        })}
+                  <button
+                    type="button"
+                    className="yume-story-card__select"
+                    aria-pressed={story.id === selectedStoryId}
+                    onClick={() => void openOrSelect(story)}
+                  >
+                    <StoryCover
+                      className="yume-story-card__cover"
+                      coverUrl={story.coverUrl}
+                      slug={story.slug}
+                    />
+                    <div className="yume-story-card__body">
+                      <h3>{story.titleEn}</h3>
+                      <p className="yume-story-card__subtitle">{story.titleVi}</p>
+                      <p className="yume-story-card__desc">{story.descriptionVi}</p>
+                      <div className="yume-story-card__meta">
+                        <span className="yume-story-card__level">{story.cefrLevel}</span>
+                        <span>{format(UI.storyChapterCount, { n: story.chapterCount })}</span>
+                        <span>{format(UI.storyChapterMinutes, { n: story.estimatedReadMinutes })}</span>
+                      </div>
+                      {story.hasProgress ? (
+                        <div
+                          className="yume-story-card__progress"
+                          role="progressbar"
+                          aria-valuemin={0}
+                          aria-valuemax={100}
+                          aria-valuenow={progressPercent}
+                          aria-label={format(UI.storyProgressRead, {
+                            read: story.completedChapters,
+                            total: story.chapterCount,
+                          })}
+                        >
+                          <span style={{ width: `${progressPercent}%` }} />
+                        </div>
+                      ) : null}
+                      <span className="yume-story-card__open">
+                        {story.hasProgress ? UI.storyContinueReading : UI.storyViewStory}
                       </span>
                     </div>
-                    <button
-                      type="button"
-                      className="yume-story-card__open"
-                      onClick={() => void openOrSelect(story)}
-                    >
-                      {story.hasProgress
-                        ? UI.storyContinueReading
-                        : UI.storyViewStory}
-                    </button>
-                  </div>
+                  </button>
                   <button
                     type="button"
                     className="yume-story-card__favorite"
@@ -300,10 +307,11 @@ export function HomeStoryLibrary({ onOpenReader }: HomeStoryLibraryProps) {
                     aria-pressed={story.isFavorite}
                     onClick={() => void toggleFavorite(story.id)}
                   >
-                    <IconHeart filled={story.isFavorite} />
+                    <IconHeart size={14} filled={story.isFavorite} />
                   </button>
                 </article>
-              ))
+              );
+              })
             : null}
         </div>
       </section>
@@ -324,6 +332,6 @@ export function HomeStoryLibrary({ onOpenReader }: HomeStoryLibraryProps) {
           <p className="yume-story-empty">{loading ? UI.storyLoading : UI.storyEmptyLibrary}</p>
         </aside>
       )}
-    </>
+    </div>
   );
 }

@@ -8,21 +8,28 @@ describe("vocabulary art", () => {
     );
   });
 
-  it("falls back to topic illustrations instead of missing arts files", () => {
-    expect(resolveVocabArt({ imageKey: "niece-term-515", word: "niece-term-515", topic: "family" })).toBe(
-      "/illustrations/fam-2.jpg",
-    );
-    expect(resolveVocabArt({ imageKey: "sister", word: "sister", topic: "family" })).toMatch(
-      /^\/illustrations\/fam-[1-8]\.jpg$/,
-    );
+  it("uses the example sentence to pick a matching scene", () => {
+    expect(
+      resolveVocabArt({
+        imageKey: "small",
+        word: "small",
+        topic: "food_dining",
+        example: "I would like a small iced latte.",
+      }),
+    ).toBe("/illustrations/cafe-1.jpg");
   });
 
-  it("maps food and travel topics onto existing banks", () => {
+  it("maps food topics onto cafe illustrations via keywords", () => {
     expect(resolveVocabArt({ imageKey: "menu", word: "menu", topic: "food_dining" })).toMatch(
       /^\/illustrations\/cafe-[1-8]\.jpg$/,
     );
-    expect(resolveVocabArt({ imageKey: "passport", word: "passport", topic: "travel" })).toMatch(
-      /^\/illustrations\/air-[1-8]\.jpg$/,
-    );
+    expect(
+      resolveVocabArt({
+        imageKey: "passport",
+        word: "passport",
+        topic: "travel",
+        example: "May I see your passport, please?",
+      }),
+    ).toMatch(/^\/illustrations\/air-[1-8]\.jpg$/);
   });
 });

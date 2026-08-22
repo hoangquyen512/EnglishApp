@@ -38,6 +38,7 @@ import {
   type StoryDetail,
 } from "../../features/stories";
 import { UserAvatar } from "../account/user-avatar";
+import { IconSpeaker } from "../shared/yume-icons";
 import {
   WordPopover,
   type StoryWordSelection,
@@ -50,6 +51,7 @@ interface StoryReaderScreenProps {
   session: SessionDto;
   onOpenAccount: () => void;
   onBack: () => void;
+  onGoHome?: () => void;
   onOpenChapter: (chapterId: number) => void;
 }
 
@@ -80,6 +82,28 @@ export interface EnglishWordPart {
 }
 
 const PROGRESS_SAVE_DELAY_MS = 5_000;
+
+function TtsButton({
+  label,
+  disabled,
+  onClick,
+}: {
+  label: string;
+  disabled?: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      className="yume-story-reader__tts-btn"
+      aria-label={label}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      <IconSpeaker size={13} />
+    </button>
+  );
+}
 
 function formatCopy(
   template: string,
@@ -136,6 +160,7 @@ export function StoryReaderScreen({
   session,
   onOpenAccount,
   onBack,
+  onGoHome,
   onOpenChapter,
 }: StoryReaderScreenProps) {
   const [data, setData] = useState<ReaderData | null>(null);
@@ -495,17 +520,13 @@ export function StoryReaderScreen({
             {unit.sentences.map((sentence, index) => (
               <span key={sentence.id}>
                 {renderEnglishSentence(sentence)}
-                <button
-                  type="button"
-                  className="yume-story-reader__word"
-                  aria-label={formatCopy(UI.storyReaderListenSentence, {
+                <TtsButton
+                  label={formatCopy(UI.storyReaderListenSentence, {
                     sentence: sentence.en,
                   })}
                   disabled={!tts.supported}
                   onClick={() => tts.speakSentence(sentence.en)}
-                >
-                  🔊
-                </button>
+                />
                 {index < unit.sentences.length - 1 ? " " : null}
               </span>
             ))}
@@ -527,14 +548,19 @@ export function StoryReaderScreen({
   return (
     <main className={`yume-shell yume-story-reader yume-story-reader--${theme}`}>
       <header className="yume-story-reader__topbar">
-        <div className="yume-home__brand" aria-label={APP_NAME}>
+        <button
+          type="button"
+          className="yume-home__brand"
+          onClick={onGoHome ?? onBack}
+          aria-label={`${APP_NAME} — ${UI.homeGoHome}`}
+        >
           <img
             src={`${import.meta.env.BASE_URL}yume-icon-mark.png`}
             alt=""
             className="yume-home__brand-icon"
           />
           <span>{APP_NAME}</span>
-        </div>
+        </button>
         <p className="yume-story-reader__breadcrumb">
           <button type="button" onClick={onBack}>
             {UI.storyReaderBreadcrumbLibrary}
@@ -669,17 +695,13 @@ export function StoryReaderScreen({
                   {item.ipa ? <span>{item.ipa}</span> : null}
                   <p>{item.meaningVi}</p>
                 </button>
-                <button
-                  type="button"
-                  className="yume-story-reader__toolbar-btn"
-                  aria-label={formatCopy(UI.storyReaderListenWord, {
+                <TtsButton
+                  label={formatCopy(UI.storyReaderListenWord, {
                     word: item.word,
                   })}
                   disabled={!tts.supported}
                   onClick={() => tts.speakText(item.word)}
-                >
-                  🔊
-                </button>
+                />
               </li>
             ))}
           </ul>
@@ -761,17 +783,13 @@ export function StoryReaderScreen({
                   {item.ipa ? <span>{item.ipa}</span> : null}
                   {item.partOfSpeech ? <span>· {item.partOfSpeech}</span> : null}
                   <p>{item.meaningVi}</p>
-                  <button
-                    type="button"
-                    className="yume-story-reader__toolbar-btn"
-                    aria-label={formatCopy(UI.storyReaderListenWord, {
+                  <TtsButton
+                    label={formatCopy(UI.storyReaderListenWord, {
                       word: item.word,
                     })}
                     disabled={!tts.supported}
                     onClick={() => tts.speakText(item.word)}
-                  >
-                    🔊
-                  </button>
+                  />
                 </li>
               ))}
               {savedWords.map((item) => (
@@ -779,17 +797,13 @@ export function StoryReaderScreen({
                   <strong>{item.word}</strong>
                   {item.phoneticIpa ? <span>{item.phoneticIpa}</span> : null}
                   <p>{item.meaningVi}</p>
-                  <button
-                    type="button"
-                    className="yume-story-reader__toolbar-btn"
-                    aria-label={formatCopy(UI.storyReaderListenWord, {
+                  <TtsButton
+                    label={formatCopy(UI.storyReaderListenWord, {
                       word: item.word,
                     })}
                     disabled={!tts.supported}
                     onClick={() => tts.speakText(item.word)}
-                  >
-                    🔊
-                  </button>
+                  />
                 </li>
               ))}
             </ul>

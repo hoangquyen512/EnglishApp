@@ -1,6 +1,6 @@
 import { UI } from "../../constants/ui";
 import type { StoryChapter, StoryDetail, StorySummary } from "../../features/stories";
-import { publicUrl } from "../../lib/public-url";
+import { IconHeart, IconShare } from "../shared/yume-icons";
 
 export interface StoryDetailPanelProps {
   story: StorySummary;
@@ -20,25 +20,6 @@ function format(template: string, values: Record<string, number>): string {
   );
 }
 
-function IconHeart({ filled }: { filled: boolean }) {
-  return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill={filled ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8" aria-hidden>
-      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
-    </svg>
-  );
-}
-
-function IconShare() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
-      <circle cx="18" cy="5" r="3" />
-      <circle cx="6" cy="12" r="3" />
-      <circle cx="18" cy="19" r="3" />
-      <path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4" />
-    </svg>
-  );
-}
-
 export function StoryDetailPanel({
   story,
   detail,
@@ -55,71 +36,85 @@ export function StoryDetailPanel({
 
   return (
     <aside className="yume-story-surface yume-story-detail" aria-labelledby="story-detail-title">
-      <img className="yume-story-detail__cover" src={publicUrl(story.coverUrl)} alt="" />
-      <div className="yume-story-card__meta">
-        <span>{story.cefrLevel}</span>
-        <span>{format(UI.storyChapterCount, { n: story.chapterCount })}</span>
-        <span>{format(UI.storyChapterMinutes, { n: story.estimatedReadMinutes })}</span>
-      </div>
-      <h2 id="story-detail-title" className="yume-story-detail__title">
-        {story.titleEn}
-      </h2>
-      <p className="yume-story-library__subtitle">{story.titleVi}</p>
-      <p className="yume-story-detail__desc">{story.descriptionVi}</p>
-      <p className="yume-story-library__subtitle">
-        {format(UI.storyProgressRead, {
-          read: story.completedChapters,
-          total: story.chapterCount,
-        })}
-      </p>
+      <div className="yume-story-detail__head">
+        <div className="yume-story-card__meta">
+          <span className="yume-story-card__level">{story.cefrLevel}</span>
+          <span>{format(UI.storyChapterCount, { n: story.chapterCount })}</span>
+          <span>{format(UI.storyChapterMinutes, { n: story.estimatedReadMinutes })}</span>
+          <span>
+            {format(UI.storyProgressRead, {
+              read: story.completedChapters,
+              total: story.chapterCount,
+            })}
+          </span>
+        </div>
+        <h2 id="story-detail-title" className="yume-story-detail__title">
+          {story.titleEn}
+        </h2>
+        <p className="yume-story-library__subtitle">{story.titleVi}</p>
+        <p className="yume-story-detail__desc">{story.descriptionVi}</p>
 
-      <div className="yume-story-detail__actions">
-        <button
-          type="button"
-          className="yume-story-chip"
-          aria-label={story.isFavorite ? UI.storyFavoriteRemove : UI.storyFavoriteAdd}
-          aria-pressed={story.isFavorite}
-          onClick={() => onToggleFavorite(story.id)}
-        >
-          <IconHeart filled={story.isFavorite} />{" "}
-          {story.isFavorite ? UI.storyFavoriteRemove : UI.storyFavoriteAdd}
-        </button>
-        <button
-          type="button"
-          className="yume-story-chip"
-          aria-label={UI.storyShare}
-          onClick={() => onShare(story)}
-        >
-          <IconShare /> {UI.storyShare}
-        </button>
-      </div>
-
-      <strong className="yume-story-library__subtitle">{UI.storyChapters}</strong>
-      <div className="yume-story-detail__chapters">
-        {chapters.map((chapter) => (
+        <div className="yume-story-detail__actions">
           <button
-            key={chapter.id}
             type="button"
-            className={
-              chapter.id === selectedChapter?.id
-                ? "yume-story-chapter-row is-selected"
-                : "yume-story-chapter-row"
-            }
-            aria-pressed={chapter.id === selectedChapter?.id}
-            onClick={() => onSelectChapter(chapter.id)}
+            className="yume-story-chip"
+            aria-label={story.isFavorite ? UI.storyFavoriteRemove : UI.storyFavoriteAdd}
+            aria-pressed={story.isFavorite}
+            onClick={() => onToggleFavorite(story.id)}
           >
-            <span>
-              <strong>{chapter.chapterNo}. {chapter.titleEn}</strong>
-              <small>{chapter.titleVi}</small>
-            </span>
-            <small>
-              {format(UI.storyChapterMinutes, { n: chapter.estimatedReadMinutes })}
-            </small>
+            <IconHeart size={15} filled={story.isFavorite} />
+            {story.isFavorite ? UI.storyFavoriteRemove : UI.storyFavoriteAdd}
           </button>
-        ))}
+          <button
+            type="button"
+            className="yume-story-chip"
+            aria-label={UI.storyShare}
+            onClick={() => onShare(story)}
+          >
+            <IconShare />
+            {UI.storyShare}
+          </button>
+        </div>
       </div>
 
-      <div className="yume-story-detail__actions">
+        <div className="yume-story-detail__body">
+        <p className="yume-story-detail__section-label">{UI.storyChapters}</p>
+        <div className="yume-story-scroll-panel yume-story-detail__chapters">
+          {chapters.map((chapter) => (
+            <button
+              key={chapter.id}
+              type="button"
+              className={
+                chapter.id === selectedChapter?.id
+                  ? "yume-story-chapter-row is-selected"
+                  : "yume-story-chapter-row"
+              }
+              aria-pressed={chapter.id === selectedChapter?.id}
+              onClick={() => onSelectChapter(chapter.id)}
+            >
+              <span>
+                <strong>{chapter.chapterNo}. {chapter.titleEn}</strong>
+                <small>{chapter.titleVi}</small>
+              </span>
+              <small>
+                {format(UI.storyChapterMinutes, { n: chapter.estimatedReadMinutes })}
+              </small>
+            </button>
+          ))}
+
+          {story.authorName ? (
+            <p className="yume-story-detail__author">{story.authorName}</p>
+          ) : null}
+          {detail?.attributionRequired && detail.attributionText ? (
+            <section className="yume-story-detail__attribution">
+              <strong>{UI.storyAttribution}</strong>
+              <p>{detail.attributionText}</p>
+            </section>
+          ) : null}
+        </div>
+      </div>
+
+      <div className="yume-story-detail__footer">
         <button
           type="button"
           className="yume-story-cta yume-story-cta--ghost"
@@ -134,19 +129,9 @@ export function StoryDetailPanel({
           disabled={!selectedChapter}
           onClick={() => selectedChapter && onOpenReader(story.id, selectedChapter.id)}
         >
-          {UI.storyReadSelectedChapter}
+          {story.hasProgress ? UI.storyContinueReading : UI.storyReadSelectedChapter}
         </button>
       </div>
-
-      {story.authorName ? (
-        <p className="yume-story-library__subtitle">{story.authorName}</p>
-      ) : null}
-      {detail?.attributionRequired && detail.attributionText ? (
-        <section className="yume-story-detail__attribution">
-          <strong>{UI.storyAttribution}</strong>
-          <p>{detail.attributionText}</p>
-        </section>
-      ) : null}
     </aside>
   );
 }
