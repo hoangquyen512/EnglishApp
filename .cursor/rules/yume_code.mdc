@@ -1,0 +1,37 @@
+---
+description: TypeScript/React conventions for src/ — feature public API, Zustand, no SQL in components. Use when editing frontend, features, stores, or components.
+alwaysApply: false
+globs: src/**/*.ts,src/**/*.tsx
+---
+
+# Yume TypeScript / React
+
+## Modules
+
+- New domain logic goes in `src/features/<name>/` with a public `index.ts`. Do not deep-import another feature's internals from components.
+- UI lives in `src/components/`. Keep SQL out of components — call `src/db/` or a feature API.
+- Shared numbers and Vietnamese UI copy live in `src/constants/` (`ui.ts`, `pet.ts`, `missions.ts`). Import those constants; do not scatter magic strings that already exist there.
+- Product name is `APP_NAME` (`Yume`); default pet name is `DEFAULT_PET_NAME` (`Sora`).
+
+## TypeScript
+
+- `strict` is on (`noUnusedLocals`, `noUnusedParameters`). Do not add `any` to silence errors.
+- Prefer explicit types on exported APIs. Match existing import style (`@/` alias is available).
+- Pure domain functions (XP, SRS, mood, scheduler interval) must be testable without Tauri. Inject `now` / clock when time matters — do not assert against `Date.now()`.
+
+## React / state
+
+- Function components only. Tailwind for styling; follow nearby spacing and existing panels/buttons.
+- App state: Zustand stores in `src/stores/` (app, auth, settings, study). Do not invent a second global store.
+- Browser vs Tauri: gate native APIs with `isTauri()` (`src/lib/tauri.ts`). Packaged app uses SQLite; `pnpm dev` uses in-memory / `localStorage` fallbacks.
+
+## Data
+
+- Current user scoping belongs in `src/db/` (`requireUserId` / `peekCurrentUserId`). Do not query all users' rows from a feature.
+- SQL strings: **only** `src/db/*.ts` (and Rust migrations). If a component needs data, add a db helper or feature function.
+
+## Do not
+
+- Do not add Next.js, Electron, or a second routing framework.
+- Do not put flashcard / XP / mood formulas in Rust because "it is the backend".
+- Do not rewrite a feature's public `index.ts` into a barrel that re-exports the world from `components/`.

@@ -24,7 +24,7 @@ Rust is limited to tray, window show/hide, plugin wiring, and SQL migrations. Fl
                 │                  │
                 ▼                  ▼
      ┌─────────────────┐   ┌─────────────────────┐
-     │  main (880x640) │   │ popup (420x680)     │
+     │  main (1280x800) │   │ popup (420x680)     │
      │  visible: false │   │ alwaysOnTop, no     │
      │  onboarding /   │   │ chrome, skipTaskbar │
      │  home + live    │   │ TOEIC flashcard     │

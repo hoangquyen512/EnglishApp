@@ -83,20 +83,21 @@ export function EditAccountScreen({ session, onCancel, onSaved }: EditAccountScr
   }
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-2xl flex-col bg-stone-25 px-7 py-4">
-      <header className="mb-2 flex min-h-10 items-center gap-2">
+    <main className="yume-shell mx-auto flex min-h-screen max-w-2xl flex-col px-7 py-4">
+      <div className="yume-shell__noise" aria-hidden />
+      <header className="relative z-[1] mb-2 flex min-h-10 items-center gap-2">
         <PrimaryButton variant="text" onClick={onCancel}>
           ← {UI.cancel}
         </PrimaryButton>
-        <h1 className="flex-1 text-xl font-bold">{UI.editAccountTitle}</h1>
+        <h1 className="font-display flex-1 text-xl font-bold text-ink">{UI.editAccountTitle}</h1>
       </header>
-      <form className="flex flex-col gap-4" onSubmit={(event) => void onSubmit(event)}>
+      <form className="relative z-[1] flex flex-col gap-4" onSubmit={(event) => void onSubmit(event)}>
         <div className="flex flex-col items-center gap-3 py-2">
           <div className="relative">
             <UserAvatar session={session} size="lg" />
             <button
               type="button"
-              className="absolute -bottom-0.5 -right-0.5 grid h-8 w-8 place-items-center rounded-full border-2 border-white bg-stone-800 text-white"
+              className="absolute -bottom-0.5 -right-0.5 grid h-8 w-8 place-items-center rounded-full border-2 border-cosmic-deep bg-clay text-white shadow-glow"
               aria-label={UI.changePhoto}
               onClick={() => fileRef.current?.click()}
             >

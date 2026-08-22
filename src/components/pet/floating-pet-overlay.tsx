@@ -1,13 +1,15 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { UI } from "../../constants/ui";
 import { recordFlashcardEvent, speakWord } from "../../features/vocabulary";
+import { studyModeFromStored } from "../../features/vocabulary/study-mode";
 import { useAppStore } from "../../stores/app-store";
 import { useStudyStore } from "../../stores/study-store";
 import type { PetState } from "../../types";
 import { FlashcardFace } from "../flashcard/flashcard-face";
 import { useFlashcardPlayer } from "../flashcard/use-flashcard-player";
-import { IconButton, IconClose } from "../shared/icon-button";
+import { IconButton, IconChat, IconClose, IconSearch, IconVocab } from "../shared/icon-button";
+import { FloatingLookupPanel } from "../quick-lookup/floating-lookup-panel";
 import { PetAvatar } from "../pet/pet-avatar";
 
 interface FloatingPetOverlayProps {
@@ -16,6 +18,43 @@ interface FloatingPetOverlayProps {
 }
 
 const STORAGE_KEY = "yume-float-pet-pos";
+const CARD_HEIGHT = 150;
+const LOOKUP_HEIGHT = 190;
+const CARD_SHIFT_X = 360;
+const LOOKUP_SHIFT_X = 320;
+
+function StudyModeFab({
+  label,
+  active,
+  onSelect,
+  children,
+}: {
+  label: string;
+  active: boolean;
+  onSelect: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      title={label}
+      aria-pressed={active}
+      className={
+        active
+          ? "inline-flex h-8 w-8 items-center justify-center rounded-full bg-clay text-white shadow-card ring-2 ring-paper hover:bg-clay-dark"
+          : "inline-flex h-8 w-8 items-center justify-center rounded-full bg-cream text-ink shadow-sm ring-1 ring-line hover:bg-paper"
+      }
+      onPointerDown={(event) => event.stopPropagation()}
+      onClick={(event) => {
+        event.stopPropagation();
+        onSelect();
+      }}
+    >
+      {children}
+    </button>
+  );
+}
 
 function loadPos(): { x: number; y: number } {
   try {
@@ -35,10 +74,16 @@ function loadPos(): { x: number; y: number } {
 
 export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) {
   const [expanded, setExpanded] = useState(false);
+  const [lookupOpen, setLookupOpen] = useState(false);
   const [pos, setPos] = useState(loadPos);
   const drag = useRef<{ ox: number; oy: number; moved: boolean } | null>(null);
   const setPet = useAppStore((state) => state.setPet);
   const contentType = useStudyStore((state) => state.contentType);
+  const setContentType = useStudyStore((state) => state.setContentType);
+  const panelOpen = expanded || lookupOpen;
+  const panelHeight = lookupOpen ? LOOKUP_HEIGHT : CARD_HEIGHT;
+  const phraseMode = studyModeFromStored(contentType) === "phrase";
+  const panelShift = lookupOpen ? LOOKUP_SHIFT_X : CARD_SHIFT_X;
 
   const onAdvance = useCallback(
     async (card: { contentId: number; contentType: typeof contentType; topic: string | null }) => {
@@ -67,17 +112,18 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
   }, [pos]);
 
   useEffect(() => {
-    if (!expanded) {
+    if (!panelOpen) {
       return;
     }
     function onKey(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setExpanded(false);
+        setLookupOpen(false);
       }
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [expanded]);
+  }, [panelOpen]);
 
   const onPointerDown = (event: React.PointerEvent) => {
     drag.current = { ox: event.clientX - pos.x, oy: event.clientY - pos.y, moved: false };
@@ -103,24 +149,23 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
     const wasDrag = drag.current?.moved ?? false;
     drag.current = null;
     if (!wasDrag) {
+      setLookupOpen(false);
       setExpanded((value) => !value);
     }
   };
 
   const node = (
-    <div
-      className="pointer-events-none fixed inset-0 z-[80]"
-      aria-live="polite"
-    >
+    <div className="pointer-events-none fixed inset-0 z-[80]" aria-live="polite">
       <div
         className="pointer-events-auto absolute flex items-end gap-2"
         style={{
-          left: expanded ? Math.max(8, pos.x - 320) : pos.x,
-          top: Math.max(8, pos.y - (expanded ? 150 : 0)),
+          left: panelOpen ? Math.max(8, pos.x - panelShift) : pos.x,
+          top: Math.max(8, pos.y - (panelOpen ? panelHeight : 0)),
         }}
       >
+        {lookupOpen ? <FloatingLookupPanel onClose={() => setLookupOpen(false)} /> : null}
         {expanded ? (
-          <section className="relative box-border h-[150px] w-[min(300px,calc(100vw-88px))] overflow-hidden rounded-xl bg-cream p-2.5 shadow-card ring-1 ring-line">
+          <section className="yume-panel relative box-border h-[150px] w-[min(300px,calc(100vw-128px))] overflow-hidden p-2.5">
             <div className="absolute right-1.5 top-1.5 z-10">
               <IconButton label={UI.close} onClick={onDismiss} className="h-5 w-5">
                 <IconClose />
@@ -146,7 +191,40 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
           </section>
         ) : null}
 
-        <div className="flex shrink-0 flex-col items-center gap-1 pb-0.5">
+        {expanded ? (
+          <div className="flex shrink-0 flex-col items-center gap-1.5 pb-1">
+            <StudyModeFab
+              label={UI.vocabulary}
+              active={!phraseMode}
+              onSelect={() => setContentType("vocabulary")}
+            >
+              <IconVocab className="text-inherit" />
+            </StudyModeFab>
+            <StudyModeFab
+              label={UI.phrases}
+              active={phraseMode}
+              onSelect={() => setContentType("phrase")}
+            >
+              <IconChat className="text-inherit" />
+            </StudyModeFab>
+          </div>
+        ) : null}
+
+        <div className="relative flex shrink-0 flex-col items-center gap-1 pb-0.5 pt-8">
+          <button
+            type="button"
+            aria-label={UI.quickLookupTitle}
+            title={UI.quickLookupTitle}
+            className="absolute left-1/2 top-0 z-20 inline-flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full bg-clay text-white shadow-card ring-2 ring-paper hover:bg-clay-dark"
+            onPointerDown={(event) => event.stopPropagation()}
+            onClick={(event) => {
+              event.stopPropagation();
+              setExpanded(false);
+              setLookupOpen((open) => !open);
+            }}
+          >
+            <IconSearch className="text-white" />
+          </button>
           <button
             type="button"
             aria-label={expanded ? "Thu pet" : "Mở thẻ học"}
@@ -160,7 +238,7 @@ export function FloatingPetOverlay({ pet, onDismiss }: FloatingPetOverlayProps) 
           >
             <PetAvatar pet={pet} size="sm" variant="float" />
           </button>
-          {!expanded ? (
+          {!panelOpen ? (
             <button
               type="button"
               className="rounded-full bg-cream/95 px-1.5 py-0.5 text-[9px] font-semibold text-muted shadow-sm ring-1 ring-line"

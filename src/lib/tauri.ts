@@ -28,6 +28,9 @@ export async function getWindowLabel(): Promise<"main" | "popup"> {
 
 export async function showMainWindow(): Promise<void> {
   if (!isTauri()) {
+    const main = new URL(window.location.href);
+    main.searchParams.set("window", "main");
+    window.open(main.toString(), "yume-main", "width=1280,height=800");
     return;
   }
   const { invoke } = await import("@tauri-apps/api/core");
@@ -38,7 +41,7 @@ export async function showPopupWindow(): Promise<void> {
   if (!isTauri()) {
     const popup = new URL(window.location.href);
     popup.searchParams.set("window", "popup");
-    window.open(popup.toString(), "yume-popup", "width=120,height=120");
+    window.open(popup.toString(), "yume-popup", "width=120,height=120,popup=yes");
     return;
   }
   const { invoke } = await import("@tauri-apps/api/core");

@@ -1,9 +1,9 @@
-//! System tray: Open app / Study now / Quit.
+//! System tray: Open app / Study now / Quick lookup / Quit.
 
 use tauri::image::Image;
 use tauri::menu::{Menu, MenuItem};
 use tauri::tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent};
-use tauri::App;
+use tauri::{App, Emitter};
 
 use crate::commands::window::{show_main_window, show_popup_window};
 
@@ -14,8 +14,12 @@ pub fn setup_tray(app: &App) -> tauri::Result<()> {
     let app_label = MenuItem::with_id(app, "app_name", "Yume", false, None::<&str>)?;
     let open_item = MenuItem::with_id(app, "open", "Mở app", true, None::<&str>)?;
     let study_item = MenuItem::with_id(app, "study", "Học ngay", true, None::<&str>)?;
+    let lookup_item = MenuItem::with_id(app, "quick_lookup", "Tra từ nhanh", true, None::<&str>)?;
     let quit_item = MenuItem::with_id(app, "quit", "Thoát", true, None::<&str>)?;
-    let menu = Menu::with_items(app, &[&app_label, &open_item, &study_item, &quit_item])?;
+    let menu = Menu::with_items(
+        app,
+        &[&app_label, &open_item, &study_item, &lookup_item, &quit_item],
+    )?;
 
     let icon = Image::from_bytes(TRAY_CIRCLE_PNG).expect("invalid tray circle icon");
 
@@ -30,6 +34,10 @@ pub fn setup_tray(app: &App) -> tauri::Result<()> {
             }
             "study" => {
                 let _ = show_popup_window(app.clone());
+            }
+            "quick_lookup" => {
+                let _ = show_main_window(app.clone());
+                let _ = app.emit("navigate-quick-lookup", ());
             }
             "quit" => {
                 app.exit(0);

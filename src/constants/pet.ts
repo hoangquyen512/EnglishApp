@@ -29,11 +29,11 @@ export const SPRITE_ART: Record<string, string> = {
   dragon_adult: "dragon-adult",
 };
 
-/** Onboarding preview art (young form) keyed by species id. */
+/** Onboarding preview art (adult form) keyed by species id. */
 export const SPECIES_PREVIEW_ART: Record<number, string> = {
-  1: "cat-young",
-  2: "fox-young",
-  3: "dragon-young",
+  1: "cat-adult",
+  2: "fox-adult",
+  3: "dragon-adult",
 };
 
 export const MOOD_EMOJI: Record<PetMood, string> = {

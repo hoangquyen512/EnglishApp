@@ -195,3 +195,42 @@ export async function countLearnedVocabulary(): Promise<number> {
   );
   return row?.count ?? 0;
 }
+
+export async function insertVocabulary(input: {
+  word: string;
+  meaning: string;
+  example?: string | null;
+  phonetic?: string | null;
+  partOfSpeech?: string | null;
+  topicId?: number | null;
+}): Promise<Vocabulary> {
+  await execute(
+    `INSERT INTO vocabulary (word, meaning, example, phonetic, part_of_speech, category, topic_id)
+     VALUES ($1, $2, $3, $4, $5, 'lookup', $6)
+     ON CONFLICT(word) DO UPDATE SET
+       meaning = excluded.meaning,
+       example = COALESCE(excluded.example, vocabulary.example),
+       phonetic = COALESCE(excluded.phonetic, vocabulary.phonetic),
+       part_of_speech = COALESCE(excluded.part_of_speech, vocabulary.part_of_speech),
+       topic_id = COALESCE(excluded.topic_id, vocabulary.topic_id)`,
+    [
+      input.word,
+      input.meaning,
+      input.example ?? null,
+      input.phonetic ?? null,
+      input.partOfSpeech ?? null,
+      input.topicId ?? null,
+    ],
+  );
+  const row = await selectOne<VocabularyRow>(
+    `SELECT ${VOCAB_COLUMNS}
+     FROM vocabulary v
+     LEFT JOIN topics t ON t.id = v.topic_id
+     WHERE v.word = $1`,
+    [input.word],
+  );
+  if (!row) {
+    throw new Error("Failed to insert vocabulary");
+  }
+  return mapVocab(row);
+}

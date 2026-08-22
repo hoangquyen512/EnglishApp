@@ -396,6 +396,12 @@ fn sqlite_migrations() -> Vec<Migration> {
             sql: include_str!("../migrations/063_seed_topic_banks_one_to_one.sql"),
             kind: MigrationKind::Up,
         },
+        Migration {
+            version: 64,
+            description: "dictionary_cache",
+            sql: include_str!("../migrations/064_dictionary_cache.sql"),
+            kind: MigrationKind::Up,
+        },
     ]
 }
 

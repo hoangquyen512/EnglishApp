@@ -7,7 +7,10 @@ export function FormError({ message }: FormErrorProps) {
     return null;
   }
   return (
-    <p className="flex items-start gap-2 rounded-xl bg-rose-50 px-3 py-2.5 text-sm text-rose-700" role="alert">
+    <p
+      className="flex items-start gap-2 rounded-xl border border-rose/35 bg-rose/15 px-3 py-2.5 text-sm text-rose"
+      role="alert"
+    >
       {message}
     </p>
   );

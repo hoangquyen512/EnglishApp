@@ -7,6 +7,11 @@ import type { ConversationTopicId } from "./types";
 export type { ConversationPhrase, ConversationTopic, ConversationTopicId } from "./types";
 export { conversationContentId } from "./ids";
 export { illustrationSrc } from "./illustration";
+export {
+  communicationCardsForLevel,
+  mergeCommunicationDecks,
+} from "./merge";
+export type { CommunicationSourceCard } from "./merge";
 export { conversationTopics, getConversationTopic, isConversationTopicId } from "../../data/conversation/topics";
 
 function cardsForBank(topicId: ConversationTopicId, topicCode: string | null): StudyFlashcard[] {

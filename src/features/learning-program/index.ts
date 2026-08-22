@@ -251,3 +251,5 @@ export {
   toggleTopicSelection,
 } from "./validate";
 export { assignVocabTopicCode, vocabWordsForTopic } from "./vocab-heuristic";
+export { buildRoadmapSnapshot } from "./roadmap-summary";
+export type { RoadmapSnapshot } from "./roadmap-summary";

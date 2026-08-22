@@ -91,13 +91,15 @@ export function FlashcardPopup() {
       ) : !session && authReady ? (
         <button
           type="button"
-          className="rounded-full bg-cream/95 px-4 py-3 text-sm font-semibold text-ink shadow-card ring-1 ring-line"
+          className="rounded-full border border-line bg-paper/90 px-4 py-3 text-sm font-semibold text-ink shadow-card backdrop-blur-md"
           onClick={() => void openMainForSetup()}
         >
           {UI.popupNeedLogin}
         </button>
       ) : (
-        <p className="rounded-full bg-cream/90 px-3 py-2 text-sm text-ink shadow-card">{UI.loading}</p>
+        <p className="rounded-full border border-line bg-paper/90 px-3 py-2 text-sm text-ink shadow-card backdrop-blur-md">
+          {UI.loading}
+        </p>
       )}
     </div>
   );
@@ -185,7 +187,7 @@ function CompanionStudyShell({
 
   return (
     <div className="flex h-full min-h-0 w-full items-end gap-2 bg-transparent">
-      <section className="relative min-h-0 min-w-0 flex-1 overflow-auto rounded-[20px] bg-cream p-3 shadow-card ring-1 ring-line">
+      <section className="yume-panel relative min-h-0 min-w-0 flex-1 overflow-auto p-3">
         <div className="absolute right-2 top-2 z-10">
           <IconButton label="Đóng cửa sổ học" onClick={() => void dismissStudyPopup()}>
             <IconClose />
@@ -193,8 +195,8 @@ function CompanionStudyShell({
         </div>
         <div className="pr-8">
           {player.error ? <p className="text-sm text-rose">{player.error}</p> : null}
-          {player.loading && !player.card ? <p>{UI.loading}</p> : null}
-          {!player.loading && !player.card ? <p>{UI.noCard}</p> : null}
+          {player.loading && !player.card ? <p className="text-muted">{UI.loading}</p> : null}
+          {!player.loading && !player.card ? <p className="text-muted">{UI.noCard}</p> : null}
           {player.card ? (
             <FlashcardFace
               card={player.card}
@@ -211,7 +213,7 @@ function CompanionStudyShell({
       </section>
       <aside className="flex w-[120px] shrink-0 flex-col items-center gap-1 pb-1">
         <CompanionPetButton pet={pet} onToggle={onToggle} label="Thu pet" />
-        <p className="text-center text-[11px] font-semibold text-ink drop-shadow-sm">
+        <p className="text-center text-[11px] font-semibold text-ink drop-shadow-[0_1px_8px_rgba(11,16,32,0.85)]">
           {UI.level} {pet.level} · {UI.xp} {pet.xp}
         </p>
       </aside>

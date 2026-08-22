@@ -35,6 +35,7 @@ export type PublicMessage = {
 
 const llm = createFakeLlm();
 const TIMEZONE = "Asia/Ho_Chi_Minh";
+let checkinFlight: Promise<PublicMessage[]> | null = null;
 
 type MemoryMsg = PublicMessage;
 const memoryMessages: MemoryMsg[] = [];
@@ -108,6 +109,16 @@ export async function listThread(): Promise<PublicMessage[]> {
 }
 
 export async function ensureDailyCheckin(): Promise<PublicMessage[]> {
+  if (checkinFlight) {
+    return checkinFlight;
+  }
+  checkinFlight = runDailyCheckin().finally(() => {
+    checkinFlight = null;
+  });
+  return checkinFlight;
+}
+
+async function runDailyCheckin(): Promise<PublicMessage[]> {
   const items = await listThread();
   const today = localToday(new Date(), TIMEZONE);
   const userChattedToday = items.some(

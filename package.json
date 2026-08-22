@@ -10,7 +10,9 @@
     "tauri": "tauri",
     "test": "vitest run",
     "test:watch": "vitest",
-    "generate:phase1-lexicon": "node scripts/generate-phase1-lexicon.cjs"
+    "generate:phase1-lexicon": "node scripts/generate-phase1-lexicon.cjs",
+    "sync-ai-rules": "node .cursor/skills/ai-config-sync/scripts/sync-ai-rules.mjs",
+    "check-ai-rules": "node .cursor/skills/ai-config-sync/scripts/sync-ai-rules.mjs --check"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",

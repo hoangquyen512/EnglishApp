@@ -1,8 +1,7 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AccountScreen } from "./components/account/account-screen";
 import { EditAccountScreen } from "./components/account/edit-account-screen";
 import { LearningProgramScreen } from "./components/account/learning-program-screen";
-import { CompanionChatScreen } from "./components/companion/companion-chat-screen";
 import { AuthGate } from "./components/auth/auth-gate";
 import { preloadVocabArts } from "./components/flashcard/vocab-illustration";
 import { FlashcardPopup } from "./components/popup/flashcard-popup";
@@ -10,23 +9,23 @@ import { HomeScreen } from "./components/shared/home-screen";
 import { OnboardingScreen } from "./components/shared/onboarding-screen";
 import { UI } from "./constants/ui";
 import { TOEIC_ART_KEYS } from "./data/toeic-cards";
-import { openStudyPopup, startScheduler } from "./features/scheduler";
+import { startScheduler } from "./features/scheduler";
 import {
   defaultContentTypeFromPreference,
   ensureLearningProgram,
 } from "./features/learning-program";
-import { getWindowLabel, showMainWindow } from "./lib/tauri";
+import { getWindowLabel, isTauri, showMainWindow } from "./lib/tauri";
 import { useAppStore } from "./stores/app-store";
 import { useAuthStore } from "./stores/auth-store";
 import { useSettingsStore } from "./stores/settings-store";
 import { useStudyStore } from "./stores/study-store";
 
-type MainView = "home" | "account" | "edit" | "chat" | "learning-program";
+type MainView = "home" | "account" | "edit" | "learning-program";
 
 export default function App() {
   const [windowKind, setWindowKind] = useState<"main" | "popup" | null>(null);
   const [view, setView] = useState<MainView>("home");
-  const [learningReturn, setLearningReturn] = useState<"home" | "account">("account");
+  const [openLookupSignal, setOpenLookupSignal] = useState(0);
   const [accountToast, setAccountToast] = useState<string | null>(null);
   const authReady = useAuthStore((state) => state.ready);
   const session = useAuthStore((state) => state.session);
@@ -35,7 +34,6 @@ export default function App() {
   const error = useAppStore((state) => state.error);
   const pet = useAppStore((state) => state.pet);
   const species = useAppStore((state) => state.species);
-  const missions = useAppStore((state) => state.missions);
   const hydrate = useAppStore((state) => state.hydrate);
   const chooseSpecies = useAppStore((state) => state.chooseSpecies);
   const contentType = useStudyStore((state) => state.contentType);
@@ -43,7 +41,6 @@ export default function App() {
   const hydratedFromPreference = useStudyStore((state) => state.hydratedFromPreference);
   const markHydratedFromPreference = useStudyStore((state) => state.markHydratedFromPreference);
   const intervalMinutes = useSettingsStore((state) => state.intervalMinutes);
-  const setIntervalMinutes = useSettingsStore((state) => state.setIntervalMinutes);
 
   useEffect(() => {
     void getWindowLabel().then(setWindowKind);
@@ -100,6 +97,24 @@ export default function App() {
     }
   }, [session]);
 
+  useEffect(() => {
+    if (windowKind !== "main" || !isTauri()) {
+      return;
+    }
+    let unlisten: (() => void) | undefined;
+    void import("@tauri-apps/api/event").then(({ listen }) =>
+      listen("navigate-quick-lookup", () => {
+        setView("home");
+        setOpenLookupSignal((n) => n + 1);
+      }).then((fn) => {
+        unlisten = fn;
+      }),
+    );
+    return () => {
+      unlisten?.();
+    };
+  }, [windowKind]);
+
   if (windowKind === null) {
     return <p className="p-6">{UI.loading}</p>;
   }
@@ -129,10 +144,6 @@ export default function App() {
     );
   }
 
-  if (view === "chat") {
-    return <CompanionChatScreen onBack={() => setView("home")} />;
-  }
-
   if (view === "edit") {
     return (
       <EditAccountScreen
@@ -149,10 +160,15 @@ export default function App() {
   if (view === "learning-program") {
     return (
       <LearningProgramScreen
-        onBack={() => setView(learningReturn)}
+        session={session}
+        onHome={() => {
+          setAccountToast(null);
+          setView("home");
+        }}
+        onCancel={() => setView("account")}
         onSaved={() => {
           setAccountToast(UI.learningProgramSaved);
-          setView(learningReturn);
+          setView("account");
         }}
       />
     );
@@ -173,7 +189,6 @@ export default function App() {
         }}
         onLearningProgram={() => {
           setAccountToast(null);
-          setLearningReturn("account");
           setView("learning-program");
         }}
       />
@@ -192,19 +207,11 @@ export default function App() {
   return (
     <HomeScreen
       pet={pet}
-      missions={missions}
       contentType={contentType}
-      intervalMinutes={intervalMinutes}
       onContentType={setContentType}
-      onInterval={setIntervalMinutes}
-      onStudyNow={() => void openStudyPopup()}
       session={session}
       onOpenAccount={() => setView("account")}
-      onOpenChat={() => setView("chat")}
-      onOpenLearningProgram={() => {
-        setLearningReturn("home");
-        setView("learning-program");
-      }}
+      openLookupSignal={openLookupSignal}
     />
   );
 }

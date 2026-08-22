@@ -1,0 +1,24 @@
+---
+description: AI config sync — .cursor/ is the only place to edit rules and skills. Use when adding Cursor rules, skills, commands, AGENTS.md, or CLAUDE.md.
+alwaysApply: true
+---
+
+# AI config
+
+`.cursor/rules/` and `.cursor/skills/` are the **single source of truth**.
+
+`.agents/`, `.claude/`, root `AGENTS.md`, and root `CLAUDE.md` are **generated**. Edit them in `.cursor/` then run:
+
+```bash
+pnpm sync-ai-rules
+```
+
+Drift check (CI / before merge):
+
+```bash
+pnpm check-ai-rules
+```
+
+Do not hand-edit `.agents/skills/`, `.agents/rules/`, `.claude/**`, or the generated index files. The next sync overwrites them.
+
+Skill: `ai-config-sync`. Algorithm: `.cursor/skills/ai-config-sync/references/sync-algorithm.md`.

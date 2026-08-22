@@ -35,7 +35,7 @@ export function PasswordField({
       trailing={
         <button
           type="button"
-          className="absolute right-1 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-lg text-stone-800 hover:bg-stone-50"
+          className="absolute right-1 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-lg text-cosmic-sub hover:bg-clay/20 hover:text-ink"
           aria-label={visible ? UI.hidePassword : UI.showPassword}
           onClick={() => setVisible((current) => !current)}
         >

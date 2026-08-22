@@ -12,10 +12,11 @@ export function PrimaryButton({
   ...props
 }: PrimaryButtonProps) {
   const styles = {
-    primary: "bg-clay text-white hover:bg-clay-dark",
-    ghost: "bg-paper text-ink border border-line hover:bg-cream",
-    danger: "bg-transparent text-rose hover:bg-rose/10 border border-transparent",
-    text: "bg-transparent text-clay hover:underline px-1 min-h-8",
+    primary:
+      "border-0 bg-gradient-to-br from-cosmic-primary-2 via-clay to-cosmic-pink text-white shadow-glow hover:brightness-110",
+    ghost: "bg-paper/80 text-ink border border-line hover:bg-cosmic-surface/80 backdrop-blur-sm",
+    danger: "bg-transparent text-rose hover:bg-rose/10 border border-rose/35",
+    text: "bg-transparent text-cosmic-sub hover:text-cosmic-warm hover:underline px-1 min-h-8",
   }[variant];
   return (
     <button

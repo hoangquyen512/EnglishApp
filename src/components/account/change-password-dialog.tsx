@@ -44,14 +44,14 @@ export function ChangePasswordDialog({ username, onClose, onSaved }: ChangePassw
   }
 
   return (
-    <div className="fixed inset-0 z-20 grid place-items-center bg-stone-950/40 p-6">
+    <div className="fixed inset-0 z-20 grid place-items-center bg-cosmic-base/70 p-6 backdrop-blur-sm">
       <form
         role="dialog"
         aria-modal="true"
-        className="flex w-full max-w-md flex-col gap-4 rounded-[20px] bg-white p-6 shadow-lg"
+        className="yume-panel flex w-full max-w-md flex-col gap-4 p-6 shadow-glow"
         onSubmit={(event) => void onSubmit(event)}
       >
-        <h2 className="text-xl font-bold">{UI.changePassword}</h2>
+        <h2 className="font-display text-xl font-bold text-ink">{UI.changePassword}</h2>
         <PasswordField
           id="current-password"
           label={UI.currentPassword}
