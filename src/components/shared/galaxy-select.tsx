@@ -1,4 +1,10 @@
-import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
+import {
+  useEffect,
+  useId,
+  useRef,
+  useState,
+  type KeyboardEvent as ReactKeyboardEvent,
+} from "react";
 
 export interface GalaxySelectOption<T extends string = string> {
   value: T;
@@ -45,7 +51,7 @@ export function GalaxySelect<T extends string>({
         setOpen(false);
       }
     };
-    const onKey = (event: KeyboardEvent) => {
+    const onKey = (event: globalThis.KeyboardEvent) => {
       if (event.key === "Escape") {
         setOpen(false);
       }
@@ -79,14 +85,14 @@ export function GalaxySelect<T extends string>({
     setOpen(false);
   };
 
-  const onTriggerKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
+  const onTriggerKeyDown = (event: ReactKeyboardEvent<HTMLButtonElement>) => {
     if (event.key === "ArrowDown" || event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       setOpen(true);
     }
   };
 
-  const onListKeyDown = (event: KeyboardEvent<HTMLUListElement>) => {
+  const onListKeyDown = (event: ReactKeyboardEvent<HTMLUListElement>) => {
     if (event.key === "ArrowDown") {
       event.preventDefault();
       setActiveIndex((current) => Math.min(options.length - 1, current + 1));
